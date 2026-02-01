@@ -1,0 +1,115 @@
+import { motion } from 'framer-motion';
+import { ExternalLink } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
+import luxuraSpaImage from '@/assets/portfolio-luxura-spa.jpg';
+import steelPipeImage from '@/assets/portfolio-steel-pipe.jpg';
+
+interface PortfolioItemProps {
+  name: string;
+  category: string;
+  description: string;
+  image: string;
+  delay: number;
+  previewLabel: string;
+}
+
+const PortfolioItem = ({ name, category, description, image, delay, previewLabel }: PortfolioItemProps) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: delay * 0.15, duration: 0.6 }}
+      className="group relative overflow-hidden rounded-3xl glass-card"
+    >
+      {/* Image Container */}
+      <div className="relative aspect-[4/3] overflow-hidden">
+        <img 
+          src={image}
+          alt={name}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        />
+        
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
+        
+        {/* Hover Preview Button */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <motion.div
+            initial={{ scale: 0.8 }}
+            whileHover={{ scale: 1 }}
+            className="flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-full font-medium shadow-[0_0_30px_hsl(328_100%_54%/0.4)]"
+          >
+            <ExternalLink className="w-4 h-4" />
+            {previewLabel}
+          </motion.div>
+        </div>
+      </div>
+      
+      {/* Content */}
+      <div className="p-6">
+        <span className="text-xs text-primary uppercase tracking-wider font-medium">
+          {category}
+        </span>
+        <h3 className="text-xl font-bold text-foreground mt-2 mb-2">{name}</h3>
+        <p className="text-sm text-muted-foreground">{description}</p>
+      </div>
+    </motion.div>
+  );
+};
+
+const PortfolioSection = () => {
+  const { t } = useLanguage();
+
+  const projects = [
+    {
+      name: t('portfolio.luxura.name'),
+      category: t('portfolio.luxura.category'),
+      description: t('portfolio.luxura.desc'),
+      image: luxuraSpaImage,
+      delay: 1,
+    },
+    {
+      name: t('portfolio.steel.name'),
+      category: t('portfolio.steel.category'),
+      description: t('portfolio.steel.desc'),
+      image: steelPipeImage,
+      delay: 2,
+    },
+  ];
+
+  return (
+    <section id="portfolio" className="py-24 relative grain">
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            {t('portfolio.title')}
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            {t('portfolio.subtitle')}
+          </p>
+        </motion.div>
+
+        {/* Portfolio Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {projects.map((project, index) => (
+            <PortfolioItem 
+              key={index} 
+              {...project} 
+              previewLabel={t('portfolio.preview')}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default PortfolioSection;
