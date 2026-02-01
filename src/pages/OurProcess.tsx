@@ -19,8 +19,9 @@ const OurProcess = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              {t('process.title')}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              <span className="text-foreground">{t('process.title1')}</span>{' '}
+              <span className="text-primary">{t('process.title2')}</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               {t('process.subtitle')}
