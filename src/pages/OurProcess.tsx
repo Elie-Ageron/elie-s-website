@@ -1,9 +1,7 @@
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
 import AnimatedTimeline from '@/components/animations/AnimatedTimeline';
-import MagneticButton from '@/components/animations/MagneticButton';
+import ContactMethodsSection from '@/components/ContactMethodsSection';
 
 const OurProcess = () => {
   const { t } = useLanguage();
@@ -38,27 +36,8 @@ const OurProcess = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="glass-card neon-border rounded-3xl p-12"
-          >
-            <h2 className="text-3xl font-bold text-foreground mb-4">{t('process.cta.title')}</h2>
-            <p className="text-lg text-muted-foreground mb-8">{t('process.cta.subtitle')}</p>
-            <MagneticButton>
-              <Button variant="hero" size="xl" asChild>
-                <a href="https://calendly.com/elie-ageron" target="_blank" rel="noopener noreferrer">
-                  {t('process.cta.button')}
-                </a>
-              </Button>
-            </MagneticButton>
-          </motion.div>
-        </div>
-      </section>
+      {/* Contact Methods */}
+      <ContactMethodsSection />
     </>
   );
 };

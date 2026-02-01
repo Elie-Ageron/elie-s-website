@@ -1,9 +1,7 @@
 import { motion } from 'framer-motion';
 import { TrendingUp, Users, DollarSign, Globe, XCircle, CheckCircle } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Link } from 'react-router-dom';
-import MagneticButton from '@/components/animations/MagneticButton';
+import ContactMethodsSection from '@/components/ContactMethodsSection';
 
 const WhyWebsite = () => {
   const { t } = useLanguage();
@@ -140,24 +138,8 @@ const WhyWebsite = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl font-bold text-foreground mb-4">{t('why.cta.title')}</h2>
-            <p className="text-lg text-muted-foreground mb-8">{t('why.cta.subtitle')}</p>
-            <MagneticButton>
-              <Button variant="hero" size="xl" asChild>
-                <Link to="/pricing">{t('why.cta.button')}</Link>
-              </Button>
-            </MagneticButton>
-          </motion.div>
-        </div>
-      </section>
+      {/* Contact Methods */}
+      <ContactMethodsSection />
     </>
   );
 };

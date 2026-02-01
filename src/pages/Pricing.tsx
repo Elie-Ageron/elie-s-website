@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Switch } from '@/components/ui/switch';
 import MagneticButton from '@/components/animations/MagneticButton';
+import ContactMethodsSection from '@/components/ContactMethodsSection';
 
 const Pricing = () => {
   const { t } = useLanguage();
@@ -193,6 +194,9 @@ const Pricing = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Contact Methods */}
+      <ContactMethodsSection />
     </>
   );
 };

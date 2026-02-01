@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import portfolioLuxura from '@/assets/portfolio-luxura-spa.jpg';
 import portfolioSteel from '@/assets/portfolio-steel-pipe.jpg';
+import ContactMethodsSection from '@/components/ContactMethodsSection';
 
 const Portfolio = () => {
   const { t } = useLanguage();
@@ -102,25 +103,8 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="glass-card neon-border rounded-3xl p-12"
-          >
-            <h2 className="text-3xl font-bold text-foreground mb-4">{t('portfolio.cta.title')}</h2>
-            <p className="text-lg text-muted-foreground mb-8">{t('portfolio.cta.subtitle')}</p>
-            <Button variant="hero" size="xl" asChild>
-              <a href="https://calendly.com/elie-ageron" target="_blank" rel="noopener noreferrer">
-                {t('portfolio.cta.button')}
-              </a>
-            </Button>
-          </motion.div>
-        </div>
-      </section>
+      {/* Contact Methods */}
+      <ContactMethodsSection />
     </>
   );
 };
