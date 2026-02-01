@@ -70,7 +70,7 @@ const Header = () => {
             </div>
             
             <Button variant="neon" size="sm" asChild>
-              <a href="#contact">{t('nav.book')}</a>
+              <a href="https://calendly.com/elie-ageron" target="_blank" rel="noopener noreferrer">{t('nav.book')}</a>
             </Button>
           </div>
 
@@ -130,7 +130,7 @@ const Header = () => {
                 </div>
                 
                 <Button variant="hero" size="lg" className="w-full" asChild>
-                  <a href="#contact">{t('nav.book')}</a>
+                  <a href="https://calendly.com/elie-ageron" target="_blank" rel="noopener noreferrer">{t('nav.book')}</a>
                 </Button>
               </div>
             </motion.div>

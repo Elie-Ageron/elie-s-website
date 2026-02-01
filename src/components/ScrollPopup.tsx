@@ -77,7 +77,7 @@ const ScrollPopup = () => {
                 
                 <div className="flex flex-col gap-3">
                   <Button variant="hero" size="lg" asChild>
-                    <a href="#contact" onClick={handleClose}>
+                    <a href="https://calendly.com/elie-ageron" target="_blank" rel="noopener noreferrer" onClick={handleClose}>
                       {t('popup.cta')}
                     </a>
                   </Button>
