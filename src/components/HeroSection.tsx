@@ -36,8 +36,10 @@ const HeroSection = () => {
           </motion.div>
 
           {/* Main Headline */}
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-foreground mb-6 leading-tight drop-shadow-lg">
-            {t('hero.headline')}
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 leading-tight drop-shadow-lg">
+            <span className="text-foreground">{t('hero.headline1')}</span>
+            <br />
+            <span className="text-primary">{t('hero.headline2')}</span>
           </h1>
 
           {/* Subheadline */}
