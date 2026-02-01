@@ -18,8 +18,8 @@ All colors MUST be HSL.
     --popover: 0 0% 5%;
     --popover-foreground: 0 0% 98%;
 
-    /* Neon Pink Primary - #FF1493 = 328 100% 54% in HSL */
-    --primary: 328 100% 54%;
+    /* Softer Neon Pink - less saturated, slightly darker */
+    --primary: 328 75% 50%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 10%;
@@ -28,7 +28,7 @@ All colors MUST be HSL.
     --muted: 0 0% 12%;
     --muted-foreground: 0 0% 65%;
 
-    --accent: 328 100% 54%;
+    --accent: 328 75% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -36,7 +36,7 @@ All colors MUST be HSL.
 
     --border: 0 0% 15%;
     --input: 0 0% 12%;
-    --ring: 328 100% 54%;
+    --ring: 328 75% 50%;
 
     --radius: 0.75rem;
 
@@ -45,19 +45,19 @@ All colors MUST be HSL.
     --glass-border: 0 0% 100% / 0.08;
     --glass-blur: 12px;
 
-    /* Neon glow */
-    --neon-glow: 328 100% 54%;
-    --neon-glow-soft: 328 100% 54% / 0.3;
-    --neon-glow-strong: 328 100% 54% / 0.6;
+    /* Neon glow - softer */
+    --neon-glow: 328 75% 50%;
+    --neon-glow-soft: 328 75% 50% / 0.3;
+    --neon-glow-strong: 328 75% 50% / 0.6;
 
     --sidebar-background: 0 0% 3%;
     --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 328 100% 54%;
+    --sidebar-primary: 328 75% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 0 0% 10%;
     --sidebar-accent-foreground: 0 0% 98%;
     --sidebar-border: 0 0% 15%;
-    --sidebar-ring: 328 100% 54%;
+    --sidebar-ring: 328 75% 50%;
   }
 
   /* Dark mode is our default, but keeping class for consistency */
@@ -71,7 +71,7 @@ All colors MUST be HSL.
     --popover: 0 0% 5%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 328 100% 54%;
+    --primary: 328 75% 50%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 10%;
@@ -80,7 +80,7 @@ All colors MUST be HSL.
     --muted: 0 0% 12%;
     --muted-foreground: 0 0% 65%;
 
-    --accent: 328 100% 54%;
+    --accent: 328 75% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
@@ -88,16 +88,16 @@ All colors MUST be HSL.
 
     --border: 0 0% 15%;
     --input: 0 0% 12%;
-    --ring: 328 100% 54%;
+    --ring: 328 75% 50%;
 
     --sidebar-background: 0 0% 3%;
     --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 328 100% 54%;
+    --sidebar-primary: 328 75% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 0 0% 10%;
     --sidebar-accent-foreground: 0 0% 98%;
     --sidebar-border: 0 0% 15%;
-    --sidebar-ring: 328 100% 54%;
+    --sidebar-ring: 328 75% 50%;
   }
 }
 

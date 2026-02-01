@@ -17,8 +17,8 @@ const FloatingOrb = ({ position, scale = 0.5 }: { position: [number, number, num
     <Float speed={1.5} rotationIntensity={0.5} floatIntensity={0.8}>
       <Sphere ref={meshRef} position={position} args={[1, 32, 32]} scale={scale}>
         <MeshDistortMaterial
-          color="#FF1493"
-          emissive="#FF1493"
+          color="#D94A8C"
+          emissive="#D94A8C"
           emissiveIntensity={0.3}
           roughness={0.3}
           metalness={0.8}
@@ -36,7 +36,7 @@ const Scene = () => {
   return (
     <>
       <ambientLight intensity={0.3} />
-      <pointLight position={[5, 5, 5]} intensity={1} color="#FF1493" />
+      <pointLight position={[5, 5, 5]} intensity={1} color="#D94A8C" />
       
       <FloatingOrb position={[3, 1, -2]} scale={0.4} />
       <FloatingOrb position={[-3, -1, -3]} scale={0.3} />
