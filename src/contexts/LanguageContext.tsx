@@ -52,8 +52,8 @@ const translations = {
     'stats.responsive': 'Responsive',
 
     // Why a Website Page
-    'why.title': 'Why You Need a Premium Website',
-    'why.subtitle': 'In 2024, your website is your most valuable employee. It works 24/7, never asks for a raise, and converts visitors into paying clients.',
+    'why.title': 'What If Your Website Worked While You Sleep?',
+    'why.subtitle': 'A great website is your best employee. It never takes breaks, never asks for a raise, and converts visitors into clients around the clock.',
     'why.benefit1.title': '24/7 Global Visibility',
     'why.benefit1.desc': 'Your business is accessible worldwide, anytime. No office hours, no geographic limits.',
     'why.benefit2.title': 'Automated Lead Generation',
@@ -225,8 +225,8 @@ const translations = {
     'stats.responsive': 'Responsive',
 
     // Why a Website Page
-    'why.title': 'Pourquoi Vous Avez Besoin d\'un Site Premium',
-    'why.subtitle': 'En 2024, votre site web est votre employé le plus précieux. Il travaille 24/7, ne demande jamais d\'augmentation, et convertit les visiteurs en clients.',
+    'why.title': 'Et Si Votre Site Travaillait Pendant Que Vous Dormez ?',
+    'why.subtitle': 'Un bon site, c\'est votre meilleur employé. Il ne prend jamais de pause, ne demande jamais d\'augmentation, et convertit vos visiteurs en clients 24h/24.',
     'why.benefit1.title': 'Visibilité Mondiale 24/7',
     'why.benefit1.desc': 'Votre entreprise est accessible partout, à tout moment. Pas d\'horaires, pas de limites géographiques.',
     'why.benefit2.title': 'Génération de Leads Automatisée',
