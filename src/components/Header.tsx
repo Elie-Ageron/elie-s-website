@@ -55,7 +55,7 @@ const Header = () => {
                     : 'text-muted-foreground hover:text-foreground'
                 }`}
               >
-                🇫🇷 FR
+                FR
               </button>
               <button
                 onClick={() => setLanguage('en')}
@@ -65,7 +65,7 @@ const Header = () => {
                     : 'text-muted-foreground hover:text-foreground'
                 }`}
               >
-                🇬🇧 EN
+                ENG
               </button>
             </div>
             
@@ -115,7 +115,7 @@ const Header = () => {
                         : 'bg-secondary text-muted-foreground'
                     }`}
                   >
-                    🇫🇷 Français
+                    FR
                   </button>
                   <button
                     onClick={() => setLanguage('en')}
@@ -125,7 +125,7 @@ const Header = () => {
                         : 'bg-secondary text-muted-foreground'
                     }`}
                   >
-                    🇬🇧 English
+                    ENG
                   </button>
                 </div>
                 
