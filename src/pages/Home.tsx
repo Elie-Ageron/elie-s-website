@@ -180,8 +180,8 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-              {t('home.contact.title')}
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+              <span className="text-primary">{t('home.contact.title')}</span>
             </h2>
             <p className="text-muted-foreground">
               {t('home.contact.subtitle')}
