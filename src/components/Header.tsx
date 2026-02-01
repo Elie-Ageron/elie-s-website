@@ -26,7 +26,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="text-xl font-bold text-foreground">
-            <span className="text-primary">É</span>lie Ageron
+            Elie Ageron
           </a>
 
           {/* Desktop Navigation */}
