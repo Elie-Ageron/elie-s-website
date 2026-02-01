@@ -170,7 +170,8 @@ const translations = {
     'popup.close': 'Maybe later',
 
     // Contact Page
-    'contact.title': "Let's Build Something Great",
+    'contact.title1': "Let's Build",
+    'contact.title2': "Something Great",
     'contact.subtitle': 'Ready to transform your online presence? Choose your preferred contact method.',
     'contact.calendly.title': 'Book a Call',
     'contact.calendly.desc': 'Schedule a free 15-minute discovery call to discuss your project.',
@@ -348,7 +349,8 @@ const translations = {
     'popup.close': 'Peut-être plus tard',
 
     // Contact Page
-    'contact.title': 'Construisons quelque chose de grand',
+    'contact.title1': 'Construisons',
+    'contact.title2': 'quelque chose de grand',
     'contact.subtitle': 'Prêt à transformer votre présence en ligne ? Choisissez votre méthode de contact préférée.',
     'contact.calendly.title': 'Réserver un Appel',
     'contact.calendly.desc': 'Planifiez un appel découverte gratuit de 15 minutes pour discuter de votre projet.',
