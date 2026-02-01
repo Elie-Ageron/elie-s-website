@@ -19,8 +19,8 @@ const translations = {
     'nav.book': 'Book a Call',
 
     // Home Page
-    'hero.headline': "Your website is losing you clients. Let's fix that.",
-    'hero.subheadline': "High-converting sites designed to generate leads, boost your credibility, and multiply your revenue.",
+    'hero.headline1': "Your website is losing you clients.",
+    'hero.headline2': "Let's fix that.",
     'hero.cta': 'Book your growth session',
     'hero.scroll': 'Scroll',
     'home.viewPricing': 'View Pricing',
@@ -192,8 +192,8 @@ const translations = {
     'nav.book': 'Réserver un appel',
 
     // Home Page
-    'hero.headline': "Votre site vous fait perdre des clients. Changeons ça.",
-    'hero.subheadline': "Des sites haute conversion conçus pour générer des leads, booster votre crédibilité et multiplier votre chiffre d'affaires.",
+    'hero.headline1': "Votre site vous fait perdre des clients.",
+    'hero.headline2': "Changeons ça.",
     'hero.cta': 'Réservez votre session croissance',
     'hero.scroll': 'Défiler',
     'home.viewPricing': 'Voir les tarifs',
