@@ -10,25 +10,85 @@ interface LanguageContextType {
 
 const translations = {
   en: {
-    // Header
-    'nav.services': 'Services',
+    // Header / Navigation
+    'nav.why': 'Why a Website',
+    'nav.process': 'Our Process',
+    'nav.pricing': 'Pricing',
     'nav.portfolio': 'Portfolio',
-    'nav.testimonials': 'Testimonials',
     'nav.contact': 'Contact',
     'nav.book': 'Book a Call',
 
-    // Hero
+    // Home Page
     'hero.headline': "Your website is losing you clients. Let's fix that.",
     'hero.subheadline': "High-converting sites designed to generate leads, boost your credibility, and multiply your revenue.",
     'hero.cta': 'Book your growth session',
-    'hero.scroll': 'Scroll to discover',
+    'home.viewPricing': 'View Pricing',
+    'home.value1.title': 'More Leads',
+    'home.value1.desc': 'Turn visitors into qualified prospects automatically.',
+    'home.value2.title': 'Higher Credibility',
+    'home.value2.desc': 'Look professional and trustworthy from day one.',
+    'home.value3.title': 'Faster Growth',
+    'home.value3.desc': 'Scale your business with a 24/7 sales machine.',
+    'home.cta.title': 'Ready to transform your business?',
+    'home.cta.subtitle': 'Book a free strategy call and discover how a premium website can multiply your revenue.',
+    'home.cta.button': 'Book your free call',
 
     // Stats
     'stats.visibility': 'More visibility',
     'stats.conversion': 'Conversion rate',
     'stats.responsive': 'Responsive',
 
-    // Services
+    // Why a Website Page
+    'why.title': 'Why You Need a Premium Website',
+    'why.subtitle': 'In 2024, your website is your most valuable employee. It works 24/7, never asks for a raise, and converts visitors into paying clients.',
+    'why.benefit1.title': '24/7 Global Visibility',
+    'why.benefit1.desc': 'Your business is accessible worldwide, anytime. No office hours, no geographic limits.',
+    'why.benefit2.title': 'Automated Lead Generation',
+    'why.benefit2.desc': 'Capture leads while you sleep. Your website qualifies prospects automatically.',
+    'why.benefit3.title': 'Explosive ROI',
+    'why.benefit3.desc': 'A well-designed site pays for itself within weeks through new client acquisition.',
+    'why.benefit4.title': 'Instant Authority',
+    'why.benefit4.desc': 'Stand out from competitors with a professional presence that builds trust instantly.',
+    'why.comparison.title': 'The Reality Check',
+    'why.comparison.without': 'Without a Website',
+    'why.comparison.with': 'With Élie Ageron Design',
+    'why.without.item1': 'Losing clients to competitors',
+    'why.without.item2': 'No online presence = no trust',
+    'why.without.item3': 'Manual lead generation only',
+    'why.without.item4': 'Limited to local reach',
+    'why.with.item1': 'Converting visitors 24/7',
+    'why.with.item2': 'Professional, trust-building presence',
+    'why.with.item3': 'Automated lead capture system',
+    'why.with.item4': 'Global audience accessibility',
+    'why.cta.title': 'Stop Losing Money',
+    'why.cta.subtitle': 'See our transparent pricing and choose the perfect solution for your business.',
+    'why.cta.button': 'View Pricing',
+
+    // Our Process Page
+    'process.title': 'How We Build Your Success',
+    'process.subtitle': 'A proven methodology that transforms your vision into a high-converting digital asset.',
+    'process.step1.title': 'Discovery Call',
+    'process.step1.desc': 'We understand your business, goals, and target audience to craft the perfect strategy.',
+    'process.step2.title': 'Strategic Design',
+    'process.step2.desc': 'Custom designs that reflect your brand while maximizing user experience and conversions.',
+    'process.step3.title': 'Conversion Optimization',
+    'process.step3.desc': 'Every element is tested and refined to turn visitors into paying clients.',
+    'process.step4.title': 'Launch & Growth',
+    'process.step4.desc': 'Your site goes live with ongoing support to ensure continuous improvement.',
+    'process.cta.title': 'Ready to Start?',
+    'process.cta.subtitle': 'Book your discovery call and let\'s build something incredible together.',
+    'process.cta.button': 'Book Discovery Call',
+
+    // Pricing Page
+    'pricing.title': 'Transparent Pricing',
+    'pricing.subtitle': 'No hidden fees. No surprises. Just premium quality at fair prices.',
+    'pricing.maintenance.toggle': 'Include Monthly Maintenance',
+    'pricing.maintenance.desc': 'Updates, security, hosting, and priority support included.',
+    'pricing.maintenance.custom': 'Custom',
+    'pricing.guarantee.title': '100% Satisfaction Guarantee',
+    'pricing.guarantee.desc': 'If you\'re not completely satisfied with the final result, we\'ll work until you are—at no extra cost.',
+
+    // Services (shared with pricing)
     'services.title': 'Invest in your digital presence',
     'services.subtitle': 'Premium solutions tailored to your ambitions',
     'services.landing.title': 'Landing Page',
@@ -68,6 +128,9 @@ const translations = {
     'portfolio.steel.name': 'Steel & Pipe Plumbing',
     'portfolio.steel.category': 'Home Services',
     'portfolio.steel.desc': 'Trust-focused, high-conversion site that generates 50+ leads monthly.',
+    'portfolio.cta.title': 'Want Results Like These?',
+    'portfolio.cta.subtitle': 'Let\'s discuss how we can transform your online presence.',
+    'portfolio.cta.button': 'Book a Strategy Call',
 
     // Testimonials
     'testimonials.title': 'What Clients Say',
@@ -88,9 +151,13 @@ const translations = {
     'popup.cta': 'Book your free call',
     'popup.close': 'Maybe later',
 
-    // Contact
+    // Contact Page
     'contact.title': "Let's Build Something Great",
-    'contact.subtitle': 'Ready to transform your online presence?',
+    'contact.subtitle': 'Ready to transform your online presence? Choose your preferred contact method.',
+    'contact.calendly.title': 'Book a Call',
+    'contact.calendly.desc': 'Schedule a free 15-minute discovery call to discuss your project.',
+    'contact.calendly.button': 'Open Calendly',
+    'contact.form.title': 'Send a Message',
     'contact.name': 'Your name',
     'contact.email': 'Your email',
     'contact.project': 'Tell me about your project',
@@ -103,25 +170,85 @@ const translations = {
     'footer.made': 'Made with passion in France',
   },
   fr: {
-    // Header
-    'nav.services': 'Services',
+    // Header / Navigation
+    'nav.why': 'Pourquoi un Site',
+    'nav.process': 'Notre Méthode',
+    'nav.pricing': 'Tarifs',
     'nav.portfolio': 'Portfolio',
-    'nav.testimonials': 'Témoignages',
     'nav.contact': 'Contact',
     'nav.book': 'Réserver un appel',
 
-    // Hero
+    // Home Page
     'hero.headline': "Votre site vous fait perdre des clients. Changeons ça.",
     'hero.subheadline': "Des sites haute conversion conçus pour générer des leads, booster votre crédibilité et multiplier votre chiffre d'affaires.",
     'hero.cta': 'Réservez votre session croissance',
-    'hero.scroll': 'Scrollez pour découvrir',
+    'home.viewPricing': 'Voir les tarifs',
+    'home.value1.title': 'Plus de Leads',
+    'home.value1.desc': 'Transformez les visiteurs en prospects qualifiés automatiquement.',
+    'home.value2.title': 'Crédibilité Accrue',
+    'home.value2.desc': 'Affichez une image professionnelle dès le premier jour.',
+    'home.value3.title': 'Croissance Rapide',
+    'home.value3.desc': 'Développez votre business avec une machine de vente 24/7.',
+    'home.cta.title': 'Prêt à transformer votre business ?',
+    'home.cta.subtitle': 'Réservez un appel stratégique gratuit et découvrez comment un site premium peut multiplier votre CA.',
+    'home.cta.button': 'Réserver mon appel gratuit',
 
     // Stats
     'stats.visibility': 'Plus de visibilité',
     'stats.conversion': 'Taux de conversion',
     'stats.responsive': 'Responsive',
 
-    // Services
+    // Why a Website Page
+    'why.title': 'Pourquoi Vous Avez Besoin d\'un Site Premium',
+    'why.subtitle': 'En 2024, votre site web est votre employé le plus précieux. Il travaille 24/7, ne demande jamais d\'augmentation, et convertit les visiteurs en clients.',
+    'why.benefit1.title': 'Visibilité Mondiale 24/7',
+    'why.benefit1.desc': 'Votre entreprise est accessible partout, à tout moment. Pas d\'horaires, pas de limites géographiques.',
+    'why.benefit2.title': 'Génération de Leads Automatisée',
+    'why.benefit2.desc': 'Capturez des leads pendant que vous dormez. Votre site qualifie les prospects automatiquement.',
+    'why.benefit3.title': 'ROI Explosif',
+    'why.benefit3.desc': 'Un site bien conçu se rentabilise en quelques semaines grâce à l\'acquisition de nouveaux clients.',
+    'why.benefit4.title': 'Autorité Instantanée',
+    'why.benefit4.desc': 'Démarquez-vous de la concurrence avec une présence professionnelle qui inspire confiance.',
+    'why.comparison.title': 'La Réalité',
+    'why.comparison.without': 'Sans Site Web',
+    'why.comparison.with': 'Avec Élie Ageron Design',
+    'why.without.item1': 'Perdre des clients au profit des concurrents',
+    'why.without.item2': 'Pas de présence en ligne = pas de confiance',
+    'why.without.item3': 'Génération de leads manuelle uniquement',
+    'why.without.item4': 'Limité à une portée locale',
+    'why.with.item1': 'Conversion des visiteurs 24/7',
+    'why.with.item2': 'Présence professionnelle et crédible',
+    'why.with.item3': 'Système de capture de leads automatisé',
+    'why.with.item4': 'Accessibilité à un public mondial',
+    'why.cta.title': 'Arrêtez de Perdre de l\'Argent',
+    'why.cta.subtitle': 'Découvrez nos tarifs transparents et choisissez la solution parfaite pour votre entreprise.',
+    'why.cta.button': 'Voir les Tarifs',
+
+    // Our Process Page
+    'process.title': 'Comment Nous Construisons Votre Succès',
+    'process.subtitle': 'Une méthodologie éprouvée qui transforme votre vision en un actif digital performant.',
+    'process.step1.title': 'Appel Découverte',
+    'process.step1.desc': 'Nous comprenons votre business, vos objectifs et votre audience pour créer la stratégie parfaite.',
+    'process.step2.title': 'Design Stratégique',
+    'process.step2.desc': 'Des designs sur-mesure qui reflètent votre marque tout en maximisant l\'expérience utilisateur.',
+    'process.step3.title': 'Optimisation Conversion',
+    'process.step3.desc': 'Chaque élément est testé et affiné pour transformer les visiteurs en clients payants.',
+    'process.step4.title': 'Lancement & Croissance',
+    'process.step4.desc': 'Votre site est mis en ligne avec un support continu pour une amélioration permanente.',
+    'process.cta.title': 'Prêt à Commencer ?',
+    'process.cta.subtitle': 'Réservez votre appel découverte et construisons quelque chose d\'incroyable ensemble.',
+    'process.cta.button': 'Réserver l\'Appel Découverte',
+
+    // Pricing Page
+    'pricing.title': 'Tarifs Transparents',
+    'pricing.subtitle': 'Pas de frais cachés. Pas de surprises. Juste de la qualité premium à des prix justes.',
+    'pricing.maintenance.toggle': 'Inclure la Maintenance Mensuelle',
+    'pricing.maintenance.desc': 'Mises à jour, sécurité, hébergement et support prioritaire inclus.',
+    'pricing.maintenance.custom': 'Sur mesure',
+    'pricing.guarantee.title': 'Garantie Satisfaction 100%',
+    'pricing.guarantee.desc': 'Si vous n\'êtes pas entièrement satisfait du résultat final, nous travaillerons jusqu\'à ce que vous le soyez—sans frais supplémentaires.',
+
+    // Services (shared with pricing)
     'services.title': 'Investissez dans votre présence digitale',
     'services.subtitle': 'Des solutions premium adaptées à vos ambitions',
     'services.landing.title': 'Landing Page',
@@ -161,6 +288,9 @@ const translations = {
     'portfolio.steel.name': 'Steel & Pipe Plumbing',
     'portfolio.steel.category': 'Services à Domicile',
     'portfolio.steel.desc': 'Site axé confiance et haute conversion qui génère 50+ leads par mois.',
+    'portfolio.cta.title': 'Vous Voulez des Résultats Similaires ?',
+    'portfolio.cta.subtitle': 'Discutons de comment nous pouvons transformer votre présence en ligne.',
+    'portfolio.cta.button': 'Réserver un Appel Stratégique',
 
     // Testimonials
     'testimonials.title': 'Ce que disent mes clients',
@@ -181,9 +311,13 @@ const translations = {
     'popup.cta': 'Réserver mon appel gratuit',
     'popup.close': 'Peut-être plus tard',
 
-    // Contact
+    // Contact Page
     'contact.title': 'Construisons quelque chose de grand',
-    'contact.subtitle': 'Prêt à transformer votre présence en ligne ?',
+    'contact.subtitle': 'Prêt à transformer votre présence en ligne ? Choisissez votre méthode de contact préférée.',
+    'contact.calendly.title': 'Réserver un Appel',
+    'contact.calendly.desc': 'Planifiez un appel découverte gratuit de 15 minutes pour discuter de votre projet.',
+    'contact.calendly.button': 'Ouvrir Calendly',
+    'contact.form.title': 'Envoyer un Message',
     'contact.name': 'Votre nom',
     'contact.email': 'Votre email',
     'contact.project': 'Parlez-moi de votre projet',

@@ -3,27 +3,38 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Rocket } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useLocation } from 'react-router-dom';
 
 const ScrollPopup = () => {
   const { t } = useLanguage();
+  const location = useLocation();
   const [isVisible, setIsVisible] = useState(false);
-  const [hasBeenShown, setHasBeenShown] = useState(false);
+  const [hasBeenShownThisSession, setHasBeenShownThisSession] = useState(false);
 
   useEffect(() => {
+    // Check session storage to see if popup was already shown
+    const popupShown = sessionStorage.getItem('popupShown');
+    if (popupShown) {
+      setHasBeenShownThisSession(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (hasBeenShownThisSession) return;
+
     const handleScroll = () => {
-      if (hasBeenShown) return;
-      
       const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
       
       if (scrollPercentage >= 50) {
         setIsVisible(true);
-        setHasBeenShown(true);
+        setHasBeenShownThisSession(true);
+        sessionStorage.setItem('popupShown', 'true');
       }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [hasBeenShown]);
+  }, [hasBeenShownThisSession, location.pathname]);
 
   const handleClose = () => {
     setIsVisible(false);
