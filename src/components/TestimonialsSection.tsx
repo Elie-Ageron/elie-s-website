@@ -82,15 +82,6 @@ const TestimonialCard = ({ text, author, role, delay, index }: TestimonialCardPr
           <div className="text-sm text-muted-foreground">{role}</div>
         </div>
       </motion.div>
-      
-      {/* Decorative line */}
-      <motion.div 
-        className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-primary to-primary/0"
-        initial={{ width: 0 }}
-        whileInView={{ width: '60%' }}
-        viewport={{ once: true }}
-        transition={{ delay: delay * 0.15 + 0.5, duration: 0.8 }}
-      />
     </motion.div>
   );
 };

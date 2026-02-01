@@ -259,15 +259,6 @@ const Home = () => {
                   <span className="text-sm">{method.cta}</span>
                   <ArrowRight className="w-4 h-4" />
                 </motion.div>
-
-                {/* Bottom decorative line */}
-                <motion.div 
-                  className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-primary to-primary/0"
-                  initial={{ width: 0 }}
-                  whileInView={{ width: method.recommended ? '100%' : '60%' }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.15 + 0.5, duration: 0.8 }}
-                />
               </motion.a>
             ))}
           </div>
