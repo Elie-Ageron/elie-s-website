@@ -52,7 +52,7 @@ const translations = {
     'stats.responsive': 'Responsive',
 
     // Why a Website Page
-    'why.title': 'What If Your Website Worked While You Sleep?',
+    'why.title': 'Your Website, Working 24/7',
     'why.subtitle': 'A great website is your best employee. It never takes breaks, never asks for a raise, and converts visitors into clients around the clock.',
     'why.benefit1.title': '24/7 Global Visibility',
     'why.benefit1.desc': 'Your business is accessible worldwide, anytime. No office hours, no geographic limits.',
@@ -225,7 +225,7 @@ const translations = {
     'stats.responsive': 'Responsive',
 
     // Why a Website Page
-    'why.title': 'Et Si Votre Site Travaillait Pendant Que Vous Dormez ?',
+    'why.title': 'Votre Site, Actif 24/7',
     'why.subtitle': 'Un bon site, c\'est votre meilleur employé. Il ne prend jamais de pause, ne demande jamais d\'augmentation, et convertit vos visiteurs en clients 24h/24.',
     'why.benefit1.title': 'Visibilité Mondiale 24/7',
     'why.benefit1.desc': 'Votre entreprise est accessible partout, à tout moment. Pas d\'horaires, pas de limites géographiques.',
