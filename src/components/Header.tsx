@@ -1,19 +1,33 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const { language, setLanguage, t } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navItems = [
-    { href: '#services', label: t('nav.services') },
-    { href: '#portfolio', label: t('nav.portfolio') },
-    { href: '#testimonials', label: t('nav.testimonials') },
-    { href: '#contact', label: t('nav.contact') },
+    { href: '/why-a-website', label: t('nav.why') },
+    { href: '/our-process', label: t('nav.process') },
+    { href: '/pricing', label: t('nav.pricing') },
+    { href: '/portfolio', label: t('nav.portfolio') },
+    { href: '/contact', label: t('nav.contact') },
   ];
+
+  const isActive = (href: string) => location.pathname === href;
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-4 py-4">
@@ -21,25 +35,37 @@ const Header = () => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className="max-w-6xl mx-auto glass-card rounded-2xl px-6 py-3"
+        className={`max-w-6xl mx-auto glass-card rounded-2xl px-6 py-3 transition-all duration-300 ${
+          scrolled ? 'shadow-lg shadow-primary/5' : ''
+        }`}
+        style={{
+          borderBottom: scrolled ? '1px solid hsl(328 100% 54% / 0.3)' : undefined,
+          boxShadow: scrolled ? '0 4px 30px hsl(328 100% 54% / 0.1)' : undefined,
+        }}
       >
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="text-xl font-bold text-foreground">
+          <Link to="/" className="text-xl font-bold text-foreground hover:text-primary transition-colors">
             Elie Ageron
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.href}
-                href={item.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors relative group"
+                to={item.href}
+                className={`text-sm transition-colors relative group ${
+                  isActive(item.href) 
+                    ? 'text-primary' 
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
               >
                 {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-              </a>
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                  isActive(item.href) ? 'w-full' : 'w-0 group-hover:w-full'
+                }`} />
+              </Link>
             ))}
           </div>
 
@@ -95,14 +121,18 @@ const Header = () => {
             >
               <div className="flex flex-col gap-4">
                 {navItems.map((item) => (
-                  <a
+                  <Link
                     key={item.href}
-                    href={item.href}
+                    to={item.href}
                     onClick={() => setIsMenuOpen(false)}
-                    className="text-muted-foreground hover:text-foreground transition-colors py-2"
+                    className={`transition-colors py-2 ${
+                      isActive(item.href) 
+                        ? 'text-primary' 
+                        : 'text-muted-foreground hover:text-foreground'
+                    }`}
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 ))}
                 
                 {/* Mobile Language Toggle */}
