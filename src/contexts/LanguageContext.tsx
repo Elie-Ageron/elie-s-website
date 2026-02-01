@@ -34,8 +34,8 @@ const translations = {
     'home.cta.button': 'Book your free call',
     
     // Home Contact Methods
-    'home.contact.title': 'Choose Your Preferred Contact Method',
-    'home.contact.subtitle': 'Multiple ways to reach out — pick what works best for you.',
+    'home.contact.title': 'Ready to Grow Online?',
+    'home.contact.subtitle': 'Multiple ways to reach out. Pick what works best for you.',
     'home.contact.recommended': 'Recommended',
     'home.contact.call.title': 'Book a Strategy Call',
     'home.contact.call.desc': 'Schedule a free 30-minute call to discuss your project and get personalized recommendations.',
@@ -205,8 +205,8 @@ const translations = {
     'home.cta.button': 'Réserver mon appel gratuit',
     
     // Home Contact Methods
-    'home.contact.title': 'Choisissez Votre Mode de Contact',
-    'home.contact.subtitle': 'Plusieurs façons de me joindre — choisissez celle qui vous convient le mieux.',
+    'home.contact.title': 'Prêt à Grandir en Ligne ?',
+    'home.contact.subtitle': 'Plusieurs façons de me joindre. Choisissez celle qui vous convient le mieux.',
     'home.contact.recommended': 'Recommandé',
     'home.contact.call.title': 'Réserver un Appel Stratégique',
     'home.contact.call.desc': 'Planifiez un appel gratuit de 30 minutes pour discuter de votre projet et obtenir des recommandations personnalisées.',
