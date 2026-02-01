@@ -18,7 +18,7 @@ const translations = {
     'nav.book': 'Book a Call',
 
     // Hero
-    'hero.headline': "I build websites that make your competitors look like amateurs.",
+    'hero.headline': "Your website is losing you clients. Let's fix that.",
     'hero.subheadline': "High-converting sites designed to generate leads, boost your credibility, and multiply your revenue.",
     'hero.cta': 'Book your growth session',
     'hero.scroll': 'Scroll to discover',
@@ -111,7 +111,7 @@ const translations = {
     'nav.book': 'Réserver un appel',
 
     // Hero
-    'hero.headline': "Je crée les sites qui font passer vos concurrents pour des amateurs.",
+    'hero.headline': "Votre site vous fait perdre des clients. Changeons ça.",
     'hero.subheadline': "Des sites haute conversion conçus pour générer des leads, booster votre crédibilité et multiplier votre chiffre d'affaires.",
     'hero.cta': 'Réservez votre session croissance',
     'hero.scroll': 'Scrollez pour découvrir',
