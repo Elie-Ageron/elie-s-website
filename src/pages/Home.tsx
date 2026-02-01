@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, TrendingUp, Target, Zap } from 'lucide-react';
+import { ArrowRight, TrendingUp, Target, Zap, Calendar, MessageCircle, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
@@ -9,6 +9,36 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 
 const Home = () => {
   const { t } = useLanguage();
+
+  const contactMethods = [
+    {
+      icon: Calendar,
+      title: t('home.contact.call.title'),
+      description: t('home.contact.call.desc'),
+      cta: t('home.contact.call.cta'),
+      href: 'https://calendly.com/elie-ageron',
+      recommended: true,
+      external: true,
+    },
+    {
+      icon: MessageCircle,
+      title: 'WhatsApp',
+      description: t('home.contact.whatsapp.desc'),
+      cta: t('home.contact.whatsapp.cta'),
+      href: 'https://wa.me/33695555318',
+      recommended: false,
+      external: true,
+    },
+    {
+      icon: Mail,
+      title: 'Email',
+      description: t('home.contact.email.desc'),
+      cta: 'elie.ageron.design@gmail.com',
+      href: 'mailto:elie.ageron.design@gmail.com',
+      recommended: false,
+      external: true,
+    },
+  ];
 
   return (
     <>
@@ -138,6 +168,78 @@ const Home = () => {
               </Button>
             </MagneticButton>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Contact Methods Section */}
+      <section className="py-20 relative">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+              {t('home.contact.title')}
+            </h2>
+            <p className="text-muted-foreground">
+              {t('home.contact.subtitle')}
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {contactMethods.map((method, index) => (
+              <motion.a
+                key={index}
+                href={method.href}
+                target={method.external ? '_blank' : undefined}
+                rel={method.external ? 'noopener noreferrer' : undefined}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ y: -5 }}
+                className={`relative glass-card rounded-2xl p-8 cursor-pointer transition-all group ${
+                  method.recommended ? 'neon-border' : 'hover:border-primary/30'
+                }`}
+              >
+                {/* Recommended Badge */}
+                {method.recommended && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full">
+                    {t('home.contact.recommended')}
+                  </div>
+                )}
+
+                {/* Icon */}
+                <div className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl mb-6 ${
+                  method.recommended ? 'bg-primary/20' : 'bg-secondary'
+                }`}>
+                  <method.icon className={`w-7 h-7 ${
+                    method.recommended ? 'text-primary' : 'text-foreground'
+                  }`} />
+                </div>
+
+                {/* Title */}
+                <h3 className={`text-xl font-bold mb-3 ${
+                  method.recommended ? 'text-primary' : 'text-foreground'
+                }`}>
+                  {method.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-muted-foreground text-sm mb-6">
+                  {method.description}
+                </p>
+
+                {/* CTA Link */}
+                <div className="flex items-center gap-2 text-primary font-medium group-hover:gap-3 transition-all">
+                  <span className="text-sm">{method.cta}</span>
+                  <ArrowRight className="w-4 h-4" />
+                </div>
+              </motion.a>
+            ))}
+          </div>
         </div>
       </section>
     </>
