@@ -181,7 +181,8 @@ const Home = () => {
             className="text-center mb-12"
           >
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-              <span className="text-primary">{t('home.contact.title')}</span>
+              <span className="text-foreground">{t('home.contact.title1')}</span>{' '}
+              <span className="text-primary">{t('home.contact.title2')}</span>
             </h2>
             <p className="text-muted-foreground">
               {t('home.contact.subtitle')}
