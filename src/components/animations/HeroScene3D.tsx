@@ -28,8 +28,8 @@ const FloatingShape = ({
 
   const renderShape = () => {
     const materialProps = {
-      color: "#FF1493",
-      emissive: "#FF1493",
+      color: "#D94A8C",
+      emissive: "#D94A8C",
       emissiveIntensity: 0.4,
       roughness: 0.2,
       metalness: 0.8,
@@ -46,8 +46,8 @@ const FloatingShape = ({
         return (
           <Icosahedron ref={meshRef} args={[1, 1]} scale={scale}>
             <MeshDistortMaterial
-              color="#FF1493"
-              emissive="#FF1493"
+              color="#D94A8C"
+              emissive="#D94A8C"
               emissiveIntensity={0.3}
               roughness={0.3}
               metalness={0.7}
@@ -60,8 +60,8 @@ const FloatingShape = ({
         return (
           <Sphere ref={meshRef} args={[1, 64, 64]} scale={scale}>
             <MeshDistortMaterial
-              color="#FF1493"
-              emissive="#FF1493"
+              color="#D94A8C"
+              emissive="#D94A8C"
               emissiveIntensity={0.5}
               roughness={0.2}
               metalness={0.9}
@@ -95,8 +95,8 @@ const GlowingOrb = ({ position, scale = 0.3 }: { position: [number, number, numb
   return (
     <Sphere ref={meshRef} position={position} args={[1, 32, 32]} scale={scale}>
       <meshStandardMaterial
-        color="#FF1493"
-        emissive="#FF1493"
+        color="#D94A8C"
+        emissive="#D94A8C"
         emissiveIntensity={0.8}
         transparent
         opacity={0.6}
@@ -117,7 +117,7 @@ const Scene = () => {
         angle={0.3}
         penumbra={1}
         intensity={2}
-        color="#FF1493"
+        color="#D94A8C"
       />
       
       {/* Secondary light for depth */}
