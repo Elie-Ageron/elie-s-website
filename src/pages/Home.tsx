@@ -92,67 +92,6 @@ const Home = () => {
       <StatsSection />
       <TestimonialsSection />
 
-      {/* CTA Section */}
-      <section className="py-24 relative overflow-hidden">
-        <FloatingElements count={6} />
-        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <ScrollReveal direction="up">
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-              className="glass-card neon-border rounded-3xl p-12 relative overflow-hidden"
-            >
-              {/* Animated gradient background */}
-              <motion.div
-                className="absolute inset-0 opacity-30"
-                style={{
-                  background: 'radial-gradient(circle at 50% 50%, hsl(var(--primary) / 0.3), transparent 70%)',
-                }}
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0.2, 0.4, 0.2],
-                }}
-                transition={{ duration: 4, repeat: Infinity }}
-              />
-              
-              <motion.h2 
-                className="text-3xl md:text-4xl font-bold text-foreground mb-4 relative z-10"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-              >
-                {t('home.cta.title')}
-              </motion.h2>
-              <motion.p 
-                className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto relative z-10"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-              >
-                {t('home.cta.subtitle')}
-              </motion.p>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4 }}
-                className="relative z-10"
-              >
-                <MagneticButton>
-                  <Button variant="hero" size="xl" asChild>
-                    <a href="https://calendly.com/elie-ageron" target="_blank" rel="noopener noreferrer">
-                      {t('home.cta.button')}
-                      <ArrowRight className="w-5 h-5 ml-2" />
-                    </a>
-                  </Button>
-                </MagneticButton>
-              </motion.div>
-            </motion.div>
-          </ScrollReveal>
-        </div>
-      </section>
-
       {/* Contact Methods Section */}
       <section className="py-20 relative overflow-hidden">
         <FloatingElements count={8} />
