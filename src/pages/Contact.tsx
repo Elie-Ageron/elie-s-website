@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Calendar } from 'lucide-react';
+import { Mail, Phone, MapPin, Calendar, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -13,8 +13,8 @@ const Contact = () => {
 
   const contactInfo = [
     { icon: Mail, label: 'Email', value: 'elie.ageron.design@gmail.com', href: 'mailto:elie.ageron.design@gmail.com' },
+    { icon: MessageCircle, label: 'WhatsApp', value: '+33 6 95 55 53 18', href: 'https://wa.me/33695555318' },
     { icon: Phone, label: 'Phone', value: '06 95 55 53 18', href: 'tel:+33695555318' },
-    { icon: MapPin, label: 'Location', value: 'France', href: null },
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
