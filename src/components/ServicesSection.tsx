@@ -2,6 +2,8 @@ import { motion } from 'framer-motion';
 import { Check, Zap, Crown, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import ScrollReveal from './animations/ScrollReveal';
+import FloatingElements from './animations/FloatingElements';
 
 interface ServiceCardProps {
   title: string;
@@ -17,48 +19,90 @@ interface ServiceCardProps {
 const ServiceCard = ({ title, price, description, features, cta, icon, popular, delay }: ServiceCardProps) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 50, rotateX: -10 }}
+      whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: delay * 0.1, duration: 0.6 }}
-      className={`relative glass-card rounded-3xl p-8 flex flex-col h-full ${
+      transition={{ delay: delay * 0.15, duration: 0.7, ease: "easeOut" }}
+      whileHover={{ 
+        y: -10, 
+        scale: 1.02,
+        transition: { duration: 0.3 }
+      }}
+      className={`relative glass-card rounded-3xl p-8 flex flex-col h-full group ${
         popular ? 'neon-border' : ''
       }`}
     >
+      {/* Hover glow effect */}
+      <motion.div 
+        className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+      />
+      
       {popular && (
-        <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full">
-          ⭐ Most Popular
-        </div>
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full"
+        >
+          <motion.span
+            animate={{ scale: [1, 1.1, 1] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          >
+            ⭐ Most Popular
+          </motion.span>
+        </motion.div>
       )}
       
-      <div className="flex items-center gap-3 mb-6">
-        <div className={`p-3 rounded-xl ${popular ? 'bg-primary/20' : 'bg-secondary'}`}>
+      <div className="flex items-center gap-3 mb-6 relative z-10">
+        <motion.div 
+          className={`p-3 rounded-xl ${popular ? 'bg-primary/20' : 'bg-secondary'}`}
+          whileHover={{ rotate: 360, scale: 1.1 }}
+          transition={{ duration: 0.5 }}
+        >
           {icon}
-        </div>
+        </motion.div>
         <div>
           <h3 className="text-xl font-bold text-foreground">{title}</h3>
         </div>
       </div>
       
-      <div className="mb-6">
+      <motion.div 
+        className="mb-6 relative z-10"
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: delay * 0.15 + 0.2 }}
+      >
         <span className="text-4xl font-bold text-foreground">{price}</span>
-      </div>
+      </motion.div>
       
-      <p className="text-muted-foreground mb-6">{description}</p>
+      <p className="text-muted-foreground mb-6 relative z-10">{description}</p>
       
-      <ul className="space-y-3 mb-8 flex-grow">
+      <ul className="space-y-3 mb-8 flex-grow relative z-10">
         {features.map((feature, index) => (
-          <li key={index} className="flex items-center gap-3 text-sm text-foreground/80">
-            <Check className="w-4 h-4 text-primary flex-shrink-0" />
+          <motion.li 
+            key={index} 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: delay * 0.15 + 0.1 * index + 0.3 }}
+            className="flex items-center gap-3 text-sm text-foreground/80"
+          >
+            <motion.div
+              whileHover={{ scale: 1.2, rotate: 360 }}
+              transition={{ duration: 0.3 }}
+            >
+              <Check className="w-4 h-4 text-primary flex-shrink-0" />
+            </motion.div>
             {feature}
-          </li>
+          </motion.li>
         ))}
       </ul>
       
       <Button 
         variant={popular ? 'hero' : 'neonOutline'} 
         size="lg" 
-        className="w-full"
+        className="w-full relative z-10"
         asChild
       >
         <a href="#contact">{cta}</a>
@@ -116,23 +160,31 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="py-24 relative">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="services" className="py-24 relative overflow-hidden">
+      {/* Floating background elements */}
+      <FloatingElements count={10} />
+      
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+        <ScrollReveal direction="up" className="text-center mb-16">
+          <motion.h2 
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
             {t('services.title')}
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          </motion.h2>
+          <motion.p 
+            className="text-lg text-muted-foreground max-w-2xl mx-auto"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
             {t('services.subtitle')}
-          </p>
-        </motion.div>
+          </motion.p>
+        </ScrollReveal>
 
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
