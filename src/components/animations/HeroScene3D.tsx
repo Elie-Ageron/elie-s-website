@@ -123,17 +123,16 @@ const Scene = () => {
       {/* Secondary light for depth */}
       <pointLight position={[-10, -10, -10]} intensity={0.5} color="#6366f1" />
       
-      {/* Main floating shapes */}
-      <FloatingShape position={[2.5, 0, 0]} scale={1.2} speed={0.8} shape="sphere" />
-      <FloatingShape position={[-2.5, 1, -2]} scale={0.8} speed={1.2} shape="icosahedron" />
-      <FloatingShape position={[0, -1.5, -1]} scale={0.6} speed={1} shape="torus" />
+      {/* Main floating shapes - scaled down */}
+      <FloatingShape position={[4, 0.5, -2]} scale={0.6} speed={0.6} shape="sphere" />
+      <FloatingShape position={[-4, 1, -3]} scale={0.4} speed={0.8} shape="icosahedron" />
+      <FloatingShape position={[3, -2, -2]} scale={0.35} speed={0.7} shape="torus" />
       
-      {/* Smaller accent orbs */}
-      <GlowingOrb position={[4, 2, -3]} scale={0.2} />
-      <GlowingOrb position={[-3, -2, -2]} scale={0.15} />
-      <GlowingOrb position={[1, 3, -4]} scale={0.25} />
-      <GlowingOrb position={[-4, 1, -3]} scale={0.18} />
-      <GlowingOrb position={[3, -1, -2]} scale={0.12} />
+      {/* Smaller accent orbs - more subtle */}
+      <GlowingOrb position={[5, 2.5, -4]} scale={0.12} />
+      <GlowingOrb position={[-5, -2, -3]} scale={0.1} />
+      <GlowingOrb position={[-3, 3, -5]} scale={0.15} />
+      <GlowingOrb position={[4, -1.5, -3]} scale={0.08} />
     </>
   );
 };
