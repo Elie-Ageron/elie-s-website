@@ -126,11 +126,11 @@ const ContactSection = () => {
           {/* Contact Info */}
           <div className="mt-8 pt-8 border-t border-border/30 flex flex-col sm:flex-row items-center justify-center gap-6 text-muted-foreground">
             <a 
-              href="mailto:elie.ageron.design@gmail.com" 
+              href="mailto:elieageron@gmail.com" 
               className="flex items-center gap-2 hover:text-primary transition-colors"
             >
               <Mail className="w-4 h-4" />
-              elie.ageron.design@gmail.com
+              elieageron@gmail.com
             </a>
             <a 
               href="tel:+33695555318" 

@@ -12,7 +12,7 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const contactInfo = [
-    { icon: Mail, label: 'Email', value: 'elie.ageron.design@gmail.com', href: 'mailto:elie.ageron.design@gmail.com' },
+    { icon: Mail, label: 'Email', value: 'elieageron@gmail.com', href: 'mailto:elieageron@gmail.com' },
     { icon: MessageCircle, label: 'WhatsApp', value: '+33 6 95 55 53 18', href: 'https://wa.me/33695555318' },
     { icon: Phone, label: 'Phone', value: '06 95 55 53 18', href: 'tel:+33695555318' },
   ];
