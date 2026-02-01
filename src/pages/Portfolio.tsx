@@ -86,17 +86,6 @@ const Portfolio = () => {
                   <p className="text-muted-foreground text-sm mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
                     {project.description}
                   </p>
-                  <Button 
-                    variant="neonOutline" 
-                    size="sm"
-                    className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-150"
-                    asChild
-                  >
-                    <a href={project.url} target="_blank" rel="noopener noreferrer">
-                      {t('portfolio.preview')}
-                      <ExternalLink className="w-4 h-4 ml-2" />
-                    </a>
-                  </Button>
                 </div>
               </motion.div>
             ))}
