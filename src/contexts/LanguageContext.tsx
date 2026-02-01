@@ -185,7 +185,7 @@ const translations = {
 
     // Footer
     'footer.rights': 'All rights reserved.',
-    'footer.made': 'Made with passion in France',
+    'footer.made': 'Made with passion',
   },
   fr: {
     // Header / Navigation
@@ -363,7 +363,7 @@ const translations = {
 
     // Footer
     'footer.rights': 'Tous droits réservés.',
-    'footer.made': 'Fait avec passion en France',
+    'footer.made': 'Fait avec passion',
   },
 };
 
