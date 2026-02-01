@@ -52,7 +52,8 @@ const translations = {
     'stats.responsive': 'Responsive',
 
     // Why a Website Page
-    'why.title': 'Ready to Grow Online?',
+    'why.title1': 'Ready to Grow',
+    'why.title2': 'Online?',
     'why.subtitle': 'A great website is your best employee. It never takes breaks, never asks for a raise, and converts visitors into clients around the clock.',
     'why.benefit1.title': '24/7 Global Visibility',
     'why.benefit1.desc': 'Your business is accessible worldwide, anytime. No office hours, no geographic limits.',
@@ -78,7 +79,8 @@ const translations = {
     'why.cta.button': 'View Pricing',
 
     // Our Process Page
-    'process.title': 'How We Build Your Success',
+    'process.title1': 'How We Build',
+    'process.title2': 'Your Success',
     'process.subtitle': 'A proven methodology that transforms your vision into a high-converting digital asset.',
     'process.step1.title': 'Discovery Call',
     'process.step1.desc': 'We understand your business, goals, and target audience to craft the perfect strategy.',
@@ -93,7 +95,8 @@ const translations = {
     'process.cta.button': 'Book Discovery Call',
 
     // Pricing Page
-    'pricing.title': 'Transparent Pricing',
+    'pricing.title1': 'Transparent',
+    'pricing.title2': 'Pricing',
     'pricing.subtitle': 'No hidden fees. No surprises. Just premium quality at fair prices.',
     'pricing.maintenance.toggle': 'Include Monthly Maintenance',
     'pricing.maintenance.desc': 'Updates, security, hosting, and priority support included.',
@@ -132,7 +135,8 @@ const translations = {
     'services.custom.cta': 'Contact me',
 
     // Portfolio
-    'portfolio.title': 'Recent Projects',
+    'portfolio.title1': 'Recent',
+    'portfolio.title2': 'Projects',
     'portfolio.subtitle': 'Websites that convert visitors into clients',
     'portfolio.preview': 'Live Preview',
     'portfolio.luxura.name': 'Luxura Spa',
@@ -146,7 +150,8 @@ const translations = {
     'portfolio.cta.button': 'Book a Strategy Call',
 
     // Testimonials
-    'testimonials.title': 'What Clients Say',
+    'testimonials.title1': 'What Clients',
+    'testimonials.title2': 'Say',
     'testimonials.subtitle': 'Real results from real business owners',
     'testimonial.1.text': "Honestly, I was hesitant but the result is insane. My store finally has a real presence online. Sales went up 40% in the first month.",
     'testimonial.1.author': 'Marc D.',
@@ -225,7 +230,8 @@ const translations = {
     'stats.responsive': 'Responsive',
 
     // Why a Website Page
-    'why.title': 'Prêt à Grandir en Ligne ?',
+    'why.title1': 'Prêt à Grandir',
+    'why.title2': 'en Ligne ?',
     'why.subtitle': 'Un bon site, c\'est votre meilleur employé. Il ne prend jamais de pause, ne demande jamais d\'augmentation, et convertit vos visiteurs en clients 24h/24.',
     'why.benefit1.title': 'Visibilité Mondiale 24/7',
     'why.benefit1.desc': 'Votre entreprise est accessible partout, à tout moment. Pas d\'horaires, pas de limites géographiques.',
@@ -251,7 +257,8 @@ const translations = {
     'why.cta.button': 'Voir les Tarifs',
 
     // Our Process Page
-    'process.title': 'Comment Nous Construisons Votre Succès',
+    'process.title1': 'Comment Nous Construisons',
+    'process.title2': 'Votre Succès',
     'process.subtitle': 'Une méthodologie éprouvée qui transforme votre vision en un actif digital performant.',
     'process.step1.title': 'Appel Découverte',
     'process.step1.desc': 'Nous comprenons votre business, vos objectifs et votre audience pour créer la stratégie parfaite.',
@@ -266,7 +273,8 @@ const translations = {
     'process.cta.button': 'Réserver l\'Appel Découverte',
 
     // Pricing Page
-    'pricing.title': 'Tarifs Transparents',
+    'pricing.title1': 'Tarifs',
+    'pricing.title2': 'Transparents',
     'pricing.subtitle': 'Pas de frais cachés. Pas de surprises. Juste de la qualité premium à des prix justes.',
     'pricing.maintenance.toggle': 'Inclure la Maintenance Mensuelle',
     'pricing.maintenance.desc': 'Mises à jour, sécurité, hébergement et support prioritaire inclus.',
@@ -305,7 +313,8 @@ const translations = {
     'services.custom.cta': 'Me contacter',
 
     // Portfolio
-    'portfolio.title': 'Projets Récents',
+    'portfolio.title1': 'Projets',
+    'portfolio.title2': 'Récents',
     'portfolio.subtitle': 'Des sites qui convertissent les visiteurs en clients',
     'portfolio.preview': 'Aperçu Live',
     'portfolio.luxura.name': 'Luxura Spa',
@@ -319,7 +328,8 @@ const translations = {
     'portfolio.cta.button': 'Réserver un Appel Stratégique',
 
     // Testimonials
-    'testimonials.title': 'Ce que disent mes clients',
+    'testimonials.title1': 'Ce que disent',
+    'testimonials.title2': 'mes clients',
     'testimonials.subtitle': 'Des résultats concrets pour de vrais entrepreneurs',
     'testimonial.1.text': "Franchement, j'hésitais mais le résultat est dingue. Mon magasin a enfin une vraie gueule sur le web. Les ventes ont augmenté de 40% le premier mois.",
     'testimonial.1.author': 'Marc D.',

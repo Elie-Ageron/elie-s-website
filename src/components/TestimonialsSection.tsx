@@ -127,7 +127,7 @@ const TestimonialsSection = () => {
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         {/* Section Header */}
         <ScrollReveal direction="up" className="text-center mb-16">
-          <motion.h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4" initial={{
+          <motion.h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4" initial={{
           opacity: 0,
           y: 30
         }} whileInView={{
@@ -136,7 +136,8 @@ const TestimonialsSection = () => {
         }} viewport={{
           once: true
         }}>
-            {t('testimonials.title')}
+            <span className="text-foreground">{t('testimonials.title1')}</span>{' '}
+            <span className="text-primary">{t('testimonials.title2')}</span>
           </motion.h2>
           <motion.p className="text-lg text-muted-foreground max-w-2xl mx-auto" initial={{
           opacity: 0
