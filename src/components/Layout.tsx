@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ScrollPopup from '@/components/ScrollPopup';
 import FloatingParticles from '@/components/animations/FloatingParticles';
+import BackgroundPattern from '@/components/BackgroundPattern';
 import PageTransition from '@/components/animations/PageTransition';
 import { ReactNode } from 'react';
 
@@ -14,6 +15,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <LanguageProvider>
       <div className="min-h-screen bg-background relative">
+        <BackgroundPattern />
         <FloatingParticles />
         <Header />
         <PageTransition>
