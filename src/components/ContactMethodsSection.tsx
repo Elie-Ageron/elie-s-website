@@ -19,7 +19,7 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
       cta: t('home.contact.call.cta'),
       href: 'https://calendly.com/elie-ageron',
       recommended: true,
-      external: true,
+      newTab: true,
     },
     {
       icon: MessageCircle,
@@ -28,7 +28,7 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
       cta: t('home.contact.whatsapp.cta'),
       href: 'https://wa.me/33695555318',
       recommended: false,
-      external: true,
+      newTab: false,
     },
     {
       icon: Mail,
@@ -37,7 +37,7 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
       cta: 'elieageron@gmail.com',
       href: 'mailto:elieageron@gmail.com',
       recommended: false,
-      external: true,
+      newTab: false,
     },
   ];
 
@@ -72,8 +72,8 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
             <motion.a
               key={index}
               href={method.href}
-              target={method.external ? '_blank' : undefined}
-              rel={method.external ? 'noopener noreferrer' : undefined}
+              target={method.newTab ? '_blank' : undefined}
+              rel={method.newTab ? 'noopener noreferrer' : undefined}
               initial={{ 
                 opacity: 0, 
                 x: index === 0 ? -50 : index === 2 ? 50 : 0,

@@ -12,9 +12,9 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const contactInfo = [
-    { icon: Mail, label: 'Email', value: 'elieageron@gmail.com', href: 'mailto:elieageron@gmail.com' },
-    { icon: MessageCircle, label: 'WhatsApp', value: '+33 6 95 55 53 18', href: 'https://wa.me/33695555318' },
-    { icon: Phone, label: 'Phone', value: '06 95 55 53 18', href: 'tel:+33695555318' },
+    { icon: Mail, label: 'Email', value: 'elieageron@gmail.com', href: 'mailto:elieageron@gmail.com', newTab: false },
+    { icon: MessageCircle, label: 'WhatsApp', value: '+33 6 95 55 53 18', href: 'https://wa.me/33695555318', newTab: false },
+    { icon: Phone, label: 'Phone', value: '06 95 55 53 18', href: 'tel:+33695555318', newTab: false },
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -102,8 +102,8 @@ const Contact = () => {
                   <motion.a
                     key={index}
                     href={info.href || undefined}
-                    target={info.href?.startsWith('http') ? '_blank' : undefined}
-                    rel={info.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    target={info.newTab ? '_blank' : undefined}
+                    rel={info.newTab ? 'noopener noreferrer' : undefined}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 + index * 0.1 }}
