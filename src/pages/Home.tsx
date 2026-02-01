@@ -206,7 +206,7 @@ const Home = () => {
                   scale: 1.02,
                   transition: { duration: 0.3 }
                 }}
-                className={`relative glass-card rounded-2xl p-8 cursor-pointer transition-all group overflow-hidden ${
+                className={`relative glass-card rounded-2xl p-8 pt-10 cursor-pointer transition-all group ${
                   method.recommended ? 'neon-border' : 'hover:border-primary/30'
                 }`}
               >
