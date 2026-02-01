@@ -32,6 +32,17 @@ const translations = {
     'home.cta.title': 'Ready to transform your business?',
     'home.cta.subtitle': 'Book a free strategy call and discover how a premium website can multiply your revenue.',
     'home.cta.button': 'Book your free call',
+    
+    // Home Contact Methods
+    'home.contact.title': 'Choose Your Preferred Contact Method',
+    'home.contact.subtitle': 'Multiple ways to reach out — pick what works best for you.',
+    'home.contact.recommended': 'Recommended',
+    'home.contact.call.title': 'Book a Strategy Call',
+    'home.contact.call.desc': 'Schedule a free 30-minute call to discuss your project and get personalized recommendations.',
+    'home.contact.call.cta': 'Open Calendar',
+    'home.contact.whatsapp.desc': 'Message me directly for quick questions or to start a conversation. I typically respond within minutes.',
+    'home.contact.whatsapp.cta': 'Chat Now',
+    'home.contact.email.desc': "Prefer email? Send me a detailed message and I'll reply within 24 hours with a thoughtful response.",
 
     // Stats
     'stats.visibility': 'More visibility',
@@ -192,6 +203,17 @@ const translations = {
     'home.cta.title': 'Prêt à transformer votre business ?',
     'home.cta.subtitle': 'Réservez un appel stratégique gratuit et découvrez comment un site premium peut multiplier votre CA.',
     'home.cta.button': 'Réserver mon appel gratuit',
+    
+    // Home Contact Methods
+    'home.contact.title': 'Choisissez Votre Mode de Contact',
+    'home.contact.subtitle': 'Plusieurs façons de me joindre — choisissez celle qui vous convient le mieux.',
+    'home.contact.recommended': 'Recommandé',
+    'home.contact.call.title': 'Réserver un Appel Stratégique',
+    'home.contact.call.desc': 'Planifiez un appel gratuit de 30 minutes pour discuter de votre projet et obtenir des recommandations personnalisées.',
+    'home.contact.call.cta': 'Ouvrir le Calendrier',
+    'home.contact.whatsapp.desc': 'Envoyez-moi un message pour des questions rapides ou pour démarrer une conversation. Je réponds généralement en quelques minutes.',
+    'home.contact.whatsapp.cta': 'Discuter Maintenant',
+    'home.contact.email.desc': "Vous préférez l'email ? Envoyez-moi un message détaillé et je vous répondrai sous 24h avec une réponse réfléchie.",
 
     // Stats
     'stats.visibility': 'Plus de visibilité',
