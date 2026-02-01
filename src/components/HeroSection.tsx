@@ -48,7 +48,7 @@ const HeroSection = () => {
             transition={{ delay: 0.4, duration: 0.6 }}
           >
             <Button variant="hero" size="xl" asChild>
-              <a href="#contact" className="gap-3">
+              <a href="https://calendly.com/elie-ageron" target="_blank" rel="noopener noreferrer" className="gap-3">
                 {t('hero.cta')}
                 <span className="ml-2">→</span>
               </a>
