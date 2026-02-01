@@ -46,7 +46,7 @@ const Footer = () => {
             {/* Logo & Copyright */}
             <div className="flex items-center gap-4">
               <Link to="/" className="text-lg font-bold text-foreground hover:text-primary transition-colors">
-                <span className="text-primary">É</span>lie Ageron
+                Elie Ageron
               </Link>
               <span className="text-sm text-muted-foreground">
                 © {currentYear} {t('footer.rights')}
