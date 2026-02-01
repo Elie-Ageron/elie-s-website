@@ -102,7 +102,7 @@ const translations = {
     'pricing.maintenance.desc': 'Updates, security, hosting, and priority support included.',
     'pricing.maintenance.custom': 'Custom',
     'pricing.guarantee.title': '100% Satisfaction Guarantee',
-    'pricing.guarantee.desc': 'If you\'re not completely satisfied with the final result, we\'ll work until you are—at no extra cost.',
+    'pricing.guarantee.desc': 'If you\'re not completely satisfied with the final result, we\'ll work until you are, at no extra cost.',
 
     // Services (shared with pricing)
     'services.title': 'Invest in your digital presence',
@@ -280,7 +280,7 @@ const translations = {
     'pricing.maintenance.desc': 'Mises à jour, sécurité, hébergement et support prioritaire inclus.',
     'pricing.maintenance.custom': 'Sur mesure',
     'pricing.guarantee.title': 'Garantie Satisfaction 100%',
-    'pricing.guarantee.desc': 'Si vous n\'êtes pas entièrement satisfait du résultat final, nous travaillerons jusqu\'à ce que vous le soyez—sans frais supplémentaires.',
+    'pricing.guarantee.desc': 'Si vous n\'êtes pas entièrement satisfait du résultat final, nous travaillerons jusqu\'à ce que vous le soyez, sans frais supplémentaires.',
 
     // Services (shared with pricing)
     'services.title': 'Investissez dans votre présence digitale',
