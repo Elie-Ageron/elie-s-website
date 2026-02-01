@@ -19,8 +19,6 @@ const HeroSection = () => {
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 py-20 text-center">
-        {/* Text backdrop for readability */}
-        <div className="absolute inset-0 -mx-8 -my-12 bg-background/60 backdrop-blur-sm rounded-3xl" />
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -38,7 +36,7 @@ const HeroSection = () => {
           </motion.div>
 
           {/* Main Headline */}
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-foreground mb-6 leading-tight drop-shadow-lg">
             {t('hero.headline')}
           </h1>
 
