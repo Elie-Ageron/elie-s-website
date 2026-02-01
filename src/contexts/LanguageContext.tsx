@@ -83,7 +83,7 @@ const translations = {
     'testimonial.3.role': 'Fitness Coach',
 
     // Popup
-    'popup.title': 'Your competitors are already online.',
+    'popup.title': "How many clients did you lose this week?",
     'popup.subtitle': "Stop losing clients today.",
     'popup.cta': 'Book your free call',
     'popup.close': 'Maybe later',
@@ -176,7 +176,7 @@ const translations = {
     'testimonial.3.role': 'Coach fitness',
 
     // Popup
-    'popup.title': 'Vos concurrents sont déjà en ligne.',
+    'popup.title': "Combien de clients avez-vous perdu cette semaine ?",
     'popup.subtitle': "Arrêtez de perdre des clients aujourd'hui.",
     'popup.cta': 'Réserver mon appel gratuit',
     'popup.close': 'Peut-être plus tard',
