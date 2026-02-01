@@ -52,7 +52,7 @@ const translations = {
     'stats.responsive': 'Responsive',
 
     // Why a Website Page
-    'why.title1': 'Ready to Grow',
+    'why.title1': 'Want to Grow',
     'why.title2': 'Online?',
     'why.subtitle': 'A great website is your best employee. It never takes breaks, never asks for a raise, and converts visitors into clients around the clock.',
     'why.benefit1.title': '24/7 Global Visibility',
@@ -230,7 +230,7 @@ const translations = {
     'stats.responsive': 'Responsive',
 
     // Why a Website Page
-    'why.title1': 'Prêt à Grandir',
+    'why.title1': 'Envie de Grandir',
     'why.title2': 'en Ligne ?',
     'why.subtitle': 'Un bon site, c\'est votre meilleur employé. Il ne prend jamais de pause, ne demande jamais d\'augmentation, et convertit vos visiteurs en clients 24h/24.',
     'why.benefit1.title': 'Visibilité Mondiale 24/7',
