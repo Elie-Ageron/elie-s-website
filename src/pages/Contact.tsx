@@ -68,7 +68,7 @@ const Contact = () => {
                 
                 <p className="text-muted-foreground mb-6">{t('contact.calendly.desc')}</p>
                 
-                {/* Calendly Embed Frame */}
+                {/* Calendly Embed Frame - lazy loaded */}
                 <div className="rounded-2xl overflow-hidden bg-card mb-6" style={{ minHeight: '400px' }}>
                   <iframe
                     src="https://calendly.com/elie-ageron?embed_domain=localhost&embed_type=Inline"
@@ -76,6 +76,7 @@ const Contact = () => {
                     height="400"
                     frameBorder="0"
                     title="Schedule a call"
+                    loading="lazy"
                     className="rounded-2xl"
                   />
                 </div>

@@ -119,7 +119,7 @@ const TestimonialsSection = () => {
   }];
   return <section id="testimonials" className="py-24 relative overflow-hidden">
       {/* Floating background elements */}
-      <FloatingElements count={6} />
+      <FloatingElements count={4} />
       
       {/* Top divider */}
       

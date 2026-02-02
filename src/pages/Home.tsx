@@ -18,7 +18,7 @@ const Home = () => {
 
       {/* Quick Value Props */}
       <section className="py-20 relative overflow-hidden">
-        <FloatingElements count={8} />
+        <FloatingElements count={5} />
         <div className="max-w-6xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
@@ -62,7 +62,7 @@ const Home = () => {
 
       {/* Contact Methods Section */}
       <section className="relative overflow-hidden">
-        <FloatingElements count={8} />
+        <FloatingElements count={5} />
         <div className="relative z-10">
           <ContactMethodsSection />
         </div>
