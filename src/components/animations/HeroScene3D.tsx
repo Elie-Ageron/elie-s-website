@@ -123,16 +123,13 @@ const Scene = () => {
       {/* Secondary light for depth */}
       <pointLight position={[-10, -10, -10]} intensity={0.5} color="#6366f1" />
       
-      {/* Main floating shapes - scaled down */}
+      {/* Main floating shapes - reduced for performance */}
       <FloatingShape position={[4, 0.5, -2]} scale={0.6} speed={0.6} shape="sphere" />
       <FloatingShape position={[-4, 1, -3]} scale={0.4} speed={0.8} shape="icosahedron" />
-      <FloatingShape position={[3, -2, -2]} scale={0.35} speed={0.7} shape="torus" />
       
-      {/* Smaller accent orbs - more subtle */}
+      {/* Accent orbs - reduced count */}
       <GlowingOrb position={[5, 2.5, -4]} scale={0.12} />
       <GlowingOrb position={[-5, -2, -3]} scale={0.1} />
-      <GlowingOrb position={[-3, 3, -5]} scale={0.15} />
-      <GlowingOrb position={[4, -1.5, -3]} scale={0.08} />
     </>
   );
 };

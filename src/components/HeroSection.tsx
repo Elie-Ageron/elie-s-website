@@ -2,15 +2,19 @@ import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
-import HeroScene3D from '@/components/animations/HeroScene3D';
+import { lazy, Suspense } from 'react';
+
+const HeroScene3D = lazy(() => import('@/components/animations/HeroScene3D'));
 
 const HeroSection = () => {
   const { t } = useLanguage();
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden grain">
-      {/* 3D Scene Background */}
-      <HeroScene3D />
+      {/* 3D Scene Background - Lazy loaded */}
+      <Suspense fallback={null}>
+        <HeroScene3D />
+      </Suspense>
       
       {/* Gradient overlays for depth */}
       <div className="absolute inset-0 z-[1] pointer-events-none">

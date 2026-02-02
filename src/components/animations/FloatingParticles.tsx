@@ -16,7 +16,7 @@ const FloatingParticles = () => {
   useEffect(() => {
     const generateParticles = () => {
       const newParticles: Particle[] = [];
-      for (let i = 0; i < 30; i++) {
+      for (let i = 0; i < 12; i++) {
         newParticles.push({
           id: i,
           x: Math.random() * 100,

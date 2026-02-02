@@ -2,10 +2,11 @@ import { LanguageProvider } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ScrollPopup from '@/components/ScrollPopup';
-import FloatingParticles from '@/components/animations/FloatingParticles';
 import BackgroundPattern from '@/components/BackgroundPattern';
 import PageTransition from '@/components/animations/PageTransition';
-import { ReactNode } from 'react';
+import { ReactNode, lazy, Suspense } from 'react';
+
+const FloatingParticles = lazy(() => import('@/components/animations/FloatingParticles'));
 
 interface LayoutProps {
   children: ReactNode;
@@ -16,7 +17,9 @@ const Layout = ({ children }: LayoutProps) => {
     <LanguageProvider>
       <div className="min-h-screen bg-background relative">
         <BackgroundPattern />
-        <FloatingParticles />
+        <Suspense fallback={null}>
+          <FloatingParticles />
+        </Suspense>
         <Header />
         <PageTransition>
           <main className="pt-24">
