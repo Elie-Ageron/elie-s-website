@@ -8,11 +8,11 @@ interface FloatingElementsProps {
 const FloatingElements = ({ count = 5, className = '' }: FloatingElementsProps) => {
   const elements = Array.from({ length: count }, (_, i) => ({
     id: i,
-    size: Math.random() * 4 + 2,
+    size: Math.random() * 3 + 2,
     x: Math.random() * 100,
     y: Math.random() * 100,
-    duration: Math.random() * 10 + 15,
-    delay: Math.random() * 5
+    duration: Math.random() * 8 + 12,
+    delay: Math.random() * 3
   }));
 
   return (
