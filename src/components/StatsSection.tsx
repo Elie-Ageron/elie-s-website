@@ -9,7 +9,7 @@ const StatsSection = () => {
   
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start end", "end start"]
+    offset: ["start 0.8", "end 0.2"]
   });
 
   const valueProps = [
@@ -17,134 +17,124 @@ const StatsSection = () => {
       icon: Clock, 
       title: t('stats.always.title'), 
       desc: t('stats.always.desc'),
-      color: 'from-primary/20 to-primary/5'
     },
     { 
       icon: Shield, 
       title: t('stats.trust.title'), 
       desc: t('stats.trust.desc'),
-      color: 'from-primary/30 to-primary/10'
     },
     { 
       icon: Smartphone, 
       title: t('stats.mobile.title'), 
       desc: t('stats.mobile.desc'),
-      color: 'from-primary/20 to-primary/5'
     },
   ];
 
-  // Create staggered animations for each card
-  const card1X = useTransform(scrollYProgress, [0, 0.3, 0.5], [-200, 0, 0]);
-  const card1Opacity = useTransform(scrollYProgress, [0, 0.25, 0.5], [0, 1, 1]);
-  const card1Rotate = useTransform(scrollYProgress, [0, 0.3, 0.5], [-15, -6, -6]);
+  // Staggered animations - each card has its own scroll range
+  const card1X = useTransform(scrollYProgress, [0, 0.3], [-100, 0]);
+  const card1Opacity = useTransform(scrollYProgress, [0, 0.25], [0, 1]);
   
-  const card2Y = useTransform(scrollYProgress, [0.1, 0.4, 0.6], [150, 0, 0]);
-  const card2Opacity = useTransform(scrollYProgress, [0.1, 0.35, 0.6], [0, 1, 1]);
-  const card2Scale = useTransform(scrollYProgress, [0.1, 0.4, 0.6], [0.8, 1, 1]);
+  const card2X = useTransform(scrollYProgress, [0.15, 0.5], [100, 0]);
+  const card2Opacity = useTransform(scrollYProgress, [0.15, 0.45], [0, 1]);
   
-  const card3X = useTransform(scrollYProgress, [0.2, 0.5, 0.7], [200, 0, 0]);
-  const card3Opacity = useTransform(scrollYProgress, [0.2, 0.45, 0.7], [0, 1, 1]);
-  const card3Rotate = useTransform(scrollYProgress, [0.2, 0.5, 0.7], [15, 6, 6]);
+  const card3X = useTransform(scrollYProgress, [0.35, 0.7], [-100, 0]);
+  const card3Opacity = useTransform(scrollYProgress, [0.35, 0.65], [0, 1]);
 
-  // Glow effect intensity
-  const glowOpacity = useTransform(scrollYProgress, [0.3, 0.5, 0.7], [0, 1, 0.5]);
+  // Connecting line animation
+  const lineHeight = useTransform(scrollYProgress, [0.1, 0.8], ["0%", "100%"]);
 
   const cardAnimations = [
-    { x: card1X, opacity: card1Opacity, rotate: card1Rotate, scale: 1, zIndex: 1 },
-    { y: card2Y, opacity: card2Opacity, scale: card2Scale, rotate: 0, zIndex: 3 },
-    { x: card3X, opacity: card3Opacity, rotate: card3Rotate, scale: 1, zIndex: 2 },
+    { x: card1X, opacity: card1Opacity, direction: 'left' },
+    { x: card2X, opacity: card2Opacity, direction: 'right' },
+    { x: card3X, opacity: card3Opacity, direction: 'left' },
   ];
 
   return (
-    <section ref={containerRef} className="py-16 sm:py-24 md:py-32 relative overflow-hidden">
-      {/* Background glow effect */}
-      <motion.div 
-        className="absolute inset-0 pointer-events-none"
-        style={{ opacity: glowOpacity }}
-      >
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px]" />
-      </motion.div>
+    <section ref={containerRef} className="py-20 sm:py-28 md:py-36 relative overflow-hidden">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 relative">
+        
+        {/* Animated vertical connecting line - hidden on mobile */}
+        <div className="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 hidden md:block">
+          <motion.div 
+            className="w-full bg-gradient-to-b from-primary via-primary to-transparent"
+            style={{ height: lineHeight }}
+          />
+        </div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-        {/* Stacked cards layout - unconventional overlap */}
-        <div className="relative flex items-center justify-center min-h-[500px] sm:min-h-[450px]">
+        {/* Staircase layout */}
+        <div className="flex flex-col gap-12 sm:gap-16 md:gap-20">
           {valueProps.map((prop, index) => {
             const anim = cardAnimations[index];
-            const positions = [
-              'left-0 sm:left-[5%] top-[10%] sm:top-[15%]', // Card 1 - top left, tilted
-              'left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2', // Card 2 - center, prominent
-              'right-0 sm:right-[5%] bottom-[10%] sm:bottom-[15%]', // Card 3 - bottom right, tilted
-            ];
-
+            const isLeft = anim.direction === 'left';
+            
             return (
               <motion.div
                 key={index}
-                className={`absolute ${positions[index]} w-[280px] sm:w-[320px]`}
+                className={`
+                  flex items-center gap-6 md:gap-12
+                  ${isLeft ? 'md:flex-row md:pr-[50%]' : 'md:flex-row-reverse md:pl-[50%]'}
+                  flex-col md:text-left text-center
+                `}
                 style={{
                   x: anim.x,
-                  y: anim.y,
                   opacity: anim.opacity,
-                  rotate: anim.rotate,
-                  scale: anim.scale,
-                  zIndex: anim.zIndex,
                 }}
               >
+                {/* Card content */}
                 <div 
                   className={`
-                    relative p-6 sm:p-8 rounded-2xl sm:rounded-3xl
-                    bg-gradient-to-br ${prop.color}
-                    backdrop-blur-xl border border-border/50
-                    shadow-2xl shadow-primary/10
-                    transition-all duration-300
-                    hover:shadow-primary/20 hover:border-primary/30
-                    group cursor-pointer
+                    relative flex-1 p-6 sm:p-8 rounded-2xl
+                    bg-secondary/80 backdrop-blur-sm
+                    border border-border/50
+                    transition-all duration-500
+                    hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10
+                    group
                   `}
                 >
-                  {/* Decorative corner accent */}
-                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-primary/20 to-transparent rounded-tr-3xl rounded-bl-[60px] opacity-50" />
-                  
-                  {/* Icon */}
-                  <motion.div 
-                    className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-primary/20 flex items-center justify-center mb-5 group-hover:bg-primary/30 transition-colors"
-                    whileHover={{ rotate: 360, scale: 1.1 }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    <prop.icon className="w-7 h-7 sm:w-8 sm:h-8 text-primary" />
-                  </motion.div>
-                  
-                  {/* Content */}
-                  <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                    {prop.title}
-                  </h3>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    {prop.desc}
-                  </p>
+                  {/* Number indicator */}
+                  <div className={`
+                    absolute -top-4 ${isLeft ? 'md:-right-4 right-4' : 'md:-left-4 left-4'}
+                    w-8 h-8 rounded-full bg-primary text-primary-foreground
+                    flex items-center justify-center text-sm font-bold
+                    shadow-lg shadow-primary/30
+                  `}>
+                    {index + 1}
+                  </div>
 
-                  {/* Subtle shine effect on hover */}
-                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl overflow-hidden pointer-events-none">
-                    <div className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+                  <div className="flex items-start gap-4 md:gap-5">
+                    {/* Icon */}
+                    <motion.div 
+                      className="shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-primary/15 flex items-center justify-center group-hover:bg-primary/25 transition-colors"
+                      whileHover={{ rotate: 360, scale: 1.1 }}
+                      transition={{ duration: 0.6 }}
+                    >
+                      <prop.icon className="w-6 h-6 sm:w-7 sm:h-7 text-primary" />
+                    </motion.div>
+                    
+                    {/* Text */}
+                    <div className="flex-1 text-left">
+                      <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                        {prop.title}
+                      </h3>
+                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                        {prop.desc}
+                      </p>
+                    </div>
                   </div>
                 </div>
+
+                {/* Timeline dot - visible on desktop */}
+                <motion.div 
+                  className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background shadow-lg shadow-primary/50"
+                  style={{ opacity: anim.opacity }}
+                  whileInView={{ scale: [0, 1.2, 1] }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                />
               </motion.div>
             );
           })}
         </div>
-
-        {/* Scroll indicator */}
-        <motion.div 
-          className="flex justify-center mt-8"
-          style={{ opacity: useTransform(scrollYProgress, [0, 0.2], [1, 0]) }}
-        >
-          <div className="flex flex-col items-center gap-2 text-muted-foreground/50">
-            <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex justify-center pt-2"
-            >
-              <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-            </motion.div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
