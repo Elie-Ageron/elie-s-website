@@ -100,7 +100,7 @@ const faqData = {
       },
       {
         question: 'Pourquoi choisir Élie Ageron pour mon projet ?',
-        answer: 'Je me concentre sur le ROI. Mes sites sont conçus pour transformer les visiteurs en clients payants grâce à des déclencheurs psychologiques avancés et des technologies modernes.',
+        answer: 'Livraison rapide, prix bas, et des sites conçus pour transformer les visiteurs en clients payants.',
       },
       {
         question: 'Quel est le délai de livraison ?',
@@ -134,7 +134,7 @@ const faqData = {
       },
       {
         question: 'Pourquoi choisir Élie Ageron pour mon projet ?',
-        answer: 'Je me concentre sur le ROI. Mes sites sont conçus pour transformer les visiteurs en clients payants grâce à des déclencheurs psychologiques avancés et des technologies modernes.',
+        answer: 'Livraison rapide, prix bas, et des sites conçus pour transformer les visiteurs en clients payants.',
       },
       {
         question: 'Quel est le délai de livraison ?',
