@@ -24,6 +24,22 @@ const faqData = {
         question: 'Is there a satisfaction guarantee?',
         answer: "Absolutely! Elie Ageron offers a 100% satisfaction guarantee. If you're not completely satisfied with the final result, we'll work until you are, at no extra cost.",
       },
+      {
+        question: 'Why should I invest in a professional design now?',
+        answer: 'Your website is your 24/7 salesperson. A high-conversion design ensures you stop losing leads to competitors with better online presence.',
+      },
+      {
+        question: 'Why choose Élie Ageron for my project?',
+        answer: 'I focus on ROI. My websites are built to turn visitors into paying customers using advanced psychological triggers and modern tech.',
+      },
+      {
+        question: 'What is the turnaround time?',
+        answer: 'Landing pages take 48 hours. Complete showcase sites are ready in 7 to 14 days.',
+      },
+      {
+        question: 'Is my site optimized for mobile and search?',
+        answer: 'Absolutely. Every project is mobile-first and includes elite SEO foundations to ensure visibility.',
+      },
     ],
     why: [
       {
@@ -41,6 +57,22 @@ const faqData = {
       {
         question: 'Can a website really generate leads while I sleep?',
         answer: 'Yes! Your website works 24/7 across all time zones. With automated lead capture forms and conversion-optimized design, it qualifies prospects even when you are offline.',
+      },
+      {
+        question: 'Why should I invest in a professional design now?',
+        answer: 'Your website is your 24/7 salesperson. A high-conversion design ensures you stop losing leads to competitors with better online presence.',
+      },
+      {
+        question: 'Why choose Élie Ageron for my project?',
+        answer: 'I focus on ROI. My websites are built to turn visitors into paying customers using advanced psychological triggers and modern tech.',
+      },
+      {
+        question: 'What is the turnaround time?',
+        answer: 'Landing pages take 48 hours. Complete showcase sites are ready in 7 to 14 days.',
+      },
+      {
+        question: 'Is my site optimized for mobile and search?',
+        answer: 'Absolutely. Every project is mobile-first and includes elite SEO foundations to ensure visibility.',
       },
     ],
   },
@@ -62,6 +94,22 @@ const faqData = {
         question: 'Y a-t-il une garantie de satisfaction ?',
         answer: 'Absolument ! Elie Ageron offre une garantie satisfaction 100%. Si vous n\'êtes pas entièrement satisfait du résultat final, nous travaillerons jusqu\'à ce que vous le soyez, sans frais supplémentaires.',
       },
+      {
+        question: 'Pourquoi investir dans un design professionnel maintenant ?',
+        answer: 'Votre site web est votre commercial 24/7. Un design haute conversion vous assure de ne plus perdre de leads au profit de concurrents mieux positionnés en ligne.',
+      },
+      {
+        question: 'Pourquoi choisir Élie Ageron pour mon projet ?',
+        answer: 'Je me concentre sur le ROI. Mes sites sont conçus pour transformer les visiteurs en clients payants grâce à des déclencheurs psychologiques avancés et des technologies modernes.',
+      },
+      {
+        question: 'Quel est le délai de livraison ?',
+        answer: 'Les landing pages sont livrées en 48 heures. Les sites vitrines complets sont prêts en 7 à 14 jours.',
+      },
+      {
+        question: 'Mon site sera-t-il optimisé mobile et SEO ?',
+        answer: 'Absolument. Chaque projet est mobile-first et inclut des fondations SEO élites pour garantir votre visibilité.',
+      },
     ],
     why: [
       {
@@ -79,6 +127,22 @@ const faqData = {
       {
         question: 'Un site peut-il vraiment générer des leads pendant mon sommeil ?',
         answer: 'Oui ! Votre site travaille 24/7 sur tous les fuseaux horaires. Avec les formulaires de capture automatisés et un design optimisé pour la conversion, il qualifie les prospects même quand vous êtes hors ligne.',
+      },
+      {
+        question: 'Pourquoi investir dans un design professionnel maintenant ?',
+        answer: 'Votre site web est votre commercial 24/7. Un design haute conversion vous assure de ne plus perdre de leads au profit de concurrents mieux positionnés en ligne.',
+      },
+      {
+        question: 'Pourquoi choisir Élie Ageron pour mon projet ?',
+        answer: 'Je me concentre sur le ROI. Mes sites sont conçus pour transformer les visiteurs en clients payants grâce à des déclencheurs psychologiques avancés et des technologies modernes.',
+      },
+      {
+        question: 'Quel est le délai de livraison ?',
+        answer: 'Les landing pages sont livrées en 48 heures. Les sites vitrines complets sont prêts en 7 à 14 jours.',
+      },
+      {
+        question: 'Mon site sera-t-il optimisé mobile et SEO ?',
+        answer: 'Absolument. Chaque projet est mobile-first et inclut des fondations SEO élites pour garantir votre visibilité.',
       },
     ],
   },
