@@ -1,71 +1,27 @@
-import { useEffect, useState, useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { Clock, Shield, Smartphone } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-
-interface StatItemProps {
-  value: number;
-  suffix: string;
-  label: string;
-  delay: number;
-}
-
-const StatItem = ({ value, suffix, label, delay }: StatItemProps) => {
-  const [count, setCount] = useState(0);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
-  useEffect(() => {
-    if (isInView) {
-      const timer = setTimeout(() => {
-        const duration = 1500;
-        const steps = 40;
-        const increment = value / steps;
-        let current = 0;
-        
-        const counter = setInterval(() => {
-          current += increment;
-          if (current >= value) {
-            setCount(value);
-            clearInterval(counter);
-          } else {
-            setCount(Math.floor(current));
-          }
-        }, duration / steps);
-        
-        return () => clearInterval(counter);
-      }, delay);
-      
-      return () => clearTimeout(timer);
-    }
-  }, [isInView, value, delay]);
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: delay / 1000, duration: 0.5 }}
-      className="text-center px-4 sm:px-8 py-5 sm:py-6"
-    >
-      <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-1.5 sm:mb-2">
-        <span className="text-primary">{count}</span>
-        <span className="text-primary">{suffix}</span>
-      </div>
-      <div className="text-xs sm:text-sm md:text-base text-muted-foreground uppercase tracking-wider">
-        {label}
-      </div>
-    </motion.div>
-  );
-};
+import ScrollReveal from '@/components/animations/ScrollReveal';
 
 const StatsSection = () => {
   const { t } = useLanguage();
 
-  const stats = [
-    { value: 3, suffix: 'x', label: t('stats.visibility'), delay: 0 },
-    { value: 45, suffix: '%', label: t('stats.conversion'), delay: 150 },
-    { value: 100, suffix: '%', label: t('stats.responsive'), delay: 300 },
+  const valueProps = [
+    { 
+      icon: Clock, 
+      title: t('stats.always.title'), 
+      desc: t('stats.always.desc')
+    },
+    { 
+      icon: Shield, 
+      title: t('stats.trust.title'), 
+      desc: t('stats.trust.desc')
+    },
+    { 
+      icon: Smartphone, 
+      title: t('stats.mobile.title'), 
+      desc: t('stats.mobile.desc')
+    },
   ];
 
   return (
@@ -79,17 +35,31 @@ const StatsSection = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="glass-card rounded-2xl sm:rounded-3xl p-3 sm:p-4 md:p-8"
+          className="glass-card rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8"
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-border/30">
-            {stats.map((stat, index) => (
-              <StatItem
-                key={index}
-                value={stat.value}
-                suffix={stat.suffix}
-                label={stat.label}
-                delay={stat.delay}
-              />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            {valueProps.map((prop, index) => (
+              <ScrollReveal 
+                key={index} 
+                direction={index === 0 ? 'left' : index === 2 ? 'right' : 'up'}
+                delay={index * 0.1}
+              >
+                <div className="text-center px-4 py-4">
+                  <motion.div 
+                    className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-primary/20 mb-4"
+                    whileHover={{ rotate: 360, scale: 1.1 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <prop.icon className="w-7 h-7 sm:w-8 sm:h-8 text-primary" />
+                  </motion.div>
+                  <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2">
+                    {prop.title}
+                  </h3>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    {prop.desc}
+                  </p>
+                </div>
+              </ScrollReveal>
             ))}
           </div>
         </motion.div>

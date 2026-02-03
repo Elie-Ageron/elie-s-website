@@ -46,10 +46,13 @@ const translations = {
     'home.contact.whatsapp.cta': 'Chat Now',
     'home.contact.email.desc': "Prefer email? Send me a detailed message and I'll reply within 24 hours with a thoughtful response.",
 
-    // Stats
-    'stats.visibility': 'More visibility',
-    'stats.conversion': 'Conversion rate',
-    'stats.responsive': 'Responsive',
+    // Stats / Value Props
+    'stats.always.title': 'Open 24/7',
+    'stats.always.desc': 'Your website works while you sleep, capturing leads around the clock.',
+    'stats.trust.title': 'Instant Credibility',
+    'stats.trust.desc': 'A professional site builds trust before you even speak to clients.',
+    'stats.mobile.title': 'Works Everywhere',
+    'stats.mobile.desc': 'Perfect on phones, tablets, and desktops. Reach clients anywhere.',
 
     // Why a Website Page
     'why.title1': 'Stop Losing Clients',
@@ -225,10 +228,13 @@ const translations = {
     'home.contact.whatsapp.cta': 'Discuter Maintenant',
     'home.contact.email.desc': "Vous préférez l'email ? Envoyez-moi un message détaillé et je vous répondrai sous 24h avec une réponse réfléchie.",
 
-    // Stats
-    'stats.visibility': 'Plus de visibilité',
-    'stats.conversion': 'Taux de conversion',
-    'stats.responsive': 'Responsive',
+    // Stats / Value Props
+    'stats.always.title': 'Ouvert 24/7',
+    'stats.always.desc': 'Votre site travaille pendant que vous dormez, capturant des leads en continu.',
+    'stats.trust.title': 'Crédibilité Instantanée',
+    'stats.trust.desc': 'Un site pro inspire confiance avant même que vous parliez aux clients.',
+    'stats.mobile.title': 'Fonctionne Partout',
+    'stats.mobile.desc': 'Parfait sur mobile, tablette et ordinateur. Touchez vos clients où qu\'ils soient.',
 
     // Why a Website Page
     'why.title1': 'Arrêtez de Perdre',
