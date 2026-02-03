@@ -344,7 +344,7 @@ const translations = {
     'testimonial.2.text': "Je ne savais pas à quoi m'attendre avec un jeune designer, mais Elie a dépassé mes attentes. Pro, rapide, et le site convertit vraiment !",
     'testimonial.2.author': 'Sophie L.',
     'testimonial.2.role': 'Agent immobilier',
-    'testimonial.3.text': "Le meilleur investissement que j'ai fait pour mon business. Le ROI était visible en quelques semaines. Je recommande à 100%.",
+    'testimonial.3.text': "Le meilleur investissement que j'ai fait pour mon business. Le ROI était visible en quelques semaines. Je recommande, sérieux.",
     'testimonial.3.author': 'Thomas R.',
     'testimonial.3.role': 'Coach fitness',
 
