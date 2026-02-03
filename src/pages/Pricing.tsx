@@ -7,6 +7,8 @@ import { Switch } from '@/components/ui/switch';
 import MagneticButton from '@/components/animations/MagneticButton';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
 import SEO from '@/components/SEO';
+import FAQSchema from '@/components/FAQSchema';
+import InternalLinks from '@/components/InternalLinks';
 
 const Pricing = () => {
   const { t } = useLanguage();
@@ -65,6 +67,7 @@ const Pricing = () => {
   return (
     <>
       <SEO page="pricing" />
+      <FAQSchema page="pricing" />
       
       {/* Hero */}
       <section className="py-20 relative grain" aria-labelledby="pricing-hero-heading">
@@ -211,6 +214,9 @@ const Pricing = () => {
           </motion.article>
         </div>
       </section>
+
+      {/* Internal Links */}
+      <InternalLinks currentPage="pricing" />
 
       {/* Contact Methods */}
       <ContactMethodsSection />

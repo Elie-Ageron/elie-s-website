@@ -3,6 +3,8 @@ import { TrendingUp, Users, DollarSign, Globe, XCircle, CheckCircle } from 'luci
 import { useLanguage } from '@/contexts/LanguageContext';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
 import SEO from '@/components/SEO';
+import FAQSchema from '@/components/FAQSchema';
+import InternalLinks from '@/components/InternalLinks';
 
 const WhyWebsite = () => {
   const { t } = useLanguage();
@@ -32,6 +34,7 @@ const WhyWebsite = () => {
   return (
     <>
       <SEO page="why" />
+      <FAQSchema page="why" />
       
       {/* Hero */}
       <section className="py-20 relative grain" aria-labelledby="why-hero-heading">
@@ -150,6 +153,9 @@ const WhyWebsite = () => {
           </div>
         </div>
       </section>
+
+      {/* Internal Links */}
+      <InternalLinks currentPage="why" />
 
       {/* Contact Methods */}
       <ContactMethodsSection />
