@@ -109,7 +109,7 @@ const WhyWebsite = () => {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="glass-card rounded-2xl p-8 border border-destructive/30"
+              className="glass-card rounded-2xl p-8 border-2 border-destructive/60 shadow-[0_0_20px_rgba(239,68,68,0.15)]"
               aria-labelledby="without-website-heading"
             >
               <div className="flex items-center gap-3 mb-6">
