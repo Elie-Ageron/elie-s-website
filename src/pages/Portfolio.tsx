@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import portfolioLuxura from '@/assets/portfolio-luxura-spa.jpg';
 import portfolioSteel from '@/assets/portfolio-steel-pipe.jpg';
@@ -60,7 +59,7 @@ const Portfolio = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8">
             {projects.map((project, index) => (
-              <Link key={project.id} to={project.url} className="block">
+              <a key={project.id} href={project.url} target="_blank" rel="noopener noreferrer" className="block">
                 <motion.article
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -97,7 +96,7 @@ const Portfolio = () => {
                     </p>
                   </figcaption>
                 </motion.article>
-              </Link>
+              </a>
             ))}
           </div>
         </div>
