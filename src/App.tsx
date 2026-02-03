@@ -13,6 +13,8 @@ const WhyWebsite = lazy(() => import("./pages/WhyWebsite"));
 const OurProcess = lazy(() => import("./pages/OurProcess"));
 const Pricing = lazy(() => import("./pages/Pricing"));
 const Portfolio = lazy(() => import("./pages/Portfolio"));
+const LuxuraSpa = lazy(() => import("./pages/portfolio/LuxuraSpa"));
+const SteelPipe = lazy(() => import("./pages/portfolio/SteelPipe"));
 const Contact = lazy(() => import("./pages/Contact"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -33,6 +35,8 @@ const App = () => (
               <Route path="/our-process" element={<OurProcess />} />
               <Route path="/pricing" element={<Pricing />} />
               <Route path="/portfolio" element={<Portfolio />} />
+              <Route path="/portfolio/luxura-spa" element={<LuxuraSpa />} />
+              <Route path="/portfolio/steel-pipe" element={<SteelPipe />} />
               <Route path="/contact" element={<Contact />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
