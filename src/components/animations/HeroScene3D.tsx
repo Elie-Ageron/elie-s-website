@@ -1,139 +1,53 @@
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Float, Sphere, RoundedBox } from '@react-three/drei';
 import { useRef, Suspense, useMemo } from 'react';
 import * as THREE from 'three';
 
-// Soft floating sphere with gentle movement
-const SoftSphere = ({ 
-  position, 
-  scale = 1, 
-  color = "#e8e4de",
-  speed = 1 
-}: { 
-  position: [number, number, number]; 
-  scale?: number; 
-  color?: string;
-  speed?: number;
-}) => {
-  const meshRef = useRef<THREE.Mesh>(null);
-
-  useFrame((state) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.x += 0.001;
-      meshRef.current.rotation.y += 0.002;
-      meshRef.current.position.y = position[1] + Math.sin(state.clock.elapsedTime * speed * 0.5) * 0.15;
-    }
-  });
-
-  return (
-    <Float speed={speed * 0.5} rotationIntensity={0.2} floatIntensity={0.3}>
-      <Sphere ref={meshRef} position={position} args={[1, 32, 32]} scale={scale}>
-        <meshStandardMaterial
-          color={color}
-          roughness={0.9}
-          metalness={0.05}
-        />
-      </Sphere>
-    </Float>
-  );
-};
-
-// Soft rounded box
-const SoftBox = ({ 
-  position, 
-  scale = 1, 
-  color = "#f0ebe5",
-  speed = 1 
-}: { 
-  position: [number, number, number]; 
-  scale?: number; 
-  color?: string;
-  speed?: number;
-}) => {
-  const meshRef = useRef<THREE.Mesh>(null);
-
-  useFrame((state) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.x += 0.002;
-      meshRef.current.rotation.y += 0.003;
-      meshRef.current.position.y = position[1] + Math.sin(state.clock.elapsedTime * speed * 0.4 + 1) * 0.1;
-    }
-  });
-
-  return (
-    <Float speed={speed * 0.4} rotationIntensity={0.15} floatIntensity={0.2}>
-      <RoundedBox ref={meshRef} position={position} args={[1, 1, 1]} radius={0.15} scale={scale}>
-        <meshStandardMaterial
-          color={color}
-          roughness={0.85}
-          metalness={0.1}
-        />
-      </RoundedBox>
-    </Float>
-  );
-};
-
-// Soft accent ring/torus
-const SoftRing = ({ 
-  position, 
-  scale = 1, 
-  speed = 1 
-}: { 
-  position: [number, number, number]; 
-  scale?: number; 
-  speed?: number;
-}) => {
-  const meshRef = useRef<THREE.Mesh>(null);
-
-  useFrame((state) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.x += 0.003;
-      meshRef.current.rotation.z += 0.002;
-    }
-  });
-
-  return (
-    <Float speed={speed * 0.3} rotationIntensity={0.3} floatIntensity={0.2}>
-      <mesh ref={meshRef} position={position} scale={scale}>
-        <torusGeometry args={[1, 0.15, 16, 48]} />
-        <meshStandardMaterial
-          color="#d8cfc5"
-          roughness={0.8}
-          metalness={0.15}
-        />
-      </mesh>
-    </Float>
-  );
-};
-
-// Small floating particles
-const FloatingParticles = () => {
-  const particlesRef = useRef<THREE.Points>(null);
+// Floating pink dots/particles
+const FloatingDots = () => {
+  const pointsRef = useRef<THREE.Points>(null);
   
-  const particleCount = 30;
-  const positions = useMemo(() => {
+  const particleCount = 80;
+  
+  const { positions, sizes, speeds } = useMemo(() => {
     const pos = new Float32Array(particleCount * 3);
+    const siz = new Float32Array(particleCount);
+    const spd = new Float32Array(particleCount);
+    
     for (let i = 0; i < particleCount; i++) {
-      pos[i * 3] = (Math.random() - 0.5) * 16;
-      pos[i * 3 + 1] = (Math.random() - 0.5) * 10;
-      pos[i * 3 + 2] = (Math.random() - 0.5) * 8 - 4;
+      // Spread dots across the viewport
+      pos[i * 3] = (Math.random() - 0.5) * 20;      // x
+      pos[i * 3 + 1] = (Math.random() - 0.5) * 14;  // y
+      pos[i * 3 + 2] = (Math.random() - 0.5) * 10 - 3; // z (depth)
+      
+      // Varying sizes for depth effect
+      siz[i] = Math.random() * 0.15 + 0.05;
+      
+      // Random speeds for organic movement
+      spd[i] = Math.random() * 0.5 + 0.3;
     }
-    return pos;
+    return { positions: pos, sizes: siz, speeds: spd };
   }, []);
 
   useFrame((state) => {
-    if (particlesRef.current) {
-      particlesRef.current.rotation.y = state.clock.elapsedTime * 0.02;
-      const positions = particlesRef.current.geometry.attributes.position.array as Float32Array;
+    if (pointsRef.current) {
+      const pos = pointsRef.current.geometry.attributes.position.array as Float32Array;
+      const time = state.clock.elapsedTime;
+      
       for (let i = 0; i < particleCount; i++) {
-        positions[i * 3 + 1] += Math.sin(state.clock.elapsedTime * 0.3 + i) * 0.002;
+        // Gentle floating motion
+        pos[i * 3 + 1] += Math.sin(time * speeds[i] + i * 0.5) * 0.003;
+        pos[i * 3] += Math.cos(time * speeds[i] * 0.7 + i * 0.3) * 0.001;
       }
-      particlesRef.current.geometry.attributes.position.needsUpdate = true;
+      
+      pointsRef.current.geometry.attributes.position.needsUpdate = true;
+      
+      // Slow overall rotation
+      pointsRef.current.rotation.y = time * 0.02;
     }
   });
 
   return (
-    <points ref={particlesRef}>
+    <points ref={pointsRef}>
       <bufferGeometry>
         <bufferAttribute
           attach="attributes-position"
@@ -143,10 +57,108 @@ const FloatingParticles = () => {
         />
       </bufferGeometry>
       <pointsMaterial
-        size={0.08}
-        color="#c9bfb3"
+        size={0.12}
+        color="#c4516b"
         transparent
-        opacity={0.6}
+        opacity={0.7}
+        sizeAttenuation
+      />
+    </points>
+  );
+};
+
+// Larger accent dots with different pink shades
+const AccentDots = () => {
+  const pointsRef = useRef<THREE.Points>(null);
+  
+  const particleCount = 25;
+  
+  const positions = useMemo(() => {
+    const pos = new Float32Array(particleCount * 3);
+    
+    for (let i = 0; i < particleCount; i++) {
+      pos[i * 3] = (Math.random() - 0.5) * 18;
+      pos[i * 3 + 1] = (Math.random() - 0.5) * 12;
+      pos[i * 3 + 2] = (Math.random() - 0.5) * 8 - 2;
+    }
+    return pos;
+  }, []);
+
+  useFrame((state) => {
+    if (pointsRef.current) {
+      const pos = pointsRef.current.geometry.attributes.position.array as Float32Array;
+      const time = state.clock.elapsedTime;
+      
+      for (let i = 0; i < particleCount; i++) {
+        pos[i * 3 + 1] += Math.sin(time * 0.4 + i * 0.8) * 0.004;
+        pos[i * 3] += Math.cos(time * 0.3 + i * 0.5) * 0.002;
+      }
+      
+      pointsRef.current.geometry.attributes.position.needsUpdate = true;
+      pointsRef.current.rotation.y = -time * 0.015;
+    }
+  });
+
+  return (
+    <points ref={pointsRef}>
+      <bufferGeometry>
+        <bufferAttribute
+          attach="attributes-position"
+          count={particleCount}
+          array={positions}
+          itemSize={3}
+        />
+      </bufferGeometry>
+      <pointsMaterial
+        size={0.2}
+        color="#e07a94"
+        transparent
+        opacity={0.5}
+        sizeAttenuation
+      />
+    </points>
+  );
+};
+
+// Tiny subtle dots for depth
+const SubtleDots = () => {
+  const pointsRef = useRef<THREE.Points>(null);
+  
+  const particleCount = 50;
+  
+  const positions = useMemo(() => {
+    const pos = new Float32Array(particleCount * 3);
+    
+    for (let i = 0; i < particleCount; i++) {
+      pos[i * 3] = (Math.random() - 0.5) * 22;
+      pos[i * 3 + 1] = (Math.random() - 0.5) * 16;
+      pos[i * 3 + 2] = (Math.random() - 0.5) * 12 - 5;
+    }
+    return pos;
+  }, []);
+
+  useFrame((state) => {
+    if (pointsRef.current) {
+      pointsRef.current.rotation.y = state.clock.elapsedTime * 0.01;
+      pointsRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.1) * 0.05;
+    }
+  });
+
+  return (
+    <points ref={pointsRef}>
+      <bufferGeometry>
+        <bufferAttribute
+          attach="attributes-position"
+          count={particleCount}
+          array={positions}
+          itemSize={3}
+        />
+      </bufferGeometry>
+      <pointsMaterial
+        size={0.06}
+        color="#d4a5b0"
+        transparent
+        opacity={0.4}
         sizeAttenuation
       />
     </points>
@@ -157,32 +169,12 @@ const Scene = () => {
   return (
     <>
       {/* Soft ambient lighting */}
-      <ambientLight intensity={0.8} color="#fff9f5" />
+      <ambientLight intensity={1} color="#fff5f7" />
       
-      {/* Main soft light from top */}
-      <directionalLight
-        position={[5, 10, 5]}
-        intensity={0.6}
-        color="#ffffff"
-        castShadow={false}
-      />
-      
-      {/* Subtle fill light */}
-      <pointLight position={[-5, -5, 5]} intensity={0.3} color="#f5e6dc" />
-      
-      {/* Floating shapes - elegant and minimal */}
-      <SoftSphere position={[4, 0.5, -3]} scale={0.7} color="#e8e0d8" speed={0.8} />
-      <SoftSphere position={[-3.5, 1.5, -4]} scale={0.45} color="#f0e8e0" speed={1} />
-      <SoftSphere position={[2, -1.5, -5]} scale={0.35} color="#d8d0c8" speed={0.6} />
-      
-      <SoftBox position={[-4.5, -0.5, -3.5]} scale={0.5} color="#ebe5dd" speed={0.7} />
-      <SoftBox position={[5, 2, -5]} scale={0.35} color="#e0d8d0" speed={0.9} />
-      
-      <SoftRing position={[3, 2.5, -4]} scale={0.4} speed={0.5} />
-      <SoftRing position={[-5, -2, -5]} scale={0.3} speed={0.6} />
-      
-      {/* Subtle floating particles */}
-      <FloatingParticles />
+      {/* Pink floating dots layers */}
+      <FloatingDots />
+      <AccentDots />
+      <SubtleDots />
     </>
   );
 };
@@ -191,7 +183,7 @@ const HeroScene3D = () => {
   return (
     <div className="absolute inset-0 z-0 pointer-events-none">
       <Canvas
-        camera={{ position: [0, 0, 8], fov: 50 }}
+        camera={{ position: [0, 0, 10], fov: 50 }}
         gl={{ antialias: true, alpha: true }}
         style={{ background: 'transparent' }}
         dpr={[1, 1.5]}
