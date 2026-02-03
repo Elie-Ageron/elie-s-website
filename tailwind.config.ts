@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Satoshi', 'system-ui', 'sans-serif'],
-        heading: ['Satoshi', 'system-ui', 'sans-serif'],
+        sans: ['General Sans', 'system-ui', 'sans-serif'],
+        heading: ['General Sans', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
