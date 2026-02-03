@@ -59,7 +59,7 @@ const FAQAccordion = () => {
           viewport={{ once: true }}
           className="text-center mb-8 sm:mb-12"
         >
-          <h2 id="faq-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 leading-tight">
+          <h2 id="faq-heading" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
             <span className="text-foreground">{language === 'fr' ? 'Questions' : 'Frequently Asked'}</span>{' '}
             <span className="text-primary">{language === 'fr' ? 'Fréquentes' : 'Questions'}</span>
           </h2>
