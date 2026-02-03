@@ -81,7 +81,7 @@ const FAQAccordion = () => {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-background/50 backdrop-blur-sm border border-border/50 rounded-xl px-4 sm:px-6 overflow-hidden transition-all duration-300 data-[state=open]:border-primary/50 data-[state=open]:shadow-[0_0_20px_hsl(var(--primary)/0.2)]"
+                className="bg-secondary border border-border rounded-xl px-4 sm:px-6 overflow-hidden transition-all duration-300 data-[state=open]:border-primary/50 data-[state=open]:shadow-[0_0_20px_hsl(var(--primary)/0.2)]"
               >
                 <AccordionTrigger className="text-left text-foreground font-semibold hover:no-underline hover:text-primary transition-colors py-4 sm:py-5 text-sm sm:text-base [&[data-state=open]]:text-primary">
                   {faq.question}
