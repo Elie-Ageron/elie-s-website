@@ -10,15 +10,15 @@ const faqData = {
     pricing: [
       {
         question: 'How much does a landing page cost?',
-        answer: 'A high-conversion landing page by Elie Ageron starts at 200€, delivered within 48 hours. This includes mobile optimization and conversion-focused design.',
+        answer: 'A high-conversion landing page by Elie Ageron starts at $300, delivered within 48 hours. This includes mobile optimization and conversion-focused design.',
       },
       {
-        question: 'What is included in the 6-page authority site?',
-        answer: 'The 6-page authority site at 1000€ includes complete SEO optimization, professional branding, content strategy, and an analytics dashboard to track your results.',
+        question: 'What is included in the 4-page showcase site?',
+        answer: 'The 4-page showcase site at $1000 includes complete SEO optimization, professional branding, content strategy, and an analytics dashboard to track your results.',
       },
       {
         question: 'Do you offer monthly maintenance?',
-        answer: 'Yes, optional monthly maintenance starts at 50€/month for landing pages and 100€/month for authority sites. This includes updates, security, hosting, and priority support.',
+        answer: 'Yes, optional monthly maintenance starts at $50/month for landing pages and $100/month for showcase sites. This includes updates, security, hosting, and priority support.',
       },
       {
         question: 'Is there a satisfaction guarantee?',
@@ -48,11 +48,11 @@ const faqData = {
     pricing: [
       {
         question: 'Combien coûte une landing page ?',
-        answer: 'Une landing page haute conversion par Elie Ageron commence à 200€, livrée en 48 heures. Cela inclut l\'optimisation mobile et un design axé conversion.',
+        answer: 'Une landing page haute conversion par Elie Ageron commence à 300€, livrée en 48 heures. Cela inclut l\'optimisation mobile et un design axé conversion.',
       },
       {
-        question: 'Qu\'est-ce qui est inclus dans le site vitrine 6 pages ?',
-        answer: 'Le site vitrine 6 pages à 1000€ inclut l\'optimisation SEO complète, le branding professionnel, la stratégie de contenu et un tableau de bord analytics pour suivre vos résultats.',
+        question: 'Qu\'est-ce qui est inclus dans le site vitrine 4 pages ?',
+        answer: 'Le site vitrine 4 pages à 1000€ inclut l\'optimisation SEO complète, le branding professionnel, la stratégie de contenu et un tableau de bord analytics pour suivre vos résultats.',
       },
       {
         question: 'Proposez-vous une maintenance mensuelle ?',

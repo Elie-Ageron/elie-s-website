@@ -11,7 +11,8 @@ import FAQSchema from '@/components/FAQSchema';
 import InternalLinks from '@/components/InternalLinks';
 
 const Pricing = () => {
-  const { t } = useLanguage();
+
+  const { t, language } = useLanguage();
   const [includeMaintenance, setIncludeMaintenance] = useState(false);
 
   const plans = [
@@ -19,8 +20,8 @@ const Pricing = () => {
       id: 'landing',
       icon: Zap,
       title: t('services.landing.title'),
-      price: '200€',
-      maintenancePrice: '+50€/mois',
+      price: language === 'fr' ? '300€' : '$300',
+      maintenancePrice: language === 'fr' ? '+50€/mois' : '+$50/month',
       description: t('services.landing.desc'),
       features: [
         t('services.landing.feature1'),
@@ -34,8 +35,8 @@ const Pricing = () => {
       id: 'authority',
       icon: Crown,
       title: t('services.authority.title'),
-      price: '1000€',
-      maintenancePrice: '+100€/mois',
+      price: language === 'fr' ? '1000€' : '$1000',
+      maintenancePrice: language === 'fr' ? '+100€/mois' : '+$100/month',
       description: t('services.authority.desc'),
       features: [
         t('services.authority.feature1'),
@@ -50,8 +51,8 @@ const Pricing = () => {
       id: 'custom',
       icon: Sparkles,
       title: t('services.custom.title'),
-      price: t('services.custom.price'),
-      maintenancePrice: t('pricing.maintenance.custom'),
+      price: language === 'fr' ? 'Sur devis' : 'On quote',
+      maintenancePrice: language === 'fr' ? 'Sur mesure' : 'Custom',
       description: t('services.custom.desc'),
       features: [
         t('services.custom.feature1'),

@@ -108,20 +108,20 @@ const JsonLd = () => {
               ? 'Landing page haute conversion livrée en 48h'
               : 'High-conversion landing page delivered in 48h',
           },
-          price: '200',
-          priceCurrency: 'EUR',
+          price: language === 'fr' ? '300' : '300',
+          priceCurrency: language === 'fr' ? 'EUR' : 'USD',
         },
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: language === 'fr' ? 'Site Vitrine 6 Pages' : '6-Page Authority Site',
+            name: language === 'fr' ? 'Site Vitrine 4 Pages' : '4-Page Showcase Site',
             description: language === 'fr'
               ? 'Site web complet avec optimisation SEO et stratégie de contenu'
               : 'Complete website with SEO optimization and content strategy',
           },
           price: '1000',
-          priceCurrency: 'EUR',
+          priceCurrency: language === 'fr' ? 'EUR' : 'USD',
         },
         {
           '@type': 'Offer',
