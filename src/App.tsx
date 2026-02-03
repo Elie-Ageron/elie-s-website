@@ -27,22 +27,33 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
-        <Layout>
-          <Suspense fallback={null}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/why-a-website" element={<WhyWebsite />} />
-              <Route path="/our-process" element={<OurProcess />} />
-              <Route path="/pricing" element={<Pricing />} />
-              <Route path="/portfolio" element={<Portfolio />} />
-              <Route path="/portfolio/luxura-spa" element={<LuxuraSpa />} />
-              <Route path="/portfolio/steel-pipe" element={<SteelPipe />} />
-              <Route path="/contact" element={<Contact />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Suspense>
-        </Layout>
+        <Routes>
+          {/* Portfolio showcase pages - standalone, no Layout wrapper */}
+          <Route path="/portfolio/luxura-spa" element={
+            <Suspense fallback={null}><LuxuraSpa /></Suspense>
+          } />
+          <Route path="/portfolio/steel-pipe" element={
+            <Suspense fallback={null}><SteelPipe /></Suspense>
+          } />
+          
+          {/* Main site pages - wrapped in Layout */}
+          <Route path="*" element={
+            <Layout>
+              <Suspense fallback={null}>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/why-a-website" element={<WhyWebsite />} />
+                  <Route path="/our-process" element={<OurProcess />} />
+                  <Route path="/pricing" element={<Pricing />} />
+                  <Route path="/portfolio" element={<Portfolio />} />
+                  <Route path="/contact" element={<Contact />} />
+                  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </Suspense>
+            </Layout>
+          } />
+        </Routes>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
