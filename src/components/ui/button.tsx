@@ -9,17 +9,17 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline: "border border-border bg-transparent hover:bg-secondary hover:text-secondary-foreground",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-secondary hover:text-secondary-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        // Premium neon variants
-        neon: "bg-primary text-primary-foreground hover:shadow-[0_0_30px_hsl(328_100%_54%/0.4),0_0_60px_hsl(328_100%_54%/0.2)] transition-shadow duration-300",
-        neonOutline: "border border-primary/50 bg-transparent text-primary hover:bg-primary/10 hover:border-primary hover:shadow-[0_0_20px_hsl(328_100%_54%/0.3)] transition-all duration-300",
-        glass: "bg-[hsl(0_0%_100%/0.05)] backdrop-blur-md text-foreground hover:bg-[hsl(0_0%_100%/0.08)] border border-[hsl(0_0%_100%/0.1)]",
-        hero: "bg-primary text-primary-foreground font-semibold shadow-[0_0_30px_hsl(328_100%_54%/0.4),0_0_60px_hsl(328_100%_54%/0.2)] hover:shadow-[0_0_40px_hsl(328_100%_54%/0.5),0_0_80px_hsl(328_100%_54%/0.3)] transition-shadow duration-300",
+        // Clean variants for light theme
+        neon: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg transition-shadow duration-300",
+        neonOutline: "border-2 border-primary/30 bg-transparent text-primary hover:bg-primary/5 hover:border-primary/50 transition-all duration-300",
+        glass: "bg-card/80 backdrop-blur-md text-foreground hover:bg-card border border-border shadow-sm",
+        hero: "bg-primary text-primary-foreground font-semibold shadow-lg hover:shadow-xl hover:bg-primary/90 transition-all duration-300",
       },
       size: {
         default: "h-10 px-4 py-2",

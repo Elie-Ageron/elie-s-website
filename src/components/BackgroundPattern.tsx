@@ -1,52 +1,31 @@
 const BackgroundPattern = () => {
   return (
     <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-      {/* Subtle grid pattern */}
+      {/* Very subtle grid pattern for light theme */}
       <div 
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 opacity-[0.4]"
         style={{
           backgroundImage: `
-            linear-gradient(hsl(var(--foreground) / 0.1) 1px, transparent 1px),
-            linear-gradient(90deg, hsl(var(--foreground) / 0.1) 1px, transparent 1px)
+            linear-gradient(hsl(var(--border)) 1px, transparent 1px),
+            linear-gradient(90deg, hsl(var(--border)) 1px, transparent 1px)
           `,
-          backgroundSize: '60px 60px'
+          backgroundSize: '80px 80px'
         }}
       />
       
-      {/* Distant color patches - soft blurred gradients */}
+      {/* Soft, subtle color accents - very light for white theme */}
       <div 
-        className="absolute top-[10%] left-[5%] w-[500px] h-[500px] rounded-full opacity-20"
+        className="absolute top-[10%] left-[5%] w-[600px] h-[600px] rounded-full opacity-30"
         style={{
-          background: 'radial-gradient(circle, hsl(var(--primary) / 0.15) 0%, transparent 70%)',
-          filter: 'blur(80px)'
-        }}
-      />
-      <div 
-        className="absolute top-[60%] right-[10%] w-[400px] h-[400px] rounded-full opacity-15"
-        style={{
-          background: 'radial-gradient(circle, hsl(var(--primary) / 0.2) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, hsl(var(--primary) / 0.08) 0%, transparent 70%)',
           filter: 'blur(100px)'
         }}
       />
       <div 
-        className="absolute top-[30%] right-[30%] w-[300px] h-[300px] rounded-full opacity-10"
+        className="absolute top-[60%] right-[10%] w-[500px] h-[500px] rounded-full opacity-25"
         style={{
-          background: 'radial-gradient(circle, hsl(328 60% 40% / 0.25) 0%, transparent 70%)',
-          filter: 'blur(60px)'
-        }}
-      />
-      <div 
-        className="absolute bottom-[20%] left-[20%] w-[350px] h-[350px] rounded-full opacity-12"
-        style={{
-          background: 'radial-gradient(circle, hsl(20 30% 30% / 0.2) 0%, transparent 70%)',
-          filter: 'blur(90px)'
-        }}
-      />
-      <div 
-        className="absolute top-[80%] left-[60%] w-[250px] h-[250px] rounded-full opacity-10"
-        style={{
-          background: 'radial-gradient(circle, hsl(var(--primary) / 0.12) 0%, transparent 70%)',
-          filter: 'blur(70px)'
+          background: 'radial-gradient(circle, hsl(var(--primary) / 0.06) 0%, transparent 70%)',
+          filter: 'blur(120px)'
         }}
       />
     </div>

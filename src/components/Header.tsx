@@ -52,10 +52,6 @@ const Header = () => {
           className={`max-w-6xl mx-auto glass-card rounded-2xl px-4 sm:px-6 py-3 transition-all duration-300 ${
             scrolled ? 'shadow-lg shadow-primary/5' : ''
           }`}
-          style={{
-            borderBottom: scrolled ? '1px solid hsl(328 100% 54% / 0.3)' : undefined,
-            boxShadow: scrolled ? '0 4px 30px hsl(328 100% 54% / 0.1)' : undefined,
-          }}
           aria-label="Main navigation"
         >
           <div className="flex items-center justify-between">

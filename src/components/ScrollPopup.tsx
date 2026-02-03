@@ -61,9 +61,9 @@ const ScrollPopup = () => {
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
             className="fixed inset-4 sm:inset-auto sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 z-50 w-auto sm:w-full sm:max-w-md flex items-center justify-center sm:block"
           >
-            <div className="glass-card neon-border rounded-2xl sm:rounded-3xl p-6 sm:p-8 relative overflow-hidden w-full max-h-[90vh] overflow-y-auto">
-              {/* Background glow - pointer-events-none to not block clicks */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-32 bg-primary/30 rounded-full blur-[60px] pointer-events-none" />
+            <div className="bg-card border border-border rounded-2xl sm:rounded-3xl p-6 sm:p-8 relative overflow-hidden w-full max-h-[90vh] overflow-y-auto shadow-xl">
+              {/* Background accent - pointer-events-none to not block clicks */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-32 bg-primary/10 rounded-full blur-[60px] pointer-events-none" />
               
               {/* Close button - 48x48 touch target with higher z-index */}
               <button
