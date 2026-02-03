@@ -10,7 +10,7 @@ const HeroSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="relative min-h-screen flex items-start justify-center pt-24 md:pt-32 overflow-hidden grain">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden grain">
       {/* 3D Scene Background - Lazy loaded */}
       <Suspense fallback={null}>
         <HeroScene3D />
