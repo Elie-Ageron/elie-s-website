@@ -4,6 +4,9 @@ import Footer from '@/components/Footer';
 import ScrollPopup from '@/components/ScrollPopup';
 import BackgroundPattern from '@/components/BackgroundPattern';
 import PageTransition from '@/components/animations/PageTransition';
+import Breadcrumb from '@/components/Breadcrumb';
+import JsonLd from '@/components/JsonLd';
+import ReviewSchema from '@/components/ReviewSchema';
 import { ReactNode, lazy, Suspense } from 'react';
 
 const FloatingParticles = lazy(() => import('@/components/animations/FloatingParticles'));
@@ -15,6 +18,8 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <LanguageProvider>
+      <JsonLd />
+      <ReviewSchema />
       <div className="min-h-screen bg-background relative">
         <BackgroundPattern />
         <Suspense fallback={null}>
@@ -23,6 +28,7 @@ const Layout = ({ children }: LayoutProps) => {
         <Header />
         <PageTransition>
           <main className="pt-24">
+            <Breadcrumb />
             {children}
           </main>
         </PageTransition>

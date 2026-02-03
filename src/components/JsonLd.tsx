@@ -56,14 +56,40 @@ const JsonLd = () => {
       {
         '@type': 'Country',
         name: 'France',
+        alternateName: 'FR',
       },
       {
         '@type': 'Country',
         name: 'United States',
+        alternateName: 'USA',
+      },
+      {
+        '@type': 'Country',
+        name: 'United Kingdom',
+        alternateName: 'UK',
+      },
+      {
+        '@type': 'Country',
+        name: 'Canada',
+        alternateName: 'CA',
+      },
+      {
+        '@type': 'Country',
+        name: 'Belgium',
+        alternateName: 'BE',
+      },
+      {
+        '@type': 'Country',
+        name: 'Switzerland',
+        alternateName: 'CH',
       },
       {
         '@type': 'AdministrativeArea',
         name: 'Europe',
+      },
+      {
+        '@type': 'AdministrativeArea',
+        name: 'North America',
       },
     ],
     founder: {
