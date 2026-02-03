@@ -16,18 +16,18 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative z-10 bg-secondary/50 backdrop-blur-sm border-t border-border/30" role="contentinfo" aria-label="Site footer">
-      <div className="py-12">
-      <div className="max-w-6xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="space-y-8"
-        >
-          {/* Navigation Links */}
-          <nav className="flex flex-wrap justify-center gap-x-8 gap-y-4" aria-label="Footer navigation">
+    <div className="relative z-10" role="contentinfo" aria-label="Site footer">
+      {/* Navigation Band - Darker background */}
+      <div className="bg-background/80 border-t border-border/30">
+        <div className="max-w-6xl mx-auto px-6 py-6">
+          <motion.nav 
+            className="flex flex-wrap justify-center gap-x-8 gap-y-4" 
+            aria-label="Footer navigation"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             {footerLinks.map((link) => (
               <Link
                 key={link.href}
@@ -37,13 +37,20 @@ const Footer = () => {
                 {link.label}
               </Link>
             ))}
-          </nav>
+          </motion.nav>
+        </div>
+      </div>
 
-          {/* Divider */}
-          <div className="section-divider" aria-hidden="true" />
-
-          {/* Bottom section */}
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+      {/* Footer - Slightly different background */}
+      <footer className="bg-secondary/30 backdrop-blur-sm border-t border-border/20">
+        <div className="max-w-6xl mx-auto px-6 py-8">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col md:flex-row items-center justify-between gap-4"
+          >
             {/* Logo & Copyright */}
             <div className="flex items-center gap-4">
               <Link 
@@ -63,11 +70,10 @@ const Footer = () => {
               {t('footer.made')}
               <Heart className="w-4 h-4 text-primary fill-primary" aria-hidden="true" />
             </div>
-          </div>
-        </motion.div>
-      </div>
-      </div>
-    </footer>
+          </motion.div>
+        </div>
+      </footer>
+    </div>
   );
 };
 
