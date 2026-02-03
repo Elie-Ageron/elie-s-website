@@ -345,7 +345,7 @@ const translations = {
     'testimonial.1.author': 'Marc D.',
     'testimonial.1.role': 'Gérant de boutique',
     'testimonial.1.date': 'Jan 2025',
-    'testimonial.2.text': "Je ne savais pas à quoi m'attendre avec un jeune designer, mais Elie a dépassé mes attentes. Pro, rapide, et le site convertit vraiment !",
+    'testimonial.2.text': "Je ne savais pas à quoi m'attendre avec un jeune designer, mais Elie a dépassé mes attentes. Pro, rapide, je recommande !",
     'testimonial.2.author': 'Sophie L.',
     'testimonial.2.role': 'Agent immobilier',
     'testimonial.2.date': 'Déc 2024',
