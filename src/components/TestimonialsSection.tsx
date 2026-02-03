@@ -101,38 +101,67 @@ const TestimonialsSection = () => {
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
+              initial={{ opacity: 0, scale: 0.96, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.96, y: -20 }}
+              transition={{ 
+                duration: 0.5, 
+                ease: [0.32, 0.72, 0, 1]
+              }}
               className="glass-card rounded-3xl p-8 sm:p-12 relative overflow-hidden"
             >
               {/* Quote Icon */}
-              <div className="absolute top-6 right-6 text-primary/20">
+              <motion.div 
+                className="absolute top-6 right-6 text-primary/20"
+                initial={{ opacity: 0, rotate: -10 }}
+                animate={{ opacity: 1, rotate: 0 }}
+                transition={{ delay: 0.2, duration: 0.4 }}
+              >
                 <Quote className="w-16 h-16" />
-              </div>
+              </motion.div>
 
               {/* Stars Rating */}
-              <div className="flex gap-1 mb-6">
+              <motion.div 
+                className="flex gap-1 mb-6"
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.1, duration: 0.4 }}
+              >
                 {[...Array(5)].map((_, i) => (
-                  <Star
+                  <motion.div
                     key={i}
-                    className={`w-5 h-5 ${
-                      i < currentTestimonial.rating 
-                        ? 'text-yellow-400 fill-yellow-400' 
-                        : 'text-muted-foreground/30'
-                    }`}
-                  />
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.15 + i * 0.05, duration: 0.3 }}
+                  >
+                    <Star
+                      className={`w-5 h-5 ${
+                        i < currentTestimonial.rating 
+                          ? 'text-yellow-400 fill-yellow-400' 
+                          : 'text-muted-foreground/30'
+                      }`}
+                    />
+                  </motion.div>
                 ))}
-              </div>
+              </motion.div>
 
               {/* Testimonial Text */}
-              <p className="text-foreground/90 text-lg sm:text-xl mb-8 leading-relaxed relative z-10">
+              <motion.p 
+                className="text-foreground/90 text-lg sm:text-xl mb-8 leading-relaxed relative z-10"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+              >
                 "{currentTestimonial.text}"
-              </p>
+              </motion.p>
 
               {/* Author Section */}
-              <div className="flex items-center gap-4 relative z-10">
+              <motion.div 
+                className="flex items-center gap-4 relative z-10"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.4 }}
+              >
                 <img
                   src={currentTestimonial.image}
                   alt={currentTestimonial.author}
@@ -149,7 +178,7 @@ const TestimonialsSection = () => {
                 <div className="text-sm text-muted-foreground/70">
                   {currentTestimonial.date}
                 </div>
-              </div>
+              </motion.div>
             </motion.div>
           </AnimatePresence>
 
