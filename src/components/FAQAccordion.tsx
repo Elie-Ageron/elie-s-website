@@ -37,7 +37,7 @@ const faqContent = {
     },
     {
       question: 'Quel est le délai de livraison ?',
-      answer: 'Les landing pages sont livrées en 48 heures. Les sites vitrines complets sont prêts en 7 à 14 jours.',
+      answer: 'Les landing pages sont livrées en 48 heures. Les sites vitrines complets sont prêts en 7 jours.',
     },
     {
       question: 'Mon site sera-t-il optimisé mobile et SEO ?',
