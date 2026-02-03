@@ -7,7 +7,6 @@ import FloatingElements from './animations/FloatingElements';
 
 import testimonialMarc from '@/assets/testimonial-marc.jpg';
 import testimonialSophie from '@/assets/testimonial-sophie.jpg';
-import testimonialThomas from '@/assets/testimonial-thomas.jpg';
 
 const TestimonialsSection = () => {
   const { t } = useLanguage();
@@ -29,14 +28,6 @@ const TestimonialsSection = () => {
       date: t('testimonial.2.date'),
       rating: 5,
       image: testimonialSophie,
-    },
-    {
-      text: t('testimonial.3.text'),
-      author: t('testimonial.3.author'),
-      role: t('testimonial.3.role'),
-      date: t('testimonial.3.date'),
-      rating: 5,
-      image: testimonialThomas,
     },
   ];
 

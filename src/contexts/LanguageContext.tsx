@@ -164,10 +164,6 @@ const translations = {
     'testimonial.2.author': 'Sophie L.',
     'testimonial.2.role': 'Real Estate Agent',
     'testimonial.2.date': 'Dec 2024',
-    'testimonial.3.text': "Great investment for my business. Super fast results, we saw the difference in just a few weeks. I recommend without hesitation.",
-    'testimonial.3.author': 'Thomas R.',
-    'testimonial.3.role': 'Fitness Coach',
-    'testimonial.3.date': 'Nov 2024',
 
     // Popup
     'popup.title': "How many clients did you lose this week?",
@@ -349,10 +345,6 @@ const translations = {
     'testimonial.2.author': 'Sophie L.',
     'testimonial.2.role': 'Agent immobilier',
     'testimonial.2.date': 'Déc 2024',
-    'testimonial.3.text': "Très bon investissement pour ma boîte. Résultat super rapide, on a vu la différence en quelques semaines seulement. Je recommande sans hésiter.",
-    'testimonial.3.author': 'Thomas R.',
-    'testimonial.3.role': 'Coach fitness',
-    'testimonial.3.date': 'Nov 2024',
 
     // Popup
     'popup.title': "Combien de clients avez-vous perdu cette semaine ?",
