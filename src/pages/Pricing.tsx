@@ -8,6 +8,7 @@ import MagneticButton from '@/components/animations/MagneticButton';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
 import SEO from '@/components/SEO';
 import FAQSchema from '@/components/FAQSchema';
+import FAQAccordion from '@/components/FAQAccordion';
 import InternalLinks from '@/components/InternalLinks';
 
 const Pricing = () => {
@@ -215,6 +216,9 @@ const Pricing = () => {
           </motion.article>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FAQAccordion />
 
       {/* Internal Links */}
       <InternalLinks currentPage="pricing" />
