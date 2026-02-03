@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link, useLocation } from 'react-router-dom';
 import MobileMenu from '@/components/MobileMenu';
-import eaLogo from '@/assets/ea-logo.png';
 
 const Header = () => {
   const { language, setLanguage, t } = useLanguage();
@@ -62,14 +62,10 @@ const Header = () => {
             {/* Logo */}
             <Link 
               to="/" 
-              className="flex items-center hover:opacity-80 transition-opacity"
+              className="text-lg sm:text-xl font-bold text-foreground hover:text-primary transition-colors"
               aria-label="Elie Ageron - Web Design - Home"
             >
-              <img 
-                src={eaLogo} 
-                alt="EA Logo" 
-                className="h-8 sm:h-10 w-auto"
-              />
+              Elie Ageron
             </Link>
 
             {/* Desktop Navigation */}
