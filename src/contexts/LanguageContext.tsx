@@ -341,7 +341,7 @@ const translations = {
     'testimonials.title1': 'Ce que disent',
     'testimonials.title2': 'mes clients',
     'testimonials.subtitle': 'Des résultats concrets pour de vrais entrepreneurs',
-    'testimonial.1.text': "Franchement, j'hésitais mais le résultat est dingue. Mon magasin a enfin une vraie présence sur le web. Les ventes ont augmenté de 30% le premier mois.",
+    'testimonial.1.text': "Franchement, j'hésitais mais le résultat est dingue. Mon magasin a enfin une vraie présence sur le web. Les ventes ont augmenté dès le premier mois.",
     'testimonial.1.author': 'Marc D.',
     'testimonial.1.role': 'Gérant de boutique',
     'testimonial.1.date': 'Jan 2025',
