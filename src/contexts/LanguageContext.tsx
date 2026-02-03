@@ -52,8 +52,8 @@ const translations = {
     'stats.responsive': 'Responsive',
 
     // Why a Website Page
-    'why.title1': 'Want to Grow',
-    'why.title2': 'Online?',
+    'why.title1': 'Stop Losing Clients',
+    'why.title2': 'Every Day',
     'why.subtitle': 'A great website is your best employee. It never takes breaks, never asks for a raise, and converts visitors into clients around the clock.',
     'why.benefit1.title': '24/7 Global Visibility',
     'why.benefit1.desc': 'Your business is accessible worldwide, anytime. No office hours, no geographic limits.',
@@ -231,8 +231,8 @@ const translations = {
     'stats.responsive': 'Responsive',
 
     // Why a Website Page
-    'why.title1': 'Envie de Grandir',
-    'why.title2': 'en Ligne ?',
+    'why.title1': 'Arrêtez de Perdre',
+    'why.title2': 'des Clients',
     'why.subtitle': 'Un bon site, c\'est votre meilleur employé. Il ne prend jamais de pause, ne demande jamais d\'augmentation, et convertit vos visiteurs en clients 24h/24.',
     'why.benefit1.title': 'Visibilité Mondiale 24/7',
     'why.benefit1.desc': 'Votre entreprise est accessible partout, à tout moment. Pas d\'horaires, pas de limites géographiques.',
