@@ -1,10 +1,9 @@
 import { motion } from 'framer-motion';
-import { ExternalLink } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import portfolioLuxura from '@/assets/portfolio-luxura-spa.jpg';
 import portfolioSteel from '@/assets/portfolio-steel-pipe.jpg';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
+import SEO from '@/components/SEO';
 
 const Portfolio = () => {
   const { t } = useLanguage();
@@ -30,34 +29,37 @@ const Portfolio = () => {
 
   return (
     <>
+      <SEO page="portfolio" />
+      
       {/* Hero */}
-      <section className="py-20 relative grain">
-        <div className="absolute inset-0">
+      <section className="py-20 relative grain" aria-labelledby="portfolio-hero-heading">
+        <div className="absolute inset-0" aria-hidden="true">
           <div className="absolute top-1/3 left-1/3 w-80 h-80 bg-primary/20 rounded-full blur-[120px]" />
         </div>
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <motion.div
+          <motion.header
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 id="portfolio-hero-heading" className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               <span className="text-foreground">{t('portfolio.title1')}</span>{' '}
               <span className="text-primary">{t('portfolio.title2')}</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               {t('portfolio.subtitle')}
             </p>
-          </motion.div>
+          </motion.header>
         </div>
       </section>
 
       {/* Portfolio Grid */}
-      <section className="py-20">
+      <section className="py-20" aria-labelledby="projects-heading">
+        <h2 id="projects-heading" className="sr-only">Web Design Projects by Elie Ageron</h2>
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
-              <motion.div
+              <motion.article
                 key={project.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -65,22 +67,26 @@ const Portfolio = () => {
                 transition={{ delay: index * 0.2 }}
                 whileHover={{ scale: 1.02 }}
                 className="group relative overflow-hidden rounded-3xl"
+                aria-label={`${project.name} - ${project.category}`}
               >
-                <div className="aspect-[4/3] overflow-hidden">
+                <figure className="aspect-[4/3] overflow-hidden">
                   <img 
                     src={project.image} 
-                    alt={project.name}
+                    alt={`${project.name} web design project - ${project.description}`}
                     loading="lazy"
                     decoding="async"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                </div>
+                </figure>
                 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div 
+                  className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  aria-hidden="true"
+                />
                 
                 {/* Content */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <figcaption className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                   <span className="text-xs text-primary font-medium uppercase tracking-wider">
                     {project.category}
                   </span>
@@ -88,8 +94,8 @@ const Portfolio = () => {
                   <p className="text-muted-foreground text-sm mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
                     {project.description}
                   </p>
-                </div>
-              </motion.div>
+                </figcaption>
+              </motion.article>
             ))}
           </div>
         </div>

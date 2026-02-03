@@ -6,6 +6,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Switch } from '@/components/ui/switch';
 import MagneticButton from '@/components/animations/MagneticButton';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
+import SEO from '@/components/SEO';
 
 const Pricing = () => {
   const { t } = useLanguage();
@@ -63,30 +64,33 @@ const Pricing = () => {
 
   return (
     <>
+      <SEO page="pricing" />
+      
       {/* Hero */}
-      <section className="py-20 relative grain">
-        <div className="absolute inset-0">
+      <section className="py-20 relative grain" aria-labelledby="pricing-hero-heading">
+        <div className="absolute inset-0" aria-hidden="true">
           <div className="absolute top-1/3 right-1/3 w-80 h-80 bg-primary/20 rounded-full blur-[120px]" />
         </div>
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <motion.div
+          <motion.header
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 id="pricing-hero-heading" className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               <span className="text-foreground">{t('pricing.title1')}</span>{' '}
               <span className="text-primary">{t('pricing.title2')}</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               {t('pricing.subtitle')}
             </p>
-          </motion.div>
+          </motion.header>
         </div>
       </section>
 
       {/* Maintenance Toggle */}
-      <section className="py-8">
+      <section className="py-8" aria-labelledby="maintenance-toggle-heading">
+        <h2 id="maintenance-toggle-heading" className="sr-only">Monthly Maintenance Option</h2>
         <div className="max-w-xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -99,19 +103,22 @@ const Pricing = () => {
               <p className="text-sm text-muted-foreground">{t('pricing.maintenance.desc')}</p>
             </div>
             <Switch 
+              id="maintenance-toggle"
               checked={includeMaintenance} 
               onCheckedChange={setIncludeMaintenance}
+              aria-label="Include monthly maintenance in pricing"
             />
           </motion.div>
         </div>
       </section>
 
       {/* Pricing Cards */}
-      <section className="py-12">
+      <section className="py-12" aria-labelledby="pricing-plans-heading">
+        <h2 id="pricing-plans-heading" className="sr-only">Web Design Pricing Plans by Elie Ageron</h2>
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" role="list" aria-label="Pricing plans">
             {plans.map((plan, index) => (
-              <motion.div
+              <motion.article
                 key={plan.id}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -125,16 +132,21 @@ const Pricing = () => {
                 className={`relative glass-card rounded-3xl p-8 flex flex-col h-full transition-all duration-300 ${
                   plan.popular ? 'neon-border' : ''
                 }`}
+                role="listitem"
+                aria-label={`${plan.title} - ${plan.price}`}
               >
                 {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full">
+                  <div 
+                    className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full"
+                    aria-label="Most popular plan"
+                  >
                     ⭐ {t('services.authority.popular')}
                   </div>
                 )}
 
                 <div className="flex items-center gap-3 mb-6">
-                  <div className={`p-3 rounded-xl ${plan.popular ? 'bg-primary/20' : 'bg-secondary'}`}>
-                    <plan.icon className="w-6 h-6 text-primary" />
+                  <div className={`p-3 rounded-xl ${plan.popular ? 'bg-primary/20' : 'bg-secondary'}`} aria-hidden="true">
+                    <plan.icon className="w-6 h-6 text-primary" aria-hidden="true" />
                   </div>
                   <h3 className="text-xl font-bold text-foreground">{plan.title}</h3>
                 </div>
@@ -146,6 +158,7 @@ const Pricing = () => {
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       className="text-sm text-primary ml-2"
+                      aria-label={`Plus ${plan.maintenancePrice} for maintenance`}
                     >
                       {plan.maintenancePrice}
                     </motion.span>
@@ -154,10 +167,10 @@ const Pricing = () => {
 
                 <p className="text-muted-foreground mb-6">{plan.description}</p>
 
-                <ul className="space-y-3 mb-8 flex-grow">
+                <ul className="space-y-3 mb-8 flex-grow" role="list" aria-label={`Features included in ${plan.title}`}>
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-center gap-3 text-sm text-foreground/80">
-                      <Check className="w-4 h-4 text-primary flex-shrink-0" />
+                      <Check className="w-4 h-4 text-primary flex-shrink-0" aria-hidden="true" />
                       {feature}
                     </li>
                   ))}
@@ -169,30 +182,33 @@ const Pricing = () => {
                     size="lg" 
                     className="w-full"
                     asChild
+                    aria-label={`${plan.cta} - ${plan.title} for ${plan.price}`}
                   >
                     <a href="https://calendly.com/elie-ageron" target="_blank" rel="noopener noreferrer">
                       {plan.cta}
                     </a>
                   </Button>
                 </MagneticButton>
-              </motion.div>
+              </motion.article>
             ))}
           </div>
         </div>
       </section>
 
       {/* Guarantee */}
-      <section className="py-20">
+      <section className="py-20" aria-labelledby="guarantee-heading">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <motion.div
+          <motion.article
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="glass-card rounded-2xl p-8"
           >
-            <h3 className="text-2xl font-bold text-foreground mb-4">{t('pricing.guarantee.title')}</h3>
+            <h2 id="guarantee-heading" className="text-2xl font-bold text-foreground mb-4">
+              {t('pricing.guarantee.title')}
+            </h2>
             <p className="text-muted-foreground">{t('pricing.guarantee.desc')}</p>
-          </motion.div>
+          </motion.article>
         </div>
       </section>
 

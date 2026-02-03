@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { TrendingUp, Users, DollarSign, Globe, XCircle, CheckCircle } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
+import SEO from '@/components/SEO';
 
 const WhyWebsite = () => {
   const { t } = useLanguage();
@@ -30,34 +31,37 @@ const WhyWebsite = () => {
 
   return (
     <>
+      <SEO page="why" />
+      
       {/* Hero */}
-      <section className="py-20 relative grain">
-        <div className="absolute inset-0">
+      <section className="py-20 relative grain" aria-labelledby="why-hero-heading">
+        <div className="absolute inset-0" aria-hidden="true">
           <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-primary/20 rounded-full blur-[120px]" />
         </div>
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <motion.div
+          <motion.header
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 id="why-hero-heading" className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               <span className="text-foreground">{t('why.title1')}</span>{' '}
               <span className="text-primary">{t('why.title2')}</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               {t('why.subtitle')}
             </p>
-          </motion.div>
+          </motion.header>
         </div>
       </section>
 
       {/* Benefits Grid */}
-      <section className="py-20">
+      <section className="py-20" aria-labelledby="benefits-heading">
+        <h2 id="benefits-heading" className="sr-only">Benefits of Professional Web Design</h2>
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {benefits.map((benefit, index) => (
-              <motion.div
+              <motion.article
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -65,26 +69,28 @@ const WhyWebsite = () => {
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ scale: 1.02 }}
                 className="glass-card rounded-2xl p-8 cursor-pointer transition-all hover:neon-border"
+                aria-label={benefit.title}
               >
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-primary/20 shrink-0">
-                    <benefit.icon className="w-6 h-6 text-primary" />
+                  <div className="p-3 rounded-xl bg-primary/20 shrink-0" aria-hidden="true">
+                    <benefit.icon className="w-6 h-6 text-primary" aria-hidden="true" />
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-foreground mb-2">{benefit.title}</h3>
                     <p className="text-muted-foreground">{benefit.desc}</p>
                   </div>
                 </div>
-              </motion.div>
+              </motion.article>
             ))}
           </div>
         </div>
       </section>
 
       {/* Comparison Table */}
-      <section className="py-20 relative">
+      <section className="py-20 relative" aria-labelledby="comparison-heading">
         <div className="max-w-5xl mx-auto px-6">
           <motion.h2 
+            id="comparison-heading"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -95,46 +101,52 @@ const WhyWebsite = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Without */}
-            <motion.div
+            <motion.article
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               className="glass-card rounded-2xl p-8 border border-destructive/30"
+              aria-labelledby="without-website-heading"
             >
               <div className="flex items-center gap-3 mb-6">
-                <XCircle className="w-8 h-8 text-destructive" />
-                <h3 className="text-xl font-bold text-foreground">{t('why.comparison.without')}</h3>
+                <XCircle className="w-8 h-8 text-destructive" aria-hidden="true" />
+                <h3 id="without-website-heading" className="text-xl font-bold text-foreground">
+                  {t('why.comparison.without')}
+                </h3>
               </div>
-              <ul className="space-y-4">
+              <ul className="space-y-4" role="list" aria-label="Disadvantages without a website">
                 {comparison.without.map((item, index) => (
                   <li key={index} className="flex items-center gap-3 text-muted-foreground">
-                    <span className="w-1.5 h-1.5 bg-destructive rounded-full" />
+                    <span className="w-1.5 h-1.5 bg-destructive rounded-full" aria-hidden="true" />
                     {item}
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </motion.article>
 
             {/* With */}
-            <motion.div
+            <motion.article
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               className="glass-card neon-border rounded-2xl p-8"
+              aria-labelledby="with-website-heading"
             >
               <div className="flex items-center gap-3 mb-6">
-                <CheckCircle className="w-8 h-8 text-primary" />
-                <h3 className="text-xl font-bold text-foreground">{t('why.comparison.with')}</h3>
+                <CheckCircle className="w-8 h-8 text-primary" aria-hidden="true" />
+                <h3 id="with-website-heading" className="text-xl font-bold text-foreground">
+                  {t('why.comparison.with')}
+                </h3>
               </div>
-              <ul className="space-y-4">
+              <ul className="space-y-4" role="list" aria-label="Advantages with Elie Ageron Design">
                 {comparison.with.map((item, index) => (
                   <li key={index} className="flex items-center gap-3 text-foreground">
-                    <span className="w-1.5 h-1.5 bg-primary rounded-full" />
+                    <span className="w-1.5 h-1.5 bg-primary rounded-full" aria-hidden="true" />
                     {item}
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </motion.article>
           </div>
         </div>
       </section>
