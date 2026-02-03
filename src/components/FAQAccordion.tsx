@@ -29,7 +29,7 @@ const faqContent = {
   fr: [
     {
       question: 'Pourquoi investir dans un design professionnel maintenant ?',
-      answer: 'Votre site web est votre commercial 24/7. Un design haute conversion vous assure de ne plus perdre de leads au profit de concurrents mieux positionnés en ligne.',
+      answer: 'Votre site web est votre commercial 24/7. Il vous assure de ne plus perdre de leads au profit de concurrents mieux positionnés en ligne.',
     },
     {
       question: 'Pourquoi choisir Élie Ageron pour mon projet ?',
