@@ -30,7 +30,7 @@ const Header = () => {
   const isActive = (href: string) => location.pathname === href;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-4 py-4">
+    <header className="fixed top-0 left-0 right-0 z-50 px-4 py-4" role="banner">
       <motion.nav 
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -42,15 +42,20 @@ const Header = () => {
           borderBottom: scrolled ? '1px solid hsl(328 100% 54% / 0.3)' : undefined,
           boxShadow: scrolled ? '0 4px 30px hsl(328 100% 54% / 0.1)' : undefined,
         }}
+        aria-label="Main navigation"
       >
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="text-xl font-bold text-foreground hover:text-primary transition-colors">
+          <Link 
+            to="/" 
+            className="text-xl font-bold text-foreground hover:text-primary transition-colors"
+            aria-label="Elie Ageron - Web Design - Home"
+          >
             Elie Ageron
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-6" role="navigation" aria-label="Primary navigation">
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -60,11 +65,15 @@ const Header = () => {
                     ? 'text-primary' 
                     : 'text-muted-foreground hover:text-foreground'
                 }`}
+                aria-current={isActive(item.href) ? 'page' : undefined}
               >
                 {item.label}
-                <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${
-                  isActive(item.href) ? 'w-full' : 'w-0 group-hover:w-full'
-                }`} />
+                <span 
+                  className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                    isActive(item.href) ? 'w-full' : 'w-0 group-hover:w-full'
+                  }`}
+                  aria-hidden="true"
+                />
               </Link>
             ))}
           </div>
@@ -72,7 +81,7 @@ const Header = () => {
           {/* Right section */}
           <div className="hidden md:flex items-center gap-4">
             {/* Language Toggle */}
-            <div className="flex items-center gap-1 bg-secondary/50 rounded-full p-1">
+            <div className="flex items-center gap-1 bg-secondary/50 rounded-full p-1" role="group" aria-label="Language selection">
               <button
                 onClick={() => setLanguage('fr')}
                 className={`px-3 py-1 rounded-full text-xs font-medium transition-all ${
@@ -80,6 +89,8 @@ const Header = () => {
                     ? 'bg-primary text-primary-foreground' 
                     : 'text-muted-foreground hover:text-foreground'
                 }`}
+                aria-label="Changer la langue en français"
+                aria-pressed={language === 'fr'}
               >
                 FR
               </button>
@@ -90,13 +101,22 @@ const Header = () => {
                     ? 'bg-primary text-primary-foreground' 
                     : 'text-muted-foreground hover:text-foreground'
                 }`}
+                aria-label="Switch language to English"
+                aria-pressed={language === 'en'}
               >
                 ENG
               </button>
             </div>
             
             <Button variant="neon" size="sm" asChild>
-              <a href="https://calendly.com/elie-ageron" target="_blank" rel="noopener noreferrer">{t('nav.book')}</a>
+              <a 
+                href="https://calendly.com/elie-ageron" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="Book a call with Elie Ageron"
+              >
+                {t('nav.book')}
+              </a>
             </Button>
           </div>
 
@@ -104,8 +124,11 @@ const Header = () => {
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden text-foreground p-2"
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
           </button>
         </div>
 
@@ -113,11 +136,14 @@ const Header = () => {
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
+              id="mobile-menu"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
               className="md:hidden mt-4 pt-4 border-t border-border/30"
+              role="navigation"
+              aria-label="Mobile navigation"
             >
               <div className="flex flex-col gap-4">
                 {navItems.map((item) => (
@@ -130,13 +156,14 @@ const Header = () => {
                         ? 'text-primary' 
                         : 'text-muted-foreground hover:text-foreground'
                     }`}
+                    aria-current={isActive(item.href) ? 'page' : undefined}
                   >
                     {item.label}
                   </Link>
                 ))}
                 
                 {/* Mobile Language Toggle */}
-                <div className="flex items-center gap-2 py-2">
+                <div className="flex items-center gap-2 py-2" role="group" aria-label="Language selection">
                   <button
                     onClick={() => setLanguage('fr')}
                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
@@ -144,6 +171,8 @@ const Header = () => {
                         ? 'bg-primary text-primary-foreground' 
                         : 'bg-secondary text-muted-foreground'
                     }`}
+                    aria-label="Changer la langue en français"
+                    aria-pressed={language === 'fr'}
                   >
                     FR
                   </button>
@@ -154,13 +183,22 @@ const Header = () => {
                         ? 'bg-primary text-primary-foreground' 
                         : 'bg-secondary text-muted-foreground'
                     }`}
+                    aria-label="Switch language to English"
+                    aria-pressed={language === 'en'}
                   >
                     ENG
                   </button>
                 </div>
                 
                 <Button variant="hero" size="lg" className="w-full" asChild>
-                  <a href="https://calendly.com/elie-ageron" target="_blank" rel="noopener noreferrer">{t('nav.book')}</a>
+                  <a 
+                    href="https://calendly.com/elie-ageron" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    aria-label="Book a call with Elie Ageron"
+                  >
+                    {t('nav.book')}
+                  </a>
                 </Button>
               </div>
             </motion.div>

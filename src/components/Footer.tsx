@@ -16,7 +16,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="py-12 border-t border-border/30 relative z-10">
+    <footer className="py-12 border-t border-border/30 relative z-10" role="contentinfo" aria-label="Site footer">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0 }}
@@ -26,7 +26,7 @@ const Footer = () => {
           className="space-y-8"
         >
           {/* Navigation Links */}
-          <div className="flex flex-wrap justify-center gap-6">
+          <nav className="flex flex-wrap justify-center gap-6" aria-label="Footer navigation">
             {footerLinks.map((link) => (
               <Link
                 key={link.href}
@@ -36,16 +36,20 @@ const Footer = () => {
                 {link.label}
               </Link>
             ))}
-          </div>
+          </nav>
 
           {/* Divider */}
-          <div className="section-divider" />
+          <div className="section-divider" aria-hidden="true" />
 
           {/* Bottom section */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             {/* Logo & Copyright */}
             <div className="flex items-center gap-4">
-              <Link to="/" className="text-lg font-bold text-foreground hover:text-primary transition-colors">
+              <Link 
+                to="/" 
+                className="text-lg font-bold text-foreground hover:text-primary transition-colors"
+                aria-label="Elie Ageron - Home"
+              >
                 Elie Ageron
               </Link>
               <span className="text-sm text-muted-foreground">
@@ -56,7 +60,7 @@ const Footer = () => {
             {/* Made with love */}
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               {t('footer.made')}
-              <Heart className="w-4 h-4 text-primary fill-primary" />
+              <Heart className="w-4 h-4 text-primary fill-primary" aria-hidden="true" />
             </div>
           </div>
         </motion.div>
