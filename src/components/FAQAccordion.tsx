@@ -51,19 +51,19 @@ const FAQAccordion = () => {
   const faqs = faqContent[language];
 
   return (
-    <section className="py-20" aria-labelledby="faq-heading">
-      <div className="max-w-3xl mx-auto px-6">
+    <section className="py-12 sm:py-16 md:py-20" aria-labelledby="faq-heading">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-12"
         >
-          <h2 id="faq-heading" className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 id="faq-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 leading-tight">
             <span className="text-foreground">{language === 'fr' ? 'Questions' : 'Frequently Asked'}</span>{' '}
             <span className="text-primary">{language === 'fr' ? 'Fréquentes' : 'Questions'}</span>
           </h2>
-          <p className="text-muted-foreground">
+          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
             {language === 'fr' 
               ? 'Tout ce que vous devez savoir avant de démarrer votre projet.'
               : 'Everything you need to know before starting your project.'}
@@ -76,17 +76,17 @@ const FAQAccordion = () => {
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
         >
-          <Accordion type="single" collapsible className="w-full space-y-4">
+          <Accordion type="single" collapsible className="w-full space-y-3 sm:space-y-4">
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-background/50 backdrop-blur-sm border border-border/50 rounded-xl px-6 overflow-hidden transition-all duration-300 data-[state=open]:border-primary/50 data-[state=open]:shadow-[0_0_20px_hsl(var(--primary)/0.2)]"
+                className="bg-background/50 backdrop-blur-sm border border-border/50 rounded-xl px-4 sm:px-6 overflow-hidden transition-all duration-300 data-[state=open]:border-primary/50 data-[state=open]:shadow-[0_0_20px_hsl(var(--primary)/0.2)]"
               >
-                <AccordionTrigger className="text-left text-foreground font-semibold hover:no-underline hover:text-primary transition-colors py-5 [&[data-state=open]]:text-primary">
+                <AccordionTrigger className="text-left text-foreground font-semibold hover:no-underline hover:text-primary transition-colors py-4 sm:py-5 text-sm sm:text-base [&[data-state=open]]:text-primary">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pb-5">
+                <AccordionContent className="text-muted-foreground pb-4 sm:pb-5 text-sm sm:text-base leading-relaxed">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

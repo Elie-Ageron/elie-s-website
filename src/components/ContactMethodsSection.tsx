@@ -42,12 +42,12 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
   ];
 
   return (
-    <section className={compact ? 'py-12' : 'py-20'}>
-      <div className="max-w-6xl mx-auto px-6">
+    <section className={compact ? 'py-8 sm:py-12' : 'py-12 sm:py-16 md:py-20'}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {showTitle && (
-          <ScrollReveal direction="up" className="text-center mb-12">
+          <ScrollReveal direction="up" className="text-center mb-8 sm:mb-12">
             <motion.h2 
-              className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 leading-tight"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -56,7 +56,7 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
               <span className="text-primary">{t('home.contact.title2')}</span>
             </motion.h2>
             <motion.p 
-              className="text-muted-foreground"
+              className="text-sm sm:text-base text-muted-foreground"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -67,7 +67,7 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
           </ScrollReveal>
         )}
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           {contactMethods.map((method, index) => (
             <motion.a
               key={index}
@@ -87,19 +87,19 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
                 scale: 1.02,
                 transition: { duration: 0.3 }
               }}
-              className={`relative glass-card rounded-2xl p-8 pt-10 cursor-pointer transition-all group ${
+              className={`relative glass-card rounded-xl sm:rounded-2xl p-5 sm:p-8 pt-8 sm:pt-10 cursor-pointer transition-all group active:scale-[0.98] ${
                 method.recommended ? 'neon-border' : 'hover:border-primary/30'
               }`}
             >
               {/* Animated background on hover */}
               <motion.div 
-                className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"
+                className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl sm:rounded-2xl"
               />
 
               {/* Recommended Badge */}
               {method.recommended && (
                 <motion.div 
-                  className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full"
+                  className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 sm:px-4 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full whitespace-nowrap"
                   animate={{ scale: [1, 1.05, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 >
@@ -109,26 +109,26 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
 
               {/* Icon */}
               <motion.div 
-                className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl mb-6 relative z-10 ${
+                className={`inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl mb-4 sm:mb-6 relative z-10 ${
                   method.recommended ? 'bg-primary/20' : 'bg-secondary'
                 }`}
                 whileHover={{ rotate: 360, scale: 1.1 }}
                 transition={{ duration: 0.5 }}
               >
-                <method.icon className={`w-7 h-7 ${
+                <method.icon className={`w-6 h-6 sm:w-7 sm:h-7 ${
                   method.recommended ? 'text-primary' : 'text-foreground'
                 }`} />
               </motion.div>
 
               {/* Title */}
-              <h3 className={`text-xl font-bold mb-3 relative z-10 ${
+              <h3 className={`text-lg sm:text-xl font-bold mb-2 sm:mb-3 relative z-10 ${
                 method.recommended ? 'text-primary' : 'text-foreground'
               }`}>
                 {method.title}
               </h3>
 
               {/* Description */}
-              <p className="text-muted-foreground text-sm mb-6 relative z-10">
+              <p className="text-muted-foreground text-sm mb-4 sm:mb-6 relative z-10 leading-relaxed">
                 {method.description}
               </p>
 

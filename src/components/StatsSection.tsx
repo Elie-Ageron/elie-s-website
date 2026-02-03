@@ -46,13 +46,13 @@ const StatItem = ({ value, suffix, label, delay }: StatItemProps) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: delay / 1000, duration: 0.5 }}
-      className="text-center px-8 py-6"
+      className="text-center px-4 sm:px-8 py-5 sm:py-6"
     >
-      <div className="text-4xl md:text-5xl lg:text-6xl font-bold mb-2">
+      <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-1.5 sm:mb-2">
         <span className="text-primary">{count}</span>
         <span className="text-primary">{suffix}</span>
       </div>
-      <div className="text-sm md:text-base text-muted-foreground uppercase tracking-wider">
+      <div className="text-xs sm:text-sm md:text-base text-muted-foreground uppercase tracking-wider">
         {label}
       </div>
     </motion.div>
@@ -69,17 +69,17 @@ const StatsSection = () => {
   ];
 
   return (
-    <section className="py-16 relative">
+    <section className="py-10 sm:py-12 md:py-16 relative">
       {/* Top divider */}
-      <div className="section-divider mb-16" />
+      <div className="section-divider mb-10 sm:mb-12 md:mb-16" />
       
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="glass-card rounded-3xl p-4 md:p-8"
+          className="glass-card rounded-2xl sm:rounded-3xl p-3 sm:p-4 md:p-8"
         >
           <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-border/30">
             {stats.map((stat, index) => (
@@ -96,7 +96,7 @@ const StatsSection = () => {
       </div>
       
       {/* Bottom divider */}
-      <div className="section-divider mt-16" />
+      <div className="section-divider mt-10 sm:mt-12 md:mt-16" />
     </section>
   );
 };

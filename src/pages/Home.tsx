@@ -22,11 +22,11 @@ const Home = () => {
       <HeroSection />
 
       {/* Quick Value Props */}
-      <section className="py-20 relative overflow-hidden" aria-labelledby="value-props-heading">
+      <section className="py-12 sm:py-16 md:py-20 relative overflow-hidden" aria-labelledby="value-props-heading">
         <h2 id="value-props-heading" className="sr-only">Why Choose Elie Ageron Web Design</h2>
         <FloatingElements count={5} />
-        <div className="max-w-6xl mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {[
               { icon: TrendingUp, title: t('home.value1.title'), desc: t('home.value1.desc') },
               { icon: Target, title: t('home.value2.title'), desc: t('home.value2.desc') },
@@ -43,22 +43,22 @@ const Home = () => {
                     y: -5,
                     transition: { duration: 0.3 }
                   }}
-                  className="glass-card rounded-2xl p-6 text-center group cursor-pointer h-full"
+                  className="glass-card rounded-xl sm:rounded-2xl p-5 sm:p-6 text-center group cursor-pointer h-full active:scale-[0.98] transition-transform"
                   role="article"
                   aria-label={item.title}
                 >
                   <motion.div 
-                    className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary/20 mb-4"
+                    className="inline-flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-primary/20 mb-3 sm:mb-4"
                     whileHover={{ rotate: 360, scale: 1.1 }}
                     transition={{ duration: 0.5 }}
                     aria-hidden="true"
                   >
-                    <item.icon className="w-6 h-6 text-primary" aria-hidden="true" />
+                    <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" aria-hidden="true" />
                   </motion.div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                  <h3 className="text-base sm:text-lg font-semibold text-foreground mb-1.5 sm:mb-2 group-hover:text-primary transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground">{item.desc}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
                 </motion.article>
               </ScrollReveal>
             ))}
@@ -72,7 +72,9 @@ const Home = () => {
       {/* Contact Methods Section */}
       <section className="relative overflow-hidden" aria-labelledby="contact-heading">
         <h2 id="contact-heading" className="sr-only">Contact Elie Ageron</h2>
-        <FloatingElements count={5} />
+        <div className="hidden sm:block">
+          <FloatingElements count={5} />
+        </div>
         <div className="relative z-10">
           <ContactMethodsSection />
         </div>
