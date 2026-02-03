@@ -70,7 +70,7 @@ const Header = () => {
                 <Link
                   key={item.href}
                   to={item.href}
-                  className={`text-sm transition-colors relative group ${
+                  className={`text-sm font-medium transition-colors relative group ${
                     isActive(item.href) 
                       ? 'text-primary' 
                       : 'text-muted-foreground hover:text-foreground'
