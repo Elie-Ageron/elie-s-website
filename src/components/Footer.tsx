@@ -26,12 +26,12 @@ const Footer = () => {
           className="space-y-8"
         >
           {/* Navigation Links */}
-          <nav className="flex flex-wrap justify-center gap-6" aria-label="Footer navigation">
+          <nav className="flex flex-wrap justify-center gap-x-8 gap-y-4" aria-label="Footer navigation">
             {footerLinks.map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
-                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                className="text-base font-medium text-foreground/80 hover:text-primary transition-colors"
               >
                 {link.label}
               </Link>
