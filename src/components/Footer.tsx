@@ -16,7 +16,8 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="py-12 border-t border-border/30 relative z-10" role="contentinfo" aria-label="Site footer">
+    <footer className="relative z-10 bg-secondary/50 backdrop-blur-sm border-t border-border/30" role="contentinfo" aria-label="Site footer">
+      <div className="py-12">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0 }}
@@ -64,6 +65,7 @@ const Footer = () => {
             </div>
           </div>
         </motion.div>
+      </div>
       </div>
     </footer>
   );
