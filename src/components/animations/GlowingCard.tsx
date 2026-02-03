@@ -21,7 +21,7 @@ const GlowingCard = ({ children, className = '' }: GlowingCardProps) => {
   const background = useMotionTemplate`
     radial-gradient(
       300px circle at ${mouseX}px ${mouseY}px,
-      hsl(var(--primary) / 0.15),
+      hsl(var(--primary) / 0.08),
       transparent 80%
     )
   `;
@@ -39,7 +39,7 @@ const GlowingCard = ({ children, className = '' }: GlowingCardProps) => {
         style={{ background }}
       />
       <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-300" 
-           style={{ background: `radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), hsl(var(--primary) / 0.1), transparent 40%)` }} 
+           style={{ background: `radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), hsl(var(--primary) / 0.05), transparent 40%)` }} 
       />
       {children}
     </motion.div>

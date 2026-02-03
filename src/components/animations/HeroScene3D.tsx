@@ -20,19 +20,20 @@ const FloatingShape = ({
 
   useFrame((state) => {
     if (meshRef.current) {
-      meshRef.current.rotation.x += 0.003 * rotationSpeed;
-      meshRef.current.rotation.y += 0.005 * rotationSpeed;
-      meshRef.current.position.y = position[1] + Math.sin(state.clock.elapsedTime * speed) * 0.3;
+      meshRef.current.rotation.x += 0.002 * rotationSpeed;
+      meshRef.current.rotation.y += 0.003 * rotationSpeed;
+      meshRef.current.position.y = position[1] + Math.sin(state.clock.elapsedTime * speed) * 0.2;
     }
   });
 
   const renderShape = () => {
+    // Subtle rose/warm colors for light theme
     const materialProps = {
-      color: "#D94A8C",
-      emissive: "#D94A8C",
-      emissiveIntensity: 0.4,
-      roughness: 0.2,
-      metalness: 0.8,
+      color: "#c4516b",
+      emissive: "#c4516b",
+      emissiveIntensity: 0.15,
+      roughness: 0.4,
+      metalness: 0.3,
     };
 
     switch (shape) {
@@ -46,13 +47,13 @@ const FloatingShape = ({
         return (
           <Icosahedron ref={meshRef} args={[1, 1]} scale={scale}>
             <MeshDistortMaterial
-              color="#D94A8C"
-              emissive="#D94A8C"
-              emissiveIntensity={0.3}
-              roughness={0.3}
-              metalness={0.7}
-              distort={0.4}
-              speed={2}
+              color="#c4516b"
+              emissive="#c4516b"
+              emissiveIntensity={0.1}
+              roughness={0.5}
+              metalness={0.2}
+              distort={0.3}
+              speed={1.5}
             />
           </Icosahedron>
         );
@@ -60,13 +61,13 @@ const FloatingShape = ({
         return (
           <Sphere ref={meshRef} args={[1, 64, 64]} scale={scale}>
             <MeshDistortMaterial
-              color="#D94A8C"
-              emissive="#D94A8C"
-              emissiveIntensity={0.5}
-              roughness={0.2}
-              metalness={0.9}
-              distort={0.5}
-              speed={1.5}
+              color="#c4516b"
+              emissive="#c4516b"
+              emissiveIntensity={0.2}
+              roughness={0.4}
+              metalness={0.3}
+              distort={0.4}
+              speed={1}
             />
           </Sphere>
         );
@@ -74,7 +75,7 @@ const FloatingShape = ({
   };
 
   return (
-    <Float speed={speed} rotationIntensity={0.5} floatIntensity={1}>
+    <Float speed={speed} rotationIntensity={0.3} floatIntensity={0.5}>
       <group position={position}>
         {renderShape()}
       </group>
@@ -87,7 +88,7 @@ const GlowingOrb = ({ position, scale = 0.3 }: { position: [number, number, numb
 
   useFrame((state) => {
     if (meshRef.current) {
-      const intensity = 0.5 + Math.sin(state.clock.elapsedTime * 2) * 0.3;
+      const intensity = 0.2 + Math.sin(state.clock.elapsedTime * 1.5) * 0.1;
       (meshRef.current.material as THREE.MeshStandardMaterial).emissiveIntensity = intensity;
     }
   });
@@ -95,11 +96,11 @@ const GlowingOrb = ({ position, scale = 0.3 }: { position: [number, number, numb
   return (
     <Sphere ref={meshRef} position={position} args={[1, 32, 32]} scale={scale}>
       <meshStandardMaterial
-        color="#D94A8C"
-        emissive="#D94A8C"
-        emissiveIntensity={0.8}
+        color="#d4a5b0"
+        emissive="#c4516b"
+        emissiveIntensity={0.3}
         transparent
-        opacity={0.6}
+        opacity={0.4}
       />
     </Sphere>
   );
@@ -108,35 +109,35 @@ const GlowingOrb = ({ position, scale = 0.3 }: { position: [number, number, numb
 const Scene = () => {
   return (
     <>
-      {/* Ambient lighting */}
-      <ambientLight intensity={0.2} />
+      {/* Soft ambient lighting for light theme */}
+      <ambientLight intensity={0.6} />
       
-      {/* Main pink spotlight */}
+      {/* Main soft spotlight */}
       <spotLight
         position={[10, 10, 10]}
-        angle={0.3}
+        angle={0.4}
         penumbra={1}
-        intensity={2}
-        color="#D94A8C"
+        intensity={0.8}
+        color="#c4516b"
       />
       
-      {/* Secondary light for depth */}
-      <pointLight position={[-10, -10, -10]} intensity={0.5} color="#6366f1" />
+      {/* Fill light */}
+      <pointLight position={[-10, -10, -10]} intensity={0.3} color="#e8b4bc" />
       
-      {/* Main floating shapes - reduced for performance */}
-      <FloatingShape position={[4, 0.5, -2]} scale={0.6} speed={0.6} shape="sphere" />
-      <FloatingShape position={[-4, 1, -3]} scale={0.4} speed={0.8} shape="icosahedron" />
+      {/* Floating shapes - subtle presence */}
+      <FloatingShape position={[4, 0.5, -2]} scale={0.5} speed={0.4} shape="sphere" />
+      <FloatingShape position={[-4, 1, -3]} scale={0.35} speed={0.5} shape="icosahedron" />
       
-      {/* Accent orbs - reduced count */}
-      <GlowingOrb position={[5, 2.5, -4]} scale={0.12} />
-      <GlowingOrb position={[-5, -2, -3]} scale={0.1} />
+      {/* Accent orbs */}
+      <GlowingOrb position={[5, 2.5, -4]} scale={0.1} />
+      <GlowingOrb position={[-5, -2, -3]} scale={0.08} />
     </>
   );
 };
 
 const HeroScene3D = () => {
   return (
-    <div className="absolute inset-0 z-0 pointer-events-none">
+    <div className="absolute inset-0 z-0 pointer-events-none opacity-60">
       <Canvas
         camera={{ position: [0, 0, 8], fov: 45 }}
         gl={{ antialias: true, alpha: true }}

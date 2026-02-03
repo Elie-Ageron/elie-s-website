@@ -8,59 +8,53 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Warm dark theme - subtle warm charcoal with Neon Pink accents */
-    --background: 30 8% 6%;
-    --foreground: 30 5% 96%;
+    /* Clean light theme - warm white with refined pink accent */
+    --background: 30 20% 98%;
+    --foreground: 30 10% 15%;
 
-    --card: 30 6% 9%;
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 30 10% 15%;
 
-    --popover: 0 0% 5%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 10% 15%;
 
-    /* Softer Neon Pink - less saturated, slightly darker */
-    --primary: 328 75% 50%;
+    /* Refined rose - elegant, not neon */
+    --primary: 340 65% 47%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 30 15% 94%;
+    --secondary-foreground: 30 10% 25%;
 
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 30 10% 92%;
+    --muted-foreground: 30 5% 45%;
 
-    --accent: 328 75% 50%;
+    --accent: 340 65% 47%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 15%;
-    --input: 0 0% 12%;
-    --ring: 328 75% 50%;
+    --border: 30 10% 88%;
+    --input: 30 10% 90%;
+    --ring: 340 65% 47%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    /* Glass effect variables */
-    --glass-bg: 0 0% 100% / 0.03;
-    --glass-border: 0 0% 100% / 0.08;
-    --glass-blur: 12px;
+    /* Subtle shadow variables */
+    --shadow-color: 30 10% 15% / 0.06;
+    --shadow-soft: 30 10% 15% / 0.04;
 
-    /* Neon glow - softer */
-    --neon-glow: 328 75% 50%;
-    --neon-glow-soft: 328 75% 50% / 0.3;
-    --neon-glow-strong: 328 75% 50% / 0.6;
-
-    --sidebar-background: 0 0% 3%;
-    --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 328 75% 50%;
+    --sidebar-background: 30 15% 96%;
+    --sidebar-foreground: 30 10% 15%;
+    --sidebar-primary: 340 65% 47%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 10%;
-    --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 0 0% 15%;
-    --sidebar-ring: 328 75% 50%;
+    --sidebar-accent: 30 15% 92%;
+    --sidebar-accent-foreground: 30 10% 25%;
+    --sidebar-border: 30 10% 88%;
+    --sidebar-ring: 340 65% 47%;
   }
 
-  /* Dark mode is our default, but keeping class for consistency */
+  /* Dark mode - keeping for reference but not used */
   .dark {
     --background: 30 8% 6%;
     --foreground: 30 5% 96%;
@@ -71,7 +65,7 @@ All colors MUST be HSL.
     --popover: 0 0% 5%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 328 75% 50%;
+    --primary: 340 65% 55%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 10%;
@@ -80,7 +74,7 @@ All colors MUST be HSL.
     --muted: 0 0% 12%;
     --muted-foreground: 0 0% 65%;
 
-    --accent: 328 75% 50%;
+    --accent: 340 65% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
@@ -88,16 +82,16 @@ All colors MUST be HSL.
 
     --border: 0 0% 15%;
     --input: 0 0% 12%;
-    --ring: 328 75% 50%;
+    --ring: 340 65% 55%;
 
     --sidebar-background: 0 0% 3%;
     --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 328 75% 50%;
+    --sidebar-primary: 340 65% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 0 0% 10%;
     --sidebar-accent-foreground: 0 0% 98%;
     --sidebar-border: 0 0% 15%;
-    --sidebar-ring: 328 75% 50%;
+    --sidebar-ring: 340 65% 55%;
   }
 }
 
@@ -115,45 +109,36 @@ All colors MUST be HSL.
   }
 }
 
-/* Glass morphism utilities */
+/* Subtle utilities for light theme */
 @layer components {
   .glass {
-    background: hsl(var(--glass-bg));
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
-    border: 1px solid hsl(var(--glass-border));
+    background: hsl(0 0% 100% / 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--border));
   }
 
   .glass-card {
-    background: linear-gradient(
-      135deg,
-      hsl(0 0% 100% / 0.05) 0%,
-      hsl(0 0% 100% / 0.02) 100%
-    );
+    background: hsl(0 0% 100% / 0.8);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid hsl(0 0% 100% / 0.1);
+    border: 1px solid hsl(var(--border));
   }
 
-  .neon-border {
-    border: 1px solid hsl(var(--primary) / 0.5);
+  .subtle-border {
+    border: 1px solid hsl(var(--border));
+  }
+
+  .soft-shadow {
     box-shadow: 
-      0 0 8px hsl(var(--neon-glow-soft)),
-      inset 0 0 8px hsl(var(--neon-glow-soft) / 0.1);
+      0 1px 3px hsl(var(--shadow-color)),
+      0 4px 12px hsl(var(--shadow-soft));
   }
 
-  .neon-glow {
+  .card-shadow {
     box-shadow: 
-      0 0 20px hsl(var(--neon-glow-soft)),
-      0 0 40px hsl(var(--neon-glow-soft) / 0.5),
-      0 0 60px hsl(var(--neon-glow-soft) / 0.3);
-  }
-
-  .neon-text {
-    text-shadow: 
-      0 0 10px hsl(var(--primary)),
-      0 0 20px hsl(var(--primary) / 0.8),
-      0 0 40px hsl(var(--primary) / 0.6);
+      0 2px 8px hsl(var(--shadow-color)),
+      0 8px 24px hsl(var(--shadow-soft));
   }
 
   .grain {
@@ -165,7 +150,7 @@ All colors MUST be HSL.
     position: absolute;
     inset: 0;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-    opacity: 0.03;
+    opacity: 0.015;
     pointer-events: none;
     z-index: 1;
   }
@@ -175,7 +160,7 @@ All colors MUST be HSL.
     background: linear-gradient(
       90deg,
       transparent 0%,
-      hsl(var(--primary) / 0.5) 50%,
+      hsl(var(--border)) 50%,
       transparent 100%
     );
   }
@@ -185,10 +170,6 @@ All colors MUST be HSL.
 @layer utilities {
   .animate-float {
     animation: float 6s ease-in-out infinite;
-  }
-
-  .animate-pulse-glow {
-    animation: pulse-glow 2s ease-in-out infinite;
   }
 
   .animate-count {
@@ -202,18 +183,5 @@ All colors MUST be HSL.
   }
   50% {
     transform: translateY(-10px);
-  }
-}
-
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 
-      0 0 20px hsl(var(--neon-glow-soft)),
-      0 0 40px hsl(var(--neon-glow-soft) / 0.3);
-  }
-  50% {
-    box-shadow: 
-      0 0 30px hsl(var(--neon-glow-soft)),
-      0 0 60px hsl(var(--neon-glow-soft) / 0.5);
   }
 }

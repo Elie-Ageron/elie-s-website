@@ -44,14 +44,13 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-            className="fixed top-0 right-0 bottom-0 w-full max-w-sm bg-background/95 backdrop-blur-xl z-[70] border-l border-primary/20 shadow-[0_0_60px_hsl(var(--primary)/0.2)]"
+            className="fixed top-0 right-0 bottom-0 w-full max-w-sm bg-card/98 backdrop-blur-xl z-[70] border-l border-border shadow-2xl"
             role="dialog"
             aria-modal="true"
             aria-label="Mobile navigation menu"
           >
-            {/* Neon glow accent */}
+            {/* Accent line */}
             <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-primary via-primary/50 to-transparent" aria-hidden="true" />
-            <div className="absolute top-0 left-0 w-8 h-full bg-gradient-to-r from-primary/20 to-transparent blur-xl" aria-hidden="true" />
 
             {/* Close button - 48x48 touch target */}
             <button
@@ -78,8 +77,8 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                       onClick={onClose}
                       className={`flex items-center min-h-[52px] px-4 rounded-xl text-lg font-medium transition-all active:scale-[0.98] ${
                         isActive(item.href)
-                          ? 'text-primary bg-primary/10 shadow-[0_0_20px_hsl(var(--primary)/0.15)]'
-                          : 'text-foreground hover:text-primary hover:bg-secondary/50 active:bg-primary/10'
+                          ? 'text-primary bg-primary/10'
+                          : 'text-foreground hover:text-primary hover:bg-secondary active:bg-primary/10'
                       }`}
                       aria-current={isActive(item.href) ? 'page' : undefined}
                     >
@@ -111,7 +110,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                     onClick={() => setLanguage('fr')}
                     className={`flex-1 min-h-[48px] rounded-xl text-base font-medium transition-all active:scale-[0.98] ${
                       language === 'fr'
-                        ? 'bg-primary text-primary-foreground shadow-[0_0_20px_hsl(var(--primary)/0.3)]'
+                        ? 'bg-primary text-primary-foreground'
                         : 'bg-secondary text-muted-foreground active:bg-primary/10'
                     }`}
                     aria-label="Changer la langue en français"
@@ -123,7 +122,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                     onClick={() => setLanguage('en')}
                     className={`flex-1 min-h-[48px] rounded-xl text-base font-medium transition-all active:scale-[0.98] ${
                       language === 'en'
-                        ? 'bg-primary text-primary-foreground shadow-[0_0_20px_hsl(var(--primary)/0.3)]'
+                        ? 'bg-primary text-primary-foreground'
                         : 'bg-secondary text-muted-foreground active:bg-primary/10'
                     }`}
                     aria-label="Switch language to English"
