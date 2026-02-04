@@ -166,12 +166,12 @@ const FloatingKeywords = () => {
   );
 };
 
-// Floating pink dots with smooth cursor repulsion
+// Floating pink dots with smooth cursor repulsion - reduced count for performance
 const FloatingDots = () => {
   const pointsRef = useRef<THREE.Points>(null);
   const circleTexture = useMemo(() => createCircleTexture(), []);
   
-  const particleCount = 80;
+  const particleCount = 50; // Reduced from 80
   
   const { basePositions, currentPositions, speeds } = useMemo(() => {
     const base = new Float32Array(particleCount * 3);
@@ -272,12 +272,12 @@ const FloatingDots = () => {
   );
 };
 
-// Medium accent dots with smooth cursor repulsion
+// Medium accent dots with smooth cursor repulsion - reduced for performance
 const AccentDots = () => {
   const pointsRef = useRef<THREE.Points>(null);
   const circleTexture = useMemo(() => createCircleTexture(), []);
   
-  const particleCount = 30;
+  const particleCount = 20; // Reduced from 30
   
   const { basePositions, currentPositions } = useMemo(() => {
     const base = new Float32Array(particleCount * 3);
@@ -383,12 +383,12 @@ const AccentDots = () => {
   );
 };
 
-// Tiny subtle dots in background - no repulsion (too far back)
+// Tiny subtle dots in background - reduced for performance
 const SubtleDots = () => {
   const pointsRef = useRef<THREE.Points>(null);
   const circleTexture = useMemo(() => createCircleTexture(), []);
   
-  const particleCount = 50;
+  const particleCount = 30; // Reduced from 50
   
   const positions = useMemo(() => {
     const pos = new Float32Array(particleCount * 3);
