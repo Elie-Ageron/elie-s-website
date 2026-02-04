@@ -125,17 +125,15 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
               )}
 
               {/* Icon */}
-              <motion.div 
-                className={`inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl mb-4 sm:mb-6 relative z-10 ${
+              <div 
+                className={`inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl mb-4 sm:mb-6 relative z-10 sm:transition-transform sm:duration-300 sm:group-hover:scale-110 ${
                   method.recommended ? 'bg-primary/20' : 'bg-secondary'
                 }`}
-                whileHover={{ rotate: 360, scale: 1.1 }}
-                transition={{ duration: 0.5 }}
               >
                 <method.icon className={`w-6 h-6 sm:w-7 sm:h-7 ${
                   method.recommended ? 'text-primary' : 'text-foreground'
                 }`} />
-              </motion.div>
+              </div>
 
               {/* Title */}
               <h3 className={`text-lg sm:text-xl font-bold mb-2 sm:mb-3 relative z-10 ${
