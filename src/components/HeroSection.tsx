@@ -37,10 +37,10 @@ const HeroSection = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
             className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full glass-card mb-6 sm:mb-8"
-            aria-label="Premium Web Design Services"
+            aria-label="Fast and affordable web design"
           >
             <span className="w-2 h-2 bg-primary rounded-full animate-pulse" aria-hidden="true" />
-            <span className="text-xs sm:text-sm text-muted-foreground">Web Design Premium</span>
+            <span className="text-xs sm:text-sm text-muted-foreground">{t('hero.badge')}</span>
           </motion.div>
 
           {/* Main Headline - Responsive typography */}
