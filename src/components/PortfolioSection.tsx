@@ -38,10 +38,11 @@ const PortfolioItem = ({ name, category, description, image, delay, previewLabel
       <div className="relative aspect-[4/3] overflow-hidden">
         <motion.img 
           src={image}
-          alt={name}
+          alt={`${name} - ${category} - Site web créé par Elie Ageron Web Design`}
           className="w-full h-full object-cover"
           whileHover={{ scale: 1.15 }}
           transition={{ duration: 0.6 }}
+          loading="lazy"
         />
         
         {/* Overlay */}

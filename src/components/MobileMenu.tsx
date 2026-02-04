@@ -18,6 +18,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
     { href: '/our-process', label: t('nav.process') },
     { href: '/pricing', label: t('nav.pricing') },
     { href: '/portfolio', label: t('nav.portfolio') },
+    { href: '/blog', label: 'Blog' },
     { href: '/contact', label: t('nav.contact') },
   ];
 
