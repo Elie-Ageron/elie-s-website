@@ -1,5 +1,5 @@
-import { Canvas, useFrame } from '@react-three/fiber';
-import { useRef, Suspense, useMemo } from 'react';
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import { useRef, Suspense, useMemo, useEffect, useState } from 'react';
 import * as THREE from 'three';
 
 // Create a circular texture for round dots
@@ -24,16 +24,38 @@ const createCircleTexture = () => {
   return texture;
 };
 
-// Floating pink dots - positioned to avoid center
-const FloatingDots = () => {
+// Mouse position in 3D space
+const useMousePosition = () => {
+  const [mouse, setMouse] = useState({ x: 0, y: 0 });
+  
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      // Convert to normalized coordinates (-1 to 1)
+      const x = (e.clientX / window.innerWidth) * 2 - 1;
+      const y = -(e.clientY / window.innerHeight) * 2 + 1;
+      setMouse({ x, y });
+    };
+    
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+  
+  return mouse;
+};
+
+// Floating pink dots - positioned to avoid center, with cursor repulsion
+const FloatingDots = ({ mouse }: { mouse: { x: number; y: number } }) => {
   const pointsRef = useRef<THREE.Points>(null);
   const circleTexture = useMemo(() => createCircleTexture(), []);
+  const { camera } = useThree();
   
   const particleCount = 60;
   
-  const { positions, speeds } = useMemo(() => {
+  const { positions, originalPositions, speeds, velocities } = useMemo(() => {
     const pos = new Float32Array(particleCount * 3);
+    const origPos = new Float32Array(particleCount * 3);
     const spd = new Float32Array(particleCount);
+    const vel = new Float32Array(particleCount * 3); // velocities for smooth movement
     
     for (let i = 0; i < particleCount; i++) {
       // Spread dots but avoid the center area where the title is
@@ -45,21 +67,78 @@ const FloatingDots = () => {
       
       pos[i * 3] = x;
       pos[i * 3 + 1] = y;
-      pos[i * 3 + 2] = (Math.random() - 0.5) * 8 - 6; // Push further back
+      pos[i * 3 + 2] = (Math.random() - 0.5) * 8 - 6;
+      
+      // Store original positions
+      origPos[i * 3] = x;
+      origPos[i * 3 + 1] = y;
+      origPos[i * 3 + 2] = pos[i * 3 + 2];
       
       spd[i] = Math.random() * 0.5 + 0.3;
+      
+      // Initialize velocities to 0
+      vel[i * 3] = 0;
+      vel[i * 3 + 1] = 0;
+      vel[i * 3 + 2] = 0;
     }
-    return { positions: pos, speeds: spd };
+    return { positions: pos, originalPositions: origPos, speeds: spd, velocities: vel };
   }, []);
+
+  // Store refs for velocities (mutable)
+  const velocitiesRef = useRef(velocities);
 
   useFrame((state) => {
     if (pointsRef.current) {
       const pos = pointsRef.current.geometry.attributes.position.array as Float32Array;
       const time = state.clock.elapsedTime;
+      const vel = velocitiesRef.current;
+      
+      // Convert mouse to 3D world position
+      const mouseX = mouse.x * 12; // Scale to match scene
+      const mouseY = mouse.y * 7;
+      
+      const repulsionRadius = 4; // How far the cursor affects dots
+      const repulsionStrength = 0.15; // How strong the push is
+      const returnStrength = 0.03; // How fast dots return to original position
+      const damping = 0.92; // Velocity damping for smooth movement
       
       for (let i = 0; i < particleCount; i++) {
-        pos[i * 3 + 1] += Math.sin(time * speeds[i] + i * 0.5) * 0.002;
-        pos[i * 3] += Math.cos(time * speeds[i] * 0.7 + i * 0.3) * 0.001;
+        const idx = i * 3;
+        
+        // Calculate distance from mouse
+        const dx = pos[idx] - mouseX;
+        const dy = pos[idx + 1] - mouseY;
+        const distSq = dx * dx + dy * dy;
+        const dist = Math.sqrt(distSq);
+        
+        // Apply repulsion force if within radius
+        if (dist < repulsionRadius && dist > 0.1) {
+          const force = (repulsionRadius - dist) / repulsionRadius;
+          const forceX = (dx / dist) * force * repulsionStrength;
+          const forceY = (dy / dist) * force * repulsionStrength;
+          
+          vel[idx] += forceX;
+          vel[idx + 1] += forceY;
+        }
+        
+        // Apply return force toward original position
+        const origDx = originalPositions[idx] - pos[idx];
+        const origDy = originalPositions[idx + 1] - pos[idx + 1];
+        
+        vel[idx] += origDx * returnStrength;
+        vel[idx + 1] += origDy * returnStrength;
+        
+        // Apply damping
+        vel[idx] *= damping;
+        vel[idx + 1] *= damping;
+        
+        // Update position with velocity
+        pos[idx] += vel[idx];
+        pos[idx + 1] += vel[idx + 1];
+        
+        // Add subtle floating animation
+        pos[idx + 1] += Math.sin(time * speeds[i] + i * 0.5) * 0.001;
+        pos[idx] += Math.cos(time * speeds[i] * 0.7 + i * 0.3) * 0.0005;
       }
       
       pointsRef.current.geometry.attributes.position.needsUpdate = true;
@@ -91,15 +170,17 @@ const FloatingDots = () => {
   );
 };
 
-// Larger accent dots - edges only
-const AccentDots = () => {
+// Larger accent dots - edges only, with cursor repulsion
+const AccentDots = ({ mouse }: { mouse: { x: number; y: number } }) => {
   const pointsRef = useRef<THREE.Points>(null);
   const circleTexture = useMemo(() => createCircleTexture(), []);
   
   const particleCount = 20;
   
-  const positions = useMemo(() => {
+  const { positions, originalPositions, velocities } = useMemo(() => {
     const pos = new Float32Array(particleCount * 3);
+    const origPos = new Float32Array(particleCount * 3);
+    const vel = new Float32Array(particleCount * 3);
     
     for (let i = 0; i < particleCount; i++) {
       // Place on edges of viewport
@@ -118,18 +199,58 @@ const AccentDots = () => {
         pos[i * 3 + 1] = (Math.random() - 0.5) * 12;
       }
       pos[i * 3 + 2] = (Math.random() - 0.5) * 6 - 4;
+      
+      origPos[i * 3] = pos[i * 3];
+      origPos[i * 3 + 1] = pos[i * 3 + 1];
+      origPos[i * 3 + 2] = pos[i * 3 + 2];
+      
+      vel[i * 3] = 0;
+      vel[i * 3 + 1] = 0;
+      vel[i * 3 + 2] = 0;
     }
-    return pos;
+    return { positions: pos, originalPositions: origPos, velocities: vel };
   }, []);
+
+  const velocitiesRef = useRef(velocities);
 
   useFrame((state) => {
     if (pointsRef.current) {
       const pos = pointsRef.current.geometry.attributes.position.array as Float32Array;
       const time = state.clock.elapsedTime;
+      const vel = velocitiesRef.current;
+      
+      const mouseX = mouse.x * 12;
+      const mouseY = mouse.y * 7;
+      
+      const repulsionRadius = 5;
+      const repulsionStrength = 0.12;
+      const returnStrength = 0.025;
+      const damping = 0.9;
       
       for (let i = 0; i < particleCount; i++) {
-        pos[i * 3 + 1] += Math.sin(time * 0.3 + i * 0.8) * 0.003;
-        pos[i * 3] += Math.cos(time * 0.25 + i * 0.5) * 0.002;
+        const idx = i * 3;
+        
+        const dx = pos[idx] - mouseX;
+        const dy = pos[idx + 1] - mouseY;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        
+        if (dist < repulsionRadius && dist > 0.1) {
+          const force = (repulsionRadius - dist) / repulsionRadius;
+          vel[idx] += (dx / dist) * force * repulsionStrength;
+          vel[idx + 1] += (dy / dist) * force * repulsionStrength;
+        }
+        
+        vel[idx] += (originalPositions[idx] - pos[idx]) * returnStrength;
+        vel[idx + 1] += (originalPositions[idx + 1] - pos[idx + 1]) * returnStrength;
+        
+        vel[idx] *= damping;
+        vel[idx + 1] *= damping;
+        
+        pos[idx] += vel[idx];
+        pos[idx + 1] += vel[idx + 1];
+        
+        pos[idx + 1] += Math.sin(time * 0.3 + i * 0.8) * 0.002;
+        pos[idx] += Math.cos(time * 0.25 + i * 0.5) * 0.001;
       }
       
       pointsRef.current.geometry.attributes.position.needsUpdate = true;
@@ -161,7 +282,7 @@ const AccentDots = () => {
   );
 };
 
-// Tiny subtle dots in background - very far back
+// Tiny subtle dots in background - very far back (no repulsion, too far)
 const SubtleDots = () => {
   const pointsRef = useRef<THREE.Points>(null);
   const circleTexture = useMemo(() => createCircleTexture(), []);
@@ -209,7 +330,7 @@ const SubtleDots = () => {
   );
 };
 
-const Scene = () => {
+const Scene = ({ mouse }: { mouse: { x: number; y: number } }) => {
   return (
     <>
       {/* Soft ambient lighting */}
@@ -217,23 +338,25 @@ const Scene = () => {
       
       {/* Pink floating dots layers - back to front */}
       <SubtleDots />
-      <FloatingDots />
-      <AccentDots />
+      <FloatingDots mouse={mouse} />
+      <AccentDots mouse={mouse} />
     </>
   );
 };
 
 const HeroScene3D = () => {
+  const mouse = useMousePosition();
+  
   return (
     <div className="absolute inset-0 z-0 pointer-events-none">
       <Canvas
         camera={{ position: [0, 0, 10], fov: 50 }}
         gl={{ antialias: true, alpha: true }}
-        style={{ background: 'transparent' }}
+        style={{ background: 'transparent', pointerEvents: 'none' }}
         dpr={[1, 1.5]}
       >
         <Suspense fallback={null}>
-          <Scene />
+          <Scene mouse={mouse} />
         </Suspense>
       </Canvas>
     </div>
