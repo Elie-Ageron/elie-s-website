@@ -47,7 +47,7 @@ const PersonalIntroSection = () => {
           >
             <h2 
               id="intro-heading" 
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-5 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-5 leading-tight"
             >
               <span className="text-foreground">
                 {language === 'fr' ? 'Laissez-moi' : 'Let me'}
