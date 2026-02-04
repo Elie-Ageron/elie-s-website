@@ -3,21 +3,25 @@ import { ArrowDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { lazy, Suspense } from 'react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const HeroScene3D = lazy(() => import('@/components/animations/HeroScene3D'));
 
 const HeroSection = () => {
   const { t } = useLanguage();
+  const isMobile = useIsMobile();
 
   return (
     <section 
       className="relative min-h-screen flex items-center justify-center overflow-hidden grain px-4 sm:px-6"
       aria-labelledby="hero-heading"
     >
-      {/* 3D Scene Background - Lazy loaded */}
-      <Suspense fallback={null}>
-        <HeroScene3D />
-      </Suspense>
+      {/* 3D Scene Background - Desktop only */}
+      {!isMobile && (
+        <Suspense fallback={null}>
+          <HeroScene3D />
+        </Suspense>
+      )}
       
       {/* Gradient overlays for depth */}
       <div className="absolute inset-0 z-[1] pointer-events-none" aria-hidden="true">
