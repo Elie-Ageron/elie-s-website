@@ -2,6 +2,8 @@ import { motion } from 'framer-motion';
 import { Calendar, MessageCircle, Mail, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ScrollReveal from '@/components/animations/ScrollReveal';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 interface ContactMethodsSectionProps {
   showTitle?: boolean;
@@ -66,6 +68,21 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
             </motion.p>
           </ScrollReveal>
         )}
+
+        {/* CTA vers les tarifs */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex justify-center mb-10 sm:mb-12"
+        >
+          <Button asChild variant="hero" size="lg" className="group">
+            <Link to="/pricing" className="flex items-center gap-2">
+              {t('nav.pricing')}
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </Button>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           {contactMethods.map((method, index) => (
