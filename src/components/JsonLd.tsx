@@ -23,6 +23,7 @@ const JsonLd = () => {
       addressCountry: 'FR',
     },
     sameAs: [
+      'https://www.linkedin.com/in/elie-ageron-289636394',
       'https://calendly.com/elie-ageron',
     ],
     knowsAbout: [
