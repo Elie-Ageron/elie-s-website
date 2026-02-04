@@ -21,7 +21,7 @@ const Layout = ({ children }: LayoutProps) => {
     <LanguageProvider>
       <JsonLd />
       <ReviewSchema />
-      <div className="min-h-screen bg-background relative">
+      <div className="min-h-screen bg-background relative overflow-x-hidden">
         <BackgroundPattern />
         <MobileBackgroundAnimation />
         <Suspense fallback={null}>
