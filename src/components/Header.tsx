@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link, useLocation } from 'react-router-dom';
 import MobileMenu from '@/components/MobileMenu';
-import logo from '@/assets/logo.png';
+
 
 const Header = () => {
   const { language, setLanguage, t } = useLanguage();
@@ -59,17 +59,10 @@ const Header = () => {
             {/* Logo */}
             <Link 
               to="/" 
-              className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+              className="text-lg sm:text-xl font-bold text-foreground hover:text-primary transition-colors"
               aria-label="Elie Ageron - Web Design - Home"
             >
-              <img 
-                src={logo} 
-                alt="Elie Ageron Logo" 
-                className="h-8 w-8 sm:h-9 sm:w-9"
-              />
-              <span className="text-lg sm:text-xl font-bold text-foreground">
-                Elie Ageron
-              </span>
+              Elie Ageron
             </Link>
 
             {/* Desktop Navigation */}
