@@ -8,28 +8,28 @@ const PersonalIntroSection = () => {
   const { language } = useLanguage();
 
   return (
-    <section className="py-16 sm:py-20 md:py-24 relative overflow-hidden" aria-labelledby="intro-heading">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-          {/* Image - Left side */}
+    <section className="py-12 sm:py-16 md:py-20 relative overflow-hidden" aria-labelledby="intro-heading">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-10 items-center">
+          {/* Image - Left side - smaller on mobile, balanced on desktop */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative order-2 md:order-1"
+            className="relative order-2 md:order-1 md:col-span-2"
           >
-            <div className="relative mx-auto md:mx-0 max-w-sm">
-              {/* Decorative elements */}
-              <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 to-transparent rounded-3xl blur-xl" aria-hidden="true" />
-              <div className="absolute -top-2 -left-2 w-20 h-20 border-t-2 border-l-2 border-primary/40 rounded-tl-2xl" aria-hidden="true" />
-              <div className="absolute -bottom-2 -right-2 w-20 h-20 border-b-2 border-r-2 border-primary/40 rounded-br-2xl" aria-hidden="true" />
+            <div className="relative mx-auto md:mx-0 max-w-[180px] sm:max-w-[220px] md:max-w-[280px]">
+              {/* Decorative elements - scaled down */}
+              <div className="absolute -inset-3 bg-gradient-to-br from-primary/15 to-transparent rounded-2xl blur-lg" aria-hidden="true" />
+              <div className="absolute -top-1.5 -left-1.5 w-12 h-12 sm:w-16 sm:h-16 border-t-2 border-l-2 border-primary/40 rounded-tl-xl" aria-hidden="true" />
+              <div className="absolute -bottom-1.5 -right-1.5 w-12 h-12 sm:w-16 sm:h-16 border-b-2 border-r-2 border-primary/40 rounded-br-xl" aria-hidden="true" />
               
               {/* Image - optimized loading */}
               <img
                 src={eliePortrait}
                 alt="Elie Ageron - Web Designer & Conversion Expert"
-                className="relative rounded-2xl shadow-2xl w-full object-cover aspect-[4/5]"
+                className="relative rounded-xl shadow-xl w-full object-cover aspect-[4/5]"
                 loading="eager"
                 decoding="async"
                 fetchPriority="high"
@@ -37,17 +37,17 @@ const PersonalIntroSection = () => {
             </div>
           </motion.div>
 
-          {/* Content - Right side */}
+          {/* Content - Right side - more space */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="order-1 md:order-2 text-center md:text-left"
+            className="order-1 md:order-2 md:col-span-3 text-center md:text-left"
           >
             <h2 
               id="intro-heading" 
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-5 leading-tight"
             >
               <span className="text-foreground">
                 {language === 'fr' ? 'Laissez-moi' : 'Let me'}
