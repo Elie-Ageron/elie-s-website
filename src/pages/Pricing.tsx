@@ -202,22 +202,6 @@ const Pricing = () => {
         </div>
       </section>
 
-      {/* Guarantee */}
-      <section className="py-20" aria-labelledby="guarantee-heading">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <motion.article
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="glass-card rounded-2xl p-8"
-          >
-            <h2 id="guarantee-heading" className="text-2xl font-bold text-foreground mb-4">
-              {t('pricing.guarantee.title')}
-            </h2>
-            <p className="text-muted-foreground">{t('pricing.guarantee.desc')}</p>
-          </motion.article>
-        </div>
-      </section>
 
       {/* CTA to Process */}
       <section className="pb-20">
