@@ -67,20 +67,15 @@ const createBadgeTexture = (text: string) => {
 // Shared mouse position ref for all components
 const mouseRef = { x: 0, y: 0 };
 
-// Floating web dev keyword badges with cursor repulsion
+// Floating web dev keyword badges with cursor repulsion - only 3 badges
 const FloatingKeywords = () => {
   const groupRef = useRef<THREE.Group>(null);
   
-  // Position badges around the edges, avoiding center
+  // Only 3 badges, positioned around the edges
   const keywords = useMemo(() => [
-    { text: '<html>', x: -10, y: 5, z: -2 },
-    { text: 'SEO', x: 10, y: 4.5, z: -2.5 },
-    { text: 'Design', x: -9.5, y: -4, z: -2 },
-    { text: 'Web', x: 10.5, y: -3, z: -2.5 },
-    { text: '</>', x: -11, y: 0.5, z: -3 },
-    { text: 'UI/UX', x: 9, y: 6, z: -2 },
-    { text: 'CSS', x: -8, y: -5.5, z: -2.5 },
-    { text: 'Sites', x: 11, y: -5, z: -2 },
+    { text: 'SEO', x: 9.5, y: 4, z: -2 },
+    { text: 'Design', x: -9, y: -3.5, z: -2.5 },
+    { text: 'Web', x: 10, y: -4, z: -2 },
   ], []);
   
   const { sprites, basePositions, currentPositions, speeds } = useMemo(() => {
@@ -99,9 +94,11 @@ const FloatingKeywords = () => {
       });
       const sprite = new THREE.Sprite(material);
       sprite.scale.set(width / 40, height / 40, 1);
+      // Start at final position immediately
       sprite.position.set(kw.x, kw.y, kw.z);
       spritesArr.push(sprite);
       base.push({ x: kw.x, y: kw.y, z: kw.z });
+      // Initialize current positions to base positions (no entrance animation)
       current.push({ x: kw.x, y: kw.y, z: kw.z });
       spd.push(Math.random() * 0.15 + 0.2);
     });
@@ -124,7 +121,7 @@ const FloatingKeywords = () => {
     const centerExclusionY = 3;
     
     sprites.forEach((sprite, i) => {
-      // Animate base position
+      // Gentle floating animation around base position
       const animX = basePositions[i].x + Math.cos(time * speeds[i] + i) * 0.3;
       const animY = basePositions[i].y + Math.sin(time * speeds[i] * 0.8 + i * 0.5) * 0.35;
       
@@ -147,7 +144,6 @@ const FloatingKeywords = () => {
       
       // Keep badges away from center (title area)
       if (Math.abs(targetX) < centerExclusionX && Math.abs(targetY) < centerExclusionY) {
-        // Push towards the original edge position
         const pushDirection = basePositions[i].x > 0 ? 1 : -1;
         targetX = pushDirection * centerExclusionX * 1.1;
       }
@@ -159,8 +155,6 @@ const FloatingKeywords = () => {
       sprite.position.x = currentPositions[i].x;
       sprite.position.y = currentPositions[i].y;
     });
-    
-    groupRef.current.rotation.y = time * 0.006;
   });
   
   return (
