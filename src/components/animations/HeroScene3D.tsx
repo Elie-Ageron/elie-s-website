@@ -23,8 +23,83 @@ const createCircleTexture = () => {
   return texture;
 };
 
+// Create text texture for floating keywords
+const createTextTexture = (text: string, fontSize: number = 24) => {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d')!;
+  
+  ctx.font = `${fontSize}px "Inter", sans-serif`;
+  const metrics = ctx.measureText(text);
+  const textWidth = metrics.width;
+  
+  canvas.width = Math.ceil(textWidth) + 20;
+  canvas.height = fontSize + 20;
+  
+  ctx.font = `${fontSize}px "Inter", sans-serif`;
+  ctx.fillStyle = 'rgba(196, 81, 107, 0.5)';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(text, canvas.width / 2, canvas.height / 2);
+  
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.needsUpdate = true;
+  return { texture, width: canvas.width, height: canvas.height };
+};
+
 // Shared mouse position ref for all components
 const mouseRef = { x: 0, y: 0 };
+
+// Floating web dev keywords
+const FloatingKeywords = () => {
+  const groupRef = useRef<THREE.Group>(null);
+  
+  const keywords = useMemo(() => [
+    { text: '<>', x: -8, y: 4, z: -3, speed: 0.3 },
+    { text: 'HTML', x: 7, y: 3, z: -4, speed: 0.25 },
+    { text: 'SEO', x: -6, y: -3, z: -3.5, speed: 0.35 },
+    { text: 'CSS', x: 8, y: -2, z: -3, speed: 0.28 },
+    { text: '</>', x: -9, y: 1, z: -4, speed: 0.32 },
+    { text: 'Web', x: 9, y: 0, z: -3.5, speed: 0.22 },
+    { text: 'UI', x: -7, y: -4, z: -3, speed: 0.3 },
+    { text: 'UX', x: 6, y: 4.5, z: -4, speed: 0.27 },
+  ], []);
+  
+  const sprites = useMemo(() => {
+    return keywords.map((kw) => {
+      const { texture, width, height } = createTextTexture(kw.text, 18);
+      const material = new THREE.SpriteMaterial({
+        map: texture,
+        transparent: true,
+        opacity: 0.4,
+        depthWrite: false,
+      });
+      const sprite = new THREE.Sprite(material);
+      sprite.scale.set(width / 60, height / 60, 1);
+      sprite.position.set(kw.x, kw.y, kw.z);
+      return { sprite, basePos: { x: kw.x, y: kw.y, z: kw.z }, speed: kw.speed };
+    });
+  }, [keywords]);
+  
+  useFrame((state) => {
+    if (!groupRef.current) return;
+    const time = state.clock.elapsedTime;
+    
+    sprites.forEach((item, i) => {
+      item.sprite.position.y = item.basePos.y + Math.sin(time * item.speed + i) * 0.3;
+      item.sprite.position.x = item.basePos.x + Math.cos(time * item.speed * 0.7 + i * 0.5) * 0.2;
+    });
+    
+    groupRef.current.rotation.y = time * 0.01;
+  });
+  
+  return (
+    <group ref={groupRef}>
+      {sprites.map((item, i) => (
+        <primitive key={i} object={item.sprite} />
+      ))}
+    </group>
+  );
+};
 
 // Floating pink dots with smooth cursor repulsion
 const FloatingDots = () => {
@@ -298,6 +373,7 @@ const Scene = () => {
       <SubtleDots />
       <FloatingDots />
       <AccentDots />
+      <FloatingKeywords />
     </>
   );
 };
