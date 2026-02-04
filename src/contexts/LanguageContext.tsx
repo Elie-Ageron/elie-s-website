@@ -54,6 +54,8 @@ const translations = {
     'stats.trust.desc': 'A professional site builds trust before you even speak to clients.',
     'stats.mobile.title': 'Works Everywhere',
     'stats.mobile.desc': 'Perfect on phones, tablets, and desktops. Reach clients anywhere.',
+    'stats.cta': 'Discover Our Method',
+    'stats.cta.link': '/our-process',
 
     // Why a Website Page
     'why.title1': 'Stop Losing Clients',
@@ -157,6 +159,8 @@ const translations = {
     'testimonials.title1': 'What Clients',
     'testimonials.title2': 'Say',
     'testimonials.subtitle': 'Real results from real business owners',
+    'testimonials.cta': 'See Our Work',
+    'testimonials.cta.link': '/portfolio',
     'testimonial.1.text': "Honestly, I was hesitant but the result is insane. My store finally has a real presence online. Sales went up 30% in the first month.",
     'testimonial.1.author': 'Marc D.',
     'testimonial.1.role': 'Boutique Owner',
@@ -240,6 +244,8 @@ const translations = {
     'stats.trust.desc': 'Un site pro inspire confiance avant même que vous parliez aux clients.',
     'stats.mobile.title': 'Fonctionne Partout',
     'stats.mobile.desc': 'Parfait sur mobile, tablette et ordinateur. Touchez vos clients où qu\'ils soient.',
+    'stats.cta': 'Découvrir notre méthode',
+    'stats.cta.link': '/our-process',
 
     // Why a Website Page
     'why.title1': 'Arrêtez de Perdre',
@@ -343,6 +349,8 @@ const translations = {
     'testimonials.title1': 'Ce que disent',
     'testimonials.title2': 'mes clients',
     'testimonials.subtitle': 'Des résultats concrets pour de vrais entrepreneurs',
+    'testimonials.cta': 'Voir nos réalisations',
+    'testimonials.cta.link': '/portfolio',
     'testimonial.1.text': "Franchement, j'hésitais mais le résultat est dingue. Mon magasin a enfin une vraie présence sur le web. Les ventes ont augmenté dès le premier mois.",
     'testimonial.1.author': 'Marc D.',
     'testimonial.1.role': 'Gérant de boutique',

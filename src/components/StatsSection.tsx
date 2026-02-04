@@ -1,7 +1,9 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Clock, Shield, Smartphone } from 'lucide-react';
+import { Clock, Shield, Smartphone, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 
 const StatsSection = () => {
   const { t } = useLanguage();
@@ -126,6 +128,22 @@ const StatsSection = () => {
             );
           })}
         </div>
+
+        {/* CTA Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+          className="flex justify-center mt-12 sm:mt-16"
+        >
+          <Button asChild variant="hero" size="lg" className="group">
+            <Link to="/our-process" className="flex items-center gap-2">
+              {t('stats.cta')}
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </Button>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { motion, AnimatePresence, PanInfo } from 'framer-motion';
-import { Quote, ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { Quote, ChevronLeft, ChevronRight, Star, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 import ScrollReveal from './animations/ScrollReveal';
 import FloatingElements from './animations/FloatingElements';
 
@@ -187,6 +189,22 @@ const TestimonialsSection = () => {
               />
             ))}
           </div>
+
+          {/* CTA Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="flex justify-center mt-10"
+          >
+            <Button asChild variant="neonOutline" size="lg" className="group">
+              <Link to="/portfolio" className="flex items-center gap-2">
+                {t('testimonials.cta')}
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </Button>
+          </motion.div>
         </div>
       </div>
       
