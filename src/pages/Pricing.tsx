@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { Check, Zap, Crown, Sparkles } from 'lucide-react';
+import { Check, Zap, Crown, Sparkles, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Switch } from '@/components/ui/switch';
 import MagneticButton from '@/components/animations/MagneticButton';
@@ -213,7 +214,14 @@ const Pricing = () => {
             <h2 id="guarantee-heading" className="text-2xl font-bold text-foreground mb-4">
               {t('pricing.guarantee.title')}
             </h2>
-            <p className="text-muted-foreground">{t('pricing.guarantee.desc')}</p>
+            <p className="text-muted-foreground mb-6">{t('pricing.guarantee.desc')}</p>
+            
+            <Button asChild variant="neonOutline" size="lg" className="group">
+              <Link to="/our-process" className="flex items-center gap-2">
+                {t('nav.process')}
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </Button>
           </motion.article>
         </div>
       </section>
