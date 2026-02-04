@@ -51,7 +51,7 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex justify-center mb-8 sm:mb-10"
+          className="flex justify-center mb-14 sm:mb-16"
         >
           <Button asChild variant="hero" size="lg" className="group">
             <Link to="/pricing" className="flex items-center gap-2">
