@@ -32,6 +32,7 @@ const OrganizationSchema = () => {
       '@id': `${baseUrl}/#person`,
     },
     sameAs: [
+      'https://www.linkedin.com/in/elie-ageron-289636394',
       'https://calendly.com/elie-ageron',
     ],
     contactPoint: {
