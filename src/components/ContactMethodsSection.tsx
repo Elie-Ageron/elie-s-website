@@ -100,9 +100,9 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
               viewport={{ once: true }}
               transition={{ delay: index * 0.15, duration: 0.7 }}
               whileHover={{ 
-                y: -10, 
-                scale: 1.02,
-                transition: { duration: 0.3 }
+                y: -6, 
+                scale: 1.01,
+                transition: { duration: 0.15, ease: "easeOut" }
               }}
               className={`relative glass-card rounded-xl sm:rounded-2xl p-5 sm:p-8 pt-8 sm:pt-10 cursor-pointer transition-all group active:scale-[0.98] ${
                 method.recommended ? 'neon-border' : 'hover:border-primary/30'
