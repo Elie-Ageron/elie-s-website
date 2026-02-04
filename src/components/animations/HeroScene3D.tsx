@@ -31,7 +31,7 @@ const FloatingDots = () => {
   const pointsRef = useRef<THREE.Points>(null);
   const circleTexture = useMemo(() => createCircleTexture(), []);
   
-  const particleCount = 60;
+  const particleCount = 80;
   
   const { basePositions, currentPositions, speeds } = useMemo(() => {
     const base = new Float32Array(particleCount * 3);
@@ -45,7 +45,8 @@ const FloatingDots = () => {
         y = (Math.random() - 0.5) * 14;
       } while (Math.abs(x) < 4 && Math.abs(y) < 2);
       
-      const z = (Math.random() - 0.5) * 8 - 6;
+      // Keep z range tighter to avoid size variation
+      const z = (Math.random() - 0.5) * 4 - 5;
       
       base[i * 3] = x;
       base[i * 3 + 1] = y;
@@ -70,45 +71,35 @@ const FloatingDots = () => {
     const mouseX = mouseRef.x * 11;
     const mouseY = mouseRef.y * 6;
     
-    const repulsionRadius = 4; // Clear gap around cursor
-    const minDistance = 2; // Minimum distance from cursor
-    const smoothing = 0.035; // Very smooth movement
+    const repulsionRadius = 4;
+    const minDistance = 2;
+    const smoothing = 0.035;
     
     for (let i = 0; i < particleCount; i++) {
       const idx = i * 3;
       
-      // Calculate animated base position (floating effect)
       const animX = basePositions[idx] + Math.cos(time * speeds[i] * 0.7 + i * 0.3) * 0.3;
       const animY = basePositions[idx + 1] + Math.sin(time * speeds[i] + i * 0.5) * 0.3;
       
-      // Target position starts at animated base
       let targetX = animX;
       let targetY = animY;
       
-      // Calculate distance from mouse
       const dx = animX - mouseX;
       const dy = animY - mouseY;
       const dist = Math.sqrt(dx * dx + dy * dy);
       
-      // If within repulsion radius, push away
       if (dist < repulsionRadius) {
-        // Normalize direction
         const nx = dist > 0.01 ? dx / dist : 0;
         const ny = dist > 0.01 ? dy / dist : 0;
-        
-        // Push to minimum distance from cursor
-        const pushDist = Math.max(minDistance, dist);
         const pushAmount = repulsionRadius - dist;
         
         targetX = mouseX + nx * (dist + pushAmount * 1.2);
         targetY = mouseY + ny * (dist + pushAmount * 1.2);
       }
       
-      // Smoothly interpolate current position toward target
       currentPositions[idx] += (targetX - currentPositions[idx]) * smoothing;
       currentPositions[idx + 1] += (targetY - currentPositions[idx + 1]) * smoothing;
       
-      // Apply to geometry
       pos[idx] = currentPositions[idx];
       pos[idx + 1] = currentPositions[idx + 1];
     }
@@ -128,11 +119,11 @@ const FloatingDots = () => {
         />
       </bufferGeometry>
       <pointsMaterial
-        size={0.25}
+        size={8}
         color="#c4516b"
         transparent
         opacity={0.6}
-        sizeAttenuation
+        sizeAttenuation={false}
         map={circleTexture}
         alphaMap={circleTexture}
         depthWrite={false}
@@ -141,12 +132,12 @@ const FloatingDots = () => {
   );
 };
 
-// Larger accent dots with smooth cursor repulsion
+// Medium accent dots with smooth cursor repulsion
 const AccentDots = () => {
   const pointsRef = useRef<THREE.Points>(null);
   const circleTexture = useMemo(() => createCircleTexture(), []);
   
-  const particleCount = 20;
+  const particleCount = 30;
   
   const { basePositions, currentPositions } = useMemo(() => {
     const base = new Float32Array(particleCount * 3);
@@ -170,7 +161,7 @@ const AccentDots = () => {
         y = (Math.random() - 0.5) * 12;
       }
       
-      const z = (Math.random() - 0.5) * 6 - 4;
+      const z = (Math.random() - 0.5) * 4 - 5;
       
       base[i * 3] = x;
       base[i * 3 + 1] = y;
@@ -193,7 +184,7 @@ const AccentDots = () => {
     const mouseY = mouseRef.y * 6;
     
     const repulsionRadius = 4.5;
-    const smoothing = 0.03; // Very smooth movement
+    const smoothing = 0.03;
     
     for (let i = 0; i < particleCount; i++) {
       const idx = i * 3;
@@ -239,11 +230,11 @@ const AccentDots = () => {
         />
       </bufferGeometry>
       <pointsMaterial
-        size={0.4}
+        size={12}
         color="#e07a94"
         transparent
-        opacity={0.45}
-        sizeAttenuation
+        opacity={0.4}
+        sizeAttenuation={false}
         map={circleTexture}
         alphaMap={circleTexture}
         depthWrite={false}
@@ -257,7 +248,7 @@ const SubtleDots = () => {
   const pointsRef = useRef<THREE.Points>(null);
   const circleTexture = useMemo(() => createCircleTexture(), []);
   
-  const particleCount = 40;
+  const particleCount = 50;
   
   const positions = useMemo(() => {
     const pos = new Float32Array(particleCount * 3);
@@ -265,7 +256,7 @@ const SubtleDots = () => {
     for (let i = 0; i < particleCount; i++) {
       pos[i * 3] = (Math.random() - 0.5) * 24;
       pos[i * 3 + 1] = (Math.random() - 0.5) * 16;
-      pos[i * 3 + 2] = -8 - Math.random() * 6;
+      pos[i * 3 + 2] = -8 - Math.random() * 4;
     }
     return pos;
   }, []);
@@ -287,11 +278,11 @@ const SubtleDots = () => {
         />
       </bufferGeometry>
       <pointsMaterial
-        size={0.15}
+        size={5}
         color="#d4a5b0"
         transparent
         opacity={0.25}
-        sizeAttenuation
+        sizeAttenuation={false}
         map={circleTexture}
         alphaMap={circleTexture}
         depthWrite={false}
