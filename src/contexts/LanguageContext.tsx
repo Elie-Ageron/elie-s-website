@@ -21,6 +21,7 @@ const translations = {
     // Home Page
     'hero.headline1': "Your website is losing you clients.",
     'hero.headline2': "Let's fix that.",
+    'hero.badge': '48h Delivery • From $300',
     'hero.cta': 'Book your growth session',
     'hero.scroll': 'Scroll',
     'home.viewPricing': 'View Pricing',
@@ -206,6 +207,7 @@ const translations = {
     // Home Page
     'hero.headline1': "Votre site vous fait perdre des clients.",
     'hero.headline2': "Changeons ça.",
+    'hero.badge': 'Livraison 48h • Dès 300€',
     'hero.cta': 'Réservez votre session croissance',
     'hero.scroll': 'Défiler',
     'home.viewPricing': 'Voir les tarifs',
