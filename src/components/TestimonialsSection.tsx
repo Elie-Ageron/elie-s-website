@@ -117,12 +117,12 @@ const TestimonialsSection = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: dragDirection >= 0 ? -30 : 30 }}
               transition={{ 
-                duration: 0.2, 
+                duration: 0.12, 
                 ease: "easeOut"
               }}
               drag="x"
               dragConstraints={{ left: 0, right: 0 }}
-              dragElastic={0.2}
+              dragElastic={0.1}
               onDragEnd={handleDragEnd}
               className="glass-card rounded-3xl p-8 sm:p-12 relative overflow-hidden cursor-grab active:cursor-grabbing touch-pan-y"
             >
