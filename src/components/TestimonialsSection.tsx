@@ -156,8 +156,9 @@ const TestimonialsSection = () => {
               <div className="flex items-center gap-4 relative z-10">
                 <img
                   src={currentTestimonial.image}
-                  alt={currentTestimonial.author}
+                  alt={`Photo de ${currentTestimonial.author}, client satisfait Elie Ageron Web Design - ${currentTestimonial.role}`}
                   className="w-16 h-16 rounded-full object-cover border-2 border-primary/30"
+                  loading="lazy"
                 />
                 <div className="flex-1">
                   <div className="font-semibold text-foreground text-lg">

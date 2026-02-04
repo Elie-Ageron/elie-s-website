@@ -7,6 +7,7 @@ import PageTransition from '@/components/animations/PageTransition';
 import Breadcrumb from '@/components/Breadcrumb';
 import JsonLd from '@/components/JsonLd';
 import ReviewSchema from '@/components/ReviewSchema';
+import OrganizationSchema from '@/components/OrganizationSchema';
 import MobileBackgroundAnimation from '@/components/animations/MobileBackgroundAnimation';
 import { ReactNode, lazy, Suspense } from 'react';
 
@@ -21,6 +22,7 @@ const Layout = ({ children }: LayoutProps) => {
     <LanguageProvider>
       <JsonLd />
       <ReviewSchema />
+      <OrganizationSchema />
       <div className="min-h-screen bg-background relative overflow-x-hidden">
         <BackgroundPattern />
         <MobileBackgroundAnimation />
