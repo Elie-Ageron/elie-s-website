@@ -67,6 +67,11 @@ const createBadgeTexture = (text: string) => {
 // Shared mouse position ref for all components
 const mouseRef = { x: 0, y: 0 };
 
+// Shared fade-in ref so all dot layers appear smoothly
+const fadeRef = { value: 0 };
+
+const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
+
 // Floating web dev keyword badges with cursor repulsion - only 3 badges
 const FloatingKeywords = () => {
   const groupRef = useRef<THREE.Group>(null);
@@ -109,6 +114,9 @@ const FloatingKeywords = () => {
   useFrame((state) => {
     if (!groupRef.current) return;
     const time = state.clock.elapsedTime;
+
+    // Fade-in
+    const fade = easeOutCubic(Math.min(1, fadeRef.value));
     
     const mouseX = mouseRef.x * 11;
     const mouseY = mouseRef.y * 6;
@@ -121,6 +129,10 @@ const FloatingKeywords = () => {
     const centerExclusionY = 3;
     
     sprites.forEach((sprite, i) => {
+      // Apply fade to sprite material
+      const mat = sprite.material as THREE.SpriteMaterial;
+      mat.opacity = 0.9 * fade;
+
       // Gentle floating animation around base position
       const animX = basePositions[i].x + Math.cos(time * speeds[i] + i) * 0.3;
       const animY = basePositions[i].y + Math.sin(time * speeds[i] * 0.8 + i * 0.5) * 0.35;
@@ -206,6 +218,11 @@ const FloatingDots = () => {
     
     const pos = pointsRef.current.geometry.attributes.position.array as Float32Array;
     const time = state.clock.elapsedTime;
+
+    // Fade-in
+    const fade = easeOutCubic(Math.min(1, fadeRef.value));
+    const mat = pointsRef.current.material as THREE.PointsMaterial;
+    mat.opacity = 0.6 * fade;
     
     // Mouse in 3D world coordinates
     const mouseX = mouseRef.x * 11;
@@ -319,6 +336,11 @@ const AccentDots = () => {
     
     const pos = pointsRef.current.geometry.attributes.position.array as Float32Array;
     const time = state.clock.elapsedTime;
+
+    // Fade-in
+    const fade = easeOutCubic(Math.min(1, fadeRef.value));
+    const mat = pointsRef.current.material as THREE.PointsMaterial;
+    mat.opacity = 0.4 * fade;
     
     const mouseX = mouseRef.x * 11;
     const mouseY = mouseRef.y * 6;
@@ -403,6 +425,11 @@ const SubtleDots = () => {
 
   useFrame((state) => {
     if (pointsRef.current) {
+      // Fade-in
+      const fade = easeOutCubic(Math.min(1, fadeRef.value));
+      const mat = pointsRef.current.material as THREE.PointsMaterial;
+      mat.opacity = 0.25 * fade;
+
       pointsRef.current.rotation.y = state.clock.elapsedTime * 0.008;
     }
   });
@@ -432,6 +459,19 @@ const SubtleDots = () => {
 };
 
 const Scene = () => {
+  // Global fade-in for the first ~1.2s after mount
+  useFrame((state) => {
+    const prefersReduced = typeof window !== 'undefined' &&
+      window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
+    if (prefersReduced) {
+      fadeRef.value = 1;
+      return;
+    }
+
+    const t = state.clock.elapsedTime;
+    fadeRef.value = Math.min(1, t / 1.2);
+  });
+
   return (
     <>
       <ambientLight intensity={1} color="#fff5f7" />
@@ -456,10 +496,7 @@ const HeroScene3D = () => {
   }, []);
   
   return (
-    <div 
-      className="absolute inset-0 z-0 pointer-events-none animate-fade-in"
-      style={{ animationDuration: '1.2s', animationFillMode: 'both' }}
-    >
+    <div className="absolute inset-0 z-0 pointer-events-none">
       <Canvas
         camera={{ position: [0, 0, 10], fov: 50 }}
         gl={{ antialias: true, alpha: true }}
