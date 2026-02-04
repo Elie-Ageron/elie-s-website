@@ -32,16 +32,29 @@ const ReviewSchema = () => {
     },
   ];
 
+  // Use Product schema for reviews - doesn't require physical address like LocalBusiness
   const reviewSchema = {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': `${baseUrl}/#business`,
-    name: 'Elie Ageron Web Design',
+    '@type': 'Product',
+    '@id': `${baseUrl}/#service`,
+    name: 'Web Design Services by Elie Ageron',
+    description: language === 'fr'
+      ? 'Services de création de sites web premium qui convertissent les visiteurs en clients'
+      : 'Premium web design services that convert visitors into paying clients',
     image: `${baseUrl}/og-image.png`,
     url: baseUrl,
-    telephone: '+33695555318',
-    email: 'elieageron@gmail.com',
-    priceRange: '€€',
+    brand: {
+      '@type': 'Brand',
+      name: 'Elie Ageron Web Design',
+    },
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'EUR',
+      price: '300',
+      priceValidUntil: '2026-12-31',
+      availability: 'https://schema.org/InStock',
+      url: `${baseUrl}/pricing`,
+    },
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '5.0',
