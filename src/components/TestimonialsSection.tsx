@@ -175,19 +175,21 @@ const TestimonialsSection = () => {
             </motion.div>
           </AnimatePresence>
 
-          {/* Dots Indicator */}
-          <div className="flex justify-center gap-2 mt-8">
+          {/* Dots Indicator - Touch optimized with 44x44 min touch target */}
+          <div className="flex justify-center gap-1 mt-8">
             {testimonials.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                  index === currentIndex 
-                    ? 'bg-primary w-8' 
-                    : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
-                }`}
+                className="min-w-[44px] min-h-[44px] flex items-center justify-center"
                 aria-label={`Go to testimonial ${index + 1}`}
-              />
+              >
+                <span className={`block rounded-full transition-all duration-300 ${
+                  index === currentIndex 
+                    ? 'bg-primary w-8 h-3' 
+                    : 'bg-muted-foreground/30 w-3 h-3 hover:bg-muted-foreground/50'
+                }`} />
+              </button>
             ))}
           </div>
 
