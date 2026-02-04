@@ -70,9 +70,9 @@ const FloatingDots = () => {
     const mouseX = mouseRef.x * 11;
     const mouseY = mouseRef.y * 6;
     
-    const repulsionRadius = 3.5; // Clear gap around cursor
-    const minDistance = 1.8; // Minimum distance from cursor
-    const smoothing = 0.08; // How smoothly dots move (lower = smoother)
+    const repulsionRadius = 4; // Clear gap around cursor
+    const minDistance = 2; // Minimum distance from cursor
+    const smoothing = 0.035; // Very smooth movement
     
     for (let i = 0; i < particleCount; i++) {
       const idx = i * 3;
@@ -192,8 +192,8 @@ const AccentDots = () => {
     const mouseX = mouseRef.x * 11;
     const mouseY = mouseRef.y * 6;
     
-    const repulsionRadius = 4;
-    const smoothing = 0.06;
+    const repulsionRadius = 4.5;
+    const smoothing = 0.03; // Very smooth movement
     
     for (let i = 0; i < particleCount; i++) {
       const idx = i * 3;
