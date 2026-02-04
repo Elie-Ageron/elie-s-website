@@ -147,7 +147,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                   asChild
                 >
                   <a
-                    href="https://calendly.com/elie-ageron"
+                    href="https://calendly.com/elie-ageron/30min"
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={onClose}

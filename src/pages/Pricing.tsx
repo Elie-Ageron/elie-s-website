@@ -191,7 +191,7 @@ const Pricing = () => {
                     asChild
                     aria-label={`${plan.cta} - ${plan.title} for ${plan.price}`}
                   >
-                    <a href="https://calendly.com/elie-ageron" target="_blank" rel="noopener noreferrer">
+                    <a href="https://calendly.com/elie-ageron/30min" target="_blank" rel="noopener noreferrer">
                       {plan.cta}
                     </a>
                   </Button>

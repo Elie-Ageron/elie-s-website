@@ -19,7 +19,7 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
       title: t('home.contact.call.title'),
       description: t('home.contact.call.desc'),
       cta: t('home.contact.call.cta'),
-      href: 'https://calendly.com/elie-ageron',
+      href: 'https://calendly.com/elie-ageron/30min',
       recommended: true,
       newTab: true,
     },

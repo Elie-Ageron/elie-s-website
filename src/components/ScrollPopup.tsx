@@ -94,7 +94,7 @@ const ScrollPopup = () => {
                     className="min-h-[52px] text-base active:scale-[0.98] transition-transform"
                     asChild
                   >
-                    <a href="https://calendly.com/elie-ageron" target="_blank" rel="noopener noreferrer" onClick={handleClose}>
+                    <a href="https://calendly.com/elie-ageron/30min" target="_blank" rel="noopener noreferrer" onClick={handleClose}>
                       {t('popup.cta')}
                     </a>
                   </Button>

@@ -68,7 +68,7 @@ const HeroSection = () => {
               asChild
               aria-label="Book your growth session with Elie Ageron"
             >
-              <a href="https://calendly.com/elie-ageron" target="_blank" rel="noopener noreferrer">
+              <a href="https://calendly.com/elie-ageron/30min" target="_blank" rel="noopener noreferrer">
                 {t('hero.cta')}
               </a>
             </Button>

@@ -24,7 +24,7 @@ const JsonLd = () => {
     },
     sameAs: [
       'https://www.linkedin.com/in/elie-ageron-289636394',
-      'https://calendly.com/elie-ageron',
+      'https://calendly.com/elie-ageron/30min',
     ],
     knowsAbout: [
       'Web Design',

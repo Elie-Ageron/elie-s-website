@@ -122,7 +122,7 @@ const Header = () => {
               
               <Button variant="neon" size="sm" asChild>
                 <a 
-                  href="https://calendly.com/elie-ageron" 
+                  href="https://calendly.com/elie-ageron/30min" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   aria-label="Book a call with Elie Ageron"
