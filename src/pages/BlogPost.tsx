@@ -144,37 +144,37 @@ const BlogPost = () => {
       />
       
       {/* Hero */}
-      <section className="py-12 md:py-16 relative grain" aria-labelledby="post-title">
+      <section className="py-10 sm:py-12 md:py-16 relative grain" aria-labelledby="post-title">
         <div className="absolute inset-0" aria-hidden="true">
-          <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-primary/20 rounded-full blur-[120px]" />
+          <div className="absolute top-1/3 right-1/4 w-56 sm:w-80 h-56 sm:h-80 bg-primary/20 rounded-full blur-[80px] sm:blur-[120px]" />
         </div>
-        <div className="max-w-3xl mx-auto px-6 relative z-10">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            {/* Back button */}
+            {/* Back button - Touch optimized */}
             <Link 
               to="/blog" 
-              className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-8 group"
+              className="inline-flex items-center gap-2 min-h-[44px] text-muted-foreground hover:text-primary active:text-primary transition-colors mb-6 sm:mb-8 group"
             >
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
               {language === 'fr' ? 'Retour aux articles' : 'Back to articles'}
             </Link>
 
             {/* Category */}
-            <span className="inline-block px-3 py-1 text-xs font-semibold bg-primary/20 text-primary rounded-full mb-4">
+            <span className="inline-block px-3 py-1.5 text-xs font-semibold bg-primary/20 text-primary rounded-full mb-3 sm:mb-4">
               {post.category}
             </span>
 
             {/* Title */}
-            <h1 id="post-title" className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
+            <h1 id="post-title" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 sm:mb-6 leading-tight">
               {post.title}
             </h1>
 
-            {/* Meta */}
-            <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-8">
+            {/* Meta - Stack on mobile */}
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-sm text-muted-foreground mb-6 sm:mb-8">
               <span className="flex items-center gap-1.5">
                 <User className="w-4 h-4" aria-hidden="true" />
                 {post.author}
@@ -189,7 +189,7 @@ const BlogPost = () => {
               </span>
               <button 
                 onClick={handleShare}
-                className="flex items-center gap-1.5 hover:text-primary transition-colors ml-auto"
+                className="flex items-center gap-1.5 min-h-[44px] px-3 -mx-3 hover:text-primary active:text-primary transition-colors ml-auto"
                 aria-label={language === 'fr' ? 'Partager cet article' : 'Share this article'}
               >
                 <Share2 className="w-4 h-4" />
@@ -201,8 +201,8 @@ const BlogPost = () => {
       </section>
 
       {/* Content */}
-      <article className="py-8 md:py-12">
-        <div className="max-w-3xl mx-auto px-6">
+      <article className="py-6 sm:py-8 md:py-12">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -217,19 +217,19 @@ const BlogPost = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="glass-card rounded-2xl p-6 md:p-8 mt-12 text-center"
+            className="glass-card rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-8 mt-10 sm:mt-12 text-center"
           >
-            <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-2 sm:mb-3 leading-snug">
               {language === 'fr' 
                 ? 'Prêt à transformer votre présence en ligne ?' 
                 : 'Ready to transform your online presence?'}
             </h3>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-sm sm:text-base text-muted-foreground mb-5 sm:mb-6">
               {language === 'fr'
                 ? 'Discutons de votre projet et voyons comment je peux vous aider.'
                 : 'Let\'s discuss your project and see how I can help.'}
             </p>
-            <Button asChild variant="hero" size="lg">
+            <Button asChild variant="hero" size="lg" className="min-h-[52px] active:scale-[0.98] transition-transform">
               <a href="https://calendly.com/elie-ageron/30min" target="_blank" rel="noopener noreferrer">
                 {language === 'fr' ? 'Réserver un appel gratuit' : 'Book a free call'}
               </a>
@@ -240,22 +240,22 @@ const BlogPost = () => {
 
       {/* Related Posts */}
       {relatedPosts.length > 0 && (
-        <section className="py-12 md:py-16" aria-labelledby="related-posts">
-          <div className="max-w-4xl mx-auto px-6">
-            <h2 id="related-posts" className="text-2xl font-bold text-foreground mb-8 text-center">
+        <section className="py-10 sm:py-12 md:py-16" aria-labelledby="related-posts">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 id="related-posts" className="text-xl sm:text-2xl font-bold text-foreground mb-6 sm:mb-8 text-center">
               {language === 'fr' ? 'Articles similaires' : 'Related articles'}
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               {relatedPosts.map((relatedPost) => (
                 <Link
                   key={relatedPost.id}
                   to={`/blog/${relatedPost.slug}`}
-                  className="glass-card rounded-2xl p-6 group hover:neon-border transition-all active:scale-[0.98]"
+                  className="glass-card rounded-xl sm:rounded-2xl p-5 sm:p-6 group hover:neon-border transition-all active:scale-[0.98]"
                 >
-                  <span className="inline-block px-2 py-0.5 text-xs font-medium bg-primary/20 text-primary rounded-full mb-3">
+                  <span className="inline-block px-2 py-1 text-xs font-medium bg-primary/20 text-primary rounded-full mb-2 sm:mb-3">
                     {relatedPost.category}
                   </span>
-                  <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors mb-2">
+                  <h3 className="text-base sm:text-lg font-semibold text-foreground group-hover:text-primary transition-colors mb-2 leading-snug">
                     {relatedPost.title}
                   </h3>
                   <p className="text-sm text-muted-foreground line-clamp-2">

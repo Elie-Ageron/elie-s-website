@@ -19,9 +19,9 @@ const Footer = () => {
     <div className="relative z-10" role="contentinfo" aria-label="Site footer">
       {/* Navigation Band - Darker background */}
       <div className="bg-background/80 border-t border-border/30">
-        <div className="max-w-6xl mx-auto px-6 py-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 sm:py-6">
           <motion.nav 
-            className="flex flex-wrap justify-center gap-x-8 gap-y-4" 
+            className="flex flex-wrap justify-center gap-x-2 sm:gap-x-8 gap-y-1 sm:gap-y-4" 
             aria-label="Footer navigation"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -32,7 +32,7 @@ const Footer = () => {
               <Link
                 key={link.href}
                 to={link.href}
-                className="text-base font-medium text-foreground/80 hover:text-primary transition-colors"
+                className="min-h-[44px] flex items-center px-3 sm:px-0 text-sm sm:text-base font-medium text-foreground/80 hover:text-primary active:text-primary transition-colors"
               >
                 {link.label}
               </Link>
