@@ -6,6 +6,7 @@ import FloatingElements from '@/components/animations/FloatingElements';
 import StatsSection from '@/components/StatsSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import HeroSection from '@/components/HeroSection';
+import PersonalIntroSection from '@/components/PersonalIntroSection';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
 import SEO from '@/components/SEO';
 import JsonLd from '@/components/JsonLd';
@@ -20,6 +21,9 @@ const Home = () => {
       
       {/* Hero Section with 3D */}
       <HeroSection />
+
+      {/* Personal Intro - First thing after hero */}
+      <PersonalIntroSection />
 
       {/* Quick Value Props */}
       <section className="py-12 sm:py-16 md:py-20 relative overflow-hidden" aria-labelledby="value-props-heading">
