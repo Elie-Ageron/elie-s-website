@@ -25,13 +25,14 @@ const PersonalIntroSection = () => {
               <div className="absolute -top-2 -left-2 w-20 h-20 border-t-2 border-l-2 border-primary/40 rounded-tl-2xl" aria-hidden="true" />
               <div className="absolute -bottom-2 -right-2 w-20 h-20 border-b-2 border-r-2 border-primary/40 rounded-br-2xl" aria-hidden="true" />
               
-              {/* Image */}
+              {/* Image - optimized loading */}
               <img
                 src={eliePortrait}
                 alt="Elie Ageron - Web Designer & Conversion Expert"
                 className="relative rounded-2xl shadow-2xl w-full object-cover aspect-[4/5]"
-                loading="lazy"
+                loading="eager"
                 decoding="async"
+                fetchPriority="high"
               />
             </div>
           </motion.div>

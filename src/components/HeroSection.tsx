@@ -2,22 +2,32 @@ import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
+// Defer 3D scene loading
 const HeroScene3D = lazy(() => import('@/components/animations/HeroScene3D'));
 
 const HeroSection = () => {
   const { t } = useLanguage();
   const isMobile = useIsMobile();
+  const [show3D, setShow3D] = useState(false);
+
+  // Delay 3D scene to prioritize text content (LCP)
+  useEffect(() => {
+    if (!isMobile) {
+      const timer = setTimeout(() => setShow3D(true), 100);
+      return () => clearTimeout(timer);
+    }
+  }, [isMobile]);
 
   return (
     <section 
       className="relative min-h-screen flex items-center justify-center overflow-hidden grain px-4 sm:px-6"
       aria-labelledby="hero-heading"
     >
-      {/* 3D Scene Background - Desktop only */}
-      {!isMobile && (
+      {/* 3D Scene Background - Desktop only, deferred */}
+      {show3D && (
         <Suspense fallback={null}>
           <HeroScene3D />
         </Suspense>
