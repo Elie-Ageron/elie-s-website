@@ -105,8 +105,8 @@ const JsonLd = () => {
             '@type': 'Service',
             name: 'Landing Page',
             description: language === 'fr' 
-              ? 'Landing page haute conversion livrée en 48h'
-              : 'High-conversion landing page delivered in 48h',
+              ? 'Landing page haute conversion livrée en 7 jours'
+              : 'High-conversion landing page delivered in 7 days',
           },
           price: language === 'fr' ? '300' : '300',
           priceCurrency: language === 'fr' ? 'EUR' : 'USD',
