@@ -456,7 +456,10 @@ const HeroScene3D = () => {
   }, []);
   
   return (
-    <div className="absolute inset-0 z-0 pointer-events-none">
+    <div 
+      className="absolute inset-0 z-0 pointer-events-none animate-fade-in"
+      style={{ animationDuration: '1.2s', animationFillMode: 'both' }}
+    >
       <Canvas
         camera={{ position: [0, 0, 10], fov: 50 }}
         gl={{ antialias: true, alpha: true }}
