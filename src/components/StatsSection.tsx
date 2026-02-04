@@ -91,15 +91,6 @@ const StatsSection = () => {
                     group
                   `}
                 >
-                  {/* Number indicator */}
-                  <div className={`
-                    absolute -top-4 ${isLeft ? 'md:-right-4 right-4' : 'md:-left-4 left-4'}
-                    w-8 h-8 rounded-full bg-primary text-primary-foreground
-                    flex items-center justify-center text-sm font-bold
-                    shadow-lg shadow-primary/30
-                  `}>
-                    {index + 1}
-                  </div>
 
                   <div className="flex items-start gap-4 md:gap-5">
                     {/* Icon */}
