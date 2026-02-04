@@ -214,16 +214,26 @@ const Pricing = () => {
             <h2 id="guarantee-heading" className="text-2xl font-bold text-foreground mb-4">
               {t('pricing.guarantee.title')}
             </h2>
-            <p className="text-muted-foreground mb-6">{t('pricing.guarantee.desc')}</p>
-            
-            <Button asChild variant="neonOutline" size="lg" className="group">
-              <Link to="/our-process" className="flex items-center gap-2">
-                {t('nav.process')}
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
+            <p className="text-muted-foreground">{t('pricing.guarantee.desc')}</p>
           </motion.article>
         </div>
+      </section>
+
+      {/* CTA to Process */}
+      <section className="pb-20">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex justify-center"
+        >
+          <Button asChild variant="hero" size="lg" className="group">
+            <Link to="/our-process" className="flex items-center gap-2">
+              {t('nav.process')}
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </Button>
+        </motion.div>
       </section>
 
       {/* FAQ Section */}
