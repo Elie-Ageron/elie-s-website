@@ -3,6 +3,8 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 interface SEOProps {
   page: 'home' | 'why' | 'process' | 'pricing' | 'portfolio' | 'contact' | 'blog';
+  customTitle?: string;
+  customDescription?: string;
 }
 
 // Optimized titles: ALL under 60 characters
@@ -69,10 +71,14 @@ const seoData = {
   },
 };
 
-const SEO = ({ page }: SEOProps) => {
+const SEO = ({ page, customTitle, customDescription }: SEOProps) => {
   const { language } = useLanguage();
   const data = seoData[language][page];
   const baseUrl = 'https://elieageron.lovable.app';
+  
+  // Use custom values if provided, otherwise fall back to page defaults
+  const title = customTitle || data.title;
+  const description = customDescription || data.description;
   
   const pathMap: Record<string, string> = {
     home: '',
@@ -90,9 +96,9 @@ const SEO = ({ page }: SEOProps) => {
   return (
     <Helmet>
       {/* Primary Meta Tags */}
-      <title>{data.title}</title>
-      <meta name="title" content={data.title} />
-      <meta name="description" content={data.description} />
+      <title>{title}</title>
+      <meta name="title" content={title} />
+      <meta name="description" content={description} />
       <meta name="author" content="Elie Ageron" />
       <meta name="robots" content="index, follow, max-image-preview:large" />
       
@@ -108,8 +114,8 @@ const SEO = ({ page }: SEOProps) => {
       {/* Open Graph / Facebook - Unique per page */}
       <meta property="og:type" content="website" />
       <meta property="og:url" content={canonicalUrl} />
-      <meta property="og:title" content={data.title} />
-      <meta property="og:description" content={data.description} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
       <meta property="og:image" content={`${baseUrl}/og-image.png`} />
       <meta property="og:locale" content={language === 'fr' ? 'fr_FR' : 'en_US'} />
       <meta property="og:site_name" content="Elie Ageron Web Design" />
@@ -117,8 +123,8 @@ const SEO = ({ page }: SEOProps) => {
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:url" content={canonicalUrl} />
-      <meta name="twitter:title" content={data.title} />
-      <meta name="twitter:description" content={data.description} />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={`${baseUrl}/og-image.png`} />
       
       {/* Additional SEO */}
