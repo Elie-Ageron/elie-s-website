@@ -50,7 +50,7 @@ const Portfolio = () => {
             <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-primary/15 border-2 border-primary/40 shadow-lg shadow-primary/10">
               <Sparkles className="w-6 h-6 text-primary" />
               <span className="text-primary font-bold text-lg sm:text-xl tracking-wide">
-                Ce site pourrait être le vôtre
+                {t('portfolio.badge')}
               </span>
               <Sparkles className="w-6 h-6 text-primary" />
             </div>
@@ -89,11 +89,11 @@ const Portfolio = () => {
                 <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-xs text-primary font-medium uppercase tracking-wider mb-1">Site Vitrine Premium</p>
+                      <p className="text-xs text-primary font-medium uppercase tracking-wider mb-1">{t('portfolio.showcase.category')}</p>
                       <h3 className="text-xl sm:text-2xl font-bold text-foreground">MyWebGlory</h3>
                     </div>
                     <div className="flex items-center gap-2 text-primary">
-                      <span className="text-sm font-medium hidden sm:block">Voir le site</span>
+                      <span className="text-sm font-medium hidden sm:block">{t('portfolio.preview')}</span>
                       <ExternalLink className="w-5 h-5" />
                     </div>
                   </div>
@@ -119,13 +119,13 @@ const Portfolio = () => {
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
-                  Découvrir MyWebGlory
+                  {t('portfolio.showcase.cta')}
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
               
               <p className="text-muted-foreground text-sm mt-4 max-w-md mx-auto">
-                Un site conçu pour convertir les visiteurs en clients, avec un design moderne et une expérience utilisateur optimisée.
+                {t('portfolio.showcase.desc')}
               </p>
             </motion.div>
           </motion.div>

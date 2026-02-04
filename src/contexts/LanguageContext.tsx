@@ -198,6 +198,12 @@ const translations = {
     // Footer
     'footer.rights': 'All rights reserved.',
     'footer.made': 'Made with passion',
+
+    // Portfolio Page - Extra
+    'portfolio.badge': 'This could be your site',
+    'portfolio.showcase.category': 'Premium Showcase Site',
+    'portfolio.showcase.cta': 'Discover MyWebGlory',
+    'portfolio.showcase.desc': 'A site designed to convert visitors into clients, with modern design and optimized user experience.',
   },
   fr: {
     // Header / Navigation
@@ -388,6 +394,12 @@ const translations = {
     // Footer
     'footer.rights': 'Tous droits réservés.',
     'footer.made': 'Fait avec passion',
+
+    // Portfolio Page - Extra
+    'portfolio.badge': 'Ce site pourrait être le vôtre',
+    'portfolio.showcase.category': 'Site Vitrine Premium',
+    'portfolio.showcase.cta': 'Découvrir MyWebGlory',
+    'portfolio.showcase.desc': 'Un site conçu pour convertir les visiteurs en clients, avec un design moderne et une expérience utilisateur optimisée.',
   },
 };
 
