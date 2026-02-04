@@ -67,23 +67,29 @@ const createBadgeTexture = (text: string) => {
 // Shared mouse position ref for all components
 const mouseRef = { x: 0, y: 0 };
 
-// Floating web dev keyword badges
+// Floating web dev keyword badges with cursor repulsion
 const FloatingKeywords = () => {
   const groupRef = useRef<THREE.Group>(null);
   
+  // Position badges around the edges, avoiding center
   const keywords = useMemo(() => [
-    { text: '<html>', x: -9, y: 4.5, z: -2, speed: 0.25 },
-    { text: 'SEO', x: 8, y: 3.5, z: -2.5, speed: 0.3 },
-    { text: 'Design', x: -7, y: -3.5, z: -2, speed: 0.28 },
-    { text: 'Web', x: 9, y: -2, z: -2.5, speed: 0.22 },
-    { text: '</>', x: -8.5, y: 1, z: -3, speed: 0.35 },
-    { text: 'UI/UX', x: 7.5, y: 5, z: -2, speed: 0.26 },
-    { text: 'CSS', x: -6, y: -5, z: -2.5, speed: 0.32 },
-    { text: 'Sites', x: 8.5, y: -4.5, z: -2, speed: 0.24 },
+    { text: '<html>', x: -10, y: 5, z: -2 },
+    { text: 'SEO', x: 10, y: 4.5, z: -2.5 },
+    { text: 'Design', x: -9.5, y: -4, z: -2 },
+    { text: 'Web', x: 10.5, y: -3, z: -2.5 },
+    { text: '</>', x: -11, y: 0.5, z: -3 },
+    { text: 'UI/UX', x: 9, y: 6, z: -2 },
+    { text: 'CSS', x: -8, y: -5.5, z: -2.5 },
+    { text: 'Sites', x: 11, y: -5, z: -2 },
   ], []);
   
-  const sprites = useMemo(() => {
-    return keywords.map((kw) => {
+  const { sprites, basePositions, currentPositions, speeds } = useMemo(() => {
+    const spritesArr: THREE.Sprite[] = [];
+    const base: { x: number; y: number; z: number }[] = [];
+    const current: { x: number; y: number; z: number }[] = [];
+    const spd: number[] = [];
+    
+    keywords.forEach((kw) => {
       const { texture, width, height } = createBadgeTexture(kw.text);
       const material = new THREE.SpriteMaterial({
         map: texture,
@@ -94,26 +100,73 @@ const FloatingKeywords = () => {
       const sprite = new THREE.Sprite(material);
       sprite.scale.set(width / 40, height / 40, 1);
       sprite.position.set(kw.x, kw.y, kw.z);
-      return { sprite, basePos: { x: kw.x, y: kw.y, z: kw.z }, speed: kw.speed };
+      spritesArr.push(sprite);
+      base.push({ x: kw.x, y: kw.y, z: kw.z });
+      current.push({ x: kw.x, y: kw.y, z: kw.z });
+      spd.push(Math.random() * 0.15 + 0.2);
     });
+    
+    return { sprites: spritesArr, basePositions: base, currentPositions: current, speeds: spd };
   }, [keywords]);
   
   useFrame((state) => {
     if (!groupRef.current) return;
     const time = state.clock.elapsedTime;
     
-    sprites.forEach((item, i) => {
-      item.sprite.position.y = item.basePos.y + Math.sin(time * item.speed + i) * 0.4;
-      item.sprite.position.x = item.basePos.x + Math.cos(time * item.speed * 0.7 + i * 0.5) * 0.25;
+    const mouseX = mouseRef.x * 11;
+    const mouseY = mouseRef.y * 6;
+    
+    const repulsionRadius = 5;
+    const smoothing = 0.04;
+    
+    // Center exclusion zone (where the title is)
+    const centerExclusionX = 6;
+    const centerExclusionY = 3;
+    
+    sprites.forEach((sprite, i) => {
+      // Animate base position
+      const animX = basePositions[i].x + Math.cos(time * speeds[i] + i) * 0.3;
+      const animY = basePositions[i].y + Math.sin(time * speeds[i] * 0.8 + i * 0.5) * 0.35;
+      
+      let targetX = animX;
+      let targetY = animY;
+      
+      // Mouse repulsion
+      const dx = animX - mouseX;
+      const dy = animY - mouseY;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      
+      if (dist < repulsionRadius) {
+        const nx = dist > 0.01 ? dx / dist : 0;
+        const ny = dist > 0.01 ? dy / dist : 0;
+        const pushAmount = repulsionRadius - dist;
+        
+        targetX = mouseX + nx * (dist + pushAmount * 1.2);
+        targetY = mouseY + ny * (dist + pushAmount * 1.2);
+      }
+      
+      // Keep badges away from center (title area)
+      if (Math.abs(targetX) < centerExclusionX && Math.abs(targetY) < centerExclusionY) {
+        // Push towards the original edge position
+        const pushDirection = basePositions[i].x > 0 ? 1 : -1;
+        targetX = pushDirection * centerExclusionX * 1.1;
+      }
+      
+      // Smooth interpolation
+      currentPositions[i].x += (targetX - currentPositions[i].x) * smoothing;
+      currentPositions[i].y += (targetY - currentPositions[i].y) * smoothing;
+      
+      sprite.position.x = currentPositions[i].x;
+      sprite.position.y = currentPositions[i].y;
     });
     
-    groupRef.current.rotation.y = time * 0.008;
+    groupRef.current.rotation.y = time * 0.006;
   });
   
   return (
     <group ref={groupRef}>
-      {sprites.map((item, i) => (
-        <primitive key={i} object={item.sprite} />
+      {sprites.map((sprite, i) => (
+        <primitive key={i} object={sprite} />
       ))}
     </group>
   );
