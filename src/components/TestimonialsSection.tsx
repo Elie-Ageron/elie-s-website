@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, PanInfo } from 'framer-motion';
 import { Quote, ChevronLeft, ChevronRight, Star } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ScrollReveal from './animations/ScrollReveal';
@@ -12,6 +12,7 @@ import testimonialThomas from '@/assets/testimonial-thomas.jpg';
 const TestimonialsSection = () => {
   const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [dragDirection, setDragDirection] = useState<number>(0);
 
   const testimonials = [
     {
@@ -41,11 +42,22 @@ const TestimonialsSection = () => {
   ];
 
   const nextTestimonial = () => {
+    setDragDirection(1);
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
   };
 
   const prevTestimonial = () => {
+    setDragDirection(-1);
     setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
+  const handleDragEnd = (_: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+    const threshold = 50;
+    if (info.offset.x > threshold) {
+      prevTestimonial();
+    } else if (info.offset.x < -threshold) {
+      nextTestimonial();
+    }
   };
 
   const currentTestimonial = testimonials[currentIndex];
@@ -80,10 +92,10 @@ const TestimonialsSection = () => {
 
         {/* Testimonial Carousel */}
         <div className="relative">
-          {/* Navigation Arrows */}
+          {/* Navigation Arrows - Hidden on mobile */}
           <button
             onClick={prevTestimonial}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 sm:-translate-x-12 z-20 w-12 h-12 rounded-full bg-secondary/80 backdrop-blur-sm border border-border/50 flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300 group"
+            className="hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 sm:-translate-x-12 z-20 w-12 h-12 rounded-full bg-secondary/80 backdrop-blur-sm border border-border/50 items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300 group"
             aria-label="Previous testimonial"
           >
             <ChevronLeft className="w-5 h-5 group-hover:scale-110 transition-transform" />
@@ -91,7 +103,7 @@ const TestimonialsSection = () => {
           
           <button
             onClick={nextTestimonial}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 sm:translate-x-12 z-20 w-12 h-12 rounded-full bg-secondary/80 backdrop-blur-sm border border-border/50 flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300 group"
+            className="hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 sm:translate-x-12 z-20 w-12 h-12 rounded-full bg-secondary/80 backdrop-blur-sm border border-border/50 items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300 group"
             aria-label="Next testimonial"
           >
             <ChevronRight className="w-5 h-5 group-hover:scale-110 transition-transform" />
@@ -101,14 +113,18 @@ const TestimonialsSection = () => {
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
-              initial={{ opacity: 0, x: 30 }}
+              initial={{ opacity: 0, x: dragDirection >= 0 ? 30 : -30 }}
               animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -30 }}
+              exit={{ opacity: 0, x: dragDirection >= 0 ? -30 : 30 }}
               transition={{ 
                 duration: 0.2, 
                 ease: "easeOut"
               }}
-              className="glass-card rounded-3xl p-8 sm:p-12 relative overflow-hidden"
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={0.2}
+              onDragEnd={handleDragEnd}
+              className="glass-card rounded-3xl p-8 sm:p-12 relative overflow-hidden cursor-grab active:cursor-grabbing touch-pan-y"
             >
               {/* Quote Icon */}
               <div className="absolute top-6 right-6 text-primary/20">
