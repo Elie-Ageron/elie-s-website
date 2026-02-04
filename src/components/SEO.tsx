@@ -9,7 +9,7 @@ const seoData = {
   en: {
     home: {
       title: 'Elie Ageron | Web Design & Conversion Optimization',
-      description: 'Transform your online presence with Elie Ageron. Premium web design services that convert visitors into paying clients. Get a high-converting website in 48h.',
+      description: 'Transform your online presence with Elie Ageron. Premium web design services that convert visitors into paying clients. Get a high-converting website in 7 days.',
     },
     why: {
       title: 'Elie Ageron | Why Your Business Needs a Professional Website',
@@ -35,7 +35,7 @@ const seoData = {
   fr: {
     home: {
       title: 'Elie Ageron | Création de Sites Web & Optimisation Conversion',
-      description: 'Transformez votre présence en ligne avec Elie Ageron. Services de création de sites web premium qui convertissent les visiteurs en clients. Site haute conversion en 48h.',
+      description: 'Transformez votre présence en ligne avec Elie Ageron. Services de création de sites web premium qui convertissent les visiteurs en clients. Site haute conversion en 7 jours.',
     },
     why: {
       title: 'Elie Ageron | Pourquoi Votre Entreprise a Besoin d\'un Site Web',
