@@ -22,70 +22,86 @@ export const blogPosts: BlogPost[] = [
     slug: 'pourquoi-site-web-2025',
     titleFr: 'Pourquoi Votre Entreprise a Besoin d\'un Site Web en 2025',
     titleEn: 'Why Your Business Needs a Website in 2025',
-    excerptFr: 'Découvrez les 5 raisons cruciales pour lesquelles un site web professionnel est essentiel pour votre croissance.',
-    excerptEn: 'Discover the 5 crucial reasons why a professional website is essential for your growth.',
+    excerptFr: 'Le monde a radicalement changé et la manière dont vos clients vous trouvent aussi. Un site web en 2025 n\'est plus une simple brochure numérique.',
+    excerptEn: 'The world has radically changed and so has the way your customers find you. A website in 2025 is no longer just a digital brochure.',
     readTime: '5 min',
     categoryFr: 'Stratégie',
     categoryEn: 'Strategy',
-    date: '2025-01-15',
+    date: '2025-02-04',
     author: 'Elie Ageron',
     contentFr: `
-## Introduction
+## Votre jumeau digital
 
-En 2025, avoir un site web n'est plus une option mais une nécessité absolue pour toute entreprise qui souhaite prospérer.
+Le monde a radicalement changé ces dernières années et la manière dont vos clients vous trouvent aussi. Aujourd'hui, votre entreprise ne commence plus à votre porte d'entrée mais sur l'écran d'un smartphone. Un site web en 2025 n'est plus une simple brochure numérique, c'est votre **jumeau digital** qui travaille pour vous chaque seconde.
 
-## 1. Votre vitrine ouverte 24h/24
+## Le premier réflexe de vos clients
 
-Contrairement à un magasin physique, votre site web travaille pour vous même quand vous dormez. Vos clients potentiels peuvent découvrir vos services à n'importe quelle heure.
+Imaginez un client potentiel qui entend parler de vous. Son premier réflexe sera de taper votre nom sur Google. S'il ne trouve rien ou s'il tombe sur une page qui semble figée dans le temps, vous perdez immédiatement en crédibilité.
 
-## 2. Crédibilité instantanée
+Un design moderne et fluide envoie un message inconscient de fiabilité. Vous montrez que vous êtes à jour, que vous investissez dans votre image et donc que vous prendrez soin de vos clients avec la même rigueur.
 
-**89% des consommateurs** recherchent une entreprise en ligne avant de faire un achat. Sans site web, vous perdez automatiquement cette clientèle.
+## Votre commercial le plus rentable
 
-## 3. Génération de leads automatique
+Au-delà de l'image, c'est une question de **rentabilité**. Un site internet bien conçu est votre commercial le plus rentable :
 
-Un site bien optimisé génère des prospects qualifiés sans effort supplémentaire de votre part. C'est votre meilleur commercial.
+- Il ne prend pas de congés
+- Il ne tombe jamais malade
+- Il traite les demandes d'informations automatiquement
 
-## 4. Avantage concurrentiel
+Grâce à des outils d'automatisation, chaque visiteur qui remplit un formulaire est instantanément pris en charge. Vous ne laissez plus aucune opportunité s'échapper par manque de temps.
 
-Vos concurrents ont probablement déjà un site. Ne pas en avoir vous place automatiquement en position de faiblesse.
+## Reprenez le contrôle de votre narration
 
-## 5. Mesurabilité
+Enfin, votre site vous permet de reprendre le contrôle de votre narration. Sur les réseaux sociaux, vous dépendez d'un algorithme qui peut décider de vous cacher du jour au lendemain.
 
-Avec les outils d'analyse modernes, vous pouvez mesurer exactement ce qui fonctionne et optimiser en conséquence.
+Sur votre site, **vous êtes chez vous**. Vous décidez :
 
-## Conclusion
+- Du parcours de votre client
+- De ce qu'il voit en premier
+- De l'émotion que vous voulez lui transmettre
 
-Investir dans un site web professionnel n'est pas une dépense, c'est un investissement qui rapporte. [Contactez-moi](/contact) pour discuter de votre projet.
+C'est l'actif le plus stable et le plus puissant pour votre croissance à long terme.
+
+---
+
+Prêt à créer votre jumeau digital ? [Réservez un appel gratuit](/contact) pour en discuter.
     `,
     contentEn: `
-## Introduction
+## Your digital twin
 
-In 2025, having a website is no longer optional but an absolute necessity for any business that wants to thrive.
+The world has radically changed in recent years and so has the way your customers find you. Today, your business no longer starts at your front door but on a smartphone screen. A website in 2025 is no longer just a digital brochure, it's your **digital twin** working for you every second.
 
-## 1. Your 24/7 Storefront
+## Your customers' first reflex
 
-Unlike a physical store, your website works for you even while you sleep. Your potential clients can discover your services at any hour.
+Imagine a potential customer who hears about you. Their first reflex will be to type your name on Google. If they find nothing or land on a page that seems frozen in time, you immediately lose credibility.
 
-## 2. Instant Credibility
+A modern, fluid design sends an unconscious message of reliability. You show that you're up to date, that you invest in your image and therefore that you'll take care of your customers with the same rigor.
 
-**89% of consumers** research a business online before making a purchase. Without a website, you automatically lose this clientele.
+## Your most profitable salesperson
 
-## 3. Automatic Lead Generation
+Beyond image, it's a matter of **profitability**. A well-designed website is your most profitable salesperson:
 
-A well-optimized website generates qualified leads without additional effort on your part. It's your best salesperson.
+- It never takes days off
+- It never gets sick
+- It handles information requests automatically
 
-## 4. Competitive Advantage
+Thanks to automation tools, every visitor who fills out a form is instantly taken care of. You no longer let any opportunity slip away due to lack of time.
 
-Your competitors probably already have a website. Not having one automatically puts you at a disadvantage.
+## Take back control of your narrative
 
-## 5. Measurability
+Finally, your website allows you to take back control of your narrative. On social media, you depend on an algorithm that can decide to hide you overnight.
 
-With modern analytics tools, you can measure exactly what works and optimize accordingly.
+On your website, **you're at home**. You decide:
 
-## Conclusion
+- Your customer's journey
+- What they see first
+- The emotion you want to convey
 
-Investing in a professional website is not an expense, it's an investment that pays off. [Contact me](/contact) to discuss your project.
+It's the most stable and powerful asset for your long-term growth.
+
+---
+
+Ready to create your digital twin? [Book a free call](/contact) to discuss.
     `,
   },
   {
@@ -93,72 +109,106 @@ Investing in a professional website is not an expense, it's an investment that p
     slug: 'optimiser-taux-conversion',
     titleFr: 'Comment Optimiser Votre Taux de Conversion',
     titleEn: 'How to Optimize Your Conversion Rate',
-    excerptFr: 'Les techniques psychologiques et design qui transforment vos visiteurs en clients payants.',
-    excerptEn: 'Psychological and design techniques that transform visitors into paying clients.',
+    excerptFr: 'Attirer des visiteurs sur votre site est une première étape, mais si personne ne clique sur vos boutons d\'action, votre investissement est gâché.',
+    excerptEn: 'Attracting visitors to your site is a first step, but if no one clicks on your action buttons, your investment is wasted.',
     readTime: '7 min',
     categoryFr: 'Conversion',
     categoryEn: 'Conversion',
-    date: '2025-01-10',
+    date: '2025-02-03',
     author: 'Elie Ageron',
     contentFr: `
-## L'art de la conversion
+## La science de la conversion
 
-La conversion n'est pas un hasard. C'est une science qui combine psychologie, design et stratégie.
+Attirer des visiteurs sur votre site est une première étape cruciale, mais si personne ne clique sur vos boutons d'action, votre investissement est gâché. La conversion est une science qui mélange **psychologie, design et clarté**. Pour transformer un simple curieux en client payant, vous devez éliminer toute friction sur son parcours.
 
-## Les principes fondamentaux
+## Règle n°1 : La clarté du message
 
-### 1. La clarté avant tout
-Votre visiteur doit comprendre en **moins de 5 secondes** ce que vous proposez.
+En arrivant sur votre page, un utilisateur doit comprendre **trois choses en moins de cinq secondes** :
 
-### 2. Un seul objectif par page
-Chaque page doit avoir un objectif clair et unique. Trop de choix paralyse.
+1. Ce que vous proposez
+2. Comment cela résout son problème
+3. Ce qu'il doit faire ensuite
 
-### 3. La preuve sociale
-Les témoignages et avis clients multiplient par 3 vos conversions.
+Si vos phrases sont trop complexes ou vos boutons cachés, l'utilisateur partira. La simplicité est la forme ultime de la sophistication en web design.
 
-### 4. L'urgence et la rareté
-Ces leviers psychologiques augmentent significativement le passage à l'action.
+## Le pouvoir de la preuve sociale
 
-## Les erreurs à éviter
+La preuve sociale est votre deuxième levier le plus puissant. L'être humain est rassuré par le groupe.
 
-- Formulaires trop longs
-- CTAs peu visibles
-- Temps de chargement lent
-- Pas de version mobile
+En affichant des **témoignages authentiques**, des études de cas chiffrées et des logos de partenaires, vous réduisez le sentiment de risque chez votre prospect. Un avis client bien placé peut augmenter votre taux de conversion de manière spectaculaire parce qu'il valide votre expertise aux yeux de quelqu'un qui ne vous connaît pas encore.
 
-## Conclusion
+## L'urgence et l'incitation
 
-Optimiser vos conversions peut doubler votre chiffre d'affaires sans augmenter votre trafic.
+Ensuite, parlons de l'urgence et de l'incitation. Sans manipuler vos clients, vous devez leur donner une raison d'agir **maintenant** plutôt que demain.
+
+Cela peut passer par :
+
+- Une offre limitée
+- Un audit gratuit
+- Souligner le coût de l'inaction
+
+Chaque élément de votre site doit diriger l'œil vers un seul objectif clair, qu'il s'agisse d'un appel via Calendly ou d'un achat direct.
+
+## L'optimisation technique
+
+Enfin, l'optimisation technique est inséparable de la conversion :
+
+- Un site qui met plus de **3 secondes à charger** perd la moitié de ses visiteurs avant même qu'ils n'aient vu votre offre
+- La fluidité sur mobile est **non négociable**
+- Si votre formulaire de contact est difficile à remplir avec un pouce, vous perdez des ventes chaque jour
+
+Chaque détail compte pour transformer une intention en action concrète.
+
+---
+
+Envie d'auditer votre taux de conversion ? [Discutons-en](/contact).
     `,
     contentEn: `
-## The Art of Conversion
+## The science of conversion
 
-Conversion is not luck. It's a science that combines psychology, design, and strategy.
+Attracting visitors to your site is a crucial first step, but if no one clicks on your action buttons, your investment is wasted. Conversion is a science that mixes **psychology, design and clarity**. To transform a simple curious person into a paying customer, you must eliminate all friction on their journey.
 
-## Fundamental Principles
+## Rule #1: Message clarity
 
-### 1. Clarity Above All
-Your visitor must understand in **less than 5 seconds** what you offer.
+When arriving on your page, a user must understand **three things in less than five seconds**:
 
-### 2. One Goal Per Page
-Each page should have a clear, single objective. Too many choices paralyze.
+1. What you offer
+2. How it solves their problem
+3. What they need to do next
 
-### 3. Social Proof
-Testimonials and customer reviews triple your conversions.
+If your sentences are too complex or your buttons hidden, the user will leave. Simplicity is the ultimate form of sophistication in web design.
 
-### 4. Urgency and Scarcity
-These psychological levers significantly increase action-taking.
+## The power of social proof
 
-## Mistakes to Avoid
+Social proof is your second most powerful lever. Humans are reassured by the group.
 
-- Forms that are too long
-- CTAs that aren't visible
-- Slow loading times
-- No mobile version
+By displaying **authentic testimonials**, case studies with numbers, and partner logos, you reduce the sense of risk in your prospect. A well-placed customer review can dramatically increase your conversion rate because it validates your expertise in the eyes of someone who doesn't know you yet.
 
-## Conclusion
+## Urgency and incentive
 
-Optimizing your conversions can double your revenue without increasing your traffic.
+Next, let's talk about urgency and incentive. Without manipulating your customers, you need to give them a reason to act **now** rather than tomorrow.
+
+This can be through:
+
+- A limited offer
+- A free audit
+- Highlighting the cost of inaction
+
+Every element of your site should direct the eye towards a single clear objective, whether it's a call via Calendly or a direct purchase.
+
+## Technical optimization
+
+Finally, technical optimization is inseparable from conversion:
+
+- A site that takes more than **3 seconds to load** loses half its visitors before they even see your offer
+- Mobile fluidity is **non-negotiable**
+- If your contact form is difficult to fill out with a thumb, you're losing sales every day
+
+Every detail counts to transform intention into concrete action.
+
+---
+
+Want to audit your conversion rate? [Let's discuss](/contact).
     `,
   },
   {
@@ -166,78 +216,118 @@ Optimizing your conversions can double your revenue without increasing your traf
     slug: 'seo-local-guide-complet',
     titleFr: 'SEO Local : Le Guide Complet pour Dominer Google',
     titleEn: 'Local SEO: The Complete Guide to Dominate Google',
-    excerptFr: 'Apprenez à positionner votre entreprise en première page de Google dans votre région.',
-    excerptEn: 'Learn how to rank your business on the first page of Google in your region.',
+    excerptFr: 'Pour un commerce ou prestataire de services lié à une région, le SEO local est la stratégie la plus rentable pour apparaître en haut de Google.',
+    excerptEn: 'For a business or service provider tied to a region, local SEO is the most profitable strategy to appear at the top of Google.',
     readTime: '10 min',
     categoryFr: 'SEO',
     categoryEn: 'SEO',
-    date: '2025-01-05',
+    date: '2025-02-02',
     author: 'Elie Ageron',
     contentFr: `
 ## Pourquoi le SEO local est crucial
 
-**46% des recherches Google** ont une intention locale. Si vous n'êtes pas visible localement, vous perdez la moitié de votre marché.
+Pour un commerce ou un prestataire de services lié à une région géographique, le SEO local est la stratégie la plus rentable. C'est ce qui vous permet d'apparaître en haut de la page quand un client cherche un service près de chez lui. C'est une bataille pour la visibilité qui se gagne sur plusieurs fronts.
 
-## Les 5 piliers du SEO local
+## Votre présence sur les cartes
 
-### 1. Google Business Profile
-Créez et optimisez votre fiche Google Business. C'est gratuit et indispensable.
+Tout commence par votre présence sur les cartes. Votre **fiche d'établissement Google** doit être impeccable :
 
-### 2. Les avis clients
-Collectez activement des avis positifs. Répondez à tous les avis, positifs comme négatifs.
+- Photos de haute qualité
+- Horaires à jour
+- Flux régulier d'avis positifs
 
-### 3. Citations locales
-Inscrivez-vous sur les annuaires locaux : Pages Jaunes, Yelp, TripAdvisor selon votre secteur.
+Google utilise ces signaux pour déterminer votre niveau de confiance. Plus vous répondez aux avis, plus vous montrez à l'algorithme que votre entreprise est vivante et engagée envers ses clients.
 
-### 4. Contenu local
-Créez du contenu qui mentionne votre ville et région. Blog, pages de service localisées.
+## L'ancrage local sur votre site
 
-### 5. Backlinks locaux
-Obtenez des liens depuis des sites locaux : associations, journaux, partenaires.
+Sur votre site lui-même, la structure de vos pages doit refléter votre ancrage local. Cela signifie inclure le nom de votre **ville et de votre région** dans :
 
-## Les outils essentiels
+- Vos titres
+- Vos descriptions
+- Votre contenu de manière naturelle
 
-- Google Search Console
-- Google Business Profile
-- Moz Local
-- BrightLocal
+Créer des pages spécifiques pour chaque zone que vous desservez permet de capturer des recherches très précises que vos concurrents nationaux ignorent souvent.
 
-## Conclusion
+## Le contenu éducatif local
 
-Le SEO local est votre meilleur investissement pour attirer des clients de proximité.
+Le contenu éducatif est votre prochain pilier. En écrivant sur les besoins spécifiques des clients de votre région, vous devenez une **autorité locale**.
+
+Par exemple, parler des défis spécifiques de l'immobilier dans votre ville ou des normes artisanales locales crée un lien de proximité immédiat. Google identifie ce contenu comme hautement pertinent pour les utilisateurs de votre zone.
+
+## Les backlinks locaux
+
+Les liens externes locaux sont souvent oubliés mais essentiels. Un lien provenant de :
+
+- Un journal local
+- Un annuaire de quartier
+- Une association de commerçants
+
+...a **plus de poids** pour votre SEO local qu'un lien générique provenant d'un site à l'autre bout du monde. Cela prouve votre importance au sein de votre communauté physique.
+
+## L'expérience mobile
+
+Enfin, la vitesse de chargement et l'expérience mobile sont critiques pour le référencement local. La plupart des recherches locales sont effectuées **en déplacement sur un smartphone**.
+
+Si votre site n'est pas parfaitement adapté aux mobiles, Google vous pénalisera au profit d'un concurrent plus agile techniquement.
+
+**Dominer le SEO local, c'est être là où vos clients sont, au moment précis où ils ont besoin de vous.**
+
+---
+
+Besoin d'aide pour votre SEO local ? [Contactez-moi](/contact).
     `,
     contentEn: `
-## Why Local SEO is Crucial
+## Why local SEO is crucial
 
-**46% of Google searches** have local intent. If you're not visible locally, you're losing half your market.
+For a business or service provider tied to a geographic region, local SEO is the most profitable strategy. It's what allows you to appear at the top of the page when a customer searches for a service near them. It's a battle for visibility that's won on multiple fronts.
 
-## The 5 Pillars of Local SEO
+## Your presence on maps
 
-### 1. Google Business Profile
-Create and optimize your Google Business listing. It's free and essential.
+Everything starts with your presence on maps. Your **Google Business Profile** must be impeccable:
 
-### 2. Customer Reviews
-Actively collect positive reviews. Respond to all reviews, both positive and negative.
+- High-quality photos
+- Up-to-date hours
+- Regular flow of positive reviews
 
-### 3. Local Citations
-Register on local directories: Yelp, TripAdvisor depending on your industry.
+Google uses these signals to determine your trust level. The more you respond to reviews, the more you show the algorithm that your business is alive and engaged with its customers.
 
-### 4. Local Content
-Create content that mentions your city and region. Blog, localized service pages.
+## Local anchoring on your site
 
-### 5. Local Backlinks
-Get links from local sites: associations, newspapers, partners.
+On your site itself, the structure of your pages must reflect your local anchoring. This means including the name of your **city and region** in:
 
-## Essential Tools
+- Your titles
+- Your descriptions
+- Your content naturally
 
-- Google Search Console
-- Google Business Profile
-- Moz Local
-- BrightLocal
+Creating specific pages for each area you serve allows you to capture very precise searches that your national competitors often ignore.
 
-## Conclusion
+## Local educational content
 
-Local SEO is your best investment to attract nearby customers.
+Educational content is your next pillar. By writing about the specific needs of customers in your region, you become a **local authority**.
+
+For example, talking about the specific challenges of real estate in your city or local craft standards creates an immediate sense of proximity. Google identifies this content as highly relevant for users in your area.
+
+## Local backlinks
+
+Local external links are often forgotten but essential. A link from:
+
+- A local newspaper
+- A neighborhood directory
+- A merchants' association
+
+...has **more weight** for your local SEO than a generic link from a site on the other side of the world. It proves your importance within your physical community.
+
+## Mobile experience
+
+Finally, loading speed and mobile experience are critical for local SEO. Most local searches are done **on the go on a smartphone**.
+
+If your site isn't perfectly adapted to mobile, Google will penalize you in favor of a more technically agile competitor.
+
+**Dominating local SEO means being where your customers are, at the precise moment they need you.**
+
+---
+
+Need help with your local SEO? [Contact me](/contact).
     `,
   },
   {
@@ -245,90 +335,102 @@ Local SEO is your best investment to attract nearby customers.
     slug: 'landing-page-efficace',
     titleFr: 'Anatomie d\'une Landing Page qui Convertit',
     titleEn: 'Anatomy of a High-Converting Landing Page',
-    excerptFr: 'Décryptage des éléments essentiels d\'une page d\'atterrissage haute performance.',
-    excerptEn: 'Breaking down the essential elements of a high-performance landing page.',
+    excerptFr: 'Une landing page est un instrument de précision. Pour qu\'elle soit efficace, elle doit suivre une hiérarchie visuelle et psychologique.',
+    excerptEn: 'A landing page is a precision instrument. To be effective, it must follow a visual and psychological hierarchy.',
     readTime: '6 min',
     categoryFr: 'Design',
     categoryEn: 'Design',
-    date: '2025-01-01',
+    date: '2025-02-01',
     author: 'Elie Ageron',
     contentFr: `
-## Qu'est-ce qu'une landing page ?
+## Un instrument de précision
 
-Une landing page est une page web conçue avec un **seul objectif** : convertir les visiteurs en leads ou clients.
+Une landing page est un instrument de précision. Contrairement à une page d'accueil classique, elle n'a qu'un seul but et une seule destination. Pour qu'elle soit efficace, elle doit suivre une **hiérarchie visuelle et psychologique** qui mène naturellement votre visiteur vers la conversion.
 
-## Les éléments indispensables
+## La section Hero
 
-### 1. Le titre accrocheur
-Votre titre doit capturer l'attention en moins de 3 secondes et promettre un bénéfice clair.
+Tout commence par l'en-tête, la **section hero**. C'est ici que vous faites votre promesse principale.
 
-### 2. Le sous-titre explicatif
-Il précise votre offre et renforce la promesse du titre.
+- Votre titre doit être percutant et centré sur le **bénéfice client**, pas sur vos caractéristiques techniques
+- Un sous-titre doit soutenir cette promesse en apportant de la crédibilité
+- Le bouton d'appel à l'action doit être visible **immédiatement**, sans avoir à faire défiler la page
 
-### 3. Les visuels percutants
-Images ou vidéos de haute qualité qui montrent votre produit/service en action.
+## La section des bénéfices
 
-### 4. Les bénéfices, pas les fonctionnalités
-Listez ce que le client **gagne**, pas ce que le produit fait.
+Vient ensuite la section des bénéfices. Ne listez pas ce que vous faites, expliquez **ce que cela change pour votre client**.
 
-### 5. La preuve sociale
-Témoignages, logos clients, chiffres clés, certifications.
+Utilisez des visuels qui parlent d'eux-mêmes. Les images doivent montrer le résultat final que votre client souhaite atteindre. La clarté visuelle aide à maintenir l'attention et à guider la lecture vers les points les plus importants.
 
-### 6. Le CTA irrésistible
-Un bouton visible, avec un texte orienté action ("Obtenez votre devis gratuit").
+## La preuve sociale
 
-### 7. L'absence de navigation
-Pas de menu, pas de distraction. Un seul chemin : la conversion.
+La section de preuve sociale doit suivre rapidement. C'est le moment de montrer :
 
-## Les erreurs fatales
+- Des visages humains
+- Des citations de clients satisfaits
+- Des résultats concrets
 
-- Trop de texte
-- CTA en bas de page uniquement
-- Pas de version mobile
-- Temps de chargement > 3 secondes
+Plus vos témoignages sont **spécifiques**, plus ils sont efficaces. Un client qui explique comment il a gagné du temps ou de l'argent grâce à vous est votre meilleur argument de vente.
 
-## Conclusion
+## Adresser les objections
 
-Une landing page bien construite peut atteindre des taux de conversion de 20% ou plus.
+Ensuite, vous devez adresser les objections. Anticipez les questions que vos prospects se posent et répondez-y directement.
+
+Une section **FAQ bien pensée** ou un paragraphe rassurant sur votre garantie de service peut lever les derniers doutes. L'objectif est de rendre la décision de vous contacter aussi simple et évidente que possible.
+
+## Le formulaire parfait
+
+Enfin, votre formulaire ou votre widget de réservation doit être d'une **simplicité absolue**. Ne demandez que les informations strictement nécessaires.
+
+Plus vous demandez de détails, plus vous risquez de perdre votre prospect à la dernière seconde. Assurez une transition fluide entre la landing page et le début de votre relation client.
+
+---
+
+Envie de créer une landing page qui convertit ? [Parlons de votre projet](/contact).
     `,
     contentEn: `
-## What is a Landing Page?
+## A precision instrument
 
-A landing page is a web page designed with a **single objective**: convert visitors into leads or customers.
+A landing page is a precision instrument. Unlike a classic homepage, it has only one goal and one destination. To be effective, it must follow a **visual and psychological hierarchy** that naturally leads your visitor to conversion.
 
-## Essential Elements
+## The Hero section
 
-### 1. The Attention-Grabbing Headline
-Your headline must capture attention in less than 3 seconds and promise a clear benefit.
+Everything starts with the header, the **hero section**. This is where you make your main promise.
 
-### 2. The Explanatory Subheadline
-It clarifies your offer and reinforces the headline's promise.
+- Your title must be impactful and focused on the **customer benefit**, not on your technical features
+- A subtitle must support this promise by adding credibility
+- The call-to-action button must be visible **immediately**, without having to scroll
 
-### 3. Impactful Visuals
-High-quality images or videos that show your product/service in action.
+## The benefits section
 
-### 4. Benefits, Not Features
-List what the customer **gains**, not what the product does.
+Next comes the benefits section. Don't list what you do, explain **what it changes for your customer**.
 
-### 5. Social Proof
-Testimonials, client logos, key figures, certifications.
+Use visuals that speak for themselves. Images should show the end result your customer wants to achieve. Visual clarity helps maintain attention and guide reading to the most important points.
 
-### 6. The Irresistible CTA
-A visible button with action-oriented text ("Get your free quote").
+## Social proof
 
-### 7. No Navigation
-No menu, no distraction. One path only: conversion.
+The social proof section should follow quickly. It's time to show:
 
-## Fatal Mistakes
+- Human faces
+- Quotes from satisfied customers
+- Concrete results
 
-- Too much text
-- CTA at the bottom only
-- No mobile version
-- Loading time > 3 seconds
+The more **specific** your testimonials are, the more effective they are. A customer who explains how they saved time or money thanks to you is your best sales argument.
 
-## Conclusion
+## Addressing objections
 
-A well-built landing page can achieve conversion rates of 20% or more.
+Next, you need to address objections. Anticipate the questions your prospects are asking and answer them directly.
+
+A **well-designed FAQ section** or a reassuring paragraph about your service guarantee can remove the last doubts. The goal is to make the decision to contact you as simple and obvious as possible.
+
+## The perfect form
+
+Finally, your form or booking widget must be **absolutely simple**. Only ask for strictly necessary information.
+
+The more details you ask for, the more likely you are to lose your prospect at the last second. Ensure a smooth transition between the landing page and the start of your customer relationship.
+
+---
+
+Want to create a landing page that converts? [Let's talk about your project](/contact).
     `,
   },
 ];
