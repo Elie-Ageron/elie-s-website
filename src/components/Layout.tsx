@@ -23,10 +23,11 @@ const Layout = ({ children }: LayoutProps) => {
   const [showDecorations, setShowDecorations] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
 
-  // Safari (especially iOS Safari) is more prone to flicker/reloads with multiple fixed + blur + continuous animations.
-  const isSafari =
-    typeof navigator !== 'undefined' &&
-    /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+  // iOS Safari is more prone to GPU memory issues with multiple fixed layers + heavy blur + continuous animations.
+  const ua = typeof navigator !== 'undefined' ? navigator.userAgent : '';
+  const isSafari = /^((?!chrome|android).)*safari/i.test(ua);
+  const isIOS = /iP(hone|ad|od)/i.test(ua);
+  const isIOSSafari = isIOS && isSafari;
 
   useEffect(() => {
     if (typeof window === 'undefined' || !('matchMedia' in window)) return;
@@ -61,11 +62,11 @@ const Layout = ({ children }: LayoutProps) => {
       <div className="min-h-screen bg-background relative overflow-x-hidden">
         {showDecorations && (
           <Suspense fallback={null}>
-            <BackgroundPattern />
+            <BackgroundPattern disableBlurAccents={isIOSSafari} />
             {!reduceMotion && (
               <>
-                <MobileBackgroundAnimation />
-                <FloatingParticles />
+                <MobileBackgroundAnimation lite={isIOSSafari} />
+                {!isIOSSafari && <FloatingParticles />}
               </>
             )}
           </Suspense>
