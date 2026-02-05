@@ -62,7 +62,7 @@ const Layout = ({ children }: LayoutProps) => {
         {showDecorations && (
           <Suspense fallback={null}>
             <BackgroundPattern />
-            {!reduceMotion && !isSafari && (
+            {!reduceMotion && (
               <>
                 <MobileBackgroundAnimation />
                 <FloatingParticles />
