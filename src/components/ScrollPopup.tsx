@@ -12,10 +12,12 @@ const ScrollPopup = () => {
   const [hasBeenShownThisSession, setHasBeenShownThisSession] = useState(false);
 
   useEffect(() => {
-    // Check session storage to see if popup was already shown
-    const popupShown = sessionStorage.getItem('popupShown');
-    if (popupShown) {
-      setHasBeenShownThisSession(true);
+    // Some Safari setups (private mode / blocked cookies) can throw on Storage access.
+    try {
+      const popupShown = window.sessionStorage.getItem('popupShown');
+      if (popupShown) setHasBeenShownThisSession(true);
+    } catch {
+      // If storage is unavailable, we just treat it as "not shown" for this session.
     }
   }, []);
 
@@ -23,12 +25,17 @@ const ScrollPopup = () => {
     if (hasBeenShownThisSession) return;
 
     const handleScroll = () => {
-      const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-      
+      const scrollPercentage =
+        (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+
       if (scrollPercentage >= 50) {
         setIsVisible(true);
         setHasBeenShownThisSession(true);
-        sessionStorage.setItem('popupShown', 'true');
+        try {
+          window.sessionStorage.setItem('popupShown', 'true');
+        } catch {
+          // ignore
+        }
       }
     };
 
