@@ -11,15 +11,23 @@ const HeroScene3D = lazy(() => import('@/components/animations/HeroScene3D'));
 const HeroSection = () => {
   const { t } = useLanguage();
   const isMobile = useIsMobile();
+  const [mounted, setMounted] = useState(false);
   const [show3D, setShow3D] = useState(false);
 
-  // Delay 3D scene to prioritize text content (LCP)
+  // Avoid loading WebGL during pre-render / first paint on mobile.
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Delay 3D scene to prioritize text content (LCP) — desktop only.
+  useEffect(() => {
+    if (!mounted) return;
     if (!isMobile) {
       const timer = setTimeout(() => setShow3D(true), 100);
       return () => clearTimeout(timer);
     }
-  }, [isMobile]);
+    setShow3D(false);
+  }, [isMobile, mounted]);
 
   return (
     <section 
@@ -27,7 +35,7 @@ const HeroSection = () => {
       aria-labelledby="hero-heading"
     >
       {/* 3D Scene Background - Desktop only, deferred */}
-      {show3D && (
+      {mounted && show3D && (
         <Suspense fallback={null}>
           <HeroScene3D />
         </Suspense>
