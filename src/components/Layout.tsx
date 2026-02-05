@@ -23,12 +23,12 @@ const Layout = ({ children }: LayoutProps) => {
   const [showDecorations, setShowDecorations] = useState(false);
   
   useEffect(() => {
-    // Use requestIdleCallback for non-critical elements
-    const id = requestIdleCallback(() => {
+    // Use setTimeout as fallback for Safari (no requestIdleCallback support)
+    const timer = setTimeout(() => {
       setShowDecorations(true);
-    }, { timeout: 1500 });
+    }, 100);
     
-    return () => cancelIdleCallback(id);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
