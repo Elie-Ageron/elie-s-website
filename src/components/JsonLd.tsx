@@ -136,42 +136,6 @@ const JsonLd = () => {
         },
       ],
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '5',
-      reviewCount: '12',
-      bestRating: '5',
-    },
-    review: [
-      {
-        '@type': 'Review',
-        reviewRating: {
-          '@type': 'Rating',
-          ratingValue: '5',
-        },
-        author: {
-          '@type': 'Person',
-          name: 'Marc D.',
-        },
-        reviewBody: language === 'fr'
-          ? 'Mon magasin a enfin une vraie présence en ligne. Les ventes ont augmenté de 40% le premier mois.'
-          : 'My store finally has a real presence online. Sales went up 40% in the first month.',
-      },
-      {
-        '@type': 'Review',
-        reviewRating: {
-          '@type': 'Rating',
-          ratingValue: '5',
-        },
-        author: {
-          '@type': 'Person',
-          name: 'Sophie L.',
-        },
-        reviewBody: language === 'fr'
-          ? 'Elie a dépassé mes attentes. Professionnel, rapide, et le site convertit vraiment!'
-          : 'Elie delivered beyond my expectations. Professional, fast, and the site actually converts!',
-      },
-    ],
   };
 
   const websiteSchema = {
