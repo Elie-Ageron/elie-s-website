@@ -158,6 +158,8 @@ const TestimonialsSection = () => {
                   src={currentTestimonial.image}
                   alt={`Photo de ${currentTestimonial.author}, client satisfait Elie Ageron Web Design - ${currentTestimonial.role}`}
                   className="w-16 h-16 rounded-full object-cover border-2 border-primary/30"
+                  width={64}
+                  height={64}
                   loading="lazy"
                 />
                 <div className="flex-1">

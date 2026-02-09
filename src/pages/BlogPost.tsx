@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowLeft, Clock, User, Calendar, Share2 } from 'lucide-react';
 import { Link, useParams, Navigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import SEO from '@/components/SEO';
@@ -135,13 +136,50 @@ const BlogPost = () => {
     }
   };
 
+  const rawPost = slug ? getPostBySlug(slug) : null;
+
+  const blogPostingSchema = rawPost && post ? {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: rawPost.date,
+    dateModified: rawPost.date,
+    author: {
+      '@type': 'Person',
+      name: 'Elie Ageron',
+      url: 'https://elieageron.lovable.app/',
+    },
+    publisher: {
+      '@type': 'Person',
+      name: 'Elie Ageron',
+      url: 'https://elieageron.lovable.app/',
+    },
+    image: 'https://elieageron.lovable.app/og-image.png',
+    url: `https://elieageron.lovable.app/blog/${slug}`,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://elieageron.lovable.app/blog/${slug}`,
+    },
+    inLanguage: language === 'fr' ? 'fr-FR' : 'en-US',
+    articleSection: post.category,
+    wordCount: post.content.split(/\s+/).length,
+  } : null;
+
   return (
     <>
       <SEO 
         page="blog"
-        customTitle={`${post.title} | Elie Ageron`}
-        customDescription={post.excerpt}
+        customTitle={`${post?.title} | Elie Ageron`}
+        customDescription={post?.excerpt}
       />
+      {blogPostingSchema && (
+        <Helmet>
+          <script type="application/ld+json">
+            {JSON.stringify(blogPostingSchema)}
+          </script>
+        </Helmet>
+      )}
       
       {/* Hero */}
       <section className="py-10 sm:py-12 md:py-16 relative grain" aria-labelledby="post-title">

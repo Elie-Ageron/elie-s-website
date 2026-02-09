@@ -28,8 +28,10 @@ const PersonalIntroSection = () => {
               {/* Image - optimized loading */}
               <img
                 src={eliePortrait}
-                alt="Elie Ageron - Web Designer & Conversion Expert"
+                alt="Elie Ageron - Web Designer & Conversion Expert spécialisé en sites haute conversion à Annecy, Haute-Savoie"
                 className="relative rounded-xl shadow-xl w-full object-cover aspect-[4/5]"
+                width={280}
+                height={350}
                 loading="eager"
                 decoding="async"
                 fetchPriority="high"
