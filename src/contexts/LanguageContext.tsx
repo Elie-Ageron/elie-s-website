@@ -21,7 +21,7 @@ const translations = {
     // Home Page
     'hero.headline1': "Your website is losing you clients.",
     'hero.headline2': "Let's fix that.",
-    'hero.badge': '7-Day Delivery • From $300',
+    'hero.badge': '7–14 Day Delivery • From $300',
     'hero.cta': "Let's talk about you 🚀",
     'hero.scroll': 'Scroll',
     'home.viewPricing': 'View Pricing',
@@ -120,7 +120,7 @@ const translations = {
     'services.landing.price': '$300',
     'services.landing.desc': 'Perfect for launching a product or testing a market.',
     'services.landing.feature1': 'High-conversion design',
-    'services.landing.feature2': '7-day delivery',
+    'services.landing.feature2': '7–14 day delivery',
     'services.landing.feature3': 'Mobile optimized',
     'services.landing.cta': 'Get started',
     
@@ -220,7 +220,7 @@ const translations = {
     // Home Page
     'hero.headline1': "Votre site vous fait perdre des clients.",
     'hero.headline2': "Changeons ça.",
-    'hero.badge': 'Projet fini en 7 jours • Dès 300€',
+    'hero.badge': 'Livraison 7–14 jours ouvrés • Dès 300€',
     'hero.cta': 'Parlons de vous 🚀',
     'hero.scroll': 'Défiler',
     'home.viewPricing': 'Voir les tarifs',
@@ -319,7 +319,7 @@ const translations = {
     'services.landing.price': '300€',
     'services.landing.desc': 'Parfait pour lancer un produit ou tester un marché.',
     'services.landing.feature1': 'Design haute conversion',
-    'services.landing.feature2': 'Livraison 7 jours',
+    'services.landing.feature2': 'Livraison 7–14 jours',
     'services.landing.feature3': 'Optimisé mobile',
     'services.landing.cta': 'Commencer',
     
