@@ -9,7 +9,6 @@ import HeroSection from '@/components/HeroSection';
 import PersonalIntroSection from '@/components/PersonalIntroSection';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
 import SEO from '@/components/SEO';
-import JsonLd from '@/components/JsonLd';
 
 const Home = () => {
   const { t } = useLanguage();
@@ -17,7 +16,6 @@ const Home = () => {
   return (
     <>
       <SEO page="home" />
-      <JsonLd />
       
       {/* Hero Section with 3D */}
       <HeroSection />

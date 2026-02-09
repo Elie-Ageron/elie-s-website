@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import SEO from '@/components/SEO';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
+import InternalLinks from '@/components/InternalLinks';
 import { blogPosts, getLocalizedPost } from '@/data/blogPosts';
 
 const Blog = () => {
@@ -156,6 +157,9 @@ const Blog = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Internal Links */}
+      <InternalLinks currentPage="blog" />
 
       {/* Contact */}
       <ContactMethodsSection />

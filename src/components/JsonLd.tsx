@@ -20,6 +20,9 @@ const JsonLd = () => {
     telephone: '+33695555318',
     address: {
       '@type': 'PostalAddress',
+      addressLocality: 'Annecy',
+      addressRegion: 'Haute-Savoie',
+      postalCode: '74000',
       addressCountry: 'FR',
     },
     sameAs: [
@@ -51,6 +54,9 @@ const JsonLd = () => {
     priceRange: '€€',
     address: {
       '@type': 'PostalAddress',
+      addressLocality: 'Annecy',
+      addressRegion: 'Haute-Savoie',
+      postalCode: '74000',
       addressCountry: 'FR',
     },
     areaServed: [

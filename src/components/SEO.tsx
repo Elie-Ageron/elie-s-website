@@ -129,7 +129,8 @@ const SEO = ({ page, customTitle, customDescription }: SEOProps) => {
       
       {/* Additional SEO */}
       <meta name="keywords" content="Elie Ageron, web design, création site web, website, landing page, conversion, France" />
-      <meta name="geo.region" content="FR" />
+      <meta name="geo.region" content="FR-74" />
+      <meta name="geo.placename" content="Annecy, Haute-Savoie" />
     </Helmet>
   );
 };
