@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import SEO from '@/components/SEO';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
+import InternalLinks from '@/components/InternalLinks';
 import { getPostBySlug, getLocalizedPost, blogPosts } from '@/data/blogPosts';
 import { useMemo } from 'react';
 
@@ -305,6 +306,9 @@ const BlogPost = () => {
           </div>
         </section>
       )}
+
+      {/* Internal Links */}
+      <InternalLinks currentPage="blog" />
 
       {/* Contact */}
       <ContactMethodsSection />

@@ -19,6 +19,7 @@ const Breadcrumb = () => {
     '/pricing': { en: 'Pricing', fr: 'Tarifs' },
     '/portfolio': { en: 'Portfolio', fr: 'Portfolio' },
     '/contact': { en: 'Contact', fr: 'Contact' },
+    '/blog': { en: 'Blog', fr: 'Blog' },
   };
 
   // Don't show breadcrumb on home page
