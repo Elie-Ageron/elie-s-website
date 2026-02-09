@@ -88,8 +88,7 @@ const Home = () => {
       <TestimonialsSection />
 
       {/* Contact Methods Section */}
-      <section className="relative overflow-hidden" aria-labelledby="contact-heading">
-        <h2 id="contact-heading" className="sr-only">Contact Elie Ageron</h2>
+      <section className="relative overflow-hidden">
         <div className="hidden sm:block">
           <FloatingElements count={5} />
         </div>

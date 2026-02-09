@@ -52,8 +52,9 @@ const StatsSection = () => {
   ];
 
   return (
-    <section ref={containerRef} className="py-20 sm:py-28 md:py-36 relative overflow-hidden">
+    <section ref={containerRef} className="py-20 sm:py-28 md:py-36 relative overflow-hidden" aria-labelledby="stats-heading">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 relative">
+        <h2 id="stats-heading" className="sr-only">Why Your Business Needs a Professional Website</h2>
         
         {/* Animated vertical connecting line - hidden on mobile */}
         <div className="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 hidden md:block">

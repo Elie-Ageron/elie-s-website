@@ -95,8 +95,7 @@ const Pricing = () => {
       </section>
 
       {/* Maintenance Toggle */}
-      <section className="py-6 sm:py-8" aria-labelledby="maintenance-toggle-heading">
-        <h2 id="maintenance-toggle-heading" className="sr-only">Monthly Maintenance Option</h2>
+      <section className="py-6 sm:py-8" aria-label="Monthly maintenance option">
         <div className="max-w-xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
