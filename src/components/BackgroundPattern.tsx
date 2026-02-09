@@ -4,7 +4,7 @@ interface BackgroundPatternProps {
 
 const BackgroundPattern = ({ disableBlurAccents = false }: BackgroundPatternProps) => {
   return (
-    <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+    <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden" style={{ willChange: 'auto', contain: 'strict' }}>
       {/* Very subtle grid pattern for light theme */}
       <div
         className="absolute inset-0 opacity-[0.4]"

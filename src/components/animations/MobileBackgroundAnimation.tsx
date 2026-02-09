@@ -26,7 +26,7 @@ const MobileBackgroundAnimation = ({ lite = false }: MobileBackgroundAnimationPr
   const dotsCount = lite ? 4 : 8;
 
   return (
-    <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden sm:hidden">
+    <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden sm:hidden" style={{ contain: 'strict' }}>
       {orbs.map((orb, index) => (
         <motion.div
           key={index}

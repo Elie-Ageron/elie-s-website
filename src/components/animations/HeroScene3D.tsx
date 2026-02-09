@@ -491,7 +491,7 @@ const HeroScene3D = () => {
       mouseRef.y = -(e.clientY / window.innerHeight) * 2 + 1;
     };
     
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
   
@@ -499,9 +499,10 @@ const HeroScene3D = () => {
     <div className="absolute inset-0 z-0 pointer-events-none">
       <Canvas
         camera={{ position: [0, 0, 10], fov: 50 }}
-        gl={{ antialias: true, alpha: true }}
+        gl={{ antialias: false, alpha: true, powerPreference: 'high-performance' }}
         style={{ background: 'transparent' }}
         dpr={[1, 1.5]}
+        frameloop="always"
       >
         <Suspense fallback={null}>
           <Scene />
