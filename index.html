@@ -51,17 +51,20 @@
     <!-- Theme color -->
     <meta name="theme-color" content="#c4516b" />
     
-    <!-- Preconnect for performance - critical only -->
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin />
     
-    <!-- Preload critical font -->
+    <!-- Preload critical font CSS -->
     <link rel="preload" href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" as="style" />
     
-    <!-- General Sans Font from Fontshare - reduced weights for faster load -->
-    <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
+    <!-- Non-render-blocking font loading -->
+    <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" /></noscript>
     
-    <!-- DNS Prefetch - deferred connections -->
+    <!-- DNS Prefetch & Preconnect - deferred connections -->
     <link rel="dns-prefetch" href="https://calendly.com" />
+    <link rel="preconnect" href="https://calendly.com" crossorigin />
     
     <!-- Canonical -->
     <link rel="canonical" href="https://elieageron.lovable.app/" />

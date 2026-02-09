@@ -161,6 +161,7 @@ const TestimonialsSection = () => {
                   width={64}
                   height={64}
                   loading="lazy"
+                  decoding="async"
                 />
                 <div className="flex-1">
                   <div className="font-semibold text-foreground text-lg">
