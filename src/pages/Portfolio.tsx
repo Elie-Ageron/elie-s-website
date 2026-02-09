@@ -83,6 +83,7 @@ const Portfolio = () => {
                   width={1200}
                   height={675}
                   loading="eager"
+                  decoding="async"
                 />
                 
                 {/* Subtle overlay on hover */}

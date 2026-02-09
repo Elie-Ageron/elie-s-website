@@ -32,14 +32,12 @@ const ScrollReveal = ({
   const initial = {
     opacity: 0,
     ...directions[direction],
-    filter: 'blur(10px)'
   };
 
   const animate = {
     opacity: isInView ? 1 : 0,
     y: isInView ? 0 : directions[direction].y,
     x: isInView ? 0 : directions[direction].x,
-    filter: isInView ? 'blur(0px)' : 'blur(10px)'
   };
 
   return (
