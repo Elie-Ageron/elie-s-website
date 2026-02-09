@@ -219,7 +219,7 @@ const translations = {
 
     // Home Page
     'hero.headline1': "Votre site vous fait perdre des clients.",
-    'hero.headline2': "Changeons cela.",
+    'hero.headline2': "Changeons ça.",
     'hero.badge': 'Projet fini en 7 jours • Dès 300€',
     'hero.cta': 'Parlons de vous 🚀',
     'hero.scroll': 'Défiler',
