@@ -26,7 +26,9 @@ const OrganizationSchema = () => {
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'FR',
-      addressLocality: 'France',
+      addressLocality: 'Annecy',
+      addressRegion: 'Haute-Savoie',
+      postalCode: '74000',
     },
     founder: {
       '@id': `${baseUrl}/#person`,

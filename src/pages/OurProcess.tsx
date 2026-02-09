@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import AnimatedTimeline from '@/components/animations/AnimatedTimeline';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
+import InternalLinks from '@/components/InternalLinks';
 import SEO from '@/components/SEO';
 
 const OurProcess = () => {
@@ -40,6 +41,9 @@ const OurProcess = () => {
           <AnimatedTimeline />
         </div>
       </section>
+
+      {/* Internal Links */}
+      <InternalLinks currentPage="process" />
 
       {/* Contact Methods */}
       <ContactMethodsSection />

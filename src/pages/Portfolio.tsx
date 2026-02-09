@@ -3,6 +3,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { ExternalLink, Sparkles, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
+import InternalLinks from '@/components/InternalLinks';
 import SEO from '@/components/SEO';
 import portfolioMyWebGlory from '@/assets/portfolio-mywebglory.png';
 
@@ -133,6 +134,9 @@ const Portfolio = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Internal Links */}
+      <InternalLinks currentPage="portfolio" />
 
       {/* Contact Methods */}
       <ContactMethodsSection />

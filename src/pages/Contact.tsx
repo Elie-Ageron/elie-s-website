@@ -3,6 +3,7 @@ import { Mail, Calendar, MessageCircle, ArrowRight, Clock, CheckCircle } from 'l
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import MagneticButton from '@/components/animations/MagneticButton';
+import InternalLinks from '@/components/InternalLinks';
 import SEO from '@/components/SEO';
 
 const Contact = () => {
@@ -206,6 +207,9 @@ const Contact = () => {
           </div>
         </div>
       </section>
+
+      {/* Internal Links */}
+      <InternalLinks currentPage="contact" />
     </>
   );
 };
