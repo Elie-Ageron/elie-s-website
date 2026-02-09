@@ -10,7 +10,7 @@ const faqData = {
     pricing: [
       {
         question: 'How much does a landing page cost?',
-        answer: 'A high-conversion landing page by Elie Ageron starts at $300, delivered within 7 days. This includes mobile optimization and conversion-focused design.',
+        answer: 'A high-conversion landing page by Elie Ageron starts at $300, delivered within 7 to 14 business days. This includes mobile optimization and conversion-focused design.',
       },
       {
         question: 'What is included in the 4-page showcase site?',
@@ -34,7 +34,7 @@ const faqData = {
       },
       {
         question: 'What is the turnaround time?',
-        answer: 'Landing pages are delivered in 7 days. Showcase sites delivery time varies based on project scope.',
+        answer: 'All projects are delivered in 7 to 14 business days, depending on scope and complexity.',
       },
       {
         question: 'Is my site optimized for mobile and search?',
@@ -68,7 +68,7 @@ const faqData = {
       },
       {
         question: 'What is the turnaround time?',
-        answer: 'Landing pages are delivered in 7 days. Showcase sites delivery time varies based on project scope.',
+        answer: 'All projects are delivered in 7 to 14 business days, depending on scope and complexity.',
       },
       {
         question: 'Is my site optimized for mobile and search?',
@@ -80,7 +80,7 @@ const faqData = {
     pricing: [
       {
         question: 'Combien coûte une landing page ?',
-        answer: 'Une landing page haute conversion par Elie Ageron commence à 300€, livrée en 7 jours. Cela inclut l\'optimisation mobile et un design axé conversion.',
+        answer: 'Une landing page haute conversion par Elie Ageron commence à 300€, livrée en 7 à 14 jours ouvrés. Cela inclut l\'optimisation mobile et un design axé conversion.',
       },
       {
         question: 'Qu\'est-ce qui est inclus dans le site vitrine 4 pages ?',
@@ -104,7 +104,7 @@ const faqData = {
       },
       {
         question: 'Quel est le délai de livraison ?',
-        answer: 'Les landing pages sont livrées en 7 jours. Le délai pour les sites vitrines varie selon le projet.',
+        answer: 'Tous les projets sont livrés en 7 à 14 jours ouvrés, selon la portée et la complexité.',
       },
       {
         question: 'Mon site sera-t-il optimisé mobile et SEO ?',
@@ -138,7 +138,7 @@ const faqData = {
       },
       {
         question: 'Quel est le délai de livraison ?',
-        answer: 'Les landing pages sont livrées en 7 jours. Le délai pour les sites vitrines varie selon le projet.',
+        answer: 'Tous les projets sont livrés en 7 à 14 jours ouvrés, selon la portée et la complexité.',
       },
       {
         question: 'Mon site sera-t-il optimisé mobile et SEO ?',

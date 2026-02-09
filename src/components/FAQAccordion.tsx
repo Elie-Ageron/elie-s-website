@@ -19,7 +19,7 @@ const faqContent = {
     },
     {
       question: 'What is the turnaround time?',
-      answer: 'Landing pages are delivered in 7 days. Showcase sites delivery time varies based on project scope.',
+      answer: 'All projects are delivered in 7 to 14 business days, depending on scope and complexity.',
     },
     {
       question: 'Is my site optimized for mobile and search?',
@@ -37,7 +37,7 @@ const faqContent = {
     },
     {
       question: 'Quel est le délai de livraison ?',
-      answer: 'Les landing pages sont livrées en 7 jours. Le délai pour les sites vitrines varie selon le projet.',
+      answer: 'Tous les projets sont livrés en 7 à 14 jours ouvrés, selon la portée et la complexité.',
     },
     {
       question: 'Mon site sera-t-il optimisé mobile et SEO ?',
