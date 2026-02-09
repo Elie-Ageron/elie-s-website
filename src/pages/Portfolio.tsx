@@ -79,6 +79,8 @@ const Portfolio = () => {
                   src={portfolioMyWebGlory}
                   alt="MyWebGlory - Site web premium pour agence de marketing événementiel créé par Elie Ageron Web Design avec design moderne haute conversion"
                   className="w-full h-auto transition-transform duration-700 group-hover:scale-[1.02]"
+                  width={1200}
+                  height={675}
                   loading="eager"
                 />
                 

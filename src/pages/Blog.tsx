@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Clock, User } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import SEO from '@/components/SEO';
@@ -12,9 +13,42 @@ const Blog = () => {
 
   const localizedPosts = blogPosts.map(post => getLocalizedPost(post, language));
 
+  const blogSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: language === 'fr' ? 'Blog Elie Ageron — Conseils Web Design & SEO' : 'Elie Ageron Blog — Web Design & SEO Tips',
+    description: language === 'fr'
+      ? 'Stratégies web, conversion et SEO pour développer votre business en ligne.'
+      : 'Web strategies, conversion and SEO to grow your business online.',
+    url: 'https://elieageron.lovable.app/blog',
+    author: {
+      '@type': 'Person',
+      name: 'Elie Ageron',
+      url: 'https://elieageron.lovable.app/',
+    },
+    blogPost: blogPosts.map(post => {
+      const localized = getLocalizedPost(post, language);
+      return {
+        '@type': 'BlogPosting',
+        headline: localized.title,
+        description: localized.excerpt,
+        datePublished: post.date,
+        dateModified: post.date,
+        author: { '@type': 'Person', name: 'Elie Ageron' },
+        url: `https://elieageron.lovable.app/blog/${post.slug}`,
+        image: 'https://elieageron.lovable.app/og-image.png',
+      };
+    }),
+  };
+
   return (
     <>
       <SEO page="blog" />
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(blogSchema)}
+        </script>
+      </Helmet>
       
       {/* Hero */}
       <section className="py-12 sm:py-16 md:py-20 relative grain" aria-labelledby="blog-hero-heading">
