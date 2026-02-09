@@ -12,6 +12,7 @@ const Footer = () => {
     { label: t('nav.process'), href: '/our-process' },
     { label: t('nav.pricing'), href: '/pricing' },
     { label: t('nav.portfolio'), href: '/portfolio' },
+    { label: 'Blog', href: '/blog' },
     { label: t('nav.contact'), href: '/contact' },
   ];
 
