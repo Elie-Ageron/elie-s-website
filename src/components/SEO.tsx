@@ -74,7 +74,7 @@ const seoData = {
 const SEO = ({ page, customTitle, customDescription }: SEOProps) => {
   const { language } = useLanguage();
   const data = seoData[language][page];
-  const baseUrl = 'https://elieageron.lovable.app';
+  const baseUrl = 'https://elieageron.com';
   
   // Use custom values if provided, otherwise fall back to page defaults
   const title = customTitle || data.title;

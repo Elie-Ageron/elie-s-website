@@ -3,7 +3,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 const ReviewSchema = () => {
   const { language } = useLanguage();
-  const baseUrl = 'https://elieageron.lovable.app';
+  const baseUrl = 'https://elieageron.com';
 
   const serviceSchema = {
     '@context': 'https://schema.org',

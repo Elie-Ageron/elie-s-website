@@ -21,11 +21,11 @@ const Blog = () => {
     description: language === 'fr'
       ? 'Stratégies web, conversion et SEO pour développer votre business en ligne.'
       : 'Web strategies, conversion and SEO to grow your business online.',
-    url: 'https://elieageron.lovable.app/blog',
+    url: 'https://elieageron.com/blog',
     author: {
       '@type': 'Person',
       name: 'Elie Ageron',
-      url: 'https://elieageron.lovable.app/',
+      url: 'https://elieageron.com/',
     },
     blogPost: blogPosts.map(post => {
       const localized = getLocalizedPost(post, language);
@@ -36,8 +36,8 @@ const Blog = () => {
         datePublished: post.date,
         dateModified: post.date,
         author: { '@type': 'Person', name: 'Elie Ageron' },
-        url: `https://elieageron.lovable.app/blog/${post.slug}`,
-        image: 'https://elieageron.lovable.app/og-image.png',
+        url: `https://elieageron.com/blog/${post.slug}`,
+        image: 'https://elieageron.com/og-image.png',
       };
     }),
   };
