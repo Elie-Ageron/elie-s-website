@@ -149,18 +149,18 @@ const BlogPost = () => {
     author: {
       '@type': 'Person',
       name: 'Elie Ageron',
-      url: 'https://elieageron.lovable.app/',
+      url: 'https://elieageron.com/',
     },
     publisher: {
       '@type': 'Person',
       name: 'Elie Ageron',
-      url: 'https://elieageron.lovable.app/',
+      url: 'https://elieageron.com/',
     },
-    image: 'https://elieageron.lovable.app/og-image.png',
-    url: `https://elieageron.lovable.app/blog/${slug}`,
+    image: 'https://elieageron.com/og-image.png',
+    url: `https://elieageron.com/blog/${slug}`,
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://elieageron.lovable.app/blog/${slug}`,
+      '@id': `https://elieageron.com/blog/${slug}`,
     },
     inLanguage: language === 'fr' ? 'fr-FR' : 'en-US',
     articleSection: post.category,

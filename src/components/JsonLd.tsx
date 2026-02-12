@@ -3,7 +3,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 const JsonLd = () => {
   const { language } = useLanguage();
-  const baseUrl = 'https://elieageron.lovable.app';
+  const baseUrl = 'https://elieageron.com';
 
   const personSchema = {
     '@context': 'https://schema.org',

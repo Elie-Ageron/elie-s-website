@@ -11,7 +11,7 @@ interface BreadcrumbItem {
 const Breadcrumb = () => {
   const { t, language } = useLanguage();
   const location = useLocation();
-  const baseUrl = 'https://elieageron.lovable.app';
+  const baseUrl = 'https://elieageron.com';
 
   const pathMap: Record<string, { en: string; fr: string }> = {
     '/why-a-website': { en: 'Why a Website', fr: 'Pourquoi un Site' },
