@@ -32,7 +32,7 @@ const InternalLinks = ({ currentPage }: InternalLinksProps) => {
       path: '/pricing',
       icon: DollarSign,
       title: language === 'fr' ? 'Tarifs' : 'Pricing',
-      desc: language === 'fr' ? 'Landing pages dès 300€' : 'Landing pages from €300',
+      desc: language === 'fr' ? 'Landing pages dès 500€' : 'Landing pages from €500',
       anchor: '#pricing-plans-heading',
     },
     {

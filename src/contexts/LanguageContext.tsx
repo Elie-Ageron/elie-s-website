@@ -21,7 +21,7 @@ const translations = {
     // Home Page
     'hero.headline1': "Your website is losing you clients.",
     'hero.headline2': "Let's fix that.",
-    'hero.badge': '7–14 Day Delivery • From $300',
+    'hero.badge': '7–14 Day Delivery • From $500',
     'hero.cta': "Let's talk about you 🚀",
     'hero.scroll': 'Scroll',
     'home.viewPricing': 'View Pricing',
@@ -117,7 +117,7 @@ const translations = {
     'services.title': 'Invest in your digital presence',
     'services.subtitle': 'Premium solutions tailored to your ambitions',
     'services.landing.title': 'Landing Page',
-    'services.landing.price': '$300',
+    'services.landing.price': '$500',
     'services.landing.desc': 'Perfect for launching a product or testing a market.',
     'services.landing.feature1': 'High-conversion design',
     'services.landing.feature2': '7–14 day delivery',
@@ -125,7 +125,7 @@ const translations = {
     'services.landing.cta': 'Get started',
     
     'services.authority.title': '4-Page Showcase Site',
-    'services.authority.price': '$1000',
+    'services.authority.price': '$1500',
     'services.authority.desc': 'Establish your brand as an industry leader.',
     'services.authority.feature1': 'Complete SEO optimization',
     'services.authority.feature2': 'Professional branding',
@@ -220,7 +220,7 @@ const translations = {
     // Home Page
     'hero.headline1': "Votre site vous fait perdre des clients.",
     'hero.headline2': "Changeons ça.",
-    'hero.badge': 'Livraison 7–14 jours ouvrés • Dès 300€',
+    'hero.badge': 'Livraison 7–14 jours ouvrés • Dès 500€',
     'hero.cta': 'Parlons de vous 🚀',
     'hero.scroll': 'Défiler',
     'home.viewPricing': 'Voir les tarifs',
@@ -316,7 +316,7 @@ const translations = {
     'services.title': 'Investissez dans votre présence digitale',
     'services.subtitle': 'Des solutions premium adaptées à vos ambitions',
     'services.landing.title': 'Landing Page',
-    'services.landing.price': '300€',
+    'services.landing.price': '500€',
     'services.landing.desc': 'Parfait pour lancer un produit ou tester un marché.',
     'services.landing.feature1': 'Design haute conversion',
     'services.landing.feature2': 'Livraison 7–14 jours',
@@ -324,7 +324,7 @@ const translations = {
     'services.landing.cta': 'Commencer',
     
     'services.authority.title': 'Site Vitrine 4 Pages',
-    'services.authority.price': '1000€',
+    'services.authority.price': '1500€',
     'services.authority.desc': 'Établissez votre marque comme leader de votre secteur.',
     'services.authority.feature1': 'Optimisation SEO complète',
     'services.authority.feature2': 'Branding professionnel',

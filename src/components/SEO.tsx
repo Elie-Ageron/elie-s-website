@@ -24,7 +24,7 @@ const seoData = {
     },
     pricing: {
       title: 'Web Design Pricing | Elie Ageron',
-      description: 'Transparent pricing by Elie Ageron. Landing pages from €300, showcase sites from €1000. No hidden fees, 100% satisfaction guaranteed.',
+      description: 'Transparent pricing by Elie Ageron. Landing pages from €500, showcase sites from €1500. No hidden fees, 100% satisfaction guaranteed.',
     },
     portfolio: {
       title: 'Portfolio & Case Studies | Elie Ageron',
@@ -54,7 +54,7 @@ const seoData = {
     },
     pricing: {
       title: 'Tarifs Web Design | Elie Ageron',
-      description: 'Tarifs transparents. Landing pages dès 300€, sites vitrines dès 1000€. Sans frais cachés, satisfaction garantie.',
+      description: 'Tarifs transparents. Landing pages dès 500€, sites vitrines dès 1500€. Sans frais cachés, satisfaction garantie.',
     },
     portfolio: {
       title: 'Portfolio & Réalisations | Elie Ageron',

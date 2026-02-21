@@ -115,7 +115,7 @@ const JsonLd = () => {
               ? 'Landing page haute conversion livrée en 7 à 14 jours ouvrés'
               : 'High-conversion landing page delivered in 7–14 business days',
           },
-          price: language === 'fr' ? '300' : '300',
+          price: language === 'fr' ? '500' : '500',
           priceCurrency: language === 'fr' ? 'EUR' : 'USD',
         },
         {
@@ -127,7 +127,7 @@ const JsonLd = () => {
               ? 'Site web complet avec optimisation SEO et stratégie de contenu'
               : 'Complete website with SEO optimization and content strategy',
           },
-          price: '1000',
+          price: '1500',
           priceCurrency: language === 'fr' ? 'EUR' : 'USD',
         },
         {
