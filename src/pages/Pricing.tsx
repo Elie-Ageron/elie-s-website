@@ -22,7 +22,7 @@ const Pricing = () => {
       id: 'landing',
       icon: Zap,
       title: t('services.landing.title'),
-      price: language === 'fr' ? '300€' : '$300',
+      price: language === 'fr' ? '500€' : '$500',
       maintenancePrice: language === 'fr' ? '+50€/mois' : '+$50/month',
       description: t('services.landing.desc'),
       features: [
@@ -37,7 +37,7 @@ const Pricing = () => {
       id: 'authority',
       icon: Crown,
       title: t('services.authority.title'),
-      price: language === 'fr' ? '1000€' : '$1000',
+      price: language === 'fr' ? '1500€' : '$1500',
       maintenancePrice: language === 'fr' ? '+100€/mois' : '+$100/month',
       description: t('services.authority.desc'),
       features: [
