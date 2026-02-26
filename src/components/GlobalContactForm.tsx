@@ -8,7 +8,6 @@ import { Label } from '@/components/ui/label';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useToast } from '@/hooks/use-toast';
 import ScrollReveal from '@/components/animations/ScrollReveal';
-import { supabase } from '@/integrations/supabase/client';
 
 const GlobalContactForm = () => {
   const { t } = useLanguage();
@@ -25,19 +24,7 @@ const GlobalContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      // Save to database
-      const { error } = await supabase
-        .from('contact_submissions')
-        .insert({
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-        });
-
-      if (error) throw error;
-
-      // Send to Google Sheets
-      fetch('https://script.google.com/macros/s/AKfycbxu13-AnjyCaXr818JdA-hCSohWEE2ii1ELGXM-PeQ_sGYYB8rvEhXr_NYh7YWedA4qyg/exec', {
+      await fetch('https://script.google.com/macros/s/AKfycbxu13-AnjyCaXr818JdA-hCSohWEE2ii1ELGXM-PeQ_sGYYB8rvEhXr_NYh7YWedA4qyg/exec', {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
@@ -46,7 +33,7 @@ const GlobalContactForm = () => {
           email: formData.email,
           message: formData.message,
         }),
-      }).catch(console.error);
+      });
 
       toast({
         title: '✨ ' + t('globalForm.success'),
