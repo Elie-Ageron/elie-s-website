@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, CheckCircle, Star, Users, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { lazy, Suspense, useState, useEffect } from 'react';
@@ -90,6 +90,26 @@ const HeroSection = () => {
                 {t('hero.cta')}
               </a>
             </Button>
+          </motion.div>
+
+
+          {/* Social Proof Badges */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.6 }}
+            className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-4 sm:gap-6"
+          >
+            {[
+              { icon: CheckCircle, label: t('hero.proof.satisfaction') },
+              { icon: Star, label: t('hero.proof.quality') },
+              { icon: Shield, label: t('hero.proof.guarantee') },
+            ].map((item, i) => (
+              <div key={i} className="flex items-center gap-2 text-muted-foreground text-xs sm:text-sm">
+                <item.icon className="w-4 h-4 text-primary shrink-0" aria-hidden="true" />
+                <span>{item.label}</span>
+              </div>
+            ))}
           </motion.div>
         </motion.header>
 
