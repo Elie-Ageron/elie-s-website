@@ -36,8 +36,7 @@ const GlobalContactForm = () => {
       });
 
       toast({
-        title: '✨ ' + t('globalForm.success'),
-        description: formData.name,
+        title: '✅ Message bien envoyé',
       });
 
       setFormData({ name: '', email: '', message: '' });
