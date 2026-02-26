@@ -105,8 +105,8 @@ const HeroSection = () => {
               { icon: Star, label: t('hero.proof.quality') },
               { icon: Shield, label: t('hero.proof.guarantee') },
             ].map((item, i) => (
-              <div key={i} className="flex items-center gap-2 text-muted-foreground text-xs sm:text-sm">
-                <item.icon className="w-4 h-4 text-primary shrink-0" aria-hidden="true" />
+              <div key={i} className="flex items-center gap-2.5 text-foreground/70 text-sm sm:text-base font-medium">
+                <item.icon className="w-5 h-5 text-primary shrink-0" aria-hidden="true" />
                 <span>{item.label}</span>
               </div>
             ))}
