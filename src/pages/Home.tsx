@@ -82,8 +82,8 @@ const Home = () => {
         </div>
       </section>
 
-      <StatsSection />
       <TestimonialsSection />
+      <StatsSection />
 
       {/* Contact Methods Section */}
       <section className="relative overflow-hidden">
