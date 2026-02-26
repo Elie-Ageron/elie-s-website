@@ -8,6 +8,7 @@ import { Label } from '@/components/ui/label';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useToast } from '@/hooks/use-toast';
 import ScrollReveal from '@/components/animations/ScrollReveal';
+import { supabase } from '@/integrations/supabase/client';
 
 const GlobalContactForm = () => {
   const { t } = useLanguage();
@@ -23,16 +24,33 @@ const GlobalContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate submission — will be connected to Google Sheets later
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    try {
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        });
 
-    toast({
-      title: '✨ ' + t('globalForm.success'),
-      description: formData.name,
-    });
+      if (error) throw error;
 
-    setFormData({ name: '', email: '', message: '' });
-    setIsSubmitting(false);
+      toast({
+        title: '✨ ' + t('globalForm.success'),
+        description: formData.name,
+      });
+
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('Contact form error:', error);
+      toast({
+        title: 'Erreur',
+        description: "Une erreur est survenue. Réessayez ou contactez-nous via WhatsApp.",
+        variant: 'destructive',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
