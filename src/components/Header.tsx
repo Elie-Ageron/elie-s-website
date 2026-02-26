@@ -62,6 +62,11 @@ const Header = () => {
               to="/" 
               className="text-lg sm:text-xl font-bold text-foreground hover:text-primary transition-colors"
               aria-label="Elie Ageron - Web Design - Home"
+              onClick={() => {
+                if (location.pathname === '/') {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+              }}
             >
               Elie Ageron
             </Link>
