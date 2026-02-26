@@ -25,6 +25,7 @@ const GlobalContactForm = () => {
     setIsSubmitting(true);
 
     try {
+      // Save to database
       const { error } = await supabase
         .from('contact_submissions')
         .insert({
@@ -34,6 +35,18 @@ const GlobalContactForm = () => {
         });
 
       if (error) throw error;
+
+      // Send to Google Sheets
+      fetch('https://script.google.com/macros/s/AKfycbxu13-AnjyCaXr818JdA-hCSohWEE2ii1ELGXM-PeQ_sGYYB8rvEhXr_NYh7YWedA4qyg/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      }).catch(console.error);
 
       toast({
         title: '✨ ' + t('globalForm.success'),
