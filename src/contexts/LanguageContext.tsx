@@ -209,9 +209,12 @@ const translations = {
 
     // Portfolio Page - Extra
     'portfolio.badge': 'This could be your site',
-    'portfolio.showcase.category': 'Premium Showcase Site',
-    'portfolio.showcase.cta': 'Discover MyWebGlory',
-    'portfolio.showcase.desc': 'A site designed to convert visitors into clients, with modern design and optimized user experience.',
+    'portfolio.showcase.mywebglory.category': 'Premium Showcase Site',
+    'portfolio.showcase.mywebglory.cta': 'Discover MyWebGlory',
+    'portfolio.showcase.mywebglory.desc': 'A site designed to convert visitors into clients, with modern design and optimized user experience.',
+    'portfolio.showcase.solarfusion.category': 'Solar Energy Company',
+    'portfolio.showcase.solarfusion.cta': 'Discover Solar Fusion',
+    'portfolio.showcase.solarfusion.desc': 'A professional site for a solar panel installer, designed to generate leads and build trust.',
   },
   fr: {
     // Header / Navigation
@@ -413,9 +416,12 @@ const translations = {
 
     // Portfolio Page - Extra
     'portfolio.badge': 'Ce site pourrait être le vôtre',
-    'portfolio.showcase.category': 'Site Vitrine Premium',
-    'portfolio.showcase.cta': 'Découvrir MyWebGlory',
-    'portfolio.showcase.desc': 'Un site conçu pour convertir les visiteurs en clients, avec un design moderne et une expérience utilisateur optimisée.',
+    'portfolio.showcase.mywebglory.category': 'Site Vitrine Premium',
+    'portfolio.showcase.mywebglory.cta': 'Découvrir MyWebGlory',
+    'portfolio.showcase.mywebglory.desc': 'Un site conçu pour convertir les visiteurs en clients, avec un design moderne et une expérience utilisateur optimisée.',
+    'portfolio.showcase.solarfusion.category': 'Énergie Solaire',
+    'portfolio.showcase.solarfusion.cta': 'Découvrir Solar Fusion',
+    'portfolio.showcase.solarfusion.desc': 'Un site professionnel pour un installateur de panneaux solaires, conçu pour générer des leads et inspirer confiance.',
   },
 };
 
