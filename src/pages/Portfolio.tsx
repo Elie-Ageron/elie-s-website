@@ -39,13 +39,16 @@ const PortfolioItem = ({ image, name, url, categoryKey, ctaKey, descKey, alt, de
           <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
           
           <img 
-            src={image}
+            src={`https://api.microlink.io/?url=${encodeURIComponent(url)}&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1200&viewport.height=675&viewport.deviceScaleFactor=1`}
             alt={alt}
             className="w-full h-auto transition-transform duration-700 group-hover:scale-[1.02]"
             width={1200}
             height={675}
             loading="eager"
             decoding="async"
+            onError={(e) => {
+              e.currentTarget.src = image;
+            }}
           />
           
           <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
