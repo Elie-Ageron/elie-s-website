@@ -1,13 +1,14 @@
 import { motion } from 'framer-motion';
-import { Heart } from 'lucide-react';
+import { Heart, Mail, Phone, MapPin } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
+import logo from '@/assets/logo.png';
 
 const Footer = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const currentYear = new Date().getFullYear();
 
-  const footerLinks = [
+  const navLinks = [
     { label: t('nav.why'), href: '/why-a-website' },
     { label: t('nav.process'), href: '/our-process' },
     { label: t('nav.pricing'), href: '/pricing' },
@@ -18,60 +19,91 @@ const Footer = () => {
 
   return (
     <div className="relative z-10" role="contentinfo" aria-label="Site footer">
-      {/* Navigation Band - Darker background */}
-      <div className="bg-background/80 border-t border-border/30">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 sm:py-6">
-          <motion.nav 
-            className="flex flex-wrap justify-center gap-x-2 sm:gap-x-8 gap-y-1 sm:gap-y-4" 
-            aria-label="Footer navigation"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            {footerLinks.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className="min-h-[44px] flex items-center px-3 sm:px-0 text-sm sm:text-base font-medium text-foreground/80 hover:text-primary active:text-primary transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </motion.nav>
-        </div>
-      </div>
-
-      {/* Footer - Slightly different background */}
-      <footer className="bg-secondary/30 backdrop-blur-sm border-t border-border/20">
-        <div className="max-w-6xl mx-auto px-6 py-8">
+      <footer className="bg-secondary/40 border-t border-border/30">
+        <div className="max-w-6xl mx-auto px-6 py-12 sm:py-16">
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="flex flex-col md:flex-row items-center justify-between gap-4"
+            className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12"
           >
-            {/* Logo & Copyright */}
-            <div className="flex items-center gap-4">
-              <Link 
-                to="/" 
-                className="text-lg font-bold text-foreground hover:text-primary transition-colors"
-                aria-label="Elie Ageron - Home"
-              >
-                Elie Ageron
+            {/* Brand Column */}
+            <div className="space-y-4">
+              <Link to="/" className="inline-flex items-center gap-3 group" aria-label="Elie Ageron - Home">
+                <img src={logo} alt="" className="w-8 h-8 rounded-lg" aria-hidden="true" />
+                <span className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
+                  Elie Ageron
+                </span>
               </Link>
-              <span className="text-sm text-muted-foreground">
-                © {currentYear} {t('footer.rights')}
-              </span>
+              <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
+                {language === 'fr'
+                  ? 'Création de sites web professionnels et performants pour développer votre activité en ligne.'
+                  : 'Professional, high-performance websites to grow your business online.'}
+              </p>
+              <div className="flex items-center gap-2 text-sm text-muted-foreground pt-1">
+                {t('footer.made')}
+                <Heart className="w-3.5 h-3.5 text-primary fill-primary" aria-hidden="true" />
+              </div>
             </div>
 
-            {/* Made with love */}
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              {t('footer.made')}
-              <Heart className="w-4 h-4 text-primary fill-primary" aria-hidden="true" />
+            {/* Navigation Column */}
+            <div>
+              <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
+                {language === 'fr' ? 'Navigation' : 'Navigation'}
+              </h3>
+              <nav className="flex flex-col gap-2.5" aria-label="Footer navigation">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors w-fit"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+
+            {/* Contact Column */}
+            <div>
+              <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
+                Contact
+              </h3>
+              <div className="flex flex-col gap-3">
+                <a
+                  href="mailto:contact@elieageron.com"
+                  className="inline-flex items-center gap-2.5 text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <Mail className="w-4 h-4 shrink-0" aria-hidden="true" />
+                  contact@elieageron.com
+                </a>
+                <a
+                  href="tel:+33695555318"
+                  className="inline-flex items-center gap-2.5 text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <Phone className="w-4 h-4 shrink-0" aria-hidden="true" />
+                  +33 6 95 55 53 18
+                </a>
+                <div className="inline-flex items-center gap-2.5 text-sm text-muted-foreground">
+                  <MapPin className="w-4 h-4 shrink-0" aria-hidden="true" />
+                  {language === 'fr' ? 'France — Remote' : 'France — Remote'}
+                </div>
+              </div>
             </div>
           </motion.div>
+
+          {/* Bottom bar */}
+          <div className="mt-10 pt-6 border-t border-border/30">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
+              <span>© {currentYear} Elie Ageron — {t('footer.rights')}</span>
+              <div className="flex items-center gap-4">
+                <Link to="/contact" className="hover:text-primary transition-colors">
+                  {language === 'fr' ? 'Mentions légales' : 'Legal'}
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
