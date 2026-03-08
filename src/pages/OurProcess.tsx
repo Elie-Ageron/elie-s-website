@@ -45,7 +45,7 @@ const OurProcess = () => {
         position: 4,
         name: language === 'fr' ? 'Révision & Retours' : 'Review & Feedback',
         text: language === 'fr'
-          ? 'Vous examinez le site et nous affinons ensemble jusqu'à ce que ce soit parfait.'
+          ? "Vous examinez le site et nous affinons ensemble jusqu'à ce que ce soit parfait."
           : 'You review the site and we refine together until it is perfect.',
       },
       {
