@@ -98,8 +98,11 @@ const Footer = () => {
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
               <span>© {currentYear} Elie Ageron — {t('footer.rights')}</span>
               <div className="flex items-center gap-4">
-                <Link to="/contact" className="hover:text-primary transition-colors">
-                  {language === 'fr' ? 'Mentions légales' : 'Legal'}
+                <Link to="/mentions-legales" className="hover:text-primary transition-colors">
+                  {language === 'fr' ? 'Mentions légales' : 'Legal Notice'}
+                </Link>
+                <Link to="/politique-confidentialite" className="hover:text-primary transition-colors">
+                  {language === 'fr' ? 'Confidentialité' : 'Privacy'}
                 </Link>
               </div>
             </div>

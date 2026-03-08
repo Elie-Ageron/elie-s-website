@@ -15,31 +15,46 @@ const renderContent = (content: string) => {
   const lines = content.trim().split('\n');
   const elements: JSX.Element[] = [];
   let key = 0;
+  let listItems: JSX.Element[] = [];
+
+  const flushList = () => {
+    if (listItems.length > 0) {
+      elements.push(
+        <ul key={key++} className="list-disc list-inside my-4 space-y-1">
+          {[...listItems]}
+        </ul>
+      );
+      listItems = [];
+    }
+  };
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
-    
+
     if (line.startsWith('## ')) {
+      flushList();
       elements.push(
         <h2 key={key++} className="text-2xl md:text-3xl font-bold text-foreground mt-10 mb-4">
           {line.replace('## ', '')}
         </h2>
       );
     } else if (line.startsWith('### ')) {
+      flushList();
       elements.push(
         <h3 key={key++} className="text-xl md:text-2xl font-semibold text-foreground mt-8 mb-3">
           {line.replace('### ', '')}
         </h3>
       );
     } else if (line.startsWith('- ')) {
-      elements.push(
-        <li key={key++} className="text-muted-foreground ml-4 mb-2">
+      listItems.push(
+        <li key={key++} className="text-muted-foreground mb-1">
           {renderInlineFormatting(line.replace('- ', ''))}
         </li>
       );
     } else if (line.trim() === '') {
-      // Skip empty lines
+      flushList();
     } else {
+      flushList();
       elements.push(
         <p key={key++} className="text-muted-foreground leading-relaxed mb-4">
           {renderInlineFormatting(line)}
@@ -48,6 +63,7 @@ const renderContent = (content: string) => {
     }
   }
 
+  flushList();
   return elements;
 };
 
@@ -103,7 +119,7 @@ const BlogPost = () => {
   const relatedPosts = useMemo(() => {
     return blogPosts
       .filter(p => p.slug !== slug)
-      .slice(0, 2)
+      .slice(0, 3)
       .map(p => getLocalizedPost(p, language));
   }, [slug, language]);
 
@@ -145,18 +161,24 @@ const BlogPost = () => {
     headline: post.title,
     description: post.excerpt,
     datePublished: rawPost.date,
-    dateModified: rawPost.date,
+    dateModified: rawPost.lastModified || rawPost.date,
     author: {
       '@type': 'Person',
       name: 'Elie Ageron',
       url: 'https://elieageron.com/',
     },
     publisher: {
-      '@type': 'Person',
-      name: 'Elie Ageron',
+      '@type': 'Organization',
+      name: 'Elie Ageron Web Design',
       url: 'https://elieageron.com/',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://elieageron.com/icons/apple-touch-icon.png',
+        width: 180,
+        height: 180,
+      },
     },
-    image: 'https://elieageron.com/og-image.png',
+    image: rawPost.image || 'https://elieageron.com/og-image.png',
     url: `https://elieageron.com/blog/${slug}`,
     mainEntityOfPage: {
       '@type': 'WebPage',
@@ -183,6 +205,12 @@ const BlogPost = () => {
         page="blog"
         customTitle={`${post?.title} | Elie Ageron`}
         customDescription={post?.excerpt}
+        customCanonical={`https://elieageron.com/blog/${slug}`}
+        ogImage={rawPost?.image ?? undefined}
+        ogType="article"
+        articlePublishedTime={rawPost?.date}
+        articleModifiedTime={rawPost?.lastModified || rawPost?.date}
+        articleSection={post?.category}
       />
       {blogPostingSchema && (
         <Helmet>

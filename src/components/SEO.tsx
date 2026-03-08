@@ -5,8 +5,35 @@ interface SEOProps {
   page: 'home' | 'why' | 'process' | 'pricing' | 'portfolio' | 'contact' | 'blog';
   customTitle?: string;
   customDescription?: string;
+  customCanonical?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article';
+  articlePublishedTime?: string;
+  articleModifiedTime?: string;
+  articleSection?: string;
   structuredData?: object | object[];
 }
+
+const pageKeywords = {
+  en: {
+    home: 'Elie Ageron, web design, web designer, conversion optimization, website, Annecy, Haute-Savoie, France',
+    why: 'why a website, need website 2025, website business benefits, online presence, digital visibility',
+    process: 'web design process, how to build a website, website creation steps, web designer workflow',
+    pricing: 'web design pricing, website cost, landing page price, showcase site price, affordable web design',
+    portfolio: 'web design portfolio, website examples, web design case studies, client results',
+    contact: 'contact web designer, book web design call, hire web designer France, web design consultation',
+    blog: 'web design tips, conversion optimization, SEO guide, digital marketing, online business growth',
+  },
+  fr: {
+    home: 'Elie Ageron, web design, création site web, optimisation conversion, site internet, Annecy, Haute-Savoie',
+    why: 'pourquoi site web, besoin site internet 2025, bénéfices site web, présence en ligne, visibilité digitale',
+    process: 'processus création site web, comment créer site internet, étapes création site web',
+    pricing: 'tarif web design, prix site internet, coût landing page, tarif site vitrine, web design Annecy',
+    portfolio: 'portfolio web design, exemples sites web, réalisations web design, résultats clients',
+    contact: 'contacter web designer, réserver appel web design, embaucher web designer France',
+    blog: 'conseils web design, optimisation conversion, guide SEO local, marketing digital, croissance business',
+  },
+};
 
 // Optimized titles: ALL under 60 characters
 const seoData = {
@@ -72,7 +99,7 @@ const seoData = {
   },
 };
 
-const SEO = ({ page, customTitle, customDescription, structuredData }: SEOProps) => {
+const SEO = ({ page, customTitle, customDescription, customCanonical, ogImage, ogType = 'website', articlePublishedTime, articleModifiedTime, articleSection, structuredData }: SEOProps) => {
   const { language } = useLanguage();
   const data = seoData[language][page];
   const baseUrl = 'https://elieageron.com';
@@ -80,6 +107,7 @@ const SEO = ({ page, customTitle, customDescription, structuredData }: SEOProps)
   // Use custom values if provided, otherwise fall back to page defaults
   const title = customTitle || data.title;
   const description = customDescription || data.description;
+  const keywords = pageKeywords[language][page];
   
   const pathMap: Record<string, string> = {
     home: '',
@@ -92,7 +120,8 @@ const SEO = ({ page, customTitle, customDescription, structuredData }: SEOProps)
   };
   
   const currentPath = pathMap[page] || '';
-  const canonicalUrl = `${baseUrl}${currentPath}`;
+  const canonicalUrl = customCanonical || `${baseUrl}${currentPath}`;
+  const ogImageUrl = ogImage || `${baseUrl}/og-image.png`;
 
   return (
     <Helmet>
@@ -101,35 +130,51 @@ const SEO = ({ page, customTitle, customDescription, structuredData }: SEOProps)
       <meta name="title" content={title} />
       <meta name="description" content={description} />
       <meta name="author" content="Elie Ageron" />
-      <meta name="robots" content="index, follow, max-image-preview:large" />
+      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       
       {/* Language */}
       <html lang={language} />
       
-      {/* Canonical */}
+      {/* Canonical — simplified hreflang: same URL serves both languages */}
       <link rel="canonical" href={canonicalUrl} />
-      <link rel="alternate" hrefLang="en" href={canonicalUrl} />
-      <link rel="alternate" hrefLang="fr" href={canonicalUrl} />
-      <link rel="alternate" hrefLang="x-default" href={baseUrl} />
+      <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
       
       {/* Open Graph / Facebook - Unique per page */}
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content={ogType} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={`${baseUrl}/og-image.png`} />
+      <meta property="og:image" content={ogImageUrl} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:locale" content={language === 'fr' ? 'fr_FR' : 'en_US'} />
       <meta property="og:site_name" content="Elie Ageron Web Design" />
+
+      {/* Article-specific OG tags */}
+      {ogType === 'article' && articlePublishedTime && (
+        <meta property="article:published_time" content={articlePublishedTime} />
+      )}
+      {ogType === 'article' && articleModifiedTime && (
+        <meta property="article:modified_time" content={articleModifiedTime} />
+      )}
+      {ogType === 'article' && (
+        <meta property="article:author" content="https://elieageron.com" />
+      )}
+      {ogType === 'article' && articleSection && (
+        <meta property="article:section" content={articleSection} />
+      )}
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@elieageron" />
       <meta name="twitter:url" content={canonicalUrl} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={`${baseUrl}/og-image.png`} />
+      <meta name="twitter:image" content={ogImageUrl} />
+      <meta name="twitter:creator" content="@elieageron" />
       
       {/* Additional SEO */}
-      <meta name="keywords" content="Elie Ageron, web design, création site web, website, landing page, conversion, France" />
+      <meta name="keywords" content={keywords} />
       <meta name="geo.region" content="FR-74" />
       <meta name="geo.placename" content="Annecy, Haute-Savoie" />
 

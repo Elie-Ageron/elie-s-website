@@ -11,6 +11,7 @@ export interface BlogPost {
   categoryFr: string;
   categoryEn: string;
   date: string;
+  lastModified?: string;
   author: string;
   image?: string;
 }
@@ -28,7 +29,9 @@ export const blogPosts: BlogPost[] = [
     categoryFr: 'Stratégie',
     categoryEn: 'Strategy',
     date: '2025-02-04',
+    lastModified: '2026-03-08',
     author: 'Elie Ageron',
+    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=630&fit=crop',
     contentFr: `
 ## Votre jumeau digital
 
@@ -115,7 +118,9 @@ Ready to create your digital twin? [Book a free call](/contact) to discuss.
     categoryFr: 'Conversion',
     categoryEn: 'Conversion',
     date: '2025-02-03',
+    lastModified: '2026-03-08',
     author: 'Elie Ageron',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=630&fit=crop',
     contentFr: `
 ## La science de la conversion
 
@@ -222,7 +227,9 @@ Want to audit your conversion rate? [Let's discuss](/contact).
     categoryFr: 'SEO',
     categoryEn: 'SEO',
     date: '2025-02-02',
+    lastModified: '2026-03-08',
     author: 'Elie Ageron',
+    image: 'https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=1200&h=630&fit=crop',
     contentFr: `
 ## Pourquoi le SEO local est crucial
 
@@ -341,7 +348,9 @@ Need help with your local SEO? [Contact me](/contact).
     categoryFr: 'Design',
     categoryEn: 'Design',
     date: '2025-02-01',
+    lastModified: '2026-03-08',
     author: 'Elie Ageron',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=630&fit=crop',
     contentFr: `
 ## Un instrument de précision
 

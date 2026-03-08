@@ -37,7 +37,7 @@ const Blog = () => {
         dateModified: post.date,
         author: { '@type': 'Person', name: 'Elie Ageron' },
         url: `https://elieageron.com/blog/${post.slug}`,
-        image: 'https://elieageron.com/og-image.png',
+        image: post.image || 'https://elieageron.com/og-image.png',
       };
     }),
   };

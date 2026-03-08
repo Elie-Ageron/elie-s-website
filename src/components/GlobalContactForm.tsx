@@ -53,7 +53,7 @@ const GlobalContactForm = () => {
   };
 
   return (
-    <section className="py-16 sm:py-20 relative" aria-labelledby="global-form-heading">
+    <section id="contact" className="py-16 sm:py-20 relative" aria-labelledby="global-form-heading">
       <div className="max-w-2xl mx-auto px-4 sm:px-6">
         <ScrollReveal direction="up">
           <div className="glass-card rounded-2xl sm:rounded-3xl p-6 sm:p-10">

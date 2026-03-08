@@ -1,0 +1,27 @@
+{
+  "name": "Elie Ageron Web Design",
+  "short_name": "Elie Ageron",
+  "description": "Premium web design & conversion optimization — Annecy, France",
+  "start_url": "/",
+  "display": "browser",
+  "theme_color": "#c4516b",
+  "background_color": "#0a0a0a",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

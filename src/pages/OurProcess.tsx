@@ -15,6 +15,12 @@ const OurProcess = () => {
     description: language === 'fr'
       ? 'Comment Elie Ageron crée votre site web haute conversion, de la découverte au lancement.'
       : 'How Elie Ageron builds your high-conversion website, from discovery to launch.',
+    totalTime: 'P14D',
+    estimatedCost: {
+      '@type': 'MonetaryAmount',
+      currency: 'EUR',
+      value: '500',
+    },
     step: [
       {
         '@type': 'HowToStep',
