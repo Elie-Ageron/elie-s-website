@@ -2,6 +2,11 @@ import { motion } from 'framer-motion';
 import { MessageCircle } from 'lucide-react';
 
 const FloatingWhatsApp = () => {
+  // Skip rendering during react-snap prerendering
+  if (typeof navigator !== 'undefined' && navigator.userAgent.includes('ReactSnap')) {
+    return null;
+  }
+
   return (
     <motion.a
       href="https://wa.me/33695555318"
