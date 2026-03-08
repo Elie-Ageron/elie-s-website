@@ -23,6 +23,8 @@ const ScrollPopup = () => {
 
   useEffect(() => {
     if (hasBeenShownThisSession) return;
+    // Don't show popup during react-snap prerendering
+    if (navigator.userAgent.includes('ReactSnap')) return;
 
     const handleScroll = () => {
       const scrollPercentage =

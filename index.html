@@ -1,43 +1,23 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="fr" xml:lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- Primary Meta Tags -->
+
+    <!-- Primary Meta Tags — overridden per-page by react-helmet-async -->
     <title>Elie Ageron | Web Design & Conversion Optimization</title>
     <meta name="title" content="Elie Ageron | Web Design & Conversion Optimization" />
     <meta name="description" content="Premium web design by Elie Ageron. Affordable, reliable websites that transform visitors into paying clients." />
     <meta name="author" content="Elie Ageron" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="keywords" content="Elie Ageron, web design, web designer, création site web, website design, landing page, conversion optimization, France, Création site internet Haute-Savoie, Webdesign Annecy, Expert conversion, Refonte site professionnel, High conversion web design, Lead generation specialist, SEO optimized websites, Premium UI/UX" />
-    
-    <!-- Geo Tags -->
+    <meta name="keywords" content="Elie Ageron, web design, web designer, creation site web, website design, landing page, conversion optimization, France, Creation site internet Haute-Savoie, Webdesign Annecy, Expert conversion, Refonte site professionnel, High conversion web design, Lead generation specialist, SEO optimized websites, Premium UI/UX" />
+
+    <!-- Geo Tags (static, identical on every page) -->
     <meta name="geo.region" content="FR-74" />
     <meta name="geo.placename" content="Haute-Savoie, France" />
     <meta name="geo.position" content="45.8992;6.1294" />
     <meta name="ICBM" content="45.8992, 6.1294" />
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://elieageron.com/" />
-    <meta property="og:title" content="Elie Ageron | Web Design & Conversion Optimization" />
-    <meta property="og:description" content="Premium web design by Elie Ageron. Affordable, reliable websites that transform visitors into paying clients." />
-    <meta property="og:image" content="https://elieageron.com/og-image.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:site_name" content="Elie Ageron Web Design" />
-    <meta property="og:locale" content="fr_FR" />
-    <meta property="og:locale:alternate" content="en_US" />
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://elieageron.com/" />
-    <meta name="twitter:title" content="Elie Ageron | Web Design & Conversion Optimization" />
-    <meta name="twitter:description" content="Premium web design by Elie Ageron. Affordable, reliable websites that transform visitors into paying clients." />
-    <meta name="twitter:image" content="https://elieageron.com/og-image.png" />
-    <meta name="twitter:creator" content="@elieageron" />
-    
     <!-- Favicons & App Icons -->
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
@@ -47,486 +27,31 @@
     <link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png" />
     <link rel="apple-touch-icon" sizes="120x120" href="/icons/icon-120x120.png" />
     <link rel="apple-touch-icon" sizes="76x76" href="/icons/icon-76x76.png" />
-    
+
     <!-- Theme color -->
     <meta name="theme-color" content="#c4516b" />
-    
+
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
     <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin />
-    
+
     <!-- Preload critical font CSS -->
     <link rel="preload" href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" as="style" />
-    
+
     <!-- Non-render-blocking font loading -->
     <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
     <noscript><link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" /></noscript>
-    
-    <!-- DNS Prefetch & Preconnect - deferred connections -->
+
+    <!-- DNS Prefetch for Calendly widget -->
     <link rel="dns-prefetch" href="https://calendly.com" />
     <link rel="preconnect" href="https://calendly.com" crossorigin />
-    
-    <!-- Canonical -->
-    <link rel="canonical" href="https://elieageron.com/" />
-    
-    <!-- Hreflang tags for bilingual indexing -->
-    <link rel="alternate" hreflang="fr" href="https://elieageron.com/" />
-    <link rel="alternate" hreflang="en" href="https://elieageron.com/" />
-    <link rel="alternate" hreflang="x-default" href="https://elieageron.com/" />
 
-    <!-- SiteNavigationElement JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SiteNavigationElement",
-      "name": ["Accueil", "Pourquoi un site", "Notre processus", "Tarifs", "Portfolio", "Blog", "Contact"],
-      "url": [
-        "https://elieageron.com/",
-        "https://elieageron.com/why-a-website",
-        "https://elieageron.com/our-process",
-        "https://elieageron.com/pricing",
-        "https://elieageron.com/portfolio",
-        "https://elieageron.com/blog",
-        "https://elieageron.com/contact"
-      ]
-    }
-    </script>
-
-    <!-- BreadcrumbList JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://elieageron.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Pourquoi un site", "item": "https://elieageron.com/why-a-website" },
-        { "@type": "ListItem", "position": 3, "name": "Notre processus", "item": "https://elieageron.com/our-process" },
-        { "@type": "ListItem", "position": 4, "name": "Tarifs", "item": "https://elieageron.com/pricing" },
-        { "@type": "ListItem", "position": 5, "name": "Portfolio", "item": "https://elieageron.com/portfolio" },
-        { "@type": "ListItem", "position": 6, "name": "Blog", "item": "https://elieageron.com/blog" },
-        { "@type": "ListItem", "position": 7, "name": "Contact", "item": "https://elieageron.com/contact" }
-      ]
-    }
-    </script>
-
-    <!-- Person JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Elie Ageron",
-      "alternateName": "Élie Ageron",
-      "jobTitle": "Web Designer & Conversion Optimization Specialist",
-      "description": "Expert en création de sites internet haute conversion, spécialisé en web design premium, SEO et optimisation du taux de conversion. Basé en Haute-Savoie, France.",
-      "url": "https://elieageron.com/",
-      "image": "https://elieageron.com/og-image.png",
-      "email": "elieageron@gmail.com",
-      "telephone": "+33695555318",
-      "address": {
-        "@type": "PostalAddress",
-        "addressRegion": "Haute-Savoie",
-        "addressCountry": "FR"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/in/elie-ageron/"
-      ],
-      "knowsAbout": [
-        "Web Design",
-        "Conversion Rate Optimization",
-        "SEO",
-        "Landing Page Design",
-        "UI/UX Design",
-        "Lead Generation",
-        "Création site internet",
-        "Refonte site professionnel"
-      ],
-      "makesOffer": {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Web Design & Conversion Optimization",
-          "description": "Premium web design services including landing pages, showcase websites, and custom solutions."
-        }
-      }
-    }
-    </script>
-
-    <!-- ProfessionalService JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Elie Ageron Web Design",
-      "alternateName": "Élie Ageron — Web Design & Conversion",
-      "description": "Agence de création de sites internet haute conversion. Spécialiste en web design premium, SEO, landing pages et refonte de sites professionnels.",
-      "url": "https://elieageron.com/",
-      "logo": "https://elieageron.com/og-image.png",
-      "image": "https://elieageron.com/og-image.png",
-      "telephone": "+33695555318",
-      "email": "elieageron@gmail.com",
-      "priceRange": "€€",
-      "currenciesAccepted": "EUR, USD",
-      "paymentAccepted": "Bank Transfer, PayPal",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Annecy",
-        "addressRegion": "Haute-Savoie",
-        "postalCode": "74000",
-        "addressCountry": "FR"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 45.8992,
-        "longitude": 6.1294
-      },
-      "areaServed": [
-        {
-          "@type": "City",
-          "name": "Annecy"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "Haute-Savoie"
-        },
-        {
-          "@type": "Country",
-          "name": "France"
-        },
-        {
-          "@type": "Country",
-          "name": "United States"
-        },
-        {
-          "@type": "Continent",
-          "name": "Asia"
-        }
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Web Design Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Landing Page haute conversion",
-              "description": "Page unique optimisée pour la conversion, livrée en 7 à 14 jours ouvrés."
-            },
-            "price": "500",
-            "priceCurrency": "EUR"
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Site Vitrine professionnel",
-              "description": "Site complet 4 pages avec stratégie de contenu, SEO et design orienté conversion."
-            },
-            "price": "1500",
-            "priceCurrency": "EUR"
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Solution Sur Mesure",
-              "description": "Solutions web sur mesure : e-commerce, applications web, sites d'entreprise."
-            }
-          }
-        ]
-      },
-      "founder": {
-        "@type": "Person",
-        "name": "Elie Ageron"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/in/elie-ageron/"
-      ]
-    }
-    </script>
-
-    <!-- FAQPage JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Combien coûte un site internet professionnel ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Nos landing pages haute conversion démarrent à partir de 500€, livrées en 7 à 14 jours ouvrés. Les sites vitrines complets commencent à 1 500€ avec stratégie de contenu et SEO inclus. Pour les projets complexes (e-commerce, applications web), nous proposons des devis personnalisés adaptés à vos besoins."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How much does a professional website cost?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Our high-conversion landing pages start from $500, delivered in 7 to 14 business days. Complete showcase websites start at $1,500 with content strategy and SEO included. For complex projects (e-commerce, web applications), we provide custom quotes tailored to your needs."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Quel est le délai de livraison d'un site web ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Tous les projets sont livrés en 7 à 14 jours ouvrés, selon la portée et la complexité. Chaque projet inclut un appel découverte gratuit de 30 minutes pour définir précisément le planning."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the turnaround time for a website?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "All projects are delivered in 7 to 14 business days, depending on scope and complexity. Every project includes a free 30-minute discovery call to define the exact timeline."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Quel retour sur investissement (ROI) puis-je attendre ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Un site web professionnel optimisé pour la conversion travaille pour vous 24h/24. Nos clients constatent en moyenne une augmentation de 40% de leur taux de conversion après refonte. 81% des consommateurs recherchent en ligne avant un achat — sans site professionnel, vous perdez des clients chaque jour."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What ROI can I expect from a professional website?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A conversion-optimized professional website works for you 24/7. Our clients see an average 40% increase in conversion rates after redesign. 81% of consumers research online before making a purchase — without a professional website, you're losing clients every day."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Le SEO est-il inclus dans le prix ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oui, l'optimisation SEO technique est incluse dans tous nos forfaits : balises méta, structure sémantique, vitesse de chargement optimisée, responsive mobile, et données structurées Schema.org. Nous proposons également un accompagnement SEO avancé en option."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is SEO included in the price?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, technical SEO optimization is included in all our packages: meta tags, semantic structure, optimized loading speed, mobile responsiveness, and Schema.org structured data. We also offer advanced SEO support as an optional add-on."
-          }
-        }
-      ]
-    }
-    </script>
-
-    <!-- LocalBusiness JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Elie Ageron Web Design",
-      "description": "Création de sites internet haute conversion en Haute-Savoie. Web design premium, landing pages, sites vitrines et solutions sur mesure à Annecy et dans toute la France.",
-      "url": "https://elieageron.com/",
-      "telephone": "+33695555318",
-      "email": "elieageron@gmail.com",
-      "image": "https://elieageron.com/og-image.png",
-      "priceRange": "€€",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Annecy",
-        "addressRegion": "Haute-Savoie",
-        "postalCode": "74000",
-        "addressCountry": "FR"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 45.8992,
-        "longitude": 6.1294
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "18:00"
-      }
-    }
-    </script>
+    <!-- OG tags, Twitter cards, canonical, hreflang and JSON-LD are managed -->
+    <!-- per-page by react-helmet-async components + react-snap prerendering   -->
   </head>
 
   <body>
-    <div id="root">
-      <!-- Static HTML shell for SEO crawlers — replaced by React on hydration -->
-      <div style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;" aria-hidden="false">
-        <header>
-          <nav aria-label="Navigation principale">
-            <a href="/">Accueil</a>
-            <a href="/why-a-website">Pourquoi un site</a>
-            <a href="/our-process">Notre processus</a>
-            <a href="/pricing">Tarifs</a>
-            <a href="/portfolio">Portfolio</a>
-            <a href="/blog">Blog</a>
-            <a href="/contact">Contact</a>
-          </nav>
-        </header>
-        <main>
-          <section aria-label="Hero">
-            <h1>Elie Ageron — Web Design &amp; Optimisation de Conversion</h1>
-            <p>Premium web design that converts visitors into paying clients. Landing pages from €500, delivered in 7 to 14 business days.</p>
-            <p>Création de sites internet haute conversion en Haute-Savoie et Annecy. Expert en refonte de site professionnel et optimisation SEO.</p>
-            <a href="/contact">Parlons de votre projet 🚀</a>
-          </section>
-
-          <section aria-label="Services">
-            <h2>Pourquoi choisir Elie Ageron pour votre site web</h2>
-            <article>
-              <h3>Design orienté conversion</h3>
-              <p>Chaque élément est conçu pour guider les visiteurs vers l'action. Web design haute conversion basé sur la data et la psychologie. Every element is designed to guide visitors toward action.</p>
-            </article>
-            <article>
-              <h3>Sites optimisés SEO</h3>
-              <p>Référencement naturel intégré pour que votre site apparaisse là où vos clients cherchent. Lead generation specialist for businesses worldwide. SEO optimized websites.</p>
-            </article>
-            <article>
-              <h3>UI/UX Design Premium</h3>
-              <p>Interfaces modernes, rapides et accessibles qui reflètent la qualité de votre marque. Modern, fast, and accessible interfaces. Premium UI/UX global standards.</p>
-            </article>
-          </section>
-
-          <section aria-label="Pourquoi un site professionnel">
-            <h2>Pourquoi votre entreprise a besoin d'un site professionnel</h2>
-            <p>Un site professionnel travaille pour vous 24h/24, capturant des leads et convertissant les visiteurs en clients. En 2025, 81% des consommateurs font des recherches en ligne avant un achat.</p>
-            <p>A professional website works for you 24/7, capturing leads and converting visitors into paying clients. Why Your Business Needs a Professional Website in 2025.</p>
-            <article>
-              <h3>Génération de leads 24h/24</h3>
-              <p>Votre site ne dort jamais. Capturez des leads qualifiés en continu grâce à des formulaires optimisés. 24/7 Lead generation specialist US and Europe.</p>
-            </article>
-            <article>
-              <h3>Crédibilité &amp; Confiance</h3>
-              <p>75% des utilisateurs jugent la crédibilité d'une entreprise par son site web. Un UI/UX premium crée une confiance instantanée. Credibility and Trust through web design.</p>
-            </article>
-            <article>
-              <h3>Surpassez vos concurrents</h3>
-              <p>Démarquez-vous avec un design haute conversion qui transforme le trafic en revenus. Outperform your competition with SEO optimized websites.</p>
-            </article>
-          </section>
-
-          <section aria-label="Notre processus">
-            <h2>Notre processus de création web éprouvé</h2>
-            <p>De la découverte au lancement, notre processus structuré garantit un site livré dans les temps et optimisé pour les conversions. Our proven web design process.</p>
-            <article>
-              <h3>1. Appel découverte</h3>
-              <p>Session stratégique gratuite de 30 minutes pour comprendre vos objectifs et votre audience. Free discovery call.</p>
-            </article>
-            <article>
-              <h3>2. Design &amp; Prototypage</h3>
-              <p>Maquettes sur mesure et prototypes interactifs alignés sur votre identité de marque. Custom mockups and interactive prototypes.</p>
-            </article>
-            <article>
-              <h3>3. Développement &amp; Optimisation</h3>
-              <p>Code propre, rapide, optimisé SEO. Design responsive mobile-first avec des scores Core Web Vitals parfaits. Clean, fast, SEO-optimized code.</p>
-            </article>
-            <article>
-              <h3>4. Lancement &amp; Support</h3>
-              <p>Mise en ligne en toute confiance. Support post-lancement et suivi analytics pour mesurer votre ROI. Post-launch support and analytics tracking.</p>
-            </article>
-          </section>
-
-          <section aria-label="Tarifs">
-            <h2>Tarifs transparents — Web Design</h2>
-            <p>Pas de frais cachés. Tous les forfaits incluent l'optimisation SEO et le design responsive mobile. No hidden fees. Transparent web design pricing.</p>
-            <article>
-              <h3>Landing Page — À partir de 500€</h3>
-              <p>Page unique haute conversion. Parfaite pour les lancements, événements ou campagnes de capture de leads. Livrée en 7–14 jours ouvrés. From $500.</p>
-            </article>
-            <article>
-              <h3>Site Vitrine — À partir de 1 500€</h3>
-              <p>Site complet 4 pages avec stratégie de contenu, SEO et design orienté conversion. Idéal pour PME et indépendants. Showcase website from $1,500.</p>
-            </article>
-            <article>
-              <h3>Solution Sur Mesure — Sur devis</h3>
-              <p>Solutions web sur mesure pour projets complexes. E-commerce, applications web et sites d'entreprise. Custom solution on quote.</p>
-            </article>
-          </section>
-
-          <section aria-label="Témoignages">
-            <h2>Ce que nos clients disent d'Elie Ageron</h2>
-            <blockquote>
-              <p>Professionnel, rapide, et les résultats parlent d'eux-mêmes. Notre taux de conversion a augmenté de 40% après la refonte.</p>
-              <cite>— Marc D., Chef d'entreprise</cite>
-            </blockquote>
-            <blockquote>
-              <p>Elie a compris notre vision immédiatement. Le site a dépassé nos attentes en design et en performance.</p>
-              <cite>— Sophie L., Fondatrice de startup</cite>
-            </blockquote>
-            <blockquote>
-              <p>Le meilleur investissement pour notre présence digitale. Le ROI était visible dès le premier mois.</p>
-              <cite>— Thomas R., Directeur d'agence</cite>
-            </blockquote>
-          </section>
-
-          <section aria-label="Blog">
-            <h2>Conseils &amp; Actualités Web Design</h2>
-            <article>
-              <h3><a href="/blog/pourquoi-site-web-2025">Pourquoi votre entreprise a besoin d'un site web en 2025</a></h3>
-              <p>Le monde a radicalement changé. Un site web en 2025, c'est votre jumeau digital qui travaille pour vous chaque seconde.</p>
-              <time datetime="2025-01-15">15 janvier 2025</time>
-            </article>
-            <article>
-              <h3><a href="/blog/optimiser-taux-conversion">Comment optimiser votre taux de conversion</a></h3>
-              <p>La conversion est une science qui mêle psychologie, design et clarté. Stratégies éprouvées pour transformer plus de visiteurs en clients.</p>
-              <time datetime="2025-01-20">20 janvier 2025</time>
-            </article>
-            <article>
-              <h3><a href="/blog/seo-local-guide-complet">SEO Local : Le guide complet pour dominer Google</a></h3>
-              <p>Pour les entreprises ancrées dans une région, le SEO local est la stratégie la plus rentable. Google My Business, mots-clés locaux et citations.</p>
-              <time datetime="2025-02-01">1 février 2025</time>
-            </article>
-            <article>
-              <h3><a href="/blog/landing-page-efficace">Anatomie d'une landing page qui convertit</a></h3>
-              <p>Une landing page est un instrument de précision suivant une hiérarchie visuelle et psychologique. Les éléments essentiels qui génèrent des conversions.</p>
-              <time datetime="2025-02-10">10 février 2025</time>
-            </article>
-          </section>
-
-          <section aria-label="FAQ">
-            <h2>Questions fréquentes — FAQ</h2>
-            <dl>
-              <dt>Combien coûte un site internet professionnel ?</dt>
-              <dd>Nos landing pages haute conversion démarrent à partir de 500€, livrées en 7 à 14 jours ouvrés. Les sites vitrines complets commencent à 1 500€ avec stratégie de contenu et SEO inclus.</dd>
-              <dt>Quel est le délai de livraison ?</dt>
-              <dd>Tous les projets sont livrés en 7 à 14 jours ouvrés, selon la portée et la complexité du projet.</dd>
-              <dt>Quel ROI puis-je attendre ?</dt>
-              <dd>Nos clients constatent en moyenne une augmentation de 40% de leur taux de conversion. 81% des consommateurs recherchent en ligne avant un achat.</dd>
-              <dt>Le SEO est-il inclus ?</dt>
-              <dd>Oui, l'optimisation SEO technique est incluse dans tous nos forfaits : balises méta, structure sémantique, vitesse, responsive et données structurées Schema.org.</dd>
-            </dl>
-          </section>
-
-          <section aria-label="Contact">
-            <h2>Contactez Elie Ageron — Web Designer</h2>
-            <p>Prêt à transformer votre présence en ligne ? Réservez un appel stratégique gratuit de 30 minutes pour discuter de votre projet.</p>
-            <a href="https://calendly.com/elie-ageron/30min">Réserver un appel gratuit</a>
-            <p>Email : <a href="mailto:elieageron@gmail.com">elieageron@gmail.com</a></p>
-            <p>Téléphone : <a href="tel:+33695555318">+33 6 95 55 53 18</a></p>
-            <p>Basé en Haute-Savoie, Annecy — Clients en France, États-Unis et Asie. Based in France — Serving clients worldwide.</p>
-          </section>
-        </main>
-
-        <footer>
-          <p>&copy; 2025 Elie Ageron — Web Design &amp; Conversion Optimization</p>
-          <nav aria-label="Navigation pied de page">
-            <a href="/">Accueil</a>
-            <a href="/why-a-website">Pourquoi un site</a>
-            <a href="/our-process">Notre processus</a>
-            <a href="/pricing">Tarifs</a>
-            <a href="/portfolio">Portfolio</a>
-            <a href="/blog">Blog</a>
-            <a href="/contact">Contact</a>
-          </nav>
-          <p>Web designer freelance spécialisé en création de sites internet haute conversion. Expert SEO, refonte de site professionnel, landing pages optimisées. Disponible en Haute-Savoie, Annecy, et dans toute la France. Professional web designer serving clients in the US and Asia.</p>
-        </footer>
-      </div>
-    </div>
+    <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
