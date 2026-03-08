@@ -88,7 +88,45 @@ const PortfolioItem = ({ image, name, url, categoryKey, ctaKey, descKey, alt, de
 };
 
 const Portfolio = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+
+  const collectionSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: language === 'fr' ? 'Portfolio — Elie Ageron Web Design' : 'Portfolio — Elie Ageron Web Design',
+    description: language === 'fr'
+      ? 'Réalisations web premium par Elie Ageron : sites haute conversion pour des clients exigeants.'
+      : 'Premium web projects by Elie Ageron: high-conversion sites for demanding clients.',
+    url: 'https://elieageron.com/portfolio',
+    author: { '@type': 'Person', name: 'Elie Ageron' },
+    hasPart: [
+      {
+        '@type': 'WebSite',
+        name: 'MyWebGlory',
+        url: 'https://mywebglory.com',
+        description: language === 'fr'
+          ? 'Site web premium pour agence de marketing événementiel'
+          : 'Premium website for an event marketing agency',
+      },
+      {
+        '@type': 'WebSite',
+        name: 'Solar Fusion',
+        url: 'https://solar-fusion.fr',
+        description: language === 'fr'
+          ? 'Site professionnel pour installateur de panneaux solaires'
+          : 'Professional website for a solar panel installer',
+      },
+    ],
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: language === 'fr' ? 'Accueil' : 'Home', item: 'https://elieageron.com' },
+      { '@type': 'ListItem', position: 2, name: 'Portfolio', item: 'https://elieageron.com/portfolio' },
+    ],
+  };
 
   const projects = [
     {
@@ -113,7 +151,7 @@ const Portfolio = () => {
 
   return (
     <>
-      <SEO page="portfolio" />
+      <SEO page="portfolio" structuredData={[collectionSchema, breadcrumbSchema]} />
       
       {/* Hero */}
       <section className="py-12 sm:py-16 md:py-20 relative grain" aria-labelledby="portfolio-hero-heading">

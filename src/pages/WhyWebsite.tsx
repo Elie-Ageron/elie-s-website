@@ -8,7 +8,16 @@ import FAQAccordion from '@/components/FAQAccordion';
 import InternalLinks from '@/components/InternalLinks';
 
 const WhyWebsite = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: language === 'fr' ? 'Accueil' : 'Home', item: 'https://elieageron.com' },
+      { '@type': 'ListItem', position: 2, name: language === 'fr' ? 'Pourquoi un site web ?' : 'Why a Website?', item: 'https://elieageron.com/why-a-website' },
+    ],
+  };
 
   const benefits = [
     { icon: Globe, title: t('why.benefit1.title'), desc: t('why.benefit1.desc') },
@@ -34,7 +43,7 @@ const WhyWebsite = () => {
 
   return (
     <>
-      <SEO page="why" />
+      <SEO page="why" structuredData={breadcrumbSchema} />
       <FAQSchema page="why" />
       
       {/* Hero */}

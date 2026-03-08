@@ -6,11 +6,71 @@ import InternalLinks from '@/components/InternalLinks';
 import SEO from '@/components/SEO';
 
 const OurProcess = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+
+  const howToSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: language === 'fr' ? 'Notre Processus de Création de Site Web' : 'Our Web Design Process',
+    description: language === 'fr'
+      ? 'Comment Elie Ageron crée votre site web haute conversion, de la découverte au lancement.'
+      : 'How Elie Ageron builds your high-conversion website, from discovery to launch.',
+    step: [
+      {
+        '@type': 'HowToStep',
+        position: 1,
+        name: language === 'fr' ? 'Appel de découverte' : 'Discovery call',
+        text: language === 'fr'
+          ? 'Nous discutons de vos objectifs, votre audience cible et votre vision.'
+          : 'We discuss your goals, target audience, and vision.',
+      },
+      {
+        '@type': 'HowToStep',
+        position: 2,
+        name: language === 'fr' ? 'Stratégie & Design' : 'Strategy & Design',
+        text: language === 'fr'
+          ? 'Création des maquettes et de la stratégie de contenu axée conversion.'
+          : 'Creating wireframes and a conversion-focused content strategy.',
+      },
+      {
+        '@type': 'HowToStep',
+        position: 3,
+        name: language === 'fr' ? 'Développement' : 'Development',
+        text: language === 'fr'
+          ? 'Développement du site avec les technologies modernes, optimisé SEO et mobile.'
+          : 'Building the site with modern technologies, optimized for SEO and mobile.',
+      },
+      {
+        '@type': 'HowToStep',
+        position: 4,
+        name: language === 'fr' ? 'Révision & Retours' : 'Review & Feedback',
+        text: language === 'fr'
+          ? 'Vous examinez le site et nous affinons ensemble jusqu'à ce que ce soit parfait.'
+          : 'You review the site and we refine together until it is perfect.',
+      },
+      {
+        '@type': 'HowToStep',
+        position: 5,
+        name: language === 'fr' ? 'Lancement' : 'Launch',
+        text: language === 'fr'
+          ? 'Mise en ligne du site avec support post-lancement inclus.'
+          : 'Going live with post-launch support included.',
+      },
+    ],
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: language === 'fr' ? 'Accueil' : 'Home', item: 'https://elieageron.com' },
+      { '@type': 'ListItem', position: 2, name: language === 'fr' ? 'Notre Processus' : 'Our Process', item: 'https://elieageron.com/our-process' },
+    ],
+  };
 
   return (
     <>
-      <SEO page="process" />
+      <SEO page="process" structuredData={[howToSchema, breadcrumbSchema]} />
       
       {/* Hero */}
       <section className="py-12 sm:py-16 md:py-20 relative grain" aria-labelledby="process-hero-heading">

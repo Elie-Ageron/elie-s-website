@@ -17,6 +17,58 @@ const Pricing = () => {
   const { t, language } = useLanguage();
   const [includeMaintenance, setIncludeMaintenance] = useState(false);
 
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: language === 'fr' ? 'Création de Site Web — Elie Ageron' : 'Web Design Services — Elie Ageron',
+    description: language === 'fr'
+      ? 'Sites web premium haute conversion. Landing pages dès 500€, sites vitrines dès 1500€.'
+      : 'Premium high-conversion websites. Landing pages from $500, showcase sites from $1500.',
+    url: 'https://elieageron.com/pricing',
+    provider: { '@type': 'Person', name: 'Elie Ageron', url: 'https://elieageron.com' },
+    areaServed: 'FR',
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: language === 'fr' ? 'Nos Offres Web Design' : 'Our Web Design Offers',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          name: language === 'fr' ? 'Landing Page' : 'Landing Page',
+          price: language === 'fr' ? '500' : '500',
+          priceCurrency: language === 'fr' ? 'EUR' : 'USD',
+          description: language === 'fr'
+            ? 'Landing page haute conversion livrée en 7-14 jours ouvrés.'
+            : 'High-conversion landing page delivered in 7-14 business days.',
+        },
+        {
+          '@type': 'Offer',
+          name: language === 'fr' ? 'Site Vitrine 4 Pages' : '4-Page Showcase Site',
+          price: language === 'fr' ? '1500' : '1500',
+          priceCurrency: language === 'fr' ? 'EUR' : 'USD',
+          description: language === 'fr'
+            ? 'Site vitrine 4 pages avec SEO complet, livré en 7-14 jours ouvrés.'
+            : '4-page showcase site with full SEO, delivered in 7-14 business days.',
+        },
+        {
+          '@type': 'Offer',
+          name: language === 'fr' ? 'Projet Sur Mesure' : 'Custom Project',
+          description: language === 'fr'
+            ? 'Solution web sur mesure adaptée à vos besoins spécifiques.'
+            : 'Custom web solution tailored to your specific needs.',
+        },
+      ],
+    },
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: language === 'fr' ? 'Accueil' : 'Home', item: 'https://elieageron.com' },
+      { '@type': 'ListItem', position: 2, name: language === 'fr' ? 'Tarifs' : 'Pricing', item: 'https://elieageron.com/pricing' },
+    ],
+  };
+
   const plans = [
     {
       id: 'landing',
@@ -69,7 +121,7 @@ const Pricing = () => {
 
   return (
     <>
-      <SEO page="pricing" />
+      <SEO page="pricing" structuredData={[serviceSchema, breadcrumbSchema]} />
       <FAQSchema page="pricing" />
       
       {/* Hero */}

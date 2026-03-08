@@ -36,9 +36,28 @@ const Contact = () => {
     ? ['Appel gratuit de 30 minutes', 'Conseils personnalisés', 'Sans engagement']
     : ['Free 30-minute call', 'Personalized advice', 'No commitment'];
 
+  const contactPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: language === 'fr' ? 'Contact — Elie Ageron Web Design' : 'Contact — Elie Ageron Web Design',
+    description: language === 'fr'
+      ? 'Contactez Elie Ageron pour votre projet web. Réservez un appel gratuit de 30 minutes.'
+      : 'Contact Elie Ageron for your web project. Book a free 30-minute strategy call.',
+    url: 'https://elieageron.com/contact',
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: language === 'fr' ? 'Accueil' : 'Home', item: 'https://elieageron.com' },
+      { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://elieageron.com/contact' },
+    ],
+  };
+
   return (
     <>
-      <SEO page="contact" />
+      <SEO page="contact" structuredData={[contactPageSchema, breadcrumbSchema]} />
       
       {/* Hero */}
       <section className="py-16 sm:py-20 relative grain" aria-labelledby="contact-hero-heading">

@@ -5,6 +5,7 @@ interface SEOProps {
   page: 'home' | 'why' | 'process' | 'pricing' | 'portfolio' | 'contact' | 'blog';
   customTitle?: string;
   customDescription?: string;
+  structuredData?: object | object[];
 }
 
 // Optimized titles: ALL under 60 characters
@@ -71,7 +72,7 @@ const seoData = {
   },
 };
 
-const SEO = ({ page, customTitle, customDescription }: SEOProps) => {
+const SEO = ({ page, customTitle, customDescription, structuredData }: SEOProps) => {
   const { language } = useLanguage();
   const data = seoData[language][page];
   const baseUrl = 'https://elieageron.com';
@@ -131,6 +132,21 @@ const SEO = ({ page, customTitle, customDescription }: SEOProps) => {
       <meta name="keywords" content="Elie Ageron, web design, création site web, website, landing page, conversion, France" />
       <meta name="geo.region" content="FR-74" />
       <meta name="geo.placename" content="Annecy, Haute-Savoie" />
+
+      {/* Page-specific structured data */}
+      {structuredData && (
+        Array.isArray(structuredData)
+          ? structuredData.map((data, index) => (
+              <script key={index} type="application/ld+json">
+                {JSON.stringify(data)}
+              </script>
+            ))
+          : (
+              <script type="application/ld+json">
+                {JSON.stringify(structuredData)}
+              </script>
+            )
+      )}
     </Helmet>
   );
 };

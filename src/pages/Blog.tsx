@@ -42,9 +42,18 @@ const Blog = () => {
     }),
   };
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: language === 'fr' ? 'Accueil' : 'Home', item: 'https://elieageron.com' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://elieageron.com/blog' },
+    ],
+  };
+
   return (
     <>
-      <SEO page="blog" />
+      <SEO page="blog" structuredData={breadcrumbSchema} />
       <Helmet>
         <script type="application/ld+json">
           {JSON.stringify(blogSchema)}

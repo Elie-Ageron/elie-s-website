@@ -11,11 +11,30 @@ import ContactMethodsSection from '@/components/ContactMethodsSection';
 import SEO from '@/components/SEO';
 
 const Home = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Elie Ageron Web Design',
+    url: 'https://elieageron.com',
+    description: language === 'fr'
+      ? 'Sites web premium qui convertissent les visiteurs en clients'
+      : 'Premium websites that convert visitors into clients',
+    author: { '@type': 'Person', name: 'Elie Ageron' },
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: language === 'fr' ? 'Accueil' : 'Home', item: 'https://elieageron.com' },
+    ],
+  };
 
   return (
     <>
-      <SEO page="home" />
+      <SEO page="home" structuredData={[websiteSchema, breadcrumbSchema]} />
       
       {/* Hero Section with 3D */}
       <HeroSection />

@@ -167,6 +167,16 @@ const BlogPost = () => {
     wordCount: post.content.split(/\s+/).length,
   } : null;
 
+  const breadcrumbSchema = rawPost && post ? {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: language === 'fr' ? 'Accueil' : 'Home', item: 'https://elieageron.com' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://elieageron.com/blog' },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `https://elieageron.com/blog/${slug}` },
+    ],
+  } : null;
+
   return (
     <>
       <SEO 
@@ -179,6 +189,11 @@ const BlogPost = () => {
           <script type="application/ld+json">
             {JSON.stringify(blogPostingSchema)}
           </script>
+          {breadcrumbSchema && (
+            <script type="application/ld+json">
+              {JSON.stringify(breadcrumbSchema)}
+            </script>
+          )}
         </Helmet>
       )}
       
