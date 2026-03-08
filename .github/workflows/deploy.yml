@@ -28,7 +28,9 @@ jobs:
           sudo apt-get install -y google-chrome-stable
 
       - name: Prerender with react-snap
-        run: bunx react-snap --puppeteerExecutablePath=/usr/bin/google-chrome
+        run: |
+          node -e "const fs=require('fs'); const p=JSON.parse(fs.readFileSync('./package.json','utf8')); p.reactSnap.puppeteerExecutablePath='/usr/bin/google-chrome'; fs.writeFileSync('./package.json', JSON.stringify(p,null,2));"
+          bunx react-snap
 
       - name: Deploy via FTP to IONOS
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
