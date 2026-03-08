@@ -1,6 +1,6 @@
 {
-  "buildCommand": "vite build",
+  "buildCommand": "bunx vite build",
   "outputDirectory": "dist",
-  "installCommand": "npm install --ignore-scripts",
+  "installCommand": "bun install",
   "rewrites": [{ "source": "/((?!.*\\.).*)", "destination": "/index.html" }]
 }
