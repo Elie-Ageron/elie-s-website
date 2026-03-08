@@ -20,7 +20,15 @@ jobs:
         run: bun install
 
       - name: Build
-        run: bun run build
+        run: bunx vite build
+
+      - name: Install Chrome for react-snap
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+
+      - name: Prerender with react-snap
+        run: bunx react-snap --puppeteerExecutablePath=/usr/bin/google-chrome
 
       - name: Deploy via FTP to IONOS
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
