@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+﻿import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface SEOProps {
@@ -135,7 +135,7 @@ const SEO = ({ page, customTitle, customDescription, customCanonical, ogImage, o
       {/* Language */}
       <html lang={language} />
       
-      {/* Canonical — simplified hreflang: same URL serves both languages */}
+      {/* Canonical - simplified hreflang: same URL serves both languages */}
       <link rel="canonical" href={canonicalUrl} />
       <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
       

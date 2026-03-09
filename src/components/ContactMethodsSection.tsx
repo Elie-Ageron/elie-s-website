@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
+import { ElementType } from 'react';
 import { Calendar, MessageCircle, Mail, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useCalendly } from '@/contexts/CalendlyContext';
 import ScrollReveal from '@/components/animations/ScrollReveal';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -12,16 +14,26 @@ interface ContactMethodsSectionProps {
 
 const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMethodsSectionProps) => {
   const { t } = useLanguage();
+  const { openCalendly } = useCalendly();
 
-  const contactMethods = [
+  const contactMethods: Array<{
+    icon: ElementType;
+    title: string;
+    description: string;
+    cta: string;
+    href?: string;
+    onClick?: () => void;
+    recommended: boolean;
+    newTab: boolean;
+  }> = [
     {
       icon: Calendar,
       title: t('home.contact.call.title'),
       description: t('home.contact.call.desc'),
       cta: t('home.contact.call.cta'),
-      href: 'https://calendly.com/elie-ageron/30min',
+      onClick: openCalendly,
       recommended: true,
-      newTab: true,
+      newTab: false,
     },
     {
       icon: MessageCircle,
@@ -85,78 +97,92 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
         )}
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-          {contactMethods.map((method, index) => (
-            <motion.a
-              key={index}
-              href={method.href}
-              target={method.newTab ? '_blank' : undefined}
-              rel={method.newTab ? 'noopener noreferrer' : undefined}
-              initial={{ 
+          {contactMethods.map((method, index) => {
+            const sharedMotionProps = {
+              key: index,
+              initial: { 
                 opacity: 0, 
                 x: index === 0 ? -50 : index === 2 ? 50 : 0,
                 y: index === 1 ? 50 : 0
-              }}
-              whileInView={{ opacity: 1, x: 0, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.15, duration: 0.7 }}
-              whileHover={{ 
+              },
+              whileInView: { opacity: 1, x: 0, y: 0 },
+              viewport: { once: true },
+              transition: { delay: index * 0.15, duration: 0.7 },
+              whileHover: { 
                 y: -6, 
                 scale: 1.01,
                 transition: { duration: 0.15, ease: "easeOut" }
-              }}
-              className={`relative glass-card rounded-xl sm:rounded-2xl p-5 sm:p-8 pt-8 sm:pt-10 cursor-pointer transition-all group active:scale-[0.98] ${
+              },
+              className: `relative glass-card rounded-xl sm:rounded-2xl p-5 sm:p-8 pt-8 sm:pt-10 cursor-pointer transition-all group active:scale-[0.98] ${
                 method.recommended ? 'neon-border' : 'hover:border-primary/30'
-              }`}
-            >
-              {/* Animated background on hover */}
-              <motion.div 
-                className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl sm:rounded-2xl"
-              />
+              }`,
+            };
 
-              {/* Recommended Badge */}
-              {method.recommended && (
+            const innerContent = (
+              <>
                 <motion.div 
-                  className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 sm:px-4 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full whitespace-nowrap"
-                  animate={{ scale: [1, 1.05, 1] }}
-                  transition={{ duration: 2, repeat: Infinity }}
+                  className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl sm:rounded-2xl"
+                />
+                {method.recommended && (
+                  <motion.div 
+                    className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 sm:px-4 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full whitespace-nowrap"
+                    animate={{ scale: [1, 1.05, 1] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
+                    {t('home.contact.recommended')}
+                  </motion.div>
+                )}
+                <div 
+                  className={`inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl mb-4 sm:mb-6 relative z-10 sm:transition-transform sm:duration-300 sm:group-hover:scale-110 ${
+                    method.recommended ? 'bg-primary/20' : 'bg-secondary'
+                  }`}
                 >
-                  {t('home.contact.recommended')}
-                </motion.div>
-              )}
-
-              {/* Icon */}
-              <div 
-                className={`inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl mb-4 sm:mb-6 relative z-10 sm:transition-transform sm:duration-300 sm:group-hover:scale-110 ${
-                  method.recommended ? 'bg-primary/20' : 'bg-secondary'
-                }`}
-              >
-                <method.icon className={`w-6 h-6 sm:w-7 sm:h-7 ${
+                  <method.icon className={`w-6 h-6 sm:w-7 sm:h-7 ${
+                    method.recommended ? 'text-primary' : 'text-foreground'
+                  }`} />
+                </div>
+                <h3 className={`text-lg sm:text-xl font-bold mb-2 sm:mb-3 relative z-10 ${
                   method.recommended ? 'text-primary' : 'text-foreground'
-                }`} />
-              </div>
+                }`}>
+                  {method.title}
+                </h3>
+                <p className="text-muted-foreground text-sm mb-4 sm:mb-6 relative z-10 leading-relaxed">
+                  {method.description}
+                </p>
+                <motion.div 
+                  className="flex items-center gap-2 text-primary font-medium relative z-10"
+                  whileHover={{ x: 5 }}
+                >
+                  <span className="text-sm">{method.cta}</span>
+                  <ArrowRight className="w-4 h-4" />
+                </motion.div>
+              </>
+            );
 
-              {/* Title */}
-              <h3 className={`text-lg sm:text-xl font-bold mb-2 sm:mb-3 relative z-10 ${
-                method.recommended ? 'text-primary' : 'text-foreground'
-              }`}>
-                {method.title}
-              </h3>
+            if (method.onClick) {
+              return (
+                <motion.button
+                  type="button"
+                  onClick={method.onClick}
+                  {...sharedMotionProps}
+                  className={sharedMotionProps.className + ' text-left w-full'}
+                >
+                  {innerContent}
+                </motion.button>
+              );
+            }
 
-              {/* Description */}
-              <p className="text-muted-foreground text-sm mb-4 sm:mb-6 relative z-10 leading-relaxed">
-                {method.description}
-              </p>
-
-              {/* CTA Link */}
-              <motion.div 
-                className="flex items-center gap-2 text-primary font-medium relative z-10"
-                whileHover={{ x: 5 }}
+            return (
+              <motion.a
+                href={method.href}
+                target={method.newTab ? '_blank' : undefined}
+                rel={method.newTab ? 'noopener noreferrer' : undefined}
+                {...sharedMotionProps}
               >
-                <span className="text-sm">{method.cta}</span>
-                <ArrowRight className="w-4 h-4" />
-              </motion.div>
-            </motion.a>
-          ))}
+                {innerContent}
+              </motion.a>
+            );
+          })}
         </div>
       </div>
     </section>

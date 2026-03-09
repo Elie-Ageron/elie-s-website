@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+﻿import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface LegalPageProps {
@@ -27,11 +27,11 @@ const LegalPage = ({ page }: LegalPageProps) => {
           content={
             isMentions
               ? isFr
-                ? "Mentions légales d'Elie Ageron Web Design — éditeur, hébergeur, propriété intellectuelle."
-                : "Legal notice for Elie Ageron Web Design — publisher, host, intellectual property."
+                ? "Mentions légales d'Elie Ageron Web Design - éditeur, hébergeur, propriété intellectuelle."
+                : "Legal notice for Elie Ageron Web Design - publisher, host, intellectual property."
               : isFr
-              ? "Politique de confidentialité d'Elie Ageron Web Design — données personnelles, cookies, RGPD."
-              : "Privacy policy for Elie Ageron Web Design — personal data, cookies, GDPR."
+              ? "Politique de confidentialité d'Elie Ageron Web Design - données personnelles, cookies, RGPD."
+              : "Privacy policy for Elie Ageron Web Design - personal data, cookies, GDPR."
           }
         />
         <meta name="robots" content="noindex, follow" />
@@ -178,7 +178,7 @@ const LegalPage = ({ page }: LegalPageProps) => {
                 {isFr ? '6. Responsable du traitement' : '6. Data Controller'}
               </h2>
               <p className="text-muted-foreground">
-                {isFr ? 'Responsable :' : 'Controller:'} Elie Ageron — contact@elieageron.com — Annecy, France
+                {isFr ? 'Responsable :' : 'Controller:'} Elie Ageron - contact@elieageron.com - Annecy, France
               </p>
             </section>
           </>

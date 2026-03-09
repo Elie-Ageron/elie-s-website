@@ -3,12 +3,14 @@ import { motion } from 'framer-motion';
 import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useCalendly } from '@/contexts/CalendlyContext';
 import { Link, useLocation } from 'react-router-dom';
 import MobileMenu from '@/components/MobileMenu';
 
 
 const Header = () => {
   const { language, setLanguage, t } = useLanguage();
+  const { openCalendly } = useCalendly();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
@@ -72,7 +74,7 @@ const Header = () => {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-6" role="navigation" aria-label="Primary navigation">
+            <div className="hidden lg:flex items-center gap-6" role="navigation" aria-label="Primary navigation">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
@@ -96,7 +98,7 @@ const Header = () => {
             </div>
 
             {/* Right section - Desktop */}
-            <div className="hidden md:flex items-center gap-4">
+            <div className="hidden lg:flex items-center gap-4">
               {/* Language Toggle */}
               <div className="flex items-center gap-1 bg-secondary/50 rounded-full p-1" role="group" aria-label="Language selection">
                 <button
@@ -125,22 +127,15 @@ const Header = () => {
                 </button>
               </div>
               
-              <Button variant="neon" size="sm" asChild>
-                <a 
-                  href="https://calendly.com/elie-ageron/30min" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  aria-label="Book a call with Elie Ageron"
-                >
-                  {t('nav.book')}
-                </a>
+              <Button variant="neon" size="sm" onClick={openCalendly} aria-label="Book a call with Elie Ageron">
+                {t('nav.book')}
               </Button>
             </div>
 
             {/* Mobile Menu Button - Animated Hamburger with 48x48 touch target */}
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden min-w-[48px] min-h-[48px] flex items-center justify-center text-foreground rounded-xl active:bg-primary/10 transition-colors"
+              className="lg:hidden min-w-[48px] min-h-[48px] flex items-center justify-center text-foreground rounded-xl active:bg-primary/10 transition-colors"
               aria-expanded={isMenuOpen}
               aria-controls="mobile-menu"
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}

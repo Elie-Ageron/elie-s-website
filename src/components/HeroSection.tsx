@@ -1,7 +1,8 @@
-import { motion } from 'framer-motion';
+﻿import { motion } from 'framer-motion';
 import { ArrowDown, CheckCircle, Star, Users, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useCalendly } from '@/contexts/CalendlyContext';
 import { lazy, Suspense, useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
@@ -10,6 +11,7 @@ const HeroScene3D = lazy(() => import('@/components/animations/HeroScene3D'));
 
 const HeroSection = () => {
   const { t } = useLanguage();
+  const { openCalendly } = useCalendly();
   const isMobile = useIsMobile();
   const [mounted, setMounted] = useState(false);
   const [show3D, setShow3D] = useState(false);
@@ -19,7 +21,7 @@ const HeroSection = () => {
     setMounted(true);
   }, []);
 
-  // Delay 3D scene to prioritize text content (LCP) — desktop only.
+  // Delay 3D scene to prioritize text content (LCP) - desktop only.
   useEffect(() => {
     if (!mounted) return;
     if (!isMobile) {
@@ -83,12 +85,10 @@ const HeroSection = () => {
               variant="hero" 
               size="xl" 
               className="min-h-[56px] sm:min-h-[60px] px-6 sm:px-10 text-base sm:text-lg active:scale-[0.98] transition-transform"
-              asChild
+              onClick={openCalendly}
               aria-label="Book your growth session with Elie Ageron"
             >
-              <a href="https://calendly.com/elie-ageron/30min" target="_blank" rel="noopener noreferrer">
-                {t('hero.cta')}
-              </a>
+              {t('hero.cta')}
             </Button>
           </motion.div>
 

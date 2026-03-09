@@ -2,10 +2,12 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useCalendly } from '@/contexts/CalendlyContext';
 import eliePortrait from '@/assets/elie-ageron-portrait.webp';
 
 const PersonalIntroSection = () => {
   const { language } = useLanguage();
+  const { openCalendly } = useCalendly();
 
   return (
     <section className="py-12 sm:py-16 md:py-20 relative overflow-hidden" aria-labelledby="intro-heading">
@@ -70,17 +72,12 @@ const PersonalIntroSection = () => {
               variant="hero" 
               size="lg" 
               className="group min-h-[52px] active:scale-[0.98] transition-transform"
-              asChild
+              onClick={openCalendly}
             >
-              <a 
-                href="https://calendly.com/elie-ageron/30min" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-2"
-              >
-                {language === 'fr' ? 'Discutons de votre projet' : 'Let\'s discuss your project'}
+              <span className="flex items-center gap-2">
+                {language === 'fr' ? 'Discutons de votre projet' : "Let's discuss your project"}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-              </a>
+              </span>
             </Button>
           </motion.div>
         </div>

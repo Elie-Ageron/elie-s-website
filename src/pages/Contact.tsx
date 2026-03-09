@@ -1,13 +1,15 @@
-import { motion } from 'framer-motion';
+﻿import { motion } from 'framer-motion';
 import { Mail, Calendar, MessageCircle, ArrowRight, Clock, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useCalendly } from '@/contexts/CalendlyContext';
 import MagneticButton from '@/components/animations/MagneticButton';
 import InternalLinks from '@/components/InternalLinks';
 import SEO from '@/components/SEO';
 
 const Contact = () => {
   const { t, language } = useLanguage();
+  const { openCalendly } = useCalendly();
 
   const contactMethods = [
     { 
@@ -39,7 +41,7 @@ const Contact = () => {
   const contactPageSchema = {
     '@context': 'https://schema.org',
     '@type': 'ContactPage',
-    name: language === 'fr' ? 'Contact — Elie Ageron Web Design' : 'Contact — Elie Ageron Web Design',
+    name: language === 'fr' ? 'Contact - Elie Ageron Web Design' : 'Contact - Elie Ageron Web Design',
     description: language === 'fr'
       ? 'Contactez Elie Ageron pour votre projet web. Réservez un appel gratuit de 30 minutes.'
       : 'Contact Elie Ageron for your web project. Book a free 30-minute strategy call.',
@@ -147,7 +149,7 @@ const Contact = () => {
               aria-label="Calendly scheduling widget"
             >
               <iframe
-                src="https://calendly.com/elie-ageron/30min?embed_domain=localhost&embed_type=Inline"
+              src="https://calendly.com/web-elieageron/30min?embed_domain=elieageron.com&embed_type=Inline"
                 width="100%"
                 height="450"
                 frameBorder="0"
@@ -161,18 +163,13 @@ const Contact = () => {
               <Button 
                 variant="hero" 
                 size="xl" 
-                className="w-full sm:w-auto min-h-[56px] group active:scale-[0.98] transition-transform" 
-                asChild
+                className="w-full sm:w-auto min-h-[56px] group active:scale-[0.98] transition-transform"
+                onClick={openCalendly}
               >
-                <a 
-                  href="https://calendly.com/elie-ageron/30min" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2"
-                >
+                <span className="flex items-center justify-center gap-2">
                   {t('contact.calendly.button')}
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </a>
+                </span>
               </Button>
             </MagneticButton>
           </motion.article>

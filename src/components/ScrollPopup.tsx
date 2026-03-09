@@ -3,10 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Rocket } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useCalendly } from '@/contexts/CalendlyContext';
 import { useLocation } from 'react-router-dom';
 
 const ScrollPopup = () => {
   const { t } = useLanguage();
+  const { openCalendly } = useCalendly();
   const location = useLocation();
   const [isVisible, setIsVisible] = useState(false);
   const [hasBeenShownThisSession, setHasBeenShownThisSession] = useState(false);
@@ -101,11 +103,9 @@ const ScrollPopup = () => {
                     variant="hero" 
                     size="lg" 
                     className="min-h-[52px] text-base active:scale-[0.98] transition-transform"
-                    asChild
+                    onClick={() => { openCalendly(); handleClose(); }}
                   >
-                    <a href="https://calendly.com/elie-ageron/30min" target="_blank" rel="noopener noreferrer" onClick={handleClose}>
-                      {t('popup.cta')}
-                    </a>
+                    {t('popup.cta')}
                   </Button>
                   <button
                     onClick={handleClose}

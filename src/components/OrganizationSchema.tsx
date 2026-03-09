@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+﻿import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const OrganizationSchema = () => {
@@ -35,7 +35,7 @@ const OrganizationSchema = () => {
     },
     sameAs: [
       'https://www.linkedin.com/in/elie-ageron-289636394',
-      'https://calendly.com/elie-ageron/30min',
+      'https://calendly.com/web-elieageron/30min',
     ],
     contactPoint: {
       '@type': 'ContactPoint',
@@ -77,8 +77,8 @@ const OrganizationSchema = () => {
     image: `${baseUrl}/og-image.png`,
     logo: `${baseUrl}/icons/apple-touch-icon.png`,
     description: language === 'fr'
-      ? 'Création de sites web premium à Annecy — spécialisé en conversion et design haute performance'
-      : 'Premium web design in Annecy — specializing in conversion optimization and high-performance design',
+      ? 'Création de sites web premium à Annecy - spécialisé en conversion et design haute performance'
+      : 'Premium web design in Annecy - specializing in conversion optimization and high-performance design',
     telephone: '+33695555318',
     email: 'elieageron@gmail.com',
     priceRange: '\u20ac\u20ac',

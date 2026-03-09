@@ -1,9 +1,10 @@
-import { motion } from 'framer-motion';
+﻿import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Check, Zap, Crown, Sparkles, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useCalendly } from '@/contexts/CalendlyContext';
 import { Switch } from '@/components/ui/switch';
 import MagneticButton from '@/components/animations/MagneticButton';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
@@ -20,7 +21,7 @@ const Pricing = () => {
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: language === 'fr' ? 'Création de Site Web — Elie Ageron' : 'Web Design Services — Elie Ageron',
+    name: language === 'fr' ? 'Création de Site Web - Elie Ageron' : 'Web Design Services - Elie Ageron',
     description: language === 'fr'
       ? 'Sites web premium haute conversion. Landing pages dès 500€, sites vitrines dès 1500€.'
       : 'Premium high-conversion websites. Landing pages from $500, showcase sites from $1500.',
@@ -239,12 +240,10 @@ const Pricing = () => {
                     variant={plan.popular ? 'hero' : 'neonOutline'} 
                     size="lg" 
                     className="w-full min-h-[52px] sm:min-h-[48px] active:scale-[0.98] transition-transform"
-                    asChild
+                    onClick={openCalendly}
                     aria-label={`${plan.cta} - ${plan.title} for ${plan.price}`}
                   >
-                    <a href="https://calendly.com/elie-ageron/30min" target="_blank" rel="noopener noreferrer">
-                      {plan.cta}
-                    </a>
+                    {plan.cta}
                   </Button>
                 </MagneticButton>
               </motion.article>

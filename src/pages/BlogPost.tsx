@@ -4,6 +4,7 @@ import { Link, useParams, Navigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useCalendly } from '@/contexts/CalendlyContext';
 import SEO from '@/components/SEO';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
 import InternalLinks from '@/components/InternalLinks';
@@ -107,6 +108,7 @@ const renderInlineFormatting = (text: string) => {
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const { language } = useLanguage();
+  const { openCalendly } = useCalendly();
 
   const post = useMemo(() => {
     if (!slug) return null;
@@ -311,10 +313,8 @@ const BlogPost = () => {
                 ? 'Discutons de votre projet et voyons comment je peux vous aider.'
                 : 'Let\'s discuss your project and see how I can help.'}
             </p>
-            <Button asChild variant="hero" size="lg" className="min-h-[52px] active:scale-[0.98] transition-transform">
-              <a href="https://calendly.com/elie-ageron/30min" target="_blank" rel="noopener noreferrer">
+            <Button variant="hero" size="lg" className="min-h-[52px] active:scale-[0.98] transition-transform" onClick={openCalendly}>
                 {language === 'fr' ? 'Réserver un appel gratuit' : 'Book a free call'}
-              </a>
             </Button>
           </motion.div>
         </div>

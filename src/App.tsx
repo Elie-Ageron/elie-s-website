@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import ScrollToTop from "./components/ScrollToTop";
 import Analytics from "./components/Analytics";
+import { CalendlyProvider } from "./contexts/CalendlyContext";
+import { CalendlyPopup } from "./components/CalendlyPopup";
 import Home from "./pages/Home";
 import WhyWebsite from "./pages/WhyWebsite";
 import OurProcess from "./pages/OurProcess";
@@ -22,6 +24,7 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <CalendlyProvider>
       <Toaster />
       <Sonner />
       <BrowserRouter>
@@ -44,6 +47,8 @@ const App = () => (
           </Routes>
         </Layout>
       </BrowserRouter>
+      <CalendlyPopup />
+      </CalendlyProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );

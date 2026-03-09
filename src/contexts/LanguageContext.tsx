@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+﻿import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
 type Language = 'fr' | 'en';
 
@@ -28,7 +28,7 @@ const translations = {
     'hero.proof.quality': '5-Star Quality',
     'hero.proof.guarantee': 'Personalized Support',
     'globalForm.title': 'Have a project in mind?',
-    'globalForm.subtitle': "Tell me about it — I'll get back to you within 24 hours.",
+    'globalForm.subtitle': "Tell me about it - I'll get back to you within 24 hours.",
     'home.viewPricing': 'View Pricing',
     'home.valueProps.title1': 'What a Website',
     'home.valueProps.title2': 'Gives You',
@@ -235,7 +235,7 @@ const translations = {
     'hero.proof.quality': 'Qualité 5 étoiles',
     'hero.proof.guarantee': 'Suivi personnalisé',
     'globalForm.title': 'Un projet en tête ?',
-    'globalForm.subtitle': 'Parlez-moi de votre projet — je vous réponds sous 24h.',
+    'globalForm.subtitle': 'Parlez-moi de votre projet - je vous réponds sous 24h.',
     'home.viewPricing': 'Voir les tarifs',
     'home.valueProps.title1': 'Ce qu\'un site web',
     'home.valueProps.title2': 'vous apporte',

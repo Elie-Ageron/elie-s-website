@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useCalendly } from '@/contexts/CalendlyContext';
 import { Link, useLocation } from 'react-router-dom';
 
 interface MobileMenuProps {
@@ -11,6 +12,7 @@ interface MobileMenuProps {
 
 const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
   const { language, setLanguage, t } = useLanguage();
+  const { openCalendly } = useCalendly();
   const location = useLocation();
 
   const navItems = [
@@ -144,17 +146,10 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                   variant="hero"
                   size="lg"
                   className="w-full min-h-[56px] text-base active:scale-[0.98]"
-                  asChild
+                  onClick={() => { openCalendly(); onClose(); }}
+                  aria-label="Book a call with Elie Ageron"
                 >
-                  <a
-                    href="https://calendly.com/elie-ageron/30min"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={onClose}
-                    aria-label="Book a call with Elie Ageron"
-                  >
-                    {t('nav.book')}
-                  </a>
+                  {t('nav.book')}
                 </Button>
               </motion.div>
             </div>

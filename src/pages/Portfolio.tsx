@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+﻿import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { ExternalLink, Sparkles, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -93,7 +93,7 @@ const Portfolio = () => {
   const collectionSchema = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: language === 'fr' ? 'Portfolio — Elie Ageron Web Design' : 'Portfolio — Elie Ageron Web Design',
+    name: language === 'fr' ? 'Portfolio - Elie Ageron Web Design' : 'Portfolio - Elie Ageron Web Design',
     description: language === 'fr'
       ? 'Réalisations web premium par Elie Ageron : sites haute conversion pour des clients exigeants.'
       : 'Premium web projects by Elie Ageron: high-conversion sites for demanding clients.',

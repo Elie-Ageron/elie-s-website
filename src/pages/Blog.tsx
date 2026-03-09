@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+﻿import { motion } from 'framer-motion';
 import { ArrowRight, Clock, User } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
@@ -17,7 +17,7 @@ const Blog = () => {
   const blogSchema = {
     '@context': 'https://schema.org',
     '@type': 'Blog',
-    name: language === 'fr' ? 'Blog Elie Ageron — Conseils Web Design & SEO' : 'Elie Ageron Blog — Web Design & SEO Tips',
+    name: language === 'fr' ? 'Blog Elie Ageron - Conseils Web Design & SEO' : 'Elie Ageron Blog - Web Design & SEO Tips',
     description: language === 'fr'
       ? 'Stratégies web, conversion et SEO pour développer votre business en ligne.'
       : 'Web strategies, conversion and SEO to grow your business online.',
