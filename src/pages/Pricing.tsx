@@ -1,6 +1,6 @@
 ﻿import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { Check, Zap, Crown, Sparkles, ArrowRight, MessageSquare } from 'lucide-react';
+import { Check, Zap, Crown, Sparkles, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -253,66 +253,39 @@ const Pricing = () => {
                 </MagneticButton>
               </motion.article>
             ))}
-
-            {/* Custom quote card */}
-            <motion.article
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-              whileHover={{ y: -10, boxShadow: '0 20px 40px hsl(0 0% 0% / 0.3)' }}
-              className="relative glass-card rounded-2xl sm:rounded-3xl p-5 sm:p-8 flex flex-col h-full transition-all duration-300 border border-dashed border-primary/30"
-              role="listitem"
-            >
-              <div className="flex items-center gap-3 mb-4 sm:mb-6">
-                <div className="p-2.5 sm:p-3 rounded-xl bg-secondary" aria-hidden="true">
-                  <MessageSquare className="w-5 h-5 sm:w-6 sm:h-6 text-primary" aria-hidden="true" />
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold text-foreground">{t('pricing.quote.title')}</h3>
-              </div>
-
-              <div className="mb-4 sm:mb-6">
-                <span className="text-3xl sm:text-4xl font-bold text-foreground">{language === 'fr' ? 'Sur mesure' : 'Custom'}</span>
-              </div>
-
-              <ul className="space-y-2.5 sm:space-y-3 mb-6 sm:mb-8 flex-grow" role="list">
-                {(['pricing.quote.q1', 'pricing.quote.q2', 'pricing.quote.q3', 'pricing.quote.q4'] as const).map((key) => (
-                  <li key={key} className="flex items-start gap-2.5 sm:gap-3 text-sm text-foreground/80">
-                    <span className="text-primary flex-shrink-0 mt-0.5 font-bold text-base leading-none">?</span>
-                    <span className="leading-relaxed">{t(key)}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <MagneticButton>
-                <Button
-                  variant="neonOutline"
-                  size="lg"
-                  className="w-full min-h-[52px] sm:min-h-[48px] active:scale-[0.98] transition-transform"
-                  onClick={scrollToContact}
-                >
-                  {t('pricing.quote.cta')}
-                </Button>
-              </MagneticButton>
-            </motion.article>
           </div>
         </div>
       </section>
 
-      {/* CTA to Process */}
-      <section className="pb-20">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="flex justify-center"
-        >
-          <Button asChild variant="hero" size="lg" className="group">
-            <Link to="/our-process" className="flex items-center gap-2">
-              {t('nav.process')}
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </Button>
-        </motion.div>
+      {/* Custom quote text + CTA */}
+      <section className="py-12 sm:py-16" aria-label="Custom quote">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
+              <span className="text-primary">{t('pricing.quote.title1')}</span>{' '}
+              <span className="text-foreground">{t('pricing.quote.title2')}</span>
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-8">{t('pricing.quote.desc')}</p>
+            <ul className="flex flex-col sm:flex-row flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-foreground/70 mb-10">
+              {(['pricing.quote.q1', 'pricing.quote.q2', 'pricing.quote.q3', 'pricing.quote.q4'] as const).map((key) => (
+                <li key={key} className="flex items-center gap-1.5">
+                  <span className="text-primary font-bold">?</span>
+                  <span>{t(key)}</span>
+                </li>
+              ))}
+            </ul>
+            <MagneticButton>
+              <Button variant="hero" size="lg" onClick={scrollToContact} className="group">
+                {t('pricing.quote.cta')}
+                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </MagneticButton>
+          </motion.div>
+        </div>
       </section>
 
       {/* FAQ Section */}
@@ -322,9 +295,7 @@ const Pricing = () => {
       <InternalLinks currentPage="pricing" />
 
       {/* Contact Methods */}
-      <div id="pricing-contact">
-        <ContactMethodsSection />
-      </div>
+      <ContactMethodsSection />
     </>
   );
 };
