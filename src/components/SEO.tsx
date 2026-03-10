@@ -40,7 +40,7 @@ const seoData = {
   en: {
     home: {
       title: 'Elie Ageron | Web Design & Conversion Expert',
-      description: 'Transform your online presence with Elie Ageron. Premium web design that converts visitors into clients. Delivered in 7–14 business days.',
+      description: 'Transform your online presence with Elie Ageron. Premium web design that converts visitors into clients. Delivered in 7-14 business days.',
     },
     why: {
       title: 'Why You Need a Website | Elie Ageron',
@@ -70,7 +70,7 @@ const seoData = {
   fr: {
     home: {
       title: 'Elie Ageron | Web Design & Conversion',
-      description: 'Transformez votre présence en ligne avec Elie Ageron. Sites web premium qui convertissent. Livraison en 7–14 jours ouvrés.',
+      description: 'Transformez votre présence en ligne avec Elie Ageron. Sites web premium qui convertissent. Livraison en 7-14 jours ouvrés.',
     },
     why: {
       title: 'Pourquoi un Site Web | Elie Ageron',

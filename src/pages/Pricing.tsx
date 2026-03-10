@@ -16,6 +16,7 @@ import InternalLinks from '@/components/InternalLinks';
 const Pricing = () => {
 
   const { t, language } = useLanguage();
+  const { openCalendly } = useCalendly();
   const [includeMaintenance, setIncludeMaintenance] = useState(false);
 
   const serviceSchema = {
@@ -106,8 +107,8 @@ const Pricing = () => {
       id: 'custom',
       icon: Sparkles,
       title: t('services.custom.title'),
-      price: language === 'fr' ? 'Sur devis' : 'On quote',
-      maintenancePrice: language === 'fr' ? 'Sur mesure' : 'Custom',
+      price: language === 'fr' ? '3500€' : '$3500',
+      maintenancePrice: language === 'fr' ? '+150€/mois' : '+$150/month',
       description: t('services.custom.desc'),
       features: [
         t('services.custom.feature1'),
