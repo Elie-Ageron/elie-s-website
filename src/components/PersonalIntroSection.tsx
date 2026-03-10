@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useCalendly } from '@/contexts/CalendlyContext';
-import eliePortrait from '@/assets/elie-ageron-portrait.webp';
+import eliePortrait from '@/assets/elie-ageron-portrait.jpg';
 
 const PersonalIntroSection = () => {
   const { language } = useLanguage();
@@ -54,11 +54,11 @@ const PersonalIntroSection = () => {
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-5 leading-tight"
             >
               <span className="text-foreground">
-                {language === 'fr' ? 'Vous méritez' : 'You deserve'}
+                {language === 'fr' ? 'Il est temps d\'avoir' : 'Time to have'}
               </span>
               <br />
               <span className="text-primary">
-                {language === 'fr' ? 'd\'exister en ligne.' : 'to be found online.'}
+                {language === 'fr' ? 'une vraie présence en ligne.' : 'a real online presence.'}
               </span>
             </h2>
             
