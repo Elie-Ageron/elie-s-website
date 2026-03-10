@@ -41,35 +41,5 @@ export default defineConfig(({ mode }) => ({
     cssCodeSplit: true,
     // Skip printing compressed sizes (speeds up CI builds)
     reportCompressedSize: false,
-    rollupOptions: {
-      output: {
-        manualChunks(id) {
-          if (!id.includes("node_modules")) return undefined;
-          // THREE.js ecosystem — very heavy, isolated for async loading
-          if (id.includes("/three") || id.includes("@react-three")) {
-            return "vendor-three";
-          }
-          // Framer-motion — isolated so pages without animations stay small
-          if (id.includes("framer-motion") || id.includes("motion")) {
-            return "vendor-motion";
-          }
-          // React core runtime — cached across all navigations
-          if (
-            id.includes("/react/") ||
-            id.includes("/react-dom/") ||
-            id.includes("/scheduler/") ||
-            id.includes("react-router")
-          ) {
-            return "vendor-react";
-          }
-          // Radix UI primitives — shared across many components
-          if (id.includes("@radix-ui")) {
-            return "vendor-radix";
-          }
-          // Everything else from node_modules — misc vendor bundle
-          return "vendor-misc";
-        },
-      },
-    },
   },
 }));
