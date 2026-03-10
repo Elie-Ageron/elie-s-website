@@ -8,6 +8,8 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import HeroSection from '@/components/HeroSection';
 import PersonalIntroSection from '@/components/PersonalIntroSection';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
+import ServicesSection from '@/components/ServicesSection';
+import FAQAccordion from '@/components/FAQAccordion';
 import SEO from '@/components/SEO';
 
 const Home = () => {
@@ -39,16 +41,19 @@ const Home = () => {
       {/* Hero Section with 3D */}
       <HeroSection />
 
-      {/* Personal Intro - First thing after hero */}
-      <PersonalIntroSection />
+      {/* Stats - Social proof immédiate sous le fold */}
+      <StatsSection />
+
+      {/* Témoignages - Avis clients juste après les chiffres */}
+      <TestimonialsSection />
 
       {/* Quick Value Props */}
-      <section className="py-12 sm:py-16 md:py-20 relative overflow-hidden" aria-labelledby="value-props-heading">
+      <section className="py-16 sm:py-24 md:py-32 relative overflow-hidden" aria-labelledby="value-props-heading">
         <FloatingElements count={5} />
         <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
           {/* Section Header */}
           <ScrollReveal direction="up" className="text-center mb-10 sm:mb-12">
-            <h2 id="value-props-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+            <h2 id="value-props-heading" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
               <span className="text-foreground">
                 {t('home.valueProps.title1')}
               </span>{' '}
@@ -101,8 +106,14 @@ const Home = () => {
         </div>
       </section>
 
-      <TestimonialsSection />
-      <StatsSection />
+      {/* Personal Intro - Qui je suis, après avoir posé la valeur */}
+      <PersonalIntroSection />
+
+      {/* Services - L'offre concrète */}
+      <ServicesSection />
+
+      {/* FAQ - Objections avant le CTA final */}
+      <FAQAccordion />
 
       {/* Contact Methods Section */}
       <section className="relative overflow-hidden">

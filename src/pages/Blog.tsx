@@ -73,16 +73,16 @@ const Blog = () => {
           >
             <h1 id="blog-hero-heading" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
               <span className="text-foreground">
-                {language === 'fr' ? 'Conseils' : 'Tips'}
+                {language === 'fr' ? 'Croissez en ligne.' : 'Grow online.'}
               </span>{' '}
               <span className="text-primary">
-                {language === 'fr' ? '& Insights' : '& Insights'}
+                {language === 'fr' ? 'Concrètement.' : 'Concretely.'}
               </span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               {language === 'fr' 
-                ? 'Stratégies web, conversion et SEO pour développer votre business en ligne.'
-                : 'Web strategies, conversion and SEO to grow your business online.'}
+                ? 'SEO, conversion, présence locale : les stratégies qui font réellement entrer des clients.'
+                : 'SEO, conversion, local presence: strategies that actually bring in clients.'}
             </p>
           </motion.header>
         </div>

@@ -30,8 +30,8 @@ const translations = {
     'globalForm.title': 'Tell me about your situation',
     'globalForm.subtitle': "One message is enough. I get back to you within 24 hours, always.",
     'home.viewPricing': 'See Prices',
-    'home.valueProps.title1': 'What changes when you have',
-    'home.valueProps.title2': 'a website that works',
+    'home.valueProps.title1': 'What a real website',
+    'home.valueProps.title2': 'does for your business',
     'home.valueProps.subtitle': 'Many businesses could reach more clients online with a stronger web presence. Here\'s what a well-built site actually changes.',
     'home.value1.title': 'Found by the right people',
     'home.value1.desc': 'Every day, people search for exactly what you offer. A well-positioned site makes sure it\'s your name they find.',
@@ -44,8 +44,8 @@ const translations = {
     'home.cta.button': 'Book my free call',
     
     // Home Contact Methods
-    'home.contact.title1': "Let's talk about",
-    'home.contact.title2': 'your project',
+    'home.contact.title1': "Let's talk,",
+    'home.contact.title2': 'no commitment',
     'home.contact.subtitle': 'No sales pitch, no pressure. Just an honest conversation about what you actually need.',
     'home.contact.recommended': 'Recommended',
     'home.contact.call.title': 'Book a Free 30-min Call',
@@ -62,7 +62,7 @@ const translations = {
     'stats.trust.desc': 'People Google before they call. A professional site is what turns a curious visitor into someone who reaches out.',
     'stats.mobile.title': '7 in 10 visitors are on mobile',
     'stats.mobile.desc': 'If your site isn\'t optimized for mobile, most visitors leave before reading a word. Every site I build looks great on every screen.',
-    'stats.cta': 'See how it works',
+    'stats.cta': 'Discover the process',
     'stats.cta.link': '/our-process',
 
     // Why a Website Page
@@ -119,7 +119,9 @@ const translations = {
     'pricing.guarantee.desc': 'If the result doesn\'t feel right, I rework it until you\'re fully happy with what you have. No extra cost.',
 
     // Services (shared with pricing)
-    'services.title': 'Choose the right plan for your project',
+    'services.title': 'The plan that fits your needs',
+    'services.title1': 'The plan that',
+    'services.title2': 'fits your needs',
     'services.subtitle': 'Whether you\'re just getting started or building everything at once, there\'s an option that fits where you are.',
     'services.landing.title': 'Single-Page Site',
     'services.landing.price': '$500',
@@ -158,8 +160,8 @@ const translations = {
     'pricing.quote.q4': 'Not sure yet what you need?',
 
     // Portfolio
-    'portfolio.title1': 'Real sites,',
-    'portfolio.title2': 'real results',
+    'portfolio.title1': 'Real projects,',
+    'portfolio.title2': 'measurable results',
     'portfolio.subtitle': 'See what it looks like when a website actually works.',
     'portfolio.preview': 'Live Preview',
     'portfolio.luxura.name': 'Luxura Spa',
@@ -173,8 +175,8 @@ const translations = {
     'portfolio.cta.button': 'Book a Free Strategy Call',
 
     // Testimonials
-    'testimonials.title1': 'What clients',
-    'testimonials.title2': 'say.',
+    'testimonials.title1': 'They were in your position.',
+    'testimonials.title2': 'Now they have results.',
     'testimonials.subtitle': 'Real feedback from business owners who went through the process.',
     'testimonials.cta': 'See the Work',
     'testimonials.cta.link': '/portfolio',
@@ -238,7 +240,7 @@ const translations = {
     'hero.headline1': "Votre business mérite",
     'hero.headline2': "une vraie présence en ligne.",
     'hero.badge': 'En ligne en 7-14 jours · Dès 500€',
-    'hero.cta': 'On en parle, c\'est gratuit 🚀',
+    'hero.cta': 'Discutons-en, c\'est gratuit 🚀',
     'hero.scroll': 'Défiler',
     'hero.proof.satisfaction': '100% Clients satisfaits',
     'hero.proof.quality': 'Qualité 5 étoiles',
@@ -246,39 +248,39 @@ const translations = {
     'globalForm.title': 'Parlez-moi de votre projet',
     'globalForm.subtitle': 'Un message suffit. Je vous réponds sous 24h.',
     'home.viewPricing': 'Voir les tarifs',
-    'home.valueProps.title1': 'Ce qui change quand vous avez',
-    'home.valueProps.title2': 'un vrai site web',
-    'home.valueProps.subtitle': 'Beaucoup d\'entreprises pourraient toucher plus de clients en ligne, simplement avec une meilleure présence. Voici ce que ça change.',
+    'home.valueProps.title1': 'L\'impact',
+    'home.valueProps.title2': 'd\'un vrai site web',
+    'home.valueProps.subtitle': 'Beaucoup d\'entreprises pourraient toucher plus de clients en ligne, simplement avec une meilleure présence. Voici trois différences concrètes.',
     'home.value1.title': 'Plus de clients',
     'home.value1.desc': 'Les gens qui cherchent votre service sur Google vous trouvent en premier.',
     'home.value2.title': 'Confiance immédiate',
     'home.value2.desc': 'Un site professionnel = les gens vous prennent au sérieux avant même de vous contacter.',
-    'home.value3.title': 'Vous bossez, il vend',
+    'home.value3.title': 'Vous travaillez, il vend',
     'home.value3.desc': 'Votre site travaille jour et nuit. Il répond aux questions, convainc, et collecte des contacts - même pendant que vous dormez.',
     'home.cta.title': 'Prêt à avoir plus de clients en ligne ?',
     'home.cta.subtitle': 'Réservez un appel gratuit de 30 min. J\'analyse votre situation et je vous dis ce qu\'un site peut concrètement faire pour vous.',
     'home.cta.button': 'Réserver mon appel gratuit',
     
     // Home Contact Methods
-    'home.contact.title1': 'Parlons de',
-    'home.contact.title2': 'votre projet ',
-    'home.contact.subtitle': 'Choisissez comment vous voulez qu\'on se parle. Pas de discours de vente, juste une vraie conversation.',
+    'home.contact.title1': 'Discutons',
+    'home.contact.title2': 'sans engagement',
+    'home.contact.subtitle': 'Choisissez comment vous souhaitez échanger. Pas de discours de vente, juste une conversation directe.',
     'home.contact.recommended': 'Recommandé',
     'home.contact.call.title': 'Appel gratuit 30 min',
-    'home.contact.call.desc': 'On regarde ensemble votre situation, je vous dis franchement ce qui peut vous apporter des clients et comment.',
+    'home.contact.call.desc': 'Nous analysons ensemble votre situation, je vous indique clairement ce qui peut vous apporter des clients et comment.',
     'home.contact.call.cta': 'Choisir un créneau',
     'home.contact.whatsapp.desc': 'Une question ? Une idée de projet ? Envoyez-moi un message, je réponds en général dans la minute.',
     'home.contact.whatsapp.cta': 'Envoyer un message',
     'home.contact.email.desc': "Vous préférez écrire ? Décrivez-moi votre situation, je reviens avec des idées concrètes sous 24h.",
 
     // Stats / Value Props
-    'stats.always.title': 'Des clients même en dormant',
+    'stats.always.title': 'Des clients, même la nuit',
     'stats.always.desc': 'Votre site ne prend pas de congé. Pendant que vous vous reposez, il collecte des demandes, répond aux questions, et vous trouve de nouveaux clients.',
     'stats.trust.title': 'Ils vous font confiance avant d\'appeler',
     'stats.trust.desc': 'Les gens se renseignent en ligne avant de contacter. Un site professionnel est ce qui transforme un visiteur curieux en quelqu\'un qui prend contact.',
     'stats.mobile.title': '7 visiteurs sur 10 sont sur mobile',
     'stats.mobile.desc': 'Si votre site n\'est pas optimisé pour mobile, la plupart de vos visiteurs repartent sans rien lire. Chaque site que je crée est parfait sur tous les écrans.',
-    'stats.cta': 'Voir comment ça marche',
+    'stats.cta': 'Découvrir la méthode',
     'stats.cta.link': '/our-process',
 
     // Why a Website Page
@@ -289,7 +291,7 @@ const translations = {
     'why.benefit1.desc': 'Quand quelqu\'un cherche « plombier à Lyon » ou « coach à Paris », c\'est vous qui apparaissez en premier - pas votre concurrent.',
     'why.benefit2.title': 'Des contacts même quand vous êtes fermé',
     'why.benefit2.desc': 'Votre formulaire de contact tourne la nuit, le week-end, les jours fériés. Vous vous réveillez avec des messages qui vous attendent.',
-    'why.benefit3.title': 'Ça se rembourse vite',
+    'why.benefit3.title': 'Un investissement rapidement rentabilisé',
     'why.benefit3.desc': 'Un ou deux nouveaux clients via votre site et c\'est déjà remboursé. Ensuite il continue de travailler.',
     'why.benefit4.title': 'Vous gagnez la confiance avant même le premier contact',
     'why.benefit4.desc': 'Un site professionnel inspire confiance immédiatement. Les visiteurs arrivent déjà convaincus de qui vous êtes.',
@@ -311,9 +313,9 @@ const translations = {
     // Our Process Page
     'process.title1': 'De zéro à en ligne',
     'process.title2': 'en 4 étapes simples',
-    'process.subtitle': 'Pas de jargon, pas de surprise. Voici exactement comment ça se passe quand vous travaillez avec moi.',
+    'process.subtitle': 'Pas de jargon, pas de surprise. Voici exactement comment cela se déroule lorsque vous travaillez avec moi.',
     'process.step1.title': 'Appel gratuit (30 min)',
-    'process.step1.desc': 'On parle de votre activité, de vos clients, de vos objectifs. Je pose les bonnes questions pour comprendre ce qui va vraiment marcher pour vous.',
+    'process.step1.desc': 'Nous échangeons sur votre activité, vos clients, vos objectifs. Je pose les bonnes questions pour comprendre ce qui fonctionnera réellement pour vous.',
     'process.step2.title': 'Je crée votre design',
     'process.step2.desc': 'Je crée un design à votre image qui donne envie aux visiteurs de vous contacter. Vous validez, j\'ajuste jusqu\'à ce que ce soit parfait.',
     'process.step3.title': 'Je développe et optimise',
@@ -321,7 +323,7 @@ const translations = {
     'process.step4.title': 'Lancement - vous êtes en ligne',
     'process.step4.desc': 'Votre site est mis en ligne. Je vous forme à l\'utiliser, et je suis disponible si vous avez des questions.',
     'process.cta.title': 'Prêt à vous lancer ?',
-    'process.cta.subtitle': 'Réservez votre appel gratuit. 30 minutes suffisent pour savoir si on est faits pour travailler ensemble.',
+    'process.cta.subtitle': 'Réservez votre appel gratuit. 30 minutes suffisent pour déterminer si nous sommes en adéquation pour travailler ensemble.',
     'process.cta.button': 'Réserver mon appel gratuit',
 
     // Pricing Page
@@ -336,6 +338,8 @@ const translations = {
 
     // Services (shared with pricing)
     'services.title': 'Choisissez la formule adaptée à votre projet',
+    'services.title1': 'La formule',
+    'services.title2': "qu'il vous faut",
     'services.subtitle': 'Que vous démarriez ou que vous construisiez tout d\'un coup, il y a une option qui correspond à où vous en êtes.',
     'services.landing.title': 'Site Une Page',
     'services.landing.price': '500€',
@@ -362,7 +366,7 @@ const translations = {
     'services.custom.feature2': 'Référencement Google avancé pour apparaître en tête dans votre secteur',
     'services.custom.feature3': 'Vous voyez combien de visiteurs arrivent sur votre site et ce qu\'ils font',
     'services.custom.feature4': 'Prêt à lancer des pubs sur Google, Facebook et Instagram dès le jour 1',
-    'services.custom.cta': 'On en parle',
+    'services.custom.cta': 'Discutons-en',
     'pricing.quote.title': 'Besoins spécifiques ?',
     'pricing.quote.title1': 'Besoins',
     'pricing.quote.title2': 'spécifiques ?',
@@ -374,9 +378,9 @@ const translations = {
     'pricing.quote.q4': 'Pas encore sûr de ce qu\'il vous faut ?',
 
     // Portfolio
-    'portfolio.title1': 'Des vrais sites,',
-    'portfolio.title2': 'de vrais résultats',
-    'portfolio.subtitle': 'Voyez à quoi ça ressemble quand un site travaille vraiment.',
+    'portfolio.title1': 'Des projets réels,',
+    'portfolio.title2': 'des résultats mesurables',
+    'portfolio.subtitle': 'Découvrez ce qu\'un site performant peut accomplir pour votre activité.',
     'portfolio.preview': 'Aperçu Live',
     'portfolio.luxura.name': 'Luxura Spa',
     'portfolio.luxura.category': 'Bien-être & Beauté',
@@ -389,8 +393,8 @@ const translations = {
     'portfolio.cta.button': 'Réserver mon appel gratuit',
 
     // Testimonials
-    'testimonials.title1': 'Ce que disent',
-    'testimonials.title2': 'mes clients.',
+    'testimonials.title1': 'Ils étaient à votre place.',
+    'testimonials.title2': 'Aujourd\'hui, ils ont des résultats.',
     'testimonials.subtitle': 'Des retours honnêtes de gens qui sont passés par là.',
     'testimonials.cta': 'Voir nos réalisations',
     'testimonials.cta.link': '/portfolio',
@@ -402,7 +406,7 @@ const translations = {
     'testimonial.2.author': 'Sophie L.',
     'testimonial.2.role': 'Agent immobilier',
     'testimonial.2.date': 'Oct 2025',
-    'testimonial.3.text': "Meilleur investissement de l'année pour ma boite. On a vu la différence en quelques semaines. Si vous hésitez encore, ça vaut vraiment le coup.",
+    'testimonial.3.text': "Meilleur investissement de l'année pour mon entreprise. Nous avons constaté la différence en quelques semaines. Si vous hésitez encore, c'est une décision qui en vaut vraiment la peine.",
     'testimonial.3.author': 'Thomas R.',
     'testimonial.3.role': 'Coach fitness',
     'testimonial.3.date': 'Nov 2024',
@@ -414,11 +418,11 @@ const translations = {
     'popup.close': 'Pas maintenant',
 
     // Contact Page
-    'contact.title1': 'On parle de',
+    'contact.title1': 'Parlons de',
     'contact.title2': 'votre situation',
     'contact.subtitle': 'Gratuit, sans engagement. J\'écoute ce dont vous avez besoin et je vous dis honnêtement ce que je peux faire, et ce que je ne peux pas.',
     'contact.calendly.title': 'Réserver un appel gratuit',
-    'contact.calendly.desc': 'On regarde votre situation ensemble. Vous repartez avec une idée claire de ce qu\'il vous faut, que vous travailliez avec moi ou pas.',
+    'contact.calendly.desc': 'Nous analysons votre situation ensemble. Vous repartez avec une idée claire de ce qu\'il vous faut, que vous travailliez avec moi ou non.',
     'contact.calendly.button': 'Choisir un créneau',
     'contact.form.title': 'Envoyez-moi un message',
     'contact.name': 'Votre nom',

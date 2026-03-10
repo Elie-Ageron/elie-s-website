@@ -168,12 +168,13 @@ const ServicesSection = () => {
         {/* Section Header */}
         <ScrollReveal direction="up" className="text-center mb-16">
           <motion.h2 
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            {t('services.title')}
+            <span className="text-foreground">{t('services.title1')}</span>{' '}
+            <span className="text-primary">{t('services.title2')}</span>
           </motion.h2>
           <motion.p 
             className="text-lg text-muted-foreground max-w-2xl mx-auto"

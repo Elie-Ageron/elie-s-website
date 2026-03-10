@@ -73,7 +73,7 @@ const TestimonialsSection = () => {
         {/* Section Header */}
         <ScrollReveal direction="up" className="text-center mb-16">
           <motion.h2 
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -93,11 +93,11 @@ const TestimonialsSection = () => {
         </ScrollReveal>
 
         {/* Testimonial Carousel */}
-        <div className="relative">
+        <div className="relative sm:px-16">
           {/* Navigation Arrows - Hidden on mobile */}
           <button
             onClick={prevTestimonial}
-            className="hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 sm:-translate-x-12 z-20 w-12 h-12 rounded-full bg-secondary/80 backdrop-blur-sm border border-border/50 items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300 group"
+            className="hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-secondary/80 backdrop-blur-sm border border-border/50 items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300 group"
             aria-label="Previous testimonial"
           >
             <ChevronLeft className="w-5 h-5 group-hover:scale-110 transition-transform" />
@@ -105,7 +105,7 @@ const TestimonialsSection = () => {
           
           <button
             onClick={nextTestimonial}
-            className="hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 sm:translate-x-12 z-20 w-12 h-12 rounded-full bg-secondary/80 backdrop-blur-sm border border-border/50 items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300 group"
+            className="hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-secondary/80 backdrop-blur-sm border border-border/50 items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300 group"
             aria-label="Next testimonial"
           >
             <ChevronRight className="w-5 h-5 group-hover:scale-110 transition-transform" />

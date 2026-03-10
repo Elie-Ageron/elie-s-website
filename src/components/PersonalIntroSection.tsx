@@ -54,18 +54,18 @@ const PersonalIntroSection = () => {
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-5 leading-tight"
             >
               <span className="text-foreground">
-                {language === 'fr' ? 'Il est temps d\'avoir' : 'Time to have'}
+                {language === 'fr' ? 'Un accompagnement' : 'Your project is in'}
               </span>
               <br />
               <span className="text-primary">
-                {language === 'fr' ? 'une vraie présence en ligne.' : 'a real online presence.'}
+                {language === 'fr' ? 'de A à Z.' : 'good hands.'}
               </span>
             </h2>
             
             <p className="text-muted-foreground text-base sm:text-lg mb-8 max-w-lg mx-auto md:mx-0 leading-relaxed">
               {language === 'fr' 
-                ? 'Vous avez construit quelque chose de bien. Vos futurs clients ne le savent pas encore. Je change ça, avec un site qui travaille pour vous 24h/24.'
-                : "You've built something great. Your future clients just don't know it yet. I fix that, with a website that works for you around the clock."}
+                ? 'Je suis Elie, freelance en création de sites web. J\'aide les entrepreneurs et les petites entreprises à construire leur présence en ligne, avec des sites clairs, rapides, et conçus pour attirer de vrais clients.'
+                : "I'm Elie, a freelance web designer. I help entrepreneurs and small businesses build their online presence, with clean, fast websites designed to attract real clients."}
             </p>
 
             <Button 
@@ -75,7 +75,7 @@ const PersonalIntroSection = () => {
               onClick={openCalendly}
             >
               <span className="flex items-center gap-2">
-                {language === 'fr' ? 'Je veux plus de clients' : "I want more clients"}
+                {language === 'fr' ? 'Prendre contact' : "Get in touch"}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </span>
             </Button>

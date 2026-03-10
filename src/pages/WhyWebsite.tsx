@@ -47,21 +47,21 @@ const WhyWebsite = () => {
       <FAQSchema page="why" />
       
       {/* Hero */}
-      <section className="py-20 relative grain" aria-labelledby="why-hero-heading">
+      <section className="py-12 sm:py-16 md:py-20 relative grain" aria-labelledby="why-hero-heading">
         <div className="absolute inset-0" aria-hidden="true">
-          <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-primary/20 rounded-full blur-[120px]" />
+          <div className="absolute top-1/3 right-1/4 w-56 sm:w-80 h-56 sm:h-80 bg-primary/20 rounded-full blur-[80px] sm:blur-[120px]" />
         </div>
-        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
           <motion.header
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 id="why-hero-heading" className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 id="why-hero-heading" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
               <span className="text-foreground">{t('why.title1')}</span>{' '}
               <span className="text-primary">{t('why.title2')}</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               {t('why.subtitle')}
             </p>
           </motion.header>
@@ -69,9 +69,9 @@ const WhyWebsite = () => {
       </section>
 
       {/* Benefits Grid */}
-      <section className="py-20" aria-labelledby="benefits-heading">
+      <section className="py-12 sm:py-16 md:py-20" aria-labelledby="benefits-heading">
         <h2 id="benefits-heading" className="sr-only">Benefits of Professional Web Design</h2>
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {benefits.map((benefit, index) => (
               <motion.article
@@ -100,16 +100,17 @@ const WhyWebsite = () => {
       </section>
 
       {/* Comparison Table */}
-      <section className="py-20 relative" aria-labelledby="comparison-heading">
-        <div className="max-w-5xl mx-auto px-6">
+      <section className="py-12 sm:py-16 md:py-20 relative" aria-labelledby="comparison-heading">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <motion.h2 
             id="comparison-heading"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-center text-foreground mb-12"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10 sm:mb-12"
           >
-            {t('why.comparison.title')}
+            <span className="text-foreground">{language === 'fr' ? 'Avec ou sans site :' : 'With or without a site:'}</span>{' '}
+            <span className="text-primary">{t('why.comparison.title')}</span>
           </motion.h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

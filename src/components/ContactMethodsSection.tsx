@@ -4,8 +4,6 @@ import { Calendar, MessageCircle, Mail, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useCalendly } from '@/contexts/CalendlyContext';
 import ScrollReveal from '@/components/animations/ScrollReveal';
-import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
 
 interface ContactMethodsSectionProps {
   showTitle?: boolean;
@@ -58,25 +56,10 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
   return (
     <section className={compact ? 'py-8 sm:py-12' : 'py-12 sm:py-16 md:py-20'}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        {/* CTA vers les tarifs - au dessus du titre */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="flex justify-center mb-14 sm:mb-16"
-        >
-          <Button asChild variant="hero" size="lg" className="group">
-            <Link to="/pricing" className="flex items-center gap-2">
-              {t('nav.pricing')}
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </Button>
-        </motion.div>
-
         {showTitle && (
           <ScrollReveal direction="up" className="text-center mb-8 sm:mb-12">
             <motion.h2 
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 leading-tight"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
