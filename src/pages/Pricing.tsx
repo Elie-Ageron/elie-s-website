@@ -295,7 +295,9 @@ const Pricing = () => {
       <InternalLinks currentPage="pricing" />
 
       {/* Contact Methods */}
-      <ContactMethodsSection />
+      <div id="pricing-contact">
+        <ContactMethodsSection />
+      </div>
     </>
   );
 };

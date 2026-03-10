@@ -54,18 +54,18 @@ const PersonalIntroSection = () => {
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-5 leading-tight"
             >
               <span className="text-foreground">
-                {language === 'fr' ? 'Laissez-moi' : 'Let me'}
+                {language === 'fr' ? 'Vous méritez' : 'You deserve'}
               </span>
               <br />
               <span className="text-primary">
-                {language === 'fr' ? 'construire votre succès' : 'build your success'}
+                {language === 'fr' ? 'd\'exister en ligne.' : 'to be found online.'}
               </span>
             </h2>
             
             <p className="text-muted-foreground text-base sm:text-lg mb-8 max-w-lg mx-auto md:mx-0 leading-relaxed">
               {language === 'fr' 
-                ? 'Je crée des sites web qui transforment vos visiteurs en clients. Design premium, livraison rapide, résultats garantis.'
-                : 'I create websites that turn your visitors into clients. Premium design, fast delivery, guaranteed results.'}
+                ? 'Vous avez construit quelque chose de bien. Vos futurs clients ne le savent pas encore. Je change ça, avec un site qui travaille pour vous 24h/24.'
+                : "You've built something great. Your future clients just don't know it yet. I fix that, with a website that works for you around the clock."}
             </p>
 
             <Button 
@@ -75,7 +75,7 @@ const PersonalIntroSection = () => {
               onClick={openCalendly}
             >
               <span className="flex items-center gap-2">
-                {language === 'fr' ? 'Discutons de votre projet' : "Let's discuss your project"}
+                {language === 'fr' ? 'Je veux plus de clients' : "I want more clients"}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </span>
             </Button>
