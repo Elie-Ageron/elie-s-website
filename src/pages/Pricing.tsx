@@ -204,7 +204,7 @@ const Pricing = () => {
                     className="absolute -top-3 sm:-top-4 left-1/2 -translate-x-1/2 px-3 sm:px-4 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full whitespace-nowrap"
                     aria-label="Most popular plan"
                   >
-                    ⭐ {t('services.authority.popular')}
+                    {t('services.authority.popular')}
                   </div>
                 )}
 

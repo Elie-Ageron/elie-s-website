@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useMemo } from 'react';
 
 interface FloatingElementsProps {
   count?: number;
@@ -6,14 +7,18 @@ interface FloatingElementsProps {
 }
 
 const FloatingElements = ({ count = 5, className = '' }: FloatingElementsProps) => {
-  const elements = Array.from({ length: count }, (_, i) => ({
-    id: i,
-    size: Math.random() * 3 + 2,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    duration: Math.random() * 8 + 12,
-    delay: Math.random() * 3
-  }));
+  // Stable random values - recalculate only when count changes
+  const elements = useMemo(() =>
+    Array.from({ length: count }, (_, i) => ({
+      id: i,
+      size: Math.random() * 3 + 2,
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      duration: Math.random() * 8 + 12,
+      delay: Math.random() * 3,
+    })),
+    [count]
+  );
 
   return (
     <div className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}>

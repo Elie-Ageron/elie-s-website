@@ -44,7 +44,7 @@ const PortfolioItem = ({ image, name, url, categoryKey, ctaKey, descKey, alt, de
             className="w-full h-auto transition-transform duration-700 group-hover:scale-[1.02]"
             width={1200}
             height={675}
-            loading="eager"
+            loading="lazy"
             decoding="async"
           />
           

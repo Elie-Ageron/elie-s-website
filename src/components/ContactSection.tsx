@@ -23,7 +23,7 @@ const ContactSection = () => {
     await new Promise(resolve => setTimeout(resolve, 1500));
     
     toast({
-      title: '✨ ' + t('contact.success'),
+      title: t('contact.success'),
       description: formData.name,
     });
     

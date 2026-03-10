@@ -48,7 +48,7 @@ const ServiceCard = ({ title, price, description, features, cta, icon, popular, 
             animate={{ scale: [1, 1.1, 1] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
-            ⭐ Most Popular
+            Most Popular
           </motion.span>
         </motion.div>
       )}

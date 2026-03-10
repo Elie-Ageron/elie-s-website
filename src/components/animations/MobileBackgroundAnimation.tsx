@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion';
-
 interface MobileBackgroundAnimationProps {
   /**
    * iOS Safari peut crasher avec trop de couches floutées animées.
@@ -23,55 +21,50 @@ const MobileBackgroundAnimation = ({ lite = false }: MobileBackgroundAnimationPr
         { size: 40, x: '85%', y: '85%', delay: 1.5, duration: 11 },
       ];
 
-  const dotsCount = lite ? 4 : 8;
+  const dotsCount = lite ? 4 : 7;
 
   return (
     <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden sm:hidden" style={{ contain: 'strict' }}>
+      <style>{`
+        @keyframes mba-orb {
+          0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.4; }
+          25%  { transform: translate(10px, -20px) scale(1.08); opacity: 0.55; }
+          50%  { transform: translate(0, -10px) scale(1); opacity: 0.45; }
+          75%  { transform: translate(-10px, 20px) scale(0.92); opacity: 0.5; }
+        }
+        @keyframes mba-dot {
+          0%, 100% { transform: translateY(0); opacity: 0.2; }
+          50% { transform: translateY(-30px); opacity: 0.5; }
+        }
+      `}</style>
       {orbs.map((orb, index) => (
-        <motion.div
+        <div
           key={index}
-          className="absolute rounded-full"
           style={{
+            position: 'absolute',
             width: orb.size,
             height: orb.size,
             left: orb.x,
             top: orb.y,
+            borderRadius: '50%',
             background: `radial-gradient(circle, hsl(var(--primary) / 0.15) 0%, transparent 70%)`,
             filter: lite ? 'blur(14px)' : 'blur(20px)',
-          }}
-          animate={{
-            y: [0, -20, 0, 20, 0],
-            x: [0, 10, 0, -10, 0],
-            scale: [1, 1.1, 1, 0.9, 1],
-            opacity: [0.4, 0.6, 0.4, 0.5, 0.4],
-          }}
-          transition={{
-            duration: orb.duration,
-            delay: orb.delay,
-            repeat: Infinity,
-            ease: 'easeInOut',
+            animation: `mba-orb ${orb.duration}s ease-in-out ${orb.delay}s infinite`,
           }}
         />
       ))}
-
-      {/* Subtle floating dots */}
-      {[...Array(dotsCount)].map((_, i) => (
-        <motion.div
+      {Array.from({ length: dotsCount }, (_, i) => (
+        <div
           key={`dot-${i}`}
-          className="absolute w-1 h-1 rounded-full bg-primary/30"
           style={{
+            position: 'absolute',
+            width: 4,
+            height: 4,
+            borderRadius: '50%',
+            background: 'hsl(var(--primary) / 0.3)',
             left: `${12 + i * (lite ? 18 : 12)}%`,
             top: `${22 + (i % 3) * 25}%`,
-          }}
-          animate={{
-            y: [0, -30, 0],
-            opacity: [0.2, 0.5, 0.2],
-          }}
-          transition={{
-            duration: 4 + i * 0.5,
-            delay: i * 0.3,
-            repeat: Infinity,
-            ease: 'easeInOut',
+            animation: `mba-dot ${4 + i * 0.5}s ease-in-out ${i * 0.3}s infinite`,
           }}
         />
       ))}

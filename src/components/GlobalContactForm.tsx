@@ -36,7 +36,7 @@ const GlobalContactForm = () => {
       });
 
       toast({
-        title: '✅ Message bien envoyé',
+        title: 'Message bien envoyé',
       });
 
       setFormData({ name: '', email: '', message: '' });

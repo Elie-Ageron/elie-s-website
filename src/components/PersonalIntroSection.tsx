@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useCalendly } from '@/contexts/CalendlyContext';
-import eliePortrait from '@/assets/elie-ageron-portrait.jpg';
+import eliePortrait from '@/assets/elie-ageron-portrait.webp';
 
 const PersonalIntroSection = () => {
   const { language } = useLanguage();
