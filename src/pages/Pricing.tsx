@@ -1,6 +1,6 @@
 ﻿import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { Check, Zap, Crown, Sparkles, ArrowRight } from 'lucide-react';
+import { Check, Zap, Crown, Sparkles, ArrowRight, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -18,6 +18,10 @@ const Pricing = () => {
   const { t, language } = useLanguage();
   const { openCalendly } = useCalendly();
   const [includeMaintenance, setIncludeMaintenance] = useState(false);
+
+  const scrollToContact = () => {
+    document.getElementById('pricing-contact')?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   const serviceSchema = {
     '@context': 'https://schema.org',
@@ -241,7 +245,7 @@ const Pricing = () => {
                     variant={plan.popular ? 'hero' : 'neonOutline'} 
                     size="lg" 
                     className="w-full min-h-[52px] sm:min-h-[48px] active:scale-[0.98] transition-transform"
-                    onClick={openCalendly}
+                    onClick={scrollToContact}
                     aria-label={`${plan.cta} - ${plan.title} for ${plan.price}`}
                   >
                     {plan.cta}
@@ -249,10 +253,50 @@ const Pricing = () => {
                 </MagneticButton>
               </motion.article>
             ))}
+
+            {/* Custom quote card */}
+            <motion.article
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              whileHover={{ y: -10, boxShadow: '0 20px 40px hsl(0 0% 0% / 0.3)' }}
+              className="relative glass-card rounded-2xl sm:rounded-3xl p-5 sm:p-8 flex flex-col h-full transition-all duration-300 border border-dashed border-primary/30"
+              role="listitem"
+            >
+              <div className="flex items-center gap-3 mb-4 sm:mb-6">
+                <div className="p-2.5 sm:p-3 rounded-xl bg-secondary" aria-hidden="true">
+                  <MessageSquare className="w-5 h-5 sm:w-6 sm:h-6 text-primary" aria-hidden="true" />
+                </div>
+                <h3 className="text-lg sm:text-xl font-bold text-foreground">{t('pricing.quote.title')}</h3>
+              </div>
+
+              <div className="mb-4 sm:mb-6">
+                <span className="text-3xl sm:text-4xl font-bold text-foreground">{language === 'fr' ? 'Sur mesure' : 'Custom'}</span>
+              </div>
+
+              <ul className="space-y-2.5 sm:space-y-3 mb-6 sm:mb-8 flex-grow" role="list">
+                {(['pricing.quote.q1', 'pricing.quote.q2', 'pricing.quote.q3', 'pricing.quote.q4'] as const).map((key) => (
+                  <li key={key} className="flex items-start gap-2.5 sm:gap-3 text-sm text-foreground/80">
+                    <span className="text-primary flex-shrink-0 mt-0.5 font-bold text-base leading-none">?</span>
+                    <span className="leading-relaxed">{t(key)}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <MagneticButton>
+                <Button
+                  variant="neonOutline"
+                  size="lg"
+                  className="w-full min-h-[52px] sm:min-h-[48px] active:scale-[0.98] transition-transform"
+                  onClick={scrollToContact}
+                >
+                  {t('pricing.quote.cta')}
+                </Button>
+              </MagneticButton>
+            </motion.article>
           </div>
         </div>
       </section>
-
 
       {/* CTA to Process */}
       <section className="pb-20">
@@ -278,7 +322,9 @@ const Pricing = () => {
       <InternalLinks currentPage="pricing" />
 
       {/* Contact Methods */}
-      <ContactMethodsSection />
+      <div id="pricing-contact">
+        <ContactMethodsSection />
+      </div>
     </>
   );
 };
