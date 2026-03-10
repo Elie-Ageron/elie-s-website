@@ -114,21 +114,22 @@ const HeroSection = () => {
         </motion.header>
 
         {/* Scroll indicator - Hidden on mobile for cleaner look */}
-        <motion.div
+        <motion.button
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.6 }}
-          className="hidden sm:flex absolute bottom-4 left-1/2 -translate-x-1/2 flex-col items-center gap-2"
-          aria-hidden="true"
+          className="hidden sm:flex absolute bottom-4 left-1/2 -translate-x-1/2 flex-col items-center gap-2 cursor-pointer group"
+          onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}
+          aria-label="Défiler vers le bas"
         >
-          <span className="text-xs text-muted-foreground">{t('hero.scroll')}</span>
+          <span className="text-xs text-muted-foreground group-hover:text-primary transition-colors">{t('hero.scroll')}</span>
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ repeat: Infinity, duration: 1.5 }}
           >
             <ArrowDown className="w-5 h-5 text-primary" />
           </motion.div>
-        </motion.div>
+        </motion.button>
       </div>
     </section>
   );
