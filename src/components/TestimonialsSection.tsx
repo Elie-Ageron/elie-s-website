@@ -170,8 +170,8 @@ const TestimonialsSection = () => {
                     className={`h-12 w-auto object-contain shrink-0 ${
                       currentTestimonial.whiteLogo ? 'brightness-0' : ''
                     }`}
-                    loading="lazy"
-                    decoding="async"
+                    loading="eager"
+                    decoding="sync"
                   />
                 ) : (
                   <img
