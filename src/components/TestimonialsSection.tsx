@@ -7,9 +7,9 @@ import { Button } from '@/components/ui/button';
 import ScrollReveal from './animations/ScrollReveal';
 import FloatingElements from './animations/FloatingElements';
 
-import testimonialMarc from '@/assets/testimonial-marc.jpg';
-import testimonialSophie from '@/assets/testimonial-sophie.jpg';
-import testimonialThomas from '@/assets/testimonial-thomas.jpg';
+import logoVmProducers from '@/assets/logo vm producers.png';
+import logoSolarFusion from '@/assets/logo solar fusion.png';
+import logoMywebglory from '@/assets/logo mwg.png';
 
 const TestimonialsSection = () => {
   const { t } = useLanguage();
@@ -20,26 +20,35 @@ const TestimonialsSection = () => {
     {
       text: t('testimonial.1.text'),
       author: t('testimonial.1.author'),
+      founder: t('testimonial.1.founder'),
       role: t('testimonial.1.role'),
       date: t('testimonial.1.date'),
       rating: 5,
-      image: testimonialMarc,
+      image: logoVmProducers,
+      isCompany: true,
+      whiteLogo: true,
     },
     {
       text: t('testimonial.2.text'),
       author: t('testimonial.2.author'),
+      founder: t('testimonial.2.founder'),
       role: t('testimonial.2.role'),
       date: t('testimonial.2.date'),
       rating: 5,
-      image: testimonialSophie,
+      image: logoSolarFusion,
+      isCompany: true,
+      whiteLogo: false,
     },
     {
       text: t('testimonial.3.text'),
       author: t('testimonial.3.author'),
+      founder: t('testimonial.3.founder'),
       role: t('testimonial.3.role'),
       date: t('testimonial.3.date'),
       rating: 5,
-      image: testimonialThomas,
+      image: logoMywebglory,
+      isCompany: true,
+      whiteLogo: false,
     },
   ];
 
@@ -154,21 +163,33 @@ const TestimonialsSection = () => {
 
               {/* Author Section */}
               <div className="flex items-center gap-4 relative z-10">
-                <img
-                  src={currentTestimonial.image}
-                  alt={`Photo de ${currentTestimonial.author}, client satisfait Elie Ageron Web Design - ${currentTestimonial.role}`}
-                  className="w-16 h-16 rounded-full object-cover border-2 border-primary/30"
-                  width={64}
-                  height={64}
-                  loading="lazy"
-                  decoding="async"
-                />
+                {currentTestimonial.isCompany ? (
+                  <img
+                    src={currentTestimonial.image}
+                    alt={`Logo ${currentTestimonial.author}`}
+                    className={`h-12 w-auto object-contain shrink-0 ${
+                      currentTestimonial.whiteLogo ? 'brightness-0' : ''
+                    }`}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ) : (
+                  <img
+                    src={currentTestimonial.image}
+                    alt={`Photo de ${currentTestimonial.author}, client satisfait Elie Ageron Web Design - ${currentTestimonial.role}`}
+                    className="w-16 h-16 rounded-full object-cover border-2 border-primary/30"
+                    width={64}
+                    height={64}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                )}
                 <div className="flex-1">
-                  <div className="font-semibold text-foreground text-lg">
+                  <div className="font-bold text-foreground text-lg">
                     {currentTestimonial.author}
                   </div>
                   <div className="text-sm text-muted-foreground">
-                    {currentTestimonial.role}
+                    {currentTestimonial.founder}
                   </div>
                 </div>
                 <div className="text-sm text-muted-foreground/70">

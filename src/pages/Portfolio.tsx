@@ -7,6 +7,7 @@ import InternalLinks from '@/components/InternalLinks';
 import SEO from '@/components/SEO';
 import portfolioMyWebGlory from '@/assets/portfolio-mywebglory.png';
 import portfolioSolarFusion from '@/assets/portfolio-solar-fusion.png';
+import portfolioVmProducers from '@/assets/portfolio-vm-producers.png';
 
 interface PortfolioItemProps {
   image: string;
@@ -116,6 +117,14 @@ const Portfolio = () => {
           ? 'Site professionnel pour installateur de panneaux solaires'
           : 'Professional website for a solar panel installer',
       },
+      {
+        '@type': 'WebSite',
+        name: 'VM Producers',
+        url: 'https://vm-producers.mywebglory.com',
+        description: language === 'fr'
+          ? 'Site vitrine pour label de production musicale'
+          : 'Showcase website for a music production label',
+      },
     ],
   };
 
@@ -146,6 +155,15 @@ const Portfolio = () => {
       ctaKey: 'portfolio.showcase.solarfusion.cta',
       descKey: 'portfolio.showcase.solarfusion.desc',
       alt: 'Solar Fusion - Site professionnel pour installateur de panneaux solaires créé par Elie Ageron Web Design',
+    },
+    {
+      image: portfolioVmProducers,
+      name: 'VM Producers',
+      url: 'https://vm-producers.mywebglory.com',
+      categoryKey: 'portfolio.showcase.vmproducers.category',
+      ctaKey: 'portfolio.showcase.vmproducers.cta',
+      descKey: 'portfolio.showcase.vmproducers.desc',
+      alt: 'VM Producers - Site vitrine pour label de production musicale créé par Elie Ageron Web Design',
     },
   ];
 
