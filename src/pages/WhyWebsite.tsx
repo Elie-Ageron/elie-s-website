@@ -138,11 +138,13 @@ const WhyWebsite = () => {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-primary/5 rounded-full blur-[140px]" />
         </div>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+
+          {/* Section header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-14 sm:mb-20"
+            className="text-center mb-24 sm:mb-32"
           >
             <span className="inline-block text-xs font-semibold uppercase tracking-widest text-primary mb-3">
               {language === 'fr' ? 'Les chiffres parlent' : 'The numbers speak'}
@@ -156,76 +158,92 @@ const WhyWebsite = () => {
           {/* Bento grid */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
 
-            {/* Card 1 — 81% — Donut chart */}
+            {/* Card 1 — 81% — Donut */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="md:col-span-5 glass-card rounded-3xl p-8 border border-primary/20 flex flex-col items-center justify-center gap-5"
+              className="md:col-span-4 glass-card rounded-3xl p-8 border border-primary/20 flex flex-col gap-6"
             >
-              <div className="relative">
-                <svg viewBox="0 0 140 140" className="w-48 h-48 -rotate-90" aria-hidden="true">
-                  <circle cx="70" cy="70" r="56" fill="none" stroke="currentColor" strokeWidth="11" className="text-primary/10" />
-                  <motion.circle
-                    cx="70" cy="70" r="56"
-                    fill="none" stroke="currentColor" strokeWidth="11"
-                    className="text-primary"
-                    strokeLinecap="round"
-                    strokeDasharray="351.9"
-                    initial={{ strokeDashoffset: 351.9 }}
-                    whileInView={{ strokeDashoffset: 351.9 * (1 - 0.81) }}
-                    transition={{ duration: 1.8, ease: 'easeOut', delay: 0.4 }}
-                    viewport={{ once: true }}
-                  />
-                </svg>
-                <div className="absolute inset-0 flex items-center justify-center" style={{ transform: 'rotate(0deg)' }}>
-                  <span className="text-5xl font-extrabold text-primary">81%</span>
+              {/* Overline */}
+              <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                {language === 'fr' ? "Comportement d'achat" : 'Purchase behaviour'}
+              </p>
+
+              {/* Donut + number */}
+              <div className="flex items-center justify-center flex-1 py-2">
+                <div className="relative w-44 h-44">
+                  <svg viewBox="0 0 140 140" className="w-full h-full -rotate-90" aria-hidden="true">
+                    <circle cx="70" cy="70" r="56" fill="none" stroke="currentColor" strokeWidth="10" className="text-primary/10" />
+                    <motion.circle
+                      cx="70" cy="70" r="56"
+                      fill="none" stroke="currentColor" strokeWidth="10"
+                      className="text-primary"
+                      strokeLinecap="round"
+                      strokeDasharray="351.9"
+                      initial={{ strokeDashoffset: 351.9 }}
+                      whileInView={{ strokeDashoffset: 351.9 * (1 - 0.81) }}
+                      transition={{ duration: 1.8, ease: 'easeOut', delay: 0.4 }}
+                      viewport={{ once: true }}
+                    />
+                  </svg>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-5xl font-thin text-primary">81%</span>
+                  </div>
                 </div>
               </div>
-              <div className="text-center">
-                <p className="text-base sm:text-lg font-semibold text-foreground/90 leading-snug">
-                  {language === 'fr' ? 'des consommateurs recherchent en ligne' : 'of consumers search online'}
-                </p>
-                <p className="text-sm text-muted-foreground mt-1">
+
+              {/* Headline */}
+              <div className="space-y-1">
+                <h3 className="text-base font-semibold text-foreground leading-snug">
+                  {language === 'fr' ? 'des consommateurs recherchent en ligne' : 'of consumers research online'}
+                </h3>
+                <p className="text-sm text-muted-foreground">
                   {language === 'fr' ? 'avant tout achat' : 'before any purchase'}
                 </p>
               </div>
-              <span className="text-xs text-muted-foreground/40">GE Capital Retail Bank</span>
+
+              {/* Source */}
+              <p className="text-xs text-muted-foreground/40 border-t border-border/40 pt-4">GE Capital Retail Bank</p>
             </motion.div>
 
-            {/* Card 2 — 75% — Horizontal progress bars */}
+            {/* Card 2 — 75% — Bars */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="md:col-span-7 glass-card rounded-3xl p-8 border border-primary/20 flex flex-col justify-between gap-6"
+              className="md:col-span-8 glass-card rounded-3xl p-8 border border-primary/20 flex flex-col gap-6"
             >
+              {/* Overline */}
+              <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                {language === 'fr' ? 'Crédibilité perçue' : 'Perceived credibility'}
+              </p>
+
+              {/* Stat + headline */}
               <div>
-                <span className="text-7xl font-extrabold text-primary leading-none">75%</span>
-                <p className="text-base sm:text-lg font-semibold text-foreground/90 mt-3 leading-snug">
+                <span className="text-8xl font-thin text-primary leading-none block">75%</span>
+                <h3 className="text-base sm:text-lg font-semibold text-foreground mt-3 leading-snug max-w-sm">
                   {language === 'fr'
-                    ? "des gens jugent la crédibilité d'une entreprise par son site"
-                    : "of people judge a business's credibility by its website"}
-                </p>
-                <p className="text-xs text-muted-foreground/40 mt-1">Stanford Web Credibility Research</p>
+                    ? "jugent la crédibilité d'une entreprise par son site web"
+                    : "judge a business's credibility by its website"}
+                </h3>
               </div>
-              <div className="space-y-4">
-                <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-                  {language === 'fr' ? 'Score de confiance perçue' : 'Perceived trust score'}
-                </p>
+
+              {/* Bar chart */}
+              <div className="space-y-3 flex-1">
                 {[
                   { label: language === 'fr' ? 'Site professionnel' : 'Professional site', pct: 92 },
                   { label: language === 'fr' ? 'Site amateur' : 'Amateur site', pct: 45 },
                   { label: language === 'fr' ? 'Sans site' : 'No website', pct: 12 },
                 ].map((bar, i) => (
                   <div key={i} className="space-y-1.5">
-                    <div className="flex justify-between text-sm">
-                      <span className="text-muted-foreground">{bar.label}</span>
-                      <span className="font-bold text-foreground">{bar.pct}%</span>
+                    <div className="flex justify-between items-baseline">
+                      <span className="text-sm text-muted-foreground">{bar.label}</span>
+                      <span className="text-sm font-semibold text-foreground">{bar.pct}%</span>
                     </div>
-                    <div className="h-3 bg-muted rounded-full overflow-hidden">
+                    <div className="h-2 bg-muted rounded-full overflow-hidden">
                       <motion.div
                         className="h-full rounded-full bg-primary"
                         style={{ opacity: 1 - i * 0.28 }}
@@ -238,84 +256,114 @@ const WhyWebsite = () => {
                   </div>
                 ))}
               </div>
+
+              {/* Source */}
+              <p className="text-xs text-muted-foreground/40 border-t border-border/40 pt-4">Stanford Web Credibility Research</p>
             </motion.div>
 
-            {/* Card 3 — 3× — Vertical bar chart */}
+            {/* Card 3 — 3× — Bar chart */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="md:col-span-7 glass-card rounded-3xl p-8 border border-primary/20 flex flex-col gap-6"
+              className="md:col-span-8 glass-card rounded-3xl p-8 border border-primary/20 flex flex-col gap-6"
             >
+              {/* Overline */}
+              <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                {language === 'fr' ? 'Génération de demandes' : 'Lead generation'}
+              </p>
+
+              {/* Stat + headline */}
               <div>
-                <span className="text-7xl font-extrabold text-primary leading-none">3×</span>
-                <p className="text-base sm:text-lg font-semibold text-foreground/90 mt-3 leading-snug">
+                <span className="text-8xl font-thin text-primary leading-none block">3×</span>
+                <h3 className="text-base sm:text-lg font-semibold text-foreground mt-3 leading-snug max-w-sm">
                   {language === 'fr'
                     ? 'plus de demandes entrantes avec un site professionnel optimisé'
                     : 'more inbound leads with a professional optimized website'}
-                </p>
-                <p className="text-xs text-muted-foreground/40 mt-1">HubSpot</p>
+                </h3>
               </div>
-              {/* Bar chart */}
-              <div className="flex items-end gap-4 h-32" aria-hidden="true">
+
+              {/* Horizontal comparison bars */}
+              <div className="space-y-3 flex-1">
                 {[
-                  { label: language === 'fr' ? 'Sans site' : 'No site', heightPct: 28, opacity: 'opacity-20' },
-                  { label: language === 'fr' ? 'Site basique' : 'Basic site', heightPct: 55, opacity: 'opacity-50' },
-                  { label: language === 'fr' ? 'Site optimisé' : 'Optimized', heightPct: 100, opacity: 'opacity-100' },
+                  { label: language === 'fr' ? 'Sans site' : 'No site', val: '1×', pct: 33 },
+                  { label: language === 'fr' ? 'Site basique' : 'Basic site', val: '2×', pct: 66 },
+                  { label: language === 'fr' ? 'Site optimisé' : 'Optimized', val: '3×', pct: 100 },
                 ].map((bar, i) => (
-                  <div key={i} className="flex-1 flex flex-col items-center gap-2 h-full">
-                    <div className="flex-1 w-full flex items-end">
+                  <div key={i} className="flex items-center gap-3">
+                    <span className="text-sm text-muted-foreground w-24 shrink-0">{bar.label}</span>
+                    <div className="flex-1 h-10 bg-muted/60 rounded-xl overflow-hidden">
                       <motion.div
-                        className={`w-full rounded-t-xl bg-primary ${bar.opacity}`}
-                        style={{ transformOrigin: 'bottom', height: `${bar.heightPct}%` }}
-                        initial={{ scaleY: 0 }}
-                        whileInView={{ scaleY: 1 }}
-                        transition={{ duration: 1.2, ease: 'easeOut', delay: 0.4 + i * 0.18 }}
+                        className="h-full rounded-xl bg-primary"
+                        style={{ opacity: 0.25 + i * 0.375 }}
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${bar.pct}%` }}
+                        transition={{ duration: 1.3, ease: 'easeOut', delay: 0.4 + i * 0.2 }}
                         viewport={{ once: true }}
                       />
                     </div>
-                    <span className="text-xs text-muted-foreground text-center leading-tight">{bar.label}</span>
+                    <span className={`text-base font-bold w-8 shrink-0 ${i === 2 ? 'text-primary' : 'text-muted-foreground'}`}>
+                      {bar.val}
+                    </span>
                   </div>
                 ))}
               </div>
+
+              {/* Source */}
+              <p className="text-xs text-muted-foreground/40 border-t border-border/40 pt-4">HubSpot</p>
             </motion.div>
 
-            {/* Card 4 — 97% — Donut small + text */}
+            {/* Card 4 — 97% — Donut */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="md:col-span-5 glass-card rounded-3xl p-8 border border-primary/20 flex flex-col items-center justify-center gap-5"
+              className="md:col-span-4 glass-card rounded-3xl p-8 border border-primary/20 flex flex-col gap-6"
             >
-              <div className="relative">
-                <svg viewBox="0 0 110 110" className="w-36 h-36 -rotate-90" aria-hidden="true">
-                  <circle cx="55" cy="55" r="44" fill="none" stroke="currentColor" strokeWidth="10" className="text-primary/10" />
-                  <motion.circle
-                    cx="55" cy="55" r="44"
-                    fill="none" stroke="currentColor" strokeWidth="10"
-                    className="text-primary"
-                    strokeLinecap="round"
-                    strokeDasharray="276.5"
-                    initial={{ strokeDashoffset: 276.5 }}
-                    whileInView={{ strokeDashoffset: 276.5 * (1 - 0.97) }}
-                    transition={{ duration: 1.6, ease: 'easeOut', delay: 0.5 }}
-                    viewport={{ once: true }}
-                  />
-                </svg>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-4xl font-extrabold text-primary">97%</span>
+              {/* Overline */}
+              <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                {language === 'fr' ? 'Recherche locale mobile' : 'Local mobile search'}
+              </p>
+
+              {/* Donut + number */}
+              <div className="flex items-center justify-center flex-1 py-2">
+                <div className="relative w-36 h-36">
+                  <svg viewBox="0 0 110 110" className="w-full h-full -rotate-90" aria-hidden="true">
+                    <circle cx="55" cy="55" r="44" fill="none" stroke="currentColor" strokeWidth="10" className="text-primary/10" />
+                    <motion.circle
+                      cx="55" cy="55" r="44"
+                      fill="none" stroke="currentColor" strokeWidth="10"
+                      className="text-primary"
+                      strokeLinecap="round"
+                      strokeDasharray="276.5"
+                      initial={{ strokeDashoffset: 276.5 }}
+                      whileInView={{ strokeDashoffset: 276.5 * (1 - 0.97) }}
+                      transition={{ duration: 1.6, ease: 'easeOut', delay: 0.5 }}
+                      viewport={{ once: true }}
+                    />
+                  </svg>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-4xl font-thin text-primary">97%</span>
+                  </div>
                 </div>
               </div>
-              <div className="text-center">
-                <p className="text-base font-semibold text-foreground/90 leading-snug">
+
+              {/* Headline */}
+              <div className="space-y-1">
+                <h3 className="text-base font-semibold text-foreground leading-snug">
                   {language === 'fr'
-                    ? 'des recherches locales mobiles mènent à une visite en boutique'
-                    : 'of local mobile searches lead to an in-store visit'}
+                    ? 'des recherches locales mobiles mènent à une visite'
+                    : 'of local mobile searches lead to a visit'}
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  {language === 'fr' ? 'en boutique ou prise de contact' : 'in-store or contact'}
                 </p>
               </div>
-              <span className="text-xs text-muted-foreground/40">Google</span>
+
+              {/* Source */}
+              <p className="text-xs text-muted-foreground/40 border-t border-border/40 pt-4">Google</p>
             </motion.div>
 
           </div>
