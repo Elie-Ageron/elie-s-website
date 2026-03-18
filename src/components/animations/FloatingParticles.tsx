@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useCalendly } from '@/contexts/CalendlyContext';
 
 interface Particle {
   id: number;
@@ -19,6 +20,7 @@ const getParticleCount = () => {
 
 const FloatingParticles = () => {
   const [particles, setParticles] = useState<Particle[]>([]);
+  const { isOpen } = useCalendly();
 
   useEffect(() => {
     const count = getParticleCount();
@@ -53,7 +55,7 @@ const FloatingParticles = () => {
             left: `${particle.x}%`,
             top: `${particle.y}%`,
             ['--fp-x' as string]: `${particle.xOffset}px`,
-            animation: `float-particle ${particle.duration}s ease-in-out ${particle.delay}s infinite`,
+            animation: isOpen ? 'none' : `float-particle ${particle.duration}s ease-in-out ${particle.delay}s infinite`,
           }}
         />
       ))}

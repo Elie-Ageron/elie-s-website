@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X } from 'lucide-react';
+import { X, ChevronDown, ChevronUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useCalendly } from '@/contexts/CalendlyContext';
@@ -15,10 +16,17 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
   const { openCalendly } = useCalendly();
   const location = useLocation();
 
-  const navItems = [
-    { href: '/why-a-website', label: t('nav.why') },
-    { href: '/our-process', label: t('nav.process') },
-    { href: '/pricing', label: t('nav.pricing') },
+  const isSitesActive = ['/why-a-website', '/our-process', '/pricing'].includes(location.pathname);
+  const [sitesExpanded, setSitesExpanded] = useState(isSitesActive);
+
+  const siteSubItems = [
+    { href: '/why-a-website', label: language === 'fr' ? 'Pourquoi un site ?' : 'Why a website?' },
+    { href: '/our-process', label: language === 'fr' ? 'Notre processus' : 'Our process' },
+    { href: '/pricing', label: language === 'fr' ? 'Tarifs' : 'Pricing' },
+  ];
+
+  const flatNavItems = [
+    { href: '/apps', label: 'Apps & Dashboards' },
     { href: '/portfolio', label: t('nav.portfolio') },
     { href: '/blog', label: 'Blog' },
     { href: '/contact', label: t('nav.contact') },
@@ -68,12 +76,66 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             <div className="flex flex-col h-full pt-20 pb-8 px-6">
               {/* Navigation Links */}
               <nav className="flex-1 space-y-2" role="navigation" aria-label="Mobile navigation">
-                {navItems.map((item, index) => (
+                {/* Sites Web expandable */}
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.1 }}
+                >
+                  <button
+                    onClick={() => setSitesExpanded(!sitesExpanded)}
+                    className={`flex items-center justify-between w-full min-h-[52px] px-4 rounded-xl text-lg font-medium transition-all active:scale-[0.98] ${
+                      isSitesActive
+                        ? 'text-primary bg-primary/10'
+                        : 'text-foreground hover:text-primary hover:bg-secondary'
+                    }`}
+                    aria-expanded={sitesExpanded}
+                  >
+                    {language === 'fr' ? 'Sites Web' : 'Websites'}
+                    {sitesExpanded ? (
+                      <ChevronUp className="w-4 h-4" />
+                    ) : (
+                      <ChevronDown className="w-4 h-4" />
+                    )}
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {sitesExpanded && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.25 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pl-4 pt-1 pb-2 space-y-1">
+                          {siteSubItems.map((item) => (
+                            <Link
+                              key={item.href}
+                              to={item.href}
+                              onClick={onClose}
+                              className={`flex items-center min-h-[44px] px-4 rounded-xl text-base font-medium transition-all active:scale-[0.98] ${
+                                isActive(item.href)
+                                  ? 'text-primary bg-primary/10'
+                                  : 'text-muted-foreground hover:text-primary hover:bg-secondary'
+                              }`}
+                              aria-current={isActive(item.href) ? 'page' : undefined}
+                            >
+                              {item.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+
+                {/* Flat nav items */}
+                {flatNavItems.map((item, index) => (
                   <motion.div
                     key={item.href}
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.1 + index * 0.05 }}
+                    transition={{ delay: 0.15 + index * 0.05 }}
                   >
                     <Link
                       to={item.href}

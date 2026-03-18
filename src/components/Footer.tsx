@@ -9,9 +9,10 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const navLinks = [
-    { label: t('nav.why'), href: '/why-a-website' },
-    { label: t('nav.process'), href: '/our-process' },
-    { label: t('nav.pricing'), href: '/pricing' },
+    { label: language === 'fr' ? 'Pourquoi un site ?' : 'Why a website?', href: '/why-a-website' },
+    { label: language === 'fr' ? 'Notre processus' : 'Our process', href: '/our-process' },
+    { label: language === 'fr' ? 'Tarifs' : 'Pricing', href: '/pricing' },
+    { label: 'Apps & Dashboards', href: '/apps' },
     { label: t('nav.portfolio'), href: '/portfolio' },
     { label: 'Blog', href: '/blog' },
     { label: t('nav.contact'), href: '/contact' },

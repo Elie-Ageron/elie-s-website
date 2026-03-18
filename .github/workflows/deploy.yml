@@ -1,5 +1,5 @@
 # Vercel handles deployment automatically on push to main.
-# This workflow is kept for reference only — no action needed here.
+# This workflow is kept for reference only - no action needed here.
 name: CI Check
 
 on:

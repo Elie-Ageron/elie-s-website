@@ -34,9 +34,8 @@ const PersonalIntroSection = () => {
                 className="relative rounded-xl shadow-xl w-full object-cover aspect-[4/5]"
                 width={280}
                 height={350}
-                loading="eager"
+                loading="lazy"
                 decoding="async"
-                fetchPriority="high"
               />
             </div>
           </motion.div>
@@ -64,22 +63,39 @@ const PersonalIntroSection = () => {
             
             <p className="text-muted-foreground text-base sm:text-lg mb-8 max-w-lg mx-auto md:mx-0 leading-relaxed">
               {language === 'fr' 
-                ? 'Je suis Elie, freelance en création de sites web. J\'aide les entrepreneurs et les petites entreprises à construire leur présence en ligne, avec des sites clairs, rapides, et conçus pour attirer de vrais clients.'
-                : "I'm Elie, a freelance web designer. I help entrepreneurs and small businesses build their online presence, with clean, fast websites designed to attract real clients."}
+                ? 'Je suis Elie. Je conçois des sites web qui génèrent de vrais résultats — plus de visibilité, plus de crédibilité, plus de clients. Chaque projet est pensé pour convertir, pas juste pour faire beau.'
+                : "I'm Elie. I build websites that drive real results — more visibility, more credibility, more clients. Every project is engineered to convert, not just to look good."}
             </p>
 
-            <Button 
-              variant="hero" 
-              size="lg" 
-              className="group min-h-[52px] active:scale-[0.98] transition-transform"
-              onClick={openCalendly}
-            >
-              <span className="flex items-center gap-2">
-                {language === 'fr' ? 'Prendre contact' : "Get in touch"}
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-              </span>
-            </Button>
+            <div className="hidden md:block">
+              <Button 
+                variant="hero" 
+                size="lg" 
+                className="group min-h-[52px] active:scale-[0.98] transition-transform"
+                onClick={openCalendly}
+              >
+                <span className="flex items-center gap-2">
+                  {language === 'fr' ? 'Prendre contact' : "Get in touch"}
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                </span>
+              </Button>
+            </div>
           </motion.div>
+        </div>
+
+        {/* CTA - Mobile only, after photo */}
+        <div className="md:hidden flex justify-center mt-6">
+          <Button 
+            variant="hero" 
+            size="lg" 
+            className="group min-h-[52px] active:scale-[0.98] transition-transform"
+            onClick={openCalendly}
+          >
+            <span className="flex items-center gap-2">
+              {language === 'fr' ? 'Prendre contact' : "Get in touch"}
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+            </span>
+          </Button>
         </div>
       </div>
     </section>

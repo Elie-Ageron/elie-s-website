@@ -2,7 +2,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface SEOProps {
-  page: 'home' | 'why' | 'process' | 'pricing' | 'portfolio' | 'contact' | 'blog';
+  page: 'home' | 'why' | 'process' | 'pricing' | 'portfolio' | 'contact' | 'blog' | 'apps';
   customTitle?: string;
   customDescription?: string;
   customCanonical?: string;
@@ -23,6 +23,7 @@ const pageKeywords = {
     portfolio: 'web design portfolio, website examples, web design case studies, client results',
     contact: 'contact web designer, book web design call, hire web designer France, web design consultation',
     blog: 'web design tips, conversion optimization, SEO guide, digital marketing, online business growth',
+    apps: 'web app development, business dashboard, custom app, CRM development, SaaS development, business software',
   },
   fr: {
     home: 'Elie Ageron, web design, création site web, optimisation conversion, site internet, Annecy, Haute-Savoie',
@@ -32,6 +33,7 @@ const pageKeywords = {
     portfolio: 'portfolio web design, exemples sites web, réalisations web design, résultats clients',
     contact: 'contacter web designer, réserver appel web design, embaucher web designer France',
     blog: 'conseils web design, optimisation conversion, guide SEO local, marketing digital, croissance business',
+    apps: 'développement application web, dashboard entreprise, app sur mesure, CRM personnalisé, logiciel métier, outil interne',
   },
 };
 
@@ -66,6 +68,10 @@ const seoData = {
       title: 'Web Design Tips & Insights | Elie Ageron',
       description: 'Expert web design tips, conversion strategies, and digital marketing insights from Elie Ageron. Learn to grow your business online.',
     },
+    apps: {
+      title: 'Business Apps & Dashboards | Elie Ageron',
+      description: 'Custom web app development: dashboards, CRMs, client portals, automation. Apps built to streamline your business processes.',
+    },
   },
   fr: {
     home: {
@@ -96,6 +102,10 @@ const seoData = {
       title: 'Conseils Web Design | Elie Ageron',
       description: 'Conseils experts en web design, stratégies de conversion et marketing digital par Elie Ageron. Développez votre business.',
     },
+    apps: {
+      title: 'Apps & Dashboards pour Entreprises | Elie Ageron',
+      description: 'Développement d\'applications web sur mesure : dashboards, CRM, portails clients, automatisation. Des apps qui font vraiment travailler votre équipe.',
+    },
   },
 };
 
@@ -117,6 +127,7 @@ const SEO = ({ page, customTitle, customDescription, customCanonical, ogImage, o
     portfolio: '/portfolio',
     contact: '/contact',
     blog: '/blog',
+    apps: '/apps',
   };
   
   const currentPath = pathMap[page] || '';

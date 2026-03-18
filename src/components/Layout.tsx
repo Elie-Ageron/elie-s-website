@@ -23,6 +23,9 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   // Delay loading decorative elements until after initial paint
   const [showDecorations, setShowDecorations] = useState(false);
+  // Delay contact form long enough for lazy page chunks to load and render,
+  // preventing it from appearing before the hero section on first load.
+  const [showContactForm, setShowContactForm] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
 
   // iOS Safari is more prone to GPU memory issues with multiple fixed layers + heavy blur + continuous animations.
@@ -48,11 +51,43 @@ const Layout = ({ children }: LayoutProps) => {
   }, []);
 
   useEffect(() => {
-    // Use setTimeout as fallback for Safari (no requestIdleCallback support)
-    const timer = setTimeout(() => {
-      setShowDecorations(true);
-    }, 100);
+    // Use requestIdleCallback to defer decorative elements until the browser is idle
+    // after the initial paint. Falls back to setTimeout(400ms) for Safari which
+    // doesn't support requestIdleCallback.
+    let id: number | ReturnType<typeof setTimeout>;
+    if ('requestIdleCallback' in window) {
+      id = (window as Window).requestIdleCallback(() => setShowDecorations(true), { timeout: 1500 });
+    } else {
+      id = setTimeout(() => setShowDecorations(true), 400);
+    }
+    return () => {
+      if ('cancelIdleCallback' in window && typeof id === 'number') {
+        (window as Window).cancelIdleCallback(id as number);
+      } else {
+        clearTimeout(id as ReturnType<typeof setTimeout>);
+      }
+    };
+  }, []);
 
+  useEffect(() => {
+    // Wait for the window load event (all resources fetched) + a small buffer
+    // so lazy-loaded page chunks have time to render before the contact form mounts.
+    const show = () => {
+      const timer = setTimeout(() => setShowContactForm(true), 300);
+      return timer;
+    };
+
+    let timer: ReturnType<typeof setTimeout>;
+    if (document.readyState === 'complete') {
+      timer = show();
+    } else {
+      const onLoad = () => { timer = show(); };
+      window.addEventListener('load', onLoad, { once: true });
+      return () => {
+        window.removeEventListener('load', onLoad);
+        clearTimeout(timer);
+      };
+    }
     return () => clearTimeout(timer);
   }, []);
 
@@ -78,7 +113,7 @@ const Layout = ({ children }: LayoutProps) => {
           <main className="pt-24">
             <Breadcrumb />
             {children}
-            <GlobalContactForm />
+            {showContactForm && <GlobalContactForm />}
           </main>
         </PageTransition>
         <Footer />

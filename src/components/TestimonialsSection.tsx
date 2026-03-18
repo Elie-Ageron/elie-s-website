@@ -157,7 +157,7 @@ const TestimonialsSection = () => {
               </div>
 
               {/* Testimonial Text */}
-              <p className="text-foreground/90 text-lg sm:text-xl mb-8 leading-relaxed relative z-10">
+              <p className="text-foreground/90 text-base sm:text-xl mb-8 leading-relaxed relative z-10">
                 "{currentTestimonial.text}"
               </p>
 
@@ -184,16 +184,16 @@ const TestimonialsSection = () => {
                     decoding="async"
                   />
                 )}
-                <div className="flex-1">
-                  <div className="font-bold text-foreground text-lg">
+                <div className="flex-1 min-w-0">
+                  <div className="font-bold text-foreground text-base sm:text-lg truncate">
                     {currentTestimonial.author}
                   </div>
-                  <div className="text-sm text-muted-foreground">
+                  <div className="text-sm text-muted-foreground truncate">
                     {currentTestimonial.founder}
                   </div>
-                </div>
-                <div className="text-sm text-muted-foreground/70">
-                  {currentTestimonial.date}
+                  <div className="hidden sm:block text-sm text-muted-foreground/70 mt-0.5">
+                    {currentTestimonial.date}
+                  </div>
                 </div>
               </div>
             </motion.div>

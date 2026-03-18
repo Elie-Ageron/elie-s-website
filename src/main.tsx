@@ -11,8 +11,9 @@ const app = (
   </HelmetProvider>
 );
 
-// Hydrate prerendered HTML from react-snap; fall back to fresh render in dev
-if (rootElement.hasChildNodes()) {
+// In production: hydrate react-snap prerendered HTML for seamless takeover
+// In dev: always fresh render (avoids hydration mismatch issues)
+if (import.meta.env.PROD && rootElement.hasChildNodes()) {
   hydrateRoot(rootElement, app);
 } else {
   createRoot(rootElement).render(app);

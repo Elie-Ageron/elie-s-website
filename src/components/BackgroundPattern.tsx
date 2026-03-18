@@ -25,6 +25,10 @@ const BackgroundPattern = ({ disableBlurAccents = false }: BackgroundPatternProp
             style={{
               background: 'radial-gradient(circle, hsl(var(--primary) / 0.08) 0%, transparent 70%)',
               filter: 'blur(100px)',
+              // Force GPU compositing so the blur lives on its own layer and
+              // doesn't trigger full-page repaints on scroll.
+              transform: 'translateZ(0)',
+              willChange: 'transform',
             }}
           />
           <div
@@ -32,6 +36,8 @@ const BackgroundPattern = ({ disableBlurAccents = false }: BackgroundPatternProp
             style={{
               background: 'radial-gradient(circle, hsl(var(--primary) / 0.06) 0%, transparent 70%)',
               filter: 'blur(120px)',
+              transform: 'translateZ(0)',
+              willChange: 'transform',
             }}
           />
         </>

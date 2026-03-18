@@ -22,10 +22,11 @@ const HeroSection = () => {
   }, []);
 
   // Delay 3D scene to prioritize text content (LCP) - desktop only.
+  // 800ms ensures the hero text, CTA and social proof paint before WebGL initialises.
   useEffect(() => {
     if (!mounted) return;
     if (!isMobile) {
-      const timer = setTimeout(() => setShow3D(true), 100);
+      const timer = setTimeout(() => setShow3D(true), 800);
       return () => clearTimeout(timer);
     }
     setShow3D(false);

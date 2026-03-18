@@ -45,9 +45,9 @@ export function CalendlyPopup() {
 
       {/* Popup overlay */}
       <div
-        className={`fixed inset-0 z-[300] flex items-center justify-center p-4 transition-all duration-300 ${
+        className={`fixed inset-0 z-[300] flex items-center justify-center p-4 transition-opacity duration-300 ${
           isOpen
-            ? 'bg-black/70 backdrop-blur-sm opacity-100 pointer-events-auto'
+            ? 'bg-black/70 opacity-100 pointer-events-auto'
             : 'opacity-0 pointer-events-none'
         }`}
         onClick={(e) => { if (e.target === e.currentTarget) closeCalendly(); }}
@@ -57,10 +57,14 @@ export function CalendlyPopup() {
         aria-label="Prendre rendez-vous"
       >
         <div
-          className={`relative bg-white rounded-2xl w-full max-w-2xl overflow-hidden shadow-2xl transition-transform duration-300 ${
+          className={`relative bg-white rounded-2xl w-full max-w-2xl shadow-2xl transition-transform duration-300 ${
             isOpen ? 'scale-100' : 'scale-95'
           }`}
-          style={{ height: 'min(700px, 85vh)' }}
+          style={{
+            height: 'min(700px, 85vh)',
+            willChange: 'transform',
+            contain: 'strict',
+          }}
         >
           <button
             onClick={closeCalendly}
@@ -73,8 +77,9 @@ export function CalendlyPopup() {
           {/* Visible iframe inside popup - same URL = browser uses cached version */}
           <iframe
             src={iframeSrc}
-            className="w-full h-full border-0"
+            className="w-full h-full border-0 rounded-2xl"
             title="Prendre rendez-vous avec Elie Ageron"
+            style={{ overscrollBehavior: 'contain' }}
           />
         </div>
       </div>
