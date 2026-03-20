@@ -88,7 +88,9 @@ const Footer = () => {
                 </a>
                 <div className="inline-flex items-center gap-2.5 text-sm text-muted-foreground">
                   <MapPin className="w-4 h-4 shrink-0" aria-hidden="true" />
-                  {language === 'fr' ? 'France · Remote' : 'France · Remote'}
+                  <address style={{ fontStyle: 'normal' }}>
+                    Annecy, Haute-Savoie, France
+                  </address>
                 </div>
               </div>
             </div>

@@ -3,11 +3,22 @@ import { ArrowDown, CheckCircle, Star, Users, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useCalendly } from '@/contexts/CalendlyContext';
-import { lazy, Suspense, useState, useEffect } from 'react';
+import { lazy, Suspense, useState, useEffect, Component, ReactNode } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 // Defer 3D scene loading
 const HeroScene3D = lazy(() => import('@/components/animations/HeroScene3D'));
+
+// Isolated error boundary for the 3D scene — prevents WebGL crashes from
+// taking down the full page (important for SEO crawlers and unsupported environments).
+class Scene3DErrorBoundary extends Component<{ children: ReactNode }, { crashed: boolean }> {
+  state = { crashed: false };
+  static getDerivedStateFromError() { return { crashed: true }; }
+  render() {
+    if (this.state.crashed) return null; // Silently hide the 3D scene on error
+    return this.props.children;
+  }
+}
 
 const HeroSection = () => {
   const { t } = useLanguage();
@@ -37,11 +48,13 @@ const HeroSection = () => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden grain px-4 sm:px-6"
       aria-labelledby="hero-heading"
     >
-      {/* 3D Scene Background - Desktop only, deferred */}
+      {/* 3D Scene Background - Desktop only, deferred, isolated from page error boundary */}
       {mounted && show3D && (
-        <Suspense fallback={null}>
-          <HeroScene3D />
-        </Suspense>
+        <Scene3DErrorBoundary>
+          <Suspense fallback={null}>
+            <HeroScene3D />
+          </Suspense>
+        </Scene3DErrorBoundary>
       )}
       
       {/* Gradient overlays for depth */}
