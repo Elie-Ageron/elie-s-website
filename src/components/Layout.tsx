@@ -110,7 +110,7 @@ const Layout = ({ children }: LayoutProps) => {
         )}
         <Header />
         <PageTransition>
-          <main className="pt-24">
+          <main className="pt-24 relative z-[1]">
             <Breadcrumb />
             {children}
             {showContactForm && <GlobalContactForm />}
