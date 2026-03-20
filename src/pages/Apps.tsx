@@ -28,13 +28,6 @@ import ContactMethodsSection from '@/components/ContactMethodsSection';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
-interface AppTypeCard {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  examples: string[];
-}
-
 interface PricingPlan {
   icon: React.ReactNode;
   title: string;
@@ -50,35 +43,6 @@ interface FAQItem {
 }
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
-
-function AppTypeCardComponent({ card, delay }: { card: AppTypeCard; delay: number }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: delay * 0.1, duration: 0.6 }}
-      whileHover={{ y: -6, transition: { duration: 0.25 } }}
-      className="glass-card rounded-2xl p-8 flex flex-col gap-5 group cursor-default"
-    >
-      <div className="flex items-center gap-3">
-        <div className="p-2.5 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
-          {card.icon}
-        </div>
-        <h3 className="text-base font-semibold text-foreground">{card.title}</h3>
-      </div>
-      <p className="text-[15px] text-foreground/75 leading-relaxed">{card.description}</p>
-      <ul className="space-y-2 mt-auto">
-        {card.examples.map((ex) => (
-          <li key={ex} className="flex items-center gap-2 text-[15px] text-foreground/75">
-            <span className="w-1 h-1 rounded-full bg-primary flex-shrink-0" />
-            {ex}
-          </li>
-        ))}
-      </ul>
-    </motion.div>
-  );
-}
 
 function PricingCard({ plan, delay }: { plan: PricingPlan; delay: number }) {
   const { openCalendly } = useCalendly();
@@ -188,45 +152,6 @@ function FAQItem({ item, index }: { item: FAQItem; index: number }) {
 const Apps = () => {
   const { openCalendly } = useCalendly();
   const { t } = useLanguage();
-
-  const appTypes: AppTypeCard[] = [
-    {
-      icon: <LayoutDashboard className="w-6 h-6 text-primary" />,
-      title: t('apps.type1.title'),
-      description: t('apps.type1.desc'),
-      examples: [t('apps.type1.ex1'), t('apps.type1.ex2'), t('apps.type1.ex3'), t('apps.type1.ex4')],
-    },
-    {
-      icon: <Users className="w-6 h-6 text-primary" />,
-      title: t('apps.type2.title'),
-      description: t('apps.type2.desc'),
-      examples: [t('apps.type2.ex1'), t('apps.type2.ex2'), t('apps.type2.ex3'), t('apps.type2.ex4')],
-    },
-    {
-      icon: <ShoppingCart className="w-6 h-6 text-primary" />,
-      title: t('apps.type3.title'),
-      description: t('apps.type3.desc'),
-      examples: [t('apps.type3.ex1'), t('apps.type3.ex2'), t('apps.type3.ex3'), t('apps.type3.ex4')],
-    },
-    {
-      icon: <Globe className="w-6 h-6 text-primary" />,
-      title: t('apps.type4.title'),
-      description: t('apps.type4.desc'),
-      examples: [t('apps.type4.ex1'), t('apps.type4.ex2'), t('apps.type4.ex3'), t('apps.type4.ex4')],
-    },
-    {
-      icon: <Bot className="w-6 h-6 text-primary" />,
-      title: t('apps.type5.title'),
-      description: t('apps.type5.desc'),
-      examples: [t('apps.type5.ex1'), t('apps.type5.ex2'), t('apps.type5.ex3'), t('apps.type5.ex4')],
-    },
-    {
-      icon: <Smartphone className="w-6 h-6 text-primary" />,
-      title: t('apps.type6.title'),
-      description: t('apps.type6.desc'),
-      examples: [t('apps.type6.ex1'), t('apps.type6.ex2'), t('apps.type6.ex3'), t('apps.type6.ex4')],
-    },
-  ];
 
   const plans: PricingPlan[] = [
     {
@@ -356,7 +281,7 @@ const Apps = () => {
       <section className="py-24 sm:py-32" aria-labelledby="apps-types-heading">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <ScrollReveal>
-            <div className="text-center mb-16">
+            <div className="text-center mb-20">
               <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">{t('apps.types.badge')}</p>
               <h2 id="apps-types-heading" className="text-3xl sm:text-5xl font-bold text-foreground mb-6">
                 {t('apps.types.title')}
@@ -367,10 +292,327 @@ const Apps = () => {
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {appTypes.map((card, i) => (
-              <AppTypeCardComponent key={i} card={card} delay={i} />
-            ))}
+          <div className="space-y-28">
+            {/* 1 — Dashboards & Reporting — text left, illustration right */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20"
+            >
+              <div className="flex-1 space-y-5">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
+                  <LayoutDashboard className="w-4 h-4 text-primary" />
+                  <span className="text-xs font-semibold text-primary uppercase tracking-widest">Dashboards & Reporting</span>
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-foreground leading-snug">
+                  {t('apps.type1.title')}
+                </h3>
+                <p className="text-base text-foreground/70 leading-relaxed">{t('apps.type1.desc')}</p>
+                <ul className="space-y-2">
+                  {[t('apps.type1.ex1'), t('apps.type1.ex2'), t('apps.type1.ex3'), t('apps.type1.ex4')].map((ex) => (
+                    <li key={ex} className="flex items-center gap-2 text-[15px] text-foreground/65">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+                      {ex}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="flex-1 flex justify-center">
+                <svg viewBox="0 0 480 320" className="w-full max-w-md" aria-hidden="true">
+                  {/* Background */}
+                  <rect x="20" y="20" width="440" height="280" rx="16" fill="currentColor" className="text-primary/5" />
+                  {/* Bar chart */}
+                  <rect x="60" y="210" width="40" height="50" rx="4" fill="currentColor" className="text-primary/40" />
+                  <rect x="120" y="170" width="40" height="90" rx="4" fill="currentColor" className="text-primary/60" />
+                  <rect x="180" y="130" width="40" height="130" rx="4" fill="currentColor" className="text-primary/80" />
+                  <rect x="240" y="150" width="40" height="110" rx="4" fill="currentColor" className="text-primary/60" />
+                  <rect x="300" y="110" width="40" height="150" rx="4" fill="currentColor" className="text-primary" />
+                  <rect x="360" y="140" width="40" height="120" rx="4" fill="currentColor" className="text-primary/70" />
+                  {/* Line chart overlay */}
+                  <polyline points="80,200 140,160 200,120 260,140 320,100 380,130" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-foreground/30" />
+                  {/* Dots */}
+                  {[{ cx:80,cy:200 },{ cx:140,cy:160 },{ cx:200,cy:120 },{ cx:260,cy:140 },{ cx:320,cy:100 },{ cx:380,cy:130 }].map((d,i)=>(
+                    <circle key={i} cx={d.cx} cy={d.cy} r="4" fill="currentColor" className="text-primary" />
+                  ))}
+                  {/* KPI cards */}
+                  <rect x="40" y="40" width="100" height="50" rx="8" fill="currentColor" className="text-primary/10" />
+                  <rect x="155" y="40" width="100" height="50" rx="8" fill="currentColor" className="text-primary/10" />
+                  <rect x="270" y="40" width="100" height="50" rx="8" fill="currentColor" className="text-primary/10" />
+                  <text x="90" y="60" textAnchor="middle" fontSize="11" fill="currentColor" className="text-foreground">Revenue</text>
+                  <text x="90" y="78" textAnchor="middle" fontSize="14" fontWeight="bold" fill="currentColor" className="text-primary">€24k</text>
+                  <text x="205" y="60" textAnchor="middle" fontSize="11" fill="currentColor" className="text-foreground">Clients</text>
+                  <text x="205" y="78" textAnchor="middle" fontSize="14" fontWeight="bold" fill="currentColor" className="text-primary">312</text>
+                  <text x="320" y="60" textAnchor="middle" fontSize="11" fill="currentColor" className="text-foreground">Growth</text>
+                  <text x="320" y="78" textAnchor="middle" fontSize="14" fontWeight="bold" fill="currentColor" className="text-primary">+18%</text>
+                </svg>
+              </div>
+            </motion.div>
+
+            {/* 2 — CRM & Client Management — illustration left, text right */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-20"
+            >
+              <div className="flex-1 space-y-5">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
+                  <Users className="w-4 h-4 text-primary" />
+                  <span className="text-xs font-semibold text-primary uppercase tracking-widest">CRM</span>
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-foreground leading-snug">
+                  {t('apps.type2.title')}
+                </h3>
+                <p className="text-base text-foreground/70 leading-relaxed">{t('apps.type2.desc')}</p>
+                <ul className="space-y-2">
+                  {[t('apps.type2.ex1'), t('apps.type2.ex2'), t('apps.type2.ex3'), t('apps.type2.ex4')].map((ex) => (
+                    <li key={ex} className="flex items-center gap-2 text-[15px] text-foreground/65">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+                      {ex}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="flex-1 flex justify-center">
+                <svg viewBox="0 0 480 320" className="w-full max-w-md" aria-hidden="true">
+                  <rect x="20" y="20" width="440" height="280" rx="16" fill="currentColor" className="text-primary/5" />
+                  {/* Pipeline columns */}
+                  {['Lead','Qualified','Proposal','Won'].map((label, i) => (
+                    <g key={label}>
+                      <rect x={50 + i * 100} y="50" width="80" height="24" rx="6" fill="currentColor" className="text-primary/15" />
+                      <text x={90 + i * 100} y="66" textAnchor="middle" fontSize="10" fontWeight="700" fill="currentColor" className="text-foreground">{label}</text>
+                    </g>
+                  ))}
+                  {/* Cards in columns */}
+                  {[
+                    { col:0, rows:[0,1,2] },{ col:1, rows:[0,1] },{ col:2, rows:[0,1] },{ col:3, rows:[0] },
+                  ].map(({ col, rows }) =>
+                    rows.map((row) => (
+                      <rect key={`${col}-${row}`} x={50 + col * 100} y={90 + row * 60} width="80" height="48" rx="8" fill="currentColor" className="text-primary/10" />
+                    ))
+                  )}
+                  {/* Avatar circles */}
+                  <circle cx="70" cy="114" r="10" fill="currentColor" className="text-primary/40" />
+                  <circle cx="170" cy="114" r="10" fill="currentColor" className="text-primary/40" />
+                  <circle cx="270" cy="114" r="10" fill="currentColor" className="text-primary/40" />
+                  <circle cx="370" cy="114" r="10" fill="currentColor" className="text-primary/60" />
+                  {/* Progress bar */}
+                  <rect x="50" y="268" width="380" height="8" rx="4" fill="currentColor" className="text-primary/10" />
+                  <rect x="50" y="268" width="240" height="8" rx="4" fill="currentColor" className="text-primary/60" />
+                </svg>
+              </div>
+            </motion.div>
+
+            {/* 3 — E-commerce Back-office — text left, illustration right */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20"
+            >
+              <div className="flex-1 space-y-5">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
+                  <ShoppingCart className="w-4 h-4 text-primary" />
+                  <span className="text-xs font-semibold text-primary uppercase tracking-widest">Back-office</span>
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-foreground leading-snug">
+                  {t('apps.type3.title')}
+                </h3>
+                <p className="text-base text-foreground/70 leading-relaxed">{t('apps.type3.desc')}</p>
+                <ul className="space-y-2">
+                  {[t('apps.type3.ex1'), t('apps.type3.ex2'), t('apps.type3.ex3'), t('apps.type3.ex4')].map((ex) => (
+                    <li key={ex} className="flex items-center gap-2 text-[15px] text-foreground/65">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+                      {ex}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="flex-1 flex justify-center">
+                <svg viewBox="0 0 480 320" className="w-full max-w-md" aria-hidden="true">
+                  <rect x="20" y="20" width="440" height="280" rx="16" fill="currentColor" className="text-primary/5" />
+                  {/* Table header */}
+                  <rect x="40" y="45" width="400" height="36" rx="8" fill="currentColor" className="text-primary/15" />
+                  <text x="80" y="68" fontSize="11" fontWeight="700" fill="currentColor" className="text-foreground">Order</text>
+                  <text x="180" y="68" fontSize="11" fontWeight="700" fill="currentColor" className="text-foreground">Product</text>
+                  <text x="300" y="68" fontSize="11" fontWeight="700" fill="currentColor" className="text-foreground">Status</text>
+                  <text x="390" y="68" fontSize="11" fontWeight="700" fill="currentColor" className="text-foreground">€</text>
+                  {/* Rows */}
+                  {[0,1,2,3,4].map((i) => (
+                    <g key={i}>
+                      <rect x="40" y={95 + i * 38} width="400" height="30" rx="6" fill="currentColor" className={i % 2 === 0 ? "text-primary/5" : "text-transparent"} />
+                      <rect x="290" y={100 + i * 38} width="60" height="18" rx="9" fill="currentColor" className={i < 2 ? "text-green-500/20" : i === 2 ? "text-primary/20" : "text-yellow-500/20"} />
+                    </g>
+                  ))}
+                  {/* Stock indicator */}
+                  <rect x="390" y="260" width="50" height="24" rx="6" fill="currentColor" className="text-primary/20" />
+                  <text x="415" y="276" textAnchor="middle" fontSize="11" fontWeight="bold" fill="currentColor" className="text-primary">Stock</text>
+                </svg>
+              </div>
+            </motion.div>
+
+            {/* 4 — Operations Management — illustration left, text right */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-20"
+            >
+              <div className="flex-1 space-y-5">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
+                  <Globe className="w-4 h-4 text-primary" />
+                  <span className="text-xs font-semibold text-primary uppercase tracking-widest">Operations</span>
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-foreground leading-snug">
+                  {t('apps.type4.title')}
+                </h3>
+                <p className="text-base text-foreground/70 leading-relaxed">{t('apps.type4.desc')}</p>
+                <ul className="space-y-2">
+                  {[t('apps.type4.ex1'), t('apps.type4.ex2'), t('apps.type4.ex3'), t('apps.type4.ex4')].map((ex) => (
+                    <li key={ex} className="flex items-center gap-2 text-[15px] text-foreground/65">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+                      {ex}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="flex-1 flex justify-center">
+                <svg viewBox="0 0 480 320" className="w-full max-w-md" aria-hidden="true">
+                  <rect x="20" y="20" width="440" height="280" rx="16" fill="currentColor" className="text-primary/5" />
+                  {/* Kanban columns */}
+                  {['To do','In progress','Done'].map((label, i) => (
+                    <g key={label}>
+                      <rect x={50 + i * 135} y="45" width="110" height="230" rx="10" fill="currentColor" className="text-primary/5" />
+                      <text x={105 + i * 135} y="68" textAnchor="middle" fontSize="11" fontWeight="700" fill="currentColor" className="text-foreground">{label}</text>
+                      {[0,1,2].slice(0, 3 - i).map((j) => (
+                        <g key={j}>
+                          <rect x={58 + i * 135} y={80 + j * 60} width="94" height="48" rx="8" fill="currentColor" className="text-primary/10" />
+                          <rect x={58 + i * 135} y={80 + j * 60} width="94" height="4" rx="2" fill="currentColor" className="text-primary/40" />
+                        </g>
+                      ))}
+                    </g>
+                  ))}
+                  {/* Checkmark on done column */}
+                  <circle cx="375" cy="107" r="10" fill="currentColor" className="text-primary/20" />
+                  <text x="375" y="112" textAnchor="middle" fontSize="12" fill="currentColor" className="text-primary">✓</text>
+                </svg>
+              </div>
+            </motion.div>
+
+            {/* 5 — Automation & AI — text left, illustration right */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20"
+            >
+              <div className="flex-1 space-y-5">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
+                  <Bot className="w-4 h-4 text-primary" />
+                  <span className="text-xs font-semibold text-primary uppercase tracking-widest">Automation & AI</span>
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-foreground leading-snug">
+                  {t('apps.type5.title')}
+                </h3>
+                <p className="text-base text-foreground/70 leading-relaxed">{t('apps.type5.desc')}</p>
+                <ul className="space-y-2">
+                  {[t('apps.type5.ex1'), t('apps.type5.ex2'), t('apps.type5.ex3'), t('apps.type5.ex4')].map((ex) => (
+                    <li key={ex} className="flex items-center gap-2 text-[15px] text-foreground/65">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+                      {ex}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="flex-1 flex justify-center">
+                <svg viewBox="0 0 480 320" className="w-full max-w-md" aria-hidden="true">
+                  <rect x="20" y="20" width="440" height="280" rx="16" fill="currentColor" className="text-primary/5" />
+                  {/* Flow nodes */}
+                  <rect x="60" y="130" width="80" height="44" rx="10" fill="currentColor" className="text-primary/20" />
+                  <text x="100" y="157" textAnchor="middle" fontSize="11" fontWeight="700" fill="currentColor" className="text-foreground">Trigger</text>
+                  <rect x="200" y="130" width="80" height="44" rx="10" fill="currentColor" className="text-primary/40" />
+                  <text x="240" y="157" textAnchor="middle" fontSize="11" fontWeight="700" fill="currentColor" className="text-foreground">AI Process</text>
+                  <rect x="340" y="130" width="80" height="44" rx="10" fill="currentColor" className="text-primary/20" />
+                  <text x="380" y="157" textAnchor="middle" fontSize="11" fontWeight="700" fill="currentColor" className="text-foreground">Output</text>
+                  {/* Arrows */}
+                  <line x1="140" y1="152" x2="200" y2="152" stroke="currentColor" strokeWidth="2" className="text-primary/40" markerEnd="url(#arr)" />
+                  <line x1="280" y1="152" x2="340" y2="152" stroke="currentColor" strokeWidth="2" className="text-primary/40" />
+                  {/* Sub-nodes */}
+                  <rect x="170" y="210" width="70" height="34" rx="8" fill="currentColor" className="text-primary/10" />
+                  <text x="205" y="231" textAnchor="middle" fontSize="10" fontWeight="700" fill="currentColor" className="text-foreground">Enrich</text>
+                  <rect x="260" y="210" width="70" height="34" rx="8" fill="currentColor" className="text-primary/10" />
+                  <text x="295" y="231" textAnchor="middle" fontSize="10" fontWeight="700" fill="currentColor" className="text-foreground">Notify</text>
+                  <line x1="240" y1="174" x2="205" y2="210" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 3" className="text-primary/30" />
+                  <line x1="240" y1="174" x2="295" y2="210" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 3" className="text-primary/30" />
+                  {/* Brain icon suggestion */}
+                  <circle cx="240" cy="80" r="28" fill="currentColor" className="text-primary/15" />
+                  <text x="240" y="87" textAnchor="middle" fontSize="20">🤖</text>
+                </svg>
+              </div>
+            </motion.div>
+
+            {/* 6 — Field & Mobile Apps — illustration left, text right */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-20"
+            >
+              <div className="flex-1 space-y-5">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
+                  <Smartphone className="w-4 h-4 text-primary" />
+                  <span className="text-xs font-semibold text-primary uppercase tracking-widest">Mobile</span>
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-foreground leading-snug">
+                  {t('apps.type6.title')}
+                </h3>
+                <p className="text-base text-foreground/70 leading-relaxed">{t('apps.type6.desc')}</p>
+                <ul className="space-y-2">
+                  {[t('apps.type6.ex1'), t('apps.type6.ex2'), t('apps.type6.ex3'), t('apps.type6.ex4')].map((ex) => (
+                    <li key={ex} className="flex items-center gap-2 text-[15px] text-foreground/65">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+                      {ex}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="flex-1 flex justify-center">
+                <svg viewBox="0 0 480 320" className="w-full max-w-md" aria-hidden="true">
+                  <rect x="20" y="20" width="440" height="280" rx="16" fill="currentColor" className="text-primary/5" />
+                  {/* Phone frame */}
+                  <rect x="175" y="30" width="130" height="240" rx="20" fill="currentColor" className="text-primary/10" />
+                  <rect x="183" y="50" width="114" height="200" rx="12" fill="currentColor" className="text-primary/5" />
+                  <rect x="205" y="38" width="70" height="8" rx="4" fill="currentColor" className="text-primary/20" />
+                  {/* App UI inside phone */}
+                  <rect x="193" y="60" width="94" height="28" rx="6" fill="currentColor" className="text-primary/20" />
+                  <text x="240" y="78" textAnchor="middle" fontSize="10" fontWeight="700" fill="currentColor" className="text-foreground">Field Report</text>
+                  {[0,1,2,3].map((i) => (
+                    <g key={i}>
+                      <rect x="193" y={98 + i * 36} width="94" height="28" rx="6" fill="currentColor" className="text-primary/25" />
+                      <rect x="197" y={102 + i * 36} width="14" height="14" rx="3" fill="currentColor" className={i < 2 ? "text-primary/60" : "text-primary/30"} />
+                    </g>
+                  ))}
+                  <rect x="193" y="252" width="94" height="22" rx="8" fill="currentColor" className="text-primary/30" />
+                  <text x="240" y="267" textAnchor="middle" fontSize="10" fontWeight="bold" fill="currentColor" className="text-primary">Submit</text>
+                  {/* Signal dots */}
+                  <circle cx="100" cy="160" r="30" fill="currentColor" className="text-primary/5" />
+                  <circle cx="100" cy="160" r="18" fill="currentColor" className="text-primary/10" />
+                  <circle cx="100" cy="160" r="8" fill="currentColor" className="text-primary/30" />
+                  <circle cx="380" cy="160" r="30" fill="currentColor" className="text-primary/5" />
+                  <circle cx="380" cy="160" r="18" fill="currentColor" className="text-primary/10" />
+                  <circle cx="380" cy="160" r="8" fill="currentColor" className="text-primary/30" />
+                  <line x1="130" y1="160" x2="175" y2="160" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 3" className="text-primary/20" />
+                  <line x1="305" y1="160" x2="350" y2="160" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 3" className="text-primary/20" />
+                </svg>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
