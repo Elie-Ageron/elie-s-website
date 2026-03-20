@@ -150,6 +150,7 @@ const JsonLd = () => {
     '@id': `${baseUrl}/#website`,
     url: baseUrl,
     name: 'Elie Ageron Web Design',
+    alternateName: 'Elie Ageron',
     description: language === 'fr'
       ? 'Création de sites web premium par Elie Ageron'
       : 'Premium web design by Elie Ageron',
@@ -157,6 +158,14 @@ const JsonLd = () => {
       '@id': `${baseUrl}/#person`,
     },
     inLanguage: [language === 'fr' ? 'fr-FR' : 'en-US'],
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${baseUrl}/blog?q={search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
+    },
   };
 
   const breadcrumbSchema = {
