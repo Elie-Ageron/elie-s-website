@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+﻿import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -63,8 +63,8 @@ const PersonalIntroSection = () => {
             
             <p className="text-muted-foreground text-base sm:text-lg mb-8 max-w-lg mx-auto md:mx-0 leading-relaxed">
               {language === 'fr' 
-                ? 'Je suis Elie. Je conçois des sites web qui génèrent de vrais résultats — plus de visibilité, plus de crédibilité, plus de clients. Chaque projet est pensé pour convertir, pas juste pour faire beau.'
-                : "I'm Elie. I build websites that drive real results — more visibility, more credibility, more clients. Every project is engineered to convert, not just to look good."}
+                ? 'Je suis Elie. Je conçois des sites web qui génèrent de vrais résultats : plus de visibilité, plus de crédibilité, plus de clients. Chaque projet est pensé pour convertir, pas juste pour faire beau.'
+                : "I'm Elie. I build websites that drive real results: more visibility, more credibility, more clients. Every project is engineered to convert, not just to look good."}
             </p>
 
             <div className="hidden md:block">

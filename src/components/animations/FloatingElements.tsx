@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+﻿import { useMemo } from 'react';
 import { useCalendly } from '@/contexts/CalendlyContext';
 
 interface FloatingElementsProps {
@@ -6,7 +6,7 @@ interface FloatingElementsProps {
   className?: string;
 }
 
-// Pure-CSS floating animation — identical visual to the framer-motion version but
+// Pure-CSS floating animation - identical visual to the framer-motion version but
 // runs entirely on the GPU compositor thread (zero JS per frame, no re-renders).
 const FloatingElements = ({ count = 5, className = '' }: FloatingElementsProps) => {
   const { isOpen } = useCalendly();

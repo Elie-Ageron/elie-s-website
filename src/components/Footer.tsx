@@ -88,7 +88,7 @@ const Footer = () => {
                 </a>
                 <div className="inline-flex items-center gap-2.5 text-sm text-muted-foreground">
                   <MapPin className="w-4 h-4 shrink-0" aria-hidden="true" />
-                  {language === 'fr' ? 'France - Remote' : 'France - Remote'}
+                  {language === 'fr' ? 'France · Remote' : 'France · Remote'}
                 </div>
               </div>
             </div>
@@ -97,7 +97,7 @@ const Footer = () => {
           {/* Bottom bar */}
           <div className="mt-10 pt-6 border-t border-border/30">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
-              <span>© {currentYear} Elie Ageron - {t('footer.rights')}</span>
+              <span>© {currentYear} Elie Ageron. {t('footer.rights')}</span>
               <div className="flex items-center gap-4">
                 <Link to="/mentions-legales" className="hover:text-primary transition-colors">
                   {language === 'fr' ? 'Mentions légales' : 'Legal Notice'}

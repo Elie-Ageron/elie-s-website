@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+﻿import { motion } from 'framer-motion';
 import { TrendingUp, Users, DollarSign, Globe, SearchX, PhoneOff, Clock, Megaphone } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
@@ -158,7 +158,7 @@ const WhyWebsite = () => {
           {/* Bento grid */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
 
-            {/* Card 1 — 81% — Donut */}
+            {/* Card 1 - 81% - Donut */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -208,7 +208,7 @@ const WhyWebsite = () => {
               <p className="text-xs text-muted-foreground/40 border-t border-border/40 pt-4">GE Capital Retail Bank</p>
             </motion.div>
 
-            {/* Card 2 — 75% — Bars */}
+            {/* Card 2 - 75% - Bars */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -261,7 +261,7 @@ const WhyWebsite = () => {
               <p className="text-xs text-muted-foreground/40 border-t border-border/40 pt-4">Stanford Web Credibility Research</p>
             </motion.div>
 
-            {/* Card 3 — 3× — Bar chart */}
+            {/* Card 3 - 3× - Bar chart */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -314,7 +314,7 @@ const WhyWebsite = () => {
               <p className="text-xs text-muted-foreground/40 border-t border-border/40 pt-4">HubSpot</p>
             </motion.div>
 
-            {/* Card 4 — 97% — Donut */}
+            {/* Card 4 - 97% - Donut */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}

@@ -1,7 +1,7 @@
-interface MobileBackgroundAnimationProps {
+﻿interface MobileBackgroundAnimationProps {
   /**
    * iOS Safari peut crasher avec trop de couches floutées animées.
-   * Cette option garde l’animation mais réduit le coût GPU.
+   * Cette option garde l'animation mais réduit le coût GPU.
    */
   lite?: boolean;
 }

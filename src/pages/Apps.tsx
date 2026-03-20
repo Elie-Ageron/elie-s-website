@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+﻿import { motion } from 'framer-motion';
 import { useState } from 'react';
 import {
   LayoutDashboard,
@@ -293,7 +293,7 @@ const Apps = () => {
           </ScrollReveal>
 
           <div className="space-y-28">
-            {/* 1 — Dashboards & Reporting — text left, illustration right */}
+            {/* 1 - Dashboards & Reporting - text left, illustration right */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -350,7 +350,7 @@ const Apps = () => {
               </div>
             </motion.div>
 
-            {/* 2 — CRM & Client Management — illustration left, text right */}
+            {/* 2 - CRM & Client Management - illustration left, text right */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -406,7 +406,7 @@ const Apps = () => {
               </div>
             </motion.div>
 
-            {/* 3 — E-commerce Back-office — text left, illustration right */}
+            {/* 3 - E-commerce Back-office - text left, illustration right */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -455,7 +455,7 @@ const Apps = () => {
               </div>
             </motion.div>
 
-            {/* 4 — Operations Management — illustration left, text right */}
+            {/* 4 - Operations Management - illustration left, text right */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -504,7 +504,7 @@ const Apps = () => {
               </div>
             </motion.div>
 
-            {/* 5 — Automation & AI — text left, illustration right */}
+            {/* 5 - Automation & AI - text left, illustration right */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -557,7 +557,7 @@ const Apps = () => {
               </div>
             </motion.div>
 
-            {/* 6 — Field & Mobile Apps — illustration left, text right */}
+            {/* 6 - Field & Mobile Apps - illustration left, text right */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
