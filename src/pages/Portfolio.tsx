@@ -159,7 +159,7 @@ const Portfolio = () => {
     {
       image: portfolioVmProducers,
       name: 'VM Producers',
-      url: 'https://vm-producers.mywebglory.com',
+      url: 'https://vmproducers.com',
       categoryKey: 'portfolio.showcase.vmproducers.category',
       ctaKey: 'portfolio.showcase.vmproducers.cta',
       descKey: 'portfolio.showcase.vmproducers.desc',
