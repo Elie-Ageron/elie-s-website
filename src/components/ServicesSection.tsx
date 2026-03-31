@@ -152,6 +152,8 @@ const ServicesSection = () => {
         t('services.custom.feature2'),
         t('services.custom.feature3'),
         t('services.custom.feature4'),
+        t('services.custom.feature5'),
+        t('services.custom.feature6'),
       ],
       cta: t('services.custom.cta'),
       icon: <Sparkles className="w-6 h-6 text-primary" />,
