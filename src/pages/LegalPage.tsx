@@ -58,7 +58,7 @@ const LegalPage = ({ page }: LegalPageProps) => {
                 <li><strong className="text-foreground">{isFr ? 'Nom :' : 'Name:'}</strong> Elie Ageron</li>
                 <li><strong className="text-foreground">{isFr ? 'Activité :' : 'Activity:'}</strong> {isFr ? 'Web Design & Optimisation Conversion' : 'Web Design & Conversion Optimization'}</li>
                 <li><strong className="text-foreground">{isFr ? 'Adresse :' : 'Address:'}</strong> Annecy, Haute-Savoie, France</li>
-                <li><strong className="text-foreground">Email :</strong> <a href="mailto:contact@elieageron.com" className="text-primary hover:underline">contact@elieageron.com</a></li>
+                <li><strong className="text-foreground">Email :</strong> <a href="mailto:web@elieageron.com" className="text-primary hover:underline">web@elieageron.com</a></li>
                 <li><strong className="text-foreground">{isFr ? 'Téléphone :' : 'Phone:'}</strong> <a href="tel:+33695555318" className="text-primary hover:underline">+33 6 95 55 53 18</a></li>
               </ul>
             </section>
@@ -169,7 +169,7 @@ const LegalPage = ({ page }: LegalPageProps) => {
                 {isFr
                   ? "Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification, d'effacement, de portabilité et d'opposition au traitement de vos données personnelles. Pour exercer ces droits, contactez-nous à :"
                   : 'Under the General Data Protection Regulation (GDPR), you have the right to access, rectify, erase, port and object to the processing of your personal data. To exercise these rights, contact us at:'}
-                {' '}<a href="mailto:contact@elieageron.com" className="text-primary hover:underline">contact@elieageron.com</a>
+                {' '}<a href="mailto:web@elieageron.com" className="text-primary hover:underline">web@elieageron.com</a>
               </p>
             </section>
 
@@ -178,7 +178,7 @@ const LegalPage = ({ page }: LegalPageProps) => {
                 {isFr ? '6. Responsable du traitement' : '6. Data Controller'}
               </h2>
               <p className="text-muted-foreground">
-                {isFr ? 'Responsable :' : 'Controller:'} Elie Ageron - contact@elieageron.com - Annecy, France
+                {isFr ? 'Responsable :' : 'Controller:'} Elie Ageron - web@elieageron.com - Annecy, France
               </p>
             </section>
           </>

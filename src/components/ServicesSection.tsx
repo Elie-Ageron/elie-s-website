@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Check, Zap, Crown, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ScrollReveal from './animations/ScrollReveal';
 import FloatingElements from './animations/FloatingElements';
@@ -17,6 +18,7 @@ interface ServiceCardProps {
 }
 
 const ServiceCard = ({ title, price, description, features, cta, icon, popular, delay }: ServiceCardProps) => {
+  const { t } = useLanguage();
   return (
     <motion.div
       initial={{ opacity: 0, y: 50, rotateX: -10 }}
@@ -48,7 +50,7 @@ const ServiceCard = ({ title, price, description, features, cta, icon, popular, 
             animate={{ scale: [1, 1.1, 1] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
-            Most Popular
+            {t('services.popular')}
           </motion.span>
         </motion.div>
       )}
@@ -105,7 +107,7 @@ const ServiceCard = ({ title, price, description, features, cta, icon, popular, 
         className="w-full relative z-10"
         asChild
       >
-        <a href="#contact">{cta}</a>
+        <a href="/contact">{cta}</a>
       </Button>
     </motion.div>
   );

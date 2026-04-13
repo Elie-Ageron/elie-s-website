@@ -73,11 +73,11 @@ const Footer = () => {
               </h3>
               <div className="flex flex-col gap-3">
                 <a
-                  href="mailto:contact@elieageron.com"
+                  href="mailto:web@elieageron.com"
                   className="inline-flex items-center gap-2.5 text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Mail className="w-4 h-4 shrink-0" aria-hidden="true" />
-                  contact@elieageron.com
+                  web@elieageron.com
                 </a>
                 <a
                   href="tel:+33695555318"

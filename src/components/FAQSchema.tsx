@@ -2,11 +2,37 @@ import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface FAQSchemaProps {
-  page: 'pricing' | 'why';
+  page: 'pricing' | 'why' | 'home';
 }
 
 const faqData = {
   en: {
+    home: [
+      {
+        question: 'Why should I invest in a professional design now?',
+        answer: 'Your website is your 24/7 salesperson. A high-conversion design builds trust instantly, communicates your value clearly, and turns visits into inquiries. Every day without a strong online presence is revenue left on the table for competitors.',
+      },
+      {
+        question: 'Why choose Élie Ageron for my project?',
+        answer: 'I combine design expertise with a business-first mindset. You work directly with me, not a junior outsourced team. I use modern technology, proven UX patterns, and SEO best practices to deliver a site that genuinely grows your business.',
+      },
+      {
+        question: 'What is the turnaround time?',
+        answer: 'Most projects are delivered within 7 to 14 business days. A landing page is faster than a full multi-page site. Revisions are included so there are no surprises at the end.',
+      },
+      {
+        question: 'Is my site optimized for mobile and search?',
+        answer: 'Yes, always. Every site is fully mobile-first and includes SEO foundations: page speed, structured data, semantic HTML, meta tags, and proper indexing so Google can find and rank you from day one.',
+      },
+      {
+        question: 'How much does a website cost?',
+        answer: 'Prices start from €500 for a professional landing page. I offer clear, fixed-price quotes with no hidden fees. Check the Pricing page for detailed packages or book a free call for a tailored estimate.',
+      },
+      {
+        question: 'What happens after the site is launched?',
+        answer: 'You own everything: the code, the domain, the content. I provide a handover walkthrough so you can manage your site independently. Optional maintenance packages are available if you prefer to focus on your business.',
+      },
+    ],
     pricing: [
       {
         question: 'How much does a landing page cost?',
@@ -77,6 +103,32 @@ const faqData = {
     ],
   },
   fr: {
+    home: [
+      {
+        question: 'Pourquoi investir dans un design professionnel maintenant ?',
+        answer: 'Votre site web est votre commercial 24/7. Un design à haute conversion inspire confiance immédiatement, communique votre valeur clairement et transforme les visites en demandes. Chaque jour sans une présence en ligne solide, c\'est du chiffre d\'affaires laissé à vos concurrents.',
+      },
+      {
+        question: 'Pourquoi choisir Élie Ageron pour mon projet ?',
+        answer: 'Je combine expertise design et vision business. Vous travaillez directement avec moi, pas une équipe sous-traitée. J\'utilise des technologies modernes, des patterns UX éprouvés et les meilleures pratiques SEO pour livrer un site qui fait vraiment grandir votre activité.',
+      },
+      {
+        question: 'Quel est le délai de livraison ?',
+        answer: 'La plupart des projets sont livrés en 7 à 14 jours ouvrés. Le délai dépend de la portée du projet. Les révisions sont incluses pour qu\'il n\'y ait aucune mauvaise surprise.',
+      },
+      {
+        question: 'Mon site sera-t-il optimisé mobile et SEO ?',
+        answer: 'Oui, toujours. Chaque site est entièrement mobile-first et inclut les fondations SEO : vitesse de chargement, données structurées, HTML sémantique, balises meta et indexation correcte pour que Google vous référence dès le premier jour.',
+      },
+      {
+        question: 'Combien coûte un site web ?',
+        answer: 'Les tarifs démarrent à 500€ pour une landing page professionnelle. Je propose des devis clairs et fixes, sans frais cachés. Consultez la page Tarifs pour les formules détaillées ou réservez un appel gratuit.',
+      },
+      {
+        question: 'Que se passe-t-il après la mise en ligne ?',
+        answer: 'Vous êtes propriétaire de tout : le code, le domaine, le contenu. Je vous fournis un accompagnement à la prise en main. Des forfaits de maintenance sont disponibles si vous préférez vous concentrer sur votre activité.',
+      },
+    ],
     pricing: [
       {
         question: 'Combien coûte une landing page ?',

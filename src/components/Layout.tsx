@@ -1,7 +1,6 @@
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import ScrollPopup from '@/components/ScrollPopup';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 import GlobalContactForm from '@/components/GlobalContactForm';
 import PageTransition from '@/components/animations/PageTransition';
@@ -117,7 +116,6 @@ const Layout = ({ children }: LayoutProps) => {
           </main>
         </PageTransition>
         <Footer />
-        <ScrollPopup />
         <FloatingWhatsApp />
       </div>
     </LanguageProvider>

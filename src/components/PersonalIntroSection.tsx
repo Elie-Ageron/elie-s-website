@@ -48,23 +48,23 @@ const PersonalIntroSection = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="order-1 md:order-2 md:col-span-3 text-center md:text-left"
           >
-            <h2 
-              id="intro-heading" 
+            <h2
+              id="intro-heading"
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-5 leading-tight"
             >
               <span className="text-foreground">
-                {language === 'fr' ? 'Un accompagnement' : 'Your project is in'}
+                {language === 'fr' ? 'Un projet à la fois.' : 'One project at a time.'}
               </span>
               <br />
               <span className="text-primary">
-                {language === 'fr' ? 'de A à Z.' : 'good hands.'}
+                {language === 'fr' ? 'Le vôtre.' : 'Yours.'}
               </span>
             </h2>
-            
+
             <p className="text-muted-foreground text-base sm:text-lg mb-8 max-w-lg mx-auto md:mx-0 leading-relaxed">
-              {language === 'fr' 
-                ? 'Je suis Elie. Je conçois des sites web qui génèrent de vrais résultats : plus de visibilité, plus de crédibilité, plus de clients. Chaque projet est pensé pour convertir, pas juste pour faire beau.'
-                : "I'm Elie. I build websites that drive real results: more visibility, more credibility, more clients. Every project is engineered to convert, not just to look good."}
+              {language === 'fr'
+                ? 'Je suis Elie. Je ne jongle pas entre trente clients. Quand on travaille ensemble, votre projet reçoit toute mon attention, du brief à la mise en ligne. Un interlocuteur unique, une livraison en 7 à 14 jours, et un site conçu pour convertir, pas juste pour exister.'
+                : "I'm Elie. I don't juggle thirty clients at once. When we work together, your project gets my full focus, from brief to launch. One point of contact, delivered in 7 to 14 days, built to convert, not just to exist."}
             </p>
 
             <div className="hidden md:block">

@@ -23,6 +23,10 @@ const translations = {
     'hero.headline2': "a real online presence.",
     'hero.badge': 'Online in 7-14 days · From $500',
     'hero.cta': "Let's talk, it's free",
+    'hero.secondaryCta': 'See my work',
+    'form.success': 'Message sent',
+    'form.error.title': 'Error',
+    'form.error.desc': 'Something went wrong. Try again or contact us via WhatsApp.',
     'hero.scroll': 'Scroll',
     'hero.proof.satisfaction': '100% Satisfied Clients',
     'hero.proof.quality': '5-Star Quality',
@@ -130,6 +134,7 @@ const translations = {
     'pricing.guarantee.desc': 'If the result doesn\'t feel right, I rework it until you\'re fully happy with what you have. No extra cost.',
 
     // Services (shared with pricing)
+    'services.popular': 'Most Popular',
     'services.title': 'The plan that fits your needs',
     'services.title1': 'The plan that',
     'services.title2': 'fits your needs',
@@ -375,10 +380,14 @@ const translations = {
     'nav.book': 'Réserver un appel',
 
     // Home Page
-    'hero.headline1': "Votre business mérite",
+    'hero.headline1': "Votre activité mérite",
     'hero.headline2': "une vraie présence en ligne.",
     'hero.badge': 'En ligne en 7-14 jours · Dès 500€',
     'hero.cta': 'Discutons-en, c\'est gratuit',
+    'hero.secondaryCta': 'Voir mes réalisations',
+    'form.success': 'Message bien envoyé',
+    'form.error.title': 'Erreur',
+    'form.error.desc': 'Une erreur est survenue. Réessayez ou contactez-nous via WhatsApp.',
     'hero.scroll': 'Défiler',
     'hero.proof.satisfaction': '100% Clients satisfaits',
     'hero.proof.quality': 'Qualité 5 étoiles',
@@ -483,9 +492,10 @@ const translations = {
     'pricing.maintenance.desc': 'Je m\'occupe de tout : mises à jour, sécurité, hébergement. Votre site tourne toujours parfaitement, sans que vous y pensiez.',
     'pricing.maintenance.custom': 'Sur mesure',
     'pricing.guarantee.title': 'Pas satisfait ? Je retravaille.',
-    'pricing.guarantee.desc': 'Si le résultat ne vous convient pas, je refais jusqu\'\u00e0 ce que vous soyez pleinement satisfait. Sans frais supplémentaires.',
+    'pricing.guarantee.desc': 'Si le résultat ne vous convient pas, je retravaille jusqu\'à ce que vous soyez pleinement satisfait. Sans frais supplémentaires.',
 
     // Services (shared with pricing)
+    'services.popular': 'Le plus populaire',
     'services.title': 'Choisissez la formule adaptée à votre projet',
     'services.title1': 'La formule',
     'services.title2': "qu'il vous faut",
@@ -610,7 +620,7 @@ const translations = {
     'apps.type1.ex3': 'Reporting financier',
     'apps.type1.ex4': 'Suivi de performance',
     'apps.type2.title': 'CRM & Gestion Clients',
-    'apps.type2.desc': 'Gérez vos contacts, opportunités et suivi client dans une interface taillée pour votre business.',
+    'apps.type2.desc': 'Gérez vos contacts, opportunités et suivi client dans une interface taillée pour votre activité.',
     'apps.type2.ex1': 'Pipeline commercial',
     'apps.type2.ex2': 'Suivi devis/factures',
     'apps.type2.ex3': 'Historique clients',

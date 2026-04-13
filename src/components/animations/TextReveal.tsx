@@ -1,5 +1,4 @@
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { motion } from 'framer-motion';
 
 interface TextRevealProps {
   text: string;
@@ -8,53 +7,38 @@ interface TextRevealProps {
   splitBy?: 'word' | 'letter';
 }
 
-const TextReveal = ({ 
-  text, 
-  className = '', 
-  delay = 0,
-  splitBy = 'word'
-}: TextRevealProps) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+const itemVariants = {
+  hidden:  { opacity: 0, y: 16 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: 'easeOut' as const } },
+};
 
+const TextReveal = ({
+  text,
+  className = '',
+  delay = 0,
+  splitBy = 'word',
+}: TextRevealProps) => {
   const items = splitBy === 'word' ? text.split(' ') : text.split('');
   const separator = splitBy === 'word' ? '\u00A0' : '';
 
   const containerVariants = {
-    hidden: { opacity: 0 },
+    hidden:  { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: splitBy === 'word' ? 0.08 : 0.03,
-        delayChildren: delay
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { 
-      opacity: 0, 
-      y: 20,
-      filter: 'blur(8px)'
+        staggerChildren: splitBy === 'word' ? 0.07 : 0.025,
+        delayChildren: delay,
+      },
     },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      filter: 'blur(0px)',
-      transition: {
-        duration: 0.5,
-        ease: "easeOut" as const
-      }
-    }
   };
 
   return (
     <motion.span
-      ref={ref}
       className={className}
       variants={containerVariants}
       initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
+      whileInView="visible"
+      viewport={{ once: true, margin: '-50px' }}
       style={{ display: 'inline-flex', flexWrap: 'wrap' }}
     >
       {items.map((item, index) => (

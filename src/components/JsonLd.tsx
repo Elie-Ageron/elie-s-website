@@ -16,7 +16,7 @@ const JsonLd = () => {
     description: language === 'fr' 
       ? 'Créateur de sites web premium spécialisé en conversion et design haute performance'
       : 'Premium web designer specializing in conversion optimization and high-performance design',
-    email: 'elieageron@gmail.com',
+    email: 'web@elieageron.com',
     telephone: '+33695555318',
     address: {
       '@type': 'PostalAddress',
@@ -28,6 +28,7 @@ const JsonLd = () => {
     sameAs: [
       'https://www.linkedin.com/in/elie-ageron-289636394',
       'https://calendly.com/web-elieageron/30min',
+      'https://www.google.com/maps/place/Elie+Ageron/@22.7831408,-94.7852384,3z/data=!3m1!4b1!4m6!3m5!1s0x478bc3783d27ffe3:0x8de1f75d4ab27b78!8m2!3d30.6959409!4d-49.8171262!16s%2Fg%2F11yyfd5c7c',
     ],
     knowsAbout: [
       'Web Design',
@@ -50,7 +51,7 @@ const JsonLd = () => {
       ? 'Services de création de sites web premium qui convertissent les visiteurs en clients payants'
       : 'Premium web design services that convert visitors into paying clients',
     telephone: '+33695555318',
-    email: 'elieageron@gmail.com',
+    email: 'web@elieageron.com',
     priceRange: '€€',
     address: {
       '@type': 'PostalAddress',

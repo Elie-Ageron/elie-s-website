@@ -21,7 +21,7 @@ const OrganizationSchema = () => {
     description: language === 'fr'
       ? 'Agence de création de sites web premium spécialisée en conversion et design haute performance'
       : 'Premium web design agency specializing in conversion optimization and high-performance design',
-    email: 'elieageron@gmail.com',
+    email: 'web@elieageron.com',
     telephone: '+33695555318',
     address: {
       '@type': 'PostalAddress',
@@ -36,12 +36,13 @@ const OrganizationSchema = () => {
     sameAs: [
       'https://www.linkedin.com/in/elie-ageron-289636394',
       'https://calendly.com/web-elieageron/30min',
+      'https://www.google.com/maps/place/Elie+Ageron/@22.7831408,-94.7852384,3z/data=!3m1!4b1!4m6!3m5!1s0x478bc3783d27ffe3:0x8de1f75d4ab27b78!8m2!3d30.6959409!4d-49.8171262!16s%2Fg%2F11yyfd5c7c',
     ],
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+33695555318',
       contactType: 'customer service',
-      email: 'elieageron@gmail.com',
+      email: 'web@elieageron.com',
       availableLanguage: ['French', 'English'],
     },
     areaServed: {
@@ -80,7 +81,7 @@ const OrganizationSchema = () => {
       ? 'Création de sites web premium à Annecy - spécialisé en conversion et design haute performance'
       : 'Premium web design in Annecy - specializing in conversion optimization and high-performance design',
     telephone: '+33695555318',
-    email: 'elieageron@gmail.com',
+    email: 'web@elieageron.com',
     priceRange: '\u20ac\u20ac',
     address: {
       '@type': 'PostalAddress',
@@ -105,6 +106,7 @@ const OrganizationSchema = () => {
     ],
     sameAs: [
       'https://www.linkedin.com/in/elie-ageron-289636394',
+      'https://www.google.com/maps/place/Elie+Ageron/@22.7831408,-94.7852384,3z/data=!3m1!4b1!4m6!3m5!1s0x478bc3783d27ffe3:0x8de1f75d4ab27b78!8m2!3d30.6959409!4d-49.8171262!16s%2Fg%2F11yyfd5c7c',
     ],
     areaServed: [
       { '@type': 'City', name: 'Annecy' },

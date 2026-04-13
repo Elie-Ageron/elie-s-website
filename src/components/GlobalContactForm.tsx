@@ -36,15 +36,15 @@ const GlobalContactForm = () => {
       });
 
       toast({
-        title: 'Message bien envoyé',
+        title: t('form.success'),
       });
 
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
       console.error('Contact form error:', error);
       toast({
-        title: 'Erreur',
-        description: "Une erreur est survenue. Réessayez ou contactez-nous via WhatsApp.",
+        title: t('form.error.title'),
+        description: t('form.error.desc'),
         variant: 'destructive',
       });
     } finally {

@@ -1,6 +1,7 @@
 ﻿import { motion } from 'framer-motion';
-import { ArrowDown, CheckCircle, Star, Users, Shield } from 'lucide-react';
+import { ArrowDown, CheckCircle, Star, Shield, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useCalendly } from '@/contexts/CalendlyContext';
 import { lazy, Suspense, useState, useEffect, Component, ReactNode } from 'react';
@@ -88,21 +89,32 @@ const HeroSection = () => {
             <span className="text-primary">{t('hero.headline2')}</span>
           </h1>
 
-          {/* CTA Button - Touch optimized */}
+          {/* CTAs */}
           <motion.div
-            className="mt-8 sm:mt-10"
+            className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
           >
-            <Button 
-              variant="hero" 
-              size="xl" 
-              className="min-h-[56px] sm:min-h-[60px] px-6 sm:px-10 text-base sm:text-lg active:scale-[0.98] transition-transform"
+            <Button
+              variant="hero"
+              size="xl"
+              className="min-h-[56px] sm:min-h-[60px] px-6 sm:px-10 text-base sm:text-lg active:scale-[0.98] transition-transform w-full sm:w-auto"
               onClick={openCalendly}
               aria-label="Book your growth session with Elie Ageron"
             >
               {t('hero.cta')}
+            </Button>
+            <Button
+              variant="ghost"
+              size="xl"
+              className="min-h-[56px] sm:min-h-[60px] px-6 sm:px-8 text-base sm:text-lg text-muted-foreground hover:text-foreground group w-full sm:w-auto"
+              asChild
+            >
+              <Link to="/portfolio" className="flex items-center gap-2">
+                {t('hero.secondaryCta')}
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+              </Link>
             </Button>
           </motion.div>
 

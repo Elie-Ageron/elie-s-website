@@ -1,6 +1,6 @@
 ﻿import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { ExternalLink, Sparkles, ArrowRight } from 'lucide-react';
+import { ExternalLink, Sparkles, ArrowRight, Quote } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
 import InternalLinks from '@/components/InternalLinks';
@@ -17,10 +17,12 @@ interface PortfolioItemProps {
   ctaKey: string;
   descKey: string;
   alt: string;
+  quote: string;
+  quoteAuthor: string;
   delay?: number;
 }
 
-const PortfolioItem = ({ image, name, url, categoryKey, ctaKey, descKey, alt, delay = 0 }: PortfolioItemProps) => {
+const PortfolioItem = ({ image, name, url, categoryKey, ctaKey, descKey, alt, quote, quoteAuthor, delay = 0 }: PortfolioItemProps) => {
   const { t } = useLanguage();
 
   return (
@@ -30,16 +32,16 @@ const PortfolioItem = ({ image, name, url, categoryKey, ctaKey, descKey, alt, de
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay }}
     >
-      <a 
-        href={url} 
-        target="_blank" 
+      <a
+        href={url}
+        target="_blank"
         rel="noopener noreferrer"
         className="block group"
       >
         <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl shadow-primary/10 border border-border/50 group-hover:border-primary/30 transition-all duration-500">
           <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
-          
-          <img 
+
+          <img
             src={image}
             alt={alt}
             className="w-full h-auto transition-transform duration-700 group-hover:scale-[1.02]"
@@ -48,9 +50,9 @@ const PortfolioItem = ({ image, name, url, categoryKey, ctaKey, descKey, alt, de
             loading="lazy"
             decoding="async"
           />
-          
+
           <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-          
+
           <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
             <div className="flex items-center justify-between">
               <div>
@@ -66,12 +68,25 @@ const PortfolioItem = ({ image, name, url, categoryKey, ctaKey, descKey, alt, de
         </div>
       </a>
 
+      {/* Client quote */}
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: delay + 0.15 }}
+        className="mt-6 px-4 py-4 rounded-xl bg-secondary/60 border border-border/50 relative"
+      >
+        <Quote className="w-4 h-4 text-primary/40 absolute top-3 left-3" aria-hidden="true" />
+        <p className="text-sm text-muted-foreground italic pl-5 leading-relaxed">"{quote}"</p>
+        <p className="text-xs text-primary font-medium mt-2 pl-5">{quoteAuthor}</p>
+      </motion.div>
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ delay: delay + 0.2 }}
-        className="text-center mt-8 sm:mt-10"
+        transition={{ delay: delay + 0.25 }}
+        className="text-center mt-6"
       >
         <Button size="lg" className="group" asChild>
           <a href={url} target="_blank" rel="noopener noreferrer">
@@ -79,7 +94,7 @@ const PortfolioItem = ({ image, name, url, categoryKey, ctaKey, descKey, alt, de
             <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
           </a>
         </Button>
-        
+
         <p className="text-muted-foreground text-sm mt-4 max-w-md mx-auto">
           {t(descKey)}
         </p>
@@ -146,6 +161,10 @@ const Portfolio = () => {
       ctaKey: 'portfolio.showcase.mywebglory.cta',
       descKey: 'portfolio.showcase.mywebglory.desc',
       alt: 'MyWebGlory - Site web premium pour agence de marketing événementiel créé par Elie Ageron Web Design',
+      quote: language === 'fr'
+        ? 'Notre site inspire confiance, convertit mieux, et nos clients nous le disent. Un travail soigné, du début à la fin.'
+        : 'Our site now inspires trust, converts better, and our clients tell us so. Careful, attentive work from start to finish.',
+      quoteAuthor: 'Gabriel Ageron – Fondateur, MyWebGlory',
     },
     {
       image: portfolioSolarFusion,
@@ -155,6 +174,10 @@ const Portfolio = () => {
       ctaKey: 'portfolio.showcase.solarfusion.cta',
       descKey: 'portfolio.showcase.solarfusion.desc',
       alt: 'Solar Fusion - Site professionnel pour installateur de panneaux solaires créé par Elie Ageron Web Design',
+      quote: language === 'fr'
+        ? 'Elie a su capter l\'essence de notre marque. Le trafic a vraiment décollé dès le lancement.'
+        : 'Elie perfectly captured our brand\'s essence. Traffic has really taken off since launch.',
+      quoteAuthor: 'Sébastien Chaffardon – Fondateur, Solar Fusion',
     },
     {
       image: portfolioVmProducers,
@@ -164,6 +187,10 @@ const Portfolio = () => {
       ctaKey: 'portfolio.showcase.vmproducers.cta',
       descKey: 'portfolio.showcase.vmproducers.desc',
       alt: 'VM Producers - Site vitrine pour label de production musicale créé par Elie Ageron Web Design',
+      quote: language === 'fr'
+        ? 'Elie a compris notre univers immédiatement. Le résultat est percutant, professionnel, exactement ce qu\'on voulait.'
+        : 'Elie understood our world straight away. The result is sharp, professional, and exactly what we were after.',
+      quoteAuthor: 'Austin Talley – VM Producers',
     },
   ];
 
