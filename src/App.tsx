@@ -21,7 +21,7 @@ const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const LegalPage = lazy(() => import("./pages/LegalPage"));
-const Apps = lazy(() => import("./pages/Apps"));
+// const Apps = lazy(() => import("./pages/Apps")); // hidden - future service
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -76,7 +76,7 @@ const App = () => (
                   <Route path="/contact" element={<Contact />} />
                   <Route path="/blog" element={<Blog />} />
                   <Route path="/blog/:slug" element={<BlogPost />} />
-                  <Route path="/apps" element={<Apps />} />
+                  {/* <Route path="/apps" element={<Apps />} /> */}{/* hidden - future service */}
                   <Route path="/mentions-legales" element={<LegalPage page="mentions" />} />
                   <Route path="/politique-confidentialite" element={<LegalPage page="privacy" />} />
                   <Route path="*" element={<NotFound />} />

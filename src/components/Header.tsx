@@ -57,7 +57,7 @@ const Header = () => {
   ];
 
   const flatNavItems = [
-    { href: '/apps', label: 'Apps & Dashboards' },
+    // { href: '/apps', label: 'Apps & Dashboards' }, // hidden - future service
     { href: '/portfolio', label: t('nav.portfolio') },
     { href: '/blog', label: 'Blog' },
     { href: '/contact', label: t('nav.contact') },
