@@ -4,6 +4,7 @@ import AnimatedTimeline from '@/components/animations/AnimatedTimeline';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
 import InternalLinks from '@/components/InternalLinks';
 import SEO from '@/components/SEO';
+import ScrollVideoSection from '@/components/ScrollVideoSection';
 
 const OurProcess = () => {
   const { t, language } = useLanguage();
@@ -107,6 +108,9 @@ const OurProcess = () => {
           <AnimatedTimeline />
         </div>
       </section>
+
+      {/* Scroll Video — Animation du processus */}
+      <ScrollVideoSection />
 
       {/* Internal Links */}
       <InternalLinks currentPage="process" />

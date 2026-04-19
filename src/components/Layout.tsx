@@ -95,7 +95,7 @@ const Layout = ({ children }: LayoutProps) => {
       <JsonLd />
       <ReviewSchema />
       <OrganizationSchema />
-      <div className="min-h-screen bg-background relative overflow-x-hidden">
+      <div className="min-h-screen bg-background relative" style={{ overflowX: 'clip' }}>
         {showDecorations && (
           <Suspense fallback={null}>
             <BackgroundPattern disableBlurAccents={isIOSSafari} />
