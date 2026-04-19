@@ -181,9 +181,9 @@ const translations = {
     'pricing.quote.q4': 'Not sure yet what you need?',
 
     // Portfolio
-    'portfolio.title1': 'Real projects,',
-    'portfolio.title2': 'measurable results',
-    'portfolio.subtitle': 'See what it looks like when a website actually works.',
+    'portfolio.title1': 'Every business',
+    'portfolio.title2': 'deserves a site like this.',
+    'portfolio.subtitle': 'Whatever your industry, a well-designed site makes all the difference.',
     'portfolio.preview': 'Live Preview',
     'portfolio.luxura.name': 'Luxura Spa',
     'portfolio.luxura.category': 'Wellness & Beauty',
@@ -553,9 +553,9 @@ const translations = {
     'pricing.quote.q4': 'Pas encore sûr de ce qu\'il vous faut ?',
 
     // Portfolio
-    'portfolio.title1': 'Des projets réels,',
-    'portfolio.title2': 'des résultats mesurables',
-    'portfolio.subtitle': 'Découvrez ce qu\'un site performant peut accomplir pour votre activité.',
+    'portfolio.title1': 'Chaque activité',
+    'portfolio.title2': 'mérite un site comme ça.',
+    'portfolio.subtitle': 'Quel que soit votre secteur, un beau site fait toute la différence.',
     'portfolio.preview': 'Aperçu Live',
     'portfolio.luxura.name': 'Luxura Spa',
     'portfolio.luxura.category': 'Bien-être & Beauté',
