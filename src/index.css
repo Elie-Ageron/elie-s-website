@@ -199,7 +199,7 @@ All colors MUST be HSL.
   }
 }
 
-/* Respect system-level "reduce motion" preference */
+/* Respect system-level "prefers-reduced-motion" preference */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
