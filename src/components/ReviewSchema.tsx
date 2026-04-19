@@ -16,7 +16,7 @@ const ReviewSchema = () => {
     image: `${baseUrl}/og-image.png`,
     url: baseUrl,
     telephone: '+33695555318',
-    email: 'elieageron@gmail.com',
+    email: 'web@elieageron.com',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Annecy',
@@ -26,58 +26,46 @@ const ReviewSchema = () => {
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '5',
-      reviewCount: '3',
+      reviewCount: '4',
       bestRating: '5',
       worstRating: '1',
     },
     review: [
       {
         '@type': 'Review',
-        author: {
-          '@type': 'Person',
-          name: 'Marc D.',
-        },
-        datePublished: '2024-12-15',
+        author: { '@type': 'Person', name: 'Gabriel Ageron' },
+        datePublished: '2026-03-01',
         reviewBody: language === 'fr'
-          ? 'Professionnel, rapide, et les résultats parlent d\'eux-mêmes. Notre taux de conversion a augmenté de 40% après la refonte.'
-          : 'Professional, fast, and the results speak for themselves. Our conversion rate increased by 40% after the redesign.',
-        reviewRating: {
-          '@type': 'Rating',
-          ratingValue: '5',
-          bestRating: '5',
-        },
+          ? "Elie a su comprendre ce qu'on construisait et l'a traduit en un site qui fonctionne vraiment. Rapide, clair, et il pousse les visiteurs à s'inscrire. C'est exactement ce qu'il nous fallait."
+          : "Elie really understood what we were building and translated it into a site that works. Fast, clear, and it pushes visitors to sign up. Exactly what we needed.",
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
       },
       {
         '@type': 'Review',
-        author: {
-          '@type': 'Person',
-          name: 'Sophie L.',
-        },
-        datePublished: '2025-01-08',
+        author: { '@type': 'Person', name: 'Austin Talley' },
+        datePublished: '2026-01-01',
         reviewBody: language === 'fr'
-          ? 'Elie a compris notre vision immédiatement. Le site a dépassé nos attentes en design et en performance.'
-          : 'Elie understood our vision immediately. The website exceeded our expectations in both design and performance.',
-        reviewRating: {
-          '@type': 'Rating',
-          ratingValue: '5',
-          bestRating: '5',
-        },
+          ? "On avait besoin d'un site à la hauteur de notre énergie. Elie a compris notre univers immédiatement. Le résultat est percutant, professionnel, exactement ce qu'on voulait."
+          : "We needed a site that matched our energy. Elie understood our world straight away. The result is sharp, professional, and exactly what we were after.",
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
       },
       {
         '@type': 'Review',
-        author: {
-          '@type': 'Person',
-          name: 'Thomas R.',
-        },
-        datePublished: '2025-01-22',
+        author: { '@type': 'Person', name: 'Gabriel Ageron' },
+        datePublished: '2025-12-01',
         reviewBody: language === 'fr'
-          ? 'Le meilleur investissement pour notre présence digitale. Le ROI était visible dès le premier mois.'
-          : 'The best investment we made for our digital presence. ROI was visible within the first month.',
-        reviewRating: {
-          '@type': 'Rating',
-          ratingValue: '5',
-          bestRating: '5',
-        },
+          ? "Collaborer avec Elie a été une vraie révélation. Notre site inspire confiance, convertit mieux, et nos clients nous le disent. Un travail soigné, du début à la fin."
+          : "Working with Elie was a real revelation. Our site now inspires trust, converts better, and our clients tell us so. Careful, attentive work from start to finish.",
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      },
+      {
+        '@type': 'Review',
+        author: { '@type': 'Person', name: 'Sébastien Chaffardon' },
+        datePublished: '2025-11-01',
+        reviewBody: language === 'fr'
+          ? "Elie a su capter l'essence de notre marque. Le site reflète parfaitement notre ambition et nos valeurs. On a eu des retours très positifs dès le lancement et le trafic a vraiment décollé."
+          : "Elie perfectly captured our brand's essence. The site reflects our ambition and our values. We got great feedback right from launch, and traffic has really taken off.",
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
       },
     ],
   };

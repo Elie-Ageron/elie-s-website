@@ -9,26 +9,10 @@ import ServicesSection from '@/components/ServicesSection';
 import FAQAccordion from '@/components/FAQAccordion';
 import SEO from '@/components/SEO';
 import FAQSchema from '@/components/FAQSchema';
+import InternalLinks from '@/components/InternalLinks';
 
 const Home = () => {
   const { t, language } = useLanguage();
-
-  const websiteSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    '@id': 'https://elieageron.com/#website',
-    name: 'Elie Ageron Web Design',
-    url: 'https://elieageron.com',
-    description: language === 'fr'
-      ? 'Sites web premium qui convertissent les visiteurs en clients'
-      : 'Premium websites that convert visitors into clients',
-    author: { '@type': 'Person', name: 'Elie Ageron' },
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: { '@type': 'EntryPoint', urlTemplate: 'https://elieageron.com/?q={search_term_string}' },
-      'query-input': 'required name=search_term_string',
-    },
-  };
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -40,7 +24,7 @@ const Home = () => {
 
   return (
     <>
-      <SEO page="home" structuredData={[websiteSchema, breadcrumbSchema]} />
+      <SEO page="home" structuredData={[breadcrumbSchema]} />
       <FAQSchema page="home" />
       
       {/* Hero Section with 3D */}
@@ -60,6 +44,9 @@ const Home = () => {
 
       {/* FAQ - Objections avant le CTA final */}
       <FAQAccordion />
+
+      {/* Internal Links */}
+      <InternalLinks currentPage="home" />
 
       {/* Contact Methods Section */}
       <section className="relative overflow-hidden">

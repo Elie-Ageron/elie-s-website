@@ -107,7 +107,7 @@ const ServiceCard = ({ title, price, description, features, cta, icon, popular, 
         className="w-full relative z-10"
         asChild
       >
-        <a href="/contact">{cta}</a>
+        <Link to="/contact">{cta}</Link>
       </Button>
     </motion.div>
   );

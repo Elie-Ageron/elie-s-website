@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { lazy, Suspense, Component, ReactNode } from "react";
+import { MotionConfig } from "framer-motion";
 import Layout from "./components/Layout";
 import ScrollToTop from "./components/ScrollToTop";
 import Analytics from "./components/Analytics";
@@ -58,6 +59,7 @@ class ErrorBoundary extends Component<{ children: ReactNode }, { error: Error | 
 
 const App = () => (
   <ErrorBoundary>
+    <MotionConfig reducedMotion="user">
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <CalendlyProvider>
@@ -94,6 +96,7 @@ const App = () => (
         </CalendlyProvider>
       </TooltipProvider>
     </QueryClientProvider>
+    </MotionConfig>
   </ErrorBoundary>
 );
 

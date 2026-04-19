@@ -6,6 +6,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useCalendly } from '@/contexts/CalendlyContext';
 import { Link, useLocation } from 'react-router-dom';
 import MobileMenu from '@/components/MobileMenu';
+import logo from '@/assets/logo.png';
 
 
 const Header = () => {
@@ -79,9 +80,9 @@ const Header = () => {
         >
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link 
-              to="/" 
-              className="text-lg sm:text-xl font-bold text-foreground hover:text-primary transition-colors"
+            <Link
+              to="/"
+              className="inline-flex items-center gap-2.5 text-lg sm:text-xl font-bold text-foreground hover:text-primary transition-colors"
               aria-label="Elie Ageron - Web Design - Home"
               onClick={() => {
                 if (location.pathname === '/') {
@@ -89,6 +90,7 @@ const Header = () => {
                 }
               }}
             >
+              <img src={logo} alt="" aria-hidden="true" width={28} height={28} className="w-7 h-7 rounded-md shrink-0" />
               Elie Ageron
             </Link>
 

@@ -35,7 +35,6 @@ const OrganizationSchema = () => {
     },
     sameAs: [
       'https://www.linkedin.com/in/elie-ageron-289636394',
-      'https://calendly.com/web-elieageron/30min',
     ],
     contactPoint: {
       '@type': 'ContactPoint',
@@ -51,7 +50,7 @@ const OrganizationSchema = () => {
         latitude: 46.603354,
         longitude: 1.888334,
       },
-      geoRadius: '5000',
+      geoRadius: '50000',
     },
     priceRange: '€€',
     currenciesAccepted: 'EUR',
@@ -62,7 +61,7 @@ const OrganizationSchema = () => {
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '5',
-      reviewCount: '3',
+      reviewCount: '4',
       bestRating: '5',
       worstRating: '1',
     },
@@ -142,7 +141,7 @@ const OrganizationSchema = () => {
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '5',
-      reviewCount: '3',
+      reviewCount: '4',
       bestRating: '5',
       worstRating: '1',
     },

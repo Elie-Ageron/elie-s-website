@@ -27,7 +27,6 @@ const JsonLd = () => {
     },
     sameAs: [
       'https://www.linkedin.com/in/elie-ageron-289636394',
-      'https://calendly.com/web-elieageron/30min',
     ],
     knowsAbout: [
       'Web Design',
@@ -52,6 +51,13 @@ const JsonLd = () => {
     telephone: '+33695555318',
     email: 'web@elieageron.com',
     priceRange: '€€',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5',
+      reviewCount: '4',
+      bestRating: '5',
+      worstRating: '1',
+    },
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Annecy',

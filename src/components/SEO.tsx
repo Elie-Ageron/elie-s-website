@@ -146,8 +146,10 @@ const SEO = ({ page, customTitle, customDescription, customCanonical, ogImage, o
       {/* Language */}
       <html lang={language} />
       
-      {/* Canonical - simplified hreflang: same URL serves both languages */}
+      {/* Canonical + hreflang: both languages live at the same URL */}
       <link rel="canonical" href={canonicalUrl} />
+      <link rel="alternate" hrefLang="fr" href={canonicalUrl} />
+      <link rel="alternate" hrefLang="en" href={canonicalUrl} />
       <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
       
       {/* Open Graph / Facebook - Unique per page */}
@@ -177,12 +179,10 @@ const SEO = ({ page, customTitle, customDescription, customCanonical, ogImage, o
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@elieageron" />
       <meta name="twitter:url" content={canonicalUrl} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImageUrl} />
-      <meta name="twitter:creator" content="@elieageron" />
       
       {/* Additional SEO */}
       <meta name="keywords" content={keywords} />

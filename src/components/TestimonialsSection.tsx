@@ -211,8 +211,21 @@ const TestimonialsSection = () => {
             </motion.div>
           </AnimatePresence>
 
+          {/* Swipe hint - mobile only, shown once */}
+          <motion.div
+            className="flex sm:hidden justify-center items-center gap-1.5 mt-4 text-xs text-muted-foreground/50"
+            initial={{ opacity: 1 }}
+            animate={{ opacity: [1, 1, 0] }}
+            transition={{ duration: 3, times: [0, 0.7, 1], delay: 1, repeat: 0 }}
+            aria-hidden="true"
+          >
+            <motion.span animate={{ x: [-4, 4, -4] }} transition={{ duration: 1.2, repeat: 2, ease: 'easeInOut' }}>←</motion.span>
+            <span>swipe</span>
+            <motion.span animate={{ x: [4, -4, 4] }} transition={{ duration: 1.2, repeat: 2, ease: 'easeInOut' }}>→</motion.span>
+          </motion.div>
+
           {/* Dots Indicator - Touch optimized with 44x44 min touch target */}
-          <div className="flex justify-center gap-1 mt-8">
+          <div className="flex justify-center gap-1 mt-4">
             {testimonials.map((_, index) => (
               <button
                 key={index}

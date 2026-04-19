@@ -27,6 +27,7 @@ const HeroSection = () => {
   const isMobile = useIsMobile();
   const [mounted, setMounted] = useState(false);
   const [show3D, setShow3D] = useState(false);
+  const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // Avoid loading WebGL during pre-render / first paint on mobile.
   useEffect(() => {
@@ -37,7 +38,7 @@ const HeroSection = () => {
   // 800ms ensures the hero text, CTA and social proof paint before WebGL initialises.
   useEffect(() => {
     if (!mounted) return;
-    if (!isMobile) {
+    if (!isMobile && !prefersReducedMotion) {
       const timer = setTimeout(() => setShow3D(true), 800);
       return () => clearTimeout(timer);
     }
