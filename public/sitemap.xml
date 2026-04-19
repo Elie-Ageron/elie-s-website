@@ -123,6 +123,39 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Article : Combien coûte un site web -->
+  <url>
+    <loc>https://elieageron.com/blog/combien-coute-un-site-web</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/blog/combien-coute-un-site-web" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog/combien-coute-un-site-web" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/blog/combien-coute-un-site-web" />
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Article : Site web pour artisan -->
+  <url>
+    <loc>https://elieageron.com/blog/site-web-artisan</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/blog/site-web-artisan" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog/site-web-artisan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/blog/site-web-artisan" />
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Article : Pourquoi mon site n'est pas sur Google -->
+  <url>
+    <loc>https://elieageron.com/blog/pourquoi-site-pas-sur-google</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/blog/pourquoi-site-pas-sur-google" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog/pourquoi-site-pas-sur-google" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/blog/pourquoi-site-pas-sur-google" />
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Pages villes — SEO local -->
   <url>
     <loc>https://elieageron.com/web-designer-annecy</loc>

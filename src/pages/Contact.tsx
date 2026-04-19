@@ -25,8 +25,8 @@ const Contact = () => {
     { 
       icon: Mail, 
       label: 'Email', 
-      value: 'elieageron@gmail.com', 
-      href: 'mailto:elieageron@gmail.com', 
+      value: 'web@elieageron.com',
+      href: 'mailto:web@elieageron.com',
       description: language === 'fr' ? 'Pour les demandes détaillées, réponse sous 24h' : 'For detailed inquiries, response within 24h',
       cta: language === 'fr' ? 'Envoyer un email' : 'Send an email',
       color: 'bg-primary/10',
