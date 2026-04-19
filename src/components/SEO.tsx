@@ -41,7 +41,7 @@ const pageKeywords = {
 const seoData = {
   en: {
     home: {
-      title: 'Web Designer France | Elie Ageron — From $500',
+      title: 'Web Designer France | Elie Ageron, from $500',
       description: 'Premium web design by Elie Ageron, based in Annecy, France. Sites that convert visitors into paying clients. Live in 7–14 days from $500. Free strategy call.',
     },
     why: {
@@ -75,7 +75,7 @@ const seoData = {
   },
   fr: {
     home: {
-      title: 'Création Site Web Annecy | Elie Ageron — Dès 500€',
+      title: 'Création Site Web Annecy | Elie Ageron, dès 500€',
       description: 'Web designer freelance à Annecy. Sites pros qui convertissent les visiteurs en clients. Livraison en 7–14 jours, dès 500€. Appel stratégique gratuit.',
     },
     why: {

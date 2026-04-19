@@ -10,6 +10,7 @@ import FloatingElements from './animations/FloatingElements';
 import logoVmProducers from '@/assets/logo vm producers.png';
 import logoSolarFusion from '@/assets/logo solar fusion.png';
 import logoMywebglory from '@/assets/logo mwg.png';
+import logoMyDrop from '@/assets/mydrop logo (1).png';
 
 const TestimonialsSection = () => {
   const { t } = useLanguage();
@@ -17,6 +18,28 @@ const TestimonialsSection = () => {
   const [dragDirection, setDragDirection] = useState<number>(0);
 
   const testimonials = [
+    {
+      text: t('testimonial.4.text'),
+      author: t('testimonial.4.author'),
+      founder: t('testimonial.4.founder'),
+      role: t('testimonial.4.role'),
+      date: t('testimonial.4.date'),
+      rating: 5,
+      image: logoMyDrop,
+      isCompany: true,
+      whiteLogo: false,
+    },
+    {
+      text: t('testimonial.3.text'),
+      author: t('testimonial.3.author'),
+      founder: t('testimonial.3.founder'),
+      role: t('testimonial.3.role'),
+      date: t('testimonial.3.date'),
+      rating: 5,
+      image: logoMywebglory,
+      isCompany: true,
+      whiteLogo: false,
+    },
     {
       text: t('testimonial.1.text'),
       author: t('testimonial.1.author'),
@@ -36,17 +59,6 @@ const TestimonialsSection = () => {
       date: t('testimonial.2.date'),
       rating: 5,
       image: logoSolarFusion,
-      isCompany: true,
-      whiteLogo: false,
-    },
-    {
-      text: t('testimonial.3.text'),
-      author: t('testimonial.3.author'),
-      founder: t('testimonial.3.founder'),
-      role: t('testimonial.3.role'),
-      date: t('testimonial.3.date'),
-      rating: 5,
-      image: logoMywebglory,
       isCompany: true,
       whiteLogo: false,
     },

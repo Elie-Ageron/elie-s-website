@@ -13,42 +13,42 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const PHASES = {
   fr: [
     {
-      label: '01 — Découverte',
+      label: '01. Découverte',
       line1: 'On comprend',
       line2: 'votre vision',
       body: "Un appel de 30 minutes pour cerner vos objectifs, votre audience et ce qui vous différencie. Votre site commence ici.",
     },
     {
-      label: '02 — Conception',
+      label: '02. Conception',
       line1: 'On construit',
       line2: 'couche par couche',
-      body: "Design, structure, copywriting — chaque élément est pensé pour convertir. Vous validez à chaque étape.",
+      body: "Design, structure, copywriting : chaque élément est pensé pour convertir. Vous validez à chaque étape.",
     },
     {
-      label: '03 — Lancement',
+      label: '03. Lancement',
       line1: 'Votre site',
       line2: 'prêt à convertir',
-      body: "Mise en ligne en 7 à 14 jours. SEO, performance, mobile — tout est optimisé avant que vos premiers visiteurs arrivent.",
+      body: "Mise en ligne en 7 à 14 jours. SEO, performance, mobile : tout est optimisé avant que vos premiers visiteurs arrivent.",
     },
   ],
   en: [
     {
-      label: '01 — Discovery',
+      label: '01. Discovery',
       line1: 'We understand',
       line2: 'your vision',
       body: "A 30-minute call to understand your goals, your audience, and what sets you apart. Your site starts here.",
     },
     {
-      label: '02 — Build',
+      label: '02. Build',
       line1: 'We build',
       line2: 'layer by layer',
-      body: "Design, structure, copywriting — every element is crafted to convert. You validate at each step.",
+      body: "Design, structure, copywriting: every element is crafted to convert. You validate at each step.",
     },
     {
-      label: '03 — Launch',
+      label: '03. Launch',
       line1: 'Your site',
       line2: 'ready to convert',
-      body: "Live in 7 to 14 days. SEO, performance, mobile — everything is optimised before your first visitors arrive.",
+      body: "Live in 7 to 14 days. SEO, performance, mobile: everything is optimised before your first visitors arrive.",
     },
   ],
 } as const;

@@ -447,8 +447,8 @@ Want to create a landing page that converts? [Let's talk about your project](/co
     slug: 'combien-coute-un-site-web',
     titleFr: 'Combien coûte un site web ? La vraie réponse.',
     titleEn: 'How Much Does a Website Cost? The Real Answer.',
-    excerptFr: 'Entre 0€ et 50 000€, la fourchette est large. Ce qui détermine le prix, ce ne sont pas les heures passées — c\'est ce que le site vous rapporte.',
-    excerptEn: 'Between €0 and €50,000, the range is wide. What determines the price isn\'t the hours spent — it\'s what the site brings back to you.',
+    excerptFr: 'Entre 0€ et 50 000€, la fourchette est large. Ce qui détermine le prix, ce ne sont pas les heures passées, c\'est ce que le site vous rapporte.',
+    excerptEn: 'Between €0 and €50,000, the range is wide. What determines the price isn\'t the hours spent, it\'s what the site brings back to you.',
     readTime: '6 min',
     categoryFr: 'Stratégie',
     categoryEn: 'Strategy',
@@ -467,17 +467,17 @@ La réponse honnête, c\'est : ça dépend. Je sais que c\'est frustrant à ente
 
 Un site web peut coûter 0€ ou 80 000€. Ces deux extrêmes existent vraiment, et entre les deux, il y a un spectre immense. Concrètement, voici comment ça se découpe.
 
-**Les créateurs en ligne** (Wix, Squarespace, Webflow en mode sans-code) : de 0 à 30€ par mois. Vous faites tout vous-même avec des templates préfabriqués. Le résultat peut être propre si vous y consacrez du temps. Mais votre site ressemblera à celui de vos concurrents qui utilisent le même template, et le référencement reste limité — ce n\'est pas fait pour ça.
+**Les créateurs en ligne** (Wix, Squarespace, Webflow en mode sans-code) : de 0 à 30€ par mois. Vous faites tout vous-même avec des templates préfabriqués. Le résultat peut être propre si vous y consacrez du temps. Mais votre site ressemblera à celui de vos concurrents qui utilisent le même template, et le référencement reste limité. Ce n\'est pas fait pour ça.
 
-**Un freelance** : entre 500€ et 5 000€. C\'est là que se situent la plupart des petites entreprises. Un bon freelance s\'occupe du design, du développement et du référencement de base. La qualité varie énormément d\'un prestataire à l\'autre — c\'est pour ça que le portfolio et les avis clients comptent autant que le tarif affiché.
+**Un freelance** : entre 500€ et 5 000€. C\'est là que se situent la plupart des petites entreprises. Un bon freelance s\'occupe du design, du développement et du référencement de base. La qualité varie énormément d\'un prestataire à l\'autre, et c\'est pour ça que le portfolio et les avis clients comptent autant que le tarif affiché.
 
 **Une agence** : à partir de 5 000€, souvent bien au-delà. Vous payez aussi les locaux, les commerciaux, les réunions de cadrage. Pour une TPE avec des besoins standard, c\'est souvent plus cher que nécessaire.
 
 ## Ce qui fait monter la facture
 
-Le nombre de pages est le premier facteur. Une landing page unique — une seule page qui présente votre offre et pousse le visiteur à vous contacter — est bien moins coûteuse qu\'un site avec huit pages de contenu, un blog et des pages de service détaillées.
+Le nombre de pages est le premier facteur. Une landing page unique (une seule page qui présente votre offre et pousse le visiteur à vous contacter) est bien moins coûteuse qu\'un site avec huit pages de contenu, un blog et des pages de service détaillées.
 
-Les fonctionnalités spécifiques ajoutent aussi du temps, donc du coût. Un système de réservation en ligne, un espace client, une boutique e-commerce — chacun représente des heures de développement supplémentaires.
+Les fonctionnalités spécifiques ajoutent aussi du temps, donc du coût. Un système de réservation en ligne, un espace client, une boutique e-commerce : chacun représente des heures de développement supplémentaires.
 
 Et puis il y a le niveau de personnalisation. Un site conçu entièrement sur mesure, avec une identité visuelle unique, demande plus de travail qu\'un template modifié. C\'est souvent là que réside la vraie différence entre un site qui ressemble à n\'importe qui et un site qui ressemble à vous.
 
@@ -487,7 +487,7 @@ Oui. Le prix ne garantit pas la qualité.
 
 Un site à 800€ fait par quelqu\'un qui comprend la conversion et le référencement battra souvent un site à 5 000€ conçu par une agence qui se concentre sur l\'esthétique. Ce qui compte vraiment : est-ce que le visiteur comprend immédiatement ce que vous faites ? Est-ce qu\'il sait quoi faire pour vous contacter ? Est-ce que la page charge vite sur mobile ?
 
-Si oui, le site fait son travail — quel que soit son prix.
+Si oui, le site fait son travail, quel que soit son prix.
 
 ## La vraie question à se poser
 
@@ -512,9 +512,9 @@ The honest answer is: it depends. I know that\'s frustrating to hear. So here\'s
 
 A website can cost €0 or €80,000. Both extremes exist, and between them is an enormous range. Here\'s how it breaks down in practice.
 
-**Online builders** (Wix, Squarespace, Webflow no-code): €0 to €30 per month. You do everything yourself with pre-made templates. The result can look decent if you invest the time. But your site will look like your competitors\' who used the same template, and SEO remains limited — it\'s not really built for that.
+**Online builders** (Wix, Squarespace, Webflow no-code): €0 to €30 per month. You do everything yourself with pre-made templates. The result can look decent if you invest the time. But your site will look like your competitors\' who used the same template, and SEO remains limited. It\'s not really built for that.
 
-**A freelancer**: between €500 and €5,000. This is where most small businesses land. A good freelancer handles design, development and basic SEO. Quality varies enormously from one provider to another — which is why portfolio and client reviews matter as much as the listed price.
+**A freelancer**: between €500 and €5,000. This is where most small businesses land. A good freelancer handles design, development and basic SEO. Quality varies enormously from one provider to another, which is why portfolio and client reviews matter as much as the listed price.
 
 **An agency**: from €5,000, often much higher. You\'re also paying for offices, salespeople, and kickoff meetings. For a small business with standard needs, it\'s often more expensive than necessary.
 
@@ -522,7 +522,7 @@ A website can cost €0 or €80,000. Both extremes exist, and between them is a
 
 The number of pages is the first factor. A single landing page is far less expensive than a site with eight content pages, a blog and detailed service pages.
 
-Specific features add time, therefore cost. An online booking system, a client portal, an e-commerce shop — each represents additional development hours.
+Specific features add time, therefore cost. An online booking system, a client portal, an e-commerce shop: each represents additional development hours.
 
 Then there\'s the level of customisation. A fully bespoke site, with a unique visual identity, requires more work than a modified template. This is often where the real difference lies between a site that looks like anyone else and one that looks like you.
 
@@ -532,7 +532,7 @@ Yes. Price doesn\'t guarantee quality.
 
 An €800 site built by someone who understands conversion and SEO will often outperform a €5,000 site designed by an agency focused on aesthetics. What actually matters: does the visitor immediately understand what you do? Do they know how to contact you? Does the page load quickly on mobile?
 
-If yes, the site does its job — regardless of cost.
+If yes, the site does its job, regardless of cost.
 
 ## The real question to ask
 
@@ -544,7 +544,7 @@ If you\'re starting with a tight budget, a well-designed landing page beats a bo
 
 ---
 
-Want to know what a site could realistically do for your business? [Let\'s talk — it\'s free.](/contact)
+Want to know what a site could realistically do for your business? [Let\'s talk, it\'s free.](/contact)
     `,
   },
   {
@@ -576,11 +576,11 @@ Un ami recommande votre travail à quelqu\'un. Super. Mais aujourd\'hui, avant d
 
 Si elle ne trouve rien, elle hésite. Si elle trouve un site impossible à lire sur mobile ou qui date de 2014, elle passe à celui d\'à côté. Qui lui, a pris la peine de soigner sa présence.
 
-Le bouche-à-oreille reste précieux — mais il ne garantit plus la conversion tout seul. Les gens vérifient. Toujours, et de plus en plus.
+Le bouche-à-oreille reste précieux, mais il ne garantit plus la conversion tout seul. Les gens vérifient. Toujours, et de plus en plus.
 
 ## La réalité de vos clients aujourd\'hui
 
-Les 25-45 ans — ceux qui font appel à un artisan pour une rénovation, une installation, une mise aux normes — ne cherchent plus dans les pages jaunes. Ils cherchent sur Google, ils lisent des avis, ils regardent des photos de vos réalisations.
+Les 25-45 ans, ceux qui font appel à un artisan pour une rénovation, une installation, une mise aux normes, ne cherchent plus dans les pages jaunes. Ils cherchent sur Google, ils lisent des avis, ils regardent des photos de vos réalisations.
 
 Si vous n\'êtes pas là, vous n\'existez pas pour eux. C\'est brutal à entendre, mais c\'est réversible en quelques semaines.
 
@@ -598,13 +598,13 @@ Oui. Et le jour où vous voudrez développer votre activité, recruter un appren
 
 Le bouche-à-oreille ne se pilote pas. Il ne se développe pas à volonté. Un site, si.
 
-Et même si vous ne cherchez pas à grandir : pensez à ce que vous perdez chaque mois. Les gens qui vous cherchent, qui ne vous trouvent pas, qui appellent quelqu\'un d\'autre. C\'est silencieux comme perte — mais c\'est réel.
+Et même si vous ne cherchez pas à grandir : pensez à ce que vous perdez chaque mois. Les gens qui vous cherchent, qui ne vous trouvent pas, qui appellent quelqu\'un d\'autre. C\'est une perte silencieuse. Mais elle est bien réelle.
 
 ## Ce dont vous avez besoin concrètement
 
 Pour un artisan, c\'est souvent simple. Une page claire avec ce que vous faites, votre zone d\'intervention, vos réalisations en photo, et un moyen de vous contacter. Pas besoin d\'un site de dix pages.
 
-Une landing page bien conçue suffit pour exister en ligne et commencer à capter des contacts. C\'est un investissement qui se rembourse souvent dès le premier nouveau chantier trouvé via Google — et après ça, il continue de travailler pour vous.
+Une landing page bien conçue suffit pour exister en ligne et commencer à capter des contacts. C\'est un investissement qui se rembourse souvent dès le premier nouveau chantier trouvé via Google. Après ça, il continue de travailler pour vous.
 
 ---
 
@@ -625,11 +625,11 @@ A friend recommends your work to someone. Great. But today, before calling, that
 
 If they find nothing, they hesitate. If they find a site that\'s impossible to read on mobile or looks like it\'s from ten years ago, they move on to whoever comes up next. The one who took the time to sort out their online presence.
 
-Word of mouth is still valuable — but it no longer guarantees the conversion on its own. People check. Always, and increasingly.
+Word of mouth is still valuable, but it no longer guarantees conversion on its own. People check. Always, and increasingly.
 
 ## The reality of your clients today
 
-The 25-45 year olds — those who hire tradespeople for renovations, installations, compliance work — no longer look in phone directories. They search on Google, read reviews, and look at photos of your completed jobs.
+The 25-45 year olds, those who hire tradespeople for renovations, installations or compliance work, no longer look in phone directories. They search on Google, read reviews, and look at photos of your completed jobs.
 
 If you\'re not there, you don\'t exist for them. That\'s hard to hear, but it\'s fixable within a few weeks.
 
@@ -647,17 +647,17 @@ Yes. And the day you want to grow your business, take on an apprentice, or move 
 
 Word of mouth can\'t be controlled or scaled on demand. A website can.
 
-And even if you\'re not looking to grow: think about what you\'re losing every month. People searching for you, finding nothing, calling someone else. It\'s a silent loss — but it\'s real.
+And even if you\'re not looking to grow: think about what you\'re losing every month. People searching for you, finding nothing, calling someone else. It\'s a real loss, even if you never see it.
 
 ## What you actually need
 
 For a tradesperson, it\'s often straightforward. One clear page with what you do, your service area, photos of your work, and a way to contact you. No need for a ten-page site.
 
-A well-designed landing page is enough to exist online and start capturing contacts. It\'s an investment that typically pays for itself with the first new job found through Google — and after that, it keeps working for you.
+A well-designed landing page is enough to exist online and start capturing contacts. It\'s an investment that typically pays for itself with the first new job found through Google. After that, it keeps working for you.
 
 ---
 
-You\'re a tradesperson and you want to know what a website could change for you? [Let\'s talk — 30 minutes.](/contact)
+You\'re a tradesperson and want to know what a website could change for you? [Let\'s talk, 30 minutes, free.](/contact)
     `,
   },
   {
@@ -679,7 +679,7 @@ You\'re a tradesperson and you want to know what a website could change for you?
 
 Vous avez mis votre site en ligne. Vous êtes content du résultat. Et puis vous tapez le nom de votre activité sur Google et... vous ne vous trouvez pas.
 
-C\'est l\'une des premières frustrations après une mise en ligne. Et c\'est presque toujours explicable — il y a rarement un mystère là-dedans. Voici les raisons les plus fréquentes, et ce que vous pouvez faire.
+C\'est l\'une des premières frustrations après une mise en ligne. Et c\'est presque toujours explicable. Il y a rarement un vrai mystère là-dedans. Voici les raisons les plus fréquentes, et ce que vous pouvez faire.
 
 ## Google ne sait pas encore que vous existez
 
@@ -687,7 +687,7 @@ C\'est souvent là que ça coince. Google ne parcourt pas automatiquement intern
 
 La solution : Google Search Console. C\'est un outil gratuit de Google. Vous soumettez votre sitemap (un fichier qui liste toutes les pages de votre site), et vous demandez l\'indexation manuelle de votre page d\'accueil. Ça prend dix minutes et ça accélère considérablement le processus.
 
-Si vous ne l\'avez pas fait, faites-le aujourd\'hui — avant de chercher une autre explication.
+Si vous ne l\'avez pas fait, faites-le aujourd\'hui, avant de chercher une autre explication.
 
 ## Être indexé et être visible sur Google, c\'est deux choses différentes
 
@@ -695,17 +695,17 @@ C\'est un point que beaucoup confondent. Google peut connaître l\'existence de 
 
 Pour se classer, Google évalue des centaines de critères. Les plus importants pour un nouveau site :
 
-La pertinence du contenu. Vos textes parlent-ils des mots-clés que vos clients tapent vraiment ? "Plombier chauffagiste Annecy" doit apparaître naturellement dans vos titres et vos paragraphes — pas juste dans un code caché que personne ne lit.
+La pertinence du contenu. Vos textes parlent-ils des mots-clés que vos clients tapent vraiment ? "Plombier chauffagiste Annecy" doit apparaître naturellement dans vos titres et vos paragraphes, pas juste dans un code caché que personne ne lit.
 
-L\'autorité de votre domaine. C\'est la confiance que Google vous accorde au fil du temps. Un site de trois semaines n\'a pas encore cette autorité. C\'est normal, ça se construit — avec du contenu, du temps, et des liens depuis d\'autres sites vers le vôtre.
+L\'autorité de votre domaine. C\'est la confiance que Google vous accorde au fil du temps. Un site de trois semaines n\'a pas encore cette autorité. C\'est normal, ça se construit avec du contenu, du temps, et des liens depuis d\'autres sites vers le vôtre.
 
-La qualité technique. Vitesse de chargement, compatibilité mobile, structure de la page — Google prend en compte l\'expérience que vous offrez aux visiteurs pour décider si vous méritez d\'être en haut.
+La qualité technique. Vitesse de chargement, compatibilité mobile, structure de la page : Google prend en compte l\'expérience que vous offrez aux visiteurs pour décider si vous méritez d\'être en haut.
 
 ## Votre site est peut-être bloqué par erreur
 
 Ça arrive plus souvent qu\'on ne le croit, surtout sur les sites récemment lancés. Pendant le développement, les développeurs activent parfois une option qui dit à Google de ne pas indexer le site (pour éviter d\'indexer une version incomplète). Si cette option a été oubliée après la mise en ligne, Google vous voit mais refuse d\'afficher vos pages.
 
-Comment vérifier : dans Google Search Console, l\'onglet "Couverture" vous dira si vos pages sont exclues de l\'index. Vous pouvez aussi taper `site:votre-domaine.com` dans Google — si rien ne s\'affiche, c\'est un signal qu\'il y a un blocage.
+Comment vérifier : dans Google Search Console, l\'onglet "Couverture" vous dira si vos pages sont exclues de l\'index. Vous pouvez aussi taper "site:votre-domaine.com" dans Google. Si rien ne s\'affiche, c\'est un signal qu\'il y a un blocage.
 
 C\'est un problème qui se règle en cinq minutes une fois qu\'on sait où chercher.
 
@@ -713,7 +713,7 @@ C\'est un problème qui se règle en cinq minutes une fois qu\'on sait où cherc
 
 C\'est subtil, mais très répandu. Vous tapez "création de site web" parce que c\'est ce que vous proposez. Mais vos clients, eux, tapent "faire un site pour mon salon de coiffure" ou "site internet pour boulangerie pas cher".
 
-Le bon référencement, ça commence par comprendre ce que vos clients cherchent — pas ce que vous pensez qu\'ils cherchent. Ces deux choses ne sont pas toujours les mêmes.
+Le bon référencement, ça commence par comprendre ce que vos clients cherchent vraiment, pas ce que vous pensez qu\'ils cherchent. Ces deux choses ne sont pas toujours les mêmes.
 
 ## Ce qu\'il faut garder en tête
 
@@ -721,7 +721,7 @@ Un nouveau site bien construit met en général trois à six mois pour commencer
 
 Pendant ce temps, le meilleur que vous puissiez faire : soumettre votre sitemap, vérifier qu\'aucun blocage n\'est actif, et continuer à écrire du contenu qui répond aux vraies questions de vos clients. Chaque page bien rédigée est une porte d\'entrée supplémentaire depuis Google.
 
-Le référencement, c\'est un travail de fond. Mais avec les bons fondamentaux en place, les résultats arrivent — et ils durent.
+Le référencement, c\'est un travail de fond. Mais avec les bons fondamentaux en place, les résultats arrivent. Et ils durent.
 
 ---
 
@@ -732,7 +732,7 @@ Votre site ne remonte pas sur Google et vous voulez comprendre pourquoi ? [Regar
 
 You launched your site. You\'re happy with the result. Then you type your business into Google and... nothing.
 
-It\'s one of the first frustrations after going live. And it\'s almost always explainable — there\'s rarely a real mystery. Here are the most common reasons, and what you can do.
+It\'s one of the first frustrations after going live. And it\'s almost always explainable. There\'s rarely a real mystery. Here are the most common reasons, and what you can do.
 
 ## Google doesn\'t know you exist yet
 
@@ -740,7 +740,7 @@ This is often where it gets stuck. Google doesn\'t automatically crawl the entir
 
 The solution: Google Search Console. It\'s a free Google tool. You submit your sitemap (a file listing all your site\'s pages) and request manual indexing for your homepage. It takes ten minutes and significantly speeds up the process.
 
-If you haven\'t done this, do it today — before looking for any other explanation.
+If you haven\'t done this, do it today, before looking for any other explanation.
 
 ## Being indexed and being visible on Google are two different things
 
@@ -748,17 +748,17 @@ This is something many people confuse. Google can know your site exists and stil
 
 To rank, Google evaluates hundreds of criteria. The most important for a new site:
 
-Relevance of your content. Do your texts talk about the keywords your clients actually type? "Plumber Annecy" should appear naturally in your titles and paragraphs — not just hidden in code that no one reads.
+Relevance of your content. Do your texts talk about the keywords your clients actually type? "Plumber Annecy" should appear naturally in your titles and paragraphs, not just hidden in code that no one reads.
 
-Your domain authority. This is the trust Google grants you over time. A three-week-old site doesn\'t have this authority yet. That\'s normal — it builds with content, time, and links from other sites pointing to yours.
+Your domain authority. This is the trust Google grants you over time. A three-week-old site doesn\'t have this authority yet. That\'s normal. It builds with content, time, and links from other sites pointing to yours.
 
-Technical quality. Loading speed, mobile compatibility, page structure — Google considers the experience you offer visitors when deciding whether you deserve to rank.
+Technical quality. Loading speed, mobile compatibility, page structure: Google considers the experience you offer visitors when deciding whether you deserve to rank.
 
 ## Your site might be blocked by mistake
 
 This happens more often than you\'d think, especially on recently launched sites. During development, developers sometimes activate an option telling Google not to index the site (to avoid indexing an incomplete version). If this option was forgotten after launch, Google sees you but refuses to display your pages.
 
-How to check: in Google Search Console, the "Coverage" tab will tell you if your pages are excluded from the index. You can also type `site:your-domain.com` into Google — if nothing comes up, that\'s a signal there\'s a block in place.
+How to check: in Google Search Console, the "Coverage" tab will tell you if your pages are excluded from the index. You can also type "site:your-domain.com" into Google. If nothing comes up, that\'s a signal there\'s a block in place.
 
 It\'s a problem that takes five minutes to fix once you know where to look.
 
@@ -766,7 +766,7 @@ It\'s a problem that takes five minutes to fix once you know where to look.
 
 This is subtle but very common. You type "web design" because that\'s what you offer. But your clients type "website for my hairdressing salon" or "cheap website for bakery."
 
-Good SEO starts with understanding what your clients are actually searching for — not what you think they\'re searching for. Those two things aren\'t always the same.
+Good SEO starts with understanding what your clients are actually searching for, not what you think they\'re searching for. Those two things aren\'t always the same.
 
 ## What to keep in mind
 
@@ -774,7 +774,7 @@ A well-built new site generally takes three to six months to start appearing for
 
 In the meantime, the best you can do: submit your sitemap, check no blocks are active, and keep writing content that answers your clients\' real questions. Every well-written page is an additional entry point from Google.
 
-SEO is a long game. But with the right foundations in place, results come — and they last.
+SEO is a long game. But with the right foundations in place, results come. And they last.
 
 ---
 

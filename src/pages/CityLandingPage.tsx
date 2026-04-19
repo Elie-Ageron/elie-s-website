@@ -214,8 +214,8 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
           >
             <span className="w-1.5 h-1.5 bg-primary/70 rounded-full shrink-0" aria-hidden="true" />
             {language === 'fr'
-              ? 'Places limitées — je travaille avec peu de clients à la fois pour garantir la qualité.'
-              : 'Limited spots — I work with a select few clients at a time to guarantee quality.'}
+              ? 'Places limitées. Je travaille avec peu de clients à la fois pour garantir la qualité.'
+              : 'Limited spots. I take on a small number of clients at a time to keep the quality high.'}
           </motion.p>
 
           {/* Social proof badges */}

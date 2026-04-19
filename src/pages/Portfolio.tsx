@@ -8,6 +8,7 @@ import SEO from '@/components/SEO';
 import portfolioMyWebGlory from '@/assets/portfolio-mywebglory.png';
 import portfolioSolarFusion from '@/assets/portfolio-solar-fusion.png';
 import portfolioVmProducers from '@/assets/portfolio-vm-producers.png';
+import portfolioMyDrop from '@/assets/portfolio mydrop.png';
 
 interface PortfolioItemProps {
   image: string;
@@ -140,6 +141,14 @@ const Portfolio = () => {
           ? 'Site vitrine pour label de production musicale'
           : 'Showcase website for a music production label',
       },
+      {
+        '@type': 'WebSite',
+        name: 'MyDrop',
+        url: 'https://mydropai.com',
+        description: language === 'fr'
+          ? 'Site web pour une plateforme SaaS de gestion des réseaux sociaux par IA'
+          : 'Website for an AI-powered social media management SaaS platform',
+      },
     ],
   };
 
@@ -191,6 +200,19 @@ const Portfolio = () => {
         ? 'Elie a compris notre univers immédiatement. Le résultat est percutant, professionnel, exactement ce qu\'on voulait.'
         : 'Elie understood our world straight away. The result is sharp, professional, and exactly what we were after.',
       quoteAuthor: 'Austin Talley – VM Producers',
+    },
+    {
+      image: portfolioMyDrop,
+      name: 'MyDrop',
+      url: 'https://mydropai.com',
+      categoryKey: 'portfolio.showcase.mydrop.category',
+      ctaKey: 'portfolio.showcase.mydrop.cta',
+      descKey: 'portfolio.showcase.mydrop.desc',
+      alt: 'MyDrop - Site web pour une plateforme SaaS de gestion des réseaux sociaux créé par Elie Ageron Web Design',
+      quote: language === 'fr'
+        ? 'Elie a su comprendre ce qu\'on construisait et l\'a traduit en un site qui fonctionne vraiment. Rapide, clair, et il pousse les visiteurs à s\'inscrire.'
+        : 'Elie really understood what we were building and translated it into a site that works. Fast, clear, and it pushes visitors to sign up.',
+      quoteAuthor: 'Gabriel Ageron – Fondateur, MyDrop',
     },
   ];
 
