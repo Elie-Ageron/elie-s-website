@@ -41,8 +41,8 @@ const pageKeywords = {
 const seoData = {
   en: {
     home: {
-      title: 'Elie Ageron | Premium Web Design & Conversion Expert',
-      description: 'Transform your online presence with Elie Ageron. Premium web design that converts visitors into paying clients. Fast delivery, affordable pricing. Based in France, serving worldwide.',
+      title: 'Web Designer France | Elie Ageron — From $500',
+      description: 'Premium web design by Elie Ageron, based in Annecy, France. Sites that convert visitors into paying clients. Live in 7–14 days from $500. Free strategy call.',
     },
     why: {
       title: 'Why You Need a Website | Elie Ageron',
@@ -75,8 +75,8 @@ const seoData = {
   },
   fr: {
     home: {
-      title: 'Elie Ageron | Expert Création de Sites Web & Conversion',
-      description: 'Transformez votre présence en ligne avec Elie Ageron. Sites web premium qui convertissent les visiteurs en clients. Livraison en 7-14 jours ouvrés. Basé en France.',
+      title: 'Création Site Web Annecy | Elie Ageron — Dès 500€',
+      description: 'Web designer freelance à Annecy. Sites pros qui convertissent les visiteurs en clients. Livraison en 7–14 jours, dès 500€. Appel stratégique gratuit.',
     },
     why: {
       title: 'Pourquoi un Site Web | Elie Ageron',

@@ -36,7 +36,6 @@ const OrganizationSchema = () => {
     sameAs: [
       'https://www.linkedin.com/in/elie-ageron-289636394',
       'https://calendly.com/web-elieageron/30min',
-      'https://www.google.com/maps/place/Elie+Ageron/@22.7831408,-94.7852384,3z/data=!3m1!4b1!4m6!3m5!1s0x478bc3783d27ffe3:0x8de1f75d4ab27b78!8m2!3d30.6959409!4d-49.8171262!16s%2Fg%2F11yyfd5c7c',
     ],
     contactPoint: {
       '@type': 'ContactPoint',
@@ -85,7 +84,6 @@ const OrganizationSchema = () => {
     priceRange: '\u20ac\u20ac',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Annecy',
       addressLocality: 'Annecy',
       addressRegion: 'Haute-Savoie',
       postalCode: '74000',
@@ -106,11 +104,21 @@ const OrganizationSchema = () => {
     ],
     sameAs: [
       'https://www.linkedin.com/in/elie-ageron-289636394',
-      'https://www.google.com/maps/place/Elie+Ageron/@22.7831408,-94.7852384,3z/data=!3m1!4b1!4m6!3m5!1s0x478bc3783d27ffe3:0x8de1f75d4ab27b78!8m2!3d30.6959409!4d-49.8171262!16s%2Fg%2F11yyfd5c7c',
     ],
     areaServed: [
+      { '@type': 'City', name: 'Thônes' },
       { '@type': 'City', name: 'Annecy' },
-      { '@type': 'State', name: 'Haute-Savoie' },
+      { '@type': 'City', name: 'Annecy-le-Vieux' },
+      { '@type': 'City', name: 'Cran-Gevrier' },
+      { '@type': 'City', name: 'Seynod' },
+      { '@type': 'City', name: 'Bonneville' },
+      { '@type': 'City', name: 'Thonon-les-Bains' },
+      { '@type': 'City', name: 'Aix-les-Bains' },
+      { '@type': 'City', name: 'Chambéry' },
+      { '@type': 'City', name: 'Albertville' },
+      { '@type': 'City', name: 'Grenoble' },
+      { '@type': 'AdministrativeArea', name: 'Haute-Savoie' },
+      { '@type': 'AdministrativeArea', name: 'Savoie' },
       { '@type': 'Country', name: 'France' },
     ],
     hasOfferCatalog: {

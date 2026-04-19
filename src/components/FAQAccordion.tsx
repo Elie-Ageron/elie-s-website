@@ -36,28 +36,28 @@ const faqContent = {
   ],
   fr: [
     {
-      question: 'Pourquoi investir dans un design professionnel maintenant ?',
-      answer: 'Votre site web est votre commercial 24/7. Il travaille pendant que vous dormez. Un site mal conçu fait fuir vos visiteurs en quelques secondes. Un design à haute conversion inspire confiance immédiatement, communique votre valeur clairement et transforme les visites en demandes. Chaque jour sans une présence en ligne solide, c\'est du chiffre d\'affaires laissé à vos concurrents.',
+      question: 'Combien coûte un site web professionnel ?',
+      answer: 'Les tarifs démarrent à 500€ pour une landing page professionnelle et à 1 500€ pour un site vitrine 4 pages. Je propose des devis clairs et fixes, sans frais cachés. Ce que vous voyez, c\'est ce que vous payez. Consultez la page Tarifs pour les formules détaillées, ou réservez un appel gratuit pour un devis personnalisé.',
     },
     {
-      question: 'Pourquoi choisir Élie Ageron pour mon projet ?',
-      answer: 'Je combine expertise design et vision business. Chaque décision est orientée vers un seul objectif : vos résultats. Vous travaillez directement avec moi, pas une équipe sous-traitée. J\'utilise des technologies modernes, des patterns UX éprouvés et les meilleures pratiques SEO pour livrer un site qui ne fait pas que briller, mais qui fait vraiment grandir votre activité. Et je livre vite, sans sacrifier la qualité.',
+      question: 'En combien de temps est livré mon site ?',
+      answer: 'La plupart des projets sont livrés en 7 à 14 jours ouvrés à partir du lancement. Le délai dépend de la portée : une landing page est plus rapide qu\'un site multi-pages complet. Je vous tiens informé tout au long du processus, et les révisions sont incluses.',
     },
     {
-      question: 'Quel est le délai de livraison ?',
-      answer: 'La plupart des projets sont livrés en 7 à 14 jours ouvrés à partir du lancement. Le délai dépend de la portée : une landing page est plus rapide qu\'un site multi-pages complet. Je vous tiens informé tout au long du processus, et les révisions sont incluses pour qu\'il n\'y ait aucune mauvaise surprise à la fin.',
+      question: 'Est-ce qu\'un site web peut vraiment me rapporter des clients ?',
+      answer: 'Oui. Un site bien conçu travaille 24h/24 : il répond aux questions, inspire confiance et capte des contacts même quand vous dormez. Un ou deux nouveaux clients via le site suffit généralement à le rentabiliser. Après ça, il continue de travailler pour vous.',
     },
     {
-      question: 'Mon site sera-t-il optimisé mobile et SEO ?',
-      answer: 'Oui, toujours. Chaque site que je crée est entièrement mobile-first, conçu pour smartphone avant tout, puisque c\'est là que viennent la majorité de vos visiteurs. Côté SEO, je gère les fondations techniques : vitesse de chargement, données structurées, HTML sémantique, balises meta et indexation correcte, pour que Google vous trouve et vous référence dès le premier jour.',
+      question: 'Pourquoi créer un site web pour mon activité ?',
+      answer: 'Aujourd\'hui, la majorité des gens cherchent un prestataire sur Google avant de l\'appeler. Sans site professionnel, vous n\'existez pas en ligne et vous laissez ces clients à vos concurrents. Un site vous rend visible, crédible, et joignable à toute heure.',
+    },
+    {
+      question: 'Mon site sera-t-il bien référencé sur Google ?',
+      answer: 'Oui, toujours. Chaque site inclut les fondations SEO techniques : vitesse, données structurées, HTML sémantique, balises meta et indexation correcte. Pour le SEO local (Annecy, Haute-Savoie), le site est optimisé pour apparaître dans les recherches de votre zone.',
     },
     {
       question: 'Que se passe-t-il après la mise en ligne ?',
-      answer: 'Vous êtes propriétaire de tout : le code, le domaine, le contenu. Je vous fournis un accompagnement à la prise en main pour que vous puissiez gérer votre site en autonomie. Je propose également des forfaits de maintenance si vous préférez vous concentrer sur votre activité et me laisser gérer la partie technique. Dans tous les cas, je reste disponible après la livraison si des questions se posent.',
-    },
-    {
-      question: 'Combien coûte un site web ?',
-      answer: 'Les tarifs démarrent à 500€ pour une landing page professionnelle et varient selon le nombre de pages, les intégrations et la complexité. Je propose des devis clairs et fixes, sans frais cachés. Ce que vous voyez, c\'est ce que vous payez. Consultez la page Tarifs pour les formules détaillées, ou réservez un appel gratuit pour obtenir une estimation personnalisée.',
+      answer: 'Vous êtes propriétaire de tout : le code, le domaine, le contenu. Je vous fournis un accompagnement à la prise en main. Je propose aussi des forfaits de maintenance si vous préférez vous concentrer sur votre activité et me laisser gérer la partie technique.',
     },
   ],
 };

@@ -105,28 +105,28 @@ const faqData = {
   fr: {
     home: [
       {
-        question: 'Pourquoi investir dans un design professionnel maintenant ?',
-        answer: 'Votre site web est votre commercial 24/7. Un design à haute conversion inspire confiance immédiatement, communique votre valeur clairement et transforme les visites en demandes. Chaque jour sans une présence en ligne solide, c\'est du chiffre d\'affaires laissé à vos concurrents.',
+        question: 'Combien coûte un site web professionnel ?',
+        answer: 'Les tarifs démarrent à 500€ pour une landing page professionnelle et à 1 500€ pour un site vitrine 4 pages. Je propose des devis clairs et fixes, sans frais cachés. Ce que vous voyez, c\'est ce que vous payez.',
       },
       {
-        question: 'Pourquoi choisir Élie Ageron pour mon projet ?',
-        answer: 'Je combine expertise design et vision business. Vous travaillez directement avec moi, pas une équipe sous-traitée. J\'utilise des technologies modernes, des patterns UX éprouvés et les meilleures pratiques SEO pour livrer un site qui fait vraiment grandir votre activité.',
+        question: 'En combien de temps est livré un site web ?',
+        answer: 'La plupart des projets sont livrés en 7 à 14 jours ouvrés à partir du lancement. Une landing page est plus rapide qu\'un site vitrine multi-pages. Les révisions sont incluses dans ce délai.',
       },
       {
-        question: 'Quel est le délai de livraison ?',
-        answer: 'La plupart des projets sont livrés en 7 à 14 jours ouvrés. Le délai dépend de la portée du projet. Les révisions sont incluses pour qu\'il n\'y ait aucune mauvaise surprise.',
+        question: 'Est-ce qu\'un site web peut vraiment me rapporter des clients ?',
+        answer: 'Oui. Un site bien conçu travaille 24h/24 : il répond aux questions, inspire confiance, et capte les contacts même quand vous dormez. Un ou deux nouveaux clients via le site suffit généralement à le rentabiliser. Après, il continue de travailler pour vous.',
       },
       {
-        question: 'Mon site sera-t-il optimisé mobile et SEO ?',
-        answer: 'Oui, toujours. Chaque site est entièrement mobile-first et inclut les fondations SEO : vitesse de chargement, données structurées, HTML sémantique, balises meta et indexation correcte pour que Google vous référence dès le premier jour.',
+        question: 'Pourquoi créer un site web pour mon entreprise ?',
+        answer: 'Aujourd\'hui, la majorité des gens cherchent un prestataire sur Google avant de l\'appeler. Sans site professionnel, vous n\'existez pas en ligne et vous laissez ces clients à vos concurrents. Un site vous rend visible, crédible, et joignable à toute heure.',
       },
       {
-        question: 'Combien coûte un site web ?',
-        answer: 'Les tarifs démarrent à 500€ pour une landing page professionnelle. Je propose des devis clairs et fixes, sans frais cachés. Consultez la page Tarifs pour les formules détaillées ou réservez un appel gratuit.',
+        question: 'Mon site sera-t-il bien référencé sur Google ?',
+        answer: 'Oui. Chaque site inclut les fondations SEO : vitesse, données structurées, HTML sémantique, balises meta et indexation correcte. Pour le référencement local (Annecy, Haute-Savoie), le site est optimisé pour apparaître dans les recherches de votre zone géographique.',
       },
       {
-        question: 'Que se passe-t-il après la mise en ligne ?',
-        answer: 'Vous êtes propriétaire de tout : le code, le domaine, le contenu. Je vous fournis un accompagnement à la prise en main. Des forfaits de maintenance sont disponibles si vous préférez vous concentrer sur votre activité.',
+        question: 'Est-ce que le site fonctionnera bien sur mobile ?',
+        answer: '7 visiteurs sur 10 arrivent sur mobile. Chaque site que je crée est conçu en mobile-first : il est parfait sur smartphone, tablette et ordinateur. Aucun zoom nécessaire, aucun bouton trop petit, aucune image qui déborde.',
       },
     ],
     pricing: [

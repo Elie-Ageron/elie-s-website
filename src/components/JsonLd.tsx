@@ -12,10 +12,10 @@ const JsonLd = () => {
     name: 'Elie Ageron',
     url: baseUrl,
     image: `${baseUrl}/og-image.png`,
-    jobTitle: language === 'fr' ? 'Créateur de Sites Web' : 'Web Designer',
-    description: language === 'fr' 
-      ? 'Créateur de sites web premium spécialisé en conversion et design haute performance'
-      : 'Premium web designer specializing in conversion optimization and high-performance design',
+    jobTitle: language === 'fr' ? 'Web Designer Freelance' : 'Freelance Web Designer',
+    description: language === 'fr'
+      ? 'Web designer freelance basé à Thônes (Haute-Savoie). Création de sites web qui convertissent les visiteurs en clients pour les entreprises d\'Annecy, Grenoble, Chambéry et toute la France.'
+      : 'Freelance web designer based in Thônes, Haute-Savoie, France. Building high-converting websites for businesses in Annecy, Grenoble, Chambéry and across France.',
     email: 'web@elieageron.com',
     telephone: '+33695555318',
     address: {
@@ -28,7 +28,6 @@ const JsonLd = () => {
     sameAs: [
       'https://www.linkedin.com/in/elie-ageron-289636394',
       'https://calendly.com/web-elieageron/30min',
-      'https://www.google.com/maps/place/Elie+Ageron/@22.7831408,-94.7852384,3z/data=!3m1!4b1!4m6!3m5!1s0x478bc3783d27ffe3:0x8de1f75d4ab27b78!8m2!3d30.6959409!4d-49.8171262!16s%2Fg%2F11yyfd5c7c',
     ],
     knowsAbout: [
       'Web Design',
@@ -61,44 +60,19 @@ const JsonLd = () => {
       addressCountry: 'FR',
     },
     areaServed: [
-      {
-        '@type': 'Country',
-        name: 'France',
-        alternateName: 'FR',
-      },
-      {
-        '@type': 'Country',
-        name: 'United States',
-        alternateName: 'USA',
-      },
-      {
-        '@type': 'Country',
-        name: 'United Kingdom',
-        alternateName: 'UK',
-      },
-      {
-        '@type': 'Country',
-        name: 'Canada',
-        alternateName: 'CA',
-      },
-      {
-        '@type': 'Country',
-        name: 'Belgium',
-        alternateName: 'BE',
-      },
-      {
-        '@type': 'Country',
-        name: 'Switzerland',
-        alternateName: 'CH',
-      },
-      {
-        '@type': 'AdministrativeArea',
-        name: 'Europe',
-      },
-      {
-        '@type': 'AdministrativeArea',
-        name: 'North America',
-      },
+      { '@type': 'City', name: 'Thônes' },
+      { '@type': 'City', name: 'Annecy' },
+      { '@type': 'City', name: 'Bonneville' },
+      { '@type': 'City', name: 'Thonon-les-Bains' },
+      { '@type': 'City', name: 'Aix-les-Bains' },
+      { '@type': 'City', name: 'Chambéry' },
+      { '@type': 'City', name: 'Albertville' },
+      { '@type': 'City', name: 'Grenoble' },
+      { '@type': 'AdministrativeArea', name: 'Haute-Savoie' },
+      { '@type': 'AdministrativeArea', name: 'Savoie' },
+      { '@type': 'Country', name: 'France', alternateName: 'FR' },
+      { '@type': 'Country', name: 'Belgium', alternateName: 'BE' },
+      { '@type': 'Country', name: 'Switzerland', alternateName: 'CH' },
     ],
     founder: {
       '@id': `${baseUrl}/#person`,

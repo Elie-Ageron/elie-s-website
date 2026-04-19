@@ -21,6 +21,7 @@ const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const LegalPage = lazy(() => import("./pages/LegalPage"));
+const CityLandingPage = lazy(() => import("./pages/CityLandingPage"));
 // const Apps = lazy(() => import("./pages/Apps")); // hidden - future service
 
 const queryClient = new QueryClient({
@@ -77,6 +78,11 @@ const App = () => (
                   <Route path="/blog" element={<Blog />} />
                   <Route path="/blog/:slug" element={<BlogPost />} />
                   {/* <Route path="/apps" element={<Apps />} /> */}{/* hidden - future service */}
+                  {/* City landing pages */}
+                  <Route path="/web-designer-annecy" element={<CityLandingPage slug="web-designer-annecy" />} />
+                  <Route path="/web-designer-grenoble" element={<CityLandingPage slug="web-designer-grenoble" />} />
+                  <Route path="/web-designer-chambery" element={<CityLandingPage slug="web-designer-chambery" />} />
+                  <Route path="/creation-site-web-haute-savoie" element={<CityLandingPage slug="creation-site-web-haute-savoie" />} />
                   <Route path="/mentions-legales" element={<LegalPage page="mentions" />} />
                   <Route path="/politique-confidentialite" element={<LegalPage page="privacy" />} />
                   <Route path="*" element={<NotFound />} />
