@@ -1,113 +1,142 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Accueil -->
   <url>
     <loc>https://elieageron.com/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/" />
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>https://elieageron.com/why-a-website</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/why-a-website" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/why-a-website" />
-    <lastmod>2026-03-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://elieageron.com/our-process</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/our-process" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/our-process" />
-    <lastmod>2026-03-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
+  <!-- Tarifs -->
   <url>
     <loc>https://elieageron.com/pricing</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/pricing" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/pricing" />
-    <lastmod>2026-03-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/pricing" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/pricing" />
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://elieageron.com/contact</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/contact" />
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Portfolio -->
   <url>
     <loc>https://elieageron.com/portfolio</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/portfolio" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/portfolio" />
-    <lastmod>2026-03-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/portfolio" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/portfolio" />
+    <lastmod>2026-04-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Pourquoi un site web -->
   <url>
-    <loc>https://elieageron.com/apps</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/apps" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/apps" />
-    <lastmod>2026-03-20</lastmod>
+    <loc>https://elieageron.com/why-a-website</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/why-a-website" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/why-a-website" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/why-a-website" />
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
+
+  <!-- Notre méthode -->
   <url>
-    <loc>https://elieageron.com/contact</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/contact" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/contact" />
-    <lastmod>2026-03-20</lastmod>
+    <loc>https://elieageron.com/our-process</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/our-process" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/our-process" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/our-process" />
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
+
+  <!-- Blog -->
   <url>
     <loc>https://elieageron.com/blog</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/blog" />
-    <lastmod>2026-03-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/blog" />
+    <lastmod>2026-04-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Article : Pourquoi un site web en 2025 -->
   <url>
     <loc>https://elieageron.com/blog/pourquoi-site-web-2025</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog/pourquoi-site-web-2025" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/blog/pourquoi-site-web-2025" />
-    <lastmod>2026-04-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog/pourquoi-site-web-2025" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/blog/pourquoi-site-web-2025" />
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Article : Optimiser taux de conversion -->
   <url>
     <loc>https://elieageron.com/blog/optimiser-taux-conversion</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog/optimiser-taux-conversion" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/blog/optimiser-taux-conversion" />
-    <lastmod>2026-04-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog/optimiser-taux-conversion" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/blog/optimiser-taux-conversion" />
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Article : SEO local guide complet -->
   <url>
     <loc>https://elieageron.com/blog/seo-local-guide-complet</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog/seo-local-guide-complet" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/blog/seo-local-guide-complet" />
-    <lastmod>2026-04-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog/seo-local-guide-complet" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/blog/seo-local-guide-complet" />
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Article : Landing page efficace -->
   <url>
     <loc>https://elieageron.com/blog/landing-page-efficace</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog/landing-page-efficace" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/blog/landing-page-efficace" />
-    <lastmod>2026-04-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog/landing-page-efficace" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/blog/landing-page-efficace" />
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Mentions légales -->
   <url>
     <loc>https://elieageron.com/mentions-legales</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
+
+  <!-- Politique de confidentialité -->
   <url>
     <loc>https://elieageron.com/politique-confidentialite</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
+
 </urlset>

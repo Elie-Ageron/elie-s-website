@@ -16,12 +16,18 @@ const Home = () => {
   const websiteSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
+    '@id': 'https://elieageron.com/#website',
     name: 'Elie Ageron Web Design',
     url: 'https://elieageron.com',
     description: language === 'fr'
       ? 'Sites web premium qui convertissent les visiteurs en clients'
       : 'Premium websites that convert visitors into clients',
     author: { '@type': 'Person', name: 'Elie Ageron' },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: { '@type': 'EntryPoint', urlTemplate: 'https://elieageron.com/?q={search_term_string}' },
+      'query-input': 'required name=search_term_string',
+    },
   };
 
   const breadcrumbSchema = {
@@ -40,17 +46,17 @@ const Home = () => {
       {/* Hero Section with 3D */}
       <HeroSection />
 
-      {/* Stats - Social proof immédiate sous le fold */}
+      {/* Stats - Agitation: why you need a site */}
       <StatsSection />
 
-      {/* Services - L'offre concrète, avant les témoignages */}
+      {/* Testimonials - Proof early, before the offer */}
+      <TestimonialsSection />
+
+      {/* Services - The offer, backed by proof */}
       <ServicesSection />
 
-      {/* Personal Intro - Qui je suis */}
+      {/* Personal Intro - Who I am */}
       <PersonalIntroSection />
-
-      {/* Témoignages - Avis clients après avoir vu l'offre */}
-      <TestimonialsSection />
 
       {/* FAQ - Objections avant le CTA final */}
       <FAQAccordion />

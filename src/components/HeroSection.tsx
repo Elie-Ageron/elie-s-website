@@ -1,5 +1,5 @@
 ﻿import { motion } from 'framer-motion';
-import { ArrowDown, CheckCircle, Star, Shield, ArrowRight } from 'lucide-react';
+import { ArrowDown, CheckCircle, Star, Shield, ArrowRight, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -83,15 +83,25 @@ const HeroSection = () => {
           </motion.div>
 
           {/* Main Headline - Responsive typography */}
-          <h1 id="hero-heading" className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-8 sm:mb-10 leading-tight sm:leading-tight drop-shadow-lg">
+          <h1 id="hero-heading" className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-4 sm:mb-6 leading-tight sm:leading-tight drop-shadow-lg">
             <span className="text-foreground">{t('hero.headline1')}</span>
             <br />
             <span className="text-primary">{t('hero.headline2')}</span>
           </h1>
 
+          {/* Subtitle — concrete promise */}
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto mb-8 sm:mb-10"
+          >
+            {t('hero.subtitle')}
+          </motion.p>
+
           {/* CTAs */}
           <motion.div
-            className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
+            className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
@@ -118,6 +128,16 @@ const HeroSection = () => {
             </Button>
           </motion.div>
 
+          {/* Scarcity — natural availability constraint */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.6 }}
+            className="mt-4 flex items-center justify-center gap-2 text-xs sm:text-sm text-muted-foreground/70"
+          >
+            <span className="w-1.5 h-1.5 bg-primary/70 rounded-full shrink-0" aria-hidden="true" />
+            {t('hero.scarcity')}
+          </motion.p>
 
           {/* Social Proof Badges */}
           <motion.div
@@ -127,6 +147,7 @@ const HeroSection = () => {
             className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-4 sm:gap-6"
           >
             {[
+              { icon: Users, label: t('hero.proof.clients') },
               { icon: CheckCircle, label: t('hero.proof.satisfaction') },
               { icon: Star, label: t('hero.proof.quality') },
               { icon: Shield, label: t('hero.proof.guarantee') },
