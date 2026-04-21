@@ -21,7 +21,7 @@ const Footer = () => {
   return (
     <div className="relative z-10" role="contentinfo" aria-label="Site footer">
       <footer className="bg-secondary/40 border-t border-border/30">
-        <div className="max-w-6xl mx-auto px-6 py-12 sm:py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -53,8 +53,9 @@ const PHASES = {
   ],
 } as const;
 
-const FRAME_COUNT = 80;
-const SCROLL_MULTIPLIER = 3.5; // hauteur = 3.5× 100vh
+const FRAME_COUNT = 40;
+const JPEG_QUALITY = 0.8;
+const SCROLL_MULTIPLIER = 5; // hauteur = 5× 100vh — plus de temps par phase
 
 // object-fit: cover sur canvas
 function drawCover(ctx: CanvasRenderingContext2D, img: HTMLImageElement, cw: number, ch: number) {
@@ -84,7 +85,7 @@ export const ScrollVideoSection = () => {
   const [phase,    setPhase]    = useState(0);
   const [progress, setProgress] = useState(0); // 0–1 pour barre UI
 
-  // ── 1. Extraction frames ──────────────────────────────────────────────────
+  // ── 1. Extraction frames (progressive) ───────────────────────────────────
   useEffect(() => {
     const video = hiddenVideo.current;
     if (!video) return;
@@ -100,7 +101,6 @@ export const ScrollVideoSection = () => {
       const off = document.createElement('canvas');
       off.width = vw; off.height = vh;
       const ctx = off.getContext('2d')!;
-      const extracted: HTMLImageElement[] = [];
 
       for (let i = 0; i < FRAME_COUNT; i++) {
         if (cancelled) return;
@@ -109,26 +109,29 @@ export const ScrollVideoSection = () => {
         if (cancelled) return;
 
         ctx.drawImage(video, 0, 0, vw, vh);
-        const dataUrl = off.toDataURL('image/jpeg', 0.95);
+        const dataUrl = off.toDataURL('image/jpeg', JPEG_QUALITY);
 
         await new Promise<void>(res => {
           const img = new Image();
-          img.onload = () => { extracted.push(img); res(); };
+          img.onload = () => {
+            framesRef.current.push(img);
+
+            // Afficher dès la première frame : plus besoin d'attendre
+            if (i === 0) {
+              setLoading(false);
+              const canvas = canvasRef.current;
+              if (canvas) {
+                const w = parseInt(canvas.style.width)  || canvas.width;
+                const h = parseInt(canvas.style.height) || canvas.height;
+                drawCover(canvas.getContext('2d')!, img, w, h);
+              }
+            }
+
+            setLoadPct(Math.round((i + 1) / FRAME_COUNT * 100));
+            res();
+          };
           img.src = dataUrl;
         });
-
-        setLoadPct(Math.round((i + 1) / FRAME_COUNT * 100));
-      }
-
-      if (cancelled) return;
-      framesRef.current = extracted;
-      setLoading(false);
-
-      // Dessiner frame 0
-      const canvas = canvasRef.current;
-      if (canvas && extracted[0]) {
-        const c = canvas.getContext('2d')!;
-        drawCover(c, extracted[0], canvas.width, canvas.height);
       }
     };
 
@@ -181,7 +184,10 @@ export const ScrollVideoSection = () => {
       const canvas = canvasRef.current;
 
       if (frames.length && canvas) {
-        const idx = Math.min(Math.floor(p * (frames.length - 1)), frames.length - 1);
+        // Utilise FRAME_COUNT comme dénominateur pour garder la synchro scroll↔frame
+        // même si toutes les frames ne sont pas encore extraites
+        const targetIdx = Math.floor(p * (FRAME_COUNT - 1));
+        const idx = Math.min(targetIdx, frames.length - 1);
         if (idx !== lastIdxRef.current) {
           lastIdxRef.current = idx;
           const w = parseInt(canvas.style.width)  || canvas.width;

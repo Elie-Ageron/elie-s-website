@@ -1,5 +1,5 @@
 ﻿import { motion } from 'framer-motion';
-import { ArrowDown, CheckCircle, Star, Shield, ArrowRight, Users } from 'lucide-react';
+import { ArrowDown, Clock, Phone, Shield, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -148,9 +148,8 @@ const HeroSection = () => {
             className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-4 sm:gap-6"
           >
             {[
-              { icon: Users, label: t('hero.proof.clients') },
-              { icon: CheckCircle, label: t('hero.proof.satisfaction') },
-              { icon: Star, label: t('hero.proof.quality') },
+              { icon: Clock,  label: t('hero.proof.delivery') },
+              { icon: Phone,  label: t('hero.proof.call') },
               { icon: Shield, label: t('hero.proof.guarantee') },
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-2.5 text-foreground/70 text-sm sm:text-base font-medium">

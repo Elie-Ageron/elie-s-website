@@ -30,7 +30,7 @@ const ServiceCard = ({ title, price, description, features, cta, icon, popular, 
         scale: 1.02,
         transition: { duration: 0.3 }
       }}
-      className={`relative glass-card rounded-3xl p-8 flex flex-col h-full group ${
+      className={`relative glass-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col h-full group ${
         popular ? 'neon-border' : ''
       }`}
     >
@@ -164,13 +164,13 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="py-24 relative overflow-hidden">
+    <section id="services" className="py-16 sm:py-24 relative overflow-hidden">
       {/* Floating background elements */}
       <FloatingElements count={10} />
-      
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header */}
-        <ScrollReveal direction="up" className="text-center mb-16">
+        <ScrollReveal direction="up" className="text-center mb-10 sm:mb-16">
           <motion.h2 
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
             initial={{ opacity: 0, y: 20 }}

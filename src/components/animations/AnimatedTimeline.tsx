@@ -26,25 +26,42 @@ const TimelineStep = ({ icon: Icon, title, description, index, scrollYProgress }
 
   return (
     <motion.div
-      className={`relative flex items-center gap-8 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}
-      initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
+      className="relative"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.55, delay: 0.1 }}
     >
-      <div className={`flex-1 ${index % 2 === 0 ? 'text-right pr-12' : 'text-left pl-12'}`}>
-        <h3 className="text-2xl font-bold text-foreground mb-2">{title}</h3>
-        <p className="text-muted-foreground">{description}</p>
+      {/* Mobile layout: icon left, text right */}
+      <div className="flex items-start gap-4 md:hidden">
+        <motion.div
+          className="flex-shrink-0 w-12 h-12 rounded-full bg-card border-2 border-border flex items-center justify-center"
+          style={{ borderColor, boxShadow }}
+        >
+          <Icon className="w-5 h-5 text-primary" />
+        </motion.div>
+        <div className="pt-1 min-w-0">
+          <h3 className="text-lg font-bold text-foreground mb-1 leading-snug">{title}</h3>
+          <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
+        </div>
       </div>
 
-      <motion.div
-        className="relative z-10 w-16 h-16 rounded-full bg-card border-2 border-border flex items-center justify-center"
-        style={{ borderColor, boxShadow }}
-      >
-        <Icon className="w-6 h-6 text-primary" />
-      </motion.div>
+      {/* Desktop layout: alternating sides */}
+      <div className={`hidden md:flex items-center gap-8 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
+        <div className={`flex-1 ${index % 2 === 0 ? 'text-right pr-12' : 'text-left pl-12'}`}>
+          <h3 className="text-2xl font-bold text-foreground mb-2">{title}</h3>
+          <p className="text-muted-foreground">{description}</p>
+        </div>
 
-      <div className="flex-1" />
+        <motion.div
+          className="relative z-10 w-16 h-16 rounded-full bg-card border-2 border-border flex items-center justify-center"
+          style={{ borderColor, boxShadow }}
+        >
+          <Icon className="w-6 h-6 text-primary" />
+        </motion.div>
+
+        <div className="flex-1" />
+      </div>
     </motion.div>
   );
 };
@@ -66,9 +83,9 @@ const AnimatedTimeline = () => {
   ];
 
   return (
-    <div ref={containerRef} className="relative py-20">
-      {/* Animated line */}
-      <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2">
+    <div ref={containerRef} className="relative py-12 md:py-20">
+      {/* Desktop center line */}
+      <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2">
         <motion.div
           className="w-full bg-primary origin-top"
           style={{
@@ -79,7 +96,19 @@ const AnimatedTimeline = () => {
         />
       </div>
 
-      <div className="space-y-24">
+      {/* Mobile left line — aligned to icon center (w-12 / 2 = 24px = left-6) */}
+      <div className="md:hidden absolute left-6 top-0 bottom-0 w-0.5 bg-border">
+        <motion.div
+          className="w-full bg-primary origin-top"
+          style={{
+            scaleY: scrollYProgress,
+            height: '100%',
+            boxShadow: '0 0 12px hsl(328 100% 54% / 0.4)',
+          }}
+        />
+      </div>
+
+      <div className="space-y-8 md:space-y-24">
         {steps.map((step, index) => (
           <TimelineStep
             key={index}
