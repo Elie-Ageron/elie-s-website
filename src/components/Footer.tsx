@@ -65,24 +65,6 @@ const Footer = () => {
                 ))}
               </nav>
 
-              {/* City pages — SEO internal links */}
-              <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4 mt-8">
-                {language === 'fr' ? 'Zones desservies' : 'Service areas'}
-              </h3>
-              <nav className="flex flex-col gap-2.5" aria-label="City pages">
-                <Link to="/web-designer-annecy" className="text-sm text-muted-foreground hover:text-primary transition-colors w-fit">
-                  {language === 'fr' ? 'Web designer Annecy' : 'Web designer Annecy'}
-                </Link>
-                <Link to="/web-designer-grenoble" className="text-sm text-muted-foreground hover:text-primary transition-colors w-fit">
-                  {language === 'fr' ? 'Web designer Grenoble' : 'Web designer Grenoble'}
-                </Link>
-                <Link to="/web-designer-chambery" className="text-sm text-muted-foreground hover:text-primary transition-colors w-fit">
-                  {language === 'fr' ? 'Web designer Chambéry' : 'Web designer Chambéry'}
-                </Link>
-                <Link to="/creation-site-web-haute-savoie" className="text-sm text-muted-foreground hover:text-primary transition-colors w-fit">
-                  {language === 'fr' ? 'Création site web Haute-Savoie' : 'Web design Haute-Savoie'}
-                </Link>
-              </nav>
             </div>
 
             {/* Contact Column */}

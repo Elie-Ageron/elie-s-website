@@ -82,8 +82,6 @@ const App = () => (
                   {/* <Route path="/apps" element={<Apps />} /> */}{/* hidden - future service */}
                   {/* City landing pages */}
                   <Route path="/web-designer-annecy" element={<CityLandingPage slug="web-designer-annecy" />} />
-                  <Route path="/web-designer-grenoble" element={<CityLandingPage slug="web-designer-grenoble" />} />
-                  <Route path="/web-designer-chambery" element={<CityLandingPage slug="web-designer-chambery" />} />
                   <Route path="/creation-site-web-haute-savoie" element={<CityLandingPage slug="creation-site-web-haute-savoie" />} />
                   <Route path="/mentions-legales" element={<LegalPage page="mentions" />} />
                   <Route path="/politique-confidentialite" element={<LegalPage page="privacy" />} />
