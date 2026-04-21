@@ -41,7 +41,7 @@ const TimelineStep = ({ icon: Icon, title, description, index, scrollYProgress }
           <Icon className="w-5 h-5 text-primary" />
         </motion.div>
         <div className="pt-1 min-w-0">
-          <h3 className="text-lg font-bold text-foreground mb-1 leading-snug">{title}</h3>
+          <h3 className="text-lg font-bold text-foreground mb-2 leading-snug">{title}</h3>
           <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
         </div>
       </div>
@@ -108,7 +108,7 @@ const AnimatedTimeline = () => {
         />
       </div>
 
-      <div className="space-y-8 md:space-y-24">
+      <div className="space-y-14 md:space-y-24">
         {steps.map((step, index) => (
           <TimelineStep
             key={index}
