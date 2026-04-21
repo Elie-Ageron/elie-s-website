@@ -2,6 +2,14 @@
   "buildCommand": "bunx vite build",
   "outputDirectory": "dist",
   "installCommand": "bun install",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.elieageron.com" }],
+      "destination": "https://elieageron.com/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [{ "source": "/((?!.*\\.).*)", "destination": "/index.html" }],
   "headers": [
     {
