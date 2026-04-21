@@ -15,7 +15,10 @@
       "Bash(node -e ' *)",
       "Bash(mkdir -p \"c:\\\\Users\\\\eliea\\\\Documents\\\\buisness\\\\web design\\\\elie\\\\elie-s-website\\\\public\\\\videos\")",
       "Bash(cp \"/c/Users/eliea/Downloads/hf_20260416_120144_59e3bb3e-f8d0-4704-94b6-8050497aeb8c.mp4\" \"c:\\\\Users\\\\eliea\\\\Documents\\\\buisness\\\\web design\\\\elie\\\\elie-s-website\\\\public\\\\videos\\\\site-animation.mp4\")",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)"
     ]
   }
 }
