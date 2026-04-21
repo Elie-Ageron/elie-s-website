@@ -11,8 +11,8 @@ const app = (
   </HelmetProvider>
 );
 
-// In production: hydrate react-snap prerendered HTML for seamless takeover
-// In dev: always fresh render (avoids hydration mismatch issues)
+// Production: hydrate react-snap prerendered HTML for seamless takeover
+// Dev: always fresh render (avoids hydration mismatch issues)
 if (import.meta.env.PROD && rootElement.hasChildNodes()) {
   hydrateRoot(rootElement, app);
 } else {
