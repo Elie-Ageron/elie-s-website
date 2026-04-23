@@ -4,35 +4,23 @@
   "installCommand": "bun install",
   "redirects": [
     {
-      "source": "/",
-      "has": [{ "type": "host", "value": "www.elieageron.com" }],
-      "destination": "https://elieageron.com/",
-      "permanent": true
-    },
-    {
-      "source": "/:path+",
-      "has": [{ "type": "host", "value": "www.elieageron.com" }],
-      "destination": "https://elieageron.com/:path+",
-      "permanent": true
-    },
-    {
       "source": "/web-designer-chambery",
-      "destination": "https://elieageron.com/web-designer-annecy",
+      "destination": "/web-designer-annecy",
       "permanent": true
     },
     {
       "source": "/web-designer-grenoble",
-      "destination": "https://elieageron.com/web-designer-annecy",
+      "destination": "/web-designer-annecy",
       "permanent": true
     },
     {
       "source": "/creation-site-web-chambery",
-      "destination": "https://elieageron.com/creation-site-web-haute-savoie",
+      "destination": "/creation-site-web-haute-savoie",
       "permanent": true
     },
     {
       "source": "/creation-site-web-grenoble",
-      "destination": "https://elieageron.com/creation-site-web-haute-savoie",
+      "destination": "/creation-site-web-haute-savoie",
       "permanent": true
     }
   ],
