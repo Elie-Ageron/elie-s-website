@@ -40,9 +40,27 @@ const queryClient = new QueryClient({
 class ErrorBoundary extends Component<{ children: ReactNode }, { error: Error | null }> {
   state = { error: null };
   static getDerivedStateFromError(error: Error) { return { error }; }
+  componentDidCatch(error: Error) {
+    // After a new deploy, stale cached index.html references old chunk hashes that no longer exist.
+    // Auto-reload once — the fresh page load fetches the new index.html with correct chunk URLs.
+    if (error.message.includes('Failed to fetch dynamically imported') && !sessionStorage.getItem('chunk-reload')) {
+      sessionStorage.setItem('chunk-reload', '1');
+      window.location.reload();
+    }
+  }
   render() {
     if (this.state.error) {
       const err = this.state.error as Error;
+      if (err.message.includes('Failed to fetch dynamically imported')) {
+        return (
+          <div style={{ padding: 32, fontFamily: 'system-ui, sans-serif', textAlign: 'center', marginTop: 80 }}>
+            <p style={{ color: '#666', marginBottom: 16 }}>Mise à jour détectée, rechargement…</p>
+            <button onClick={() => window.location.reload()} style={{ padding: '10px 24px', background: '#c4516b', color: '#fff', border: 'none', borderRadius: 8, cursor: 'pointer', fontSize: 15 }}>
+              Recharger la page
+            </button>
+          </div>
+        );
+      }
       return (
         <div style={{ padding: 32, fontFamily: 'system-ui, sans-serif', maxWidth: 600, margin: '60px auto' }}>
           <h2 style={{ color: '#c4516b', marginBottom: 8 }}>Erreur de rendu</h2>
