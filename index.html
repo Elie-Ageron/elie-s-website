@@ -146,7 +146,8 @@
 
   <body>
     <!-- Stale-chunk guard: if a JS bundle fails to load (old cached HTML after a deploy),
-         force a hard navigation once so the browser fetches fresh HTML and chunk URLs. -->
+         reload once so the browser fetches fresh HTML with correct chunk URLs.
+         Uses localStorage with 60s cooldown to prevent infinite loops. -->
     <script>
       (function() {
         var key = 'scr';
@@ -155,7 +156,7 @@
             var ts = localStorage.getItem(key);
             if (!ts || Date.now() - Number(ts) > 60000) {
               localStorage.setItem(key, String(Date.now()));
-              window.location.href = window.location.href.split('?')[0] + '?r=' + Date.now();
+              window.location.reload();
             }
           }
         }, true);
