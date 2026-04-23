@@ -40,34 +40,28 @@ const queryClient = new QueryClient({
 class ErrorBoundary extends Component<{ children: ReactNode }, { error: Error | null }> {
   state = { error: null };
   static getDerivedStateFromError(error: Error) { return { error }; }
-  componentDidCatch(error: Error) {
-    // After a new deploy, stale cached index.html references old chunk hashes that no longer exist.
-    // Auto-reload once — the fresh page load fetches the new index.html with correct chunk URLs.
-    if (error.message.includes('Failed to fetch dynamically imported') && !sessionStorage.getItem('chunk-reload')) {
-      sessionStorage.setItem('chunk-reload', '1');
-      window.location.reload();
-    }
-  }
   render() {
     if (this.state.error) {
       const err = this.state.error as Error;
-      if (err.message.includes('Failed to fetch dynamically imported')) {
-        return (
-          <div style={{ padding: 32, fontFamily: 'system-ui, sans-serif', textAlign: 'center', marginTop: 80 }}>
-            <p style={{ color: '#666', marginBottom: 16 }}>Mise à jour détectée, rechargement…</p>
-            <button onClick={() => window.location.reload()} style={{ padding: '10px 24px', background: '#c4516b', color: '#fff', border: 'none', borderRadius: 8, cursor: 'pointer', fontSize: 15 }}>
+      const isChunkError = err.message.includes('Failed to fetch dynamically imported') || err.message.includes('Loading chunk') || err.message.includes('Failed to load');
+      return (
+        <div style={{ minHeight: '100vh', background: 'hsl(30 20% 98%)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'system-ui, sans-serif' }}>
+          <div style={{ textAlign: 'center', padding: 32, maxWidth: 400 }}>
+            <h2 style={{ color: '#c4516b', marginBottom: 12, fontSize: 20 }}>
+              {isChunkError ? 'Mise à jour disponible' : 'Erreur de rendu'}
+            </h2>
+            <p style={{ color: '#666', marginBottom: 24, lineHeight: 1.6 }}>
+              {isChunkError
+                ? 'Le site a été mis à jour. Rechargez la page pour voir la nouvelle version.'
+                : "Une erreur JavaScript s’est produite."}
+            </p>
+            <button
+              onClick={() => { localStorage.removeItem('chunk-reload'); window.location.href = window.location.href; }}
+              style={{ padding: '12px 28px', background: '#c4516b', color: '#fff', border: 'none', borderRadius: 8, cursor: 'pointer', fontSize: 15, fontWeight: 600 }}
+            >
               Recharger la page
             </button>
           </div>
-        );
-      }
-      return (
-        <div style={{ padding: 32, fontFamily: 'system-ui, sans-serif', maxWidth: 600, margin: '60px auto' }}>
-          <h2 style={{ color: '#c4516b', marginBottom: 8 }}>Erreur de rendu</h2>
-          <p style={{ color: '#666', marginBottom: 16 }}>Une erreur JavaScript s'est produite. Vérifiez la console du navigateur.</p>
-          <pre style={{ background: '#f5f5f5', padding: 16, borderRadius: 8, overflow: 'auto', fontSize: 13 }}>
-            {err.message}
-          </pre>
         </div>
       );
     }
@@ -87,7 +81,7 @@ const App = () => (
             <ScrollToTop />
             <Analytics />
             <Layout>
-              <Suspense fallback={null}>
+              <Suspense fallback={<div style={{ minHeight: '60vh' }} />}>
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/why-a-website" element={<WhyWebsite />} />
