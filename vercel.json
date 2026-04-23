@@ -4,9 +4,15 @@
   "installCommand": "bun install",
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/",
       "has": [{ "type": "host", "value": "www.elieageron.com" }],
-      "destination": "https://elieageron.com/:path*",
+      "destination": "https://elieageron.com/",
+      "permanent": true
+    },
+    {
+      "source": "/:path+",
+      "has": [{ "type": "host", "value": "www.elieageron.com" }],
+      "destination": "https://elieageron.com/:path+",
       "permanent": true
     },
     {
