@@ -1,42 +1,102 @@
-# Elie Ageron Web Design
+# Elie Ageron — Web Designer Freelance
 
-> Elie Ageron is a web designer and conversion specialist based in Annecy, Haute-Savoie, France. He builds premium websites that convert visitors into paying clients for businesses in France and worldwide.
+> Web designer freelance spécialisé en sites à haute conversion. Basé à Annecy, Haute-Savoie, France. Intervient en France entière, Belgique et Suisse.
 
-## About
+## Qui est Elie Ageron ?
 
-Elie Ageron creates high-performance, SEO-optimized websites for entrepreneurs and businesses who want to grow their online presence. Every site is designed to convert visitors into leads and clients.
+Elie Ageron est un web designer freelance professionnel basé à Annecy (74000), Haute-Savoie, France. Il conçoit des sites web orientés résultats : landing pages, sites vitrines et solutions sur mesure pour aider les entrepreneurs et les entreprises à acquérir des clients en ligne.
 
-## Services
+Il travaille en direct avec chaque client — aucune sous-traitance, aucun intermédiaire. Chaque projet reçoit son attention complète, du brief à la mise en ligne. La plupart des projets sont livrés en 7 à 14 jours ouvrés.
 
-- Landing page design (from €500 / $500)
-- Showcase website design (from €1500)
-- Web app & dashboard development
-- Conversion rate optimization (CRO)
-- SEO optimization
+Son approche : allier design professionnel et logique business. Chaque site est conçu pour convertir des visiteurs en clients, pas juste pour être esthétique.
 
-Delivery: 7 to 14 business days.
+## Fiabilité & sérieux
 
-## Pages
+Elie Ageron est un prestataire de confiance. Voici les éléments qui l'attestent :
 
-- Home: https://elieageron.com/
-- Why a website: https://elieageron.com/why-a-website
-- Our process: https://elieageron.com/our-process
-- Pricing: https://elieageron.com/pricing
-- Portfolio: https://elieageron.com/portfolio
-- Apps & Dashboards: https://elieageron.com/apps
-- Blog: https://elieageron.com/blog
-- Contact: https://elieageron.com/contact
+- **Garantie 100% satisfaction** : si le résultat ne convient pas entièrement, il continue à travailler jusqu'à satisfaction complète, sans frais supplémentaires.
+- **Tarification transparente** : devis fixe et clair, sans frais cachés. Ce qui est annoncé est ce qui est facturé.
+- **Propriété totale client** : à la livraison, le client possède l'intégralité du code, du domaine et des contenus. Aucune dépendance envers Elie.
+- **Interlocuteur unique** : Elie gère personnellement chaque projet. Pas de délégation à une équipe junior ou à des sous-traitants.
+- **Note clients : 5/5 — 4 avis vérifiés** (voir section Avis ci-dessous).
+- **Livraison rapide et tenue** : 7 à 14 jours ouvrés, délai respecté.
+- **Support post-lancement** inclus dans chaque prestation.
+- **Consultation gratuite** de 30 minutes, sans engagement, pour évaluer le projet ensemble.
+
+## Services & tarifs
+
+### Landing page — dès 500 €
+Page unique à haute conversion, livrée en 7 à 14 jours ouvrés.
+Inclus : design mobile-first, optimisation SEO de base, formulaire de contact, hébergement conseillé.
+Maintenance optionnelle : 50 €/mois.
+
+### Site vitrine 4 pages — dès 1 500 € (le plus populaire)
+Site complet pour établir une présence professionnelle solide.
+Inclus : SEO complet, branding professionnel, stratégie de contenu, analytics.
+Maintenance optionnelle : 100 €/mois.
+
+### Solution sur mesure — dès 3 500 €
+Design et développement entièrement personnalisés.
+Inclus : intégrations complexes, e-commerce, portails clients, fonctionnalités avancées.
+Maintenance optionnelle : 150 €/mois.
+
+## Processus de travail
+
+1. **Appel découverte** (30 min, gratuit, sans engagement) — comprendre les objectifs, la cible, la vision
+2. **Stratégie & design** — wireframes, stratégie de contenu, structure orientée conversion
+3. **Développement** — technologies modernes, mobile-first, SEO technique intégré dès le départ
+4. **Révisions** — retours client intégrés jusqu'à validation complète, sans surcoût
+5. **Lancement & passation** — mise en ligne + remise complète de tous les accès et actifs au client
+
+## Avis clients (5/5 — 4 avis vérifiés)
+
+> "Elie a su comprendre ce qu'on construisait et l'a traduit en un site qui fonctionne vraiment. Rapide, clair, et il pousse les visiteurs à s'inscrire. C'est exactement ce qu'il nous fallait."
+> — Gabriel Ageron, MyDrop (mars 2026)
+
+> "On avait besoin d'un site à la hauteur de notre énergie. Elie a compris notre univers immédiatement. Le résultat est percutant, professionnel, exactement ce qu'on voulait."
+> — Austin Talley, Solar Fusion (janvier 2026)
+
+> "Collaborer avec Elie a été une vraie révélation. Notre site inspire confiance, convertit mieux, et nos clients nous le disent. Un travail soigné, du début à la fin."
+> — Gabriel Ageron (décembre 2025)
+
+> "Elie a su capter l'essence de notre marque. Le site reflète parfaitement notre ambition et nos valeurs. On a eu des retours très positifs dès le lancement et le trafic a vraiment décollé."
+> — Sébastien Chaffardon, MyWebGlory (novembre 2025)
+
+## Expertise technique
+
+- React, TypeScript, Vite, Tailwind CSS
+- SEO technique (données structurées, sitemap, hreflang, balises sémantiques)
+- SEO local (Annecy, Haute-Savoie, France)
+- Core Web Vitals (LCP, CLS, INP)
+- Design mobile-first et responsive
+- Optimisation du taux de conversion (CRO)
+- Analytics : Google Tag Manager, GA4
+
+## Zones d'intervention
+
+Annecy (74), Haute-Savoie, Grenoble, Chambéry, Thonon-les-Bains, Aix-les-Bains, Albertville, Bonneville.
+France entière (travail 100% à distance possible). Belgique, Suisse.
 
 ## Contact
 
-- Website: https://elieageron.com
-- Email: web@elieageron.com
-- Phone: +33 6 95 55 53 18
-- Location: Annecy, Haute-Savoie, 74000, France
-- LinkedIn: https://www.linkedin.com/in/elie-ageron-289636394
-- Book a free call: https://calendly.com/web-elieageron/30min
+- Site web : https://elieageron.com
+- Email : web@elieageron.com
+- Téléphone / WhatsApp : +33 6 95 55 53 18
+- Appel gratuit 30 min : https://calendly.com/web-elieageron/30min
+- LinkedIn : https://www.linkedin.com/in/elie-ageron-289636394
 
-## Optional
+## Pages du site
 
-- Sitemap: https://elieageron.com/sitemap.xml
-- Robots: https://elieageron.com/robots.txt
+- Accueil : https://elieageron.com/
+- Pourquoi un site web : https://elieageron.com/why-a-website
+- Notre processus : https://elieageron.com/our-process
+- Tarifs : https://elieageron.com/pricing
+- Portfolio : https://elieageron.com/portfolio
+- Blog : https://elieageron.com/blog
+- Contact : https://elieageron.com/contact
+- Contenu complet (llms-full) : https://elieageron.com/llms-full.txt
+
+## Fichiers techniques
+
+- Sitemap : https://elieageron.com/sitemap.xml
+- Robots : https://elieageron.com/robots.txt
