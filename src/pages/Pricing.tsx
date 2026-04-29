@@ -1,11 +1,8 @@
 ﻿import { motion } from 'framer-motion';
-import { useState } from 'react';
-import { Check, Zap, Crown, Sparkles, ArrowRight } from 'lucide-react';
+import { Check, Zap, Crown, Sparkles, ArrowRight, Shield, Wrench, Rocket } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useCalendly } from '@/contexts/CalendlyContext';
-import { Switch } from '@/components/ui/switch';
 import MagneticButton from '@/components/animations/MagneticButton';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
 import SEO from '@/components/SEO';
@@ -17,7 +14,6 @@ const Pricing = () => {
 
   const { t, language } = useLanguage();
   const { openCalendly } = useCalendly();
-  const [includeMaintenance, setIncludeMaintenance] = useState(false);
 
   const scrollToContact = () => {
     document.getElementById('pricing-contact')?.scrollIntoView({ behavior: 'smooth' });
@@ -81,7 +77,6 @@ const Pricing = () => {
       icon: Zap,
       title: t('services.landing.title'),
       price: language === 'fr' ? '500€' : '$500',
-      maintenancePrice: language === 'fr' ? '+50€/mois' : '+$50/month',
       description: t('services.landing.desc'),
       features: [
         t('services.landing.feature1'),
@@ -96,7 +91,6 @@ const Pricing = () => {
       icon: Crown,
       title: t('services.authority.title'),
       price: language === 'fr' ? '1500€' : '$1500',
-      maintenancePrice: language === 'fr' ? '+100€/mois' : '+$100/month',
       description: t('services.authority.desc'),
       features: [
         t('services.authority.feature1'),
@@ -112,7 +106,6 @@ const Pricing = () => {
       icon: Sparkles,
       title: t('services.custom.title'),
       price: language === 'fr' ? '3500€' : '$3500',
-      maintenancePrice: language === 'fr' ? '+150€/mois' : '+$150/month',
       description: t('services.custom.desc'),
       features: [
         t('services.custom.feature1'),
@@ -151,30 +144,6 @@ const Pricing = () => {
               {t('pricing.subtitle')}
             </p>
           </motion.header>
-        </div>
-      </section>
-
-      {/* Maintenance Toggle */}
-      <section className="py-6 sm:py-8" aria-label="Monthly maintenance option">
-        <div className="max-w-xl mx-auto px-4 sm:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6 flex items-center justify-between gap-4"
-          >
-            <div className="flex-1 min-w-0">
-              <h3 className="font-semibold text-foreground text-sm sm:text-base">{t('pricing.maintenance.toggle')}</h3>
-              <p className="text-xs sm:text-sm text-muted-foreground">{t('pricing.maintenance.desc')}</p>
-            </div>
-            <Switch 
-              id="maintenance-toggle"
-              checked={includeMaintenance} 
-              onCheckedChange={setIncludeMaintenance}
-              aria-label="Include monthly maintenance in pricing"
-              className="shrink-0"
-            />
-          </motion.div>
         </div>
       </section>
 
@@ -219,16 +188,6 @@ const Pricing = () => {
 
                 <div className="mb-4 sm:mb-6">
                   <span className="text-3xl sm:text-4xl font-bold text-foreground">{plan.price}</span>
-                  {includeMaintenance && (
-                    <motion.span
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      className="text-xs sm:text-sm text-primary ml-2"
-                      aria-label={`Plus ${plan.maintenancePrice} for maintenance`}
-                    >
-                      {plan.maintenancePrice}
-                    </motion.span>
-                  )}
                 </div>
 
                 <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 leading-relaxed">{plan.description}</p>
@@ -255,6 +214,155 @@ const Pricing = () => {
                 </MagneticButton>
               </motion.article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Maintenance Mensuelle */}
+      <section className="py-12 sm:py-16" aria-labelledby="maintenance-heading">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-8 sm:mb-12"
+          >
+            <h2 id="maintenance-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3">
+              {language === 'fr' ? 'Maintenance Mensuelle' : 'Monthly Maintenance'}
+            </h2>
+            <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto">
+              {language === 'fr'
+                ? "Après la livraison, choisissez votre niveau d'implication."
+                : 'After delivery, choose how involved you want me to be.'}
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+            {/* Option A */}
+            <motion.article
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.0 }}
+              whileHover={{ y: -6 }}
+              className="glass-card rounded-2xl sm:rounded-3xl p-5 sm:p-7 flex flex-col transition-all duration-300"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2.5 rounded-xl bg-secondary">
+                  <Rocket className="w-5 h-5 text-primary" aria-hidden="true" />
+                </div>
+                <div>
+                  <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
+                    {language === 'fr' ? 'Option A' : 'Option A'}
+                  </span>
+                  <h3 className="text-base font-bold text-foreground leading-tight">
+                    {language === 'fr' ? 'Autonome' : 'Standalone'}
+                  </h3>
+                </div>
+              </div>
+              <div className="mb-4">
+                <span className="text-3xl font-bold text-foreground">0€</span>
+                <span className="text-sm text-muted-foreground ml-1">{language === 'fr' ? '/mois' : '/month'}</span>
+              </div>
+              <p className="text-sm text-muted-foreground leading-relaxed flex-grow">
+                {language === 'fr'
+                  ? "Je livre le site, tu gères tout toi-même. Hébergement, DNS, modifications, tout est sur toi. Je ne suis plus dans la boucle."
+                  : "I deliver the site, you handle everything. Hosting, DNS, changes, all on you. I'm no longer in the loop."}
+              </p>
+            </motion.article>
+
+            {/* Option B */}
+            <motion.article
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              whileHover={{ y: -6, boxShadow: '0 0 50px hsl(328 100% 54% / 0.3)' }}
+              className="relative glass-card neon-border rounded-2xl sm:rounded-3xl p-5 sm:p-7 flex flex-col transition-all duration-300"
+            >
+              <div className="absolute -top-3 sm:-top-4 left-1/2 -translate-x-1/2 px-3 sm:px-4 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full whitespace-nowrap">
+                {language === 'fr' ? 'Recommandé' : 'Recommended'}
+              </div>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2.5 rounded-xl bg-primary/20">
+                  <Shield className="w-5 h-5 text-primary" aria-hidden="true" />
+                </div>
+                <div>
+                  <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
+                    {language === 'fr' ? 'Option B' : 'Option B'}
+                  </span>
+                  <h3 className="text-base font-bold text-foreground leading-tight">
+                    {language === 'fr' ? 'Géré' : 'Managed'}
+                  </h3>
+                </div>
+              </div>
+              <div className="mb-4">
+                <span className="text-3xl font-bold text-foreground">25€</span>
+                <span className="text-sm text-muted-foreground ml-1">{language === 'fr' ? '/mois' : '/month'}</span>
+              </div>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                {language === 'fr'
+                  ? "Je gère l'hébergement, le DNS, la sécurité. Les petites modifications sont incluses. Tu m'envoies un message, c'est fait sous 24h."
+                  : 'I handle hosting, DNS, and security. Small updates included. Message me, done within 24h.'}
+              </p>
+              <ul className="space-y-2 flex-grow">
+                {[
+                  language === 'fr' ? 'Hébergement, DNS & sécurité gérés' : 'Hosting, DNS & security managed',
+                  language === 'fr' ? 'Petites modifs incluses (texte, photo, couleur)' : 'Small edits included (text, photo, color)',
+                  language === 'fr' ? 'Modifications effectuées sous 24h' : 'Changes done within 24h',
+                ].map((feat, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm text-foreground/80">
+                    <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
+                    <span>{feat}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.article>
+
+            {/* Option C */}
+            <motion.article
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              whileHover={{ y: -6 }}
+              className="glass-card rounded-2xl sm:rounded-3xl p-5 sm:p-7 flex flex-col transition-all duration-300"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2.5 rounded-xl bg-secondary">
+                  <Wrench className="w-5 h-5 text-primary" aria-hidden="true" />
+                </div>
+                <div>
+                  <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
+                    {language === 'fr' ? 'Option C' : 'Option C'}
+                  </span>
+                  <h3 className="text-base font-bold text-foreground leading-tight">
+                    {language === 'fr' ? 'Géré + Évolutions' : 'Managed + Growth'}
+                  </h3>
+                </div>
+              </div>
+              <div className="mb-4">
+                <span className="text-3xl font-bold text-foreground">80€</span>
+                <span className="text-sm text-muted-foreground ml-1">{language === 'fr' ? '/mois' : '/month'}</span>
+              </div>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                {language === 'fr'
+                  ? "Tout ce qu'il y a dans B, plus les ajouts de sections, modifications conséquentes, nouvelles pages ou nouvelles fonctionnalités."
+                  : "Everything in B, plus new sections, bigger changes, full new pages or new features, all included."}
+              </p>
+              <ul className="space-y-2 flex-grow">
+                {[
+                  language === 'fr' ? "Tout ce qu'il y a dans l'Option B" : 'Everything in Option B',
+                  language === 'fr' ? 'Nouvelles sections & modifications conséquentes incluses' : 'New sections & larger edits included',
+                  language === 'fr' ? 'Nouvelles pages complètes ou nouvelles fonctionnalités' : 'Full new pages or new features',
+                ].map((feat, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm text-foreground/80">
+                    <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
+                    <span>{feat}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.article>
           </div>
         </div>
       </section>
