@@ -1,5 +1,5 @@
 {
-  "buildCommand": "bunx vite build && bunx react-snap",
+  "buildCommand": "bunx vite build",
   "outputDirectory": "dist",
   "installCommand": "bun install",
   "redirects": [
