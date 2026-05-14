@@ -1,8 +1,13 @@
 {
-  "buildCommand": "bunx vite build",
+  "buildCommand": "bunx vite build && bunx react-snap",
   "outputDirectory": "dist",
   "installCommand": "bun install",
   "redirects": [
+    {
+      "source": "/apps",
+      "destination": "/",
+      "permanent": true
+    },
     {
       "source": "/web-designer-chambery",
       "destination": "/web-designer-annecy",

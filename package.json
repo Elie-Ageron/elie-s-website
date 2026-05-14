@@ -22,8 +22,7 @@
     "puppeteerArgs": [
       "--no-sandbox",
       "--disable-setuid-sandbox"
-    ],
-    "puppeteerExecutablePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+    ]
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
