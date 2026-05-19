@@ -77,7 +77,7 @@ const FAQAccordion = () => {
         >
           <h2 id="faq-heading" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
             <span className="text-foreground">{language === 'fr' ? 'Questions' : 'Frequently Asked'}</span>{' '}
-            <span className="text-primary">{language === 'fr' ? 'Fréquentes' : 'Questions'}</span>
+            <span className="inline-block text-primary">{language === 'fr' ? 'Fréquentes' : 'Questions'}</span>
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
             {language === 'fr' 

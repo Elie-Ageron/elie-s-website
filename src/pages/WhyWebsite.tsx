@@ -49,9 +49,9 @@ const WhyWebsite = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 id="why-hero-heading" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
+            <h1 id="why-hero-heading" className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
               <span className="text-foreground">{t('why.title1')}</span>{' '}
-              <span className="text-primary">{t('why.title2')}</span>
+              <span className="inline-block text-primary">{t('why.title2')}</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               {t('why.subtitle')}
@@ -102,7 +102,7 @@ const WhyWebsite = () => {
             <span className="inline-block text-xs font-semibold uppercase tracking-widest text-primary mb-3">{t('why.solution.label')}</span>
             <h2 id="solution-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold">
               <span className="text-foreground">{t('why.solution.title1')}</span>{' '}
-              <span className="text-primary">{t('why.solution.title2')}</span>
+              <span className="inline-block text-primary">{t('why.solution.title2')}</span>
             </h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -151,7 +151,7 @@ const WhyWebsite = () => {
             </span>
             <h2 id="stats-heading" className="text-3xl sm:text-5xl md:text-6xl font-bold leading-tight">
               <span className="text-foreground">{language === 'fr' ? 'Pourquoi vous ne pouvez plus' : "Why you can't afford"}</span>{' '}
-              <span className="text-primary">{language === 'fr' ? 'attendre.' : 'to wait.'}</span>
+              <span className="inline-block text-primary">{language === 'fr' ? 'attendre.' : 'to wait.'}</span>
             </h2>
           </motion.div>
 

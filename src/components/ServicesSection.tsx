@@ -178,7 +178,7 @@ const ServicesSection = () => {
             viewport={{ once: true }}
           >
             <span className="text-foreground">{t('services.title1')}</span>{' '}
-            <span className="text-primary">{t('services.title2')}</span>
+            <span className="inline-block text-primary">{t('services.title2')}</span>
           </motion.h2>
           <motion.p 
             className="text-lg text-muted-foreground max-w-2xl mx-auto"

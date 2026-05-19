@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, FileText, DollarSign, Briefcase, HelpCircle, BookOpen } from 'lucide-react';
+import { ArrowRight, FileText, DollarSign, Briefcase, HelpCircle, BookOpen, CalendarDays } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface InternalLinksProps {
-  currentPage: 'home' | 'why' | 'process' | 'pricing' | 'portfolio' | 'contact' | 'blog';
+  currentPage: 'home' | 'why' | 'process' | 'pricing' | 'portfolio' | 'contact' | 'blog' | 'event';
 }
 
 const InternalLinks = ({ currentPage }: InternalLinksProps) => {
@@ -49,6 +49,14 @@ const InternalLinks = ({ currentPage }: InternalLinksProps) => {
       icon: BookOpen,
       title: language === 'fr' ? 'Blog & Conseils' : 'Blog & Tips',
       desc: language === 'fr' ? 'Stratégies web & SEO' : 'Web & SEO strategies',
+      anchor: '',
+    },
+    {
+      id: 'event',
+      path: '/event-production',
+      icon: CalendarDays,
+      title: language === 'fr' ? 'Sites Événementiels' : 'Event Websites',
+      desc: language === 'fr' ? 'Pages qui convertissent le trafic event' : 'Pages that convert event traffic',
       anchor: '',
     },
   ];

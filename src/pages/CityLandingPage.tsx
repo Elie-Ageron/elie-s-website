@@ -153,7 +153,7 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight drop-shadow-lg"
           >
             <span className="text-foreground">{d.h1Pre}</span>
-            <span className="text-primary">{d.h1Highlight}</span>
+            <span className="inline-block text-primary">{d.h1Highlight}</span>
           </motion.h1>
 
           {/* H2 subtitle */}

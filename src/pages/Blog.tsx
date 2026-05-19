@@ -71,11 +71,11 @@ const Blog = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 id="blog-hero-heading" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
+            <h1 id="blog-hero-heading" className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
               <span className="text-foreground">
                 {language === 'fr' ? 'Croissez en ligne.' : 'Grow online.'}
               </span>{' '}
-              <span className="text-primary">
+              <span className="inline-block text-primary">
                 {language === 'fr' ? 'Concrètement.' : 'Concretely.'}
               </span>
             </h1>

@@ -56,7 +56,7 @@ const PersonalIntroSection = () => {
                 {language === 'fr' ? 'Un projet à la fois.' : 'One project at a time.'}
               </span>
               <br />
-              <span className="text-primary">
+              <span className="inline-block text-primary">
                 {language === 'fr' ? 'Le vôtre.' : 'Yours.'}
               </span>
             </h2>

@@ -2,7 +2,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface SEOProps {
-  page: 'home' | 'why' | 'process' | 'pricing' | 'portfolio' | 'contact' | 'blog' | 'apps';
+  page: 'home' | 'why' | 'process' | 'pricing' | 'portfolio' | 'contact' | 'blog' | 'apps' | 'event';
   customTitle?: string;
   customDescription?: string;
   customCanonical?: string;
@@ -24,6 +24,7 @@ const pageKeywords = {
     contact: 'contact web designer, book web design call, hire web designer France, web design consultation',
     blog: 'web design tips, conversion optimization, SEO guide, digital marketing, online business growth',
     apps: 'web app development, business dashboard, custom app, CRM development, SaaS development, business software',
+    event: 'event production website, event registration page, event website design, high-conversion event page, event producer web design',
   },
   fr: {
     home: 'Elie Ageron, web design, création site web, optimisation conversion, site internet, Annecy, Haute-Savoie',
@@ -34,6 +35,7 @@ const pageKeywords = {
     contact: 'contacter web designer, réserver appel web design, embaucher web designer France',
     blog: 'conseils web design, optimisation conversion, guide SEO local, marketing digital, croissance business',
     apps: 'développement application web, dashboard entreprise, app sur mesure, CRM personnalisé, logiciel métier, outil interne',
+    event: 'site web producteur événements, page inscription événement, création site événementiel, page registration haute conversion, web design événement',
   },
 };
 
@@ -72,6 +74,10 @@ const seoData = {
       title: 'Business Apps & Dashboards | Elie Ageron',
       description: 'Custom web app development: dashboards, CRMs, client portals, automation. Apps built to streamline your business processes.',
     },
+    event: {
+      title: 'Event Production Websites | Elie Ageron',
+      description: 'Registration pages that convert event traffic into bookings. Mobile-first, high-conversion design for event producers. From €800.',
+    },
   },
   fr: {
     home: {
@@ -106,6 +112,10 @@ const seoData = {
       title: 'Apps & Dashboards pour Entreprises | Elie Ageron',
       description: 'Développement d\'applications web sur mesure : dashboards, CRM, portails clients, automatisation. Des apps qui font vraiment travailler votre équipe.',
     },
+    event: {
+      title: 'Sites pour Producteurs d\'Événements | Elie Ageron',
+      description: 'Pages d\'inscription qui convertissent votre trafic event en bookings réels. Mobile-first, haute conversion, dès 800€. Appel découverte gratuit.',
+    },
   },
 };
 
@@ -128,6 +138,7 @@ const SEO = ({ page, customTitle, customDescription, customCanonical, ogImage, o
     contact: '/contact',
     blog: '/blog',
     apps: '/apps',
+    event: '/event-production',
   };
   
   const currentPath = pathMap[page] || '';

@@ -22,7 +22,7 @@ class Scene3DErrorBoundary extends Component<{ children: ReactNode }, { crashed:
 }
 
 const HeroSection = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { openCalendly } = useCalendly();
   const isMobile = useIsMobile();
   const [mounted, setMounted] = useState(false);
@@ -87,7 +87,7 @@ const HeroSection = () => {
           <h1 id="hero-heading" className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-4 sm:mb-6 leading-tight sm:leading-tight drop-shadow-lg">
             <span className="text-foreground">{t('hero.headline1')}</span>
             <br />
-            <span className="text-primary">{t('hero.headline2')}</span>
+            <span className="inline-block text-primary">{t('hero.headline2')}</span>
           </h1>
 
           {/* Subtitle — concrete promise */}
@@ -127,6 +127,22 @@ const HeroSection = () => {
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Link>
             </Button>
+          </motion.div>
+
+          {/* Event producer subtle link */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.55, duration: 0.5 }}
+            className="mt-3"
+          >
+            <Link
+              to="/event-production"
+              className="inline-flex items-center gap-1.5 text-xs sm:text-sm text-muted-foreground/60 hover:text-primary transition-colors group"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:bg-primary transition-colors shrink-0" aria-hidden="true" />
+              {language === 'fr' ? 'Producteur d\'événements ? Voir notre offre dédiée →' : 'Event producer? See our dedicated offer →'}
+            </Link>
           </motion.div>
 
           {/* Scarcity — natural availability constraint */}

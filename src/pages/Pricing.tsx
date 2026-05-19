@@ -136,9 +136,9 @@ const Pricing = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 id="pricing-hero-heading" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
+            <h1 id="pricing-hero-heading" className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
               <span className="text-foreground">{t('pricing.title1')}</span>{' '}
-              <span className="text-primary">{t('pricing.title2')}</span>
+              <span className="inline-block text-primary">{t('pricing.title2')}</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               {t('pricing.subtitle')}
@@ -376,7 +376,7 @@ const Pricing = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
-              <span className="text-primary">{t('pricing.quote.title1')}</span>{' '}
+              <span className="inline-block text-primary">{t('pricing.quote.title1')}</span>{' '}
               <span className="text-foreground">{t('pricing.quote.title2')}</span>
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-8">{t('pricing.quote.desc')}</p>

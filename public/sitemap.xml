@@ -156,6 +156,17 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Sites pour producteurs d'événements -->
+  <url>
+    <loc>https://elieageron.com/event-production</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/event-production" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/event-production" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/event-production" />
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Pages villes — SEO local -->
   <url>
     <loc>https://elieageron.com/web-designer-annecy</loc>

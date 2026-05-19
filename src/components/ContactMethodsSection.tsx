@@ -65,7 +65,7 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
               viewport={{ once: true }}
             >
               <span className="text-foreground">{t('home.contact.title1')}</span>{' '}
-              <span className="text-primary">{t('home.contact.title2')}</span>
+              <span className="inline-block text-primary">{t('home.contact.title2')}</span>
             </motion.h2>
             <motion.p 
               className="text-sm sm:text-base text-muted-foreground"

@@ -82,9 +82,9 @@ const Contact = () => {
               <Clock className="w-4 h-4" />
               {language === 'fr' ? 'Réponse rapide garantie' : 'Fast response guaranteed'}
             </motion.div>
-            <h1 id="contact-hero-heading" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
+            <h1 id="contact-hero-heading" className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6">
               <span className="text-foreground">{t('contact.title1')}</span>{' '}
-              <span className="text-primary">{t('contact.title2')}</span>
+              <span className="inline-block text-primary">{t('contact.title2')}</span>
             </h1>
             <p className="text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               {t('contact.subtitle')}
