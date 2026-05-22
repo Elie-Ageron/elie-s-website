@@ -129,19 +129,27 @@ const HeroSection = () => {
             </Button>
           </motion.div>
 
-          {/* Event producer subtle link */}
+          {/* Subtle CTAs — specific niches */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.55, duration: 0.5 }}
-            className="mt-3"
+            className="mt-3 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-5"
           >
+            <Link
+              to="/get-started"
+              className="inline-flex items-center gap-1.5 text-xs sm:text-sm text-muted-foreground/60 hover:text-primary transition-colors group"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:bg-primary transition-colors shrink-0" aria-hidden="true" />
+              {language === 'fr' ? 'Déjà un projet en tête ? Démarrer sans appel →' : 'Already have a project? Start without a call →'}
+            </Link>
+            <span className="hidden sm:block text-muted-foreground/30 text-xs">·</span>
             <Link
               to="/event-production"
               className="inline-flex items-center gap-1.5 text-xs sm:text-sm text-muted-foreground/60 hover:text-primary transition-colors group"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:bg-primary transition-colors shrink-0" aria-hidden="true" />
-              {language === 'fr' ? 'Producteur d\'événements ? Voir notre offre dédiée →' : 'Event producer? See our dedicated offer →'}
+              {language === 'fr' ? "Producteur d'événements ? Offre dédiée →" : 'Event producer? Dedicated offer →'}
             </Link>
           </motion.div>
 

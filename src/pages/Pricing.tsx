@@ -1,8 +1,8 @@
 ﻿import { motion } from 'framer-motion';
 import { Check, Zap, Crown, Sparkles, ArrowRight, Shield, Wrench, Rocket } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { useCalendly } from '@/contexts/CalendlyContext';
 import MagneticButton from '@/components/animations/MagneticButton';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
 import SEO from '@/components/SEO';
@@ -13,11 +13,6 @@ import InternalLinks from '@/components/InternalLinks';
 const Pricing = () => {
 
   const { t, language } = useLanguage();
-  const { openCalendly } = useCalendly();
-
-  const scrollToContact = () => {
-    document.getElementById('pricing-contact')?.scrollIntoView({ behavior: 'smooth' });
-  };
 
   const serviceSchema = {
     '@context': 'https://schema.org',
@@ -202,14 +197,15 @@ const Pricing = () => {
                 </ul>
 
                 <MagneticButton>
-                  <Button 
-                    variant={plan.popular ? 'hero' : 'neonOutline'} 
-                    size="lg" 
+                  <Button
+                    variant={plan.popular ? 'hero' : 'neonOutline'}
+                    size="lg"
                     className="w-full min-h-[52px] sm:min-h-[48px] active:scale-[0.98] transition-transform"
-                    onClick={scrollToContact}
-                    aria-label={`${plan.cta} - ${plan.title} for ${plan.price}`}
+                    asChild
                   >
-                    {plan.cta}
+                    <Link to="/get-started" aria-label={`${plan.cta} - ${plan.title} for ${plan.price}`}>
+                      {plan.cta}
+                    </Link>
                   </Button>
                 </MagneticButton>
               </motion.article>
@@ -389,9 +385,11 @@ const Pricing = () => {
               ))}
             </ul>
             <MagneticButton>
-              <Button variant="hero" size="lg" onClick={scrollToContact} className="group">
-                {t('pricing.quote.cta')}
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              <Button variant="hero" size="lg" className="group" asChild>
+                <Link to="/get-started" className="flex items-center gap-2">
+                  {t('pricing.quote.cta')}
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </Button>
             </MagneticButton>
           </motion.div>

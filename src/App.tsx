@@ -21,6 +21,7 @@ const Contact = lazy(() => import("./pages/Contact"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 const EventProduction = lazy(() => import("./pages/EventProduction"));
+const GetStarted = lazy(() => import("./pages/GetStarted"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const LegalPage = lazy(() => import("./pages/LegalPage"));
 const CityLandingPage = lazy(() => import("./pages/CityLandingPage"));
@@ -93,6 +94,7 @@ const App = () => (
                   <Route path="/blog" element={<Blog />} />
                   <Route path="/blog/:slug" element={<BlogPost />} />
                   <Route path="/event-production" element={<EventProduction />} />
+                  <Route path="/get-started" element={<GetStarted />} />
                   {/* <Route path="/apps" element={<Apps />} /> */}{/* hidden - future service */}
                   {/* City landing pages */}
                   <Route path="/web-designer-annecy" element={<CityLandingPage slug="web-designer-annecy" />} />

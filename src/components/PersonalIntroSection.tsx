@@ -1,13 +1,12 @@
 ﻿import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { useCalendly } from '@/contexts/CalendlyContext';
 import eliePortrait from '@/assets/elie-ageron-portrait.webp';
 
 const PersonalIntroSection = () => {
   const { language } = useLanguage();
-  const { openCalendly } = useCalendly();
 
   return (
     <section className="py-12 sm:py-16 md:py-20 relative overflow-hidden" aria-labelledby="intro-heading">
@@ -68,16 +67,16 @@ const PersonalIntroSection = () => {
             </p>
 
             <div className="hidden md:block">
-              <Button 
-                variant="hero" 
-                size="lg" 
+              <Button
+                variant="hero"
+                size="lg"
                 className="group min-h-[52px] active:scale-[0.98] transition-transform"
-                onClick={openCalendly}
+                asChild
               >
-                <span className="flex items-center gap-2">
-                  {language === 'fr' ? 'Prendre contact' : "Get in touch"}
+                <Link to="/get-started" className="flex items-center gap-2">
+                  {language === 'fr' ? 'Démarrer mon projet' : 'Start my project'}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-                </span>
+                </Link>
               </Button>
             </div>
           </motion.div>
@@ -85,16 +84,16 @@ const PersonalIntroSection = () => {
 
         {/* CTA - Mobile only, after photo */}
         <div className="md:hidden flex justify-center mt-6">
-          <Button 
-            variant="hero" 
-            size="lg" 
+          <Button
+            variant="hero"
+            size="lg"
             className="group min-h-[52px] active:scale-[0.98] transition-transform"
-            onClick={openCalendly}
+            asChild
           >
-            <span className="flex items-center gap-2">
-              {language === 'fr' ? 'Prendre contact' : "Get in touch"}
+            <Link to="/get-started" className="flex items-center gap-2">
+              {language === 'fr' ? 'Démarrer mon projet' : 'Start my project'}
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-            </span>
+            </Link>
           </Button>
         </div>
       </div>
