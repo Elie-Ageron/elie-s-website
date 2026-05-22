@@ -6,6 +6,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useToast } from '@/hooks/use-toast';
 import SEO from '@/components/SEO';
 import InternalLinks from '@/components/InternalLinks';
+import ScrollArrow from '@/components/ScrollArrow';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 
@@ -130,12 +131,12 @@ const GetStarted = () => {
       <SEO page="contact" structuredData={[breadcrumbSchema]} />
 
       {/* Hero */}
-      <section className="py-12 sm:py-16 md:py-20 relative grain" aria-labelledby="gs-heading">
+      <section className="relative grain min-h-screen flex items-center justify-center" aria-labelledby="gs-heading">
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
           <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-primary/15 rounded-full blur-[100px]" />
           <div className="absolute bottom-1/4 left-1/4 w-56 h-56 bg-primary/8 rounded-full blur-[80px]" />
         </div>
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center relative z-10">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center relative z-10 -mt-16 sm:-mt-32">
           <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
             <span className="inline-block text-xs font-semibold uppercase tracking-widest text-primary mb-4">
               {language === 'fr' ? 'Sans appel · Sans engagement' : 'No call · No commitment'}
@@ -157,6 +158,7 @@ const GetStarted = () => {
             </p>
           </motion.header>
         </div>
+        <ScrollArrow />
       </section>
 
       {/* Form */}

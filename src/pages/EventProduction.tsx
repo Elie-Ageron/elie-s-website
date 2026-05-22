@@ -13,6 +13,7 @@ import MagneticButton from '@/components/animations/MagneticButton';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
 import SEO from '@/components/SEO';
 import InternalLinks from '@/components/InternalLinks';
+import ScrollArrow from '@/components/ScrollArrow';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import logoVmProducers from '@/assets/logo vm producers.png';
@@ -371,12 +372,12 @@ const EventProduction = () => {
       <SEO page="event" structuredData={[breadcrumbSchema, serviceSchema]} />
 
       {/* ─── Hero ─── */}
-      <section className="py-12 sm:py-16 md:py-20 relative grain" aria-labelledby="event-hero-heading">
+      <section className="relative grain min-h-screen flex items-center justify-center" aria-labelledby="event-hero-heading">
         <div className="absolute inset-0" aria-hidden="true">
           <div className="absolute top-1/3 right-1/4 w-56 sm:w-80 h-56 sm:h-80 bg-primary/20 rounded-full blur-[80px] sm:blur-[120px]" />
           <div className="absolute bottom-1/4 left-1/4 w-40 sm:w-60 h-40 sm:h-60 bg-primary/10 rounded-full blur-[60px] sm:blur-[100px]" />
         </div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10 -mt-16 sm:-mt-32">
           <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
             <span className="inline-block text-xs font-semibold uppercase tracking-widest text-primary mb-4">
               {language === 'fr' ? "Pour les producteurs d'événements" : 'For event producers'}
@@ -409,6 +410,7 @@ const EventProduction = () => {
             </motion.div>
           </motion.header>
         </div>
+        <ScrollArrow />
       </section>
 
       {/* ─── Problem + Solution (côte à côte) ─── */}
@@ -420,11 +422,11 @@ const EventProduction = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-12 sm:mb-16"
+            className="mb-12 sm:mb-16 text-center"
           >
             <h2 id="event-problem-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
               <span className="text-foreground">
-                {language === 'fr' ? 'Pourquoi vous perdez des inscriptions' : 'Why you lose registrations'}
+                {language === 'fr' ? 'Pourquoi vos places restent vides' : 'Why your seats stay empty'}
               </span>
               <br />
               <span className="inline-block text-primary">

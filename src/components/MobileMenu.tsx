@@ -199,16 +199,27 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                 </div>
               </motion.div>
 
-              {/* CTA Button - Touch optimized */}
+              {/* CTA Buttons - Touch optimized */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.35 }}
+                className="flex flex-col gap-3"
               >
                 <Button
                   variant="hero"
                   size="lg"
                   className="w-full min-h-[56px] text-base active:scale-[0.98]"
+                  asChild
+                >
+                  <Link to="/get-started" onClick={onClose}>
+                    {language === 'fr' ? 'Démarrer mon projet →' : 'Start my project →'}
+                  </Link>
+                </Button>
+                <Button
+                  variant="neonOutline"
+                  size="lg"
+                  className="w-full min-h-[52px] text-base active:scale-[0.98]"
                   onClick={() => { openCalendly(); onClose(); }}
                   aria-label="Book a call with Elie Ageron"
                 >

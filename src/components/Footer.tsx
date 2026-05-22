@@ -1,5 +1,5 @@
 ﻿import { motion } from 'framer-motion';
-import { Heart, Mail, Phone, MapPin } from 'lucide-react';
+import { Heart, Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 import logo from '@/assets/logo.png';
@@ -13,6 +13,7 @@ const Footer = () => {
     { label: language === 'fr' ? 'Notre processus' : 'Our process', href: '/our-process' },
     { label: language === 'fr' ? 'Tarifs' : 'Pricing', href: '/pricing' },
     { label: t('nav.portfolio'), href: '/portfolio' },
+    { label: language === 'fr' ? 'Événements' : 'Events', href: '/event-production' },
     { label: 'Blog', href: '/blog' },
     { label: t('nav.contact'), href: '/contact' },
   ];
@@ -21,6 +22,34 @@ const Footer = () => {
     <div className="relative z-10" role="contentinfo" aria-label="Site footer">
       <footer className="bg-secondary/40 border-t border-border/30">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+            {/* CTA Banner */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-10 pb-10 border-b border-border/30"
+          >
+            <p className="text-sm text-muted-foreground mb-4">
+              {language === 'fr' ? 'Prêt à lancer votre projet ?' : 'Ready to launch your project?'}
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <Link
+                to="/get-started"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-xl hover:bg-primary/90 transition-all text-sm active:scale-[0.98]"
+              >
+                {language === 'fr' ? 'Démarrer mon projet' : 'Start my project'}
+                <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              </Link>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 px-5 py-3 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {language === 'fr' ? 'Questions ? Écrivez-moi' : 'Questions? Write me'}
+              </Link>
+            </div>
+          </motion.div>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

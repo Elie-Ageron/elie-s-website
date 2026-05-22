@@ -9,6 +9,7 @@ import SEO from '@/components/SEO';
 import FAQSchema from '@/components/FAQSchema';
 import FAQAccordion from '@/components/FAQAccordion';
 import InternalLinks from '@/components/InternalLinks';
+import ScrollArrow from '@/components/ScrollArrow';
 
 const Pricing = () => {
 
@@ -121,11 +122,11 @@ const Pricing = () => {
       <FAQSchema page="pricing" />
       
       {/* Hero */}
-      <section className="py-12 sm:py-16 md:py-20 relative grain" aria-labelledby="pricing-hero-heading">
+      <section className="relative grain min-h-screen flex items-center justify-center" aria-labelledby="pricing-hero-heading">
         <div className="absolute inset-0" aria-hidden="true">
           <div className="absolute top-1/3 right-1/4 sm:right-1/3 w-56 sm:w-80 h-56 sm:h-80 bg-primary/20 rounded-full blur-[80px] sm:blur-[120px]" />
         </div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10 -mt-16 sm:-mt-32">
           <motion.header
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -140,6 +141,7 @@ const Pricing = () => {
             </p>
           </motion.header>
         </div>
+        <ScrollArrow />
       </section>
 
       {/* Pricing Cards */}

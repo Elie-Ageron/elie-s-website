@@ -7,6 +7,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import SEO from '@/components/SEO';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
 import InternalLinks from '@/components/InternalLinks';
+import ScrollArrow from '@/components/ScrollArrow';
 import { blogPosts, getLocalizedPost } from '@/data/blogPosts';
 
 const Blog = () => {
@@ -61,11 +62,11 @@ const Blog = () => {
       </Helmet>
       
       {/* Hero */}
-      <section className="py-12 sm:py-16 md:py-20 relative grain" aria-labelledby="blog-hero-heading">
+      <section className="relative grain min-h-screen flex items-center justify-center" aria-labelledby="blog-hero-heading">
         <div className="absolute inset-0" aria-hidden="true">
           <div className="absolute top-1/3 right-1/4 w-56 sm:w-80 h-56 sm:h-80 bg-primary/20 rounded-full blur-[80px] sm:blur-[120px]" />
         </div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10 -mt-16 sm:-mt-32">
           <motion.header
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -80,12 +81,13 @@ const Blog = () => {
               </span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              {language === 'fr' 
+              {language === 'fr'
                 ? 'SEO, conversion, présence locale : les stratégies qui font réellement entrer des clients.'
                 : 'SEO, conversion, local presence: strategies that actually bring in clients.'}
             </p>
           </motion.header>
         </div>
+        <ScrollArrow />
       </section>
 
       {/* Blog Grid */}

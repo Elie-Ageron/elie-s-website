@@ -111,21 +111,21 @@ const HeroSection = () => {
               variant="hero"
               size="xl"
               className="min-h-[56px] sm:min-h-[60px] px-6 sm:px-10 text-base sm:text-lg active:scale-[0.98] transition-transform w-full sm:w-auto"
-              onClick={openCalendly}
-              aria-label="Book your growth session with Elie Ageron"
+              asChild
             >
-              {t('hero.cta')}
+              <Link to="/get-started" className="flex items-center gap-2">
+                {language === 'fr' ? 'Démarrer mon projet' : 'Start my project'}
+                <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              </Link>
             </Button>
             <Button
               variant="ghost"
               size="xl"
-              className="min-h-[56px] sm:min-h-[60px] px-6 sm:px-8 text-base sm:text-lg text-muted-foreground hover:text-foreground group w-full sm:w-auto"
-              asChild
+              className="min-h-[56px] sm:min-h-[60px] px-6 sm:px-8 text-base sm:text-lg text-muted-foreground hover:text-foreground w-full sm:w-auto"
+              onClick={openCalendly}
+              aria-label="Book a call with Elie Ageron"
             >
-              <Link to="/portfolio" className="flex items-center gap-2">
-                {t('hero.secondaryCta')}
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-              </Link>
+              {language === 'fr' ? 'Réserver un appel' : 'Book a call'}
             </Button>
           </motion.div>
 
@@ -137,11 +137,11 @@ const HeroSection = () => {
             className="mt-3 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-5"
           >
             <Link
-              to="/get-started"
+              to="/contact"
               className="inline-flex items-center gap-1.5 text-xs sm:text-sm text-muted-foreground/60 hover:text-primary transition-colors group"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:bg-primary transition-colors shrink-0" aria-hidden="true" />
-              {language === 'fr' ? 'Déjà un projet en tête ? Démarrer sans appel →' : 'Already have a project? Start without a call →'}
+              {language === 'fr' ? 'Vous préférez d\'abord en parler ?' : 'Prefer to talk first?'}
             </Link>
             <span className="hidden sm:block text-muted-foreground/30 text-xs">·</span>
             <Link

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import InternalLinks from '@/components/InternalLinks';
 import SEO from '@/components/SEO';
+import ScrollArrow from '@/components/ScrollArrow';
 
 const Contact = () => {
   const { language } = useLanguage();
@@ -32,12 +33,12 @@ const Contact = () => {
       <SEO page="contact" structuredData={[contactPageSchema, breadcrumbSchema]} />
 
       {/* Hero */}
-      <section className="py-16 sm:py-20 relative grain" aria-labelledby="contact-hero-heading">
+      <section className="relative grain min-h-screen flex items-center justify-center" aria-labelledby="contact-hero-heading">
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
           <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-primary/20 rounded-full blur-[120px]" />
           <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-[100px]" />
         </div>
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center relative z-10">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center relative z-10 -mt-16 sm:-mt-32">
           <motion.header initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <h1 id="contact-hero-heading" className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
               <span className="text-foreground">{language === 'fr' ? 'Parlons de' : "Let's talk about"}</span>{' '}
@@ -50,6 +51,7 @@ const Contact = () => {
             </p>
           </motion.header>
         </div>
+        <ScrollArrow />
       </section>
 
       {/* Main options */}

@@ -207,8 +207,19 @@ const Header = () => {
                 </button>
               </div>
               
-              <Button variant="neon" size="sm" onClick={openCalendly} aria-label="Book a call with Elie Ageron">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={openCalendly}
+                className="text-muted-foreground hover:text-foreground"
+                aria-label="Book a call with Elie Ageron"
+              >
                 {t('nav.book')}
+              </Button>
+              <Button variant="hero" size="sm" asChild>
+                <Link to="/get-started">
+                  {language === 'fr' ? 'Démarrer →' : 'Start →'}
+                </Link>
               </Button>
             </div>
 

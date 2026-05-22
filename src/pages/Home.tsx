@@ -6,6 +6,7 @@ import HeroSection from '@/components/HeroSection';
 import PersonalIntroSection from '@/components/PersonalIntroSection';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
 import ServicesSection from '@/components/ServicesSection';
+import RoutingSection from '@/components/RoutingSection';
 import FAQAccordion from '@/components/FAQAccordion';
 import SEO from '@/components/SEO';
 import FAQSchema from '@/components/FAQSchema';
@@ -29,6 +30,9 @@ const Home = () => {
       
       {/* Hero Section with 3D */}
       <HeroSection />
+
+      {/* Routing — 3 clear entry paths */}
+      <RoutingSection />
 
       {/* Stats - Agitation: why you need a site */}
       <StatsSection />
