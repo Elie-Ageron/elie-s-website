@@ -5,7 +5,7 @@ import {
   Smartphone, Timer, ArrowRight, Send, Plus, Minus,
   Users, Music, Mic, Building,
   ClipboardList, Wrench, Eye, MessageSquare, BadgeCheck,
-  Target, Link2, Star, Search, BarChart3,
+  Target, Link2, Star, Search, BarChart3, ExternalLink, Scale, X,
 } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useToast } from '@/hooks/use-toast';
@@ -16,7 +16,6 @@ import InternalLinks from '@/components/InternalLinks';
 import ScrollArrow from '@/components/ScrollArrow';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import logoVmProducers from '@/assets/logo vm producers.png';
 
 const SCRIPT_URL =
   'https://script.google.com/macros/s/AKfycbxu13-AnjyCaXr818JdA-hCSohWEE2ii1ELGXM-PeQ_sGYYB8rvEhXr_NYh7YWedA4qyg/exec';
@@ -413,7 +412,7 @@ const EventProduction = () => {
         <ScrollArrow />
       </section>
 
-      {/* ─── Problem + Solution (côte à côte) ─── */}
+      {/* ─── Problem + Solution ─── */}
       <section className="py-12 sm:py-16 md:py-20" aria-labelledby="event-problem-heading">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
 
@@ -424,88 +423,98 @@ const EventProduction = () => {
             viewport={{ once: true }}
             className="mb-12 sm:mb-16 text-center"
           >
+            <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 mb-5" aria-hidden="true">
+              <Scale className="w-6 h-6 text-primary" />
+            </div>
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground mb-4">
+              {language === 'fr' ? 'La vraie différence' : 'The honest difference'}
+            </p>
             <h2 id="event-problem-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
               <span className="text-foreground">
-                {language === 'fr' ? 'Pourquoi vos places restent vides' : 'Why your seats stay empty'}
+                {language === 'fr' ? 'Deux résultats très différents.' : 'Two very different outcomes.'}
               </span>
               <br />
-              <span className="inline-block text-primary">
-                {language === 'fr' ? 'et comment on règle ça.' : 'and how we fix it.'}
+              <span className="text-primary">
+                {language === 'fr' ? 'Lequel est le vôtre ?' : 'Which one is yours?'}
               </span>
             </h2>
+            <div className="flex items-center justify-center gap-3 mt-8" aria-hidden="true">
+              <div className="w-16 h-px bg-border/50" />
+              <div className="w-8 h-8 rounded-full bg-muted border border-border/60 flex items-center justify-center">
+                <Scale className="w-3.5 h-3.5 text-muted-foreground/40" />
+              </div>
+              <div className="w-16 h-px bg-border/50" />
+            </div>
           </motion.div>
 
-          {/* 2-column grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+          {/* Two columns */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
 
-            {/* LEFT — Problem */}
-            <div>
-              <div className="flex items-center gap-2.5 mb-7">
-                <div className="w-2 h-2 rounded-full bg-destructive shrink-0" aria-hidden="true" />
-                <span className="text-xs font-bold uppercase tracking-[0.18em] text-destructive">
-                  {language === 'fr' ? 'Le problème' : 'The problem'}
+            {/* Left — Without */}
+            <motion.div
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="rounded-2xl bg-destructive/5 border border-destructive/15 p-6"
+            >
+              <div className="flex items-center gap-3 mb-5 pb-4 border-b border-destructive/15">
+                <div className="w-6 h-6 rounded-full bg-destructive flex items-center justify-center shrink-0" aria-hidden="true">
+                  <X className="w-3.5 h-3.5 text-white" />
+                </div>
+                <span className="font-semibold text-destructive text-sm sm:text-base">
+                  {language === 'fr' ? 'Sans page dédiée' : 'Without a dedicated page'}
                 </span>
               </div>
-              <div className="space-y-4">
+              <div className="space-y-2.5">
                 {painPoints.map((point, index) => (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 8 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: index * 0.08, duration: 0.45 }}
-                    className="flex gap-4 p-5 sm:p-6 rounded-2xl bg-destructive/5 border border-destructive/10 hover:border-destructive/25 transition-colors"
+                    transition={{ delay: index * 0.07 }}
+                    className="flex items-center gap-3 px-4 py-3 rounded-xl bg-card border border-destructive/15"
                   >
-                    <div className="p-2 rounded-lg bg-destructive/10 shrink-0 mt-0.5" aria-hidden="true">
-                      <point.icon className="w-4 h-4 text-destructive" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-foreground text-sm sm:text-base leading-snug mb-1">
-                        {point.title}
-                      </h3>
-                      <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">
-                        {point.desc}
-                      </p>
-                    </div>
+                    <point.icon className="w-4 h-4 text-destructive/70 shrink-0" aria-hidden="true" />
+                    <span className="text-sm text-foreground font-medium">{point.title}</span>
                   </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
 
-            {/* RIGHT — Solution */}
-            <div>
-              <div className="flex items-center gap-2.5 mb-7">
-                <div className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" aria-hidden="true" />
-                <span className="text-xs font-bold uppercase tracking-[0.18em] text-emerald-500">
-                  {language === 'fr' ? 'Ce qu\'on livre' : 'What we deliver'}
+            {/* Right — With */}
+            <motion.div
+              initial={{ opacity: 0, x: 24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="rounded-2xl bg-emerald-500/5 border border-emerald-500/20 p-6"
+            >
+              <div className="flex items-center gap-3 mb-5 pb-4 border-b border-emerald-500/20">
+                <div className="w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center shrink-0" aria-hidden="true">
+                  <Check className="w-3.5 h-3.5 text-white" />
+                </div>
+                <span className="font-semibold text-emerald-500 text-sm sm:text-base">
+                  {language === 'fr' ? 'Avec votre page event' : 'With your event page'}
                 </span>
               </div>
-              <div className="relative pl-5 sm:pl-7 border-l-2 border-emerald-500/40">
-                <div
-                  className="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-emerald-500"
-                  style={{ boxShadow: '0 0 8px 2px hsl(160 84% 39% / 0.4)' }}
-                  aria-hidden="true"
-                />
+              <div className="space-y-2.5">
                 {includes.map((item, index) => (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 8 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: index * 0.06, duration: 0.4 }}
-                    className="group flex items-center gap-4 py-4 sm:py-[18px] px-3 sm:px-5 rounded-xl hover:bg-emerald-500/[0.05] transition-colors"
+                    transition={{ delay: index * 0.05 }}
+                    className="flex items-center gap-3 px-4 py-3 rounded-xl bg-card border border-emerald-500/15"
                   >
-                    <div className="p-2.5 rounded-xl bg-emerald-500/10 group-hover:bg-emerald-500/20 transition-colors shrink-0">
-                      <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-500" aria-hidden="true" />
-                    </div>
-                    <span className="text-foreground font-medium text-sm sm:text-base leading-snug flex-1">
-                      {item.text}
-                    </span>
-                    <Check className="w-4 h-4 text-emerald-500/25 group-hover:text-emerald-500/60 shrink-0 transition-colors" aria-hidden="true" />
+                    <item.icon className="w-4 h-4 text-emerald-500 shrink-0" aria-hidden="true" />
+                    <span className="text-sm text-foreground font-medium">{item.text}</span>
                   </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
 
           </div>
         </div>
@@ -533,8 +542,8 @@ const EventProduction = () => {
             </h2>
             <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
               {language === 'fr'
-                ? "VM Producers utilisait leur Linktree pour vendre leurs billets. On a remplacé ça par une page dédiée. Les inscriptions ont suivi."
-                : 'VM Producers used their Linktree to sell tickets. We replaced it with a dedicated page. Registrations followed.'}
+                ? "Un exemple concret de ce qu'on construit pour vos événements. Design responsive, compte à rebours, section intervenants."
+                : 'A concrete example of what we build for your events. Responsive design, countdown timer, speakers section.'}
             </p>
           </motion.div>
 
@@ -543,61 +552,59 @@ const EventProduction = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="rounded-2xl overflow-hidden border border-border/50 shadow-2xl shadow-primary/5"
           >
-            <div className="bg-muted/60 px-4 py-3 flex items-center gap-3 border-b border-border/30">
-              <div className="flex gap-1.5" aria-hidden="true">
-                <div className="w-3 h-3 rounded-full bg-red-400/50" />
-                <div className="w-3 h-3 rounded-full bg-yellow-400/50" />
-                <div className="w-3 h-3 rounded-full bg-green-400/50" />
-              </div>
-              <div className="flex-1 mx-2">
-                <div className="bg-background/50 rounded-md px-3 py-1 text-xs text-muted-foreground/70 text-center max-w-xs mx-auto">
-                  evenements.vmproducers.com
+            <a
+              href="https://apex-summit.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block group relative rounded-2xl overflow-hidden border border-border/50 shadow-2xl shadow-primary/5 hover:border-primary/30 transition-all duration-500"
+              aria-label={language === 'fr' ? 'Voir la démo Apex Summit' : 'View Apex Summit demo'}
+            >
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" aria-hidden="true" />
+
+              {/* Browser chrome */}
+              <div className="bg-muted/60 px-4 py-3 flex items-center gap-3 border-b border-border/30">
+                <div className="flex gap-1.5" aria-hidden="true">
+                  <div className="w-3 h-3 rounded-full bg-red-400/50" />
+                  <div className="w-3 h-3 rounded-full bg-yellow-400/50" />
+                  <div className="w-3 h-3 rounded-full bg-green-400/50" />
                 </div>
-              </div>
-            </div>
-            <div className="bg-background/30 backdrop-blur-sm p-6 sm:p-12">
-              <div className="max-w-2xl mx-auto text-center space-y-5">
-                <img src={logoVmProducers} alt="VM Producers" className="h-8 w-auto mx-auto opacity-80" width={120} height={32} loading="lazy" decoding="async" />
-                <div className="inline-block px-3 py-1 rounded-full bg-primary/15 text-primary text-xs font-semibold tracking-wide">
-                  {language === 'fr' ? 'Vendredi 14 Mars 2025 · Paris' : 'Friday, March 14 2025 · Paris'}
-                </div>
-                <div className="text-2xl sm:text-4xl font-bold text-foreground">The Sound Experience</div>
-                <div className="text-sm text-muted-foreground max-w-xs mx-auto">
-                  {language === 'fr' ? 'La soirée électro la plus attendue du printemps' : "The most anticipated electronic night of the spring"}
-                </div>
-                <div className="flex justify-center gap-3 sm:gap-4">
-                  {(language === 'fr'
-                    ? [['02', 'Jours'], ['14', 'Heures'], ['32', 'Min'], ['18', 'Sec']]
-                    : [['02', 'Days'], ['14', 'Hours'], ['32', 'Min'], ['18', 'Sec']]
-                  ).map(([val, label]) => (
-                    <div key={label} className="glass-card rounded-xl px-3 py-2 min-w-[52px] text-center">
-                      <div className="text-xl font-bold text-primary">{val}</div>
-                      <div className="text-xs text-muted-foreground">{label}</div>
-                    </div>
-                  ))}
-                </div>
-                <div className="text-xs font-semibold text-destructive">
-                  {language === 'fr' ? '47 places restantes' : '47 spots remaining'}
-                </div>
-                <div>
-                  <div className="inline-block px-8 py-3 bg-primary text-primary-foreground rounded-xl font-semibold text-sm cursor-default">
-                    {language === 'fr' ? "Je m'inscris maintenant" : 'Register now'}
+                <div className="flex-1 mx-2">
+                  <div className="bg-background/50 rounded-md px-3 py-1 text-xs text-muted-foreground/70 text-center max-w-xs mx-auto">
+                    apex-summit.vercel.app
                   </div>
                 </div>
-                <div className="flex justify-center gap-6 text-xs text-muted-foreground/60 border-t border-border/20 pt-4">
-                  <span>4.9/5 (230 {language === 'fr' ? 'avis' : 'reviews'})</span>
-                  <span>{language === 'fr' ? "1 200 participants l'an dernier" : '1,200 attendees last year'}</span>
+                <ExternalLink className="w-4 h-4 text-muted-foreground/40 group-hover:text-primary transition-colors" aria-hidden="true" />
+              </div>
+
+              {/* Live iframe preview */}
+              <div className="relative overflow-hidden" style={{ height: '560px' }}>
+                <iframe
+                  src="https://apex-summit.vercel.app"
+                  title={language === 'fr' ? 'Démo site événementiel Apex Summit' : 'Apex Summit event website demo'}
+                  className="w-full h-full border-0 pointer-events-none"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                  <div className="flex items-center gap-2 text-primary">
+                    <span className="text-sm font-medium">{language === 'fr' ? 'Voir le site' : 'View site'}</span>
+                    <ExternalLink className="w-4 h-4" aria-hidden="true" />
+                  </div>
                 </div>
               </div>
-            </div>
+            </a>
           </motion.div>
 
           <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="text-center mt-6">
-            <a href="/portfolio" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors group">
-              {language === 'fr' ? 'Voir le cas complet VM Producers' : 'See the full VM Producers case study'}
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+            <a
+              href="https://apex-summit.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors group"
+            >
+              {language === 'fr' ? 'Ouvrir la démo Apex Summit' : 'Open the Apex Summit demo'}
+              <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
             </a>
           </motion.div>
         </div>
