@@ -2,6 +2,7 @@
   "buildCommand": "bunx vite build",
   "outputDirectory": "dist",
   "installCommand": "bun install",
+  "trailingSlash": false,
   "redirects": [
     {
       "source": "/apps",
