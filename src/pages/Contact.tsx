@@ -38,7 +38,7 @@ const Contact = () => {
           <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-primary/20 rounded-full blur-[120px]" />
           <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-[100px]" />
         </div>
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center relative z-10 -mt-16 sm:-mt-32">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center relative z-10 -mt-36">
           <motion.header initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <h1 id="contact-hero-heading" className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
               <span className="text-foreground">{language === 'fr' ? 'Parlons de' : "Let's talk about"}</span>{' '}

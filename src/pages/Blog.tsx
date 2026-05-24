@@ -66,7 +66,7 @@ const Blog = () => {
         <div className="absolute inset-0" aria-hidden="true">
           <div className="absolute top-1/3 right-1/4 w-56 sm:w-80 h-56 sm:h-80 bg-primary/20 rounded-full blur-[80px] sm:blur-[120px]" />
         </div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10 -mt-16 sm:-mt-32">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10 -mt-36">
           <motion.header
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -85,6 +85,15 @@ const Blog = () => {
                 ? 'SEO, conversion, présence locale : les stratégies qui font réellement entrer des clients.'
                 : 'SEO, conversion, local presence: strategies that actually bring in clients.'}
             </p>
+            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.4 }} className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+              <Link to="/get-started" className="inline-flex items-center gap-2 px-7 py-3.5 bg-primary text-primary-foreground font-semibold rounded-xl hover:bg-primary/90 transition-all text-sm">
+                {language === 'fr' ? 'Démarrer mon projet' : 'Start my project'}
+                <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              </Link>
+              <Link to="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                {language === 'fr' ? 'Questions ? Écrivez-moi →' : 'Questions? Write me →'}
+              </Link>
+            </motion.div>
           </motion.header>
         </div>
         <ScrollArrow />

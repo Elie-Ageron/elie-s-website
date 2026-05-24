@@ -25,7 +25,12 @@
       "Bash(git config *)",
       "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\eliea\\\\Documents\\\\buisness\\\\web design\\\\elie\\\\elie-s-website\" -Directory)",
       "Bash(Select-Object Name)",
-      "WebFetch(domain:outboundarchitects.co)"
+      "WebFetch(domain:outboundarchitects.co)",
+      "Bash(sed -i 's/-mt-16 sm:-mt-32/-mt-36/g' \"c:/Users/eliea/Documents/buisness/web design/elie/elie-s-website/src/pages/WhyWebsite.tsx\")",
+      "Bash(sed -i 's/-mt-16 sm:-mt-32/-mt-36/g' \"c:/Users/eliea/Documents/buisness/web design/elie/elie-s-website/src/pages/OurProcess.tsx\")",
+      "Bash(sed -i 's/-mt-16 sm:-mt-32/-mt-36/g' \"c:/Users/eliea/Documents/buisness/web design/elie/elie-s-website/src/pages/Portfolio.tsx\")",
+      "Bash(sed -i 's/-mt-16 sm:-mt-32/-mt-36/g' \"c:/Users/eliea/Documents/buisness/web design/elie/elie-s-website/src/pages/Blog.tsx\")",
+      "Bash(sed -i 's/-mt-16 sm:-mt-32/-mt-36/g' \"c:/Users/eliea/Documents/buisness/web design/elie/elie-s-website/src/pages/Pricing.tsx\")"
     ]
   }
 }

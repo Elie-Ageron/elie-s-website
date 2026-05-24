@@ -1,11 +1,11 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useCallback } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import {
   Check, Zap, Crown, TrendingDown, MousePointerClick,
   Smartphone, Timer, ArrowRight, Send, Plus, Minus,
   Users, Music, Mic, Building,
   ClipboardList, Wrench, Eye, MessageSquare, BadgeCheck,
-  Target, Link2, Star, Search, BarChart3, ExternalLink, Scale, X,
+  Target, Link2, Star, Search, BarChart3, ExternalLink, Scale, X, ChevronLeft, ChevronRight,
 } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useToast } from '@/hooks/use-toast';
@@ -82,6 +82,122 @@ const StepNode = ({ step, index, total, isLast, scrollYProgress, language }: Ste
             <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
           </a>
         )}
+      </div>
+    </motion.div>
+  );
+};
+
+interface DemoSliderProps {
+  demos: { url: string; label: string }[];
+  language: string;
+}
+
+const DemoSlider = ({ demos, language }: DemoSliderProps) => {
+  const [active, setActive] = useState(0);
+  const [direction, setDirection] = useState(0);
+
+  const go = useCallback((next: number) => {
+    setDirection(next > active ? 1 : -1);
+    setActive(next);
+  }, [active]);
+
+  const prev = () => go((active - 1 + demos.length) % demos.length);
+  const next = () => go((active + 1) % demos.length);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.7 }}
+      className="flex flex-col gap-4"
+    >
+      {/* Browser frame */}
+      <div className="relative rounded-2xl overflow-hidden border border-border/50 shadow-2xl shadow-primary/5">
+        {/* Chrome bar */}
+        <div className="bg-muted/60 px-4 py-3 flex items-center gap-3 border-b border-border/30">
+          <div className="flex gap-1.5" aria-hidden="true">
+            <div className="w-3 h-3 rounded-full bg-red-400/50" />
+            <div className="w-3 h-3 rounded-full bg-yellow-400/50" />
+            <div className="w-3 h-3 rounded-full bg-green-400/50" />
+          </div>
+          <div className="flex-1 mx-2">
+            <div className="bg-background/50 rounded-md px-3 py-1 text-xs text-muted-foreground/70 text-center max-w-sm mx-auto truncate">
+              {demos[active].url.replace('https://', '')}
+            </div>
+          </div>
+          <a
+            href={demos[active].url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={language === 'fr' ? 'Ouvrir dans un nouvel onglet' : 'Open in new tab'}
+            onClick={e => e.stopPropagation()}
+          >
+            <ExternalLink className="w-4 h-4 text-muted-foreground/40 hover:text-primary transition-colors" aria-hidden="true" />
+          </a>
+        </div>
+
+        {/* Iframe with slide transition */}
+        <div className="relative overflow-hidden" style={{ height: '560px' }}>
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.div
+              key={active}
+              initial={{ opacity: 0, x: direction * 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -direction * 40 }}
+              transition={{ duration: 0.3, ease: 'easeOut' }}
+              className="absolute inset-0"
+            >
+              <iframe
+                src={demos[active].url}
+                title={demos[active].label}
+                className="w-full h-full border-0 pointer-events-none"
+                loading="lazy"
+              />
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Side arrows — overlaid on the iframe */}
+          <button
+            onClick={prev}
+            className="absolute left-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-background/90 border border-border/60 shadow-lg flex items-center justify-center text-foreground hover:text-primary hover:border-primary/50 transition-all"
+            aria-label={language === 'fr' ? 'Démo précédente' : 'Previous demo'}
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <button
+            onClick={next}
+            className="absolute right-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-background/90 border border-border/60 shadow-lg flex items-center justify-center text-foreground hover:text-primary hover:border-primary/50 transition-all"
+            aria-label={language === 'fr' ? 'Démo suivante' : 'Next demo'}
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
+      </div>
+
+      {/* Dots + label + link */}
+      <div className="flex items-center justify-center gap-4">
+        <div className="flex items-center gap-2" role="tablist" aria-label={language === 'fr' ? 'Sélectionner une démo' : 'Select a demo'}>
+          {demos.map((demo, i) => (
+            <button
+              key={i}
+              role="tab"
+              aria-selected={active === i}
+              aria-label={demo.label}
+              onClick={() => go(i)}
+              className={`h-1.5 rounded-full transition-all duration-300 ${active === i ? 'w-6 bg-primary' : 'w-1.5 bg-border hover:bg-muted-foreground/40'}`}
+            />
+          ))}
+        </div>
+        <a
+          href={demos[active].url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-primary transition-colors group"
+        >
+          {language === 'fr' ? `Ouvrir ${demos[active].label}` : `Open ${demos[active].label}`}
+          <ExternalLink className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
+        </a>
       </div>
     </motion.div>
   );
@@ -376,7 +492,7 @@ const EventProduction = () => {
           <div className="absolute top-1/3 right-1/4 w-56 sm:w-80 h-56 sm:h-80 bg-primary/20 rounded-full blur-[80px] sm:blur-[120px]" />
           <div className="absolute bottom-1/4 left-1/4 w-40 sm:w-60 h-40 sm:h-60 bg-primary/10 rounded-full blur-[60px] sm:blur-[100px]" />
         </div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10 -mt-16 sm:-mt-32">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10 -mt-24">
           <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
             <span className="inline-block text-xs font-semibold uppercase tracking-widest text-primary mb-4">
               {language === 'fr' ? "Pour les producteurs d'événements" : 'For event producers'}
@@ -547,115 +663,14 @@ const EventProduction = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-
-            {/* Demo 1 — Apex Summit */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="flex flex-col gap-3"
-            >
-              <a
-                href="https://apex-summit.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block group relative rounded-2xl overflow-hidden border border-border/50 shadow-xl shadow-primary/5 hover:border-primary/30 transition-all duration-500"
-                aria-label={language === 'fr' ? 'Voir la démo Apex Summit' : 'View Apex Summit demo'}
-              >
-                <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" aria-hidden="true" />
-                <div className="bg-muted/60 px-4 py-3 flex items-center gap-3 border-b border-border/30">
-                  <div className="flex gap-1.5" aria-hidden="true">
-                    <div className="w-3 h-3 rounded-full bg-red-400/50" />
-                    <div className="w-3 h-3 rounded-full bg-yellow-400/50" />
-                    <div className="w-3 h-3 rounded-full bg-green-400/50" />
-                  </div>
-                  <div className="flex-1 mx-2">
-                    <div className="bg-background/50 rounded-md px-3 py-1 text-xs text-muted-foreground/70 text-center max-w-xs mx-auto">
-                      apex-summit.vercel.app
-                    </div>
-                  </div>
-                  <ExternalLink className="w-4 h-4 text-muted-foreground/40 group-hover:text-primary transition-colors" aria-hidden="true" />
-                </div>
-                <div className="relative overflow-hidden" style={{ height: '460px' }}>
-                  <iframe
-                    src="https://apex-summit.vercel.app"
-                    title={language === 'fr' ? 'Démo site événementiel Apex Summit' : 'Apex Summit event website demo'}
-                    className="w-full h-full border-0 pointer-events-none"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                    <div className="flex items-center gap-2 text-primary">
-                      <span className="text-sm font-medium">{language === 'fr' ? 'Voir le site' : 'View site'}</span>
-                      <ExternalLink className="w-4 h-4" aria-hidden="true" />
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <div className="text-center">
-                <a href="https://apex-summit.vercel.app" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-primary transition-colors group">
-                  Apex Summit
-                  <ExternalLink className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
-                </a>
-              </div>
-            </motion.div>
-
-            {/* Demo 2 — Chromatic */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="flex flex-col gap-3"
-            >
-              <a
-                href="https://chromatic-pi.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block group relative rounded-2xl overflow-hidden border border-border/50 shadow-xl shadow-primary/5 hover:border-primary/30 transition-all duration-500"
-                aria-label={language === 'fr' ? 'Voir la démo Chromatic' : 'View Chromatic demo'}
-              >
-                <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" aria-hidden="true" />
-                <div className="bg-muted/60 px-4 py-3 flex items-center gap-3 border-b border-border/30">
-                  <div className="flex gap-1.5" aria-hidden="true">
-                    <div className="w-3 h-3 rounded-full bg-red-400/50" />
-                    <div className="w-3 h-3 rounded-full bg-yellow-400/50" />
-                    <div className="w-3 h-3 rounded-full bg-green-400/50" />
-                  </div>
-                  <div className="flex-1 mx-2">
-                    <div className="bg-background/50 rounded-md px-3 py-1 text-xs text-muted-foreground/70 text-center max-w-xs mx-auto">
-                      chromatic-pi.vercel.app
-                    </div>
-                  </div>
-                  <ExternalLink className="w-4 h-4 text-muted-foreground/40 group-hover:text-primary transition-colors" aria-hidden="true" />
-                </div>
-                <div className="relative overflow-hidden" style={{ height: '460px' }}>
-                  <iframe
-                    src="https://chromatic-pi.vercel.app"
-                    title={language === 'fr' ? 'Démo site événementiel Chromatic' : 'Chromatic event website demo'}
-                    className="w-full h-full border-0 pointer-events-none"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                    <div className="flex items-center gap-2 text-primary">
-                      <span className="text-sm font-medium">{language === 'fr' ? 'Voir le site' : 'View site'}</span>
-                      <ExternalLink className="w-4 h-4" aria-hidden="true" />
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <div className="text-center">
-                <a href="https://chromatic-pi.vercel.app" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-primary transition-colors group">
-                  Chromatic
-                  <ExternalLink className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
-                </a>
-              </div>
-            </motion.div>
-
-          </div>
+          {/* Slider */}
+          <DemoSlider
+            demos={[
+              { url: 'https://apex-summit.vercel.app', label: 'Apex Summit' },
+              { url: 'https://chromatic-pi.vercel.app', label: 'Chromatic' },
+            ]}
+            language={language}
+          />
         </div>
       </section>
 
