@@ -95,8 +95,8 @@ const Blog = () => {
               </Link>
             </motion.div>
           </motion.header>
+          <ScrollArrow />
         </div>
-        <ScrollArrow />
       </section>
 
       {/* Blog Grid */}

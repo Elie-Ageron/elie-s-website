@@ -250,8 +250,8 @@ const Portfolio = () => {
               </Link>
             </motion.div>
           </motion.header>
+          <ScrollArrow />
         </div>
-        <ScrollArrow />
       </section>
 
       {/* Portfolio Showcase */}

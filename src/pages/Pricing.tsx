@@ -149,8 +149,8 @@ const Pricing = () => {
               </Link>
             </motion.div>
           </motion.header>
+          <ScrollArrow />
         </div>
-        <ScrollArrow />
       </section>
 
       {/* Pricing Cards */}

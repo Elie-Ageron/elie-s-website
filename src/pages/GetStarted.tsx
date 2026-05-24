@@ -157,8 +157,8 @@ const GetStarted = () => {
                 : 'Fill in this 4-step form. I build your site, you review it, you keep it if you like it.'}
             </p>
           </motion.header>
+          <ScrollArrow />
         </div>
-        <ScrollArrow />
       </section>
 
       {/* Form */}

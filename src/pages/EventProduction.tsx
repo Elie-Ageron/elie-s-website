@@ -524,8 +524,8 @@ const EventProduction = () => {
               </p>
             </motion.div>
           </motion.header>
+          <ScrollArrow />
         </div>
-        <ScrollArrow />
       </section>
 
       {/* ─── Problem + Solution ─── */}

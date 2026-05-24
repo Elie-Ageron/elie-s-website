@@ -50,8 +50,8 @@ const Contact = () => {
                 : "You have an idea, a project, a question. There's an option for every situation."}
             </p>
           </motion.header>
+          <ScrollArrow />
         </div>
-        <ScrollArrow />
       </section>
 
       {/* Main options */}

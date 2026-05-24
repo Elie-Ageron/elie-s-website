@@ -110,8 +110,8 @@ const OurProcess = () => {
               </Link>
             </motion.div>
           </motion.header>
+          <ScrollArrow />
         </div>
-        <ScrollArrow />
       </section>
 
       {/* Timeline */}
