@@ -253,11 +253,25 @@ const EventProduction = () => {
     if (!canProceed()) return;
     setIsSubmitting(true);
     try {
+      const message = [
+        `Événement : ${formData.eventName}`,
+        `Type : ${formData.eventType}`,
+        `Date : ${formData.eventDate}`,
+        `Ville : ${formData.eventCity}`,
+        formData.expectedAttendees ? `Jauge attendue : ${formData.expectedAttendees}` : null,
+        formData.currentSite ? `Site actuel : ${formData.currentSite}` : null,
+        `Billetterie : ${formData.ticketingSystem}`,
+        `Visuels prêts : ${formData.hasVisuals}`,
+        `Lineup confirmé : ${formData.hasLineup}`,
+        `Description : ${formData.eventDescription}`,
+        formData.specificRequests ? `Demandes spécifiques : ${formData.specificRequests}` : null,
+      ].filter(Boolean).join('\n');
+
       await fetch(SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ source: 'event-production', ...formData }),
+        body: JSON.stringify({ name: formData.name, email: formData.email, message }),
       });
       setSubmitted(true);
     } catch {
