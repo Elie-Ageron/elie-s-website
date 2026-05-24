@@ -225,6 +225,7 @@ const EventProduction = () => {
     eventName: '', eventType: '', eventDate: '', eventCity: '', expectedAttendees: '',
     currentSite: '', ticketingSystem: '', hasVisuals: '', hasLineup: '',
     eventDescription: '', specificRequests: '',
+    siteReference: '', visualStyle: '', colorPalette: '',
   });
 
   const canProceed = (): boolean => {
@@ -265,6 +266,9 @@ const EventProduction = () => {
         `Lineup confirmé : ${formData.hasLineup}`,
         `Description : ${formData.eventDescription}`,
         formData.specificRequests ? `Demandes spécifiques : ${formData.specificRequests}` : null,
+        formData.siteReference ? `Référence de site : ${formData.siteReference}` : null,
+        formData.visualStyle ? `Ambiance visuelle : ${formData.visualStyle}` : null,
+        formData.colorPalette ? `Couleurs : ${formData.colorPalette}` : null,
       ].filter(Boolean).join('\n');
 
       await fetch(SCRIPT_URL, {
@@ -1070,6 +1074,38 @@ const EventProduction = () => {
                             <Input id="f-requests" type="text" maxLength={300}
                               placeholder={language === 'fr' ? "Ex : un compte à rebours, une section VIP, une vidéo teaser..." : "e.g. countdown timer, VIP section, teaser video..."}
                               value={formData.specificRequests} onChange={e => setFormData({ ...formData, specificRequests: e.target.value })} />
+                          </div>
+                          <div className="space-y-2">
+                            <Label htmlFor="f-site-ref">
+                              {language === 'fr' ? 'Un site ou événement dont vous aimez le design' : 'A site or event whose design you like'}{' '}
+                              <span className="text-muted-foreground/60 text-xs">({language === 'fr' ? 'optionnel' : 'optional'})</span>
+                            </Label>
+                            <Input id="f-site-ref" type="text" maxLength={255}
+                              placeholder={language === 'fr' ? "Ex : tomorrowland.com, We Love Green..." : "e.g. tomorrowland.com, Coachella..."}
+                              value={formData.siteReference} onChange={e => setFormData({ ...formData, siteReference: e.target.value })} />
+                          </div>
+                          <div className="space-y-2">
+                            <Label htmlFor="f-visual-style">
+                              {language === 'fr' ? 'Ambiance visuelle souhaitée' : 'Desired visual style'}{' '}
+                              <span className="text-muted-foreground/60 text-xs">({language === 'fr' ? 'optionnel' : 'optional'})</span>
+                            </Label>
+                            <select id="f-visual-style" value={formData.visualStyle} onChange={e => setFormData({ ...formData, visualStyle: e.target.value })}
+                              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 text-foreground">
+                              <option value="">{language === 'fr' ? 'Choisissez...' : 'Choose...'}</option>
+                              {(language === 'fr'
+                                ? ['Sombre & intense', 'Minimal & épuré', 'Coloré & festif', 'Élégant & premium']
+                                : ['Dark & intense', 'Minimal & clean', 'Colorful & festive', 'Elegant & premium']
+                              ).map(t => <option key={t} value={t}>{t}</option>)}
+                            </select>
+                          </div>
+                          <div className="space-y-2">
+                            <Label htmlFor="f-colors">
+                              {language === 'fr' ? 'Couleurs principales de votre événement' : 'Main colors of your event'}{' '}
+                              <span className="text-muted-foreground/60 text-xs">({language === 'fr' ? 'optionnel' : 'optional'})</span>
+                            </Label>
+                            <Input id="f-colors" type="text" maxLength={150}
+                              placeholder={language === 'fr' ? "Ex : rouge et noir, violet néon, blanc et doré..." : "e.g. red and black, neon purple, white and gold..."}
+                              value={formData.colorPalette} onChange={e => setFormData({ ...formData, colorPalette: e.target.value })} />
                           </div>
                         </div>
                       )}
