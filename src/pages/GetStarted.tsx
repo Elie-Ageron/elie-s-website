@@ -31,8 +31,10 @@ const GetStarted = () => {
     currentSite: '',
     whatsBroken: '',
     mainGoal: '',
-    budget: '',
-    timeline: '',
+    siteReference: '',
+    mainAction: '',
+    googleBusinessName: '',
+    visualStyle: '',
     description: '',
     mustHave: '',
   });
@@ -44,7 +46,7 @@ const GetStarted = () => {
     switch (currentStep) {
       case 1: return !!(formData.name.trim() && formData.email.trim() && formData.businessType);
       case 2: return !!formData.hasWebsite;
-      case 3: return !!(formData.mainGoal && formData.budget && formData.timeline);
+      case 3: return !!(formData.mainGoal && formData.mainAction && formData.visualStyle);
       case 4: return !!formData.description.trim();
       default: return false;
     }
@@ -66,11 +68,24 @@ const GetStarted = () => {
     if (!canProceed()) return;
     setIsSubmitting(true);
     try {
+      const message = [
+        `Type de business : ${formData.businessType}`,
+        `Site existant : ${formData.hasWebsite === 'yes' ? `Oui — ${formData.currentSite || 'URL non renseignée'}` : 'Non'}`,
+        formData.whatsBroken ? `Raison du changement : ${formData.whatsBroken}` : null,
+        `Objectif principal : ${formData.mainGoal}`,
+        `Action souhaitée des visiteurs : ${formData.mainAction}`,
+        `Ambiance visuelle : ${formData.visualStyle}`,
+        formData.siteReference ? `Référence de site : ${formData.siteReference}` : null,
+        formData.googleBusinessName ? `Google Business : ${formData.googleBusinessName}` : 'Google Business : non renseigné',
+        `Description : ${formData.description}`,
+        formData.mustHave ? `Must-have : ${formData.mustHave}` : null,
+      ].filter(Boolean).join('\n');
+
       await fetch(SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ source: 'get-started', ...formData }),
+        body: JSON.stringify({ name: formData.name, email: formData.email, message }),
       });
       setSubmitted(true);
     } catch {
@@ -95,13 +110,14 @@ const GetStarted = () => {
     ? ['Générer des contacts et leads', 'Vendre mes produits ou services en ligne', 'Présenter mon activité (vitrine)', 'Gagner en visibilité locale', 'Autre']
     : ['Generate leads and inquiries', 'Sell products or services online', 'Showcase my business', 'Boost local visibility', 'Other'];
 
-  const budgets = language === 'fr'
-    ? ["Jusqu'à 500€ (landing page)", '1 000 - 2 000€ (site vitrine)', '2 000 - 5 000€ (site complet)', '5 000€+ (projet sur mesure)', 'Pas encore défini']
-    : ['Up to €500 (landing page)', '€1,000 - €2,000 (showcase site)', '€2,000 - €5,000 (full site)', '€5,000+ (custom project)', 'Not decided yet'];
 
-  const timelines = language === 'fr'
-    ? ['Le plus vite possible (moins de 2 semaines)', 'Dans le mois', 'Dans les 3 mois', 'Pas de contrainte']
-    : ['As soon as possible (under 2 weeks)', 'Within a month', 'Within 3 months', 'No deadline'];
+  const mainActions = language === 'fr'
+    ? ['Appeler', 'Remplir un formulaire de contact', 'Acheter en ligne', 'Réserver un rendez-vous', 'Venir en boutique / sur place']
+    : ['Call', 'Fill a contact form', 'Buy online', 'Book an appointment', 'Visit in store / on site'];
+
+  const visualStyles = language === 'fr'
+    ? ['Moderne & épuré', 'Chaleureux & naturel', 'Élégant & premium', 'Coloré & dynamique']
+    : ['Modern & minimal', 'Warm & natural', 'Elegant & premium', 'Bold & dynamic'];
 
   const stepLabels = language === 'fr'
     ? ['Votre activité', 'Situation actuelle', 'Votre projet', 'Détails']
@@ -412,35 +428,63 @@ const GetStarted = () => {
                             </select>
                           </div>
                           <div className="space-y-2">
-                            <Label htmlFor="gs-budget">
-                              {language === 'fr' ? 'Budget estimé' : 'Estimated budget'}{' '}
+                            <Label htmlFor="gs-site-ref">
+                              {language === 'fr' ? 'Un site que vous aimez ? (référence de style)' : 'A site you like? (style reference)'}
+                              {' '}<span className="text-muted-foreground/60 text-xs">({language === 'fr' ? 'optionnel' : 'optional'})</span>
+                            </Label>
+                            <Input
+                              id="gs-site-ref"
+                              type="text"
+                              maxLength={255}
+                              placeholder="https://... ou simplement le nom du site"
+                              value={formData.siteReference}
+                              onChange={e => setFormData({ ...formData, siteReference: e.target.value })}
+                            />
+                          </div>
+                          <div className="space-y-2">
+                            <Label htmlFor="gs-main-action">
+                              {language === 'fr' ? 'Quelle action voulez-vous que les visiteurs fassent ?' : 'What action do you want visitors to take?'}{' '}
                               <span className="text-primary" aria-hidden="true">*</span>
                             </Label>
                             <select
-                              id="gs-budget"
+                              id="gs-main-action"
                               required
-                              value={formData.budget}
-                              onChange={e => setFormData({ ...formData, budget: e.target.value })}
+                              value={formData.mainAction}
+                              onChange={e => setFormData({ ...formData, mainAction: e.target.value })}
                               className={sel}
                             >
                               <option value="" disabled>{language === 'fr' ? 'Choisissez...' : 'Choose...'}</option>
-                              {budgets.map(t => <option key={t} value={t}>{t}</option>)}
+                              {mainActions.map(t => <option key={t} value={t}>{t}</option>)}
                             </select>
                           </div>
                           <div className="space-y-2">
-                            <Label htmlFor="gs-timeline">
-                              {language === 'fr' ? 'Délai souhaité' : 'Desired timeline'}{' '}
+                            <Label htmlFor="gs-google-business">
+                              {language === 'fr' ? 'Nom de votre page Google Business (si vous en avez une)' : 'Your Google Business name (if you have one)'}
+                              {' '}<span className="text-muted-foreground/60 text-xs">({language === 'fr' ? 'optionnel' : 'optional'})</span>
+                            </Label>
+                            <Input
+                              id="gs-google-business"
+                              type="text"
+                              maxLength={150}
+                              placeholder={language === 'fr' ? 'Ex : Salon de coiffure Dupont' : 'e.g. Dupont Hair Salon'}
+                              value={formData.googleBusinessName}
+                              onChange={e => setFormData({ ...formData, googleBusinessName: e.target.value })}
+                            />
+                          </div>
+                          <div className="space-y-2">
+                            <Label htmlFor="gs-style">
+                              {language === 'fr' ? 'Ambiance visuelle souhaitée' : 'Desired visual style'}{' '}
                               <span className="text-primary" aria-hidden="true">*</span>
                             </Label>
                             <select
-                              id="gs-timeline"
+                              id="gs-style"
                               required
-                              value={formData.timeline}
-                              onChange={e => setFormData({ ...formData, timeline: e.target.value })}
+                              value={formData.visualStyle}
+                              onChange={e => setFormData({ ...formData, visualStyle: e.target.value })}
                               className={sel}
                             >
                               <option value="" disabled>{language === 'fr' ? 'Choisissez...' : 'Choose...'}</option>
-                              {timelines.map(t => <option key={t} value={t}>{t}</option>)}
+                              {visualStyles.map(t => <option key={t} value={t}>{t}</option>)}
                             </select>
                           </div>
                         </div>
