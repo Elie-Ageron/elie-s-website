@@ -547,66 +547,115 @@ const EventProduction = () => {
             </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <a
-              href="https://apex-summit.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block group relative rounded-2xl overflow-hidden border border-border/50 shadow-2xl shadow-primary/5 hover:border-primary/30 transition-all duration-500"
-              aria-label={language === 'fr' ? 'Voir la démo Apex Summit' : 'View Apex Summit demo'}
-            >
-              <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" aria-hidden="true" />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
 
-              {/* Browser chrome */}
-              <div className="bg-muted/60 px-4 py-3 flex items-center gap-3 border-b border-border/30">
-                <div className="flex gap-1.5" aria-hidden="true">
-                  <div className="w-3 h-3 rounded-full bg-red-400/50" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-400/50" />
-                  <div className="w-3 h-3 rounded-full bg-green-400/50" />
+            {/* Demo 1 — Apex Summit */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="flex flex-col gap-3"
+            >
+              <a
+                href="https://apex-summit.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block group relative rounded-2xl overflow-hidden border border-border/50 shadow-xl shadow-primary/5 hover:border-primary/30 transition-all duration-500"
+                aria-label={language === 'fr' ? 'Voir la démo Apex Summit' : 'View Apex Summit demo'}
+              >
+                <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" aria-hidden="true" />
+                <div className="bg-muted/60 px-4 py-3 flex items-center gap-3 border-b border-border/30">
+                  <div className="flex gap-1.5" aria-hidden="true">
+                    <div className="w-3 h-3 rounded-full bg-red-400/50" />
+                    <div className="w-3 h-3 rounded-full bg-yellow-400/50" />
+                    <div className="w-3 h-3 rounded-full bg-green-400/50" />
+                  </div>
+                  <div className="flex-1 mx-2">
+                    <div className="bg-background/50 rounded-md px-3 py-1 text-xs text-muted-foreground/70 text-center max-w-xs mx-auto">
+                      apex-summit.vercel.app
+                    </div>
+                  </div>
+                  <ExternalLink className="w-4 h-4 text-muted-foreground/40 group-hover:text-primary transition-colors" aria-hidden="true" />
                 </div>
-                <div className="flex-1 mx-2">
-                  <div className="bg-background/50 rounded-md px-3 py-1 text-xs text-muted-foreground/70 text-center max-w-xs mx-auto">
-                    apex-summit.vercel.app
+                <div className="relative overflow-hidden" style={{ height: '460px' }}>
+                  <iframe
+                    src="https://apex-summit.vercel.app"
+                    title={language === 'fr' ? 'Démo site événementiel Apex Summit' : 'Apex Summit event website demo'}
+                    className="w-full h-full border-0 pointer-events-none"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                    <div className="flex items-center gap-2 text-primary">
+                      <span className="text-sm font-medium">{language === 'fr' ? 'Voir le site' : 'View site'}</span>
+                      <ExternalLink className="w-4 h-4" aria-hidden="true" />
+                    </div>
                   </div>
                 </div>
-                <ExternalLink className="w-4 h-4 text-muted-foreground/40 group-hover:text-primary transition-colors" aria-hidden="true" />
+              </a>
+              <div className="text-center">
+                <a href="https://apex-summit.vercel.app" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-primary transition-colors group">
+                  Apex Summit
+                  <ExternalLink className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
+                </a>
               </div>
+            </motion.div>
 
-              {/* Live iframe preview */}
-              <div className="relative overflow-hidden" style={{ height: '560px' }}>
-                <iframe
-                  src="https://apex-summit.vercel.app"
-                  title={language === 'fr' ? 'Démo site événementiel Apex Summit' : 'Apex Summit event website demo'}
-                  className="w-full h-full border-0 pointer-events-none"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                  <div className="flex items-center gap-2 text-primary">
-                    <span className="text-sm font-medium">{language === 'fr' ? 'Voir le site' : 'View site'}</span>
-                    <ExternalLink className="w-4 h-4" aria-hidden="true" />
+            {/* Demo 2 — Chromatic */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="flex flex-col gap-3"
+            >
+              <a
+                href="https://chromatic-pi.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block group relative rounded-2xl overflow-hidden border border-border/50 shadow-xl shadow-primary/5 hover:border-primary/30 transition-all duration-500"
+                aria-label={language === 'fr' ? 'Voir la démo Chromatic' : 'View Chromatic demo'}
+              >
+                <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" aria-hidden="true" />
+                <div className="bg-muted/60 px-4 py-3 flex items-center gap-3 border-b border-border/30">
+                  <div className="flex gap-1.5" aria-hidden="true">
+                    <div className="w-3 h-3 rounded-full bg-red-400/50" />
+                    <div className="w-3 h-3 rounded-full bg-yellow-400/50" />
+                    <div className="w-3 h-3 rounded-full bg-green-400/50" />
+                  </div>
+                  <div className="flex-1 mx-2">
+                    <div className="bg-background/50 rounded-md px-3 py-1 text-xs text-muted-foreground/70 text-center max-w-xs mx-auto">
+                      chromatic-pi.vercel.app
+                    </div>
+                  </div>
+                  <ExternalLink className="w-4 h-4 text-muted-foreground/40 group-hover:text-primary transition-colors" aria-hidden="true" />
+                </div>
+                <div className="relative overflow-hidden" style={{ height: '460px' }}>
+                  <iframe
+                    src="https://chromatic-pi.vercel.app"
+                    title={language === 'fr' ? 'Démo site événementiel Chromatic' : 'Chromatic event website demo'}
+                    className="w-full h-full border-0 pointer-events-none"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                    <div className="flex items-center gap-2 text-primary">
+                      <span className="text-sm font-medium">{language === 'fr' ? 'Voir le site' : 'View site'}</span>
+                      <ExternalLink className="w-4 h-4" aria-hidden="true" />
+                    </div>
                   </div>
                 </div>
+              </a>
+              <div className="text-center">
+                <a href="https://chromatic-pi.vercel.app" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-primary transition-colors group">
+                  Chromatic
+                  <ExternalLink className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
+                </a>
               </div>
-            </a>
-          </motion.div>
+            </motion.div>
 
-          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="text-center mt-6">
-            <a
-              href="https://apex-summit.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors group"
-            >
-              {language === 'fr' ? 'Ouvrir la démo Apex Summit' : 'Open the Apex Summit demo'}
-              <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
-            </a>
-          </motion.div>
+          </div>
         </div>
       </section>
 
