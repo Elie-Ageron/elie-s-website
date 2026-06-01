@@ -408,58 +408,70 @@ const EventProduction = () => {
 
   const faqs = [
     {
-      q: language === 'fr' ? "C'est quoi exactement ce 'trial de 7 jours' ?" : "What exactly is the '7-day free trial'?",
+      q: language === 'fr' ? "Concrètement, qu'est-ce que je reçois ?" : 'What do I actually get?',
       a: language === 'fr'
-        ? "On construit votre page en 48h et on la met en ligne sur une URL privée. Vous avez 7 jours pour la tester : la regarder sur mobile, la partager avec votre équipe, vérifier que tout colle. À la fin, vous décidez."
-        : "We build your page in 48 hours and host it on a private URL. You have 7 days to test it: check it on mobile, share it with your team, make sure everything fits. At the end, you decide.",
+        ? "Une landing page claire et rapide, construite autour de votre événement. Hero visuel fort, votre programme, les intervenants avec photos, la billetterie ou l'inscription, et de la preuve sociale. Le tout sur une seule page, parfaite sur mobile, faite pour que votre événement ait l'air sérieux dès la première seconde."
+        : 'One clean, fast landing page built around your event. A bold visual hero, your agenda, speakers with photos, ticketing or signup, and social proof. All on a single page, perfect on mobile, made to make your event look legit the second someone lands on it.',
     },
     {
-      q: language === 'fr' ? "Qu'est-ce qui se passe au bout de 7 jours ?" : "What happens after 7 days?",
+      q: language === 'fr' ? 'En combien de temps tu la livres ?' : 'How fast can you deliver?',
       a: language === 'fr'
-        ? "Si la page vous convient, vous payez et vous récupérez le code source complet : hébergement, domaine, tout vous appartient. Sinon, on retire la page. Aucune facturation automatique. Aucun suivi commercial."
-        : "If the page works for you, you pay and get the full source code: hosting, domain, everything is yours. If not, we take it down. No automatic billing. No follow-up sales call.",
+        ? "Vite, votre date ne bougera pas à cause de moi. Le délai standard est d'environ 5 jours, soit une petite semaine de travail. Si l'événement approche, j'ai une option express (24–72h) en supplément."
+        : "Fast. Your event date won't slip because of me. Standard turnaround is around 5 days, roughly one working week. If your event is close, I offer a rush option (24–72h) for an extra fee.",
     },
     {
-      q: language === 'fr' ? "J'ai besoin de donner ma carte de crédit pour commencer ?" : "Do I need a credit card to get started?",
+      q: language === 'fr' ? 'Comment ça se passe ?' : 'How does it work?',
       a: language === 'fr'
-        ? "Non. Vous remplissez le formulaire, on construit la page, vous la testez 7 jours. Le paiement n'intervient que si vous décidez de la garder. Pas de carte, pas d'engagement, pas de surprise."
-        : "No. You fill in the form, we build the page, you test it for 7 days. Payment only comes if you decide to keep it. No card, no commitment, no surprise.",
+        ? "Simple. On parle de votre événement (un appel rapide ou un court formulaire), je conçois la page et je vous envoie un lien, vous me dites quoi ajuster, je corrige. Pas de longues réunions, pas de jargon."
+        : 'Simple. We talk through your event (a quick call or a short form), I design the page and send you a live link, you tell me what to tweak, I adjust. No long meetings, no jargon.',
     },
     {
-      q: language === 'fr' ? "Comment est-ce qu'on démarre ?" : "How do we get started?",
+      q: language === 'fr' ? 'Combien ça coûte ?' : 'How much does it cost?',
       a: language === 'fr'
-        ? "Remplissez le formulaire en bas de cette page. Deux minutes, pas d'appel nécessaire. On revient vers vous sous 24h pour confirmer le brief, et la page est prête dans les 48h qui suivent."
-        : "Fill in the form at the bottom of this page. Two minutes, no call needed. We get back to you within 24h to confirm the brief, and the page is ready within 48 hours.",
+        ? "Ça dépend de votre événement et de vos besoins, donc je n'affiche pas de prix fixe ici. Réservez un appel rapide et je vous donne un chiffre clair, sans pression et sans baratin."
+        : "It depends on your event and what you need, so I don't list a fixed price here. Book a quick call and I'll give you a straight number, no pressure and no sales pitch.",
     },
     {
-      q: language === 'fr' ? 'En combien de temps est construite la page ?' : 'How fast is the page built?',
+      q: language === 'fr' ? "J'ai déjà un site ou une page. Tu peux la refaire ?" : 'I already have a site or page. Can you redo it?',
       a: language === 'fr'
-        ? "48 heures après la confirmation du brief. Pour un site complet multi-pages, comptez 7 jours. La date de votre événement ne bougera pas à cause de nous."
-        : "48 hours after the brief is confirmed. For a full multi-page site, allow 7 days. Your event date won't slip because of us.",
+        ? "Oui. Je refais souvent des pages d'événement datées ou fades. Envoyez-moi ce que vous avez et je la transforme en page d'un événement où tout le monde veut être."
+        : "Yes. I rebuild outdated or underwhelming event pages all the time. Send me what you've got and I'll turn it into the page of an event everyone wants to be at.",
     },
     {
-      q: language === 'fr' ? "Je n'ai pas encore de texte rédigé. C'est un problème ?" : "I don't have copy written yet. Is that a problem?",
+      q: language === 'fr' ? 'Tu gères la billetterie et les intégrations ?' : 'Do you handle ticketing and integrations?',
       a: language === 'fr'
-        ? "Non. On part du brief que vous remplissez dans le formulaire. Les titres, les accroches, les arguments : on les écrit pour vous. Vous validez avant la mise en ligne."
-        : "No. We work from the brief you fill in the form. Headlines, hooks, arguments: we write them. You approve before it goes live.",
+        ? "Oui, quel que soit l'outil que vous utilisez déjà : Eventbrite, Luma, Stripe, Weezevent, Shotgun, un simple formulaire, à peu près tout ce qui peut s'intégrer. Si ça vend des billets, je le connecte. Et si vous ne savez pas quoi prendre, je vous oriente vers une option simple."
+        : "Yes, whatever you already use: Eventbrite, Luma, Stripe, Weezevent, Shotgun, a simple form, pretty much anything that can be embedded. If it sells tickets, I'll connect it. And if you're not sure what to use, I'll point you to a simple option.",
     },
     {
-      q: language === 'fr' ? "C'est un template ou quelque chose de fait pour mon événement ?" : 'Is it a template or built for my event?',
+      q: language === 'fr' ? 'Et si je dois changer des trucs après (programme, horaire, un speaker) ?' : 'What if I need to change things later (agenda, a time, a speaker)?',
       a: language === 'fr'
-        ? "Fait pour votre événement spécifique. Votre programme, vos intervenants, votre audience, votre billetterie. Pas un thème WordPress changé en 20 minutes."
-        : "Built for your specific event. Your lineup, your speakers, your audience, your ticketing system. Not a WordPress theme swapped in 20 minutes.",
+        ? "Aucun souci, c'est normal avec un événement. Les line-ups bougent, les horaires changent. Une fois qu'on a démarré et que l'acompte est versé, les retouches sont illimitées jusqu'à ce que la page vous plaise. Je ne vais pas y passer trois mois, mais je ne m'arrête pas tant que ce n'est pas au point."
+        : "No problem, that's normal with events. Lineups shift, times move. Once we've started and the deposit is in, revisions are unlimited until the page feels right to you. I won't drag it out for months, but I won't stop until you're happy.",
     },
     {
-      q: language === 'fr' ? 'Vous intégrez ma billetterie existante ?' : 'Do you integrate with my existing ticketing system?',
+      q: language === 'fr' ? 'Tu fais aussi le contenu réseaux / les posts de lancement ?' : 'Can you do the social content and launch posts too?',
       a: language === 'fr'
-        ? "Oui. Billetweb, Eventbrite, Shotgun, Weezevent, ou un formulaire simple. On s'adapte à ce que vous avez déjà en place."
-        : "Yes. Billetweb, Eventbrite, Shotgun, Weezevent, or a simple form. We adapt to whatever you already use.",
+        ? "Oui, c'est mon option Launch Pack. Posts de lancement pour LinkedIn, Instagram et Facebook, plus des bannières LinkedIn et une signature email, le tout brandé à votre événement pour que tout forme une seule campagne."
+        : "Yes, that's my Launch Pack add-on. Launch posts for LinkedIn, Instagram and Facebook, plus LinkedIn banners and an email signature, all branded to your event so everything looks like one campaign.",
     },
     {
-      q: language === 'fr' ? "Je garde la propriété de la page après la livraison ?" : 'Do I own the page after delivery?',
+      q: language === 'fr' ? 'Qui es-tu, et tu as déjà fait ça ?' : 'Who are you, and have you done this before?',
       a: language === 'fr'
-        ? "Oui. Code source complet, hébergement sur votre serveur, domaine à votre nom. Tout vous appartient dès le paiement. On ne garde aucun accès."
-        : "Yes. Full source code, hosted on your server, domain in your name. Everything is yours from the moment you pay. We keep no access.",
+        ? "Je suis Elie, web designer, je crée des landing pages pour événements. Vous voyez des exemples réels juste sur cette page : ouvrez-les et testez-les sur votre téléphone. Je suis seul aux commandes, donc vous parlez directement à la personne qui construit votre page."
+        : "I'm Elie, a web designer who builds landing pages for events. You can see real examples right here on this page, open them and test them on your phone. It's just me, so you talk to the person actually building your page.",
+    },
+    {
+      q: language === 'fr' ? 'Comment se passe le paiement ?' : 'How does payment work?',
+      a: language === 'fr'
+        ? "Via Stripe, donc sécurisé et simple. 50% pour démarrer, 50% une fois que la page vous plaît. Vous ne payez jamais pour quelque chose que vous n'avez pas vu."
+        : "Through Stripe, so it's secure and simple. 50% to get started, 50% once you're happy with the page. You're never paying for something you haven't seen.",
+    },
+    {
+      q: language === 'fr' ? "Et après l'événement ? Tu gères la maintenance ?" : 'What happens after the event? Do you handle maintenance?',
+      a: language === 'fr'
+        ? "Une fois le solde réglé, je vous transmets tout (le code complet et les fichiers) et la page est 100% à vous. Elle reste en ligne pour votre événement, et après vous pouvez la garder comme récap, la retirer, ou me demander de la rafraîchir pour votre prochaine édition. Pas de frais mensuels imposés, et si vous avez besoin d'un changement plus tard, écrivez-moi."
+        : "Once the final payment is in, I hand over everything (the full code and files) and the page is 100% yours. It stays live for your event, and afterward you can keep it up as a recap, take it down, or have me refresh it for your next edition. No forced monthly fees, and if you need a change later, just reach out.",
     },
   ];
 
