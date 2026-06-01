@@ -75,8 +75,8 @@ const seoData = {
       description: 'Custom web app development: dashboards, CRMs, client portals, automation. Apps built to streamline your business processes.',
     },
     event: {
-      title: 'Event Production Websites | Elie Ageron',
-      description: 'Registration pages that convert event traffic into bookings. Mobile-first, high-conversion design for event producers. From €800.',
+      title: 'Event Landing Pages | Elie Ageron',
+      description: 'Bold, modern landing pages for event organizers. Speakers, agenda, ticketing and social proof, built fast and ready before doors open.',
     },
   },
   fr: {
@@ -113,8 +113,8 @@ const seoData = {
       description: 'Développement d\'applications web sur mesure : dashboards, CRM, portails clients, automatisation. Des apps qui font vraiment travailler votre équipe.',
     },
     event: {
-      title: 'Sites pour Producteurs d\'Événements | Elie Ageron',
-      description: 'Pages d\'inscription qui convertissent votre trafic event en bookings réels. Mobile-first, haute conversion, dès 800€. Appel découverte gratuit.',
+      title: 'Landing Pages Événement | Elie Ageron',
+      description: 'Landing pages d\'événement modernes et percutantes pour organisateurs. Intervenants, programme, billetterie et preuve sociale. Livrées vite.',
     },
   },
 };

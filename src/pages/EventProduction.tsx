@@ -8,6 +8,7 @@ import {
   Target, Link2, Star, Search, BarChart3, ExternalLink, Scale, X, ChevronLeft, ChevronRight,
 } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useCalendly } from '@/contexts/CalendlyContext';
 import { useToast } from '@/hooks/use-toast';
 import MagneticButton from '@/components/animations/MagneticButton';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
@@ -205,6 +206,7 @@ const DemoSlider = ({ demos, language }: DemoSliderProps) => {
 
 const EventProduction = () => {
   const { language } = useLanguage();
+  const { openCalendly } = useCalendly();
   const { toast } = useToast();
   const stepsRef = useRef<HTMLDivElement>(null);
 
@@ -301,16 +303,16 @@ const EventProduction = () => {
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: language === 'fr' ? "Site Web pour Producteurs d'Événements" : 'Event Production Website Design',
-    description: language === 'fr' ? "Pages d'inscription optimisées pour convertir le trafic marketing en bookings événementiels." : 'Optimized registration pages that convert your event marketing traffic into actual bookings.',
+    name: language === 'fr' ? "Landing Pages pour Producteurs d'Événements" : 'Event Landing Page Design',
+    description: language === 'fr' ? "Landing pages d'événement modernes et percutantes : hero visuel, programme, intervenants, billetterie et preuve sociale. Livrées vite." : 'Bold, modern event landing pages: visual hero, agenda, speakers, ticketing and social proof. Delivered fast.',
     url: 'https://elieageron.com/event-production',
     provider: { '@type': 'Person', name: 'Elie Ageron', url: 'https://elieageron.com' },
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: language === 'fr' ? 'Offres Sites Événementiels' : 'Event Website Offers',
+      name: language === 'fr' ? "Offres Landing Pages Événement" : 'Event Landing Page Offers',
       itemListElement: [
-        { '@type': 'Offer', name: language === 'fr' ? 'Page Événement' : 'Event Page', price: '1500', priceCurrency: 'EUR' },
-        { '@type': 'Offer', name: language === 'fr' ? 'Site Événementiel' : 'Event Website', price: '3000', priceCurrency: 'EUR' },
+        { '@type': 'Offer', name: language === 'fr' ? "Landing page d'événement" : 'Event Landing Page' },
+        { '@type': 'Offer', name: 'Launch Pack' },
       ],
     },
   };
@@ -318,53 +320,45 @@ const EventProduction = () => {
   const painPoints = [
     {
       icon: TrendingDown,
-      title: language === 'fr' ? 'Budget pub dépensé, places vides.' : 'Ads paid. Seats empty.',
-      desc: language === 'fr'
-        ? "Campagnes Instagram, Meta ads, TikTok : vous payez pour les attirer. Une page générique les renvoie d'où ils viennent."
-        : "Instagram, Meta, TikTok. You pay to bring them in. A generic page sends them straight back.",
+      title: language === 'fr' ? 'Paraît petit, même si l\'event est grand.' : 'Looks small, even when the event is big.',
+      desc: '',
     },
     {
       icon: MousePointerClick,
-      title: language === 'fr' ? "Trop d'étapes, zéro inscription." : 'Too many steps. Zero registrations.',
-      desc: language === 'fr'
-        ? "Chaque étape inutile entre l'arrivée et le booking vous coûte une place. Les gens ne cherchent pas."
-        : "Every unnecessary step between landing and booking costs you a seat. People don't go looking.",
+      title: language === 'fr' ? 'Template générique, zéro effet wow.' : 'Generic template. Zero wow.',
+      desc: '',
     },
     {
       icon: Smartphone,
-      title: language === 'fr' ? 'Mobile cassé, audience perdue.' : 'Broken on mobile. Audience gone.',
-      desc: language === 'fr'
-        ? "72% des gens découvrent un événement sur leur téléphone. Une page qui casse, ou qui charge lentement, les fait partir."
-        : "72% discover events on their phone. A page that breaks or loads slowly loses them immediately.",
+      title: language === 'fr' ? 'Casse ou rame sur mobile.' : 'Breaks or lags on mobile.',
+      desc: '',
     },
     {
       icon: Timer,
-      title: language === 'fr' ? "Pas d'urgence, pas d'inscription." : 'No urgency. No registration.',
-      desc: language === 'fr'
-        ? "Les visiteurs qui repartent pour y réfléchir ne reviennent presque jamais. Sans compte à rebours, rien ne pousse à agir."
-        : "Visitors who leave to think about it almost never come back. Without a countdown, nothing drives action.",
+      title: language === 'fr' ? 'Fait trop tard, bâclé et hors marque.' : 'Built too late. Rushed and off-brand.',
+      desc: '',
     },
   ];
 
   const includes = [
-    { icon: Target,    text: language === 'fr' ? 'Page de registration haute conversion' : 'High-conversion registration page' },
-    { icon: Smartphone,text: language === 'fr' ? 'Design mobile-first, rapide à charger' : 'Mobile-first, fast-loading design' },
-    { icon: Timer,     text: language === 'fr' ? "Compte à rebours et éléments d'urgence" : 'Countdown timer and urgency elements' },
-    { icon: Link2,     text: language === 'fr' ? 'Intégration formulaire et billetterie' : 'Form and ticketing system integration' },
-    { icon: Users,     text: language === 'fr' ? 'Section intervenants et programme' : 'Speakers section and event schedule' },
-    { icon: Star,      text: language === 'fr' ? 'Preuves sociales et témoignages' : 'Social proof and testimonials' },
-    { icon: Search,    text: language === 'fr' ? 'SEO optimisé pour votre événement' : 'SEO optimized for your event' },
-    { icon: BarChart3, text: language === 'fr' ? 'Analytics et suivi des conversions' : 'Analytics and conversion tracking' },
+    { icon: Zap,           text: language === 'fr' ? 'Un hero visuel fort qui capte au premier regard' : 'A bold, high-impact hero that grabs attention' },
+    { icon: Target,        text: language === 'fr' ? "La valeur de l'événement, claire en 5 secondes" : "Your event's value, clear in 5 seconds" },
+    { icon: Users,         text: language === 'fr' ? 'Section intervenants avec photos et bios' : 'Speakers section with photos and bios' },
+    { icon: ClipboardList, text: language === 'fr' ? 'Programme complet, lieu et date' : 'Full agenda, venue and date' },
+    { icon: BadgeCheck,    text: language === 'fr' ? 'Billetterie multi-tarifs (standard, premium, VIP)' : 'Ticket tiers (standard, premium, VIP)' },
+    { icon: Star,          text: language === 'fr' ? 'Preuve sociale : partenaires, chiffres, éditions passées' : 'Social proof: partners, numbers, past editions' },
+    { icon: Smartphone,    text: language === 'fr' ? 'Mobile-first et chargement rapide' : 'Mobile-first and fast-loading' },
+    { icon: Search,        text: language === 'fr' ? 'Optimisée SEO pour être trouvée' : 'SEO-ready so your event gets found' },
   ];
 
   const steps = [
     {
       icon: ClipboardList,
       number: '01', label: language === 'fr' ? 'BRIEF' : 'BRIEF',
-      title: language === 'fr' ? 'Vous remplissez le formulaire.' : 'You fill in the form.',
+      title: language === 'fr' ? "Vous me parlez de l'événement." : 'You tell me about the event.',
       desc: language === 'fr'
-        ? "Type d'événement, date, site actuel. C'est tout. Deux minutes, pas d'appel, pas de réunion de présentation."
-        : "Event type, date, current site. That's it. Two minutes, no call, no kickoff meeting.",
+        ? "Type d'événement, date, programme. Par un court appel ou un formulaire de 2 minutes, comme vous préférez."
+        : 'Event type, date, lineup. On a short call or a 2-minute form, whichever you prefer.',
       duration: language === 'fr' ? '2 minutes' : '2 minutes',
     },
     {
@@ -472,31 +466,28 @@ const EventProduction = () => {
   const plans = [
     {
       icon: Zap,
-      title: language === 'fr' ? 'Page Événement' : 'Event Page',
-      price: '1 500€',
-      desc: language === 'fr' ? "Un événement, une page. Chaque euro de pub dépensé a maintenant un endroit utile où atterrir." : 'One event, one page. Every euro you spent on ads now has somewhere useful to land.',
+      title: language === 'fr' ? "Landing page d'événement" : 'Event Landing Page',
+      desc: language === 'fr' ? "Un événement, une page. Tout ce qu'il faut pour vendre votre événement et inspirer confiance, sur une seule page percutante." : 'One event, one page. Everything you need to sell your event and build trust, on a single high-impact page.',
       features: [
-        language === 'fr' ? '1 page de registration optimisée' : '1 optimized registration page',
-        language === 'fr' ? 'Compte à rebours et urgence' : 'Countdown timer and urgency',
-        language === 'fr' ? 'Mobile-first et chargement rapide' : 'Mobile-first and fast-loading',
-        language === 'fr' ? 'Formulaire ou billetterie intégré' : 'Form or ticketing integrated',
+        language === 'fr' ? "Hero visuel fort + identité de l'événement" : 'Bold visual hero + event branding',
+        language === 'fr' ? 'Programme, intervenants (photos), lieu & date' : 'Agenda, speakers (photos), venue & date',
+        language === 'fr' ? 'Billetterie multi-tarifs (standard, premium, VIP)' : 'Ticket tiers (standard, premium, VIP)',
+        language === 'fr' ? 'Preuve sociale : partenaires, chiffres, éditions passées' : 'Social proof: partners, numbers, past editions',
+        language === 'fr' ? 'Mobile-first, rapide, optimisée SEO' : 'Mobile-first, fast, SEO-ready',
       ],
-      popular: false,
+      popular: true,
     },
     {
       icon: Crown,
-      title: language === 'fr' ? 'Site Événementiel' : 'Event Website',
-      price: '3 000€',
-      desc: language === 'fr' ? "Votre marque, votre calendrier, votre taux de conversion. Pour les producteurs qui organisent plus d'un événement par an." : 'Your brand, your calendar, your conversion rate. For producers who run more than one event a year.',
+      title: 'Launch Pack',
+      desc: language === 'fr' ? "La landing page, plus tout le kit de lancement pour faire du bruit sur les réseaux. Le tout brandé à votre événement." : 'The landing page, plus a full launch kit to make noise on social. All branded to your event.',
       features: [
-        language === 'fr' ? 'Tout de la Page Événement' : 'Everything in Event Page',
-        language === 'fr' ? "Jusqu'à 5 pages (accueil, événements, sponsors, contact)" : 'Up to 5 pages (home, events, sponsors, contact)',
-        language === 'fr' ? 'Page dédiée par événement' : 'Dedicated page per event',
-        language === 'fr' ? 'Section intervenants et programme' : 'Speakers and schedule sections',
-        language === 'fr' ? 'Galerie photos et preuves sociales' : 'Photo gallery and social proof',
-        language === 'fr' ? 'Analytics et suivi des conversions' : 'Analytics and conversion tracking',
+        language === 'fr' ? 'Tout de la landing page' : 'Everything in the landing page',
+        language === 'fr' ? 'Posts de lancement (LinkedIn, Instagram, Facebook)' : 'Launch posts (LinkedIn, Instagram, Facebook)',
+        language === 'fr' ? 'Bannières LinkedIn + signature email brandées' : 'Branded LinkedIn banners + email signature',
+        language === 'fr' ? 'Visuels cohérents avec la page' : 'Visuals matched to the page',
       ],
-      popular: true,
+      popular: false,
     },
   ];
 
@@ -519,26 +510,32 @@ const EventProduction = () => {
           <motion.header initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}>
             <h1 id="event-hero-heading" className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
               <span className="text-foreground">
-                {language === 'fr' ? 'Transformez votre trafic event' : 'Turn your event traffic'}
+                {language === 'fr' ? 'Des pages qui font tourner les têtes' : 'Event pages that turn heads'}
               </span>{' '}
               <span className="inline-block text-primary">
-                {language === 'fr' ? 'en inscriptions.' : 'into registrations.'}
+                {language === 'fr' ? 'et remplissent la salle.' : 'and fill the room.'}
               </span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-8">
               {language === 'fr'
-                ? "Vous avez déjà payé pour les attirer. On s'assure qu'ils ne repartent pas les mains vides."
-                : "You already paid to bring them there. We make sure they don't leave without registering."}
+                ? "Des landing pages modernes et percutantes pour organisateurs d'événements. Pensées pour donner à votre événement l'ampleur qu'il mérite, et livrées vite."
+                : 'Bold, modern landing pages for event organizers. Designed to make your event look as big as it is, and delivered fast.'}
             </p>
             <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.4 }}>
-              <MagneticButton>
-                <a href="#apply" className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-xl hover:bg-primary/90 transition-all text-base">
-                  <Send className="w-5 h-5" aria-hidden="true" />
-                  {language === 'fr' ? 'Obtenir ma démo gratuite' : 'Get my free demo'}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                <MagneticButton>
+                  <button onClick={openCalendly} className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-xl hover:bg-primary/90 transition-all text-base">
+                    <Send className="w-5 h-5" aria-hidden="true" />
+                    {language === 'fr' ? 'Réserver un appel' : 'Book a call'}
+                  </button>
+                </MagneticButton>
+                <a href="#demos" className="inline-flex items-center gap-1.5 px-6 py-4 text-primary font-semibold text-base hover:underline underline-offset-4">
+                  {language === 'fr' ? 'Voir des exemples' : 'See live examples'}
+                  <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </a>
-              </MagneticButton>
-              <p className="text-xs text-muted-foreground/70 mt-3">
-                {language === 'fr' ? 'Sans appel. Sans engagement. Vous payez si elle vous convient.' : 'No call. No commitment. You pay if you like it.'}
+              </div>
+              <p className="text-xs text-muted-foreground/70 mt-4">
+                {language === 'fr' ? 'Design moderne · Livré en quelques jours · Une seule page, pensée pour votre événement' : 'Modern design · Delivered in days · One single page, built for your event'}
               </p>
             </motion.div>
           </motion.header>
@@ -655,7 +652,7 @@ const EventProduction = () => {
       </section>
 
       {/* ─── Demo Visual ─── */}
-      <section className="py-12 sm:py-16 md:py-20 relative" aria-labelledby="event-demo-heading">
+      <section id="demos" className="py-12 sm:py-16 md:py-20 relative scroll-mt-20" aria-labelledby="event-demo-heading">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -664,20 +661,20 @@ const EventProduction = () => {
             className="text-center mb-10 sm:mb-14"
           >
             <span className="inline-block text-xs font-bold uppercase tracking-[0.18em] text-primary mb-3">
-              {language === 'fr' ? 'Ce que ça donne' : 'What it looks like'}
+              {language === 'fr' ? 'Exemples réels' : 'Real examples'}
             </span>
             <h2 id="event-demo-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold">
               <span className="text-foreground">
-                {language === 'fr' ? 'Une page conçue pour' : 'A page built to'}
+                {language === 'fr' ? 'Conçues pour rendre votre' : 'Built to make your event'}
               </span>{' '}
               <span className="inline-block text-primary">
-                {language === 'fr' ? "que l'on s'inscrive." : 'make people register.'}
+                {language === 'fr' ? 'événement incontournable.' : 'impossible to ignore.'}
               </span>
             </h2>
             <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
               {language === 'fr'
-                ? "Un exemple concret de ce qu'on construit pour vos événements. Design responsive, compte à rebours, section intervenants."
-                : 'A concrete example of what we build for your events. Responsive design, countdown timer, speakers section.'}
+                ? "Des exemples réels de landing pages d'événement : hero visuel fort, programme, intervenants, billetterie. Testez-les sur votre téléphone."
+                : 'Real event landing pages: bold visual hero, agenda, speakers, ticketing. Try them on your phone.'}
             </p>
           </motion.div>
 
@@ -792,12 +789,17 @@ const EventProduction = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10 sm:mb-14">
             <span className="inline-block text-xs font-bold uppercase tracking-[0.18em] text-primary mb-3">
-              {language === 'fr' ? 'Tarifs' : 'Pricing'}
+              {language === 'fr' ? "L'offre" : 'The offer'}
             </span>
             <h2 id="event-pricing-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold">
-              <span className="text-foreground">{language === 'fr' ? 'Simple, transparent,' : 'Simple, transparent,'}</span>{' '}
-              <span className="inline-block text-primary">{language === 'fr' ? 'sans surprise.' : 'no surprises.'}</span>
+              <span className="text-foreground">{language === 'fr' ? 'Choisissez ce qui colle' : 'Pick what fits'}</span>{' '}
+              <span className="inline-block text-primary">{language === 'fr' ? 'à votre événement.' : 'your event.'}</span>
             </h2>
+            <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
+              {language === 'fr'
+                ? 'On cale le prix ensemble sur un court appel, en fonction de votre événement.'
+                : 'We set the price together on a short call, based on your event.'}
+            </p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {plans.map((plan, index) => (
@@ -815,7 +817,6 @@ const EventProduction = () => {
                   </div>
                   <h3 className="text-lg font-bold text-foreground">{plan.title}</h3>
                 </div>
-                <div className="mb-4"><span className="text-4xl font-thin text-primary">{plan.price}</span></div>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-6">{plan.desc}</p>
                 <ul className="space-y-3 flex-1 mb-8" aria-label={`${plan.title} features`}>
                   {plan.features.map((feature, fIndex) => (
@@ -825,22 +826,25 @@ const EventProduction = () => {
                     </li>
                   ))}
                 </ul>
-                <a href="#apply" className={`w-full py-3 px-6 rounded-xl font-semibold text-sm transition-all text-center block ${plan.popular ? 'bg-primary text-primary-foreground hover:bg-primary/90' : 'border border-primary/40 text-primary hover:bg-primary/10'}`}>
-                  {language === 'fr' ? 'Obtenir ma démo' : 'Get my demo'}
-                </a>
+                <button onClick={openCalendly} className={`w-full py-3 px-6 rounded-xl font-semibold text-sm transition-all text-center block ${plan.popular ? 'bg-primary text-primary-foreground hover:bg-primary/90' : 'border border-primary/40 text-primary hover:bg-primary/10'}`}>
+                  {language === 'fr' ? 'Réserver un appel' : 'Book a call'}
+                </button>
               </motion.div>
             ))}
           </div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="max-w-3xl mx-auto mt-4">
             <div className="glass-card rounded-2xl px-8 py-6 border border-border/50 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div>
-                <p className="font-semibold text-foreground">{language === 'fr' ? 'Besoin de quelque chose de plus complexe ?' : 'Need something more complex?'}</p>
-                <p className="text-sm text-muted-foreground mt-0.5">{language === 'fr' ? 'Plateforme multi-événements, automation, dashboard. On établit un devis sur mesure.' : 'Multi-event platform, automation, dashboard. We put together a custom proposal.'}</p>
+                <p className="font-semibold text-foreground flex items-center gap-2">
+                  <Timer className="w-4 h-4 text-primary shrink-0" aria-hidden="true" />
+                  {language === 'fr' ? 'Événement dans l\'urgence ? Option Rush.' : 'Event on a tight deadline? Rush option.'}
+                </p>
+                <p className="text-sm text-muted-foreground mt-0.5">{language === 'fr' ? 'Livraison express en 24-72h en supplément. Et si besoin, je peux aussi gérer le récap après l\'événement.' : 'Express delivery in 24-72h as an add-on. And if needed, I can handle the post-event recap too.'}</p>
               </div>
-              <a href="#apply" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-primary/40 text-primary font-semibold text-sm hover:bg-primary/10 transition-all shrink-0">
+              <button onClick={openCalendly} className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-primary/40 text-primary font-semibold text-sm hover:bg-primary/10 transition-all shrink-0">
                 {language === 'fr' ? 'En discuter' : "Let's talk"}
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
-              </a>
+              </button>
             </div>
           </motion.div>
         </div>
@@ -854,16 +858,16 @@ const EventProduction = () => {
         <div className="max-w-2xl mx-auto px-4 sm:px-6 relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-8">
             <span className="inline-block text-xs font-bold uppercase tracking-[0.18em] text-primary mb-3">
-              {language === 'fr' ? 'Démo gratuite · 7 jours' : 'Free demo · 7 days'}
+              {language === 'fr' ? 'Vous préférez sans appel ?' : 'Prefer to skip the call?'}
             </span>
             <h2 id="event-apply-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
-              <span className="text-foreground">{language === 'fr' ? 'Votre page en 48h.' : 'Your page in 48h.'}</span>{' '}
-              <span className="inline-block text-primary">{language === 'fr' ? 'Vous payez si elle vous convient.' : 'You pay if you like it.'}</span>
+              <span className="text-foreground">{language === 'fr' ? 'Envoyez-moi le brief' : 'Send me your event brief'}</span>{' '}
+              <span className="inline-block text-primary">{language === 'fr' ? 'de votre événement.' : 'instead.'}</span>
             </h2>
             <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
               {language === 'fr'
-                ? "Remplissez ce formulaire. Plus vous donnez de détails, mieux je construis votre page."
-                : 'Fill in this form. The more detail you give, the better I build your page.'}
+                ? "Remplissez ce formulaire. Je reviens vers vous sous 24h, et la première version est prête dans les 48h. Plus vous donnez de détails, mieux je construis votre page."
+                : 'Fill in this form. I get back to you within 24h, and a first version is ready within 48h. The more detail you give, the better I build your page.'}
             </p>
           </motion.div>
 
