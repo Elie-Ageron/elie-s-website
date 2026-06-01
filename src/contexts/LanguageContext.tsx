@@ -21,7 +21,7 @@ const translations = {
     // Home Page
     'hero.headline1': "Turn your",
     'hero.headline2': "visitors into clients.",
-    'hero.subtitle': "I build websites that don't just look good — they're built to convert. Live in 7–14 days, optimized for Google.",
+    'hero.subtitle': "I build websites that don't just look good. They're built to convert. Live in 7–14 days, optimized for Google.",
     'hero.badge': 'Online in 7-14 days · From $500',
     'hero.cta': "Get my free website audit",
     'hero.secondaryCta': 'See my work',

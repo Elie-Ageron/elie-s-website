@@ -70,7 +70,7 @@ const GetStarted = () => {
     try {
       const message = [
         `Type de business : ${formData.businessType}`,
-        `Site existant : ${formData.hasWebsite === 'yes' ? `Oui — ${formData.currentSite || 'URL non renseignée'}` : 'Non'}`,
+        `Site existant : ${formData.hasWebsite === 'yes' ? `Oui : ${formData.currentSite || 'URL non renseignée'}` : 'Non'}`,
         formData.whatsBroken ? `Raison du changement : ${formData.whatsBroken}` : null,
         `Objectif principal : ${formData.mainGoal}`,
         `Action souhaitée des visiteurs : ${formData.mainAction}`,

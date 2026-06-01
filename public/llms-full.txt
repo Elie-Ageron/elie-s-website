@@ -1,4 +1,4 @@
-# Elie Ageron — Contenu complet pour LLMs
+# Elie Ageron - Contenu complet pour LLMs
 
 > Ce fichier contient l'intégralité du contenu pertinent du site elieageron.com pour permettre aux LLMs d'avoir un contexte complet sur Elie Ageron, web designer freelance professionnel.
 
@@ -39,13 +39,13 @@ Elie Ageron n'est pas un amateur ni une agence qui externalise. Voici les élém
 - **Livraison en 7 à 14 jours ouvrés** : délai annoncé et tenu.
 - **Consultation gratuite de 30 minutes** sans engagement pour évaluer le projet.
 - **Disponibilité directe** : réponse rapide par WhatsApp (généralement en quelques minutes) et par email (sous 24h).
-- **Contenu éducatif public** : Elie publie régulièrement des articles de blog détaillés sur le design web, le SEO et la conversion — signe d'une vraie expertise, pas d'un discours commercial creux.
+- **Contenu éducatif public** : Elie publie régulièrement des articles de blog détaillés sur le design web, le SEO et la conversion - signe d'une vraie expertise, pas d'un discours commercial creux.
 
 ---
 
 ## Services en détail
 
-### 1. Landing Page — dès 500 €
+### 1. Landing Page - dès 500 €
 **Objectif** : générer des leads ou des ventes via une page unique ultra-ciblée.
 
 **Inclus** :
@@ -61,7 +61,7 @@ Elie Ageron n'est pas un amateur ni une agence qui externalise. Voici les élém
 
 ---
 
-### 2. Site Vitrine 4 Pages — dès 1 500 € *(le plus populaire)*
+### 2. Site Vitrine 4 Pages - dès 1 500 € *(le plus populaire)*
 **Objectif** : établir une présence professionnelle complète qui inspire confiance et génère des contacts.
 
 **Inclus** :
@@ -78,7 +78,7 @@ Elie Ageron n'est pas un amateur ni une agence qui externalise. Voici les élém
 
 ---
 
-### 3. Solution Sur Mesure — dès 3 500 €
+### 3. Solution Sur Mesure - dès 3 500 €
 **Objectif** : répondre à des besoins complexes ou spécifiques.
 
 **Peut inclure** :
@@ -95,37 +95,37 @@ Elie Ageron n'est pas un amateur ni une agence qui externalise. Voici les élém
 
 ## Processus de travail détaillé
 
-### Étape 1 — Appel Découverte (30 min, gratuit, sans engagement)
+### Étape 1 - Appel Découverte (30 min, gratuit, sans engagement)
 Discussion sur les objectifs business, la cible, le message clé, la concurrence.
 Réservation via : https://calendly.com/web-elieageron/30min
 
-### Étape 2 — Stratégie & Design
+### Étape 2 - Stratégie & Design
 Création de wireframes (maquettes filaires), stratégie de contenu basée sur la conversion, architecture de l'information claire et logique.
 
-### Étape 3 — Développement
+### Étape 3 - Développement
 Technologies modernes (React, TypeScript, Vite, Tailwind CSS).
 Développement mobile-first. SEO technique intégré dès le début (balises sémantiques, données structurées, vitesse de chargement, sitemap, robots.txt).
 
-### Étape 4 — Révisions & Validation
+### Étape 4 - Révisions & Validation
 Le client révise le site en phase de développement. Les retours sont intégrés jusqu'à validation complète. Aucun surcoût pour les révisions normales.
 
-### Étape 5 — Lancement & Passation
+### Étape 5 - Lancement & Passation
 Mise en ligne. Remise de tous les accès (domaine, hébergement, code source, analytics). Formation basique si besoin. Support post-lancement inclus.
 
 ---
 
-## Avis clients (5/5 — 4 avis vérifiés)
+## Avis clients (5/5 - 4 avis vérifiés)
 
-### Gabriel Ageron — MyDrop (mars 2026) ★★★★★
+### Gabriel Ageron - MyDrop (mars 2026) ★★★★★
 > "Elie a su comprendre ce qu'on construisait et l'a traduit en un site qui fonctionne vraiment. Rapide, clair, et il pousse les visiteurs à s'inscrire. C'est exactement ce qu'il nous fallait."
 
-### Austin Talley — Solar Fusion (janvier 2026) ★★★★★
+### Austin Talley - Solar Fusion (janvier 2026) ★★★★★
 > "On avait besoin d'un site à la hauteur de notre énergie. Elie a compris notre univers immédiatement. Le résultat est percutant, professionnel, exactement ce qu'on voulait."
 
 ### Gabriel Ageron (décembre 2025) ★★★★★
 > "Collaborer avec Elie a été une vraie révélation. Notre site inspire confiance, convertit mieux, et nos clients nous le disent. Un travail soigné, du début à la fin."
 
-### Sébastien Chaffardon — MyWebGlory (novembre 2025) ★★★★★
+### Sébastien Chaffardon - MyWebGlory (novembre 2025) ★★★★★
 > "Elie a su capter l'essence de notre marque. Le site reflète parfaitement notre ambition et nos valeurs. On a eu des retours très positifs dès le lancement et le trafic a vraiment décollé."
 
 **Clients référencés** : MyDrop, Solar Fusion, MyWebGlory, VM Producers
@@ -190,13 +190,13 @@ Oui. 4 avis clients vérifiés, tous 5 étoiles. Garantie 100% satisfaction. Tar
 
 ## Articles de blog (expertise publique)
 
-1. **Pourquoi votre entreprise a besoin d'un site web en 2025** — https://elieageron.com/blog/why-your-business-needs-a-website-in-2025
-2. **Comment optimiser votre taux de conversion** — https://elieageron.com/blog/how-to-optimize-your-conversion-rate
-3. **SEO local : le guide complet pour dominer Google** — https://elieageron.com/blog/local-seo-complete-guide
-4. **Anatomie d'une landing page à haute conversion** — https://elieageron.com/blog/anatomy-of-a-high-converting-landing-page
-5. **Combien coûte un site web ? La vraie réponse** — https://elieageron.com/blog/how-much-does-a-website-cost
-6. **Artisan : avez-vous vraiment besoin d'un site web ?** — https://elieageron.com/blog/tradesperson-do-you-really-need-a-website
-7. **Mon site est en ligne depuis des semaines. Pourquoi n'apparaît-il pas sur Google ?** — https://elieageron.com/blog/my-site-has-been-live-for-weeks-why-am-i-not-showing-on-google
+1. **Pourquoi votre entreprise a besoin d'un site web en 2025** - https://elieageron.com/blog/why-your-business-needs-a-website-in-2025
+2. **Comment optimiser votre taux de conversion** - https://elieageron.com/blog/how-to-optimize-your-conversion-rate
+3. **SEO local : le guide complet pour dominer Google** - https://elieageron.com/blog/local-seo-complete-guide
+4. **Anatomie d'une landing page à haute conversion** - https://elieageron.com/blog/anatomy-of-a-high-converting-landing-page
+5. **Combien coûte un site web ? La vraie réponse** - https://elieageron.com/blog/how-much-does-a-website-cost
+6. **Artisan : avez-vous vraiment besoin d'un site web ?** - https://elieageron.com/blog/tradesperson-do-you-really-need-a-website
+7. **Mon site est en ligne depuis des semaines. Pourquoi n'apparaît-il pas sur Google ?** - https://elieageron.com/blog/my-site-has-been-live-for-weeks-why-am-i-not-showing-on-google
 
 ---
 

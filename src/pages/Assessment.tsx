@@ -1,7 +1,6 @@
 import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Check, ArrowRight, MessageSquare, ShieldCheck, MousePointerClick, Sparkles, Phone } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { ArrowRight, MessageSquare, ShieldCheck, MousePointerClick, Sparkles, Phone, MessageCircle } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useCalendly } from '@/contexts/CalendlyContext';
 import { useToast } from '@/hooks/use-toast';
@@ -254,10 +253,10 @@ const Assessment = () => {
     const { pct, axisPct } = computeScore();
     try {
       const lines = [
-        `🎯 ASSESSMENT — Score global : ${pct}/100`,
+        `🎯 ASSESSMENT · Score global : ${pct}/100`,
         ...axisPct.map((a) => `  · ${AXIS_META[a.axis].fr} : ${a.pct}/100`),
         '',
-        ...QUESTIONS.map((q) => `${language === 'fr' ? q.fr : q.en} → ${answers[q.id] || '—'}`),
+        ...QUESTIONS.map((q) => `${language === 'fr' ? q.fr : q.en} → ${answers[q.id] || '-'}`),
         openNote ? `\nNote libre : ${openNote}` : '',
         lead.phone ? `Téléphone : ${lead.phone}` : 'Téléphone : non renseigné',
       ].filter(Boolean);
@@ -339,8 +338,8 @@ const Assessment = () => {
             transition={{ delay: 0.15, duration: 0.6 }}
           >
             {L(
-              'Répondez à quelques questions (2 min) pour découvrir ce qui freine votre site — et exactement comment le corriger.',
-              'Answer a few questions (2 min) to find out what holds your site back — and exactly how to fix it.'
+              'Répondez à quelques questions (2 min) pour découvrir ce qui freine votre site, et exactement comment le corriger.',
+              'Answer a few questions (2 min) to find out what holds your site back, and exactly how to fix it.'
             )}
           </motion.p>
 
@@ -459,7 +458,7 @@ const Assessment = () => {
                                 {L('Autre chose à savoir ?', 'Anything else I should know?')}
                               </h2>
                               <p className="text-sm text-muted-foreground">
-                                {L('Optionnel — un détail sur votre situation, un blocage, une envie.', 'Optional — a detail about your situation, a blocker, a wish.')}
+                                {L('Optionnel : un détail sur votre situation, un blocage, une envie.', 'Optional: a detail about your situation, a blocker, a wish.')}
                               </p>
                             </div>
                             <textarea
@@ -589,6 +588,15 @@ const Result = ({ computeScore, answers, L, openCalendly, name }: ResultProps) =
   const solution = answers['solution'] || '';
   const highIntent = /complet|vitrine|refonte|redesign|showcase|full/i.test(solution);
 
+  // WhatsApp pre-filled with their score — no form to refill, the lead is already captured.
+  const waText = encodeURIComponent(
+    L(
+      `Bonjour Elie, j'ai fait le test (score ${pct}/100) et j'aimerais quelques pistes pour mon site.`,
+      `Hi Elie, I took the test (score ${pct}/100) and I'd like a few tips for my site.`
+    )
+  );
+  const waHref = `https://wa.me/33695555318?text=${waText}`;
+
   const band = pct >= 71 ? 'high' : pct >= 41 ? 'mid' : 'low';
   const bandMsg = {
     high: L('Votre site a de solides fondations. Quelques réglages et il devient une vraie machine à clients.', 'Your site has solid foundations. A few tweaks and it becomes a real client machine.'),
@@ -706,23 +714,37 @@ const Result = ({ computeScore, answers, L, openCalendly, name }: ResultProps) =
             ? L('On regarde votre situation ensemble et je vous dis précisément ce qui ferait grimper votre score. Sans engagement.', 'We look at your situation together and I tell you exactly what would lift your score. No commitment.')
             : L('Un appel rapide pour transformer ces pistes en plan d\'action concret pour votre activité.', 'A quick call to turn these tips into a concrete action plan for your business.')}
         </p>
-        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+        <div className="flex justify-center">
           <button
             onClick={openCalendly}
-            className="inline-flex items-center justify-center gap-2 min-h-[52px] px-7 bg-primary text-primary-foreground font-semibold rounded-xl shadow-lg hover:shadow-xl hover:bg-primary/90 transition-all active:scale-[0.98]"
+            className="inline-flex items-center justify-center gap-2 min-h-[52px] px-8 bg-primary text-primary-foreground font-semibold rounded-xl shadow-lg hover:shadow-xl hover:bg-primary/90 transition-all active:scale-[0.98]"
           >
             <Phone className="w-4 h-4" aria-hidden="true" />
             {L('Réserver mon appel gratuit', 'Book my free call')}
           </button>
-          <Link
-            to="/get-started"
-            className="inline-flex items-center justify-center gap-2 min-h-[52px] px-7 border-2 border-primary/30 text-primary font-semibold rounded-xl hover:bg-primary/5 hover:border-primary/50 transition-all"
-          >
-            {L('Démarrer sans appel', 'Start without a call')}
-          </Link>
         </div>
-        <p className="text-xs text-muted-foreground/60 mt-5">
-          {L('Votre résultat détaillé vous a été envoyé. Questions ? web@elieageron.com', 'Your detailed result was sent to you. Questions? web@elieageron.com')}
+
+        {/* No-call path — the lead is already captured, so NO second form. Just reassurance + a direct line. */}
+        <div className="mt-6 pt-6 border-t border-border/60">
+          <p className="text-sm text-muted-foreground max-w-md mx-auto mb-3">
+            {L(
+              `Pas envie d'un appel${name ? `, ${name}` : ''} ? J'ai déjà toutes vos réponses. Je vous envoie 2-3 pistes concrètes sous 24h.`,
+              `Don't feel like a call${name ? `, ${name}` : ''}? I already have all your answers. I'll send you 2-3 concrete tips within 24h.`
+            )}
+          </p>
+          <a
+            href={waHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 min-h-[48px] px-6 border-2 border-primary/30 text-primary font-semibold rounded-xl hover:bg-primary/5 hover:border-primary/50 transition-all"
+          >
+            <MessageCircle className="w-4 h-4" aria-hidden="true" />
+            {L('M\'écrire sur WhatsApp', 'Message me on WhatsApp')}
+          </a>
+        </div>
+
+        <p className="text-xs text-muted-foreground/60 mt-6">
+          {L('Votre résultat vient aussi de m\'être envoyé. Questions ? web@elieageron.com', 'Your result was just sent to me too. Questions? web@elieageron.com')}
         </p>
       </div>
     </div>

@@ -149,7 +149,7 @@ const RoutingSection = () => {
         >
           {language === 'fr' ? "Pas sûr de ce qu'il vous faut ? " : 'Not sure what you need? '}
           <Link to="/assessment" className="text-primary font-medium hover:underline underline-offset-4 inline-flex items-center gap-1">
-            {language === 'fr' ? 'Faites le test — 2 min' : 'Take the test — 2 min'}
+            {language === 'fr' ? 'Faites le test (2 min)' : 'Take the test (2 min)'}
             <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
           </Link>
         </motion.p>
