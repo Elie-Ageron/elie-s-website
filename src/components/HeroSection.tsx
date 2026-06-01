@@ -1,11 +1,25 @@
 ﻿import { motion } from 'framer-motion';
-import { ArrowDown, Clock, Phone, Shield, ArrowRight } from 'lucide-react';
+import { ArrowDown, ArrowRight, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useCalendly } from '@/contexts/CalendlyContext';
 import { lazy, Suspense, useState, useEffect, Component, ReactNode } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
+
+import logoVmProducers from '@/assets/logo vm producers.png';
+import logoSolarFusion from '@/assets/logo solar fusion.png';
+import logoMywebglory from '@/assets/logo mwg.png';
+import logoMyDrop from '@/assets/mydrop logo (1).png';
+
+// Real client logos shown as above-the-fold social proof.
+// `white: true` logos are dark-on-transparent and need the brightness-0 trick.
+const CLIENT_LOGOS = [
+  { src: logoMyDrop, name: 'MyDrop', white: false },
+  { src: logoMywebglory, name: 'MyWebGlory', white: false },
+  { src: logoVmProducers, name: 'VM Producers', white: true },
+  { src: logoSolarFusion, name: 'Solar Fusion', white: false },
+];
 
 // Defer 3D scene loading
 const HeroScene3D = lazy(() => import('@/components/animations/HeroScene3D'));
@@ -100,48 +114,56 @@ const HeroSection = () => {
             {t('hero.subtitle')}
           </motion.p>
 
-          {/* CTAs */}
+          {/* CTAs — primary: book a call (solid) · secondary: assessment (lighter, subordinate to the headline) */}
           <motion.div
-            className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
+            className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
           >
             <Button
               variant="hero"
-              size="xl"
-              className="min-h-[56px] sm:min-h-[60px] px-6 sm:px-10 text-base sm:text-lg active:scale-[0.98] transition-transform w-full sm:w-auto"
-              asChild
+              size="lg"
+              className="px-7 sm:px-8 text-sm sm:text-base active:scale-[0.98] transition-transform w-full sm:w-auto"
+              onClick={openCalendly}
+              aria-label={language === 'fr' ? 'Réserver un appel gratuit avec Elie Ageron' : 'Book a free call with Elie Ageron'}
             >
-              <Link to="/get-started" className="flex items-center gap-2">
-                {language === 'fr' ? 'Démarrer mon projet' : 'Start my project'}
-                <ArrowRight className="w-4 h-4" aria-hidden="true" />
-              </Link>
+              {t('hero.cta.call')}
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Button>
             <Button
-              variant="ghost"
-              size="xl"
-              className="min-h-[56px] sm:min-h-[60px] px-6 sm:px-8 text-base sm:text-lg text-muted-foreground hover:text-foreground w-full sm:w-auto"
-              onClick={openCalendly}
-              aria-label="Book a call with Elie Ageron"
+              variant="neonOutline"
+              size="lg"
+              className="px-6 sm:px-7 text-sm sm:text-base w-full sm:w-auto"
+              asChild
             >
-              {language === 'fr' ? 'Réserver un appel' : 'Book a call'}
+              <Link to="/assessment">{t('hero.cta.assessment')}</Link>
             </Button>
           </motion.div>
 
-          {/* Subtle CTAs — specific niches */}
+          {/* Friction reducers — directly under the CTA */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+            className="mt-4 text-xs sm:text-sm text-muted-foreground font-medium"
+          >
+            {t('hero.friction')}
+          </motion.p>
+
+          {/* Subtle CTAs — no-call path + niche */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.55, duration: 0.5 }}
-            className="mt-3 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-5"
+            transition={{ delay: 0.58, duration: 0.5 }}
+            className="mt-2.5 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-5"
           >
             <Link
-              to="/contact"
+              to="/get-started"
               className="inline-flex items-center gap-1.5 text-xs sm:text-sm text-muted-foreground/60 hover:text-primary transition-colors group"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:bg-primary transition-colors shrink-0" aria-hidden="true" />
-              {language === 'fr' ? 'Vous préférez d\'abord en parler ?' : 'Prefer to talk first?'}
+              {t('hero.cta.nocall')}
             </Link>
             <span className="hidden sm:block text-muted-foreground/30 text-xs">·</span>
             <Link
@@ -153,34 +175,41 @@ const HeroSection = () => {
             </Link>
           </motion.div>
 
-          {/* Scarcity — natural availability constraint */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.6 }}
-            className="mt-4 flex items-center justify-center gap-2 text-xs sm:text-sm text-muted-foreground/70"
-          >
-            <span className="w-1.5 h-1.5 bg-primary/70 rounded-full shrink-0" aria-hidden="true" />
-            {t('hero.scarcity')}
-          </motion.p>
-
-          {/* Social Proof Badges */}
+          {/* Social proof — real client logos + one verified review */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.6 }}
-            className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-4 sm:gap-6"
+            className="mt-9 sm:mt-11"
           >
-            {[
-              { icon: Clock,  label: t('hero.proof.delivery') },
-              { icon: Phone,  label: t('hero.proof.call') },
-              { icon: Shield, label: t('hero.proof.guarantee') },
-            ].map((item, i) => (
-              <div key={i} className="flex items-center gap-2.5 text-foreground/70 text-sm sm:text-base font-medium">
-                <item.icon className="w-5 h-5 text-primary shrink-0" aria-hidden="true" />
-                <span>{item.label}</span>
+            <p className="text-[11px] sm:text-xs uppercase tracking-widest text-muted-foreground/60 mb-4">
+              {t('hero.trustedby')}
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-x-7 gap-y-4 sm:gap-x-10">
+              {CLIENT_LOGOS.map((logo) => (
+                <img
+                  key={logo.name}
+                  src={logo.src}
+                  alt={`Logo ${logo.name}, client d'Elie Ageron`}
+                  className={`h-6 sm:h-7 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity ${logo.white ? 'brightness-0' : ''}`}
+                  loading="eager"
+                  decoding="async"
+                />
+              ))}
+            </div>
+
+            {/* One real, attributed review — replace/extend as you collect more */}
+            <div className="mt-6 flex flex-col items-center gap-1.5">
+              <div className="flex gap-0.5" aria-label="5 sur 5 étoiles">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-3.5 h-3.5 text-yellow-400 fill-yellow-400" aria-hidden="true" />
+                ))}
               </div>
-            ))}
+              <p className="text-sm sm:text-base text-foreground/80 italic max-w-md">
+                «&nbsp;{t('hero.review.text')}&nbsp;»
+              </p>
+              <p className="text-xs text-muted-foreground/70">{t('hero.review.author')}</p>
+            </div>
           </motion.div>
         </motion.header>
 
