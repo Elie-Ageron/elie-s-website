@@ -2,7 +2,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface SEOProps {
-  page: 'home' | 'why' | 'process' | 'pricing' | 'portfolio' | 'contact' | 'blog' | 'apps' | 'event';
+  page: 'home' | 'services' | 'why' | 'process' | 'pricing' | 'portfolio' | 'contact' | 'blog' | 'apps' | 'event';
   customTitle?: string;
   customDescription?: string;
   customCanonical?: string;
@@ -16,7 +16,8 @@ interface SEOProps {
 
 const pageKeywords = {
   en: {
-    home: 'Elie Ageron, web design, web designer, conversion optimization, website, Annecy, Haute-Savoie, France',
+    home: 'Elie Ageron, web design, web designer, conversion optimization, website, Savoie, Haute-Savoie, Albertville, Annecy, France',
+    services: 'web partner, digital partner, web designer Savoie, web designer Annecy, Google Business, social media management, brand identity, local SEO, content writing, web agency Savoie Haute-Savoie',
     why: 'why a website, need website 2025, website business benefits, online presence, digital visibility',
     process: 'web design process, how to build a website, website creation steps, web designer workflow',
     pricing: 'web design pricing, website cost, landing page price, showcase site price, affordable web design',
@@ -27,10 +28,11 @@ const pageKeywords = {
     event: 'event production website, event registration page, event website design, high-conversion event page, event producer web design',
   },
   fr: {
-    home: 'Elie Ageron, web design, création site web, optimisation conversion, site internet, Annecy, Haute-Savoie',
+    home: 'Elie Ageron, web design, création site web, optimisation conversion, site internet, Savoie, Haute-Savoie, Albertville, Annecy',
+    services: 'partenaire web, partenaire digital, web designer Savoie, web designer Annecy, fiche Google Business, gestion réseaux sociaux, identité de marque, référencement local, rédaction de contenu, agence web Savoie Haute-Savoie',
     why: 'pourquoi site web, besoin site internet 2025, bénéfices site web, présence en ligne, visibilité digitale',
     process: 'processus création site web, comment créer site internet, étapes création site web',
-    pricing: 'tarif web design, prix site internet, coût landing page, tarif site vitrine, web design Annecy',
+    pricing: 'tarif web design, prix site internet, coût landing page, tarif site vitrine, web design Savoie, web design Annecy',
     portfolio: 'portfolio web design, exemples sites web, réalisations web design, résultats clients',
     contact: 'contacter web designer, réserver appel web design, embaucher web designer France',
     blog: 'conseils web design, optimisation conversion, guide SEO local, marketing digital, croissance business',
@@ -44,7 +46,11 @@ const seoData = {
   en: {
     home: {
       title: 'Web Designer France | Elie Ageron, from $500',
-      description: 'Premium web design by Elie Ageron, based in Annecy, France. Sites that convert visitors into paying clients. Live in 7–14 days from $500. Free strategy call.',
+      description: 'Premium web design by Elie Ageron, based in Savoie, France. Sites that convert visitors into paying clients. Live in 7-14 days from $500. Free strategy call.',
+    },
+    services: {
+      title: 'Web Partner in Savoie | Elie Ageron',
+      description: 'More than websites: Google Business, social media, branding, local SEO & content. Your all-in-one web partner in Savoie & Haute-Savoie. Free strategy call.',
     },
     why: {
       title: 'Why You Need a Website | Elie Ageron',
@@ -81,8 +87,12 @@ const seoData = {
   },
   fr: {
     home: {
-      title: 'Création Site Web Annecy | Elie Ageron, dès 500€',
-      description: 'Web designer freelance à Annecy. Sites pros qui convertissent les visiteurs en clients. Livraison en 7–14 jours, dès 500€. Appel stratégique gratuit.',
+      title: 'Création Site Web Savoie | Elie Ageron, dès 500€',
+      description: 'Web designer freelance en Savoie et Haute-Savoie. Sites pros qui convertissent les visiteurs en clients. Livraison en 7-14 jours, dès 500€. Appel gratuit.',
+    },
+    services: {
+      title: 'Partenaire Web en Savoie | Elie Ageron',
+      description: "Bien plus qu'un site : Google Business, réseaux sociaux, identité de marque, SEO local et contenu. Votre partenaire web en Savoie et Haute-Savoie. Appel gratuit.",
     },
     why: {
       title: 'Pourquoi un Site Web | Elie Ageron',
@@ -131,6 +141,7 @@ const SEO = ({ page, customTitle, customDescription, customCanonical, ogImage, o
   
   const pathMap: Record<string, string> = {
     home: '',
+    services: '/services',
     why: '/why-a-website',
     process: '/our-process',
     pricing: '/pricing',
@@ -197,8 +208,8 @@ const SEO = ({ page, customTitle, customDescription, customCanonical, ogImage, o
       
       {/* Additional SEO */}
       <meta name="keywords" content={keywords} />
-      <meta name="geo.region" content="FR-74" />
-      <meta name="geo.placename" content="Annecy, Haute-Savoie" />
+      <meta name="geo.region" content="FR-73" />
+      <meta name="geo.placename" content="Albertville, Savoie" />
 
       {/* Page-specific structured data */}
       {structuredData && (

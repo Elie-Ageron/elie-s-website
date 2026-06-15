@@ -1,6 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, ChevronDown } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useCalendly } from '@/contexts/CalendlyContext';
@@ -36,29 +35,9 @@ const Header = () => {
     };
   }, [isMenuOpen]);
 
-  const [sitesOpen, setSitesOpen] = useState(false);
-  const sitesCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  const siteSubItems = [
-    {
-      href: '/why-a-website',
-      label: language === 'fr' ? 'Pourquoi un site ?' : 'Why a website?',
-      desc: language === 'fr' ? "Les raisons d'avoir un site pro" : 'Why your business needs one',
-    },
-    {
-      href: '/our-process',
-      label: language === 'fr' ? 'Notre processus' : 'Our process',
-      desc: language === 'fr' ? "De l'idée à la livraison" : 'From idea to launch',
-    },
-    {
-      href: '/pricing',
-      label: language === 'fr' ? 'Tarifs' : 'Pricing',
-      desc: language === 'fr' ? 'Dès 500€, sans surprise' : 'From €500, no surprises',
-    },
-  ];
-
   const flatNavItems = [
-    // { href: '/apps', label: 'Apps & Dashboards' }, // hidden - future service
+    { href: '/services', label: 'Services' },
+    { href: '/pricing', label: language === 'fr' ? 'Tarifs' : 'Pricing' },
     { href: '/event-production', label: language === 'fr' ? 'Événements' : 'Events' },
     { href: '/portfolio', label: t('nav.portfolio') },
     { href: '/blog', label: 'Blog' },
@@ -97,63 +76,6 @@ const Header = () => {
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-6" role="navigation" aria-label="Primary navigation">
-              {/* Sites Web dropdown */}
-              <div
-                className="relative"
-                onMouseEnter={() => {
-                  if (sitesCloseTimer.current) clearTimeout(sitesCloseTimer.current);
-                  setSitesOpen(true);
-                }}
-                onMouseLeave={() => {
-                  sitesCloseTimer.current = setTimeout(() => setSitesOpen(false), 150);
-                }}
-              >
-                <button
-                  className={`flex items-center gap-1 text-sm font-medium transition-colors ${
-                    ['/why-a-website', '/our-process', '/pricing'].includes(location.pathname)
-                      ? 'text-primary'
-                      : 'text-muted-foreground hover:text-foreground'
-                  }`}
-                  aria-expanded={sitesOpen}
-                  aria-haspopup="true"
-                >
-                  {language === 'fr' ? 'Sites Web' : 'Websites'}
-                  <motion.span animate={{ rotate: sitesOpen ? 180 : 0 }} transition={{ duration: 0.2 }}>
-                    <ChevronDown className="w-3.5 h-3.5" />
-                  </motion.span>
-                </button>
-
-                <AnimatePresence>
-                  {sitesOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 8, scale: 0.96 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 8, scale: 0.96 }}
-                      transition={{ duration: 0.18 }}
-                      className="absolute top-full left-1/2 -translate-x-1/2 pt-3 z-50"
-                    >
-                      <div className="bg-background rounded-2xl p-2 shadow-xl border border-border/50 min-w-[230px]">
-                        {siteSubItems.map((item) => (
-                          <Link
-                            key={item.href}
-                            to={item.href}
-                            onClick={() => setSitesOpen(false)}
-                            className={`flex flex-col px-4 py-3 rounded-xl transition-colors ${
-                              location.pathname === item.href
-                                ? 'text-primary bg-primary/10'
-                                : 'text-foreground hover:bg-secondary'
-                            }`}
-                          >
-                            <span className="text-sm font-medium">{item.label}</span>
-                            <span className="text-xs text-muted-foreground mt-0.5">{item.desc}</span>
-                          </Link>
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-
               {/* Flat nav items */}
               {flatNavItems.map((item) => (
                 <Link

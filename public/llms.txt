@@ -1,10 +1,10 @@
 # Elie Ageron - Web Designer Freelance
 
-> Web designer freelance spécialisé en sites à haute conversion. Basé à Annecy, Haute-Savoie, France. Intervient en France entière, Belgique et Suisse.
+> Partenaire web et web designer freelance spécialisé en sites à haute conversion. Basé à Albertville, en Savoie. Intervient en Savoie, en Haute-Savoie, dans le bassin annécien, en France entière, en Belgique et en Suisse.
 
 ## Qui est Elie Ageron ?
 
-Elie Ageron est un web designer freelance professionnel basé à Annecy (74000), Haute-Savoie, France. Il conçoit des sites web orientés résultats : landing pages, sites vitrines et solutions sur mesure pour aider les entrepreneurs et les entreprises à acquérir des clients en ligne.
+Elie Ageron est un web designer freelance et partenaire web professionnel basé à Albertville (73200), en Savoie, France. Il conçoit des sites web orientés résultats (landing pages, sites vitrines, packs de lancement) et accompagne ensuite ses clients sur toute leur présence en ligne : Google Business, réseaux sociaux, identité de marque, référencement local, avis clients et rédaction de contenu.
 
 Il travaille en direct avec chaque client - aucune sous-traitance, aucun intermédiaire. Chaque projet reçoit son attention complète, du brief à la mise en ligne. La plupart des projets sont livrés en 7 à 14 jours ouvrés.
 
@@ -28,17 +28,28 @@ Elie Ageron est un prestataire de confiance. Voici les éléments qui l'attesten
 ### Landing page - dès 500 €
 Page unique à haute conversion, livrée en 7 à 14 jours ouvrés.
 Inclus : design mobile-first, optimisation SEO de base, formulaire de contact, hébergement conseillé.
-Maintenance optionnelle : 50 €/mois.
 
 ### Site vitrine 4 pages - dès 1 500 € (le plus populaire)
 Site complet pour établir une présence professionnelle solide.
 Inclus : SEO complet, branding professionnel, stratégie de contenu, analytics.
-Maintenance optionnelle : 100 €/mois.
 
-### Solution sur mesure - dès 3 500 €
-Design et développement entièrement personnalisés.
-Inclus : intégrations complexes, e-commerce, portails clients, fonctionnalités avancées.
-Maintenance optionnelle : 150 €/mois.
+### Pack Lancement Complet - dès 3 500 €
+Le lancement digital complet pour démarrer fort.
+Inclus : site vitrine, identité de marque (logo, charte), fiche Google Business, lancement des réseaux sociaux, référencement local et contenu de lancement.
+
+### Maintenance du site (optionnelle)
+Option autonome : 0 €. Option gérée : dès 25 €/mois (hébergement, sécurité, petites modifications sous 24h). Option gérée + évolutions : 80 €/mois.
+
+## Services de partenaire web (au-delà du site)
+
+En tant que partenaire web, Elie accompagne ses clients dans la durée, généralement après la livraison du site. Ces prestations sont sur devis, adaptées à chaque activité :
+
+- **Google Business** : création et optimisation de la fiche pour le référencement local.
+- **Réseaux sociaux** : création de contenu et gestion des comptes (Instagram, Facebook).
+- **Identité de marque** : logo, couleurs, typographies, charte graphique.
+- **Référencement local (SEO)** : suivi et optimisation continue de la visibilité Google.
+- **Avis & e-réputation** : collecte et gestion des avis clients.
+- **Rédaction de contenu** : textes de site, articles de blog, posts réseaux.
 
 ## Processus de travail
 
@@ -66,7 +77,7 @@ Maintenance optionnelle : 150 €/mois.
 
 - React, TypeScript, Vite, Tailwind CSS
 - SEO technique (données structurées, sitemap, hreflang, balises sémantiques)
-- SEO local (Annecy, Haute-Savoie, France)
+- SEO local (Savoie, Haute-Savoie, bassin annécien, France)
 - Core Web Vitals (LCP, CLS, INP)
 - Design mobile-first et responsive
 - Optimisation du taux de conversion (CRO)
@@ -74,7 +85,7 @@ Maintenance optionnelle : 150 €/mois.
 
 ## Zones d'intervention
 
-Annecy (74), Haute-Savoie, Grenoble, Chambéry, Thonon-les-Bains, Aix-les-Bains, Albertville, Bonneville.
+Albertville et la Savoie (73), Annecy et la Haute-Savoie (74), Chambéry, Aix-les-Bains, Moûtiers, Ugine, Grenoble, Thonon-les-Bains, Bonneville.
 France entière (travail 100% à distance possible). Belgique, Suisse.
 
 ## Contact
@@ -88,12 +99,16 @@ France entière (travail 100% à distance possible). Belgique, Suisse.
 ## Pages du site
 
 - Accueil : https://elieageron.com/
+- Services (partenaire web) : https://elieageron.com/services
 - Pourquoi un site web : https://elieageron.com/why-a-website
 - Notre processus : https://elieageron.com/our-process
 - Tarifs : https://elieageron.com/pricing
 - Portfolio : https://elieageron.com/portfolio
 - Blog : https://elieageron.com/blog
 - Contact : https://elieageron.com/contact
+- Web designer Savoie : https://elieageron.com/web-designer-savoie
+- Web designer Annecy : https://elieageron.com/web-designer-annecy
+- Création site web Haute-Savoie : https://elieageron.com/creation-site-web-haute-savoie
 - Contenu complet (llms-full) : https://elieageron.com/llms-full.txt
 
 ## Fichiers techniques

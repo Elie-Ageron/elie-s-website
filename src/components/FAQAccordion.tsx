@@ -53,7 +53,7 @@ const faqContent = {
     },
     {
       question: 'Mon site sera-t-il bien référencé sur Google ?',
-      answer: 'Oui, toujours. Chaque site inclut les fondations SEO techniques : vitesse, données structurées, HTML sémantique, balises meta et indexation correcte. Pour le SEO local (Annecy, Haute-Savoie), le site est optimisé pour apparaître dans les recherches de votre zone.',
+      answer: 'Oui, toujours. Chaque site inclut les fondations SEO techniques : vitesse, données structurées, HTML sémantique, balises meta et indexation correcte. Pour le SEO local (Savoie, Haute-Savoie, bassin annécien), le site est optimisé pour apparaître dans les recherches de votre zone.',
     },
     {
       question: 'Que se passe-t-il après la mise en ligne ?',

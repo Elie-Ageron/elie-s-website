@@ -9,6 +9,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const navLinks = [
+    { label: language === 'fr' ? 'Services' : 'Services', href: '/services' },
     { label: language === 'fr' ? 'Pourquoi un site ?' : 'Why a website?', href: '/why-a-website' },
     { label: language === 'fr' ? 'Notre processus' : 'Our process', href: '/our-process' },
     { label: language === 'fr' ? 'Tarifs' : 'Pricing', href: '/pricing' },
@@ -67,8 +68,8 @@ const Footer = () => {
               </Link>
               <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
                 {language === 'fr'
-                  ? 'Création de sites web professionnels et performants pour développer votre activité en ligne.'
-                  : 'Professional, high-performance websites to grow your business online.'}
+                  ? 'Votre partenaire web de A à Z : site, Google, photos, réseaux sociaux et identité de marque. Toute votre présence en ligne, gérée par une seule personne.'
+                  : 'Your all-in-one web partner: website, Google, photos, social media and brand identity. Your entire online presence, managed by one person.'}
               </p>
               <div className="flex items-center gap-2 text-sm text-muted-foreground pt-1">
                 {t('footer.made')}
@@ -118,12 +119,30 @@ const Footer = () => {
                 <div className="inline-flex items-center gap-2.5 text-sm text-muted-foreground">
                   <MapPin className="w-4 h-4 shrink-0" aria-hidden="true" />
                   <address style={{ fontStyle: 'normal' }}>
-                    Thônes, Haute-Savoie, France
+                    Albertville, Savoie, France
                   </address>
                 </div>
               </div>
             </div>
           </motion.div>
+
+          {/* Zones d'intervention — internal links to local landing pages for SEO crawl */}
+          <nav aria-label={language === 'fr' ? "Zones d'intervention" : 'Service areas'} className="mt-10 pt-8 border-t border-border/30">
+            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-3">
+              {language === 'fr' ? "Zones d'intervention" : 'Service areas'}
+            </h3>
+            <div className="flex flex-wrap gap-x-5 gap-y-2">
+              {[
+                { href: '/web-designer-savoie', label: language === 'fr' ? 'Web designer Savoie' : 'Web designer Savoie' },
+                { href: '/web-designer-annecy', label: language === 'fr' ? 'Web designer Annecy' : 'Web designer Annecy' },
+                { href: '/creation-site-web-haute-savoie', label: language === 'fr' ? 'Création site web Haute-Savoie' : 'Web design Haute-Savoie' },
+              ].map((z) => (
+                <Link key={z.href} to={z.href} className="text-sm text-muted-foreground hover:text-primary transition-colors w-fit">
+                  {z.label}
+                </Link>
+              ))}
+            </div>
+          </nav>
 
           {/* Bottom bar */}
           <div className="mt-10 pt-6 border-t border-border/30">

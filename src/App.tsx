@@ -13,6 +13,7 @@ import { CalendlyPopup } from "./components/CalendlyPopup";
 
 // Lazy-load all pages so only the current page's JS is downloaded on first visit
 const Home = lazy(() => import("./pages/Home"));
+const Services = lazy(() => import("./pages/Services"));
 const WhyWebsite = lazy(() => import("./pages/WhyWebsite"));
 const OurProcess = lazy(() => import("./pages/OurProcess"));
 const Pricing = lazy(() => import("./pages/Pricing"));
@@ -87,6 +88,7 @@ const App = () => (
               <Suspense fallback={<div style={{ minHeight: '60vh' }} />}>
                 <Routes>
                   <Route path="/" element={<Home />} />
+                  <Route path="/services" element={<Services />} />
                   <Route path="/why-a-website" element={<WhyWebsite />} />
                   <Route path="/our-process" element={<OurProcess />} />
                   <Route path="/pricing" element={<Pricing />} />
@@ -99,6 +101,7 @@ const App = () => (
                   <Route path="/assessment" element={<Assessment />} />
                   {/* <Route path="/apps" element={<Apps />} /> */}{/* hidden - future service */}
                   {/* City landing pages */}
+                  <Route path="/web-designer-savoie" element={<CityLandingPage slug="web-designer-savoie" />} />
                   <Route path="/web-designer-annecy" element={<CityLandingPage slug="web-designer-annecy" />} />
                   <Route path="/creation-site-web-haute-savoie" element={<CityLandingPage slug="creation-site-web-haute-savoie" />} />
                   <Route path="/mentions-legales" element={<LegalPage page="mentions" />} />

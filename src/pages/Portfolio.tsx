@@ -175,7 +175,7 @@ const Portfolio = () => {
       quote: language === 'fr'
         ? 'Notre site inspire confiance, convertit mieux, et nos clients nous le disent. Un travail soigné, du début à la fin.'
         : 'Our site now inspires trust, converts better, and our clients tell us so. Careful, attentive work from start to finish.',
-      quoteAuthor: 'Gabriel Ageron – Fondateur, MyWebGlory',
+      quoteAuthor: 'Gabriel Ageron, Fondateur, MyWebGlory',
     },
     {
       image: portfolioSolarFusion,
@@ -188,7 +188,7 @@ const Portfolio = () => {
       quote: language === 'fr'
         ? 'Elie a su capter l\'essence de notre marque. Le trafic a vraiment décollé dès le lancement.'
         : 'Elie perfectly captured our brand\'s essence. Traffic has really taken off since launch.',
-      quoteAuthor: 'Sébastien Chaffardon – Fondateur, Solar Fusion',
+      quoteAuthor: 'Sébastien Chaffardon, Fondateur, Solar Fusion',
     },
     {
       image: portfolioVmProducers,
@@ -201,7 +201,7 @@ const Portfolio = () => {
       quote: language === 'fr'
         ? 'Elie a compris notre univers immédiatement. Le résultat est percutant, professionnel, exactement ce qu\'on voulait.'
         : 'Elie understood our world straight away. The result is sharp, professional, and exactly what we were after.',
-      quoteAuthor: 'Austin Talley – VM Producers',
+      quoteAuthor: 'Austin Talley, VM Producers',
     },
     {
       image: portfolioMyDrop,
@@ -214,7 +214,7 @@ const Portfolio = () => {
       quote: language === 'fr'
         ? 'Elie a su comprendre ce qu\'on construisait et l\'a traduit en un site qui fonctionne vraiment. Rapide, clair, et il pousse les visiteurs à s\'inscrire.'
         : 'Elie really understood what we were building and translated it into a site that works. Fast, clear, and it pushes visitors to sign up.',
-      quoteAuthor: 'Gabriel Ageron – Fondateur, MyDrop',
+      quoteAuthor: 'Gabriel Ageron, Fondateur, MyDrop',
     },
   ];
 

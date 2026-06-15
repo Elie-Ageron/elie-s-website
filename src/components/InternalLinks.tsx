@@ -1,16 +1,24 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, FileText, DollarSign, Briefcase, HelpCircle, BookOpen, CalendarDays } from 'lucide-react';
+import { ArrowRight, FileText, DollarSign, Briefcase, HelpCircle, BookOpen, CalendarDays, LayoutGrid } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface InternalLinksProps {
-  currentPage: 'home' | 'why' | 'process' | 'pricing' | 'portfolio' | 'contact' | 'blog' | 'event';
+  currentPage: 'home' | 'services' | 'why' | 'process' | 'pricing' | 'portfolio' | 'contact' | 'blog' | 'event';
 }
 
 const InternalLinks = ({ currentPage }: InternalLinksProps) => {
   const { language } = useLanguage();
 
   const links = [
+    {
+      id: 'services',
+      path: '/services',
+      icon: LayoutGrid,
+      title: language === 'fr' ? 'Tous les services' : 'All services',
+      desc: language === 'fr' ? 'Site, Google, réseaux, photo, branding' : 'Site, Google, social, photo, branding',
+      anchor: '',
+    },
     {
       id: 'why',
       path: '/why-a-website',

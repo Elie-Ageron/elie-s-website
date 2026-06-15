@@ -374,6 +374,43 @@ const Pricing = () => {
         </div>
       </section>
 
+      {/* Bridge to the partner offer (ongoing, custom-priced) */}
+      <section className="py-12 sm:py-16" aria-labelledby="partner-bridge-heading">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-primary/30 bg-primary/[0.04] p-6 sm:p-10"
+          >
+            <div className="absolute -top-12 -right-10 w-48 h-48 rounded-full bg-primary/10 blur-3xl" aria-hidden="true" />
+            <div className="relative z-10 flex flex-col sm:flex-row sm:items-center gap-6">
+              <div className="flex-1">
+                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-primary mb-2 block">
+                  {language === 'fr' ? 'Et après le lancement ?' : 'And after launch?'}
+                </span>
+                <h2 id="partner-bridge-heading" className="text-2xl sm:text-3xl font-bold text-foreground mb-2 leading-snug">
+                  {language === 'fr' ? 'Je vous accompagne sur tout le reste' : 'I support you on everything else'}
+                </h2>
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-xl">
+                  {language === 'fr'
+                    ? "Google Business, réseaux sociaux, référencement, avis, contenu : je fais grandir votre présence mois après mois. Accompagnement sur mesure, chiffré ensemble selon vos besoins."
+                    : 'Google Business, social media, SEO, reviews, content: I grow your presence month after month. Custom support, priced together based on your needs.'}
+                </p>
+              </div>
+              <div className="shrink-0">
+                <Button variant="neonOutline" size="lg" className="group" asChild>
+                  <Link to="/services" className="flex items-center gap-2">
+                    {language === 'fr' ? 'Voir les services' : 'See the services'}
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Custom quote text + CTA */}
       <section className="py-12 sm:py-16" aria-label="Custom quote">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">

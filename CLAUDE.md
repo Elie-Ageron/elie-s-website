@@ -2,18 +2,33 @@
 
 ## Contexte du projet
 
-Site vitrine / portfolio de **Elie Ageron**, web designer freelance basé à **Annecy, Haute-Savoie (74), France**.
+Site vitrine / portfolio de **Elie Ageron**, web designer et partenaire web freelance basé à **Albertville, Savoie (73), France**. Zone d'intervention : Savoie, Haute-Savoie, bassin annécien, France entière.
 - URL : https://elieageron.com
 - Stack : React + TypeScript + Vite + Tailwind + Supabase + Vercel
 - Bilingue : Français (défaut) + Anglais
 - Email pro : **web@elieageron.com** (toujours utiliser cette adresse, pas elieageron@gmail.com)
 - Téléphone : +33 6 95 55 53 18
 
+## Positionnement
+**Partenaire web tout-en-un** (et non plus simple créateur de sites). Elie accompagne ses clients sur toute leur présence en ligne, dans la durée. ICP : TPE, artisans, tatoueurs, et PME locales (hors multinationales).
+
 ## Services proposés
-- Landing page haute conversion (dès 500€, livraison 7-14j)
-- Site vitrine 4 pages (dès 1500€)
-- Apps & dashboards sur mesure
-- Maintenance mensuelle (50€/mois landing, 100€/mois vitrine)
+Les 7 services (source unique : `src/data/services.ts`) :
+- **Sites web** (point fort) — landing dès 500€, vitrine dès 1500€, pack lancement dès 3500€
+- **Google Business** — création / optimisation de la fiche
+- **Réseaux sociaux** — création de contenu + gestion des comptes (récurrent)
+- **Identité de marque** — logo, charte (réalisée avec son frère, designer)
+- **Référencement local (SEO)** — suivi continu (Elie monte en compétence dessus)
+- **Avis & e-réputation** — collecte + réponses aux avis Google
+- **Rédaction de contenu** — textes site, posts, blog (produits avec Claude + skill)
+
+**Maintenance site :** Option A 0€, Option B 25€/mois, Option C 80€/mois
+
+### Notes capacité / sous-traitance
+- **Pas proposés** : Photo/vidéo (frère photographe pas encore pro) et Publicité Google/Meta Ads (compétence non maîtrisée) — retirés volontairement.
+- **Événementiel** : conservé dans le menu, prospection active en cours (page `/event-production`).
+
+> ⚠️ **Aucun prix n'est affiché publiquement** sur la page `/services` (décision produit). Les prix ci-dessus sont une référence interne. Modèle business : land & expand (acquisition via le site, expansion via le partenariat après livraison).
 
 ---
 
@@ -33,6 +48,12 @@ Site vitrine / portfolio de **Elie Ageron**, web designer freelance basé à **A
 - `index.html` — Meta tags statiques (fallback pour crawlers), schemas JSON-LD statiques
 - `public/sitemap.xml` — Sitemap avec hreflang fr/en
 - `public/robots.txt` — Directives crawl
+
+### Page Services (/services)
+- `src/pages/Services.tsx` — Page hub du partenaire web : hero, manifeste (repositionnement), **une section alternée par service** (numéro fantôme, orbe, kicker), "pourquoi un partenaire", CTA. **Sans prix affiché.**
+- `src/data/services.ts` — Source unique des 7 services (kicker, titre, desc, bullets, prix interne FR/EN, icône, ancre)
+- `src/components/ServicesEcosystem.tsx` — Section grille "Et une fois le site en ligne ?" affichée sur la Home (après les formules site)
+- Le menu est **plat** (Services · Tarifs · Événements · Portfolio · Blog · Contact) — "Services" pointe vers la page unique `/services`. Les ancres (`#google-business`, `#reseaux-sociaux`…) servent aux pills du hero de la page.
 
 ---
 
@@ -99,6 +120,8 @@ Site vitrine / portfolio de **Elie Ageron**, web designer freelance basé à **A
 ## Mots-clés cibles
 
 ### Primaires (FR)
+- création site web Savoie
+- web designer Savoie
 - création site web Annecy
 - web designer Annecy
 - création site internet Haute-Savoie
@@ -132,13 +155,12 @@ Site vitrine / portfolio de **Elie Ageron**, web designer freelance basé à **A
 
 ---
 
-## SEO Local (Annecy / Haute-Savoie)
+## SEO Local (Savoie / Haute-Savoie)
 
-- Ville principale : **Annecy** (74000)
-- Région : **Haute-Savoie** (FR-74)
-- Coordonnées GPS : lat 45.8992, lng 6.1294
-- Rayon d'action : Annecy, Haute-Savoie, Rhône-Alpes, France entière + international
-- Toujours inclure geo tags dans `index.html` et LocalBusiness schema
+- **NAP / adresse réelle** : **Albertville** (73200), **Savoie**, FR-73, GPS lat 45.6756, lng 6.3925. C'est l'adresse à utiliser partout (mentions légales, schémas, Google Business). Elie a quitté la Haute-Savoie (Thônes/Annecy) pour la vallée d'Albertville.
+- **Zone d'intervention** (areaServed, ≠ adresse) : Savoie + Haute-Savoie + bassin annécien + Rhône-Alpes + France entière + international. On garde Annecy et la Haute-Savoie comme cibles SEO (marché plus gros, servi sur place et à distance).
+- **Pages locales** : `/web-designer-savoie` (Albertville/Savoie), `/web-designer-annecy`, `/creation-site-web-haute-savoie`. Le schéma LocalBusiness de ces pages utilise l'adresse réelle (Albertville) avec `areaServed` = la ville ciblée.
+- Toujours inclure geo tags dans `index.html` et LocalBusiness schema.
 
 ---
 

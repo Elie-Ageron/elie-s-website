@@ -416,8 +416,8 @@ const EventProduction = () => {
     {
       q: language === 'fr' ? 'En combien de temps tu la livres ?' : 'How fast can you deliver?',
       a: language === 'fr'
-        ? "Vite, votre date ne bougera pas à cause de moi. Le délai standard est d'environ 5 jours, soit une petite semaine de travail. Si l'événement approche, j'ai une option express (24–72h) en supplément."
-        : "Fast. Your event date won't slip because of me. Standard turnaround is around 5 days, roughly one working week. If your event is close, I offer a rush option (24–72h) for an extra fee.",
+        ? "Vite, votre date ne bougera pas à cause de moi. Le délai standard est d'environ 5 jours, soit une petite semaine de travail. Si l'événement approche, j'ai une option express (24-72h) en supplément."
+        : "Fast. Your event date won't slip because of me. Standard turnaround is around 5 days, roughly one working week. If your event is close, I offer a rush option (24-72h) for an extra fee.",
     },
     {
       q: language === 'fr' ? 'Comment ça se passe ?' : 'How does it work?',

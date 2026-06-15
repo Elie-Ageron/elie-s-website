@@ -19,8 +19,8 @@ const ReviewSchema = () => {
     email: 'web@elieageron.com',
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Annecy',
-      addressRegion: 'Haute-Savoie',
+      addressLocality: 'Albertville',
+      addressRegion: 'Savoie',
       addressCountry: 'FR',
     },
     aggregateRating: {

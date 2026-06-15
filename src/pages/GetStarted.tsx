@@ -37,7 +37,17 @@ const GetStarted = () => {
     visualStyle: '',
     description: '',
     mustHave: '',
+    extraServices: [] as string[],
   });
+
+  const toggleExtraService = (service: string) => {
+    setFormData(prev => ({
+      ...prev,
+      extraServices: prev.extraServices.includes(service)
+        ? prev.extraServices.filter(s => s !== service)
+        : [...prev.extraServices, service],
+    }));
+  };
 
   const isEventProducer =
     formData.businessType === (language === 'fr' ? "Producteur d'événements" : 'Event producer');
@@ -75,6 +85,7 @@ const GetStarted = () => {
         `Objectif principal : ${formData.mainGoal}`,
         `Action souhaitée des visiteurs : ${formData.mainAction}`,
         `Ambiance visuelle : ${formData.visualStyle}`,
+        formData.extraServices.length ? `Autres besoins (upsell) : ${formData.extraServices.join(', ')}` : null,
         formData.siteReference ? `Référence de site : ${formData.siteReference}` : null,
         formData.googleBusinessName ? `Google Business : ${formData.googleBusinessName}` : 'Google Business : non renseigné',
         `Description : ${formData.description}`,
@@ -118,6 +129,10 @@ const GetStarted = () => {
   const visualStyles = language === 'fr'
     ? ['Moderne & épuré', 'Chaleureux & naturel', 'Élégant & premium', 'Coloré & dynamique']
     : ['Modern & minimal', 'Warm & natural', 'Elegant & premium', 'Bold & dynamic'];
+
+  const extraNeeds = language === 'fr'
+    ? ['Fiche Google Business', 'Réseaux sociaux', 'Logo / identité de marque', 'Référencement (SEO)', 'Avis clients', 'Rédaction de contenu']
+    : ['Google Business profile', 'Social media', 'Logo / brand identity', 'SEO', 'Customer reviews', 'Content writing'];
 
   const stepLabels = language === 'fr'
     ? ['Votre activité', 'Situation actuelle', 'Votre projet', 'Détails']
@@ -486,6 +501,42 @@ const GetStarted = () => {
                               <option value="" disabled>{language === 'fr' ? 'Choisissez...' : 'Choose...'}</option>
                               {visualStyles.map(t => <option key={t} value={t}>{t}</option>)}
                             </select>
+                          </div>
+                          <div className="space-y-2 pt-1">
+                            <Label>
+                              {language === 'fr'
+                                ? 'Vous avez aussi besoin de… ?'
+                                : 'Do you also need…?'}{' '}
+                              <span className="text-muted-foreground/60 text-xs">
+                                ({language === 'fr' ? 'optionnel, plusieurs choix' : 'optional, multiple choices'})
+                              </span>
+                            </Label>
+                            <p className="text-xs text-muted-foreground/70">
+                              {language === 'fr'
+                                ? "Au-delà du site, je peux gérer toute votre présence en ligne."
+                                : 'Beyond the site, I can manage your whole online presence.'}
+                            </p>
+                            <div className="flex flex-wrap gap-2 pt-1">
+                              {extraNeeds.map(need => {
+                                const active = formData.extraServices.includes(need);
+                                return (
+                                  <button
+                                    key={need}
+                                    type="button"
+                                    aria-pressed={active}
+                                    onClick={() => toggleExtraService(need)}
+                                    className={`inline-flex items-center gap-1.5 py-2 px-3.5 rounded-full border text-sm font-medium transition-all ${
+                                      active
+                                        ? 'bg-primary text-primary-foreground border-primary'
+                                        : 'border-input bg-background text-foreground hover:border-primary/50'
+                                    }`}
+                                  >
+                                    {active && <Check className="w-3.5 h-3.5" aria-hidden="true" />}
+                                    {need}
+                                  </button>
+                                );
+                              })}
+                            </div>
                           </div>
                         </div>
                       )}

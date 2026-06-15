@@ -14,15 +14,15 @@ const JsonLd = () => {
     image: `${baseUrl}/og-image.png`,
     jobTitle: language === 'fr' ? 'Web Designer Freelance' : 'Freelance Web Designer',
     description: language === 'fr'
-      ? 'Web designer freelance basé à Thônes (Haute-Savoie). Création de sites web qui convertissent les visiteurs en clients pour les entreprises d\'Annecy, Grenoble, Chambéry et toute la France.'
-      : 'Freelance web designer based in Thônes, Haute-Savoie, France. Building high-converting websites for businesses in Annecy, Grenoble, Chambéry and across France.',
+      ? 'Web designer freelance basé à Albertville (Savoie). Création de sites web qui convertissent les visiteurs en clients pour les entreprises de Savoie, Haute-Savoie, Annecy, Chambéry et toute la France.'
+      : 'Freelance web designer based in Albertville, Savoie, France. Building high-converting websites for businesses in Savoie, Haute-Savoie, Annecy, Chambéry and across France.',
     email: 'web@elieageron.com',
     telephone: '+33695555318',
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Annecy',
-      addressRegion: 'Haute-Savoie',
-      postalCode: '74000',
+      addressLocality: 'Albertville',
+      addressRegion: 'Savoie',
+      postalCode: '73200',
       addressCountry: 'FR',
     },
     sameAs: [
@@ -34,6 +34,11 @@ const JsonLd = () => {
       'Landing Page Design',
       'UI/UX Design',
       'SEO',
+      'Local SEO',
+      'Google Business Profile',
+      'Social Media Management',
+      'Brand Identity',
+      'Content Writing',
       'Responsive Design',
     ],
   };
@@ -46,8 +51,8 @@ const JsonLd = () => {
     url: baseUrl,
     image: `${baseUrl}/og-image.png`,
     description: language === 'fr'
-      ? 'Services de création de sites web premium qui convertissent les visiteurs en clients payants'
-      : 'Premium web design services that convert visitors into paying clients',
+      ? 'Partenaire web : sites qui convertissent, Google Business, réseaux sociaux, identité de marque, référencement local et contenu'
+      : 'Web partner: high-converting websites, Google Business, social media, brand identity, local SEO and content',
     telephone: '+33695555318',
     email: 'web@elieageron.com',
     priceRange: '€€',
@@ -60,13 +65,13 @@ const JsonLd = () => {
     },
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Annecy',
-      addressRegion: 'Haute-Savoie',
-      postalCode: '74000',
+      addressLocality: 'Albertville',
+      addressRegion: 'Savoie',
+      postalCode: '73200',
       addressCountry: 'FR',
     },
     areaServed: [
-      { '@type': 'City', name: 'Thônes' },
+      { '@type': 'City', name: 'Moûtiers' },
       { '@type': 'City', name: 'Annecy' },
       { '@type': 'City', name: 'Bonneville' },
       { '@type': 'City', name: 'Thonon-les-Bains' },
@@ -119,6 +124,56 @@ const JsonLd = () => {
             description: language === 'fr'
               ? 'Solutions web personnalisées pour besoins complexes'
               : 'Custom web solutions for complex needs',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Google Business',
+            description: language === 'fr'
+              ? 'Création et optimisation de la fiche Google Business pour le référencement local'
+              : 'Google Business profile creation and optimization for local search',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: language === 'fr' ? 'Gestion des réseaux sociaux' : 'Social media management',
+            description: language === 'fr'
+              ? 'Création de contenu et gestion des comptes Instagram et Facebook'
+              : 'Content creation and management of Instagram and Facebook accounts',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: language === 'fr' ? 'Identité de marque' : 'Brand identity',
+            description: language === 'fr'
+              ? 'Logo, couleurs, typographies et charte graphique'
+              : 'Logo, colors, typography and brand guidelines',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: language === 'fr' ? 'Référencement local' : 'Local SEO',
+            description: language === 'fr'
+              ? 'Suivi et optimisation continue du référencement local'
+              : 'Ongoing local SEO tracking and optimization',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: language === 'fr' ? 'Rédaction de contenu' : 'Content writing',
+            description: language === 'fr'
+              ? 'Textes de site, articles de blog et posts pour les réseaux'
+              : 'Website copy, blog articles and social media posts',
           },
         },
       ],

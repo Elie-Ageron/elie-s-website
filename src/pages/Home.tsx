@@ -6,6 +6,7 @@ import HeroSection from '@/components/HeroSection';
 import PersonalIntroSection from '@/components/PersonalIntroSection';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
 import ServicesSection from '@/components/ServicesSection';
+import ServicesEcosystem from '@/components/ServicesEcosystem';
 import RoutingSection from '@/components/RoutingSection';
 import FAQAccordion from '@/components/FAQAccordion';
 import SEO from '@/components/SEO';
@@ -40,8 +41,11 @@ const Home = () => {
       {/* Testimonials - Proof early, before the offer */}
       <TestimonialsSection />
 
-      {/* Services - The offer, backed by proof */}
+      {/* Services - The website plans (the core wedge offer) */}
       <ServicesSection />
+
+      {/* Ecosystem - "Beyond the site": the partner expansion teaser */}
+      <ServicesEcosystem />
 
       {/* Personal Intro - Who I am */}
       <PersonalIntroSection />

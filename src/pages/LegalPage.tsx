@@ -57,7 +57,7 @@ const LegalPage = ({ page }: LegalPageProps) => {
               <ul className="text-muted-foreground space-y-1 list-none">
                 <li><strong className="text-foreground">{isFr ? 'Nom :' : 'Name:'}</strong> Elie Ageron</li>
                 <li><strong className="text-foreground">{isFr ? 'Activité :' : 'Activity:'}</strong> {isFr ? 'Web Design & Optimisation Conversion' : 'Web Design & Conversion Optimization'}</li>
-                <li><strong className="text-foreground">{isFr ? 'Adresse :' : 'Address:'}</strong> Annecy, Haute-Savoie, France</li>
+                <li><strong className="text-foreground">{isFr ? 'Adresse :' : 'Address:'}</strong> Albertville, Savoie, France</li>
                 <li><strong className="text-foreground">Email :</strong> <a href="mailto:web@elieageron.com" className="text-primary hover:underline">web@elieageron.com</a></li>
                 <li><strong className="text-foreground">{isFr ? 'Téléphone :' : 'Phone:'}</strong> <a href="tel:+33695555318" className="text-primary hover:underline">+33 6 95 55 53 18</a></li>
               </ul>
@@ -178,7 +178,7 @@ const LegalPage = ({ page }: LegalPageProps) => {
                 {isFr ? '6. Responsable du traitement' : '6. Data Controller'}
               </h2>
               <p className="text-muted-foreground">
-                {isFr ? 'Responsable :' : 'Controller:'} Elie Ageron - web@elieageron.com - Annecy, France
+                {isFr ? 'Responsable :' : 'Controller:'} Elie Ageron - web@elieageron.com - Albertville, France
               </p>
             </section>
           </>

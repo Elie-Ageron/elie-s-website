@@ -380,8 +380,8 @@ const Assessment = () => {
             transition={{ delay: 0.5, duration: 0.6 }}
           >
             {L(
-              'Par Elie Ageron, web designer à Annecy. Je conçois des sites qui transforment les visiteurs en clients.',
-              'By Elie Ageron, web designer in Annecy, France. I build sites that turn visitors into clients.'
+              'Par Elie Ageron, web designer en Savoie. Je conçois des sites qui transforment les visiteurs en clients.',
+              'By Elie Ageron, web designer in Savoie, France. I build sites that turn visitors into clients.'
             )}
           </motion.p>
         </div>

@@ -38,15 +38,15 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
     priceRange: '€€',
     address: {
       '@type': 'PostalAddress',
-      addressLocality: d.name,
-      addressRegion: city.department,
-      postalCode: city.postalCode,
+      addressLocality: 'Albertville',
+      addressRegion: 'Savoie',
+      postalCode: '73200',
       addressCountry: 'FR',
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: city.lat,
-      longitude: city.lng,
+      latitude: 45.6756,
+      longitude: 6.3925,
     },
     areaServed: { '@type': 'City', name: d.name },
     aggregateRating: {

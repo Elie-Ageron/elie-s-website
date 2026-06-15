@@ -590,7 +590,7 @@ La première chose, c\'est la crédibilité avant l\'appel. Un visiteur qui tomb
 
 Ensuite, il y a la disponibilité. Vous êtes sur un chantier de 8h à 18h, le téléphone dans la poche. Vous ne pouvez pas toujours décrocher. Votre formulaire de contact, lui, prend le message à votre place. Vous le trouvez le soir, vous rappelez. Aucun contact perdu.
 
-Et puis, la visibilité locale. Avec un site bien fait, vous pouvez apparaître quand quelqu\'un cherche "électricien Annecy" ou "plombier Thônes" sur Google. Ces gens-là ont un problème maintenant et cherchent quelqu\'un maintenant. C\'est exactement là où vous voulez être.
+Et puis, la visibilité locale. Avec un site bien fait, vous pouvez apparaître quand quelqu\'un cherche "électricien Annecy" ou "plombier Albertville" sur Google. Ces gens-là ont un problème maintenant et cherchent quelqu\'un maintenant. C\'est exactement là où vous voulez être.
 
 ## "Mais mes clients me connaissent déjà"
 

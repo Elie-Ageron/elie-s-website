@@ -44,7 +44,7 @@ const faqData = {
       },
       {
         question: 'Do you offer monthly maintenance?',
-        answer: 'Yes, optional monthly maintenance starts at $50/month for landing pages and $100/month for showcase sites. This includes updates, security, hosting, and priority support.',
+        answer: 'Yes, optional monthly maintenance is available from €25/month, covering hosting, security, and small updates within 24h. Beyond maintenance, I also offer ongoing partner support (Google Business, social media, SEO) on a custom basis.',
       },
       {
         question: 'Is there a satisfaction guarantee?',
@@ -122,7 +122,7 @@ const faqData = {
       },
       {
         question: 'Mon site sera-t-il bien référencé sur Google ?',
-        answer: 'Oui. Chaque site inclut les fondations SEO : vitesse, données structurées, HTML sémantique, balises meta et indexation correcte. Pour le référencement local (Annecy, Haute-Savoie), le site est optimisé pour apparaître dans les recherches de votre zone géographique.',
+        answer: 'Oui. Chaque site inclut les fondations SEO : vitesse, données structurées, HTML sémantique, balises meta et indexation correcte. Pour le référencement local (Savoie, Haute-Savoie, bassin annécien), le site est optimisé pour apparaître dans les recherches de votre zone géographique.',
       },
       {
         question: 'Est-ce que le site fonctionnera bien sur mobile ?',
@@ -140,7 +140,7 @@ const faqData = {
       },
       {
         question: 'Proposez-vous une maintenance mensuelle ?',
-        answer: 'Oui, la maintenance mensuelle optionnelle commence à 50€/mois pour les landing pages et 100€/mois pour les sites vitrines. Cela inclut les mises à jour, la sécurité, l\'hébergement et le support prioritaire.',
+        answer: 'Oui, la maintenance mensuelle optionnelle est disponible à partir de 25€/mois : hébergement, sécurité et petites modifications sous 24h. Au-delà de la maintenance, je propose aussi un accompagnement partenaire (Google Business, réseaux sociaux, SEO) sur devis.',
       },
       {
         question: 'Y a-t-il une garantie de satisfaction ?',

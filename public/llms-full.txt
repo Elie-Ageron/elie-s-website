@@ -8,8 +8,9 @@
 
 **Nom** : Elie Ageron
 **Titre** : Web Designer Freelance & Expert en Conversion
-**Localisation** : Annecy (74000), Haute-Savoie, France
-**Coordonnées GPS** : 45.8992° N, 6.1294° E
+**Localisation** : Albertville (73200), Savoie, France
+**Coordonnées GPS** : 45.6756° N, 6.3925° E
+**Zone d'intervention** : Savoie, Haute-Savoie, bassin annécien, France entière (à distance)
 **Email** : web@elieageron.com
 **Téléphone / WhatsApp** : +33 6 95 55 53 18
 **Site web** : https://elieageron.com
@@ -57,7 +58,7 @@ Elie Ageron n'est pas un amateur ni une agence qui externalise. Voici les élém
 - Passation complète au client
 
 **Délai** : 7 à 14 jours ouvrés
-**Maintenance optionnelle** : 50 €/mois (mises à jour, sécurité, hébergement, support prioritaire)
+**Maintenance optionnelle** : dès 25 €/mois (hébergement, sécurité, petites modifications)
 
 ---
 
@@ -74,22 +75,38 @@ Elie Ageron n'est pas un amateur ni une agence qui externalise. Voici les élém
 - Passation complète avec formation basique
 
 **Délai** : 7 à 14 jours ouvrés
-**Maintenance optionnelle** : 100 €/mois
+**Maintenance optionnelle** : dès 25 €/mois
 
 ---
 
-### 3. Solution Sur Mesure - dès 3 500 €
-**Objectif** : répondre à des besoins complexes ou spécifiques.
+### 3. Pack Lancement Complet - dès 3 500 €
+**Objectif** : lancer toute la présence en ligne d'une activité d'un coup.
 
-**Peut inclure** :
-- E-commerce (boutique en ligne)
-- Portails clients ou membres
-- Intégrations API (CRM, paiement, etc.)
-- Applications web (dashboards, outils métier)
-- Design entièrement sur mesure
+**Inclus** :
+- Site vitrine complet
+- Identité de marque (logo, couleurs, charte graphique)
+- Fiche Google Business créée et optimisée
+- Lancement des réseaux sociaux
+- Référencement local
+- Contenu de lancement rédigé (site + posts)
 
 **Délai** : variable selon le périmètre (discussion lors de l'appel découverte)
-**Maintenance optionnelle** : 150 €/mois
+**Maintenance optionnelle** : dès 25 €/mois
+
+---
+
+## Services de partenaire web (au-delà du site)
+
+Elie ne s'arrête pas au site : il accompagne ses clients dans la durée sur toute leur présence en ligne, généralement après la livraison du site. Ces prestations sont sur devis, adaptées à chaque activité.
+
+- **Google Business** : création et optimisation de la fiche pour le référencement local.
+- **Réseaux sociaux** : création de contenu et gestion des comptes Instagram et Facebook.
+- **Identité de marque** : logo, couleurs, typographies, charte graphique.
+- **Référencement local (SEO)** : suivi et optimisation continue de la visibilité sur Google.
+- **Avis & e-réputation** : collecte et gestion des avis clients Google.
+- **Rédaction de contenu** : textes de site, articles de blog, posts réseaux.
+
+Les publicités payantes (Google Ads, Meta Ads) ne font pas partie de l'offre actuelle.
 
 ---
 
@@ -146,8 +163,8 @@ Mise en ligne. Remise de tous les accès (domaine, hébergement, code source, an
 
 ## Zones d'intervention
 
-**Ville principale** : Annecy (74000), Haute-Savoie
-**Villes couvertes** : Thônes, Bonneville, Thonon-les-Bains, Aix-les-Bains, Albertville, Grenoble, Chambéry
+**Ville principale** : Albertville (73200), Savoie
+**Villes couvertes** : Annecy, Chambéry, Aix-les-Bains, Moûtiers, Ugine, Bonneville, Thonon-les-Bains, Grenoble
 **Régions** : Haute-Savoie (74), Savoie (73), Isère (38), Ain (01), Rhône-Alpes, Auvergne-Rhône-Alpes
 **National** : France entière (travail 100% à distance)
 **International** : Belgique, Suisse
@@ -178,7 +195,7 @@ Oui, tous les sites sont conçus en mobile-first. Plus de 7 visiteurs sur 10 arr
 Au client. Il reçoit l'intégralité du code source, les accès domaine et hébergement. Aucune dépendance vis-à-vis d'Elie.
 
 **Y a-t-il une maintenance possible après la livraison ?**
-Oui, des forfaits de maintenance mensuelle sont disponibles : 50 €/mois (landing page), 100 €/mois (site vitrine), 150 €/mois (solution sur mesure). Inclut mises à jour, sécurité, hébergement et support prioritaire.
+Oui. Maintenance du site : option autonome 0 €, option gérée dès 25 €/mois (hébergement, sécurité, petites modifications sous 24h), option gérée + évolutions 80 €/mois. Au-delà du site, Elie propose un accompagnement de partenaire web sur devis : Google Business, réseaux sociaux, identité de marque, référencement local, avis et contenu.
 
 **Est-ce que je peux vous appeler avant de commander ?**
 Oui. Consultation gratuite de 30 minutes disponible sur : https://calendly.com/web-elieageron/30min
@@ -190,13 +207,13 @@ Oui. 4 avis clients vérifiés, tous 5 étoiles. Garantie 100% satisfaction. Tar
 
 ## Articles de blog (expertise publique)
 
-1. **Pourquoi votre entreprise a besoin d'un site web en 2025** - https://elieageron.com/blog/why-your-business-needs-a-website-in-2025
-2. **Comment optimiser votre taux de conversion** - https://elieageron.com/blog/how-to-optimize-your-conversion-rate
-3. **SEO local : le guide complet pour dominer Google** - https://elieageron.com/blog/local-seo-complete-guide
-4. **Anatomie d'une landing page à haute conversion** - https://elieageron.com/blog/anatomy-of-a-high-converting-landing-page
-5. **Combien coûte un site web ? La vraie réponse** - https://elieageron.com/blog/how-much-does-a-website-cost
-6. **Artisan : avez-vous vraiment besoin d'un site web ?** - https://elieageron.com/blog/tradesperson-do-you-really-need-a-website
-7. **Mon site est en ligne depuis des semaines. Pourquoi n'apparaît-il pas sur Google ?** - https://elieageron.com/blog/my-site-has-been-live-for-weeks-why-am-i-not-showing-on-google
+1. **Pourquoi votre entreprise a besoin d'un site web en 2025** - https://elieageron.com/blog/pourquoi-site-web-2025
+2. **Comment optimiser votre taux de conversion** - https://elieageron.com/blog/optimiser-taux-conversion
+3. **SEO local : le guide complet pour dominer Google** - https://elieageron.com/blog/seo-local-guide-complet
+4. **Anatomie d'une landing page à haute conversion** - https://elieageron.com/blog/landing-page-efficace
+5. **Combien coûte un site web ? La vraie réponse** - https://elieageron.com/blog/combien-coute-un-site-web
+6. **Artisan : avez-vous vraiment besoin d'un site web ?** - https://elieageron.com/blog/site-web-artisan
+7. **Mon site est en ligne depuis des semaines. Pourquoi n'apparaît-il pas sur Google ?** - https://elieageron.com/blog/pourquoi-site-pas-sur-google
 
 ---
 
@@ -209,6 +226,8 @@ Oui. 4 avis clients vérifiés, tous 5 étoiles. Garantie 100% satisfaction. Tar
 - Portfolio : https://elieageron.com/portfolio
 - Blog : https://elieageron.com/blog
 - Contact / Appel gratuit : https://elieageron.com/contact
+- Services (partenaire web) : https://elieageron.com/services
+- Web designer Savoie : https://elieageron.com/web-designer-savoie
 - Web designer Annecy : https://elieageron.com/web-designer-annecy
 - Création site web Haute-Savoie : https://elieageron.com/creation-site-web-haute-savoie
 

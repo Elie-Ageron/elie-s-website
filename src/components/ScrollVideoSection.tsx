@@ -1,7 +1,7 @@
 /**
- * ScrollVideoSection — Scroll-driven video animation (desktop) / static cards (mobile)
+ * ScrollVideoSection - Scroll-driven video animation (desktop) / static cards (mobile)
  * Desktop : 500vh sticky + canvas frame extraction
- * Mobile  : 3 static phase cards — no video, no jank
+ * Mobile  : 3 static phase cards, no video, no jank
  */
 
 import { useRef, useEffect, useState } from 'react';

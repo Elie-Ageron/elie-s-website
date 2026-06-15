@@ -15,11 +15,13 @@ const Breadcrumb = () => {
 
   const pathMap: Record<string, { en: string; fr: string }> = {
     '/why-a-website': { en: 'Why a Website', fr: 'Pourquoi un Site' },
+    '/services': { en: 'Services', fr: 'Services' },
     '/our-process': { en: 'Our Process', fr: 'Notre Méthode' },
     '/pricing': { en: 'Pricing', fr: 'Tarifs' },
     '/portfolio': { en: 'Portfolio', fr: 'Portfolio' },
     '/contact': { en: 'Contact', fr: 'Contact' },
     '/blog': { en: 'Blog', fr: 'Blog' },
+    '/web-designer-savoie': { en: 'Web Designer Savoie', fr: 'Web Designer Savoie' },
     '/web-designer-annecy': { en: 'Web Designer Annecy', fr: 'Web Designer Annecy' },
     '/web-designer-grenoble': { en: 'Web Designer Grenoble', fr: 'Web Designer Grenoble' },
     '/web-designer-chambery': { en: 'Web Designer Chambéry', fr: 'Web Designer Chambéry' },
