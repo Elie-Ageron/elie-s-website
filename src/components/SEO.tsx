@@ -46,7 +46,7 @@ const seoData = {
   en: {
     home: {
       title: 'Web Design That Brings You Clients | Elie Ageron',
-      description: 'Websites built to turn your visitors into paying clients, live in 7-14 days from $500. Based in Savoie & Haute-Savoie. Free, honest strategy call.',
+      description: 'Websites built to turn your visitors into paying clients, live in 7-14 days from $500. Based in Savoie, working across France remotely. Free strategy call.',
     },
     services: {
       title: 'Web Partner in Savoie | Elie Ageron',
@@ -88,7 +88,7 @@ const seoData = {
   fr: {
     home: {
       title: 'Création Site Web Savoie | Elie Ageron, dès 500€',
-      description: 'Des sites web pros qui transforment vos visiteurs en clients, en Savoie et Haute-Savoie. Livrés en 7-14 jours, dès 500€. Appel gratuit.',
+      description: 'Des sites web pros qui transforment vos visiteurs en clients. En Savoie, Haute-Savoie, et partout en France à distance. Livrés en 7-14 jours, dès 500€.',
     },
     services: {
       title: 'Partenaire Web en Savoie | Elie Ageron',
