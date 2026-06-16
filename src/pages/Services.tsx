@@ -9,7 +9,7 @@ import InternalLinks from '@/components/InternalLinks';
 import ScrollArrow from '@/components/ScrollArrow';
 import SEO from '@/components/SEO';
 import ServiceMockup from '@/components/ServiceMockups';
-import { DeadSiteMockup, LiveSiteMockup } from '@/components/BeforeAfterSites';
+import ServiceHeroMorph from '@/components/ServiceHeroMorph';
 import { services, type ServiceItem } from '@/data/services';
 
 /* One full-width, alternating section per service. */
@@ -232,57 +232,43 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Manifesto — the repositioning */}
-      <section className="py-16 sm:py-24" aria-labelledby="manifesto-heading">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+      {/* Morph showcase — a forgotten site is rebuilt, live, as you scroll */}
+      <ServiceHeroMorph />
+
+      {/* Services intro */}
+      <section className="py-16 sm:py-24" aria-labelledby="services-intro-heading">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+          <motion.span
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-primary"
+          >
+            <span className="h-px w-6 bg-primary/50" aria-hidden="true" />
+            {language === 'fr' ? 'Ce que je fais' : 'What I do'}
+          </motion.span>
+
           <motion.h2
-            id="manifesto-heading"
+            id="services-intro-heading"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-foreground leading-snug mb-12 sm:mb-16 max-w-3xl mx-auto"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground leading-tight mb-6"
           >
-            {language === 'fr' ? (
-              <>Un site, c'est un début. <span className="text-primary">Pas une fin.</span></>
-            ) : (
-              <>A website is a start. <span className="text-primary">Not the finish line.</span></>
-            )}
+            {language === 'fr' ? 'Mes services' : 'My services'}
           </motion.h2>
 
-          <div className="grid sm:grid-cols-2 gap-10 sm:gap-12 items-start">
-            {/* Avant — site dormant */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="flex flex-col items-center gap-5"
-            >
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                {language === 'fr' ? 'Le modèle classique' : 'The classic model'}
-              </span>
-              <DeadSiteMockup />
-              <p className="text-lg sm:text-xl font-bold text-muted-foreground text-center">
-                {language === 'fr' ? 'Vos clients vont chez le concurrent.' : 'Your clients go to the competitor.'}
-              </p>
-            </motion.div>
-
-            {/* Après — site vivant */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.12 }}
-              className="flex flex-col items-center gap-5"
-            >
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-                {language === 'fr' ? 'Ma façon de faire' : 'How I work'}
-              </span>
-              <LiveSiteMockup />
-              <p className="text-lg sm:text-xl font-bold text-foreground text-center">
-                {language === 'fr' ? 'Vos clients vous choisissent.' : 'Your clients choose you.'}
-              </p>
-            </motion.div>
-          </div>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto"
+          >
+            {language === 'fr'
+              ? "Tout ce qu'il faut pour rendre votre activité visible et attirante en ligne — du site web à votre fiche Google, des réseaux sociaux au référencement. Réuni au même endroit, géré par une seule personne."
+              : "Everything you need to make your business visible and appealing online — from your website to your Google profile, social media to SEO. All in one place, handled by one person."}
+          </motion.p>
         </div>
       </section>
 
