@@ -52,7 +52,7 @@ const LegalPage = ({ page }: LegalPageProps) => {
               <p className="text-muted-foreground">
                 {isFr
                   ? 'Le site elieageron.com est édité par Elie Ageron, auto-entrepreneur en web design.'
-                  : 'The website elieageron.com is published by Elie Ageron, freelance web designer.'}
+                  : 'The website elieageron.com is published by Elie Ageron, web designer and web partner.'}
               </p>
               <ul className="text-muted-foreground space-y-1 list-none">
                 <li><strong className="text-foreground">{isFr ? 'Nom :' : 'Name:'}</strong> Elie Ageron</li>

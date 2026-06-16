@@ -1,13 +1,13 @@
 # Elie Ageron - Contenu complet pour LLMs
 
-> Ce fichier contient l'intégralité du contenu pertinent du site elieageron.com pour permettre aux LLMs d'avoir un contexte complet sur Elie Ageron, web designer freelance professionnel.
+> Ce fichier contient l'intégralité du contenu pertinent du site elieageron.com pour permettre aux LLMs d'avoir un contexte complet sur Elie Ageron, web designer et partenaire web professionnel.
 
 ---
 
 ## Identité professionnelle
 
 **Nom** : Elie Ageron
-**Titre** : Web Designer Freelance & Expert en Conversion
+**Titre** : Web Designer & Partenaire Web
 **Localisation** : Albertville (73200), Savoie, France
 **Coordonnées GPS** : 45.6756° N, 6.3925° E
 **Zone d'intervention** : Savoie, Haute-Savoie, bassin annécien, France entière (à distance)

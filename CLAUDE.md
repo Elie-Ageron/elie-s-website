@@ -2,7 +2,7 @@
 
 ## Contexte du projet
 
-Site vitrine / portfolio de **Elie Ageron**, web designer et partenaire web freelance basé à **Albertville, Savoie (73), France**. Zone d'intervention : Savoie, Haute-Savoie, bassin annécien, France entière.
+Site vitrine / portfolio de **Elie Ageron**, web designer et partenaire web basé à **Albertville, Savoie (73), France**. Zone d'intervention : Savoie, Haute-Savoie, bassin annécien, France entière.
 - URL : https://elieageron.com
 - Stack : React + TypeScript + Vite + Tailwind + Supabase + Vercel
 - Bilingue : Français (défaut) + Anglais

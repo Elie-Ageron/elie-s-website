@@ -12,10 +12,10 @@ const JsonLd = () => {
     name: 'Elie Ageron',
     url: baseUrl,
     image: `${baseUrl}/og-image.png`,
-    jobTitle: language === 'fr' ? 'Web Designer Freelance' : 'Freelance Web Designer',
+    jobTitle: language === 'fr' ? 'Web Designer & Partenaire Web' : 'Web Designer & Web Partner',
     description: language === 'fr'
-      ? 'Web designer freelance basé à Albertville (Savoie). Création de sites web qui convertissent les visiteurs en clients pour les entreprises de Savoie, Haute-Savoie, Annecy, Chambéry et toute la France.'
-      : 'Freelance web designer based in Albertville, Savoie, France. Building high-converting websites for businesses in Savoie, Haute-Savoie, Annecy, Chambéry and across France.',
+      ? 'Web designer et partenaire web basé à Albertville (Savoie). Création de sites web qui convertissent les visiteurs en clients pour les entreprises de Savoie, Haute-Savoie, Annecy, Chambéry et toute la France.'
+      : 'Web designer and web partner based in Albertville, Savoie, France. Building high-converting websites for businesses in Savoie, Haute-Savoie, Annecy, Chambéry and across France.',
     email: 'web@elieageron.com',
     telephone: '+33695555318',
     address: {

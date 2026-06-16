@@ -45,8 +45,8 @@ const pageKeywords = {
 const seoData = {
   en: {
     home: {
-      title: 'Web Designer France | Elie Ageron, from $500',
-      description: 'Premium web design by Elie Ageron, based in Savoie, France. Sites that convert visitors into paying clients. Live in 7-14 days from $500. Free strategy call.',
+      title: 'Web Design That Brings You Clients | Elie Ageron',
+      description: 'Websites built to turn your visitors into paying clients, live in 7-14 days from $500. Based in Savoie & Haute-Savoie. Free, honest strategy call.',
     },
     services: {
       title: 'Web Partner in Savoie | Elie Ageron',
@@ -88,7 +88,7 @@ const seoData = {
   fr: {
     home: {
       title: 'Création Site Web Savoie | Elie Ageron, dès 500€',
-      description: 'Web designer freelance en Savoie et Haute-Savoie. Sites pros qui convertissent les visiteurs en clients. Livraison en 7-14 jours, dès 500€. Appel gratuit.',
+      description: 'Des sites web pros qui transforment vos visiteurs en clients, en Savoie et Haute-Savoie. Livrés en 7-14 jours, dès 500€. Appel gratuit.',
     },
     services: {
       title: 'Partenaire Web en Savoie | Elie Ageron',
