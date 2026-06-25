@@ -15,7 +15,7 @@ const Card = () => {
   return (
     <>
       <Helmet>
-        <title>Elie Ageron — Créateur de sites web</title>
+        <title>Elie Ageron, Créateur de sites web</title>
         <meta name="robots" content="noindex, nofollow" />
         <meta name="theme-color" content="#ffffff" />
         <meta
