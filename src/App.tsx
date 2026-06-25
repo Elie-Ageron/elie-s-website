@@ -27,6 +27,7 @@ const Assessment = lazy(() => import("./pages/Assessment"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const LegalPage = lazy(() => import("./pages/LegalPage"));
 const CityLandingPage = lazy(() => import("./pages/CityLandingPage"));
+const Card = lazy(() => import("./pages/Card"));
 // const Apps = lazy(() => import("./pages/Apps")); // hidden - future service
 
 const queryClient = new QueryClient({
@@ -84,32 +85,49 @@ const App = () => (
           <BrowserRouter>
             <ScrollToTop />
             <Analytics />
-            <Layout>
-              <Suspense fallback={<div style={{ minHeight: '60vh' }} />}>
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/services" element={<Services />} />
-                  <Route path="/why-a-website" element={<WhyWebsite />} />
-                  <Route path="/our-process" element={<OurProcess />} />
-                  <Route path="/pricing" element={<Pricing />} />
-                  <Route path="/portfolio" element={<Portfolio />} />
-                  <Route path="/contact" element={<Contact />} />
-                  <Route path="/blog" element={<Blog />} />
-                  <Route path="/blog/:slug" element={<BlogPost />} />
-                  <Route path="/event-production" element={<EventProduction />} />
-                  <Route path="/get-started" element={<GetStarted />} />
-                  <Route path="/assessment" element={<Assessment />} />
-                  {/* <Route path="/apps" element={<Apps />} /> */}{/* hidden - future service */}
-                  {/* City landing pages */}
-                  <Route path="/web-designer-savoie" element={<CityLandingPage slug="web-designer-savoie" />} />
-                  <Route path="/web-designer-annecy" element={<CityLandingPage slug="web-designer-annecy" />} />
-                  <Route path="/creation-site-web-haute-savoie" element={<CityLandingPage slug="creation-site-web-haute-savoie" />} />
-                  <Route path="/mentions-legales" element={<LegalPage page="mentions" />} />
-                  <Route path="/politique-confidentialite" element={<LegalPage page="privacy" />} />
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
-              </Suspense>
-            </Layout>
+            <Routes>
+              {/* Carte de visite virtuelle — page isolée, SANS header/footer/Layout global */}
+              <Route
+                path="/carte"
+                element={
+                  <Suspense fallback={<div style={{ minHeight: '100dvh' }} />}>
+                    <Card />
+                  </Suspense>
+                }
+              />
+              {/* Toutes les autres pages : Layout global (header, footer, schémas) */}
+              <Route
+                path="*"
+                element={
+                  <Layout>
+                    <Suspense fallback={<div style={{ minHeight: '60vh' }} />}>
+                      <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/services" element={<Services />} />
+                        <Route path="/why-a-website" element={<WhyWebsite />} />
+                        <Route path="/our-process" element={<OurProcess />} />
+                        <Route path="/pricing" element={<Pricing />} />
+                        <Route path="/portfolio" element={<Portfolio />} />
+                        <Route path="/contact" element={<Contact />} />
+                        <Route path="/blog" element={<Blog />} />
+                        <Route path="/blog/:slug" element={<BlogPost />} />
+                        <Route path="/event-production" element={<EventProduction />} />
+                        <Route path="/get-started" element={<GetStarted />} />
+                        <Route path="/assessment" element={<Assessment />} />
+                        {/* <Route path="/apps" element={<Apps />} /> */}{/* hidden - future service */}
+                        {/* City landing pages */}
+                        <Route path="/web-designer-savoie" element={<CityLandingPage slug="web-designer-savoie" />} />
+                        <Route path="/web-designer-annecy" element={<CityLandingPage slug="web-designer-annecy" />} />
+                        <Route path="/creation-site-web-haute-savoie" element={<CityLandingPage slug="creation-site-web-haute-savoie" />} />
+                        <Route path="/mentions-legales" element={<LegalPage page="mentions" />} />
+                        <Route path="/politique-confidentialite" element={<LegalPage page="privacy" />} />
+                        <Route path="*" element={<NotFound />} />
+                      </Routes>
+                    </Suspense>
+                  </Layout>
+                }
+              />
+            </Routes>
           </BrowserRouter>
           <CalendlyPopup />
         </CalendlyProvider>

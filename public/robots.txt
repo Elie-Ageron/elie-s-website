@@ -24,3 +24,5 @@ Crawl-delay: 1
 
 # Block internal paths
 Disallow: /api/
+# Carte de visite virtuelle — partage direct uniquement, hors index
+Disallow: /carte
