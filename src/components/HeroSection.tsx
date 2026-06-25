@@ -151,30 +151,6 @@ const HeroSection = () => {
             {t('hero.friction')}
           </motion.p>
 
-          {/* Subtle CTAs — no-call path + niche */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.58, duration: 0.5 }}
-            className="mt-2.5 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-5"
-          >
-            <Link
-              to="/get-started"
-              className="inline-flex items-center gap-1.5 text-xs sm:text-sm text-muted-foreground/60 hover:text-primary transition-colors group"
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:bg-primary transition-colors shrink-0" aria-hidden="true" />
-              {t('hero.cta.nocall')}
-            </Link>
-            <span className="hidden sm:block text-muted-foreground/30 text-xs">·</span>
-            <Link
-              to="/event-production"
-              className="inline-flex items-center gap-1.5 text-xs sm:text-sm text-muted-foreground/60 hover:text-primary transition-colors group"
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:bg-primary transition-colors shrink-0" aria-hidden="true" />
-              {language === 'fr' ? "Producteur d'événements ? Offre dédiée →" : 'Event producer? Dedicated offer →'}
-            </Link>
-          </motion.div>
-
           {/* Social proof — real client logos + one verified review */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
