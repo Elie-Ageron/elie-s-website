@@ -270,7 +270,7 @@ const Assessment = () => {
     } catch {
       toast({
         title: L("Erreur lors de l'envoi", 'Submission error'),
-        description: L('Réessayez ou écrivez à web@elieageron.com', 'Try again or email web@elieageron.com'),
+        description: L('Réessayez ou écrivez à elie@elieageron.com', 'Try again or email elie@elieageron.com'),
         variant: 'destructive',
       });
     } finally {
@@ -744,7 +744,7 @@ const Result = ({ computeScore, answers, L, openCalendly, name }: ResultProps) =
         </div>
 
         <p className="text-xs text-muted-foreground/60 mt-6">
-          {L('Votre résultat vient aussi de m\'être envoyé. Questions ? web@elieageron.com', 'Your result was just sent to me too. Questions? web@elieageron.com')}
+          {L('Votre résultat vient aussi de m\'être envoyé. Questions ? elie@elieageron.com', 'Your result was just sent to me too. Questions? elie@elieageron.com')}
         </p>
       </div>
     </div>

@@ -146,7 +146,7 @@ const Contact = () => {
               </a>
 
               <a
-                href="mailto:web@elieageron.com"
+                href="mailto:elie@elieageron.com"
                 className="glass-card rounded-2xl p-5 sm:p-6 flex gap-4 items-start hover:border-primary/40 border border-border/40 transition-colors group active:scale-[0.98]"
                 aria-label="Contact via email"
               >
@@ -161,7 +161,7 @@ const Contact = () => {
                       : 'For quick questions, response within 24h.'}
                   </p>
                   <div className="flex items-center gap-1.5 text-primary font-medium text-sm group-hover:gap-2.5 transition-all">
-                    web@elieageron.com
+                    elie@elieageron.com
                     <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </div>
                 </div>

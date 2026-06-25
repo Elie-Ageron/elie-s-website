@@ -2,11 +2,11 @@ BEGIN:VCARD
 VERSION:3.0
 N:Ageron;Elie;;;
 FN:Elie Ageron
-ORG:Elie Ageron — Création de sites web
+ORG:Elie Ageron, Création de sites web
 TITLE:Créateur de sites web
 TEL;TYPE=CELL,VOICE:+33695555318
-EMAIL;TYPE=WORK,INTERNET:web@elieageron.com
+EMAIL;TYPE=WORK,INTERNET:elie@elieageron.com
 URL:https://elieageron.com
 ADR;TYPE=WORK:;;;Albertville;Savoie;73200;France
-NOTE:Création de sites web pour artisans et commerçants — Savoie & France.
+NOTE:Création de sites web pour artisans et commerçants en Savoie et partout en France.
 END:VCARD

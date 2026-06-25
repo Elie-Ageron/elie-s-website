@@ -16,7 +16,7 @@ const ReviewSchema = () => {
     image: `${baseUrl}/og-image.png`,
     url: baseUrl,
     telephone: '+33695555318',
-    email: 'web@elieageron.com',
+    email: 'elie@elieageron.com',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Albertville',

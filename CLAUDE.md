@@ -6,7 +6,7 @@ Site vitrine / portfolio de **Elie Ageron**, web designer et partenaire web bas�
 - URL : https://elieageron.com
 - Stack : React + TypeScript + Vite + Tailwind + Supabase + Vercel
 - Bilingue : Français (défaut) + Anglais
-- Email pro : **web@elieageron.com** (toujours utiliser cette adresse, pas elieageron@gmail.com)
+- Email pro : **elie@elieageron.com** (adresse canonique — toujours l'utiliser, pas elieageron@gmail.com). `web@elieageron.com` est un ancien alias encore fonctionnel mais déprécié : ne plus l'utiliser.
 - Téléphone : +33 6 95 55 53 18
 
 ## Positionnement
@@ -107,7 +107,7 @@ Les 7 services (source unique : `src/data/services.ts`) :
 - Fonts : toujours charger avec `media="print" onload="this.media='all'"` pattern
 
 ### 9. Email cohérence (CRITIQUE)
-- Utiliser **UNIQUEMENT** `web@elieageron.com` dans tous les schemas JSON-LD
+- Utiliser **UNIQUEMENT** `elie@elieageron.com` dans tous les schemas JSON-LD
 - Ne jamais utiliser `elieageron@gmail.com` dans les schemas visibles par Google
 
 ### 10. Sitemap
@@ -166,7 +166,7 @@ Les 7 services (source unique : `src/data/services.ts`) :
 
 ## Bugs SEO connus à surveiller
 
-1. **Email inconsistance** : `JsonLd.tsx` et `OrganizationSchema.tsx` utilisaient `elieageron@gmail.com` → corrigé vers `web@elieageron.com`
+1. **Email inconsistance** : `JsonLd.tsx` et `OrganizationSchema.tsx` utilisaient `elieageron@gmail.com` → corrigé vers `elie@elieageron.com`
 2. **FAQSchema home** : FAQAccordion présent sur Home mais pas de FAQPage schema → à ajouter
 3. **Schemas dupliqués** : Person et LocalBusiness définis à la fois dans `index.html` (statique) et dans les composants React → normal, le statique sert de fallback
 4. **hreflang** : le site sert FR/EN sur la même URL → `x-default` + les deux hreflang doivent pointer vers la même URL

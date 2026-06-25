@@ -1,6 +1,7 @@
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { Download, Briefcase, Phone, Mail, MapPin, MessageCircle, MessageSquareText, ShieldCheck } from 'lucide-react';
+import { Download, Briefcase, Phone, Mail, MapPin, MessageCircle, MessageSquareText, ShieldCheck, Loader2, Check, UserPlus } from 'lucide-react';
 import portrait from '@/assets/elie-ageron-portrait.webp';
 
 /**
@@ -10,7 +11,17 @@ import portrait from '@/assets/elie-ageron-portrait.webp';
  */
 const Card = () => {
   const PHONE = '+33695555318';
-  const EMAIL = 'web@elieageron.com';
+  const EMAIL = 'elie@elieageron.com';
+  const MESSAGE = 'Bonjour Elie, je voudrais créer mon site web, pourrait-on en discuter ?';
+
+  // Feedback visuel pendant l'enregistrement du contact (le téléchargement / import peut prendre quelques secondes)
+  const [contactStatus, setContactStatus] = useState<'idle' | 'saving' | 'done'>('idle');
+
+  const handleSaveContact = () => {
+    setContactStatus('saving');
+    window.setTimeout(() => setContactStatus('done'), 1400);
+    window.setTimeout(() => setContactStatus('idle'), 6000);
+  };
 
   return (
     <>
@@ -80,6 +91,7 @@ const Card = () => {
             transition={{ duration: 0.4, delay: 0.2 }}
             href="/elie.vcf"
             download="elie.vcf"
+            onClick={handleSaveContact}
             className="mt-8 w-full flex items-center justify-center gap-2.5 rounded-2xl bg-primary text-primary-foreground font-semibold text-base px-6 py-4 shadow-lg shadow-primary/25 active:scale-[0.98] transition-transform"
           >
             <Download className="w-5 h-5" aria-hidden="true" />
@@ -137,7 +149,7 @@ const Card = () => {
             </div>
             <div className="grid grid-cols-2 gap-3">
               <a
-                href={`https://wa.me/${PHONE.replace('+', '')}`}
+                href={`https://wa.me/${PHONE.replace('+', '')}?text=${encodeURIComponent(MESSAGE)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 rounded-2xl glass-card text-foreground font-medium text-base px-4 py-4 border border-border hover:border-[#25D366]/50 active:scale-[0.98] transition-all"
@@ -146,7 +158,7 @@ const Card = () => {
                 WhatsApp
               </a>
               <a
-                href={`sms:${PHONE}`}
+                href={`sms:${PHONE}?body=${encodeURIComponent(MESSAGE)}`}
                 className="flex items-center justify-center gap-2 rounded-2xl glass-card text-foreground font-medium text-base px-4 py-4 border border-border hover:border-primary/40 active:scale-[0.98] transition-all"
               >
                 <MessageSquareText className="w-5 h-5 text-primary" aria-hidden="true" />
@@ -170,6 +182,66 @@ const Card = () => {
             elieageron.com
           </a>
         </motion.div>
+
+        {/* Popup feedback : enregistrement du contact */}
+        <AnimatePresence>
+          {contactStatus !== 'idle' && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={() => setContactStatus('idle')}
+              className="fixed inset-0 z-50 flex items-center justify-center px-6 bg-background/70 backdrop-blur-sm"
+            >
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, y: 14 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95, y: 8 }}
+                transition={{ type: 'spring', stiffness: 320, damping: 26 }}
+                onClick={(e) => e.stopPropagation()}
+                role="status"
+                aria-live="polite"
+                className="relative w-full max-w-xs rounded-3xl bg-card border border-border shadow-2xl px-7 py-8 text-center"
+              >
+                {contactStatus === 'saving' ? (
+                  <>
+                    <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
+                      <Loader2 className="h-7 w-7 text-primary animate-spin" aria-hidden="true" />
+                    </div>
+                    <p className="text-lg font-semibold text-foreground">Enregistrement du contact…</p>
+                    <p className="mt-1.5 text-sm text-muted-foreground">
+                      Préparation de la fiche d'Elie sur votre appareil.
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <motion.div
+                      initial={{ scale: 0.6 }}
+                      animate={{ scale: 1 }}
+                      transition={{ type: 'spring', stiffness: 380, damping: 18 }}
+                      className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366]/15"
+                    >
+                      <Check className="h-7 w-7 text-[#25D366]" aria-hidden="true" />
+                    </motion.div>
+                    <p className="text-lg font-semibold text-foreground">Contact prêt !</p>
+                    <p className="mt-1.5 text-sm text-muted-foreground">
+                      Confirmez l'ajout dans votre application Contacts pour le garder.
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => setContactStatus('idle')}
+                      className="mt-5 inline-flex items-center justify-center gap-2 rounded-2xl bg-primary text-primary-foreground font-semibold text-sm px-5 py-3 active:scale-[0.98] transition-transform"
+                    >
+                      <UserPlus className="w-4 h-4" aria-hidden="true" />
+                      C'est fait
+                    </button>
+                  </>
+                )}
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </main>
     </>
   );

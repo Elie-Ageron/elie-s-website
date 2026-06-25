@@ -16,7 +16,7 @@ const JsonLd = () => {
     description: language === 'fr'
       ? 'Web designer et partenaire web basé à Albertville (Savoie). Création de sites web qui convertissent les visiteurs en clients pour les entreprises de Savoie, Haute-Savoie, Annecy, Chambéry et toute la France.'
       : 'Web designer and web partner based in Albertville, Savoie, France. Building high-converting websites for businesses in Savoie, Haute-Savoie, Annecy, Chambéry and across France.',
-    email: 'web@elieageron.com',
+    email: 'elie@elieageron.com',
     telephone: '+33695555318',
     address: {
       '@type': 'PostalAddress',
@@ -54,7 +54,7 @@ const JsonLd = () => {
       ? 'Partenaire web : sites qui convertissent, Google Business, réseaux sociaux, identité de marque, référencement local et contenu'
       : 'Web partner: high-converting websites, Google Business, social media, brand identity, local SEO and content',
     telephone: '+33695555318',
-    email: 'web@elieageron.com',
+    email: 'elie@elieageron.com',
     priceRange: '€€',
     aggregateRating: {
       '@type': 'AggregateRating',

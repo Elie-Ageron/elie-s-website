@@ -283,7 +283,7 @@ const EventProduction = () => {
     } catch {
       toast({
         title: language === 'fr' ? "Erreur lors de l'envoi" : 'Submission error',
-        description: language === 'fr' ? 'Réessayez ou écrivez à web@elieageron.com' : 'Try again or email web@elieageron.com',
+        description: language === 'fr' ? 'Réessayez ou écrivez à elie@elieageron.com' : 'Try again or email elie@elieageron.com',
         variant: 'destructive',
       });
     } finally {
@@ -895,7 +895,7 @@ const EventProduction = () => {
                     ? "Je reviens vers vous sous 24h pour confirmer le brief. La page sera prête dans les 48h."
                     : "I'll get back to you within 24h to confirm the brief. The page will be ready within 48 hours."}
                 </p>
-                <p className="text-xs text-muted-foreground/60">{language === 'fr' ? 'Questions ? Écrivez à web@elieageron.com' : 'Questions? Email web@elieageron.com'}</p>
+                <p className="text-xs text-muted-foreground/60">{language === 'fr' ? 'Questions ? Écrivez à elie@elieageron.com' : 'Questions? Email elie@elieageron.com'}</p>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit}>

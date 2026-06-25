@@ -21,7 +21,7 @@ const OrganizationSchema = () => {
     description: language === 'fr'
       ? 'Partenaire web en Savoie et Haute-Savoie : création de sites, Google Business, réseaux sociaux, identité de marque, référencement local et contenu'
       : 'Web partner in Savoie & Haute-Savoie: websites, Google Business, social media, brand identity, local SEO and content',
-    email: 'web@elieageron.com',
+    email: 'elie@elieageron.com',
     telephone: '+33695555318',
     address: {
       '@type': 'PostalAddress',
@@ -40,7 +40,7 @@ const OrganizationSchema = () => {
       '@type': 'ContactPoint',
       telephone: '+33695555318',
       contactType: 'customer service',
-      email: 'web@elieageron.com',
+      email: 'elie@elieageron.com',
       availableLanguage: ['French', 'English'],
     },
     areaServed: {
@@ -79,7 +79,7 @@ const OrganizationSchema = () => {
       ? 'Partenaire web en Savoie et Haute-Savoie : sites web, Google Business, réseaux sociaux, identité de marque, référencement local et contenu'
       : 'Web partner in Savoie & Haute-Savoie: websites, Google Business, social media, brand identity, local SEO and content',
     telephone: '+33695555318',
-    email: 'web@elieageron.com',
+    email: 'elie@elieageron.com',
     priceRange: '\u20ac\u20ac',
     address: {
       '@type': 'PostalAddress',

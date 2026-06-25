@@ -104,8 +104,8 @@ const GetStarted = () => {
         title: language === 'fr' ? "Erreur lors de l'envoi" : 'Submission error',
         description:
           language === 'fr'
-            ? 'Réessayez ou écrivez à web@elieageron.com'
-            : 'Try again or email web@elieageron.com',
+            ? 'Réessayez ou écrivez à elie@elieageron.com'
+            : 'Try again or email elie@elieageron.com',
         variant: 'destructive',
       });
     } finally {
@@ -215,7 +215,7 @@ const GetStarted = () => {
                     : "I'll get back to you within 24h with a brief of what I propose to build."}
                 </p>
                 <p className="text-xs text-muted-foreground/60">
-                  {language === 'fr' ? 'Questions ? web@elieageron.com' : 'Questions? web@elieageron.com'}
+                  {language === 'fr' ? 'Questions ? elie@elieageron.com' : 'Questions? elie@elieageron.com'}
                 </p>
               </motion.div>
             ) : (

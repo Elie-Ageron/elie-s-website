@@ -34,7 +34,7 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
     image: `${baseUrl}/og-image.png`,
     description: d.description,
     telephone: '+33695555318',
-    email: 'web@elieageron.com',
+    email: 'elie@elieageron.com',
     priceRange: '€€',
     address: {
       '@type': 'PostalAddress',
