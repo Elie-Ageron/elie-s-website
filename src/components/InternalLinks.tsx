@@ -82,46 +82,51 @@ const InternalLinks = ({ currentPage }: InternalLinksProps) => {
   }
 
   return (
-    <section className="py-12 sm:py-16" aria-label="Related content">
+    <section className="py-12 sm:py-16 bg-secondary/50 border-y border-border/50" aria-label="Related content">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <motion.h2
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-xl sm:text-2xl font-bold text-foreground text-center mb-8"
+          className="text-base sm:text-lg font-semibold text-foreground text-center mb-6 sm:mb-8"
         >
           {language === 'fr' ? 'Continuer votre exploration' : 'Continue exploring'}
         </motion.h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3">
           {filteredLinks.map((link, index) => (
             <motion.div
               key={link.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ delay: index * 0.08, duration: 0.5 }}
             >
               <Link
                 to={`${link.path}${link.anchor}`}
-                className="glass-card rounded-xl p-5 flex items-start gap-4 group hover:neon-border transition-all block h-full"
+                className="group flex items-start gap-3.5 p-3.5 sm:p-4 h-full rounded-xl transition-colors duration-300 hover:bg-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
                 id={`internal-link-${link.id}`}
               >
-                <div className="p-2 rounded-lg bg-primary/20 shrink-0" aria-hidden="true">
-                  <link.icon className="w-5 h-5 text-primary" />
-                </div>
+                <span
+                  className="flex items-center justify-center w-9 h-9 shrink-0 rounded-lg bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors duration-300"
+                  aria-hidden="true"
+                >
+                  <link.icon className="w-[18px] h-[18px]" strokeWidth={2} />
+                </span>
                 <div className="flex-1 min-w-0">
-                  <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors text-sm sm:text-base">
-                    {link.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-muted-foreground mt-1">
+                  <span className="flex items-center gap-1.5">
+                    <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors text-sm sm:text-base">
+                      {link.title}
+                    </h3>
+                    <ArrowRight
+                      className="w-3.5 h-3.5 text-primary group-hover:translate-x-0.5 transition-transform duration-300 shrink-0"
+                      aria-hidden="true"
+                    />
+                  </span>
+                  <p className="text-xs sm:text-sm text-muted-foreground mt-1 leading-relaxed">
                     {link.desc}
                   </p>
                 </div>
-                <ArrowRight 
-                  className="w-4 h-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity shrink-0 mt-1" 
-                  aria-hidden="true" 
-                />
               </Link>
             </motion.div>
           ))}

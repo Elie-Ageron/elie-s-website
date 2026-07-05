@@ -11,6 +11,7 @@ import portfolioMyWebGlory from '@/assets/portfolio-mywebglory.png';
 import portfolioSolarFusion from '@/assets/portfolio-solar-fusion.png';
 import portfolioVmProducers from '@/assets/portfolio-vm-producers.png';
 import portfolioMyDrop from '@/assets/portfolio mydrop.png';
+import portfolioNaura from '@/assets/portfolio-naura.png';
 
 interface PortfolioItemProps {
   image: string;
@@ -20,8 +21,8 @@ interface PortfolioItemProps {
   ctaKey: string;
   descKey: string;
   alt: string;
-  quote: string;
-  quoteAuthor: string;
+  quote?: string;
+  quoteAuthor?: string;
   delay?: number;
 }
 
@@ -72,17 +73,19 @@ const PortfolioItem = ({ image, name, url, categoryKey, ctaKey, descKey, alt, qu
       </a>
 
       {/* Client quote */}
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: delay + 0.15 }}
-        className="mt-6 px-4 py-4 rounded-xl bg-secondary/60 border border-border/50 relative"
-      >
-        <Quote className="w-4 h-4 text-primary/40 absolute top-3 left-3" aria-hidden="true" />
-        <p className="text-sm text-muted-foreground italic pl-5 leading-relaxed">"{quote}"</p>
-        <p className="text-xs text-primary font-medium mt-2 pl-5">{quoteAuthor}</p>
-      </motion.div>
+      {quote && (
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: delay + 0.15 }}
+          className="mt-6 px-4 py-4 rounded-xl bg-secondary/60 border border-border/50 relative"
+        >
+          <Quote className="w-4 h-4 text-primary/40 absolute top-3 left-3" aria-hidden="true" />
+          <p className="text-sm text-muted-foreground italic pl-5 leading-relaxed">"{quote}"</p>
+          {quoteAuthor && <p className="text-xs text-primary font-medium mt-2 pl-5">{quoteAuthor}</p>}
+        </motion.div>
+      )}
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -121,6 +124,14 @@ const Portfolio = () => {
     hasPart: [
       {
         '@type': 'WebSite',
+        name: 'Naura Conseils Finance',
+        url: 'https://naura-finances.fr',
+        description: language === 'fr'
+          ? 'Site vitrine élégant pour une conseillère en financement et courtage'
+          : 'Elegant showcase website for a financing and mortgage broker',
+      },
+      {
+        '@type': 'WebSite',
         name: 'MyWebGlory',
         url: 'https://mywebglory.com',
         description: language === 'fr'
@@ -138,7 +149,7 @@ const Portfolio = () => {
       {
         '@type': 'WebSite',
         name: 'VM Producers',
-        url: 'https://vm-producers.mywebglory.com',
+        url: 'https://vmproducers.com',
         description: language === 'fr'
           ? 'Site vitrine pour label de production musicale'
           : 'Showcase website for a music production label',
@@ -164,6 +175,15 @@ const Portfolio = () => {
   };
 
   const projects = [
+    {
+      image: portfolioNaura,
+      name: 'Naura Conseils Finance',
+      url: 'https://naura-finances.fr',
+      categoryKey: 'portfolio.showcase.naura.category',
+      ctaKey: 'portfolio.showcase.naura.cta',
+      descKey: 'portfolio.showcase.naura.desc',
+      alt: 'Naura Conseils Finance - Site vitrine élégant pour une conseillère en financement et courtage créé par Elie Ageron Web Design',
+    },
     {
       image: portfolioMyWebGlory,
       name: 'MyWebGlory',

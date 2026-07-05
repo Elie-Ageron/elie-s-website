@@ -391,6 +391,9 @@ const translations = {
 
     // Portfolio Page - Extra
     'portfolio.badge': 'This could be your site',
+    'portfolio.showcase.naura.category': 'Financial Advisory & Brokerage',
+    'portfolio.showcase.naura.cta': 'Discover Naura Conseils Finance',
+    'portfolio.showcase.naura.desc': 'A warm, elegant showcase site for a financing and mortgage advisor. Refined design that builds trust and turns visitors into booked consultations.',
     'portfolio.showcase.mywebglory.category': 'Event Marketing Agency',
     'portfolio.showcase.mywebglory.cta': 'Discover MyWebGlory',
     'portfolio.showcase.mywebglory.desc': 'Built to convert visitors into clients. Modern design, intuitive flow, and every element designed to get people to reach out.',
@@ -769,6 +772,9 @@ const translations = {
 
     // Portfolio Page - Extra
     'portfolio.badge': 'Ce site pourrait être le vôtre',
+    'portfolio.showcase.naura.category': 'Conseil Financier & Courtage',
+    'portfolio.showcase.naura.cta': 'Découvrir Naura Conseils Finance',
+    'portfolio.showcase.naura.desc': 'Un site vitrine chaleureux et élégant pour une conseillère en financement et courtage. Un design raffiné qui inspire confiance et transforme les visiteurs en rendez-vous.',
     'portfolio.showcase.mywebglory.category': 'Marketing d\'Événement',
     'portfolio.showcase.mywebglory.cta': 'Découvrir MyWebGlory',
     'portfolio.showcase.mywebglory.desc': 'Conçu pour convertir les visiteurs en clients. Design moderne, navigation fluide, et chaque élément pensé pour pousser à l\'action.',
