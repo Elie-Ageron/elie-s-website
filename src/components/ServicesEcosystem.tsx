@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import ScrollReveal from './animations/ScrollReveal';
 import { services } from '@/data/services';
 
-// Section "Votre présence en ligne, gérée de A à Z" — index éditorial (voir refonte juillet 2026)
+// Section "Votre présence en ligne, gérée de A à Z" — index éditorial (refonte juillet 2026)
 const ServicesEcosystem = () => {
   const { language } = useLanguage();
 
