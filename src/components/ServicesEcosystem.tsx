@@ -32,7 +32,7 @@ const ServicesEcosystem = () => {
 
             <h2
               id="ecosystem-heading"
-              className="text-3xl sm:text-4xl md:text-[2.75rem] font-bold leading-[1.1] text-balance"
+              className="text-3xl sm:text-4xl md:text-[2.75rem] font-medium leading-[1.1] text-balance"
             >
               {language === 'fr' ? 'Votre présence en ligne, ' : 'Your online presence, '}
               <span className="text-primary">

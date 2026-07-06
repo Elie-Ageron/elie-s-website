@@ -59,7 +59,7 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
         {showTitle && (
           <ScrollReveal direction="up" className="text-center mb-8 sm:mb-12">
             <motion.h2 
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-3 sm:mb-4 leading-tight"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

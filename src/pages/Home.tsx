@@ -1,5 +1,4 @@
 import { useLanguage } from '@/contexts/LanguageContext';
-import FloatingElements from '@/components/animations/FloatingElements';
 import StatsSection from '@/components/StatsSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import HeroSection from '@/components/HeroSection';
@@ -7,6 +6,7 @@ import PersonalIntroSection from '@/components/PersonalIntroSection';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
 import ServicesSection from '@/components/ServicesSection';
 import ServicesEcosystem from '@/components/ServicesEcosystem';
+import PortfolioShowcaseSection from '@/components/PortfolioShowcaseSection';
 import RoutingSection from '@/components/RoutingSection';
 import FAQAccordion from '@/components/FAQAccordion';
 import SEO from '@/components/SEO';
@@ -32,14 +32,14 @@ const Home = () => {
       {/* Hero Section with 3D */}
       <HeroSection />
 
-      {/* Routing — 3 clear entry paths */}
-      <RoutingSection />
+      {/* Work first — the strongest proof for a web designer */}
+      <PortfolioShowcaseSection />
 
-      {/* Stats - Agitation: why you need a site */}
-      <StatsSection />
-
-      {/* Testimonials - Proof early, before the offer */}
+      {/* Testimonials - the people behind the sites */}
       <TestimonialsSection />
+
+      {/* Why a professional site + real delivery facts */}
+      <StatsSection />
 
       {/* Services - The website plans (the core wedge offer) */}
       <ServicesSection />
@@ -53,18 +53,14 @@ const Home = () => {
       {/* FAQ - Objections avant le CTA final */}
       <FAQAccordion />
 
+      {/* Routing — 3 entry paths, once the visitor is convinced */}
+      <RoutingSection />
+
       {/* Internal Links */}
       <InternalLinks currentPage="home" />
 
       {/* Contact Methods Section */}
-      <section className="relative overflow-hidden">
-        <div className="hidden sm:block">
-          <FloatingElements count={5} />
-        </div>
-        <div className="relative z-10">
-          <ContactMethodsSection />
-        </div>
-      </section>
+      <ContactMethodsSection />
     </>
   );
 };

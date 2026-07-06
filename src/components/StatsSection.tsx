@@ -1,147 +1,96 @@
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { Clock, Shield, Smartphone, ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
+// Chiffres réels + argument central, en colonnes éditoriales (pas de cartes).
 const StatsSection = () => {
-  const { t } = useLanguage();
-  const containerRef = useRef<HTMLDivElement>(null);
-  
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start 0.8", "end 0.2"]
-  });
+  const { t, language } = useLanguage();
 
-  const valueProps = [
-    { 
-      icon: Clock, 
-      title: t('stats.always.title'), 
-      desc: t('stats.always.desc'),
+  const facts = [
+    {
+      value: language === 'fr' ? '7–14 jours' : '7–14 days',
+      desc:
+        language === 'fr'
+          ? 'entre le brief et la mise en ligne de votre site.'
+          : 'from the brief to your site going live.',
     },
-    { 
-      icon: Shield, 
-      title: t('stats.trust.title'), 
-      desc: t('stats.trust.desc'),
+    {
+      value: '< 24 h',
+      desc:
+        language === 'fr'
+          ? 'pour une réponse à votre demande, gratuite et sans engagement.'
+          : 'to get a reply to your request — free, no commitment.',
     },
-    { 
-      icon: Smartphone, 
-      title: t('stats.mobile.title'), 
-      desc: t('stats.mobile.desc'),
+    {
+      value: language === 'fr' ? '1 interlocuteur' : '1 contact',
+      desc:
+        language === 'fr'
+          ? 'du brief à la maintenance : vous parlez toujours à la même personne.'
+          : 'from brief to maintenance: you always talk to the same person.',
     },
-  ];
-
-  // Staggered animations - each card has its own scroll range
-  const card1X = useTransform(scrollYProgress, [0, 0.3], [-100, 0]);
-  const card1Opacity = useTransform(scrollYProgress, [0, 0.25], [0, 1]);
-  
-  const card2X = useTransform(scrollYProgress, [0.15, 0.5], [100, 0]);
-  const card2Opacity = useTransform(scrollYProgress, [0.15, 0.45], [0, 1]);
-  
-  const card3X = useTransform(scrollYProgress, [0.35, 0.7], [-100, 0]);
-  const card3Opacity = useTransform(scrollYProgress, [0.35, 0.65], [0, 1]);
-
-  // Connecting line animation
-  const lineHeight = useTransform(scrollYProgress, [0.1, 0.8], ["0%", "100%"]);
-
-  const cardAnimations = [
-    { x: card1X, opacity: card1Opacity, direction: 'left' },
-    { x: card2X, opacity: card2Opacity, direction: 'right' },
-    { x: card3X, opacity: card3Opacity, direction: 'left' },
   ];
 
   return (
-    <section ref={containerRef} className="py-20 sm:py-28 md:py-36 relative overflow-hidden" aria-labelledby="stats-heading">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 relative">
-        <h2 id="stats-heading" className="sr-only">Why Your Business Needs a Professional Website</h2>
-        
-        {/* Animated vertical connecting line - hidden on mobile */}
-        <div className="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 hidden md:block">
-          <motion.div 
-            className="w-full bg-gradient-to-b from-primary via-primary to-transparent"
-            style={{ height: lineHeight }}
-          />
-        </div>
-
-        {/* Staircase layout */}
-        <div className="flex flex-col gap-12 sm:gap-16 md:gap-20">
-          {valueProps.map((prop, index) => {
-            const anim = cardAnimations[index];
-            const isLeft = anim.direction === 'left';
-            
-            return (
-              <motion.div
-                key={index}
-                className={`
-                  flex items-center gap-6 md:gap-12
-                  ${isLeft ? 'md:flex-row md:pr-[50%]' : 'md:flex-row-reverse md:pl-[50%]'}
-                  flex-col md:text-left text-center
-                `}
-                style={{
-                  x: anim.x,
-                  opacity: anim.opacity,
-                }}
-              >
-                {/* Card content */}
-                <div 
-                  className={`
-                    relative flex-1 p-6 sm:p-8 rounded-2xl
-                    bg-secondary/80 backdrop-blur-sm
-                    border border-border/50
-                    transition-all duration-500
-                    hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10
-                    group
-                  `}
-                >
-
-                  <div className="flex items-start gap-4 md:gap-5">
-                    {/* Icon */}
-                    <motion.div 
-                      className="shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-primary/15 flex items-center justify-center group-hover:bg-primary/25 transition-colors"
-                      whileHover={{ rotate: 360, scale: 1.1 }}
-                      transition={{ duration: 0.6 }}
-                    >
-                      <prop.icon className="w-6 h-6 sm:w-7 sm:h-7 text-primary" />
-                    </motion.div>
-                    
-                    {/* Text */}
-                    <div className="flex-1 text-left">
-                      <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                        {prop.title}
-                      </h3>
-                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                        {prop.desc}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Timeline dot - visible on desktop */}
-                <motion.div 
-                  className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background shadow-lg shadow-primary/50"
-                  style={{ opacity: anim.opacity }}
-                  whileInView={{ scale: [0, 1.2, 1] }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                />
-              </motion.div>
-            );
-          })}
-        </div>
-
-        {/* CTA Button */}
+    <section className="py-20 sm:py-28 relative" aria-labelledby="stats-heading">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-          className="flex justify-center mt-12 sm:mt-16"
+          transition={{ duration: 0.5 }}
+          className="max-w-2xl mx-auto text-center"
+        >
+          <span className="inline-flex items-center gap-2 text-sm font-medium text-primary mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary" aria-hidden="true" />
+            {language === 'fr' ? 'Ce que ça change' : 'Why it matters'}
+          </span>
+          <h2
+            id="stats-heading"
+            className="text-3xl sm:text-4xl md:text-[2.75rem] font-medium leading-[1.1] text-balance"
+          >
+            {language === 'fr' ? 'Vos clients vous cherchent sur Google ' : 'Your clients Google you '}
+            <span className="text-primary">
+              {language === 'fr' ? "avant de vous appeler." : 'before they call you.'}
+            </span>
+          </h2>
+          <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
+            {language === 'fr'
+              ? "Un site professionnel transforme cette recherche en prise de contact — même la nuit, même le week-end, et surtout sur mobile, où naviguent 7 visiteurs sur 10."
+              : 'A professional website turns that search into an inquiry — at night, on weekends, and above all on mobile, where 7 out of 10 visitors browse.'}
+          </p>
+        </motion.div>
+
+        {/* Facts — editorial columns with thin rules */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10 mt-12 sm:mt-16">
+          {facts.map((fact, index) => (
+            <motion.div
+              key={fact.value}
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ delay: index * 0.08, duration: 0.5 }}
+              className="border-t border-border/60 pt-5"
+            >
+              <p className="text-3xl sm:text-4xl font-medium text-foreground tabular-nums">{fact.value}</p>
+              <p className="mt-2 text-sm sm:text-base text-muted-foreground leading-relaxed">{fact.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+          className="mt-12 sm:mt-14 flex justify-center"
         >
           <Button asChild variant="hero" size="lg" className="group">
             <Link to="/our-process" className="flex items-center gap-2">
               {t('stats.cta')}
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </Link>
           </Button>
         </motion.div>

@@ -98,7 +98,7 @@ const HeroSection = () => {
           </motion.div>
 
           {/* Main Headline - Responsive typography */}
-          <h1 id="hero-heading" className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-4 sm:mb-6 leading-tight sm:leading-tight drop-shadow-lg">
+          <h1 id="hero-heading" className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-4 sm:mb-6 leading-tight sm:leading-tight">
             <span className="text-foreground">{t('hero.headline1')}</span>
             <br />
             <span className="inline-block text-primary">{t('hero.headline2')}</span>
