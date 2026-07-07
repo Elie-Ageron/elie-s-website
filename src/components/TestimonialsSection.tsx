@@ -1,5 +1,6 @@
-import { motion } from 'framer-motion';
-import { Star, ArrowRight } from 'lucide-react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Star, ArrowRight, ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 
@@ -7,22 +8,34 @@ import logoVmProducers from '@/assets/logo vm producers.png';
 import logoSolarFusion from '@/assets/logo solar fusion.png';
 import logoMywebglory from '@/assets/logo mwg.png';
 import logoMyDrop from '@/assets/mydrop logo (1).png';
+import logoNaura from '@/assets/logo-naura.webp';
 
 // Témoignages éditoriaux : une citation mise en avant en grand,
 // les autres en colonnes — tout est visible, aucune carte.
 const TestimonialsSection = () => {
   const { t, language } = useLanguage();
+  const [expanded, setExpanded] = useState(false);
 
+  // Avis vedette : Nora / Naura Conseils (Google, juillet 2026) — le plus récent et le plus complet.
+  // Extrait par défaut, texte complet dépliable pour ne pas noyer la page.
   const featured = {
-    text: t('testimonial.3.text'),
-    founder: t('testimonial.3.founder'),
-    role: t('testimonial.3.role'),
-    date: t('testimonial.3.date'),
-    image: logoMywebglory,
-    whiteLogo: false,
+    excerpt: t('testimonial.5.excerpt'),
+    text: t('testimonial.5.text'),
+    founder: t('testimonial.5.founder'),
+    role: t('testimonial.5.role'),
+    date: t('testimonial.5.date'),
+    image: logoNaura,
   };
 
   const testimonials = [
+    {
+      text: t('testimonial.3.text'),
+      founder: t('testimonial.3.founder'),
+      role: t('testimonial.3.role'),
+      date: t('testimonial.3.date'),
+      image: logoMywebglory,
+      whiteLogo: false,
+    },
     {
       text: t('testimonial.4.text'),
       founder: t('testimonial.4.founder'),
@@ -95,15 +108,36 @@ const TestimonialsSection = () => {
             «
           </span>
           <blockquote className="relative">
-            <p className="text-xl sm:text-2xl md:text-[1.75rem] font-medium leading-snug sm:leading-snug text-foreground text-balance">
-              {featured.text}
-            </p>
+            {expanded ? (
+              <div className="space-y-4 text-lg sm:text-xl md:text-2xl font-medium leading-relaxed text-foreground text-balance">
+                {featured.text.split('\n\n').map((para, i) => (
+                  <p key={i}>{para}</p>
+                ))}
+              </div>
+            ) : (
+              <p className="text-lg sm:text-xl md:text-2xl font-medium leading-relaxed text-foreground text-balance">
+                {featured.excerpt}
+              </p>
+            )}
+            <AnimatePresence initial={false}>
+              {!expanded && (
+                <motion.button
+                  key="more"
+                  exit={{ opacity: 0 }}
+                  onClick={() => setExpanded(true)}
+                  className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline underline-offset-4"
+                >
+                  {language === 'fr' ? "Lire l'avis complet" : 'Read the full review'}
+                  <ChevronDown className="w-4 h-4" aria-hidden="true" />
+                </motion.button>
+              )}
+            </AnimatePresence>
           </blockquote>
-          <figcaption className="mt-6 sm:mt-8 flex items-center justify-center gap-4">
+          <figcaption className="mt-7 sm:mt-9 flex items-center justify-center gap-3.5">
             <img
               src={featured.image}
               alt={`Logo ${featured.role}`}
-              className={`h-9 w-auto object-contain shrink-0 ${featured.whiteLogo ? 'brightness-0' : ''}`}
+              className="h-11 w-11 rounded-xl object-cover shrink-0 shadow-sm"
               loading="lazy"
               decoding="async"
             />
@@ -116,8 +150,8 @@ const TestimonialsSection = () => {
           </figcaption>
         </motion.figure>
 
-        {/* Three more voices — editorial columns, thin rules, no boxes */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10 mt-14 sm:mt-20">
+        {/* Four more voices — 2×2 grid, thin rules, no boxes */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-8 sm:gap-y-10 mt-14 sm:mt-20">
           {testimonials.map((item, index) => (
             <motion.figure
               key={item.founder + item.role}
