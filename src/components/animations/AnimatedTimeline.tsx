@@ -96,7 +96,7 @@ const AnimatedTimeline = () => {
         />
       </div>
 
-      {/* Mobile left line — aligned to icon center (w-12 / 2 = 24px = left-6) */}
+      {/* Mobile left line, aligned to icon center (w-12 / 2 = 24px = left-6) */}
       <div className="md:hidden absolute left-6 top-0 bottom-0 w-0.5 bg-border">
         <motion.div
           className="w-full bg-primary origin-top"

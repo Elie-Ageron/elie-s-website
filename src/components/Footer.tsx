@@ -126,11 +126,16 @@ const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Zones d'intervention — internal links to local landing pages for SEO crawl */}
+          {/* Zones d'intervention, internal links to local landing pages for SEO crawl */}
           <nav aria-label={language === 'fr' ? "Zones d'intervention" : 'Service areas'} className="mt-10 pt-8 border-t border-border/30">
-            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-3">
+            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">
               {language === 'fr' ? "Zones d'intervention" : 'Service areas'}
             </h3>
+            <p className="text-sm text-muted-foreground mb-3">
+              {language === 'fr'
+                ? 'Basé en Savoie, je travaille avec des clients partout en France, sur place et à distance.'
+                : 'Based in Savoie, I work with clients all across France, on-site and remotely.'}
+            </p>
             <div className="flex flex-wrap gap-x-5 gap-y-2">
               {[
                 { href: '/web-designer-savoie', label: language === 'fr' ? 'Web designer Savoie' : 'Web designer Savoie' },

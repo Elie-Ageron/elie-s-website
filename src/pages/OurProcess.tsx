@@ -122,7 +122,7 @@ const OurProcess = () => {
         </div>
       </section>
 
-      {/* Scroll Video — Animation du processus */}
+      {/* Scroll Video, Animation du processus */}
       <ScrollVideoSection />
 
       {/* Internal Links */}

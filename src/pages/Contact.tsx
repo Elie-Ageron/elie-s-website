@@ -62,7 +62,7 @@ const Contact = () => {
           </h2>
           <div className="space-y-4">
 
-            {/* Primary — Get started form */}
+            {/* Primary, Get started form */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -116,7 +116,7 @@ const Contact = () => {
               <div className="flex-1 h-px bg-border/50" />
             </div>
 
-            {/* Secondary — Direct contact */}
+            {/* Secondary, Direct contact */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

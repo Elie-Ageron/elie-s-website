@@ -11,10 +11,12 @@ import logoVmProducers from '@/assets/logo vm producers.png';
 import logoSolarFusion from '@/assets/logo solar fusion.png';
 import logoMywebglory from '@/assets/logo mwg.png';
 import logoMyDrop from '@/assets/mydrop logo (1).png';
+import logoNaura from '@/assets/logo-naura.webp';
 
 // Real client logos shown as above-the-fold social proof.
 // `white: true` logos are dark-on-transparent and need the brightness-0 trick.
 const CLIENT_LOGOS = [
+  { src: logoNaura, name: 'Naura Conseils', white: false },
   { src: logoMyDrop, name: 'MyDrop', white: false },
   { src: logoMywebglory, name: 'MyWebGlory', white: false },
   { src: logoVmProducers, name: 'VM Producers', white: true },
@@ -24,7 +26,7 @@ const CLIENT_LOGOS = [
 // Defer 3D scene loading
 const HeroScene3D = lazy(() => import('@/components/animations/HeroScene3D'));
 
-// Isolated error boundary for the 3D scene — prevents WebGL crashes from
+// Isolated error boundary for the 3D scene, prevents WebGL crashes from
 // taking down the full page (important for SEO crawlers and unsupported environments).
 class Scene3DErrorBoundary extends Component<{ children: ReactNode }, { crashed: boolean }> {
   state = { crashed: false };
@@ -104,7 +106,7 @@ const HeroSection = () => {
             <span className="inline-block text-primary">{t('hero.headline2')}</span>
           </h1>
 
-          {/* Subtitle — concrete promise */}
+          {/* Subtitle, concrete promise */}
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -114,7 +116,7 @@ const HeroSection = () => {
             {t('hero.subtitle')}
           </motion.p>
 
-          {/* CTAs — primary: book a call (solid) · secondary: assessment (lighter, subordinate to the headline) */}
+          {/* CTAs, primary: book a call (solid) · secondary: assessment (lighter, subordinate to the headline) */}
           <motion.div
             className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3"
             initial={{ opacity: 0, y: 20 }}
@@ -141,7 +143,7 @@ const HeroSection = () => {
             </Button>
           </motion.div>
 
-          {/* Friction reducers — directly under the CTA */}
+          {/* Friction reducers, directly under the CTA */}
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -151,7 +153,7 @@ const HeroSection = () => {
             {t('hero.friction')}
           </motion.p>
 
-          {/* Social proof — real client logos + one verified review */}
+          {/* Social proof, real client logos + one verified review */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -167,14 +169,14 @@ const HeroSection = () => {
                   key={logo.name}
                   src={logo.src}
                   alt={`Logo ${logo.name}, client d'Elie Ageron`}
-                  className={`h-6 sm:h-7 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity ${logo.white ? 'brightness-0' : ''}`}
+                  className={`h-6 sm:h-7 w-auto object-contain ${logo.white ? 'brightness-0' : ''}`}
                   loading="eager"
                   decoding="async"
                 />
               ))}
             </div>
 
-            {/* One real, attributed review — replace/extend as you collect more */}
+            {/* One real, attributed review, replace/extend as you collect more */}
             <div className="mt-6 flex flex-col items-center gap-1.5">
               <div className="flex gap-0.5" aria-label="5 sur 5 étoiles">
                 {[...Array(5)].map((_, i) => (

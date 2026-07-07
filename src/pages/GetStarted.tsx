@@ -248,7 +248,7 @@ const GetStarted = () => {
                       transition={{ duration: 0.22, ease: 'easeOut' }}
                     >
 
-                      {/* Step 1 — Activité */}
+                      {/* Step 1, Activité */}
                       {currentStep === 1 && (
                         <div className="space-y-5">
                           <div className="mb-6">
@@ -331,7 +331,7 @@ const GetStarted = () => {
                         </div>
                       )}
 
-                      {/* Step 2 — Situation */}
+                      {/* Step 2, Situation */}
                       {currentStep === 2 && (
                         <div className="space-y-6">
                           <div className="mb-6">
@@ -413,7 +413,7 @@ const GetStarted = () => {
                         </div>
                       )}
 
-                      {/* Step 3 — Projet */}
+                      {/* Step 3, Projet */}
                       {currentStep === 3 && (
                         <div className="space-y-5">
                           <div className="mb-6">
@@ -541,7 +541,7 @@ const GetStarted = () => {
                         </div>
                       )}
 
-                      {/* Step 4 — Détails */}
+                      {/* Step 4, Détails */}
                       {currentStep === 4 && (
                         <div className="space-y-5">
                           <div className="mb-6">

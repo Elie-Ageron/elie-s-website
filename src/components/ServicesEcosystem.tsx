@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import ScrollReveal from './animations/ScrollReveal';
 import { services } from '@/data/services';
 
-// Section "Votre présence en ligne, gérée de A à Z" — index éditorial (refonte juillet 2026)
+// Section "Votre présence en ligne, gérée de A à Z", index éditorial (refonte juillet 2026)
 const ServicesEcosystem = () => {
   const { language } = useLanguage();
 
@@ -24,7 +24,7 @@ const ServicesEcosystem = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* ─── Narrative (sticky on desktop) ─── */}
-          <ScrollReveal direction="up" className="lg:col-span-5 lg:sticky lg:top-28">
+          <ScrollReveal direction="up" className="lg:col-span-5 lg:sticky lg:top-28 text-center lg:text-left">
             <span className="inline-flex items-center gap-2 text-sm font-medium text-primary mb-5">
               <span className="w-1.5 h-1.5 rounded-full bg-primary" aria-hidden="true" />
               {language === 'fr' ? 'Une fois le site en ligne' : 'Once the site is live'}
@@ -40,13 +40,13 @@ const ServicesEcosystem = () => {
               </span>
             </h2>
 
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-md">
+            <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-md mx-auto lg:mx-0">
               {language === 'fr'
                 ? "Google, réseaux sociaux, identité de marque, référencement. Au lieu de jongler entre plusieurs prestataires, un seul partenaire s'occupe de tout."
                 : 'Google, social media, brand identity, SEO. Instead of juggling several providers, one partner handles it all.'}
             </p>
 
-            <div className="mt-8 flex flex-col sm:flex-row lg:flex-col gap-4 sm:items-center lg:items-start">
+            <div className="mt-8 flex flex-col sm:flex-row lg:flex-col gap-4 items-center lg:items-start">
               <Button variant="hero" size="lg" className="group" asChild>
                 <Link to="/services" className="flex items-center gap-2">
                   {language === 'fr' ? 'Voir tous les services' : 'See all services'}
@@ -92,7 +92,7 @@ const ServicesEcosystem = () => {
                     to={href}
                     className="group flex items-center gap-4 sm:gap-5 py-5 pr-2 sm:pr-3 rounded-2xl sm:px-4 sm:-mx-4 transition-colors duration-300 hover:bg-secondary/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
                   >
-                    {/* Bare icon — node, not a card */}
+                    {/* Bare icon, node, not a card */}
                     <Icon
                       className="w-5 h-5 shrink-0 text-muted-foreground/70 group-hover:text-primary transition-colors duration-300"
                       strokeWidth={1.75}

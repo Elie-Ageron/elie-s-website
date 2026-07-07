@@ -588,7 +588,7 @@ const Result = ({ computeScore, answers, L, openCalendly, name }: ResultProps) =
   const solution = answers['solution'] || '';
   const highIntent = /complet|vitrine|refonte|redesign|showcase|full/i.test(solution);
 
-  // WhatsApp pre-filled with their score — no form to refill, the lead is already captured.
+  // WhatsApp pre-filled with their score, no form to refill, the lead is already captured.
   const waText = encodeURIComponent(
     L(
       `Bonjour Elie, j'ai fait le test (score ${pct}/100) et j'aimerais quelques pistes pour mon site.`,
@@ -724,7 +724,7 @@ const Result = ({ computeScore, answers, L, openCalendly, name }: ResultProps) =
           </button>
         </div>
 
-        {/* No-call path — the lead is already captured, so NO second form. Just reassurance + a direct line. */}
+        {/* No-call path, the lead is already captured, so NO second form. Just reassurance + a direct line. */}
         <div className="mt-6 pt-6 border-t border-border/60">
           <p className="text-sm text-muted-foreground max-w-md mx-auto mb-3">
             {L(

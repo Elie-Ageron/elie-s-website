@@ -18,7 +18,7 @@ const Blog = () => {
       year: 'numeric',
     });
 
-  // Latest article first — the most recent one is featured
+  // Latest article first, the most recent one is featured
   const sortedPosts = [...blogPosts]
     .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : Number(b.id) - Number(a.id)))
     .map((post) => getLocalizedPost(post, language));
@@ -71,7 +71,7 @@ const Blog = () => {
         </script>
       </Helmet>
 
-      {/* Hero — compact, the articles are the point */}
+      {/* Hero, compact, the articles are the point */}
       <section className="relative grain pt-8 sm:pt-14 pb-10 sm:pb-14" aria-labelledby="blog-hero-heading">
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
           <div className="absolute -top-10 right-[10%] w-64 sm:w-80 h-64 sm:h-80 bg-primary/10 rounded-full blur-[100px]" />
@@ -109,7 +109,7 @@ const Blog = () => {
         </h2>
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
 
-          {/* Featured — latest article, big and typographic */}
+          {/* Featured, latest article, big and typographic */}
           <motion.article
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -143,7 +143,7 @@ const Blog = () => {
             </Link>
           </motion.article>
 
-          {/* The rest — editorial list */}
+          {/* The rest, editorial list */}
           <ul className="mt-2">
             {rest.map((post, index) => (
               <motion.li

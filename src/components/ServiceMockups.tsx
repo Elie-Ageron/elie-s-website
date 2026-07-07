@@ -21,7 +21,7 @@ const Bar = ({ w = 'w-full', tone = 'bg-muted-foreground/25', h = 'h-1.5' }: { w
   <span className={`block rounded-full ${h} ${w} ${tone}`} aria-hidden="true" />
 );
 
-/* 1. SITES — browser window with a colorful demo site + floating result chip */
+/* 1. SITES, browser window with a colorful demo site + floating result chip */
 const SitesMockup = () => (
   <div className="relative w-[340px] sm:w-[400px]">
     <div className="rounded-2xl bg-card border border-border shadow-2xl overflow-hidden -rotate-2">
@@ -59,7 +59,7 @@ const SitesMockup = () => (
   </div>
 );
 
-/* 2. GOOGLE BUSINESS — map card with Google colors + floating rank chip */
+/* 2. GOOGLE BUSINESS, map card with Google colors + floating rank chip */
 const GoogleBusinessMockup = () => {
   const { language } = useLanguage();
   return (
@@ -98,7 +98,7 @@ const GoogleBusinessMockup = () => {
   );
 };
 
-/* 3. SOCIAL — phone with IG-gradient + floating like + new-follower bubbles */
+/* 3. SOCIAL, phone with IG-gradient + floating like + new-follower bubbles */
 const SocialMockup = () => {
   const { language } = useLanguage();
   const tiles = ['from-orange-400 to-rose-500', 'from-sky-400 to-indigo-500', 'from-emerald-400 to-teal-500', 'from-fuchsia-400 to-purple-600', 'from-amber-300 to-orange-500', 'from-rose-400 to-pink-600', 'from-cyan-400 to-blue-500', 'from-violet-400 to-fuchsia-500', 'from-lime-400 to-emerald-500'];
@@ -137,7 +137,7 @@ const SocialMockup = () => {
   );
 };
 
-/* 4. BRANDING — brand board with a real multi-color palette + floating swatch */
+/* 4. BRANDING, brand board with a real multi-color palette + floating swatch */
 const BrandingMockup = () => (
   <div className="relative w-[330px] sm:w-[380px] -rotate-1">
     <div className="rounded-2xl bg-card border border-border shadow-2xl p-5 space-y-4">
@@ -166,7 +166,7 @@ const BrandingMockup = () => (
   </div>
 );
 
-/* 5. SEO — Google result with real link colors + floating rank-up + bar chart */
+/* 5. SEO, Google result with real link colors + floating rank-up + bar chart */
 const SeoMockup = () => {
   const { language } = useLanguage();
   return (
@@ -211,7 +211,7 @@ const SeoMockup = () => {
   );
 };
 
-/* 6. REVIEWS — stacked review cards + floating gold rating badge */
+/* 6. REVIEWS, stacked review cards + floating gold rating badge */
 const ReviewMockup = () => {
   const { language } = useLanguage();
   return (
@@ -251,7 +251,7 @@ const ReviewMockup = () => {
   );
 };
 
-/* 7. CONTENT — layered article sheets + highlight + floating chip */
+/* 7. CONTENT, layered article sheets + highlight + floating chip */
 const ContentMockup = () => {
   const { language } = useLanguage();
   return (

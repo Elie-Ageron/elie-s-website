@@ -5,7 +5,7 @@ import { Download, Briefcase, Phone, Mail, MapPin, MessageCircle, MessageSquareT
 import portrait from '@/assets/elie-ageron-portrait.webp';
 
 /**
- * Carte de visite virtuelle — page totalement indépendante.
+ * Carte de visite virtuelle, page totalement indépendante.
  * Pas de Header / Footer / Layout global (montée hors de <Layout> dans App.tsx).
  * noindex : page destinée au partage direct (QR code / NFC / lien), pas au référencement.
  */
@@ -84,7 +84,7 @@ const Card = () => {
             être trouvés et choisis près de chez eux.
           </p>
 
-          {/* CTA principal — télécharge le contact */}
+          {/* CTA principal, télécharge le contact */}
           <motion.a
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
@@ -98,7 +98,7 @@ const Card = () => {
             Enregistrer le contact
           </motion.a>
 
-          {/* Réalisations — pleine largeur */}
+          {/* Réalisations, pleine largeur */}
           <motion.a
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
@@ -110,7 +110,7 @@ const Card = () => {
             Voir mes réalisations
           </motion.a>
 
-          {/* Me joindre — 2 colonnes */}
+          {/* Me joindre, 2 colonnes */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
@@ -133,7 +133,7 @@ const Card = () => {
             </a>
           </motion.div>
 
-          {/* M'envoyer un message — WhatsApp ou SMS */}
+          {/* M'envoyer un message, WhatsApp ou SMS */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}

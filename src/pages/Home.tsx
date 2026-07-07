@@ -32,7 +32,7 @@ const Home = () => {
       {/* Hero Section with 3D */}
       <HeroSection />
 
-      {/* Work first — the strongest proof for a web designer */}
+      {/* Work first, the strongest proof for a web designer */}
       <PortfolioShowcaseSection />
 
       {/* Testimonials - the people behind the sites */}
@@ -53,7 +53,7 @@ const Home = () => {
       {/* FAQ - Objections avant le CTA final */}
       <FAQAccordion />
 
-      {/* Routing — 3 entry paths, once the visitor is convinced */}
+      {/* Routing, 3 entry paths, once the visitor is convinced */}
       <RoutingSection />
 
       {/* Internal Links */}

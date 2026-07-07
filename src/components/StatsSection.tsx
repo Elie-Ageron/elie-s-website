@@ -21,7 +21,7 @@ const StatsSection = () => {
       desc:
         language === 'fr'
           ? 'pour une réponse à votre demande, gratuite et sans engagement.'
-          : 'to get a reply to your request — free, no commitment.',
+          : 'to get a reply to your request, free, no commitment.',
     },
     {
       value: language === 'fr' ? '1 interlocuteur' : '1 contact',
@@ -57,12 +57,12 @@ const StatsSection = () => {
           </h2>
           <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
             {language === 'fr'
-              ? "Un site professionnel transforme cette recherche en prise de contact — même la nuit, même le week-end, et surtout sur mobile, où naviguent 7 visiteurs sur 10."
-              : 'A professional website turns that search into an inquiry — at night, on weekends, and above all on mobile, where 7 out of 10 visitors browse.'}
+              ? "Un site professionnel transforme cette recherche en prise de contact, même la nuit, même le week-end, et surtout sur mobile, où naviguent 7 visiteurs sur 10."
+              : 'A professional website turns that search into an inquiry, at night, on weekends, and above all on mobile, where 7 out of 10 visitors browse.'}
           </p>
         </motion.div>
 
-        {/* Facts — editorial columns with thin rules */}
+        {/* Facts, editorial columns with thin rules */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10 mt-12 sm:mt-16">
           {facts.map((fact, index) => (
             <motion.div

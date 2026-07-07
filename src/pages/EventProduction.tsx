@@ -158,7 +158,7 @@ const DemoSlider = ({ demos, language }: DemoSliderProps) => {
             </motion.div>
           </AnimatePresence>
 
-          {/* Side arrows — overlaid on the iframe */}
+          {/* Side arrows, overlaid on the iframe */}
           <button
             onClick={prev}
             className="absolute left-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-background/90 border border-border/60 shadow-lg flex items-center justify-center text-foreground hover:text-primary hover:border-primary/50 transition-all"
@@ -593,7 +593,7 @@ const EventProduction = () => {
           {/* Two columns */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
 
-            {/* Left — Without */}
+            {/* Left, Without */}
             <motion.div
               initial={{ opacity: 0, x: -24 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -626,7 +626,7 @@ const EventProduction = () => {
               </div>
             </motion.div>
 
-            {/* Right — With */}
+            {/* Right, With */}
             <motion.div
               initial={{ opacity: 0, x: 24 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -701,7 +701,7 @@ const EventProduction = () => {
         </div>
       </section>
 
-      {/* ─── How it works — 5 steps ─── */}
+      {/* ─── How it works, 5 steps ─── */}
       <section className="py-12 sm:py-16 md:py-20" aria-labelledby="event-steps-heading">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12 sm:mb-16">
@@ -934,7 +934,7 @@ const EventProduction = () => {
                       transition={{ duration: 0.22, ease: 'easeOut' }}
                     >
 
-                      {/* Step 1 — Contact */}
+                      {/* Step 1, Contact */}
                       {currentStep === 1 && (
                         <div className="space-y-5">
                           <div className="mb-6">
@@ -952,7 +952,7 @@ const EventProduction = () => {
                         </div>
                       )}
 
-                      {/* Step 2 — Event details */}
+                      {/* Step 2, Event details */}
                       {currentStep === 2 && (
                         <div className="space-y-5">
                           <div className="mb-6">
@@ -998,7 +998,7 @@ const EventProduction = () => {
                         </div>
                       )}
 
-                      {/* Step 3 — Current setup */}
+                      {/* Step 3, Current setup */}
                       {currentStep === 3 && (
                         <div className="space-y-6">
                           <div className="mb-6">
@@ -1054,7 +1054,7 @@ const EventProduction = () => {
                         </div>
                       )}
 
-                      {/* Step 4 — Details */}
+                      {/* Step 4, Details */}
                       {currentStep === 4 && (
                         <div className="space-y-5">
                           <div className="mb-6">

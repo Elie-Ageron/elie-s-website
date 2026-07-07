@@ -82,8 +82,7 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           {contactMethods.map((method, index) => {
             const sharedMotionProps = {
-              key: index,
-              initial: { 
+              initial: {
                 opacity: 0, 
                 x: index === 0 ? -50 : index === 2 ? 50 : 0,
                 y: index === 1 ? 50 : 0
@@ -145,6 +144,7 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
             if (method.onClick) {
               return (
                 <motion.button
+                  key={index}
                   type="button"
                   onClick={method.onClick}
                   {...sharedMotionProps}
@@ -157,6 +157,7 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
 
             return (
               <motion.a
+                key={index}
                 href={method.href}
                 target={method.newTab ? '_blank' : undefined}
                 rel={method.newTab ? 'noopener noreferrer' : undefined}

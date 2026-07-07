@@ -26,7 +26,7 @@ const ServiceSection = ({ service, index }: { service: ServiceItem; index: numbe
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
       className="relative flex items-center justify-center pt-2 pb-8 sm:py-10 px-6"
     >
-      {/* Soft glow for depth — no surrounding box */}
+      {/* Soft glow for depth, no surrounding box */}
       <div className="absolute w-72 h-72 rounded-full bg-primary/10 blur-[90px]" aria-hidden="true" />
       <div className="relative z-10">
         <ServiceMockup id={service.id} />
@@ -204,7 +204,7 @@ const Services = () => {
                 : 'Website, Google Business, social media, brand identity, SEO. Instead of a site delivered and forgotten, I keep supporting you to grow your business online, month after month.'}
             </p>
 
-            {/* Service pills — preview the breadth */}
+            {/* Service pills, preview the breadth */}
             <div className="mt-9 flex flex-wrap items-center justify-center gap-2 max-w-2xl mx-auto">
               {services.map((s) => (
                 <a
@@ -232,7 +232,7 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Morph showcase — a forgotten site is rebuilt, live, as you scroll */}
+      {/* Morph showcase, a forgotten site is rebuilt, live, as you scroll */}
       <ServiceHeroMorph />
 
       {/* Services intro */}
@@ -266,8 +266,8 @@ const Services = () => {
             className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto"
           >
             {language === 'fr'
-              ? "Tout ce qu'il faut pour rendre votre activité visible et attirante en ligne — du site web à votre fiche Google, des réseaux sociaux au référencement. Réuni au même endroit, géré par une seule personne."
-              : "Everything you need to make your business visible and appealing online — from your website to your Google profile, social media to SEO. All in one place, handled by one person."}
+              ? "Tout ce qu'il faut pour rendre votre activité visible et attirante en ligne, du site web à votre fiche Google, des réseaux sociaux au référencement. Réuni au même endroit, géré par une seule personne."
+              : "Everything you need to make your business visible and appealing online, from your website to your Google profile, social media to SEO. All in one place, handled by one person."}
           </motion.p>
         </div>
       </section>

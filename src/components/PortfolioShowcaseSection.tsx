@@ -8,7 +8,7 @@ import portfolioNaura from '@/assets/portfolio-naura.webp';
 import portfolioSolarFusion from '@/assets/portfolio-solar-fusion.webp';
 import portfolioMyDrop from '@/assets/portfolio-mydrop.webp';
 
-// Section "Réalisations" de la home — la preuve avant le discours.
+// Section "Réalisations" de la home, la preuve avant le discours.
 // Traitement éditorial : grands visuels + légendes, pas de grille de cartes.
 const PortfolioShowcaseSection = () => {
   const { language } = useLanguage();
@@ -99,7 +99,7 @@ const PortfolioShowcaseSection = () => {
   return (
     <section className="py-20 sm:py-28 relative" aria-labelledby="work-heading">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        {/* Header — centered like the rest of the site */}
+        {/* Header, centered like the rest of the site */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -120,7 +120,7 @@ const PortfolioShowcaseSection = () => {
           </h2>
         </motion.div>
 
-        {/* Featured project — full width */}
+        {/* Featured project, full width */}
         {featured.map((project) => (
           <motion.div
             key={project.name}
@@ -136,7 +136,7 @@ const PortfolioShowcaseSection = () => {
           </motion.div>
         ))}
 
-        {/* Two supporting projects — side by side, no boxes */}
+        {/* Two supporting projects, side by side, no boxes */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 mt-12 sm:mt-16">
           {others.map((project, i) => (
             <motion.div

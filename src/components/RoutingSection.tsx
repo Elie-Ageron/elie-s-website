@@ -92,7 +92,7 @@ const RoutingSection = () => {
           ))}
         </ul>
 
-        {/* Soft secondary entry — the assessment, for the undecided */}
+        {/* Soft secondary entry, the assessment, for the undecided */}
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

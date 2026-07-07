@@ -3,7 +3,7 @@ import { Star, ArrowRight, Unplug, Plus } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 /**
- * Visual before/after for the /services manifesto — what a prospect lands on.
+ * Visual before/after for the /services manifesto, what a prospect lands on.
  * Left: a dull, broken, abandoned site (greyed out) and a visitor who leaves.
  * Right: a vibrant, living site and a visitor who converts. Markup only.
  */
@@ -17,7 +17,7 @@ const BrowserBar = ({ url, dim = false }: { url: string; dim?: boolean }) => (
   </div>
 );
 
-/* AVANT — site gris, cassé, abandonné. Le client repart. */
+/* AVANT, site gris, cassé, abandonné. Le client repart. */
 export const DeadSiteMockup = () => {
   const { language } = useLanguage();
   return (
@@ -47,7 +47,7 @@ export const DeadSiteMockup = () => {
   );
 };
 
-/* APRÈS — beau site vivant, belles images. Le client reste et contacte. */
+/* APRÈS, beau site vivant, belles images. Le client reste et contacte. */
 export const LiveSiteMockup = () => {
   const { language } = useLanguage();
   return (

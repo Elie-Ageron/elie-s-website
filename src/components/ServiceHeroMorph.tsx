@@ -12,13 +12,13 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 /**
  * Cinematic, scroll-driven "morph" showcase for /services.
- * A forgotten, broken site is rebuilt — live — into a vibrant, working one.
+ * A forgotten, broken site is rebuilt, live, into a vibrant, working one.
  * The reveal is scrubbed by scroll: a scanner sweeps down and the new site
  * materialises beneath its edge (clip-path wipe). The stage is pinned (sticky)
  * so the whole transformation plays out slowly as the visitor scrolls.
  *
  * Respects prefers-reduced-motion (renders the final living state, no scrub).
- * Markup only · transform / opacity / clip-path — no layout shift.
+ * Markup only · transform / opacity / clip-path, no layout shift.
  */
 
 /* ---- The two sites share the exact same structure, so the reveal reads as
@@ -241,7 +241,7 @@ const ServiceHeroMorph = () => {
               </span>
             </div>
 
-            {/* stage — both sites stacked, the living one revealed by clip */}
+            {/* stage, both sites stacked, the living one revealed by clip */}
             <div className="relative h-[412px]">
               <DeadSite t={t} />
               <motion.div style={{ clipPath: revealClip }} className="absolute inset-0 z-10">

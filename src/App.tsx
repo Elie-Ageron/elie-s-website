@@ -86,7 +86,7 @@ const App = () => (
             <ScrollToTop />
             <Analytics />
             <Routes>
-              {/* Carte de visite virtuelle — page isolée, SANS header/footer/Layout global */}
+              {/* Carte de visite virtuelle, page isolée, SANS header/footer/Layout global */}
               <Route
                 path="/carte"
                 element={
