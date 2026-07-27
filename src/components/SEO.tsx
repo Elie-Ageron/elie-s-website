@@ -46,7 +46,7 @@ const seoData = {
   en: {
     home: {
       title: 'Web Design That Brings You Clients | Elie Ageron',
-      description: 'Websites built to turn your visitors into paying clients, live in 7-14 days from $500. Based in Savoie, working across France remotely. Free strategy call.',
+      description: 'Websites built to turn your visitors into paying clients, live in 7-14 days. Based in Savoie, working across France remotely. Free strategy call & custom quote.',
     },
     services: {
       title: 'Web Partner in Savoie | Elie Ageron',
@@ -62,7 +62,7 @@ const seoData = {
     },
     pricing: {
       title: 'Web Design Pricing | Elie Ageron',
-      description: 'Transparent pricing by Elie Ageron. Landing pages from €500, showcase sites from €1500. No hidden fees, 100% satisfaction guaranteed.',
+      description: 'Custom quotes by Elie Ageron. Landing pages, showcase sites & full launch packs, priced around your project. No hidden fees, 100% satisfaction guaranteed.',
     },
     portfolio: {
       title: 'Portfolio & Case Studies | Elie Ageron',
@@ -87,8 +87,8 @@ const seoData = {
   },
   fr: {
     home: {
-      title: 'Création Site Web Savoie | Elie Ageron, dès 500€',
-      description: 'Des sites web pros qui transforment vos visiteurs en clients. En Savoie, Haute-Savoie, et partout en France à distance. Livrés en 7-14 jours, dès 500€.',
+      title: 'Création Site Web Savoie | Elie Ageron',
+      description: 'Des sites web pros qui transforment vos visiteurs en clients. En Savoie, Haute-Savoie, et partout en France à distance. Livrés en 7-14 jours, sur devis.',
     },
     services: {
       title: 'Partenaire Web en Savoie | Elie Ageron',
@@ -104,7 +104,7 @@ const seoData = {
     },
     pricing: {
       title: 'Tarifs Web Design | Elie Ageron',
-      description: 'Tarifs transparents. Landing pages dès 500€, sites vitrines dès 1500€. Sans frais cachés, satisfaction garantie.',
+      description: 'Devis sur mesure. Landing pages, sites vitrines et packs lancement, chiffrés selon votre projet. Sans frais cachés, satisfaction garantie.',
     },
     portfolio: {
       title: 'Portfolio & Réalisations | Elie Ageron',

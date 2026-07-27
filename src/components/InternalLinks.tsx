@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, FileText, DollarSign, Briefcase, HelpCircle, BookOpen, CalendarDays, LayoutGrid } from 'lucide-react';
+import { ArrowRight, FileText, Briefcase, HelpCircle, BookOpen, CalendarDays, LayoutGrid } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface InternalLinksProps {
-  currentPage: 'home' | 'services' | 'why' | 'process' | 'pricing' | 'portfolio' | 'contact' | 'blog' | 'event';
+  currentPage: 'home' | 'services' | 'why' | 'process' | 'portfolio' | 'contact' | 'blog' | 'event';
 }
 
 const InternalLinks = ({ currentPage }: InternalLinksProps) => {
@@ -36,14 +36,6 @@ const InternalLinks = ({ currentPage }: InternalLinksProps) => {
       anchor: '',
     },
     {
-      id: 'pricing',
-      path: '/pricing',
-      icon: DollarSign,
-      title: language === 'fr' ? 'Tarifs' : 'Pricing',
-      desc: language === 'fr' ? 'Landing pages dès 500€' : 'Landing pages from €500',
-      anchor: '#pricing-plans-heading',
-    },
-    {
       id: 'portfolio',
       path: '/portfolio',
       icon: Briefcase,
@@ -70,16 +62,7 @@ const InternalLinks = ({ currentPage }: InternalLinksProps) => {
   ];
 
   // Filter out current page and limit to 3 links
-  let filteredLinks = links.filter(link => link.id !== currentPage).slice(0, 3);
-
-  // Smart linking: If on "why" page, prioritize pricing link with anchor
-  if (currentPage === 'why') {
-    const pricingLink = links.find(l => l.id === 'pricing');
-    const otherLinks = links.filter(l => l.id !== 'pricing' && l.id !== currentPage).slice(0, 2);
-    if (pricingLink) {
-      filteredLinks = [pricingLink, ...otherLinks];
-    }
-  }
+  const filteredLinks = links.filter(link => link.id !== currentPage).slice(0, 3);
 
   return (
     <section className="py-12 sm:py-16 bg-secondary/50 border-y border-border/50" aria-label="Related content">

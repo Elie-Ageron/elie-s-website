@@ -12,7 +12,6 @@ const Footer = () => {
     { label: language === 'fr' ? 'Services' : 'Services', href: '/services' },
     { label: language === 'fr' ? 'Pourquoi un site ?' : 'Why a website?', href: '/why-a-website' },
     { label: language === 'fr' ? 'Notre processus' : 'Our process', href: '/our-process' },
-    { label: language === 'fr' ? 'Tarifs' : 'Pricing', href: '/pricing' },
     { label: t('nav.portfolio'), href: '/portfolio' },
     { label: language === 'fr' ? 'Événements' : 'Events', href: '/event-production' },
     { label: 'Blog', href: '/blog' },

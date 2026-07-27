@@ -63,8 +63,6 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
         {
           '@type': 'Offer',
           name: language === 'fr' ? 'Landing Page' : 'Landing Page',
-          price: '500',
-          priceCurrency: 'EUR',
           description: language === 'fr'
             ? `Landing page haute conversion pour entreprises à ${d.name}`
             : `High-conversion landing page for businesses in ${d.name}`,
@@ -72,8 +70,6 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
         {
           '@type': 'Offer',
           name: language === 'fr' ? 'Site Vitrine 4 Pages' : '4-Page Showcase Site',
-          price: '1500',
-          priceCurrency: 'EUR',
           description: language === 'fr'
             ? `Site vitrine complet avec SEO local optimisé pour ${d.name}`
             : `Full showcase site with local SEO optimized for ${d.name}`,
@@ -198,8 +194,8 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
               className="min-h-[56px] px-8 text-base text-muted-foreground hover:text-foreground group w-full sm:w-auto"
               asChild
             >
-              <Link to="/pricing" className="flex items-center gap-2">
-                {language === 'fr' ? 'Voir les tarifs' : 'See pricing'}
+              <Link to="/services" className="flex items-center gap-2">
+                {language === 'fr' ? 'Voir les services' : 'See services'}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Link>
             </Button>

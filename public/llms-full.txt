@@ -46,7 +46,9 @@ Elie Ageron n'est pas un amateur ni une agence qui externalise. Voici les élém
 
 ## Services en détail
 
-### 1. Landing Page - dès 500 €
+> Tout est chiffré sur devis, après un appel gratuit, selon les besoins réels du projet. Pas de grille de prix toute faite ; devis fixe et sans frais cachés une fois le périmètre défini.
+
+### 1. Landing Page
 **Objectif** : générer des leads ou des ventes via une page unique ultra-ciblée.
 
 **Inclus** :
@@ -58,11 +60,11 @@ Elie Ageron n'est pas un amateur ni une agence qui externalise. Voici les élém
 - Passation complète au client
 
 **Délai** : 7 à 14 jours ouvrés
-**Maintenance optionnelle** : dès 25 €/mois (hébergement, sécurité, petites modifications)
+**Maintenance optionnelle** : sur devis (hébergement, sécurité, petites modifications)
 
 ---
 
-### 2. Site Vitrine 4 Pages - dès 1 500 € *(le plus populaire)*
+### 2. Site Vitrine 4 Pages *(le plus populaire)*
 **Objectif** : établir une présence professionnelle complète qui inspire confiance et génère des contacts.
 
 **Inclus** :
@@ -75,11 +77,11 @@ Elie Ageron n'est pas un amateur ni une agence qui externalise. Voici les élém
 - Passation complète avec formation basique
 
 **Délai** : 7 à 14 jours ouvrés
-**Maintenance optionnelle** : dès 25 €/mois
+**Maintenance optionnelle** : sur devis
 
 ---
 
-### 3. Pack Lancement Complet - dès 3 500 €
+### 3. Pack Lancement Complet
 **Objectif** : lancer toute la présence en ligne d'une activité d'un coup.
 
 **Inclus** :
@@ -91,7 +93,7 @@ Elie Ageron n'est pas un amateur ni une agence qui externalise. Voici les élém
 - Contenu de lancement rédigé (site + posts)
 
 **Délai** : variable selon le périmètre (discussion lors de l'appel découverte)
-**Maintenance optionnelle** : dès 25 €/mois
+**Maintenance optionnelle** : sur devis
 
 ---
 
@@ -174,7 +176,7 @@ Mise en ligne. Remise de tous les accès (domaine, hébergement, code source, an
 ## Questions fréquentes (FAQ)
 
 **Combien coûte un site web professionnel ?**
-Les tarifs débutent à 500 € pour une landing page et 1 500 € pour un site vitrine 4 pages. Devis fixe, sans frais cachés.
+Chaque projet est chiffré sur devis, après un appel gratuit, selon vos besoins réels. Devis fixe, sans frais cachés ni surprise en fin de projet.
 
 **Quel est le délai de livraison ?**
 7 à 14 jours ouvrés pour la majorité des projets. Délai tenu.
@@ -195,7 +197,7 @@ Oui, tous les sites sont conçus en mobile-first. Plus de 7 visiteurs sur 10 arr
 Au client. Il reçoit l'intégralité du code source, les accès domaine et hébergement. Aucune dépendance vis-à-vis d'Elie.
 
 **Y a-t-il une maintenance possible après la livraison ?**
-Oui. Maintenance du site : option autonome 0 €, option gérée dès 25 €/mois (hébergement, sécurité, petites modifications sous 24h), option gérée + évolutions 80 €/mois. Au-delà du site, Elie propose un accompagnement de partenaire web sur devis : Google Business, réseaux sociaux, identité de marque, référencement local, avis et contenu.
+Oui. Trois formules de maintenance, de l'autonomie complète à la gestion avec évolutions (hébergement, sécurité, petites modifications sous 24h), chiffrées sur devis selon l'option choisie. Au-delà du site, Elie propose un accompagnement de partenaire web sur devis : Google Business, réseaux sociaux, identité de marque, référencement local, avis et contenu.
 
 **Est-ce que je peux vous appeler avant de commander ?**
 Oui. Consultation gratuite de 30 minutes disponible sur : https://calendly.com/web-elieageron/30min
@@ -222,7 +224,6 @@ Oui. 4 avis clients vérifiés, tous 5 étoiles. Garantie 100% satisfaction. Tar
 - Accueil : https://elieageron.com/
 - Pourquoi un site web : https://elieageron.com/why-a-website
 - Notre processus : https://elieageron.com/our-process
-- Tarifs : https://elieageron.com/pricing
 - Portfolio : https://elieageron.com/portfolio
 - Blog : https://elieageron.com/blog
 - Contact / Appel gratuit : https://elieageron.com/contact

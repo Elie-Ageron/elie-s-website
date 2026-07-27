@@ -37,8 +37,8 @@ export const cities: CityData[] = [
     departmentCode: 'FR-74',
     fr: {
       name: 'Annecy',
-      title: 'Web Designer Annecy | Elie Ageron, dès 500€',
-      description: 'Web designer basé en Savoie, j\'interviens à Annecy. Sites pros qui convertissent les visiteurs en clients. Livraison en 7-14 jours, dès 500€.',
+      title: 'Web Designer Annecy | Elie Ageron',
+      description: 'Web designer basé en Savoie, j\'interviens à Annecy. Sites pros qui convertissent les visiteurs en clients. Livraison en 7-14 jours, sur devis.',
       h1Pre: 'Web designer à ',
       h1Highlight: 'Annecy',
       h2: 'Un site qui ramène des clients. Pas juste un beau design.',
@@ -47,8 +47,8 @@ export const cities: CityData[] = [
     },
     en: {
       name: 'Annecy',
-      title: 'Web Designer Annecy France | Elie Ageron, from €500',
-      description: 'Web designer based in Savoie, working in the Annecy area. Sites that convert visitors into clients. Live in 7-14 days from €500.',
+      title: 'Web Designer Annecy France | Elie Ageron',
+      description: 'Web designer based in Savoie, working in the Annecy area. Sites that convert visitors into clients. Live in 7-14 days, custom quote.',
       h1Pre: 'Web designer in ',
       h1Highlight: 'Annecy',
       h2: 'A site that brings you clients. Not just a pretty design.',
@@ -66,7 +66,7 @@ export const cities: CityData[] = [
     fr: {
       name: 'Haute-Savoie',
       title: 'Création Site Web Haute-Savoie | Elie Ageron',
-      description: 'Création de sites web professionnels en Haute-Savoie. Dès 500€, livraison en 7-14 jours. Web designer basé en Savoie, proche du 74.',
+      description: 'Création de sites web professionnels en Haute-Savoie. Sur devis, livraison en 7-14 jours. Web designer basé en Savoie, proche du 74.',
       h1Pre: 'Création de site web en ',
       h1Highlight: 'Haute-Savoie',
       h2: 'Un site qui vous ramène des clients partout dans le 74.',
@@ -76,7 +76,7 @@ export const cities: CityData[] = [
     en: {
       name: 'Haute-Savoie',
       title: 'Web Design Haute-Savoie France | Elie Ageron',
-      description: 'Professional web design in Haute-Savoie, France. From €500, delivered in 7-14 days. Web designer based in Savoie, next to Haute-Savoie.',
+      description: 'Professional web design in Haute-Savoie, France. Custom quote, delivered in 7-14 days. Web designer based in Savoie, next to Haute-Savoie.',
       h1Pre: 'Web design in ',
       h1Highlight: 'Haute-Savoie',
       h2: 'A site that brings you clients across the department.',
@@ -93,8 +93,8 @@ export const cities: CityData[] = [
     departmentCode: 'FR-73',
     fr: {
       name: 'Albertville',
-      title: 'Web Designer Savoie | Elie Ageron, dès 500€',
-      description: 'Web designer en Savoie, basé à Albertville. Sites pros qui convertissent les visiteurs en clients. Livraison en 7-14 jours, dès 500€.',
+      title: 'Web Designer Savoie | Elie Ageron',
+      description: 'Web designer en Savoie, basé à Albertville. Sites pros qui convertissent les visiteurs en clients. Livraison en 7-14 jours, sur devis.',
       h1Pre: 'Web designer en ',
       h1Highlight: 'Savoie',
       h2: 'Un site qui vous ramène des clients. Pas juste un beau design.',
@@ -103,8 +103,8 @@ export const cities: CityData[] = [
     },
     en: {
       name: 'Albertville',
-      title: 'Web Designer Savoie France | Elie Ageron, from €500',
-      description: 'Web designer in Savoie, based in Albertville. Sites that convert visitors into clients. Live in 7-14 days from €500.',
+      title: 'Web Designer Savoie France | Elie Ageron',
+      description: 'Web designer in Savoie, based in Albertville. Sites that convert visitors into clients. Live in 7-14 days, custom quote.',
       h1Pre: 'Web designer in ',
       h1Highlight: 'Savoie',
       h2: 'A site that brings you clients. Not just a pretty design.',

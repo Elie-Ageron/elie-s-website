@@ -7,7 +7,7 @@ import ScrollReveal from './animations/ScrollReveal';
 
 interface ServiceCardProps {
   title: string;
-  price: string;
+  tagline: string;
   description: string;
   features: string[];
   cta: string;
@@ -16,7 +16,7 @@ interface ServiceCardProps {
   delay: number;
 }
 
-const ServiceCard = ({ title, price, description, features, cta, icon, popular, delay }: ServiceCardProps) => {
+const ServiceCard = ({ title, tagline, description, features, cta, icon, popular, delay }: ServiceCardProps) => {
   const { t } = useLanguage();
   return (
     <motion.div
@@ -34,16 +34,14 @@ const ServiceCard = ({ title, price, description, features, cta, icon, popular, 
         </div>
       )}
 
-      <div className="flex items-center gap-3 mb-6">
+      <div className="flex items-center gap-3 mb-4">
         <div className={`p-3 rounded-xl ${popular ? 'bg-primary/20' : 'bg-secondary'}`}>
           {icon}
         </div>
         <h3 className="text-xl font-semibold text-foreground">{title}</h3>
       </div>
 
-      <div className="mb-6">
-        <span className="text-4xl font-medium text-foreground">{price}</span>
-      </div>
+      <p className="text-base font-medium text-primary mb-4 leading-snug">{tagline}</p>
 
       <p className="text-muted-foreground mb-6">{description}</p>
 
@@ -74,7 +72,7 @@ const ServicesSection = () => {
   const services = [
     {
       title: t('services.landing.title'),
-      price: t('services.landing.price'),
+      tagline: t('services.landing.tag'),
       description: t('services.landing.desc'),
       features: [
         t('services.landing.feature1'),
@@ -87,7 +85,7 @@ const ServicesSection = () => {
     },
     {
       title: t('services.authority.title'),
-      price: t('services.authority.price'),
+      tagline: t('services.authority.tag'),
       description: t('services.authority.desc'),
       features: [
         t('services.authority.feature1'),
@@ -102,7 +100,7 @@ const ServicesSection = () => {
     },
     {
       title: t('services.custom.title'),
-      price: t('services.custom.price'),
+      tagline: t('services.custom.tag'),
       description: t('services.custom.desc'),
       features: [
         t('services.custom.feature1'),
@@ -149,6 +147,19 @@ const ServicesSection = () => {
             <ServiceCard key={index} {...service} />
           ))}
         </div>
+
+        {/* Custom-quote note */}
+        <motion.p
+          className="text-center text-sm text-muted-foreground max-w-xl mx-auto mt-8 sm:mt-10"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+        >
+          {t('services.quote.note')}{' '}
+          <Link to="/get-started" className="text-primary font-medium hover:underline underline-offset-4">
+            {t('services.quote.link')}
+          </Link>
+        </motion.p>
       </div>
     </section>
   );

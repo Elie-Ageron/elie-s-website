@@ -17,7 +17,6 @@ const Breadcrumb = () => {
     '/why-a-website': { en: 'Why a Website', fr: 'Pourquoi un Site' },
     '/services': { en: 'Services', fr: 'Services' },
     '/our-process': { en: 'Our Process', fr: 'Notre Méthode' },
-    '/pricing': { en: 'Pricing', fr: 'Tarifs' },
     '/portfolio': { en: 'Portfolio', fr: 'Portfolio' },
     '/contact': { en: 'Contact', fr: 'Contact' },
     '/blog': { en: 'Blog', fr: 'Blog' },

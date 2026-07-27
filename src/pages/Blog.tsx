@@ -193,11 +193,11 @@ const Blog = () => {
               ? 'Un projet de site en tête ? '
               : 'Have a website project in mind? '}
             <Link
-              to="/pricing"
+              to="/get-started"
               className="text-primary font-medium hover:underline underline-offset-4 inline-flex items-center gap-1"
-              id="cta-blog-pricing"
+              id="cta-blog-quote"
             >
-              {language === 'fr' ? 'Voir les tarifs' : 'View pricing'}
+              {language === 'fr' ? 'Demander un devis' : 'Request a quote'}
               <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
             </Link>
           </motion.p>

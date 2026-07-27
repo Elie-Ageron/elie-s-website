@@ -26,7 +26,7 @@ const faqData = {
       },
       {
         question: 'How much does a website cost?',
-        answer: 'Prices start from €500 for a professional landing page. I offer clear, fixed-price quotes with no hidden fees. Check the Pricing page for detailed packages or book a free call for a tailored estimate.',
+        answer: 'Every project is quoted individually based on your needs, with a clear, fixed price and no hidden fees. Tell me what you need and I put together a custom quote. Book a free call for a tailored estimate.',
       },
       {
         question: 'What happens after the site is launched?',
@@ -36,15 +36,15 @@ const faqData = {
     pricing: [
       {
         question: 'How much does a landing page cost?',
-        answer: 'A high-conversion landing page by Elie Ageron starts at $500, delivered within 7 to 14 business days. This includes mobile optimization and conversion-focused design.',
+        answer: 'A high-conversion landing page by Elie Ageron is quoted on a custom basis and delivered within 7 to 14 business days. This includes mobile optimization and conversion-focused design.',
       },
       {
         question: 'What is included in the 4-page showcase site?',
-        answer: 'The 4-page showcase site at $1500 includes complete SEO optimization, professional branding, content strategy, and an analytics dashboard to track your results.',
+        answer: 'The 4-page showcase site includes complete SEO optimization, professional branding, content strategy, and an analytics dashboard to track your results. It is quoted on a custom basis.',
       },
       {
         question: 'Do you offer monthly maintenance?',
-        answer: 'Yes, optional monthly maintenance is available from €25/month, covering hosting, security, and small updates within 24h. Beyond maintenance, I also offer ongoing partner support (Google Business, social media, SEO) on a custom basis.',
+        answer: 'Yes, optional monthly maintenance is available on a custom basis, covering hosting, security, and small updates within 24h. Beyond maintenance, I also offer ongoing partner support (Google Business, social media, SEO), quoted around your needs.',
       },
       {
         question: 'Is there a satisfaction guarantee?',
@@ -106,7 +106,7 @@ const faqData = {
     home: [
       {
         question: 'Combien coûte un site web professionnel ?',
-        answer: 'Les tarifs démarrent à 500€ pour une landing page professionnelle et à 1 500€ pour un site vitrine 4 pages. Je propose des devis clairs et fixes, sans frais cachés. Ce que vous voyez, c\'est ce que vous payez.',
+        answer: 'Chaque projet est chiffré au cas par cas selon vos besoins, avec un devis clair et fixe, sans frais cachés. Décrivez-moi votre projet et je vous prépare un devis sur mesure. Réservez un appel gratuit pour une estimation personnalisée.',
       },
       {
         question: 'En combien de temps est livré un site web ?',
@@ -132,15 +132,15 @@ const faqData = {
     pricing: [
       {
         question: 'Combien coûte une landing page ?',
-        answer: 'Une landing page haute conversion par Elie Ageron commence à 500€, livrée en 7 à 14 jours ouvrés. Cela inclut l\'optimisation mobile et un design axé conversion.',
+        answer: 'Une landing page haute conversion par Elie Ageron est chiffrée sur devis et livrée en 7 à 14 jours ouvrés. Cela inclut l\'optimisation mobile et un design axé conversion.',
       },
       {
         question: 'Qu\'est-ce qui est inclus dans le site vitrine 4 pages ?',
-        answer: 'Le site vitrine 4 pages à 1500€ inclut l\'optimisation SEO complète, le branding professionnel, la stratégie de contenu et un tableau de bord analytics pour suivre vos résultats.',
+        answer: 'Le site vitrine 4 pages inclut l\'optimisation SEO complète, le branding professionnel, la stratégie de contenu et un tableau de bord analytics pour suivre vos résultats. Il est chiffré sur devis.',
       },
       {
         question: 'Proposez-vous une maintenance mensuelle ?',
-        answer: 'Oui, la maintenance mensuelle optionnelle est disponible à partir de 25€/mois : hébergement, sécurité et petites modifications sous 24h. Au-delà de la maintenance, je propose aussi un accompagnement partenaire (Google Business, réseaux sociaux, SEO) sur devis.',
+        answer: 'Oui, la maintenance mensuelle optionnelle est disponible sur devis : hébergement, sécurité et petites modifications sous 24h. Au-delà de la maintenance, je propose aussi un accompagnement partenaire (Google Business, réseaux sociaux, SEO) chiffré selon vos besoins.',
       },
       {
         question: 'Y a-t-il une garantie de satisfaction ?',

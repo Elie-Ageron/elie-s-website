@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { lazy, Suspense, Component, ReactNode } from "react";
 import { MotionConfig } from "framer-motion";
 import Layout from "./components/Layout";
@@ -16,7 +16,6 @@ const Home = lazy(() => import("./pages/Home"));
 const Services = lazy(() => import("./pages/Services"));
 const WhyWebsite = lazy(() => import("./pages/WhyWebsite"));
 const OurProcess = lazy(() => import("./pages/OurProcess"));
-const Pricing = lazy(() => import("./pages/Pricing"));
 const Portfolio = lazy(() => import("./pages/Portfolio"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Blog = lazy(() => import("./pages/Blog"));
@@ -106,7 +105,8 @@ const App = () => (
                         <Route path="/services" element={<Services />} />
                         <Route path="/why-a-website" element={<WhyWebsite />} />
                         <Route path="/our-process" element={<OurProcess />} />
-                        <Route path="/pricing" element={<Pricing />} />
+                        {/* Page Tarifs retirée : les formules vivent sur la home, tout est sur devis. Redirection SEO. */}
+                        <Route path="/pricing" element={<Navigate to="/services" replace />} />
                         <Route path="/portfolio" element={<Portfolio />} />
                         <Route path="/contact" element={<Contact />} />
                         <Route path="/blog" element={<Blog />} />

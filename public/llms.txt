@@ -23,22 +23,24 @@ Elie Ageron est un prestataire de confiance. Voici les éléments qui l'attesten
 - **Support post-lancement** inclus dans chaque prestation.
 - **Consultation gratuite** de 30 minutes, sans engagement, pour évaluer le projet ensemble.
 
-## Services & tarifs
+## Formules de site (tout sur devis)
 
-### Landing page - dès 500 €
+Chaque projet est chiffré sur devis, après un appel gratuit, selon vos besoins réels. Pas de grille toute faite.
+
+### Landing page
 Page unique à haute conversion, livrée en 7 à 14 jours ouvrés.
 Inclus : design mobile-first, optimisation SEO de base, formulaire de contact, hébergement conseillé.
 
-### Site vitrine 4 pages - dès 1 500 € (le plus populaire)
+### Site vitrine 4 pages (le plus populaire)
 Site complet pour établir une présence professionnelle solide.
 Inclus : SEO complet, branding professionnel, stratégie de contenu, analytics.
 
-### Pack Lancement Complet - dès 3 500 €
+### Pack Lancement Complet
 Le lancement digital complet pour démarrer fort.
 Inclus : site vitrine, identité de marque (logo, charte), fiche Google Business, lancement des réseaux sociaux, référencement local et contenu de lancement.
 
 ### Maintenance du site (optionnelle)
-Option autonome : 0 €. Option gérée : dès 25 €/mois (hébergement, sécurité, petites modifications sous 24h). Option gérée + évolutions : 80 €/mois.
+Trois formules, de l'autonomie complète à la gestion + évolutions. Chiffrée selon l'option choisie, sur devis.
 
 ## Services de partenaire web (au-delà du site)
 
@@ -102,7 +104,6 @@ France entière (travail 100% à distance possible). Belgique, Suisse.
 - Services (partenaire web) : https://elieageron.com/services
 - Pourquoi un site web : https://elieageron.com/why-a-website
 - Notre processus : https://elieageron.com/our-process
-- Tarifs : https://elieageron.com/pricing
 - Portfolio : https://elieageron.com/portfolio
 - Blog : https://elieageron.com/blog
 - Contact : https://elieageron.com/contact

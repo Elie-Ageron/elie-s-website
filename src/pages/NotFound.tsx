@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Home, ArrowLeft, BookOpen, CreditCard, Mail } from 'lucide-react';
+import { Home, ArrowLeft, BookOpen, LayoutGrid, Mail } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
@@ -22,7 +22,7 @@ const NotFound = () => {
       cta: 'Go to Homepage',
       links: [
         { to: '/why-a-website', icon: BookOpen, label: 'Why You Need a Website', desc: 'Learn how a site transforms your business' },
-        { to: '/pricing', icon: CreditCard, label: 'View Pricing', desc: 'Transparent pricing for all budgets' },
+        { to: '/services', icon: LayoutGrid, label: 'Our Services', desc: 'Everything to grow your online presence' },
         { to: '/contact', icon: Mail, label: 'Contact Us', desc: 'Get in touch for a free consultation' },
       ],
     },
@@ -33,7 +33,7 @@ const NotFound = () => {
       cta: 'Retour à l\'Accueil',
       links: [
         { to: '/why-a-website', icon: BookOpen, label: 'Pourquoi un Site Web', desc: 'Découvrez comment un site transforme votre business' },
-        { to: '/pricing', icon: CreditCard, label: 'Voir les Tarifs', desc: 'Tarifs transparents pour tous les budgets' },
+        { to: '/services', icon: LayoutGrid, label: 'Nos Services', desc: 'Tout pour développer votre présence en ligne' },
         { to: '/contact', icon: Mail, label: 'Nous Contacter', desc: 'Contactez-nous pour une consultation gratuite' },
       ],
     },

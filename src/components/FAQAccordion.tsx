@@ -31,13 +31,13 @@ const faqContent = {
     },
     {
       question: 'How much does a website cost?',
-      answer: 'Prices start from €500 for a professional landing page and scale based on the number of pages, integrations, and complexity. I offer clear, fixed-price quotes with no hidden fees. What you see is what you pay. You can check the Pricing page for detailed packages, or book a free call to get a tailored estimate for your project.',
+      answer: 'Every project is quoted individually, based on the number of pages, integrations, and complexity. I offer clear, fixed-price quotes with no hidden fees. What you see is what you pay. Tell me what you need and I put together a custom quote around it, or book a free call to get a tailored estimate for your project.',
     },
   ],
   fr: [
     {
       question: 'Combien coûte un site web professionnel ?',
-      answer: 'Les tarifs démarrent à 500€ pour une landing page professionnelle et à 1 500€ pour un site vitrine 4 pages. Je propose des devis clairs et fixes, sans frais cachés. Ce que vous voyez, c\'est ce que vous payez. Consultez la page Tarifs pour les formules détaillées, ou réservez un appel gratuit pour un devis personnalisé.',
+      answer: 'Chaque projet est chiffré au cas par cas, selon le nombre de pages, les intégrations et la complexité. Je propose des devis clairs et fixes, sans frais cachés. Ce que vous voyez, c\'est ce que vous payez. Décrivez-moi votre projet et je vous prépare un devis sur mesure, ou réservez un appel gratuit pour une estimation personnalisée.',
     },
     {
       question: 'En combien de temps est livré mon site ?',

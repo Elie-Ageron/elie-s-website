@@ -37,7 +37,6 @@ const Header = () => {
 
   const flatNavItems = [
     { href: '/services', label: 'Services' },
-    { href: '/pricing', label: language === 'fr' ? 'Tarifs' : 'Pricing' },
     { href: '/event-production', label: language === 'fr' ? 'Événements' : 'Events' },
     { href: '/portfolio', label: t('nav.portfolio') },
     { href: '/blog', label: 'Blog' },

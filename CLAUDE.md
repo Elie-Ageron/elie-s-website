@@ -38,7 +38,7 @@ Les 7 services (source unique : `src/data/services.ts`) :
 - `src/components/SEO.tsx` — Helmet (title, description, OG, Twitter, canonical, keywords, geo) par page
 - `src/components/JsonLd.tsx` — Schemas globaux : Person, ProfessionalService, WebSite, BreadcrumbList
 - `src/components/OrganizationSchema.tsx` — Schemas : Organization + LocalBusiness
-- `src/components/FAQSchema.tsx` — FAQPage schema (pages pricing + why)
+- `src/components/FAQSchema.tsx` — FAQPage schema (pages home + why)
 - `src/components/ReviewSchema.tsx` — Review schemas
 - `src/components/Breadcrumb.tsx` — Breadcrumb visuel
 - `src/components/InternalLinks.tsx` — Liens internes pour crawl
@@ -53,7 +53,8 @@ Les 7 services (source unique : `src/data/services.ts`) :
 - `src/pages/Services.tsx` — Page hub du partenaire web : hero, manifeste (repositionnement), **une section alternée par service** (numéro fantôme, orbe, kicker), "pourquoi un partenaire", CTA. **Sans prix affiché.**
 - `src/data/services.ts` — Source unique des 7 services (kicker, titre, desc, bullets, prix interne FR/EN, icône, ancre)
 - `src/components/ServicesEcosystem.tsx` — Section grille "Et une fois le site en ligne ?" affichée sur la Home (après les formules site)
-- Le menu est **plat** (Services · Tarifs · Événements · Portfolio · Blog · Contact) — "Services" pointe vers la page unique `/services`. Les ancres (`#google-business`, `#reseaux-sociaux`…) servent aux pills du hero de la page.
+- Le menu est **plat** (Services · Événements · Portfolio · Blog · Contact) — "Services" pointe vers la page unique `/services`. Les ancres (`#google-business`, `#reseaux-sociaux`…) servent aux pills du hero de la page.
+- **Pas de page Tarifs** : la page `/pricing` a été retirée (tout est sur devis). Les 3 formules de site vivent sur la home (`ServicesSection.tsx`), suivies d'une note « chiffré sur devis ». L'URL `/pricing` redirige vers `/services` (SEO). Prix de référence internes conservés dans `src/data/services.ts` (jamais affichés).
 
 ---
 

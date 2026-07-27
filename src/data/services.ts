@@ -51,7 +51,6 @@ export const services: ServiceItem[] = [
       en: ['Landing page or multi-page showcase site', 'Google SEO included', 'Perfect on mobile, tablet and desktop'],
     },
     price: { fr: 'dès 500€', en: 'from €500' },
-    to: '/pricing',
   },
   {
     id: 'google-business',

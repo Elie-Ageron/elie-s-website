@@ -20,11 +20,6 @@ const OurProcess = () => {
       ? 'Comment Elie Ageron crée votre site web haute conversion, de la découverte au lancement.'
       : 'How Elie Ageron builds your high-conversion website, from discovery to launch.',
     totalTime: 'P14D',
-    estimatedCost: {
-      '@type': 'MonetaryAmount',
-      currency: 'EUR',
-      value: '500',
-    },
     step: [
       {
         '@type': 'HowToStep',
@@ -105,8 +100,8 @@ const OurProcess = () => {
                 {language === 'fr' ? 'Démarrer mon projet' : 'Start my project'}
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
-              <Link to="/pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                {language === 'fr' ? 'Voir les tarifs →' : 'See pricing →'}
+              <Link to="/services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                {language === 'fr' ? 'Voir les services →' : 'See services →'}
               </Link>
             </motion.div>
           </motion.header>

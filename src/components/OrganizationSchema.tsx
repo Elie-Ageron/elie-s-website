@@ -127,14 +127,10 @@ const OrganizationSchema = () => {
         {
           '@type': 'Offer',
           name: language === 'fr' ? 'Landing Page' : 'Landing Page',
-          price: '500',
-          priceCurrency: 'EUR',
         },
         {
           '@type': 'Offer',
           name: language === 'fr' ? 'Site Vitrine' : 'Showcase Website',
-          price: '1500',
-          priceCurrency: 'EUR',
         },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: language === 'fr' ? 'Google Business' : 'Google Business' } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: language === 'fr' ? 'Gestion des réseaux sociaux' : 'Social media management' } },
