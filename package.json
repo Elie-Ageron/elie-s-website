@@ -6,23 +6,15 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "postbuild": "react-snap",
-    "build:prerender": "vite build && react-snap",
+    "build:prerender": "vite build && node scripts/prerender.mjs",
+    "gen:covers": "node scripts/generate-blog-covers.mjs",
+    "gen:sitemap": "node scripts/generate-sitemap.mjs",
+    "gen:all": "node scripts/generate-blog-covers.mjs && node scripts/generate-sitemap.mjs",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest"
-  },
-  "reactSnap": {
-    "source": "dist",
-    "inlineCss": false,
-    "skipThirdPartyRequests": true,
-    "concurrency": 1,
-    "puppeteerArgs": [
-      "--no-sandbox",
-      "--disable-setuid-sandbox"
-    ]
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

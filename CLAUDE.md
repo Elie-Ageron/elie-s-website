@@ -201,16 +201,84 @@ Le contenu du site est passé au filtre "signes d'écriture IA". À maintenir :
 
 ---
 
+## Architecture de contenu (refonte SEO, août 2026)
+
+### Hub and spoke : 3 pages piliers + 47 articles
+Source unique : `src/data/guides.ts`. Chaque guide est un hub long, découpé en chapitres, qui renvoie vers ses articles satellites. Les articles remontent vers leur pilier via leur champ `pillar`.
+
+- `/guides/reseaux-sociaux-entreprise-locale` (11 chapitres) — pilier 1
+- `/guides/video-smartphone-entreprise` (8 chapitres) — production au smartphone
+- `/guides/visibilite-google-locale` (8 chapitres) — fiche Google, avis, pages villes
+- `/guides` — index, lié depuis le header, le footer et le blog
+
+### Blog : 47 articles, 6 catégories indexées
+- Articles pré-août 2026 : bilingues, dans `src/data/blogPosts.ts` (`legacyPosts`)
+- Articles depuis août 2026 : **français uniquement** (`frOnly: true`), répartis dans `src/data/blog/posts-*.ts`
+- Types et catégories : `src/data/blog/types.ts`
+- `frOnly` masque l'article des listes anglaises, et `SEO forceLang` garde `<html lang="fr">` sur ces pages
+- Catégories : `/blog/categorie/:slug` — cibles SEO à part entière, chacune renvoie vers son guide pilier
+- Chaque article porte : `categorySlug`, `tags`, `related`, `pillar`, `faqFr` (rendu + schéma FAQPage)
+- `getRelatedPosts()` respecte d'abord `related`, puis complète par catégorie et tags partagés
+
+### Pages locales : 11 villes
+Source : `src/data/cities/`. Chaque page porte un `depthFr` avec contexte économique réel, secteurs, communes desservies, temps de trajet depuis Albertville, blocs éditoriaux, angle réseaux sociaux et FAQ propre.
+
+Albertville, Chambéry, Aix-les-Bains, Ugine, Moûtiers, Bourg-Saint-Maurice, Saint-Jean-de-Maurienne, La Ravoire, Annecy, Savoie, Haute-Savoie.
+
+> Une page locale sans contenu spécifique ne sert à rien et peut desservir. Ne jamais dupliquer une page en changeant seulement le nom de la commune.
+
+### Page À propos (`/a-propos`)
+Signal E-E-A-T principal. `AuthorCard.tsx` est affiché en bas de chaque article et de chaque guide, et crée un lien interne systématique vers cette page. L'entité `Person` est définie **une seule fois**, dans `JsonLd.tsx` (`@id` `#person`) ; `/a-propos` ne fait que l'enrichir.
+
+---
+
+## Scripts de génération
+
+Trois scripts remplacent du travail manuel qu'on oubliait de refaire :
+
+- `npm run gen:covers` — visuels de partage 1200x630 (SVG + PNG) dans `public/blog/covers/`. Style éditorial imprimé : fond papier, filet rose, grille de colonnes, titre typographique et marque géométrique déterministe. **Aucun dégradé diffus ni sphère lumineuse** : ce sont les signatures d'une image générée automatiquement.
+- `npm run gen:sitemap` — reconstruit `public/sitemap.xml` depuis les sources (81 URL). **Ne plus éditer le sitemap à la main.**
+- `npm run gen:all` — les deux.
+
+À lancer après tout ajout d'article, de ville ou de guide.
+
+---
+
+## Pré-rendu HTML
+
+`scripts/prerender.mjs` produit un HTML complet pour les 82 routes après `vite build`.
+
+Pourquoi : sans lui, chaque URL est servie comme une coquille vide. Google finit par exécuter le JS, avec du retard. Les moteurs de réponse (ChatGPT, Perplexity) ne l'exécutent pas et ne voient rien.
+
+- Le script trouve Chrome ou Edge tout seul, ou lit `PRERENDER_BROWSER`
+- **S'il ne trouve aucun navigateur, il sort en succès** : un pré-rendu impossible ne casse jamais un déploiement
+- Sur Vercel, l'image de build n'a pas de Chromium : le pré-rendu est donc ignoré sauf si `PRERENDER_BROWSER` est défini. Pour vérifier en local : `npm run build:prerender`
+- `react-snap` n'est plus appelé directement (son Chromium 1.x ne se télécharge plus)
+
+---
+
+## Bug corrigé : canonical en double
+
+`index.html` déclarait un `<link rel="canonical">` vers l'accueil, plus une `description` et des balises Open Graph statiques. React Helmet ajoutait les siennes **sans supprimer les statiques** : chaque page servait donc deux canonical, dont un pointant vers la home.
+
+Correction : les balises statiques que `SEO.tsx` réémet portent maintenant `data-rh="true"`, ce qui les confie à react-helmet-async qui les remplace au lieu de les doubler.
+
+**Règle :** toute balise ajoutée dans le `<head>` de `index.html` qui est aussi émise par `SEO.tsx` doit porter `data-rh="true"`. Les balises purement globales (`viewport`, `charset`, icônes, `geo.position`, `twitter:site`) restent sans l'attribut.
+
+---
+
 ## Checklist avant chaque déploiement
 
 - [ ] Titres < 60 chars sur toutes les pages modifiées
 - [ ] Descriptions < 160 chars et uniques
 - [ ] Schemas JSON-LD valides (tester sur https://validator.schema.org)
 - [ ] Canonical correct sur chaque page
-- [ ] `lastmod` sitemap mis à jour
+- [ ] `npm run gen:all` lancé (visuels + sitemap)
 - [ ] Images avec alt text
 - [ ] Pas d'erreurs console JS
 - [ ] Liens internes cohérents
+- [ ] Un seul canonical par page (vérifier après build)
+- [ ] Aucun tiret cadratin ni guillemet courbe dans le contenu ajouté
 
 ---
 

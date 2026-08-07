@@ -40,6 +40,7 @@ const Header = () => {
     { href: '/reseaux-sociaux', label: language === 'fr' ? 'Réseaux sociaux' : 'Social media' },
     { href: '/portfolio', label: t('nav.portfolio') },
     { href: '/blog', label: 'Blog' },
+    { href: '/guides', label: language === 'fr' ? 'Guides' : 'Guides' },
     { href: '/contact', label: t('nav.contact') },
   ];
 

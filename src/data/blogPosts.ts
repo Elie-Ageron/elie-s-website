@@ -1,29 +1,19 @@
-export interface BlogPost {
-  id: string;
-  slug: string;
-  titleFr: string;
-  titleEn: string;
-  excerptFr: string;
-  excerptEn: string;
-  /** Balise title complete, suffixe marque inclus, sous 60 caracteres. Repli sur titleXx. */
-  seoTitleFr?: string;
-  seoTitleEn?: string;
-  /** Meta description, sous 160 caracteres. Repli sur excerptXx. */
-  seoDescFr?: string;
-  seoDescEn?: string;
-  contentFr: string;
-  contentEn: string;
-  readTime: string;
-  categoryFr: string;
-  categoryEn: string;
-  date: string;
-  lastModified?: string;
-  author: string;
-  image?: string;
-}
+import type { BlogPost, CategorySlug } from './blog/types';
+import { blogCategories, getCategory, getCategorySlug } from './blog/types';
+import { socialPostsA } from './blog/posts-social-a';
+import { socialPostsB } from './blog/posts-social-b';
+import { videoPosts } from './blog/posts-video';
+import { localPosts } from './blog/posts-local';
+import { webPosts } from './blog/posts-web';
 
-// Add your blog posts here - the content supports Markdown formatting
-export const blogPosts: BlogPost[] = [
+export type { BlogPost, BlogCategory, CategorySlug, BlogFaqItem } from './blog/types';
+export { blogCategories, getCategory, getCategorySlug } from './blog/types';
+
+/**
+ * Articles bilingues publies avant le pivot "reseaux sociaux" d'aout 2026.
+ * Les articles plus recents vivent dans src/data/blog/ et sont en francais seul.
+ */
+const legacyPosts: BlogPost[] = [
   {
     id: '1',
     slug: 'pourquoi-site-web-2025',
@@ -41,7 +31,6 @@ export const blogPosts: BlogPost[] = [
     date: '2026-01-20',
     lastModified: '2026-04-19',
     author: 'Elie Ageron',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=630&fit=crop',
     contentFr: `
 ## On vous cherche sur Google avant de vous appeler
 
@@ -130,7 +119,6 @@ Want to talk it through? [Book a free call](/contact) and we will look at where 
     date: '2026-02-12',
     lastModified: '2026-04-19',
     author: 'Elie Ageron',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=630&fit=crop',
     contentFr: `
 ## Le problème n'est presque jamais le trafic
 
@@ -243,7 +231,6 @@ Want me to look at your site with you? [Write to me](/contact) and I will tell y
     date: '2026-03-08',
     lastModified: '2026-04-19',
     author: 'Elie Ageron',
-    image: 'https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=1200&h=630&fit=crop',
     contentFr: `
 ## Ce que voit vraiment quelqu'un qui cherche "plombier Albertville"
 
@@ -384,7 +371,6 @@ Want a hand with your local visibility? [Write to me](/contact) and we will look
     date: '2026-04-05',
     lastModified: '2026-04-19',
     author: 'Elie Ageron',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=630&fit=crop',
     contentFr: `
 ## Une page d'accueil et une landing page ne font pas le même métier
 
@@ -517,7 +503,6 @@ Want a page that does that job? [Let's talk about your project](/contact).
     date: '2026-04-12',
     lastModified: '2026-04-19',
     author: 'Elie Ageron',
-    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&h=630&fit=crop',
     contentFr: `
 ## La question que tout le monde se pose
 
@@ -626,7 +611,6 @@ Want to know what a site could realistically do for your business? [Let's talk, 
     date: '2026-04-19',
     lastModified: '2026-04-19',
     author: 'Elie Ageron',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&h=630&fit=crop',
     contentFr: `
 ## La phrase que j'entends tout le temps
 
@@ -743,7 +727,6 @@ You're a tradesperson and want to know what a website could change for you? [Let
     date: '2026-04-19',
     lastModified: '2026-04-19',
     author: 'Elie Ageron',
-    image: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=1200&h=630&fit=crop',
     contentFr: `
 ## Vous n'êtes pas seul
 
@@ -2295,27 +2278,119 @@ If all of this sounds like a full-time job, [that is because it is one](/reseaux
   },
 ];
 
-// Helper function to get post by slug
-export const getPostBySlug = (slug: string): BlogPost | undefined => {
-  return blogPosts.find(post => post.slug === slug);
+/**
+ * Catalogue complet, trie du plus recent au plus ancien.
+ * L'ordre du tableau pilote toutes les listes du site.
+ */
+export const blogPosts: BlogPost[] = [
+  ...legacyPosts,
+  ...socialPostsA,
+  ...socialPostsB,
+  ...videoPosts,
+  ...localPosts,
+  ...webPosts,
+].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : Number(b.id) - Number(a.id)));
+
+export const getPostBySlug = (slug: string): BlogPost | undefined =>
+  blogPosts.find((post) => post.slug === slug);
+
+/**
+ * Visuel de partage. Par defaut le visuel editorial genere par
+ * scripts/generate-blog-covers.mjs, servi depuis le domaine plutot que
+ * hotlinke sur une banque d'images.
+ */
+export const getPostImage = (post: BlogPost): string =>
+  post.image ?? `https://elieageron.com/blog/covers/${post.slug}.png`;
+
+/**
+ * Articles visibles dans une langue donnee. Les articles `frOnly` sont masques
+ * en anglais : servir du francais sous `lang="en"` ferait plus de mal que bien.
+ */
+export const getPostsForLanguage = (language: 'fr' | 'en'): BlogPost[] =>
+  language === 'fr' ? blogPosts : blogPosts.filter((post) => !post.frOnly);
+
+export const getPostsByCategory = (
+  slug: CategorySlug,
+  language: 'fr' | 'en' = 'fr'
+): BlogPost[] => getPostsForLanguage(language).filter((post) => getCategorySlug(post) === slug);
+
+/** Categories qui contiennent au moins un article dans la langue demandee. */
+export const getActiveCategories = (language: 'fr' | 'en' = 'fr') =>
+  blogCategories
+    .map((category) => ({
+      ...category,
+      count: getPostsByCategory(category.slug, language).length,
+    }))
+    .filter((category) => category.count > 0);
+
+/**
+ * Lectures suivantes. On respecte d'abord la liste `related` ecrite a la main,
+ * puis on complete par proximite : meme categorie, puis tags partages.
+ */
+export const getRelatedPosts = (
+  post: BlogPost,
+  language: 'fr' | 'en' = 'fr',
+  limit = 3
+): BlogPost[] => {
+  const pool = getPostsForLanguage(language).filter((p) => p.slug !== post.slug);
+  const picked: BlogPost[] = [];
+
+  const push = (candidate?: BlogPost) => {
+    if (candidate && picked.length < limit && !picked.some((p) => p.slug === candidate.slug)) {
+      picked.push(candidate);
+    }
+  };
+
+  (post.related ?? []).forEach((slug) => push(pool.find((p) => p.slug === slug)));
+
+  const category = getCategorySlug(post);
+  pool
+    .filter((p) => getCategorySlug(p) === category)
+    .forEach(push);
+
+  const tags = new Set(post.tags ?? []);
+  if (tags.size > 0) {
+    pool
+      .filter((p) => (p.tags ?? []).some((tag) => tags.has(tag)))
+      .forEach(push);
+  }
+
+  pool.forEach(push);
+
+  return picked;
 };
 
-// Helper function to get localized content
+/**
+ * Ajoute le suffixe de marque tant que la balise title reste sous 60 caracteres.
+ * Les titres deja signes ou trop longs sont laisses tels quels.
+ */
+const withBrand = (title: string): string => {
+  const suffix = ' | Elie Ageron';
+  if (title.includes('Elie Ageron')) return title;
+  return title.length + suffix.length <= 60 ? title + suffix : title;
+};
+
+/** Contenu localise, avec repli sur le francais pour les articles `frOnly`. */
 export const getLocalizedPost = (post: BlogPost, language: 'fr' | 'en') => {
+  const useEnglish = language === 'en' && !post.frOnly;
+
+  const title = useEnglish ? post.titleEn ?? post.titleFr : post.titleFr;
+  const excerpt = useEnglish ? post.excerptEn ?? post.excerptFr : post.excerptFr;
+
   return {
     ...post,
-    title: language === 'fr' ? post.titleFr : post.titleEn,
-    excerpt: language === 'fr' ? post.excerptFr : post.excerptEn,
-    content: language === 'fr' ? post.contentFr : post.contentEn,
-    category: language === 'fr' ? post.categoryFr : post.categoryEn,
+    title,
+    excerpt,
+    content: useEnglish ? post.contentEn ?? post.contentFr : post.contentFr,
+    category: useEnglish ? post.categoryEn ?? post.categoryFr : post.categoryFr,
+    categorySlug: getCategorySlug(post),
+    categoryLabel: useEnglish ? getCategory(getCategorySlug(post)).en : getCategory(getCategorySlug(post)).fr,
     // Balise title complete (suffixe marque compris) et meta description.
     // Les articles ont un titre editorial long ; ces champs gardent le SEO
     // sous les limites de Google sans raccourcir le H1.
-    seoTitle:
-      (language === 'fr' ? post.seoTitleFr : post.seoTitleEn) ??
-      `${language === 'fr' ? post.titleFr : post.titleEn} | Elie Ageron`,
-    seoDesc:
-      (language === 'fr' ? post.seoDescFr : post.seoDescEn) ??
-      (language === 'fr' ? post.excerptFr : post.excerptEn),
+    seoTitle: withBrand((useEnglish ? post.seoTitleEn : post.seoTitleFr) ?? title),
+    seoDesc: (useEnglish ? post.seoDescEn : post.seoDescFr) ?? excerpt,
+    /** Langue reelle du contenu servi, utilisee pour la balise html lang. */
+    contentLanguage: (useEnglish ? 'en' : 'fr') as 'fr' | 'en',
   };
 };

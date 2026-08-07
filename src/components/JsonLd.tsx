@@ -11,6 +11,8 @@ const JsonLd = () => {
     '@id': `${baseUrl}/#person`,
     name: 'Elie Ageron',
     url: baseUrl,
+    // La page qui decrit cette personne : signal E-E-A-T principal du site.
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `${baseUrl}/a-propos` },
     image: `${baseUrl}/og-image.png`,
     jobTitle: language === 'fr'
       ? 'Web Designer & Créateur de contenu réseaux sociaux'

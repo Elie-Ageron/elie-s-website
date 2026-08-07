@@ -2,7 +2,9 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface SEOProps {
-  page: 'home' | 'services' | 'social' | 'why' | 'process' | 'pricing' | 'portfolio' | 'contact' | 'blog' | 'apps';
+  page: 'home' | 'services' | 'social' | 'why' | 'process' | 'pricing' | 'portfolio' | 'contact' | 'blog' | 'apps' | 'guides' | 'about';
+  /** Force la langue du document, pour les contenus servis en francais seul. */
+  forceLang?: 'fr' | 'en';
   customTitle?: string;
   customDescription?: string;
   customCanonical?: string;
@@ -26,6 +28,8 @@ const pageKeywords = {
     contact: 'contact web designer, book web design call, hire web designer France, web design consultation',
     blog: 'web design tips, conversion optimization, SEO guide, digital marketing, online business growth',
     apps: 'web app development, business dashboard, custom app, CRM development, SaaS development, business software',
+    guides: 'social media guide for small business, smartphone video guide, local SEO guide, Google Business Profile, content marketing for local business',
+    about: 'Elie Ageron, web designer Savoie, freelance web designer France, about, portfolio, Albertville',
   },
   fr: {
     home: 'Elie Ageron, web design, création site web, optimisation conversion, site internet, Savoie, Haute-Savoie, Albertville, Annecy',
@@ -38,6 +42,8 @@ const pageKeywords = {
     contact: 'contacter web designer, réserver appel web design, embaucher web designer France',
     blog: 'conseils réseaux sociaux, vidéo courte entreprise, conseils web design, optimisation conversion, guide SEO local, marketing digital local',
     apps: 'développement application web, dashboard entreprise, app sur mesure, CRM personnalisé, logiciel métier, outil interne',
+    guides: 'guide réseaux sociaux entreprise, guide vidéo smartphone, guide référencement local, fiche Google Business, contenu vidéo TPE, guide SEO local Savoie',
+    about: 'Elie Ageron, web designer Savoie, partenaire web Albertville, freelance création site web, qui suis-je',
   },
 };
 
@@ -84,6 +90,14 @@ const seoData = {
       title: 'Business Apps & Dashboards | Elie Ageron',
       description: 'Custom web app development: dashboards, CRMs, client portals, automation. Apps built to streamline your business processes.',
     },
+    guides: {
+      title: 'Guides for Local Businesses | Elie Ageron',
+      description: 'Long-form guides on social media, smartphone video and local SEO for small businesses. Practical, tested, and free to read.',
+    },
+    about: {
+      title: 'About Elie Ageron | Web Designer',
+      description: 'Web designer based in Albertville, Savoie. How I work, who I work with, and why I stay involved after a site goes live.',
+    },
   },
   fr: {
     home: {
@@ -129,8 +143,10 @@ const seoData = {
   },
 };
 
-const SEO = ({ page, customTitle, customDescription, customCanonical, ogImage, ogType = 'website', articlePublishedTime, articleModifiedTime, articleSection, structuredData }: SEOProps) => {
-  const { language } = useLanguage();
+const SEO = ({ page, forceLang, customTitle, customDescription, customCanonical, ogImage, ogType = 'website', articlePublishedTime, articleModifiedTime, articleSection, structuredData }: SEOProps) => {
+  const { language: uiLanguage } = useLanguage();
+  // Certains contenus (articles francais seuls) doivent rester annonces en fr.
+  const language = forceLang ?? uiLanguage;
   const data = seoData[language][page];
   const baseUrl = 'https://elieageron.com';
   
@@ -150,6 +166,8 @@ const SEO = ({ page, customTitle, customDescription, customCanonical, ogImage, o
     contact: '/contact',
     blog: '/blog',
     apps: '/apps',
+    guides: '/guides',
+    about: '/a-propos',
   };
   
   const currentPath = pathMap[page] || '';

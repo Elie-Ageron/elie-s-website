@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, FileText, Briefcase, HelpCircle, BookOpen, Share2, LayoutGrid } from 'lucide-react';
+import { ArrowRight, FileText, Briefcase, HelpCircle, BookOpen, Share2, LayoutGrid, MapPin, GraduationCap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface InternalLinksProps {
-  currentPage: 'home' | 'services' | 'why' | 'process' | 'portfolio' | 'contact' | 'blog' | 'social';
+  currentPage: 'home' | 'services' | 'why' | 'process' | 'portfolio' | 'contact' | 'blog' | 'social' | 'guides' | 'about';
 }
 
 const InternalLinks = ({ currentPage }: InternalLinksProps) => {
@@ -25,6 +25,22 @@ const InternalLinks = ({ currentPage }: InternalLinksProps) => {
       icon: Share2,
       title: language === 'fr' ? 'Réseaux sociaux' : 'Social media',
       desc: language === 'fr' ? 'Je filme, je monte, je publie tout le mois' : 'I film, edit and post all month long',
+      anchor: '',
+    },
+    {
+      id: 'guides',
+      path: '/guides',
+      icon: GraduationCap,
+      title: language === 'fr' ? 'Guides gratuits' : 'Free guides',
+      desc: language === 'fr' ? 'Réseaux, vidéo et Google, expliqués' : 'Social, video and Google, explained',
+      anchor: '',
+    },
+    {
+      id: 'about',
+      path: '/a-propos',
+      icon: MapPin,
+      title: language === 'fr' ? 'À propos' : 'About',
+      desc: language === 'fr' ? 'Qui je suis et comment je travaille' : 'Who I am and how I work',
       anchor: '',
     },
     {

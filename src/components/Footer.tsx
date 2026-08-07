@@ -3,6 +3,8 @@ import { Heart, Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 import logo from '@/assets/logo.webp';
+import { cities } from '@/data/cities';
+import { guides } from '@/data/guides';
 
 const Footer = () => {
   const { t, language } = useLanguage();
@@ -15,6 +17,8 @@ const Footer = () => {
     { label: language === 'fr' ? 'Notre processus' : 'Our process', href: '/our-process' },
     { label: t('nav.portfolio'), href: '/portfolio' },
     { label: 'Blog', href: '/blog' },
+    { label: language === 'fr' ? 'Guides' : 'Guides', href: '/guides' },
+    { label: language === 'fr' ? 'À propos' : 'About', href: '/a-propos' },
     { label: t('nav.contact'), href: '/contact' },
   ];
 
@@ -125,24 +129,47 @@ const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Zones d'intervention, internal links to local landing pages for SEO crawl */}
-          <nav aria-label={language === 'fr' ? "Zones d'intervention" : 'Service areas'} className="mt-10 pt-8 border-t border-border/30">
+          {/* Guides piliers : distribue l'autorite du pied de page vers les hubs de contenu */}
+          {language === 'fr' && (
+            <nav aria-label="Guides" className="mt-10 pt-8 border-t border-border/30">
+              <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-3">
+                Guides gratuits
+              </h3>
+              <div className="flex flex-wrap gap-x-5 gap-y-2">
+                {guides.map((guide) => (
+                  <Link
+                    key={guide.slug}
+                    to={`/guides/${guide.slug}`}
+                    className="inline-flex items-center min-h-[24px] text-sm text-muted-foreground hover:text-primary transition-colors w-fit"
+                  >
+                    {guide.label}
+                  </Link>
+                ))}
+              </div>
+            </nav>
+          )}
+
+          {/* Zones d'intervention : liens internes vers toutes les pages locales, pour le crawl */}
+          <nav
+            aria-label={language === 'fr' ? "Zones d'intervention" : 'Service areas'}
+            className="mt-8 pt-8 border-t border-border/30"
+          >
             <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">
               {language === 'fr' ? "Zones d'intervention" : 'Service areas'}
             </h3>
             <p className="text-sm text-muted-foreground mb-3">
               {language === 'fr'
-                ? 'Basé en Savoie, je travaille avec des clients partout en France, sur place et à distance.'
-                : 'Based in Savoie, I work with clients all across France, on-site and remotely.'}
+                ? 'Basé à Albertville, je me déplace dans toute la Savoie et le bassin annécien, et je travaille à distance partout en France.'
+                : 'Based in Albertville, I travel across Savoie and the Annecy area, and work remotely all across France.'}
             </p>
             <div className="flex flex-wrap gap-x-5 gap-y-2">
-              {[
-                { href: '/web-designer-savoie', label: language === 'fr' ? 'Web designer Savoie' : 'Web designer Savoie' },
-                { href: '/web-designer-annecy', label: language === 'fr' ? 'Web designer Annecy' : 'Web designer Annecy' },
-                { href: '/creation-site-web-haute-savoie', label: language === 'fr' ? 'Création site web Haute-Savoie' : 'Web design Haute-Savoie' },
-              ].map((z) => (
-                <Link key={z.href} to={z.href} className="inline-flex items-center min-h-[24px] text-sm text-muted-foreground hover:text-primary transition-colors w-fit">
-                  {z.label}
+              {cities.map((city) => (
+                <Link
+                  key={city.slug}
+                  to={`/${city.slug}`}
+                  className="inline-flex items-center min-h-[24px] text-sm text-muted-foreground hover:text-primary transition-colors w-fit"
+                >
+                  {city[language].breadcrumb}
                 </Link>
               ))}
             </div>

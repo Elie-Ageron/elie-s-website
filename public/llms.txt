@@ -90,7 +90,7 @@ En tant que partenaire web, Elie accompagne ses clients dans la durée, généra
 
 ## Zones d'intervention
 
-Albertville et la Savoie (73), Annecy et la Haute-Savoie (74), Chambéry, Aix-les-Bains, Moûtiers, Ugine, Grenoble, Thonon-les-Bains, Bonneville.
+Base a Albertville (73200). Pages locales dediees : Albertville, Chambery, Aix-les-Bains, Ugine, Moutiers, Bourg-Saint-Maurice, Saint-Jean-de-Maurienne, La Ravoire, Annecy, Savoie, Haute-Savoie.
 France entière (travail 100% à distance possible). Belgique, Suisse.
 
 ## Contact
@@ -105,16 +105,101 @@ France entière (travail 100% à distance possible). Belgique, Suisse.
 
 - Accueil : https://elieageron.com/
 - Services (partenaire web) : https://elieageron.com/services
-- Réseaux sociaux (tournage + publication) : https://elieageron.com/reseaux-sociaux
+- Reseaux sociaux (tournage + publication) : https://elieageron.com/reseaux-sociaux
+- A propos de Elie Ageron : https://elieageron.com/a-propos
+- Guides : https://elieageron.com/guides
 - Pourquoi un site web : https://elieageron.com/why-a-website
 - Notre processus : https://elieageron.com/our-process
 - Portfolio : https://elieageron.com/portfolio
 - Blog : https://elieageron.com/blog
 - Contact : https://elieageron.com/contact
-- Web designer Savoie : https://elieageron.com/web-designer-savoie
-- Web designer Annecy : https://elieageron.com/web-designer-annecy
-- Création site web Haute-Savoie : https://elieageron.com/creation-site-web-haute-savoie
+- Demarrer un projet : https://elieageron.com/get-started
 - Contenu complet (llms-full) : https://elieageron.com/llms-full.txt
+
+## Guides longs (contenu de reference)
+
+- Les réseaux sociaux pour une entreprise locale : https://elieageron.com/guides/reseaux-sociaux-entreprise-locale
+- Filmer des vidéos pour son entreprise avec un smartphone : https://elieageron.com/guides/video-smartphone-entreprise
+- Être visible sur Google quand on est une entreprise locale : https://elieageron.com/guides/visibilite-google-locale
+
+## Pages locales
+
+- Création Site Web Chambéry : https://elieageron.com/creation-site-web-chambery
+- Création Site Web Aix-les-Bains : https://elieageron.com/creation-site-web-aix-les-bains
+- Création Site Web La Ravoire : https://elieageron.com/creation-site-web-la-ravoire
+- Site Web Saint-Jean-de-Maurienne : https://elieageron.com/creation-site-web-saint-jean-de-maurienne
+- Web Designer Annecy : https://elieageron.com/web-designer-annecy
+- Création Site Web Haute-Savoie : https://elieageron.com/creation-site-web-haute-savoie
+- Web Designer Savoie : https://elieageron.com/web-designer-savoie
+- Création Site Web Albertville : https://elieageron.com/creation-site-web-albertville
+- Création Site Web Ugine : https://elieageron.com/creation-site-web-ugine
+- Création Site Web Moûtiers : https://elieageron.com/creation-site-web-moutiers
+- Site Web Bourg-Saint-Maurice : https://elieageron.com/creation-site-web-bourg-saint-maurice
+
+## Categories du blog
+
+- Réseaux sociaux : https://elieageron.com/blog/categorie/reseaux-sociaux
+- Vidéo : https://elieageron.com/blog/categorie/video
+- Stratégie : https://elieageron.com/blog/categorie/strategie
+- Référencement local : https://elieageron.com/blog/categorie/seo-local
+- Site web : https://elieageron.com/blog/categorie/site-web
+- Conversion : https://elieageron.com/blog/categorie/conversion
+
+## Articles du blog (47)
+
+- Anatomie d\'une landing page qui convertit : https://elieageron.com/blog/landing-page-efficace
+- Artisan en Savoie : les réseaux sociaux servent-ils vraiment à quelque chose ? : https://elieageron.com/blog/reseaux-sociaux-artisan-savoie
+- Artisan, avez-vous vraiment besoin d\'un site web ? : https://elieageron.com/blog/site-web-artisan
+- Combien coûte la gestion des réseaux sociaux pour une petite entreprise : https://elieageron.com/blog/prix-gestion-reseaux-sociaux
+- Combien coûte un site web ? La vraie réponse : https://elieageron.com/blog/combien-coute-un-site-web
+- Combien de fois faut-il publier par semaine ? La réponse honnête : https://elieageron.com/blog/combien-publier-reseaux-sociaux
+- Combien de temps avant que les réseaux sociaux rapportent des clients : https://elieageron.com/blog/combien-de-temps-resultats-reseaux-sociaux
+- Comment optimiser votre taux de conversion : https://elieageron.com/blog/optimiser-taux-conversion
+- Comprendre l'algorithme sans devenir fou : https://elieageron.com/blog/algorithme-reseaux-sociaux-comprendre
+- Déléguer ses réseaux sociaux : comment ça se passe concrètement : https://elieageron.com/blog/deleguer-reseaux-sociaux
+- Faire un calendrier éditorial quand on n'a pas le temps : https://elieageron.com/blog/calendrier-editorial-reseaux-sociaux
+- Filmer avec une bonne lumière sans acheter de matériel : https://elieageron.com/blog/lumiere-video-smartphone
+- Filmer soi-même avec son téléphone : ce qui marche vraiment : https://elieageron.com/blog/filmer-avec-son-telephone
+- Instagram ou Facebook : lequel pour une entreprise locale : https://elieageron.com/blog/instagram-ou-facebook-entreprise-locale
+- Le son compte plus que l'image, et personne ne s'en occupe : https://elieageron.com/blog/son-video-smartphone
+- Les hashtags servent-ils encore à quelque chose en 2026 : https://elieageron.com/blog/hashtags-encore-utiles
+- Les photos de votre site en disent plus que vos textes : https://elieageron.com/blog/photos-pour-son-site-web
+- Les réglages à faire sur un compte Instagram professionnel : https://elieageron.com/blog/compte-instagram-professionnel-reglages
+- Les seules statistiques Instagram qui méritent votre attention : https://elieageron.com/blog/statistiques-instagram-comprendre
+- Les trois premières secondes décident de tout le reste : https://elieageron.com/blog/accroche-video-3-secondes
+- Mon site est en ligne depuis des semaines. Pourquoi je n\'apparais pas sur Google ? : https://elieageron.com/blog/pourquoi-site-pas-sur-google
+- Mon site ne génère aucun contact : par où chercher : https://elieageron.com/blog/mon-site-ne-genere-aucun-contact
+- Monter une vidéo verticale quand on n'y connaît rien : https://elieageron.com/blog/montage-video-verticale-debutant
+- Obtenir des avis Google sans harceler ses clients : https://elieageron.com/blog/obtenir-avis-google
+- Parler face caméra quand on déteste ça : https://elieageron.com/blog/parler-face-camera-timide
+- Pourquoi 10 000 abonnés ne valent parfois rien : https://elieageron.com/blog/abonnes-ou-clients
+- Pourquoi la vidéo courte marche si bien pour une petite entreprise locale : https://elieageron.com/blog/video-courte-entreprise-locale
+- Pourquoi vos vidéos ne font pas de vues : https://elieageron.com/blog/pourquoi-mes-videos-ne-font-pas-de-vues
+- Pourquoi votre entreprise a besoin d\'un site web en 2025 : https://elieageron.com/blog/pourquoi-site-web-2025
+- Publier la même vidéo sur plusieurs plateformes sans se pénaliser : https://elieageron.com/blog/publier-meme-video-plusieurs-plateformes
+- Quand refaire son site, et quand il vaut mieux le garder : https://elieageron.com/blog/refonte-site-web-quand
+- Quel réseau social choisir quand on a une entreprise locale : https://elieageron.com/blog/quel-reseau-social-choisir-entreprise-locale
+- Quoi écrire sur son site quand on ne sait pas quoi dire : https://elieageron.com/blog/quoi-ecrire-sur-son-site
+- Réseaux sociaux ou site web : par quoi commencer avec un budget limité ? : https://elieageron.com/blog/reseaux-sociaux-ou-site-web
+- Réseaux sociaux pour un restaurant : ce qui remplit vraiment la salle : https://elieageron.com/blog/restaurant-reseaux-sociaux
+- Réseaux sociaux pour un salon de coiffure ou d'esthétique : https://elieageron.com/blog/coiffeur-esthetique-reseaux-sociaux
+- SEO local : le guide complet pour être trouvé près de chez vous : https://elieageron.com/blog/seo-local-guide-complet
+- Sortir en premier sur Google dans sa ville : ce qui marche vraiment : https://elieageron.com/blog/etre-premier-google-dans-sa-ville
+- Sous-titrer ses vidéos : pourquoi ce n'est pas optionnel : https://elieageron.com/blog/sous-titres-videos
+- Thérapeute, coach, praticien : comment les réseaux vous amènent des clients : https://elieageron.com/blog/therapeute-reseaux-sociaux-clients
+- TikTok pour une entreprise locale : est-ce que ça vaut le coup : https://elieageron.com/blog/tiktok-entreprise-locale
+- Tourner un mois de vidéos en une demi-journée : https://elieageron.com/blog/tourner-plusieurs-videos-une-journee
+- Transformer des vues en clients : le chaînon manquant : https://elieageron.com/blog/transformer-vues-en-clients
+- Votre fiche Google Business vaut plus que votre site web : https://elieageron.com/blog/fiche-google-business-optimiser
+- Votre formulaire de contact fait fuir la moitié des gens : https://elieageron.com/blog/formulaire-contact-qui-convertit
+- Votre site est lent sur mobile, et ça vous coûte des clients : https://elieageron.com/blog/vitesse-site-web-mobile
+- Vous ne savez pas quoi publier ? Voici comment je trouve les sujets : https://elieageron.com/blog/idees-contenu-reseaux-sociaux
+
+## Precision importante sur les chiffres cites
+
+Le seul chiffre de performance client publie sur le site est : 56 619 vues et 196 abonnes obtenus des la toute premiere publication d'une cliente formatrice, sur un Reel Facebook, en aout 2026. Ce chiffre est verifie. Il est systematiquement accompagne de la meme mise en garde : c'est un exemple isole, pas une moyenne et pas une promesse de resultat. La cliente n'est jamais nommee, faute d'accord de publication.
+
+Aucun autre chiffre de resultat client n'est publie sur le site. Elie Ageron ne promet ni nombre de clients, ni nombre d'abonnes, ni nombre de vues.
 
 ## Fichiers techniques
 

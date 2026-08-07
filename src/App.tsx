@@ -10,6 +10,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Analytics from "./components/Analytics";
 import { CalendlyProvider } from "./contexts/CalendlyContext";
 import { CalendlyPopup } from "./components/CalendlyPopup";
+import { cities } from "./data/cities";
 
 // Lazy-load all pages so only the current page's JS is downloaded on first visit
 const Home = lazy(() => import("./pages/Home"));
@@ -26,6 +27,10 @@ const Assessment = lazy(() => import("./pages/Assessment"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const LegalPage = lazy(() => import("./pages/LegalPage"));
 const CityLandingPage = lazy(() => import("./pages/CityLandingPage"));
+const BlogCategory = lazy(() => import("./pages/BlogCategory"));
+const GuidesIndex = lazy(() => import("./pages/GuidesIndex"));
+const GuidePage = lazy(() => import("./pages/GuidePage"));
+const About = lazy(() => import("./pages/About"));
 const Card = lazy(() => import("./pages/Card"));
 // const Apps = lazy(() => import("./pages/Apps")); // hidden - future service
 
@@ -110,6 +115,8 @@ const App = () => (
                         <Route path="/portfolio" element={<Portfolio />} />
                         <Route path="/contact" element={<Contact />} />
                         <Route path="/blog" element={<Blog />} />
+                        {/* Pages categorie : cibles SEO a part entiere, declarees avant /blog/:slug */}
+                        <Route path="/blog/categorie/:slug" element={<BlogCategory />} />
                         <Route path="/blog/:slug" element={<BlogPost />} />
                         <Route path="/reseaux-sociaux" element={<SocialMedia />} />
                         {/* Page Événements retirée (août 2026) : l'événementiel n'est plus un service à part. Redirection SEO. */}
@@ -117,10 +124,18 @@ const App = () => (
                         <Route path="/get-started" element={<GetStarted />} />
                         <Route path="/assessment" element={<Assessment />} />
                         {/* <Route path="/apps" element={<Apps />} /> */}{/* hidden - future service */}
-                        {/* City landing pages */}
-                        <Route path="/web-designer-savoie" element={<CityLandingPage slug="web-designer-savoie" />} />
-                        <Route path="/web-designer-annecy" element={<CityLandingPage slug="web-designer-annecy" />} />
-                        <Route path="/creation-site-web-haute-savoie" element={<CityLandingPage slug="creation-site-web-haute-savoie" />} />
+                        {/* Pages piliers : hubs de contenu vers lesquels les articles remontent */}
+                        <Route path="/guides" element={<GuidesIndex />} />
+                        <Route path="/guides/:slug" element={<GuidePage />} />
+                        <Route path="/a-propos" element={<About />} />
+                        {/* Pages locales, generees depuis src/data/cities */}
+                        {cities.map((city) => (
+                          <Route
+                            key={city.slug}
+                            path={`/${city.slug}`}
+                            element={<CityLandingPage slug={city.slug} />}
+                          />
+                        ))}
                         <Route path="/mentions-legales" element={<LegalPage page="mentions" />} />
                         <Route path="/politique-confidentialite" element={<LegalPage page="privacy" />} />
                         <Route path="*" element={<NotFound />} />
