@@ -17,7 +17,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
 
   const flatNavItems = [
     { href: '/services', label: 'Services' },
-    { href: '/event-production', label: language === 'fr' ? 'Événements' : 'Events' },
+    { href: '/reseaux-sociaux', label: language === 'fr' ? 'Réseaux sociaux' : 'Social media' },
     { href: '/portfolio', label: t('nav.portfolio') },
     { href: '/blog', label: 'Blog' },
     { href: '/contact', label: t('nav.contact') },

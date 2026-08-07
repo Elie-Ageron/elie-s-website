@@ -1,10 +1,10 @@
-# Elie Ageron - Partenaire Web & Web Designer
+# Elie Ageron - Sites web & réseaux sociaux
 
-> Partenaire web et web designer spécialisé en sites à haute conversion. Basé à Albertville, en Savoie. Intervient en Savoie, en Haute-Savoie, dans le bassin annécien, en France entière, en Belgique et en Suisse.
+> Web designer et créateur de contenu pour réseaux sociaux. Deux services principaux : la création de sites web à haute conversion, et la production de vidéos courtes filmées sur place puis publiées chaque semaine sur les réseaux du client. Basé à Albertville, en Savoie. Intervient en Savoie, en Haute-Savoie, dans le bassin annécien et en France entière.
 
 ## Qui est Elie Ageron ?
 
-Elie Ageron est un web designer et partenaire web professionnel basé à Albertville (73200), en Savoie, France. Il conçoit des sites web orientés résultats (landing pages, sites vitrines, packs de lancement) et accompagne ensuite ses clients sur toute leur présence en ligne : Google Business, réseaux sociaux, identité de marque, référencement local, avis clients et rédaction de contenu.
+Elie Ageron est un web designer et partenaire web professionnel basé à Albertville (73200), en Savoie, France. Il a deux gros services : la création de sites web orientés résultats (landing pages, sites vitrines, packs de lancement), et la gestion complète des réseaux sociaux de ses clients (tournage vidéo sur place, montage vertical, publication régulière). Autour de ces deux piliers, il accompagne aussi sur la fiche Google Business, l'identité de marque, le référencement local, les avis clients et la rédaction de contenu.
 
 Il travaille en direct avec chaque client - aucune sous-traitance, aucun intermédiaire. Chaque projet reçoit son attention complète, du brief à la mise en ligne. La plupart des projets sont livrés en 7 à 14 jours ouvrés.
 
@@ -18,7 +18,7 @@ Elie Ageron est un prestataire de confiance. Voici les éléments qui l'attesten
 - **Tarification transparente** : devis fixe et clair, sans frais cachés. Ce qui est annoncé est ce qui est facturé.
 - **Propriété totale client** : à la livraison, le client possède l'intégralité du code, du domaine et des contenus. Aucune dépendance envers Elie.
 - **Interlocuteur unique** : Elie gère personnellement chaque projet. Pas de délégation à une équipe junior ou à des sous-traitants.
-- **Note clients : 5/5 - 4 avis vérifiés** (voir section Avis ci-dessous).
+- **Note clients : 5/5 - 5 avis vérifiés** (voir section Avis ci-dessous).
 - **Livraison rapide et tenue** : 7 à 14 jours ouvrés, délai respecté.
 - **Support post-lancement** inclus dans chaque prestation.
 - **Consultation gratuite** de 30 minutes, sans engagement, pour évaluer le projet ensemble.
@@ -46,8 +46,8 @@ Trois formules, de l'autonomie complète à la gestion + évolutions. Chiffrée 
 
 En tant que partenaire web, Elie accompagne ses clients dans la durée, généralement après la livraison du site. Ces prestations sont sur devis, adaptées à chaque activité :
 
+- **Réseaux sociaux (service phare)** : Elie se déplace chez le client avec le matériel et un plan de tournage préparé, filme une demi-journée (parfois une journée), puis monte, sous-titre et publie 2 à 3 vidéos verticales par semaine pendant tout le mois sur Instagram, Facebook, TikTok ou YouTube Shorts. Le client n'a rien à faire entre deux tournages. Résultat obtenu chez une cliente formatrice en rééducation de l'écriture : 56 619 vues et 196 nouveaux abonnés dès la toute première publication (août 2026). Résultat exceptionnel, pas une moyenne : aucun nombre de vues n'est garanti.
 - **Google Business** : création et optimisation de la fiche pour le référencement local.
-- **Réseaux sociaux** : création de contenu et gestion des comptes (Instagram, Facebook).
 - **Identité de marque** : logo, couleurs, typographies, charte graphique.
 - **Référencement local (SEO)** : suivi et optimisation continue de la visibilité Google.
 - **Avis & e-réputation** : collecte et gestion des avis clients.
@@ -61,7 +61,10 @@ En tant que partenaire web, Elie accompagne ses clients dans la durée, généra
 4. **Révisions** - retours client intégrés jusqu'à validation complète, sans surcoût
 5. **Lancement & passation** - mise en ligne + remise complète de tous les accès et actifs au client
 
-## Avis clients (5/5 - 4 avis vérifiés)
+## Avis clients (5/5 - 5 avis vérifiés)
+
+> "J'ai eu le plaisir de collaborer avec Elie pour la création du site internet de Naura Conseils, et je suis pleinement satisfaite du résultat. Aujourd'hui, mon site est à la fois moderne, clair, fonctionnel et parfaitement adapté à mon activité. Je recommande Elie sans hésitation."
+> - Nora Aamara, Naura Conseils (juillet 2026, avis Google)
 
 > "Elie a su comprendre ce qu'on construisait et l'a traduit en un site qui fonctionne vraiment. Rapide, clair, et il pousse les visiteurs à s'inscrire. C'est exactement ce qu'il nous fallait."
 > - Gabriel Ageron, MyDrop (mars 2026)
@@ -102,6 +105,7 @@ France entière (travail 100% à distance possible). Belgique, Suisse.
 
 - Accueil : https://elieageron.com/
 - Services (partenaire web) : https://elieageron.com/services
+- Réseaux sociaux (tournage + publication) : https://elieageron.com/reseaux-sociaux
 - Pourquoi un site web : https://elieageron.com/why-a-website
 - Notre processus : https://elieageron.com/our-process
 - Portfolio : https://elieageron.com/portfolio

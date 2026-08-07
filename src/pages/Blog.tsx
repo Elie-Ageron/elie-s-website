@@ -95,8 +95,8 @@ const Blog = () => {
             </h1>
             <p className="mt-5 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               {language === 'fr'
-                ? 'SEO, conversion, présence locale : les stratégies qui font réellement entrer des clients.'
-                : 'SEO, conversion, local presence: strategies that actually bring in clients.'}
+                ? 'Réseaux sociaux, site web, référencement local. Ce qui fait réellement entrer des clients, et ce qui fait juste perdre du temps.'
+                : 'Social media, websites, local SEO. What actually brings clients in, and what just wastes your time.'}
             </p>
           </motion.header>
         </div>
@@ -136,7 +136,7 @@ const Blog = () => {
               <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl">
                 {featured.excerpt}
               </p>
-              <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-primary">
+              <span className="mt-6 inline-flex items-center gap-1.5 min-h-[24px] text-sm font-medium text-primary">
                 {language === 'fr' ? "Lire l'article" : 'Read the article'}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </span>
@@ -194,7 +194,7 @@ const Blog = () => {
               : 'Have a website project in mind? '}
             <Link
               to="/get-started"
-              className="text-primary font-medium hover:underline underline-offset-4 inline-flex items-center gap-1"
+              className="text-primary font-medium hover:underline underline-offset-4 inline-flex items-center gap-1 min-h-[24px]"
               id="cta-blog-quote"
             >
               {language === 'fr' ? 'Demander un devis' : 'Request a quote'}

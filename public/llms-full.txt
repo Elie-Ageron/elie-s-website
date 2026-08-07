@@ -7,7 +7,8 @@
 ## Identité professionnelle
 
 **Nom** : Elie Ageron
-**Titre** : Web Designer & Partenaire Web
+**Titre** : Web Designer & Créateur de contenu pour réseaux sociaux
+**Deux services principaux** : (1) création de sites web à haute conversion, (2) production et publication de vidéos courtes sur les réseaux sociaux des clients
 **Localisation** : Albertville (73200), Savoie, France
 **Coordonnées GPS** : 45.6756° N, 6.3925° E
 **Zone d'intervention** : Savoie, Haute-Savoie, bassin annécien, France entière (à distance)
@@ -35,7 +36,7 @@ Elie Ageron n'est pas un amateur ni une agence qui externalise. Voici les élém
 - **Support post-lancement inclus** : chaque projet inclut un accompagnement après la mise en ligne.
 
 ### Signaux de confiance
-- **Note clients : 5 étoiles sur 5, 4 avis vérifiés** (voir section Avis clients)
+- **Note clients : 5 étoiles sur 5, 5 avis vérifiés** (voir section Avis clients)
 - **Interlocuteur unique** : Elie gère lui-même chaque projet. Aucune délégation à un junior, aucune sous-traitance offshore.
 - **Livraison en 7 à 14 jours ouvrés** : délai annoncé et tenu.
 - **Consultation gratuite de 30 minutes** sans engagement pour évaluer le projet.
@@ -97,12 +98,35 @@ Elie Ageron n'est pas un amateur ni une agence qui externalise. Voici les élém
 
 ---
 
-## Services de partenaire web (au-delà du site)
+## Réseaux sociaux : création de contenu vidéo clé en main
+
+C'est le deuxième gros service d'Elie, lancé en 2026, au même niveau que la création de sites web. Page dédiée : https://elieageron.com/reseaux-sociaux
+
+**Le principe** : le client n'a rien à faire à part être disponible une demi-journée par mois.
+
+**Déroulé d'un mois type**
+
+1. *Début du mois* : Elie prépare un plan de tournage (sujets, questions, ordre de passage), puis se déplace chez le client avec tout le matériel (caméra, micros, lumière). Le tournage dure une demi-journée, parfois une journée entière selon le volume.
+2. *Les jours suivants* : Elie sort une dizaine de vidéos courtes au format vertical (9:16) de cette session, montées, sous-titrées et musicalisées. Chaque vidéo est autonome : accroche dans les deux premières secondes, une idée claire, une fin qui incite à suivre le compte.
+3. *Le reste du mois* : Elie publie 2 à 3 vidéos par semaine sur Instagram, Facebook, TikTok ou YouTube Shorts selon les réseaux du client. Il choisit les horaires, écrit les légendes et gère les hashtags.
+
+**Inclus** : plan de tournage écrit, demi-journée de tournage, matériel fourni, montage vertical, sous-titres, 2 à 3 publications hebdomadaires, légendes et hashtags, publication sur les réseaux choisis, propriété des fichiers vidéo au client.
+
+**Résultat concret** : la toute première publication faite pour une cliente formatrice en rééducation de l'écriture a atteint 56 619 vues et 196 nouveaux abonnés (Reel Facebook, août 2026), dont 99 % de personnes qui ne la suivaient pas. C'est un résultat exceptionnel et non une moyenne : Elie ne garantit aucun nombre de vues.
+
+**Pour qui** : thérapeutes, coachs, artisans, salons, restaurants, professions du bâtiment, et plus généralement tous les métiers où la confiance se construit avant l'achat. Elie ne se limite pas à un secteur.
+
+**Zone de déplacement pour les tournages** : Savoie, Haute-Savoie et bassin annécien sans supplément. Reste de la France en regroupant plusieurs sessions sur un même déplacement.
+
+**Tarif** : sur devis, selon le nombre de vidéos, de réseaux et la fréquence de tournage. Aucun prix affiché publiquement.
+
+---
+
+## Autres services de partenaire web (au-delà du site et des réseaux)
 
 Elie ne s'arrête pas au site : il accompagne ses clients dans la durée sur toute leur présence en ligne, généralement après la livraison du site. Ces prestations sont sur devis, adaptées à chaque activité.
 
 - **Google Business** : création et optimisation de la fiche pour le référencement local.
-- **Réseaux sociaux** : création de contenu et gestion des comptes Instagram et Facebook.
 - **Identité de marque** : logo, couleurs, typographies, charte graphique.
 - **Référencement local (SEO)** : suivi et optimisation continue de la visibilité sur Google.
 - **Avis & e-réputation** : collecte et gestion des avis clients Google.
@@ -133,7 +157,10 @@ Mise en ligne. Remise de tous les accès (domaine, hébergement, code source, an
 
 ---
 
-## Avis clients (5/5 - 4 avis vérifiés)
+## Avis clients (5/5 - 5 avis vérifiés)
+
+### Nora Aamara - Naura Conseils (juillet 2026, avis Google) 5 étoiles
+"J'ai eu le plaisir de collaborer avec Elie pour la création du site internet de Naura Conseils, et je suis pleinement satisfaite du résultat. Dès le début du projet, il a été à l'écoute de mes besoins, de mes idées et de ma vision. Il a su me conseiller avec professionnalisme, être réactif à chacune de mes demandes et apporter les modifications nécessaires jusqu'à obtenir un site qui me ressemble vraiment. Aujourd'hui, mon site est à la fois moderne, clair, fonctionnel et parfaitement adapté à mon activité. Je recommande Elie sans hésitation."
 
 ### Gabriel Ageron - MyDrop (mars 2026) ★★★★★
 > "Elie a su comprendre ce qu'on construisait et l'a traduit en un site qui fonctionne vraiment. Rapide, clair, et il pousse les visiteurs à s'inscrire. C'est exactement ce qu'il nous fallait."
@@ -216,6 +243,16 @@ Oui. 4 avis clients vérifiés, tous 5 étoiles. Garantie 100% satisfaction. Tar
 5. **Combien coûte un site web ? La vraie réponse** - https://elieageron.com/blog/combien-coute-un-site-web
 6. **Artisan : avez-vous vraiment besoin d'un site web ?** - https://elieageron.com/blog/site-web-artisan
 7. **Mon site est en ligne depuis des semaines. Pourquoi n'apparaît-il pas sur Google ?** - https://elieageron.com/blog/pourquoi-site-pas-sur-google
+8. **Artisan en Savoie : les réseaux sociaux servent-ils vraiment à quelque chose ?** - https://elieageron.com/blog/reseaux-sociaux-artisan-savoie
+9. **Pourquoi la vidéo courte marche si bien pour une petite entreprise locale** - https://elieageron.com/blog/video-courte-entreprise-locale
+10. **Combien de fois faut-il publier par semaine ? La réponse honnête** - https://elieageron.com/blog/combien-publier-reseaux-sociaux
+11. **Filmer soi-même avec son téléphone : ce qui marche vraiment** - https://elieageron.com/blog/filmer-avec-son-telephone
+12. **Thérapeute, coach, praticien : comment les réseaux vous amènent des clients** - https://elieageron.com/blog/therapeute-reseaux-sociaux-clients
+13. **Vous ne savez pas quoi publier ? Voici comment je trouve les sujets** - https://elieageron.com/blog/idees-contenu-reseaux-sociaux
+14. **Pourquoi vos vidéos ne font pas de vues** - https://elieageron.com/blog/pourquoi-mes-videos-ne-font-pas-de-vues
+15. **Comprendre l'algorithme sans devenir fou** - https://elieageron.com/blog/algorithme-reseaux-sociaux-comprendre
+16. **Réseaux sociaux ou site web : par quoi commencer avec un budget limité ?** - https://elieageron.com/blog/reseaux-sociaux-ou-site-web
+17. **Déléguer ses réseaux sociaux : comment ça se passe concrètement** - https://elieageron.com/blog/deleguer-reseaux-sociaux
 
 ---
 
@@ -228,6 +265,7 @@ Oui. 4 avis clients vérifiés, tous 5 étoiles. Garantie 100% satisfaction. Tar
 - Blog : https://elieageron.com/blog
 - Contact / Appel gratuit : https://elieageron.com/contact
 - Services (partenaire web) : https://elieageron.com/services
+- Réseaux sociaux (tournage + publication) : https://elieageron.com/reseaux-sociaux
 - Web designer Savoie : https://elieageron.com/web-designer-savoie
 - Web designer Annecy : https://elieageron.com/web-designer-annecy
 - Création site web Haute-Savoie : https://elieageron.com/creation-site-web-haute-savoie

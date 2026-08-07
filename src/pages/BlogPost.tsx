@@ -205,8 +205,8 @@ const BlogPost = () => {
     <>
       <SEO 
         page="blog"
-        customTitle={`${post?.title} | Elie Ageron`}
-        customDescription={post?.excerpt}
+        customTitle={post?.seoTitle}
+        customDescription={post?.seoDesc}
         customCanonical={`https://elieageron.com/blog/${slug}`}
         ogImage={rawPost?.image ?? undefined}
         ogType="article"

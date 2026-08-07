@@ -28,12 +28,12 @@ const RoutingSection = () => {
       primary: false,
     },
     {
-      label: language === 'fr' ? "Producteur d'événements" : 'Event producer',
+      label: language === 'fr' ? "Je veux exister sur les réseaux" : 'I want to show up on social',
       desc: language === 'fr'
-        ? 'Landing page sur-mesure. Testé gratuitement, payé si ça vous convient.'
-        : 'Custom landing page. Try free, pay only if happy.',
-      href: '/event-production',
-      cta: language === 'fr' ? "Voir l'offre dédiée" : 'See dedicated offer',
+        ? 'On filme une demi-journée, je publie tout le mois. Vous, vous ne touchez à rien.'
+        : 'We film for half a day, I post all month. You touch nothing.',
+      href: '/reseaux-sociaux',
+      cta: language === 'fr' ? "Voir comment ça marche" : 'See how it works',
       primary: false,
     },
   ];
@@ -75,7 +75,7 @@ const RoutingSection = () => {
                     >
                       {path.label}
                     </h3>
-                    <span className="hidden sm:inline text-sm font-medium text-muted-foreground/80">
+                    <span className="hidden sm:inline text-sm font-medium text-muted-foreground">
                       {path.cta}
                     </span>
                   </div>
@@ -101,7 +101,7 @@ const RoutingSection = () => {
           className="mt-6 pt-6 border-t border-border/60 text-sm text-muted-foreground text-center"
         >
           {language === 'fr' ? "Pas sûr de ce qu'il vous faut ? " : 'Not sure what you need? '}
-          <Link to="/assessment" className="text-primary font-medium hover:underline underline-offset-4 inline-flex items-center gap-1">
+          <Link to="/assessment" className="text-primary font-medium hover:underline underline-offset-4 inline-flex items-center gap-1 min-h-[24px]">
             {language === 'fr' ? 'Faites le test (2 min)' : 'Take the test (2 min)'}
             <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
           </Link>

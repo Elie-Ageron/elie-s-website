@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async';
 import { Link, useLocation } from 'react-router-dom';
 import { ChevronRight, Home } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -8,22 +7,25 @@ interface BreadcrumbItem {
   href: string;
 }
 
+/**
+ * Fil d'Ariane visuel uniquement. Le schéma BreadcrumbList JSON-LD est émis par
+ * chaque page (via SEO structuredData) : le dupliquer ici créait deux entités
+ * BreadcrumbList concurrentes sur la même page.
+ */
 const Breadcrumb = () => {
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
   const location = useLocation();
-  const baseUrl = 'https://elieageron.com';
 
   const pathMap: Record<string, { en: string; fr: string }> = {
-    '/why-a-website': { en: 'Why a Website', fr: 'Pourquoi un Site' },
     '/services': { en: 'Services', fr: 'Services' },
+    '/reseaux-sociaux': { en: 'Social Media', fr: 'Réseaux Sociaux' },
+    '/why-a-website': { en: 'Why a Website', fr: 'Pourquoi un Site' },
     '/our-process': { en: 'Our Process', fr: 'Notre Méthode' },
     '/portfolio': { en: 'Portfolio', fr: 'Portfolio' },
     '/contact': { en: 'Contact', fr: 'Contact' },
     '/blog': { en: 'Blog', fr: 'Blog' },
     '/web-designer-savoie': { en: 'Web Designer Savoie', fr: 'Web Designer Savoie' },
     '/web-designer-annecy': { en: 'Web Designer Annecy', fr: 'Web Designer Annecy' },
-    '/web-designer-grenoble': { en: 'Web Designer Grenoble', fr: 'Web Designer Grenoble' },
-    '/web-designer-chambery': { en: 'Web Designer Chambéry', fr: 'Web Designer Chambéry' },
     '/creation-site-web-haute-savoie': { en: 'Web Design Haute-Savoie', fr: 'Création Site Web Haute-Savoie' },
   };
 
@@ -40,27 +42,8 @@ const Breadcrumb = () => {
     { name: currentPage[language], href: location.pathname },
   ];
 
-  // JSON-LD Schema for breadcrumbs
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: breadcrumbs.map((item, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      name: item.name,
-      item: `${baseUrl}${item.href === '/' ? '' : item.href}`,
-    })),
-  };
-
   return (
-    <>
-      <Helmet>
-        <script type="application/ld+json">
-          {JSON.stringify(breadcrumbSchema)}
-        </script>
-      </Helmet>
-      
-      <nav 
+      <nav
         aria-label="Breadcrumb" 
         className="max-w-6xl mx-auto px-6 py-4"
       >
@@ -83,7 +66,7 @@ const Breadcrumb = () => {
               {index === 0 ? (
                 <Link
                   to={item.href}
-                  className="flex items-center gap-1 hover:text-primary transition-colors"
+                  className="inline-flex items-center gap-1 min-h-[24px] min-w-[24px] hover:text-primary transition-colors"
                   itemProp="item"
                 >
                   <Home className="w-4 h-4" aria-hidden="true" />
@@ -106,7 +89,6 @@ const Breadcrumb = () => {
           ))}
         </ol>
       </nav>
-    </>
   );
 };
 

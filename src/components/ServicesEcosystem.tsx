@@ -27,23 +27,23 @@ const ServicesEcosystem = () => {
           <ScrollReveal direction="up" className="lg:col-span-5 lg:sticky lg:top-28 text-center lg:text-left">
             <span className="inline-flex items-center gap-2 text-sm font-medium text-primary mb-5">
               <span className="w-1.5 h-1.5 rounded-full bg-primary" aria-hidden="true" />
-              {language === 'fr' ? 'Une fois le site en ligne' : 'Once the site is live'}
+              {language === 'fr' ? 'Au-delà du site' : 'Beyond the site'}
             </span>
 
             <h2
               id="ecosystem-heading"
               className="text-3xl sm:text-4xl md:text-[2.75rem] font-medium leading-[1.1] text-balance"
             >
-              {language === 'fr' ? 'Votre présence en ligne, ' : 'Your online presence, '}
+              {language === 'fr' ? "Le site n'est que " : 'The site is only '}
               <span className="text-primary">
-                {language === 'fr' ? 'gérée de A à Z' : 'managed from A to Z'}
+                {language === 'fr' ? 'le point de départ' : 'the starting point'}
               </span>
             </h2>
 
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-md mx-auto lg:mx-0">
               {language === 'fr'
-                ? "Google, réseaux sociaux, identité de marque, référencement. Au lieu de jongler entre plusieurs prestataires, un seul partenaire s'occupe de tout."
-                : 'Google, social media, brand identity, SEO. Instead of juggling several providers, one partner handles it all.'}
+                ? "Des vidéos qui tournent sur vos réseaux, une fiche Google qui remonte, une identité cohérente. Au lieu de jongler entre plusieurs prestataires, un seul partenaire s'occupe de tout."
+                : 'Videos running on your social accounts, a Google profile that climbs, a consistent identity. Instead of juggling several providers, one partner handles it all.'}
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row lg:flex-col gap-4 items-center lg:items-start">
@@ -94,7 +94,7 @@ const ServicesEcosystem = () => {
                   >
                     {/* Bare icon, node, not a card */}
                     <Icon
-                      className="w-5 h-5 shrink-0 text-muted-foreground/70 group-hover:text-primary transition-colors duration-300"
+                      className="w-5 h-5 shrink-0 text-muted-foreground group-hover:text-primary transition-colors duration-300"
                       strokeWidth={1.75}
                       aria-hidden="true"
                     />
@@ -105,7 +105,7 @@ const ServicesEcosystem = () => {
                           {service.title[language]}
                         </h3>
                         {tag && (
-                          <span className="text-xs font-medium text-muted-foreground/80 tabular-nums">
+                          <span className="text-xs font-medium text-muted-foreground tabular-nums">
                             · {tag}
                           </span>
                         )}

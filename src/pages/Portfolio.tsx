@@ -7,11 +7,11 @@ import ContactMethodsSection from '@/components/ContactMethodsSection';
 import InternalLinks from '@/components/InternalLinks';
 import SEO from '@/components/SEO';
 import ScrollArrow from '@/components/ScrollArrow';
-import portfolioMyWebGlory from '@/assets/portfolio-mywebglory.png';
-import portfolioSolarFusion from '@/assets/portfolio-solar-fusion.png';
-import portfolioVmProducers from '@/assets/portfolio-vm-producers.png';
-import portfolioMyDrop from '@/assets/portfolio mydrop.png';
-import portfolioNaura from '@/assets/portfolio-naura.png';
+import portfolioMyWebGlory from '@/assets/portfolio-mywebglory.webp';
+import portfolioSolarFusion from '@/assets/portfolio-solar-fusion.webp';
+import portfolioVmProducers from '@/assets/portfolio-vm-producers.webp';
+import portfolioMyDrop from '@/assets/portfolio-mydrop.webp';
+import portfolioNaura from '@/assets/portfolio-naura.webp';
 
 interface PortfolioItemProps {
   image: string;

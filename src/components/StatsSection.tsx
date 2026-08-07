@@ -10,7 +10,7 @@ const StatsSection = () => {
 
   const facts = [
     {
-      value: language === 'fr' ? '7–14 jours' : '7–14 days',
+      value: language === 'fr' ? '7 à 14 jours' : '7 to 14 days',
       desc:
         language === 'fr'
           ? 'entre le brief et la mise en ligne de votre site.'

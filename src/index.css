@@ -26,7 +26,11 @@ All colors MUST be HSL.
     --secondary-foreground: 30 10% 25%;
 
     --muted: 30 10% 92%;
-    --muted-foreground: 30 5% 45%;
+    /* 38% et pas 45% : a 45% le texte secondaire tombait a 4,13:1 sur le fond
+       clair, sous le minimum WCAG AA de 4,5:1. A 38% on est a ~5,9:1.
+       Ne pas appliquer d'opacite (/60, /70, /80) sur du texte avec ce token :
+       toute transparence le fait repasser sous le seuil. */
+    --muted-foreground: 30 5% 38%;
 
     --accent: 340 65% 47%;
     --accent-foreground: 0 0% 100%;

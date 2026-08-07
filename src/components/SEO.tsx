@@ -2,7 +2,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface SEOProps {
-  page: 'home' | 'services' | 'why' | 'process' | 'pricing' | 'portfolio' | 'contact' | 'blog' | 'apps' | 'event';
+  page: 'home' | 'services' | 'social' | 'why' | 'process' | 'pricing' | 'portfolio' | 'contact' | 'blog' | 'apps';
   customTitle?: string;
   customDescription?: string;
   customCanonical?: string;
@@ -18,6 +18,7 @@ const pageKeywords = {
   en: {
     home: 'Elie Ageron, web design, web designer, conversion optimization, website, Savoie, Haute-Savoie, Albertville, Annecy, France',
     services: 'web partner, digital partner, web designer Savoie, web designer Annecy, Google Business, social media management, brand identity, local SEO, content writing, web agency Savoie Haute-Savoie',
+    social: 'social media management Savoie, short form video production France, Instagram Reels for small business, TikTok content creation, social media content creator Annecy, done-for-you social media',
     why: 'why a website, need website 2025, website business benefits, online presence, digital visibility',
     process: 'web design process, how to build a website, website creation steps, web designer workflow',
     pricing: 'web design pricing, website cost, landing page price, showcase site price, affordable web design',
@@ -25,19 +26,18 @@ const pageKeywords = {
     contact: 'contact web designer, book web design call, hire web designer France, web design consultation',
     blog: 'web design tips, conversion optimization, SEO guide, digital marketing, online business growth',
     apps: 'web app development, business dashboard, custom app, CRM development, SaaS development, business software',
-    event: 'event production website, event registration page, event website design, high-conversion event page, event producer web design',
   },
   fr: {
     home: 'Elie Ageron, web design, création site web, optimisation conversion, site internet, Savoie, Haute-Savoie, Albertville, Annecy',
     services: 'partenaire web, partenaire digital, web designer Savoie, web designer Annecy, fiche Google Business, gestion réseaux sociaux, identité de marque, référencement local, rédaction de contenu, agence web Savoie Haute-Savoie',
+    social: 'gestion réseaux sociaux Savoie, création contenu vidéo Savoie, vidéo verticale Instagram, reels professionnels, community manager Albertville, community manager Annecy, création contenu TikTok, gestion Instagram artisan, vidéaste réseaux sociaux Haute-Savoie',
     why: 'pourquoi site web, besoin site internet 2025, bénéfices site web, présence en ligne, visibilité digitale',
     process: 'processus création site web, comment créer site internet, étapes création site web',
     pricing: 'tarif web design, prix site internet, coût landing page, tarif site vitrine, web design Savoie, web design Annecy',
     portfolio: 'portfolio web design, exemples sites web, réalisations web design, résultats clients',
     contact: 'contacter web designer, réserver appel web design, embaucher web designer France',
-    blog: 'conseils web design, optimisation conversion, guide SEO local, marketing digital, croissance business',
+    blog: 'conseils réseaux sociaux, vidéo courte entreprise, conseils web design, optimisation conversion, guide SEO local, marketing digital local',
     apps: 'développement application web, dashboard entreprise, app sur mesure, CRM personnalisé, logiciel métier, outil interne',
-    event: 'site web producteur événements, page inscription événement, création site événementiel, page registration haute conversion, web design événement',
   },
 };
 
@@ -45,12 +45,16 @@ const pageKeywords = {
 const seoData = {
   en: {
     home: {
-      title: 'Web Design That Brings You Clients | Elie Ageron',
-      description: 'Websites built to turn your visitors into paying clients, live in 7-14 days. Based in Savoie, working across France remotely. Free strategy call & custom quote.',
+      title: 'Websites & Social Media Content | Elie Ageron',
+      description: 'Websites that turn visitors into clients, plus short videos posted every week on your social accounts. Based in Savoie, working across France. Free call.',
     },
     services: {
       title: 'Web Partner in Savoie | Elie Ageron',
-      description: 'More than websites: Google Business, social media, branding, local SEO & content. Your all-in-one web partner in Savoie & Haute-Savoie. Free strategy call.',
+      description: 'More than websites: social media content, Google Business, branding, local SEO. Your all-in-one web partner in Savoie & Haute-Savoie. Free strategy call.',
+    },
+    social: {
+      title: 'Social Media Content, Done For You | Elie Ageron',
+      description: 'I come film for half a day, then post 2 to 3 short videos a week on your accounts. 56,619 views on a client first post. Free call, custom quote.',
     },
     why: {
       title: 'Why You Need a Website | Elie Ageron',
@@ -80,19 +84,19 @@ const seoData = {
       title: 'Business Apps & Dashboards | Elie Ageron',
       description: 'Custom web app development: dashboards, CRMs, client portals, automation. Apps built to streamline your business processes.',
     },
-    event: {
-      title: 'Event Landing Pages | Elie Ageron',
-      description: 'Bold, modern landing pages for event organizers. Speakers, agenda, ticketing and social proof, built fast and ready before doors open.',
-    },
   },
   fr: {
     home: {
-      title: 'Création Site Web Savoie | Elie Ageron',
-      description: 'Des sites web pros qui transforment vos visiteurs en clients. En Savoie, Haute-Savoie, et partout en France à distance. Livrés en 7-14 jours, sur devis.',
+      title: 'Site Web & Réseaux Sociaux Savoie | Elie Ageron',
+      description: 'Des sites qui transforment vos visiteurs en clients, et des vidéos publiées chaque semaine sur vos réseaux. Savoie, Haute-Savoie et France. Sur devis.',
     },
     services: {
       title: 'Partenaire Web en Savoie | Elie Ageron',
-      description: "Bien plus qu'un site : Google Business, réseaux sociaux, identité de marque, SEO local et contenu. Votre partenaire web en Savoie et Haute-Savoie. Appel gratuit.",
+      description: "Bien plus qu'un site : vidéos pour vos réseaux, fiche Google, identité de marque, SEO local. Votre partenaire web en Savoie et Haute-Savoie. Appel gratuit.",
+    },
+    social: {
+      title: 'Gestion Réseaux Sociaux Savoie | Elie Ageron',
+      description: 'Je viens filmer une demi-journée, puis je publie 2 à 3 vidéos par semaine sur vos réseaux. 56 619 vues dès la première publication. Appel gratuit.',
     },
     why: {
       title: 'Pourquoi un Site Web | Elie Ageron',
@@ -115,16 +119,12 @@ const seoData = {
       description: 'Contactez Elie Ageron pour votre projet. Réservez un appel gratuit et convertissez plus de visiteurs.',
     },
     blog: {
-      title: 'Conseils Web Design | Elie Ageron',
-      description: 'Conseils experts en web design, stratégies de conversion et marketing digital par Elie Ageron. Développez votre business.',
+      title: 'Conseils Réseaux Sociaux & Web | Elie Ageron',
+      description: 'Réseaux sociaux, vidéo courte, création de site et référencement local. Des conseils concrets pour faire venir des clients, sans jargon.',
     },
     apps: {
       title: 'Apps & Dashboards pour Entreprises | Elie Ageron',
       description: 'Développement d\'applications web sur mesure : dashboards, CRM, portails clients, automatisation. Des apps qui font vraiment travailler votre équipe.',
-    },
-    event: {
-      title: 'Landing Pages Événement | Elie Ageron',
-      description: 'Landing pages d\'événement modernes et percutantes pour organisateurs. Intervenants, programme, billetterie et preuve sociale. Livrées vite.',
     },
   },
 };
@@ -142,6 +142,7 @@ const SEO = ({ page, customTitle, customDescription, customCanonical, ogImage, o
   const pathMap: Record<string, string> = {
     home: '',
     services: '/services',
+    social: '/reseaux-sociaux',
     why: '/why-a-website',
     process: '/our-process',
     pricing: '/pricing',
@@ -149,7 +150,6 @@ const SEO = ({ page, customTitle, customDescription, customCanonical, ogImage, o
     contact: '/contact',
     blog: '/blog',
     apps: '/apps',
-    event: '/event-production',
   };
   
   const currentPath = pathMap[page] || '';

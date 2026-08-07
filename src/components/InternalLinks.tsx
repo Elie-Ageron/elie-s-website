@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, FileText, Briefcase, HelpCircle, BookOpen, CalendarDays, LayoutGrid } from 'lucide-react';
+import { ArrowRight, FileText, Briefcase, HelpCircle, BookOpen, Share2, LayoutGrid } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface InternalLinksProps {
-  currentPage: 'home' | 'services' | 'why' | 'process' | 'portfolio' | 'contact' | 'blog' | 'event';
+  currentPage: 'home' | 'services' | 'why' | 'process' | 'portfolio' | 'contact' | 'blog' | 'social';
 }
 
 const InternalLinks = ({ currentPage }: InternalLinksProps) => {
@@ -16,7 +16,15 @@ const InternalLinks = ({ currentPage }: InternalLinksProps) => {
       path: '/services',
       icon: LayoutGrid,
       title: language === 'fr' ? 'Tous les services' : 'All services',
-      desc: language === 'fr' ? 'Site, Google, réseaux, photo, branding' : 'Site, Google, social, photo, branding',
+      desc: language === 'fr' ? 'Site, réseaux, Google, branding, SEO' : 'Site, social, Google, branding, SEO',
+      anchor: '',
+    },
+    {
+      id: 'social',
+      path: '/reseaux-sociaux',
+      icon: Share2,
+      title: language === 'fr' ? 'Réseaux sociaux' : 'Social media',
+      desc: language === 'fr' ? 'Je filme, je monte, je publie tout le mois' : 'I film, edit and post all month long',
       anchor: '',
     },
     {
@@ -48,15 +56,7 @@ const InternalLinks = ({ currentPage }: InternalLinksProps) => {
       path: '/blog',
       icon: BookOpen,
       title: language === 'fr' ? 'Blog & Conseils' : 'Blog & Tips',
-      desc: language === 'fr' ? 'Stratégies web & SEO' : 'Web & SEO strategies',
-      anchor: '',
-    },
-    {
-      id: 'event',
-      path: '/event-production',
-      icon: CalendarDays,
-      title: language === 'fr' ? 'Sites Événementiels' : 'Event Websites',
-      desc: language === 'fr' ? 'Pages qui convertissent le trafic event' : 'Pages that convert event traffic',
+      desc: language === 'fr' ? 'Stratégies web, réseaux & SEO' : 'Web, social & SEO strategies',
       anchor: '',
     },
   ];

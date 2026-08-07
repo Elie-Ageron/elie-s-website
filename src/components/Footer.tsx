@@ -2,7 +2,7 @@
 import { Heart, Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
-import logo from '@/assets/logo.png';
+import logo from '@/assets/logo.webp';
 
 const Footer = () => {
   const { t, language } = useLanguage();
@@ -10,10 +10,10 @@ const Footer = () => {
 
   const navLinks = [
     { label: language === 'fr' ? 'Services' : 'Services', href: '/services' },
+    { label: language === 'fr' ? 'Réseaux sociaux' : 'Social media', href: '/reseaux-sociaux' },
     { label: language === 'fr' ? 'Pourquoi un site ?' : 'Why a website?', href: '/why-a-website' },
     { label: language === 'fr' ? 'Notre processus' : 'Our process', href: '/our-process' },
     { label: t('nav.portfolio'), href: '/portfolio' },
-    { label: language === 'fr' ? 'Événements' : 'Events', href: '/event-production' },
     { label: 'Blog', href: '/blog' },
     { label: t('nav.contact'), href: '/contact' },
   ];
@@ -43,7 +43,7 @@ const Footer = () => {
               </Link>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 px-5 py-3 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="inline-flex items-center gap-2 px-5 py-3 min-h-[24px] text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 {language === 'fr' ? 'Questions ? Écrivez-moi' : 'Questions? Write me'}
               </Link>
@@ -67,8 +67,8 @@ const Footer = () => {
               </Link>
               <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
                 {language === 'fr'
-                  ? 'Votre partenaire web de A à Z : site, Google, photos, réseaux sociaux et identité de marque. Toute votre présence en ligne, gérée par une seule personne.'
-                  : 'Your all-in-one web partner: website, Google, photos, social media and brand identity. Your entire online presence, managed by one person.'}
+                  ? "Votre partenaire web de A à Z : site internet, vidéos et publications pour vos réseaux sociaux, fiche Google, identité de marque. Toute votre présence en ligne, gérée par une seule personne."
+                  : 'Your all-in-one web partner: website, videos and posts for your social media, Google profile, brand identity. Your entire online presence, managed by one person.'}
               </p>
               <div className="flex items-center gap-2 text-sm text-muted-foreground pt-1">
                 {t('footer.made')}
@@ -86,7 +86,7 @@ const Footer = () => {
                   <Link
                     key={link.href}
                     to={link.href}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors w-fit"
+                    className="inline-flex items-center min-h-[24px] text-sm text-muted-foreground hover:text-primary transition-colors w-fit"
                   >
                     {link.label}
                   </Link>
@@ -103,14 +103,14 @@ const Footer = () => {
               <div className="flex flex-col gap-3">
                 <a
                   href="mailto:elie@elieageron.com"
-                  className="inline-flex items-center gap-2.5 text-sm text-muted-foreground hover:text-primary transition-colors"
+                  className="inline-flex items-center gap-2.5 min-h-[24px] text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Mail className="w-4 h-4 shrink-0" aria-hidden="true" />
                   elie@elieageron.com
                 </a>
                 <a
                   href="tel:+33695555318"
-                  className="inline-flex items-center gap-2.5 text-sm text-muted-foreground hover:text-primary transition-colors"
+                  className="inline-flex items-center gap-2.5 min-h-[24px] text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Phone className="w-4 h-4 shrink-0" aria-hidden="true" />
                   +33 6 95 55 53 18
@@ -141,7 +141,7 @@ const Footer = () => {
                 { href: '/web-designer-annecy', label: language === 'fr' ? 'Web designer Annecy' : 'Web designer Annecy' },
                 { href: '/creation-site-web-haute-savoie', label: language === 'fr' ? 'Création site web Haute-Savoie' : 'Web design Haute-Savoie' },
               ].map((z) => (
-                <Link key={z.href} to={z.href} className="text-sm text-muted-foreground hover:text-primary transition-colors w-fit">
+                <Link key={z.href} to={z.href} className="inline-flex items-center min-h-[24px] text-sm text-muted-foreground hover:text-primary transition-colors w-fit">
                   {z.label}
                 </Link>
               ))}
@@ -153,10 +153,10 @@ const Footer = () => {
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
               <span>© {currentYear} Elie Ageron. {t('footer.rights')}</span>
               <div className="flex items-center gap-4">
-                <Link to="/mentions-legales" className="hover:text-primary transition-colors">
+                <Link to="/mentions-legales" className="inline-flex items-center min-h-[24px] hover:text-primary transition-colors">
                   {language === 'fr' ? 'Mentions légales' : 'Legal Notice'}
                 </Link>
-                <Link to="/politique-confidentialite" className="hover:text-primary transition-colors">
+                <Link to="/politique-confidentialite" className="inline-flex items-center min-h-[24px] hover:text-primary transition-colors">
                   {language === 'fr' ? 'Confidentialité' : 'Privacy'}
                 </Link>
               </div>

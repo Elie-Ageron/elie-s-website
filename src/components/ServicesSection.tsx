@@ -156,7 +156,7 @@ const ServicesSection = () => {
           viewport={{ once: true }}
         >
           {t('services.quote.note')}{' '}
-          <Link to="/get-started" className="text-primary font-medium hover:underline underline-offset-4">
+          <Link to="/get-started" className="inline-flex items-center min-h-[24px] text-primary font-medium hover:underline underline-offset-4">
             {t('services.quote.link')}
           </Link>
         </motion.p>

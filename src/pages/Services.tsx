@@ -78,15 +78,19 @@ const ServiceSection = ({ service, index }: { service: ServiceItem; index: numbe
         ) : service.to ? (
           <Link
             to={service.to}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all"
+            className="inline-flex items-center gap-2 min-h-[24px] text-sm font-semibold text-primary hover:gap-3 transition-all"
           >
-            {language === 'fr' ? 'Voir les formules' : 'See the plans'}
+            {service.ctaLabel
+              ? service.ctaLabel[language]
+              : language === 'fr'
+              ? 'En savoir plus'
+              : 'Learn more'}
             <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </Link>
         ) : (
           <Link
             to="/get-started"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all"
+            className="inline-flex items-center gap-2 min-h-[24px] text-sm font-semibold text-primary hover:gap-3 transition-all"
           >
             {language === 'fr' ? 'En parler' : "Let's talk about it"}
             <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -200,8 +204,8 @@ const Services = () => {
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               {language === 'fr'
-                ? "Site web, Google Business, réseaux sociaux, identité de marque, référencement. Au lieu d'un site livré puis oublié, je vous accompagne pour faire grandir votre activité en ligne, mois après mois."
-                : 'Website, Google Business, social media, brand identity, SEO. Instead of a site delivered and forgotten, I keep supporting you to grow your business online, month after month.'}
+                ? "Un site web qui vous ramène des clients, des vidéos qui tournent sur vos réseaux, une fiche Google qui remonte. Au lieu d'un site livré puis oublié, je m'occupe de votre présence en ligne mois après mois."
+                : 'A website that brings you clients, videos running on your social accounts, a Google profile that climbs. Instead of a site delivered and forgotten, I look after your online presence month after month.'}
             </p>
 
             {/* Service pills, preview the breadth */}
@@ -266,8 +270,8 @@ const Services = () => {
             className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto"
           >
             {language === 'fr'
-              ? "Tout ce qu'il faut pour rendre votre activité visible et attirante en ligne, du site web à votre fiche Google, des réseaux sociaux au référencement. Réuni au même endroit, géré par une seule personne."
-              : "Everything you need to make your business visible and appealing online, from your website to your Google profile, social media to SEO. All in one place, handled by one person."}
+              ? "Deux gros morceaux : votre site web et vos réseaux sociaux. Autour, tout ce qui les rend efficaces, de votre fiche Google au référencement. Réuni au même endroit, géré par une seule personne."
+              : 'Two big pieces: your website and your social media. Around them, everything that makes them work, from your Google profile to SEO. All in one place, handled by one person.'}
           </motion.p>
         </div>
       </section>

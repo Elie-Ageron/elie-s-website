@@ -4,10 +4,10 @@ import { Star, ArrowRight, ChevronDown, ChevronLeft, ChevronRight, Play, Quote }
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 
-import logoVmProducers from '@/assets/logo vm producers.png';
-import logoSolarFusion from '@/assets/logo solar fusion.png';
-import logoMywebglory from '@/assets/logo mwg.png';
-import logoMyDrop from '@/assets/mydrop logo (1).png';
+import logoVmProducers from '@/assets/logo-vm-producers.webp';
+import logoSolarFusion from '@/assets/logo-solar-fusion.webp';
+import logoMywebglory from '@/assets/logo-mwg.webp';
+import logoMyDrop from '@/assets/logo-mydrop.webp';
 import logoNaura from '@/assets/logo-naura.webp';
 import noraVideoMp4 from '@/assets/nora-testimonial.mp4';
 import noraVideoWebm from '@/assets/nora-testimonial.webm';
@@ -260,7 +260,7 @@ const TestimonialsSection = () => {
             <button
               type="button"
               onClick={() => setExpanded((v) => !v)}
-              className="group mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary"
+              className="group mt-6 inline-flex items-center gap-1.5 min-h-[24px] text-sm font-semibold text-primary"
             >
               {expanded
                 ? language === 'fr' ? "Réduire l'avis" : 'Show less'
@@ -356,7 +356,7 @@ const TestimonialsSection = () => {
                     <button
                       type="button"
                       onClick={() => toggleCard(i)}
-                      className="sm:hidden mt-2 text-sm font-semibold text-primary"
+                      className="sm:hidden mt-2 inline-flex items-center min-h-[24px] text-sm font-semibold text-primary"
                     >
                       {isOpen
                         ? language === 'fr' ? 'Voir moins' : 'Show less'
@@ -399,7 +399,7 @@ const TestimonialsSection = () => {
           {language === 'fr' ? 'Envie de voir les sites derrière ces avis ? ' : 'Want to see the sites behind these reviews? '}
           <Link
             to="/portfolio"
-            className="text-primary font-medium hover:underline underline-offset-4 inline-flex items-center gap-1"
+            className="text-primary font-medium hover:underline underline-offset-4 inline-flex items-center gap-1 min-h-[24px]"
           >
             {t('testimonials.cta')}
             <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />

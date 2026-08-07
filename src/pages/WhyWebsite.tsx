@@ -217,7 +217,7 @@ const WhyWebsite = () => {
               </div>
 
               {/* Source */}
-              <p className="text-xs text-muted-foreground/40 border-t border-border/40 pt-4">GE Capital Retail Bank</p>
+              <p className="text-xs text-muted-foreground border-t border-border/40 pt-4">GE Capital Retail Bank</p>
             </motion.div>
 
             {/* Card 2 - 75% - Bars */}
@@ -270,7 +270,7 @@ const WhyWebsite = () => {
               </div>
 
               {/* Source */}
-              <p className="text-xs text-muted-foreground/40 border-t border-border/40 pt-4">Stanford Web Credibility Research</p>
+              <p className="text-xs text-muted-foreground border-t border-border/40 pt-4">Stanford Web Credibility Research</p>
             </motion.div>
 
             {/* Card 3 - 3× - Bar chart */}
@@ -323,7 +323,7 @@ const WhyWebsite = () => {
               </div>
 
               {/* Source */}
-              <p className="text-xs text-muted-foreground/40 border-t border-border/40 pt-4">HubSpot</p>
+              <p className="text-xs text-muted-foreground border-t border-border/40 pt-4">HubSpot</p>
             </motion.div>
 
             {/* Card 4 - 97% - Donut */}
@@ -375,7 +375,7 @@ const WhyWebsite = () => {
               </div>
 
               {/* Source */}
-              <p className="text-xs text-muted-foreground/40 border-t border-border/40 pt-4">Google</p>
+              <p className="text-xs text-muted-foreground border-t border-border/40 pt-4">Google</p>
             </motion.div>
 
           </div>

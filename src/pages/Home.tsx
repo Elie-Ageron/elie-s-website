@@ -1,4 +1,3 @@
-import { useLanguage } from '@/contexts/LanguageContext';
 import StatsSection from '@/components/StatsSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import HeroSection from '@/components/HeroSection';
@@ -14,19 +13,10 @@ import FAQSchema from '@/components/FAQSchema';
 import InternalLinks from '@/components/InternalLinks';
 
 const Home = () => {
-  const { t, language } = useLanguage();
-
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: language === 'fr' ? 'Accueil' : 'Home', item: 'https://elieageron.com' },
-    ],
-  };
-
   return (
     <>
-      <SEO page="home" structuredData={[breadcrumbSchema]} />
+      {/* Le BreadcrumbList de l'accueil est déjà émis par JsonLd.tsx (Layout). */}
+      <SEO page="home" />
       <FAQSchema page="home" />
       
       {/* Hero Section with 3D */}

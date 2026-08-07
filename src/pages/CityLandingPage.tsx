@@ -29,6 +29,8 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
   const localBusinessSchema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
+    // Meme entite entreprise que partout ailleurs, avec un areaServed cible.
+    '@id': `${baseUrl}/#business`,
     name: 'Elie Ageron Web Design',
     url: baseUrl,
     image: `${baseUrl}/og-image.png`,
@@ -49,13 +51,7 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
       longitude: 6.3925,
     },
     areaServed: { '@type': 'City', name: d.name },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '5',
-      reviewCount: '3',
-      bestRating: '5',
-      worstRating: '1',
-    },
+    // Note globale portee uniquement par ReviewSchema (rendu par le Layout).
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: language === 'fr' ? 'Services Web Design' : 'Web Design Services',
@@ -167,7 +163,7 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="text-sm sm:text-base text-muted-foreground/80 mb-10 max-w-2xl mx-auto leading-relaxed"
+            className="text-sm sm:text-base text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed"
           >
             {d.intro}
           </motion.p>
@@ -206,7 +202,7 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.55, duration: 0.6 }}
-            className="mt-4 flex items-center justify-center gap-2 text-xs sm:text-sm text-muted-foreground/70"
+            className="mt-4 flex items-center justify-center gap-2 text-xs sm:text-sm text-muted-foreground"
           >
             <span className="w-1.5 h-1.5 bg-primary/70 rounded-full shrink-0" aria-hidden="true" />
             {language === 'fr'

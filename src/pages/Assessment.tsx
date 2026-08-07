@@ -144,7 +144,6 @@ const QUESTIONS: Question[] = [
       { fr: 'Restaurant / Bar / Café', en: 'Restaurant / Bar / Café' },
       { fr: 'Artisan / Prestataire de service', en: 'Craftsman / Service provider' },
       { fr: 'Commerce / Boutique', en: 'Shop / Retail' },
-      { fr: "Producteur d'événements", en: 'Event producer' },
       { fr: 'PME / Entreprise', en: 'SMB / Company' },
       { fr: 'Autre', en: 'Other' },
     ],
@@ -374,7 +373,7 @@ const Assessment = () => {
 
           {/* Short credibility */}
           <motion.p
-            className="mt-6 text-xs sm:text-sm text-muted-foreground/70 max-w-md mx-auto"
+            className="mt-6 text-xs sm:text-sm text-muted-foreground max-w-md mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.6 }}
@@ -404,7 +403,7 @@ const Assessment = () => {
                       <span className="text-xs font-semibold text-primary uppercase tracking-wider">
                         {L(`Question ${step + 1} sur ${TOTAL_STEPS}`, `Question ${step + 1} of ${TOTAL_STEPS}`)}
                       </span>
-                      <span className="text-xs text-muted-foreground/60">{Math.round(((step + 1) / TOTAL_STEPS) * 100)}%</span>
+                      <span className="text-xs text-muted-foreground">{Math.round(((step + 1) / TOTAL_STEPS) * 100)}%</span>
                     </div>
                     <div className="w-full h-1.5 bg-muted rounded-full overflow-hidden">
                       <motion.div
@@ -498,7 +497,7 @@ const Assessment = () => {
                               </div>
                               <div className="space-y-2">
                                 <Label htmlFor="as-phone">
-                                  {L('Téléphone', 'Phone')} <span className="text-muted-foreground/60 text-xs">({L('optionnel', 'optional')})</span>
+                                  {L('Téléphone', 'Phone')} <span className="text-muted-foreground text-xs">({L('optionnel', 'optional')})</span>
                                 </Label>
                                 <Input id="as-phone" type="tel" maxLength={30} placeholder="+33 6 …" value={lead.phone} onChange={(e) => setLead({ ...lead, phone: e.target.value })} />
                               </div>
@@ -552,7 +551,7 @@ const Assessment = () => {
                   </div>
 
                   {step === leadStepIndex && (
-                    <p className="text-center text-xs text-muted-foreground/60 mt-4">
+                    <p className="text-center text-xs text-muted-foreground mt-4">
                       {L('Pas de spam. Juste votre résultat et, si vous voulez, des conseils.', 'No spam. Just your result and, if you want, some advice.')}
                     </p>
                   )}
@@ -743,7 +742,7 @@ const Result = ({ computeScore, answers, L, openCalendly, name }: ResultProps) =
           </a>
         </div>
 
-        <p className="text-xs text-muted-foreground/60 mt-6">
+        <p className="text-xs text-muted-foreground mt-6">
           {L('Votre résultat vient aussi de m\'être envoyé. Questions ? elie@elieageron.com', 'Your result was just sent to me too. Questions? elie@elieageron.com')}
         </p>
       </div>

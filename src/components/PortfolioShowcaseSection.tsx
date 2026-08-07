@@ -71,7 +71,7 @@ const PortfolioShowcaseSection = () => {
           <h3 className="text-lg sm:text-xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
             {project.name}
           </h3>
-          <span className="text-xs sm:text-sm text-muted-foreground/80">{project.category}</span>
+          <span className="text-xs sm:text-sm text-muted-foreground">{project.category}</span>
         </div>
         <p className="mt-1 text-sm text-muted-foreground leading-relaxed max-w-xl">{project.desc}</p>
       </div>

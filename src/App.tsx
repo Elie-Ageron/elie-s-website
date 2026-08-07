@@ -20,7 +20,7 @@ const Portfolio = lazy(() => import("./pages/Portfolio"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
-const EventProduction = lazy(() => import("./pages/EventProduction"));
+const SocialMedia = lazy(() => import("./pages/SocialMedia"));
 const GetStarted = lazy(() => import("./pages/GetStarted"));
 const Assessment = lazy(() => import("./pages/Assessment"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -60,7 +60,7 @@ class ErrorBoundary extends Component<{ children: ReactNode }, { error: Error | 
                 : "Une erreur JavaScript s’est produite."}
             </p>
             <button
-              onClick={() => { localStorage.removeItem('chunk-reload'); window.location.href = window.location.href; }}
+              onClick={() => { localStorage.removeItem('chunk-reload'); window.location.reload(); }}
               style={{ padding: '12px 28px', background: '#c4516b', color: '#fff', border: 'none', borderRadius: 8, cursor: 'pointer', fontSize: 15, fontWeight: 600 }}
             >
               Recharger la page
@@ -111,7 +111,9 @@ const App = () => (
                         <Route path="/contact" element={<Contact />} />
                         <Route path="/blog" element={<Blog />} />
                         <Route path="/blog/:slug" element={<BlogPost />} />
-                        <Route path="/event-production" element={<EventProduction />} />
+                        <Route path="/reseaux-sociaux" element={<SocialMedia />} />
+                        {/* Page Événements retirée (août 2026) : l'événementiel n'est plus un service à part. Redirection SEO. */}
+                        <Route path="/event-production" element={<Navigate to="/services" replace />} />
                         <Route path="/get-started" element={<GetStarted />} />
                         <Route path="/assessment" element={<Assessment />} />
                         {/* <Route path="/apps" element={<Apps />} /> */}{/* hidden - future service */}

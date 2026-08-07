@@ -12,10 +12,12 @@ const JsonLd = () => {
     name: 'Elie Ageron',
     url: baseUrl,
     image: `${baseUrl}/og-image.png`,
-    jobTitle: language === 'fr' ? 'Web Designer & Partenaire Web' : 'Web Designer & Web Partner',
+    jobTitle: language === 'fr'
+      ? 'Web Designer & Créateur de contenu réseaux sociaux'
+      : 'Web Designer & Social Media Content Producer',
     description: language === 'fr'
-      ? 'Web designer et partenaire web basé à Albertville (Savoie). Création de sites web qui convertissent les visiteurs en clients pour les entreprises de Savoie, Haute-Savoie, Annecy, Chambéry et toute la France.'
-      : 'Web designer and web partner based in Albertville, Savoie, France. Building high-converting websites for businesses in Savoie, Haute-Savoie, Annecy, Chambéry and across France.',
+      ? "Web designer et créateur de contenu basé à Albertville (Savoie). Deux services : des sites web qui convertissent les visiteurs en clients, et des vidéos courtes filmées sur place puis publiées chaque semaine sur les réseaux sociaux des clients. Savoie, Haute-Savoie, Annecy, Chambéry et toute la France."
+      : 'Web designer and content producer based in Albertville, Savoie, France. Two services: high-converting websites, and short-form videos filmed on site then published weekly on clients social accounts. Savoie, Haute-Savoie, Annecy, Chambéry and across France.',
     email: 'elie@elieageron.com',
     telephone: '+33695555318',
     address: {
@@ -30,13 +32,18 @@ const JsonLd = () => {
     ],
     knowsAbout: [
       'Web Design',
+      'Social Media Management',
+      'Short-form Vertical Video Production',
+      'Instagram Reels',
+      'TikTok Content Creation',
+      'YouTube Shorts',
+      'Video Editing',
       'Conversion Optimization',
       'Landing Page Design',
       'UI/UX Design',
       'SEO',
       'Local SEO',
       'Google Business Profile',
-      'Social Media Management',
       'Brand Identity',
       'Content Writing',
       'Responsive Design',
@@ -51,18 +58,12 @@ const JsonLd = () => {
     url: baseUrl,
     image: `${baseUrl}/og-image.png`,
     description: language === 'fr'
-      ? 'Partenaire web : sites qui convertissent, Google Business, réseaux sociaux, identité de marque, référencement local et contenu'
-      : 'Web partner: high-converting websites, Google Business, social media, brand identity, local SEO and content',
+      ? "Partenaire web : sites qui convertissent, création et publication de vidéos pour les réseaux sociaux, fiche Google Business, identité de marque, référencement local et contenu"
+      : 'Web partner: high-converting websites, social media video production and publishing, Google Business profile, brand identity, local SEO and content',
     telephone: '+33695555318',
     email: 'elie@elieageron.com',
     priceRange: '€€',
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '5',
-      reviewCount: '4',
-      bestRating: '5',
-      worstRating: '1',
-    },
+    // aggregateRating vit uniquement dans ReviewSchema, sur ce meme @id #business.
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Albertville',
@@ -90,36 +91,28 @@ const JsonLd = () => {
     },
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: language === 'fr' ? 'Services Web Design' : 'Web Design Services',
+      name: language === 'fr' ? 'Services Web & Réseaux Sociaux' : 'Web & Social Media Services',
       itemListElement: [
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Landing Page',
-            description: language === 'fr' 
-              ? 'Landing page haute conversion livrée en 7 à 14 jours ouvrés'
-              : 'High-conversion landing page delivered in 7-14 business days',
+            name: language === 'fr' ? 'Création de site web' : 'Website design',
+            description: language === 'fr'
+              ? 'Landing page ou site vitrine multi-pages, livré en 7 à 14 jours ouvrés, optimisé pour Google et pour la conversion'
+              : 'Landing page or multi-page showcase site, delivered in 7-14 business days, optimized for Google and for conversion',
           },
         },
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: language === 'fr' ? 'Site Vitrine 4 Pages' : '4-Page Showcase Site',
+            '@id': `${baseUrl}/reseaux-sociaux#service`,
+            name: language === 'fr' ? 'Gestion des réseaux sociaux' : 'Social media management',
+            url: `${baseUrl}/reseaux-sociaux`,
             description: language === 'fr'
-              ? 'Site web complet avec optimisation SEO et stratégie de contenu'
-              : 'Complete website with SEO optimization and content strategy',
-          },
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: language === 'fr' ? 'Solution Sur-Mesure' : 'Custom Solution',
-            description: language === 'fr'
-              ? 'Solutions web personnalisées pour besoins complexes'
-              : 'Custom web solutions for complex needs',
+              ? "Tournage vidéo sur place une demi-journée par mois, montage vertical, sous-titrage et publication de 2 à 3 vidéos courtes par semaine sur Instagram, Facebook, TikTok et YouTube Shorts"
+              : 'On-site video shoot half a day a month, vertical editing, subtitling and publishing of 2 to 3 short videos a week on Instagram, Facebook, TikTok and YouTube Shorts',
           },
         },
         {
@@ -130,16 +123,6 @@ const JsonLd = () => {
             description: language === 'fr'
               ? 'Création et optimisation de la fiche Google Business pour le référencement local'
               : 'Google Business profile creation and optimization for local search',
-          },
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: language === 'fr' ? 'Gestion des réseaux sociaux' : 'Social media management',
-            description: language === 'fr'
-              ? 'Création de contenu et gestion des comptes Instagram et Facebook'
-              : 'Content creation and management of Instagram and Facebook accounts',
           },
         },
         {
@@ -172,6 +155,16 @@ const JsonLd = () => {
               : 'Website copy, blog articles and social media posts',
           },
         },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: language === 'fr' ? 'Avis & e-réputation' : 'Reviews & online reputation',
+            description: language === 'fr'
+              ? "Collecte d'avis Google et réponses professionnelles à chaque retour client"
+              : 'Google review collection and professional replies to every customer review',
+          },
+        },
       ],
     },
   };
@@ -200,18 +193,9 @@ const JsonLd = () => {
     },
   };
 
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: language === 'fr' ? 'Accueil' : 'Home',
-        item: baseUrl,
-      },
-    ],
-  };
+  // Pas de BreadcrumbList ici : ce composant est rendu par le Layout sur toutes
+  // les pages, et il y emettait un fil d'un seul element ("Accueil") en doublon
+  // du vrai fil de chaque page. L'accueil etant la racine, il n'en a pas besoin.
 
   return (
     <Helmet>
@@ -223,9 +207,6 @@ const JsonLd = () => {
       </script>
       <script type="application/ld+json">
         {JSON.stringify(websiteSchema)}
-      </script>
-      <script type="application/ld+json">
-        {JSON.stringify(breadcrumbSchema)}
       </script>
     </Helmet>
   );

@@ -300,7 +300,7 @@ const ServiceHeroMorph = () => {
 
         {/* caption flips before → after */}
         <div className="relative mt-6 sm:mt-8 h-9 w-full text-center flex items-center justify-center">
-          <motion.span style={{ opacity: capDead }} className="absolute left-1/2 -translate-x-1/2 text-xs font-semibold uppercase tracking-[0.2em] text-stone-400">
+          <motion.span style={{ opacity: capDead }} className="absolute left-1/2 -translate-x-1/2 text-xs font-semibold uppercase tracking-[0.2em] text-stone-500">
             {t('Un site oublié', 'A forgotten site')}
           </motion.span>
           <motion.span

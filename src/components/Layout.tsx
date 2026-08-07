@@ -40,13 +40,15 @@ const Layout = ({ children }: LayoutProps) => {
     const apply = () => setReduceMotion(!!mq.matches);
     apply();
 
-    // Safari < 14 uses addListener/removeListener
-    // eslint-disable-next-line deprecation/deprecation
-    mq.addEventListener?.('change', apply) ?? mq.addListener?.(apply);
-    return () => {
-      // eslint-disable-next-line deprecation/deprecation
-      mq.removeEventListener?.('change', apply) ?? mq.removeListener?.(apply);
-    };
+    // Safari < 14 only has addListener/removeListener. `??` would run both
+    // branches here (addEventListener returns undefined), registering the
+    // listener twice, so branch explicitly.
+    if (typeof mq.addEventListener === 'function') {
+      mq.addEventListener('change', apply);
+      return () => mq.removeEventListener('change', apply);
+    }
+    mq.addListener(apply);
+    return () => mq.removeListener(apply);
   }, []);
 
   useEffect(() => {

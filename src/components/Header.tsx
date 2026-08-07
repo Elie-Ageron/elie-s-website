@@ -5,7 +5,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useCalendly } from '@/contexts/CalendlyContext';
 import { Link, useLocation } from 'react-router-dom';
 import MobileMenu from '@/components/MobileMenu';
-import logo from '@/assets/logo.png';
+import logo from '@/assets/logo.webp';
 
 
 const Header = () => {
@@ -37,7 +37,7 @@ const Header = () => {
 
   const flatNavItems = [
     { href: '/services', label: 'Services' },
-    { href: '/event-production', label: language === 'fr' ? 'Événements' : 'Events' },
+    { href: '/reseaux-sociaux', label: language === 'fr' ? 'Réseaux sociaux' : 'Social media' },
     { href: '/portfolio', label: t('nav.portfolio') },
     { href: '/blog', label: 'Blog' },
     { href: '/contact', label: t('nav.contact') },

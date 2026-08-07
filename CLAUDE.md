@@ -10,13 +10,13 @@ Site vitrine / portfolio de **Elie Ageron**, web designer et partenaire web bas�
 - Téléphone : +33 6 95 55 53 18
 
 ## Positionnement
-**Partenaire web tout-en-un** (et non plus simple créateur de sites). Elie accompagne ses clients sur toute leur présence en ligne, dans la durée. ICP : TPE, artisans, tatoueurs, et PME locales (hors multinationales).
+**Partenaire web tout-en-un**, avec **deux gros services de rang égal** : la **création de sites web** et la **création de contenu pour les réseaux sociaux**. Elie accompagne ses clients sur toute leur présence en ligne, dans la durée. ICP : TPE, artisans, thérapeutes / formateurs, et PME locales (hors multinationales).
 
 ## Services proposés
-Les 7 services (source unique : `src/data/services.ts`) :
-- **Sites web** (point fort) — landing dès 500€, vitrine dès 1500€, pack lancement dès 3500€
+Les 7 services (source unique : `src/data/services.ts`, **l'ordre du tableau pilote l'affichage**) :
+- **Sites web** (pilier 1) — landing dès 500€, vitrine dès 1500€, pack lancement dès 3500€
+- **Réseaux sociaux** (pilier 2, page dédiée `/reseaux-sociaux`) — tournage sur place une demi-journée par mois, montage vertical, sous-titres, puis 2 à 3 publications par semaine sur Instagram / Facebook / TikTok / YouTube Shorts. Récurrent, dès 450€/mois en interne.
 - **Google Business** — création / optimisation de la fiche
-- **Réseaux sociaux** — création de contenu + gestion des comptes (récurrent)
 - **Identité de marque** — logo, charte (réalisée avec son frère, designer)
 - **Référencement local (SEO)** — suivi continu (Elie monte en compétence dessus)
 - **Avis & e-réputation** — collecte + réponses aux avis Google
@@ -26,7 +26,7 @@ Les 7 services (source unique : `src/data/services.ts`) :
 
 ### Notes capacité / sous-traitance
 - **Pas proposés** : Photo/vidéo (frère photographe pas encore pro) et Publicité Google/Meta Ads (compétence non maîtrisée) — retirés volontairement.
-- **Événementiel** : conservé dans le menu, prospection active en cours (page `/event-production`).
+- **Événementiel** : **supprimé (août 2026)**. Plus un service à part : une landing page d'événement est simplement un site web. La page `/event-production` et les démos Apex Summit / Chromatic ont été retirées, l'URL redirige en 301 vers `/services` (règle dans `vercel.json`).
 
 > ⚠️ **Aucun prix n'est affiché publiquement** sur la page `/services` (décision produit). Les prix ci-dessus sont une référence interne. Modèle business : land & expand (acquisition via le site, expansion via le partenariat après livraison).
 
@@ -53,8 +53,17 @@ Les 7 services (source unique : `src/data/services.ts`) :
 - `src/pages/Services.tsx` — Page hub du partenaire web : hero, manifeste (repositionnement), **une section alternée par service** (numéro fantôme, orbe, kicker), "pourquoi un partenaire", CTA. **Sans prix affiché.**
 - `src/data/services.ts` — Source unique des 7 services (kicker, titre, desc, bullets, prix interne FR/EN, icône, ancre)
 - `src/components/ServicesEcosystem.tsx` — Section grille "Et une fois le site en ligne ?" affichée sur la Home (après les formules site)
-- Le menu est **plat** (Services · Événements · Portfolio · Blog · Contact) — "Services" pointe vers la page unique `/services`. Les ancres (`#google-business`, `#reseaux-sociaux`…) servent aux pills du hero de la page.
+- Le menu est **plat** (Services · Réseaux sociaux · Portfolio · Blog · Contact) — "Services" pointe vers la page unique `/services`, "Réseaux sociaux" vers `/reseaux-sociaux`. Les ancres (`#reseaux-sociaux`, `#google-business`…) servent aux pills du hero de la page services.
 - **Pas de page Tarifs** : la page `/pricing` a été retirée (tout est sur devis). Les 3 formules de site vivent sur la home (`ServicesSection.tsx`), suivies d'une note « chiffré sur devis ». L'URL `/pricing` redirige vers `/services` (SEO). Prix de référence internes conservés dans `src/data/services.ts` (jamais affichés).
+
+### Page Réseaux sociaux (`/reseaux-sociaux`)
+- `src/pages/SocialMedia.tsx` — hero, preuve chiffrée, déroulé d'un mois type (tournage → montage → publication), ce qui est inclus, combo site + réseaux, FAQ (8 questions) et CTA. **Sans prix affiché.**
+- Schémas : `Service` (@id `/reseaux-sociaux#service`), `FAQPage`, `BreadcrumbList`.
+
+### Preuve sociale chiffrée (à tenir à jour)
+- Chiffre affiché : **56 619 vues + 196 abonnés dès la toute première publication** pour une cliente formatrice en rééducation de l'écriture (Reel Facebook, 3 août 2026). Source : `création de contenue/ressources, data/15-CLIENTS/formatrice-ecriture/04-tableau-de-bord.md`.
+- **La cliente n'est jamais nommée** sur le site (pas d'accord de publication).
+- Un **disclaimer obligatoire** accompagne le chiffre (exemple ≠ moyenne ≠ garantie). Ne jamais arrondir vers le haut un chiffre non atteint : le tableau de bord fait foi.
 
 ---
 
@@ -165,11 +174,29 @@ Les 7 services (source unique : `src/data/services.ts`) :
 
 ---
 
+## Règles d'accessibilité (vérifiées août 2026)
+
+1. **`--muted-foreground` est à `30 5% 38%`**, pas 45%. À 45% le texte secondaire tombait à 4,13:1, sous le seuil WCAG AA de 4,5:1.
+2. **Ne jamais appliquer d'opacité à `text-muted-foreground` sur du texte** (`/60`, `/70`, `/80`). Toute transparence le repasse sous 4,5:1. Les icônes peuvent garder une opacité (seuil 3:1).
+3. **Cibles tactiles ≥ 24px** (WCAG 2.5.8) sur tout lien ou bouton autonome. Les liens en pleine phrase bénéficient de l'exception.
+4. **Les maquettes décoratives** (`ServiceMockups.tsx`, `ServiceHeroMorph.tsx`) sont `aria-hidden="true"` : elles représentent des sites fictifs et ne doivent pas être lues ni évaluées en contraste.
+
+## Règles de rédaction (skill humanizer)
+
+Le contenu du site est passé au filtre "signes d'écriture IA". À maintenir :
+- **Aucun tiret cadratin ni demi-cadratin** (— –) nulle part.
+- Pas de titres en Title Case en français, pas de gras décoratif, pas de listes à en-tête gras.
+- Pas de règle de trois systématique, pas de "il est important de", "dans un monde où", "chaque détail compte".
+- Ton : première personne, phrases de longueurs variées, détails concrets et vérifiables (villes, chiffres, délais).
+
 ## Bugs SEO connus à surveiller
 
 1. **Email inconsistance** : `JsonLd.tsx` et `OrganizationSchema.tsx` utilisaient `elieageron@gmail.com` → corrigé vers `elie@elieageron.com`
 2. **FAQSchema home** : FAQAccordion présent sur Home mais pas de FAQPage schema → à ajouter
-3. **Schemas dupliqués** : Person et LocalBusiness définis à la fois dans `index.html` (statique) et dans les composants React → normal, le statique sert de fallback
+3. **Schemas dupliqués** : Person et LocalBusiness définis à la fois dans `index.html` (statique) et dans les composants React → normal, le statique sert de fallback pour les crawlers sans JS
+5. **Une seule entité entreprise** : tous les schémas d'entreprise partagent l'`@id` `https://elieageron.com/#business`. Avant août 2026, quatre entités concurrentes (`#business`, `#service`, `#organization`, `#localbusiness`) déclaraient chacune la même note : Google y voyait quatre entreprises notées 5/5.
+6. **`aggregateRating` et `review` vivent uniquement dans `ReviewSchema.tsx`.** Ne pas les redéclarer ailleurs.
+7. **Un seul `BreadcrumbList` par page** : émis par chaque page via `SEO structuredData`. `Breadcrumb.tsx` ne rend que le fil visuel, et `JsonLd.tsx` n'en émet plus.
 4. **hreflang** : le site sert FR/EN sur la même URL → `x-default` + les deux hreflang doivent pointer vers la même URL
 
 ---

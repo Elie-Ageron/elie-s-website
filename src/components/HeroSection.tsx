@@ -7,10 +7,10 @@ import { useCalendly } from '@/contexts/CalendlyContext';
 import { lazy, Suspense, useState, useEffect, Component, ReactNode } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
-import logoVmProducers from '@/assets/logo vm producers.png';
-import logoSolarFusion from '@/assets/logo solar fusion.png';
-import logoMywebglory from '@/assets/logo mwg.png';
-import logoMyDrop from '@/assets/mydrop logo (1).png';
+import logoVmProducers from '@/assets/logo-vm-producers.webp';
+import logoSolarFusion from '@/assets/logo-solar-fusion.webp';
+import logoMywebglory from '@/assets/logo-mwg.webp';
+import logoMyDrop from '@/assets/logo-mydrop.webp';
 import logoNaura from '@/assets/logo-naura.webp';
 
 // Real client logos shown as above-the-fold social proof.
@@ -160,7 +160,7 @@ const HeroSection = () => {
             transition={{ delay: 0.7, duration: 0.6 }}
             className="mt-9 sm:mt-11"
           >
-            <p className="text-[11px] sm:text-xs uppercase tracking-widest text-muted-foreground/60 mb-4">
+            <p className="text-[11px] sm:text-xs uppercase tracking-widest text-muted-foreground mb-4">
               {t('hero.trustedby')}
             </p>
             <div className="flex flex-wrap items-center justify-center gap-x-7 gap-y-4 sm:gap-x-10">
@@ -186,7 +186,7 @@ const HeroSection = () => {
               <p className="text-sm sm:text-base text-foreground/80 italic max-w-md">
                 «&nbsp;{t('hero.review.text')}&nbsp;»
               </p>
-              <p className="text-xs text-muted-foreground/70">{t('hero.review.author')}</p>
+              <p className="text-xs text-muted-foreground">{t('hero.review.author')}</p>
             </div>
           </motion.div>
         </motion.header>

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Star, MapPin, Search, TrendingUp, Heart, Check, PenLine } from 'lucide-react';
+import { Star, MapPin, Search, TrendingUp, Heart, Check, PenLine, Share2 } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 /**
@@ -98,40 +98,68 @@ const GoogleBusinessMockup = () => {
   );
 };
 
-/* 3. SOCIAL, phone with IG-gradient + floating like + new-follower bubbles */
+/* 3. SOCIAL, phone playing a vertical reel + floating view counter & schedule chip */
 const SocialMockup = () => {
   const { language } = useLanguage();
-  const tiles = ['from-orange-400 to-rose-500', 'from-sky-400 to-indigo-500', 'from-emerald-400 to-teal-500', 'from-fuchsia-400 to-purple-600', 'from-amber-300 to-orange-500', 'from-rose-400 to-pink-600', 'from-cyan-400 to-blue-500', 'from-violet-400 to-fuchsia-500', 'from-lime-400 to-emerald-500'];
   return (
-    <div className="relative w-[210px] mx-auto rotate-2">
-      <div className="rounded-[2.2rem] border-[5px] border-foreground/10 bg-card shadow-2xl p-3">
-        <div className="mx-auto mb-2.5 h-1.5 w-10 rounded-full bg-foreground/15" aria-hidden="true" />
-        <div className="flex items-center gap-2.5 px-0.5 mb-2.5">
-          <span className="p-[2px] rounded-full bg-gradient-to-tr from-amber-400 via-rose-500 to-fuchsia-600 shrink-0" aria-hidden="true">
-            <span className="block w-9 h-9 rounded-full bg-card border-2 border-card overflow-hidden">
-              <span className="block w-full h-full bg-gradient-to-br from-violet-400 to-cyan-400" />
+    <div className="relative w-[196px] mx-auto rotate-2">
+      <div className="rounded-[2.2rem] border-[5px] border-foreground/10 bg-foreground/90 shadow-2xl p-1.5">
+        <div className="mx-auto mb-1.5 h-1 w-9 rounded-full bg-white/25" aria-hidden="true" />
+        {/* Reel frame, 9:16 */}
+        <div className="relative aspect-[9/16] rounded-[1.6rem] overflow-hidden bg-gradient-to-br from-violet-500 via-fuchsia-500 to-orange-400">
+          {/* subject silhouette */}
+          <span className="absolute left-1/2 bottom-0 -translate-x-1/2 w-24 h-32 rounded-t-[3rem] bg-black/20 backdrop-blur-[1px]" aria-hidden="true" />
+          <span className="absolute left-1/2 bottom-24 -translate-x-1/2 w-12 h-12 rounded-full bg-black/25" aria-hidden="true" />
+
+          {/* burned-in subtitles, the signature of a short-form edit */}
+          <span className="absolute left-1/2 -translate-x-1/2 bottom-12 w-[86%] text-center" aria-hidden="true">
+            <span className="inline-block rounded-md bg-black/65 px-1.5 py-0.5 text-[9px] font-extrabold uppercase leading-tight tracking-tight text-white">
+              {language === 'fr' ? 'ce que personne' : 'what nobody'}
+            </span>
+            <span className="mt-0.5 inline-block rounded-md bg-black/65 px-1.5 py-0.5 text-[9px] font-extrabold uppercase leading-tight tracking-tight text-amber-300">
+              {language === 'fr' ? 'ne vous dit' : 'tells you'}
             </span>
           </span>
-          <span className="min-w-0">
-            <span className="block text-[11px] font-semibold text-foreground truncate">@votremarque</span>
-            <span className="block text-[8px] text-muted-foreground">1 248 {language === 'fr' ? 'abonnés' : 'followers'}</span>
+
+          {/* right-side action rail */}
+          <span className="absolute right-1.5 bottom-14 flex flex-col items-center gap-2.5" aria-hidden="true">
+            <span className="flex flex-col items-center gap-0.5">
+              <Heart className="w-4 h-4 text-white fill-white drop-shadow" />
+              <span className="text-[7px] font-semibold text-white/90">4 812</span>
+            </span>
+            <span className="flex flex-col items-center gap-0.5">
+              <Share2 className="w-3.5 h-3.5 text-white drop-shadow" />
+              <span className="text-[7px] font-semibold text-white/90">318</span>
+            </span>
+          </span>
+
+          {/* handle */}
+          <span className="absolute left-2 bottom-3 flex items-center gap-1.5" aria-hidden="true">
+            <span className="w-4 h-4 rounded-full bg-gradient-to-br from-emerald-300 to-teal-500 border border-white/70" />
+            <span className="text-[8px] font-semibold text-white/95">@votremarque</span>
+          </span>
+
+          {/* progress bar */}
+          <span className="absolute left-2 right-2 bottom-1 h-[2px] rounded-full bg-white/25" aria-hidden="true">
+            <span className="block h-full w-2/3 rounded-full bg-white" />
           </span>
         </div>
-        <div className="grid grid-cols-3 gap-1">
-          {tiles.map((t, i) => (
-            <div key={i} className={`aspect-square rounded-md bg-gradient-to-br ${t}`} aria-hidden="true" />
-          ))}
-        </div>
       </div>
-      {/* floating like bubble */}
-      <div className="absolute -left-8 top-1/4 -rotate-6 rounded-2xl bg-card border border-border shadow-xl px-3 py-2 flex items-center gap-1.5 transition-transform duration-300 ease-out group-hover:-translate-x-2.5 group-hover:-translate-y-1 group-hover:-rotate-[14deg]">
-        <Heart className="w-4 h-4 text-rose-500 fill-rose-500" aria-hidden="true" />
-        <span className="text-sm font-bold text-foreground">1,2k</span>
+
+      {/* floating view counter, the real proof of the offer */}
+      <div className="absolute -left-10 top-[18%] -rotate-6 rounded-2xl bg-card border border-border shadow-xl px-3 py-2 leading-tight transition-transform duration-300 ease-out group-hover:-translate-x-2.5 group-hover:-translate-y-1 group-hover:-rotate-[14deg]">
+        <span className="block text-sm font-bold text-foreground tabular-nums">56 619</span>
+        <span className="block text-[9px] text-muted-foreground">{language === 'fr' ? 'vues' : 'views'}</span>
       </div>
-      {/* floating new-follower chip */}
-      <div className="absolute -right-9 bottom-10 rotate-3 rounded-full bg-card border border-border shadow-xl pl-1.5 pr-3 py-1 flex items-center gap-1.5 transition-transform duration-300 ease-out group-hover:translate-x-2.5 group-hover:translate-y-1">
-        <span className="w-5 h-5 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500" aria-hidden="true" />
-        <span className="text-[9px] font-semibold text-foreground">+ {language === 'fr' ? 'abonné' : 'follower'}</span>
+
+      {/* floating publishing rhythm chip */}
+      <div className="absolute -right-11 bottom-[22%] rotate-3 rounded-full bg-card border border-border shadow-xl pl-1.5 pr-3 py-1 flex items-center gap-1.5 transition-transform duration-300 ease-out group-hover:translate-x-2.5 group-hover:translate-y-1">
+        <span className="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center">
+          <Check className="w-3 h-3 text-white" aria-hidden="true" />
+        </span>
+        <span className="text-[9px] font-semibold text-foreground">
+          {language === 'fr' ? '3 / semaine' : '3 / week'}
+        </span>
       </div>
     </div>
   );
@@ -156,7 +184,7 @@ const BrandingMockup = () => (
       <div className="flex items-baseline gap-2.5">
         <span className="font-heading font-bold text-3xl text-foreground">Aa</span>
         <span className="text-base text-muted-foreground">Bb Cc</span>
-        <span className="ml-auto text-[9px] text-muted-foreground/70 uppercase tracking-wide">General Sans</span>
+        <span className="ml-auto text-[9px] text-muted-foreground uppercase tracking-wide">General Sans</span>
       </div>
     </div>
     {/* floating swatch chip */}
@@ -237,7 +265,7 @@ const ReviewMockup = () => {
             : '"Impeccable work, my site finally brings in clients. Highly recommend."'}
         </p>
         <div className="ml-2 pl-2.5 border-l-2 border-rose-500/40">
-          <p className="text-[9px] text-muted-foreground/80">
+          <p className="text-[9px] text-muted-foreground">
             {language === 'fr' ? 'Réponse du pro : Merci Marie, ravi de vous accompagner.' : 'Owner reply: Thanks Marie, glad to support you.'}
           </p>
         </div>
@@ -301,8 +329,12 @@ const ServiceMockup = ({ id }: { id: string }) => {
   const Mockup = MOCKUPS[id];
   if (!Mockup) return null;
   return (
+    // Illustration purement decorative : elle represente le site/la fiche d'un
+    // client fictif. aria-hidden evite de faire lire ce faux contenu aux
+    // lecteurs d'ecran, et exclut son micro-texte des regles de contraste.
     <motion.div
-      className="group cursor-pointer"
+      className="group"
+      aria-hidden="true"
       whileHover={{ y: -10, scale: 1.03 }}
       transition={{ type: 'spring', stiffness: 260, damping: 18 }}
     >

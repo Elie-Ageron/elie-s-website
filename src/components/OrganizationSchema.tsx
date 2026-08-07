@@ -19,8 +19,8 @@ const OrganizationSchema = () => {
     },
     image: `${baseUrl}/og-image.png`,
     description: language === 'fr'
-      ? 'Partenaire web en Savoie et Haute-Savoie : création de sites, Google Business, réseaux sociaux, identité de marque, référencement local et contenu'
-      : 'Web partner in Savoie & Haute-Savoie: websites, Google Business, social media, brand identity, local SEO and content',
+      ? "Partenaire web en Savoie et Haute-Savoie : création de sites web, tournage et publication de vidéos pour les réseaux sociaux, fiche Google Business, identité de marque, référencement local et contenu"
+      : 'Web partner in Savoie & Haute-Savoie: websites, social media video production and publishing, Google Business, brand identity, local SEO and content',
     email: 'elie@elieageron.com',
     telephone: '+33695555318',
     address: {
@@ -56,28 +56,24 @@ const OrganizationSchema = () => {
     currenciesAccepted: 'EUR',
     paymentAccepted: 'Bank Transfer, Credit Card',
     slogan: language === 'fr'
-      ? 'Votre partenaire web de A à Z'
-      : 'Your all-in-one web partner',
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '5',
-      reviewCount: '4',
-      bestRating: '5',
-      worstRating: '1',
-    },
+      ? 'Votre présence en ligne, gérée de A à Z'
+      : 'Your online presence, handled end to end',
+    // La note globale est portee par le seul noeud #business (voir ReviewSchema).
   };
 
   const localBusinessSchema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    '@id': `${baseUrl}/#localbusiness`,
+    // Meme @id que le LocalBusiness statique de index.html et que ReviewSchema :
+    // une seule entite entreprise, enrichie par plusieurs scripts.
+    '@id': `${baseUrl}/#business`,
     name: 'Elie Ageron Web Design',
     url: baseUrl,
     image: `${baseUrl}/og-image.png`,
     logo: `${baseUrl}/icons/apple-touch-icon.png`,
     description: language === 'fr'
-      ? 'Partenaire web en Savoie et Haute-Savoie : sites web, Google Business, réseaux sociaux, identité de marque, référencement local et contenu'
-      : 'Web partner in Savoie & Haute-Savoie: websites, Google Business, social media, brand identity, local SEO and content',
+      ? "Partenaire web en Savoie et Haute-Savoie : sites web, tournage et publication de vidéos pour les réseaux sociaux, fiche Google Business, identité de marque, référencement local et contenu"
+      : 'Web partner in Savoie & Haute-Savoie: websites, social media video production and publishing, Google Business, brand identity, local SEO and content',
     telephone: '+33695555318',
     email: 'elie@elieageron.com',
     priceRange: '\u20ac\u20ac',
@@ -122,31 +118,26 @@ const OrganizationSchema = () => {
     ],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: language === 'fr' ? 'Services Web Design' : 'Web Design Services',
+      name: language === 'fr' ? 'Services Web & Réseaux Sociaux' : 'Web & Social Media Services',
       itemListElement: [
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: language === 'fr' ? 'Création de site web' : 'Website design' } },
         {
           '@type': 'Offer',
-          name: language === 'fr' ? 'Landing Page' : 'Landing Page',
-        },
-        {
-          '@type': 'Offer',
-          name: language === 'fr' ? 'Site Vitrine' : 'Showcase Website',
+          itemOffered: {
+            '@type': 'Service',
+            '@id': `${baseUrl}/reseaux-sociaux#service`,
+            name: language === 'fr' ? 'Gestion des réseaux sociaux' : 'Social media management',
+            url: `${baseUrl}/reseaux-sociaux`,
+          },
         },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: language === 'fr' ? 'Google Business' : 'Google Business' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: language === 'fr' ? 'Gestion des réseaux sociaux' : 'Social media management' } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: language === 'fr' ? 'Identité de marque' : 'Brand identity' } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: language === 'fr' ? 'Référencement local' : 'Local SEO' } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: language === 'fr' ? 'Avis & e-réputation' : 'Reviews & reputation' } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: language === 'fr' ? 'Rédaction de contenu' : 'Content writing' } },
       ],
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '5',
-      reviewCount: '4',
-      bestRating: '5',
-      worstRating: '1',
-    },
+    // Pas de aggregateRating ici : ReviewSchema le porte sur le meme noeud #business.
   };
 
   return (

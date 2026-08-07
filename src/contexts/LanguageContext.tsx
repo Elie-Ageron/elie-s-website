@@ -19,10 +19,10 @@ const translations = {
     'nav.book': 'Book a Call',
 
     // Home Page
-    'hero.headline1': "Turn your",
-    'hero.headline2': "visitors into clients.",
-    'hero.subtitle': "I build your website, then support you on everything else: Google, social media, branding, SEO. Live in 7-14 days, optimized to convert.",
-    'hero.badge': 'Online in 7-14 days · Free quote',
+    'hero.headline1': "Your online presence,",
+    'hero.headline2': "handled end to end.",
+    'hero.subtitle': "Website and social media. I build, I film, I post. You get on with your work.",
+    'hero.badge': 'Site in 7-14 days · Videos every week',
     'hero.cta': "Get my free website audit",
     'hero.secondaryCta': 'See my work',
     'hero.cta.call': 'Book a free call',
@@ -448,10 +448,10 @@ const translations = {
     'nav.book': 'Réserver un appel',
 
     // Home Page
-    'hero.headline1': "Transformez vos",
-    'hero.headline2': "visiteurs en clients.",
-    'hero.subtitle': "Je crée votre site, puis je vous accompagne sur tout le reste : Google, réseaux, identité de marque, référencement. Livré en 7-14 jours, pensé pour convertir.",
-    'hero.badge': 'En ligne en 7-14 jours · Devis gratuit',
+    'hero.headline1': "Votre présence en ligne,",
+    'hero.headline2': "gérée de A à Z.",
+    'hero.subtitle': "Site web et réseaux sociaux. Je crée, je filme, je publie. Vous, vous faites votre métier.",
+    'hero.badge': 'Site en 7-14 jours · Vidéos chaque semaine',
     'hero.cta': 'Obtenir mon audit gratuit',
     'hero.secondaryCta': 'Voir mes réalisations',
     'hero.cta.call': 'Réserver un appel gratuit',

@@ -49,9 +49,6 @@ const GetStarted = () => {
     }));
   };
 
-  const isEventProducer =
-    formData.businessType === (language === 'fr' ? "Producteur d'événements" : 'Event producer');
-
   const canProceed = (): boolean => {
     switch (currentStep) {
       case 1: return !!(formData.name.trim() && formData.email.trim() && formData.businessType);
@@ -114,8 +111,8 @@ const GetStarted = () => {
   };
 
   const businessTypes = language === 'fr'
-    ? ["Coiffeur / Salon de beauté", "Coach / Thérapeute", "Restaurant / Bar / Café", "Artisan / Prestataire de service", "Boutique en ligne", "PME / Entreprise", "Producteur d'événements", "Autre"]
-    : ['Hairdresser / Beauty salon', 'Coach / Therapist', 'Restaurant / Bar / Café', 'Craftsman / Service provider', 'Online store', 'SMB / Company', 'Event producer', 'Other'];
+    ? ["Coiffeur / Salon de beauté", "Coach / Thérapeute", "Restaurant / Bar / Café", "Artisan / Prestataire de service", "Boutique en ligne", "PME / Entreprise", "Autre"]
+    : ['Hairdresser / Beauty salon', 'Coach / Therapist', 'Restaurant / Bar / Café', 'Craftsman / Service provider', 'Online store', 'SMB / Company', 'Other'];
 
   const goals = language === 'fr'
     ? ['Générer des contacts et leads', 'Vendre mes produits ou services en ligne', 'Présenter mon activité (vitrine)', 'Gagner en visibilité locale', 'Autre']
@@ -131,8 +128,8 @@ const GetStarted = () => {
     : ['Modern & minimal', 'Warm & natural', 'Elegant & premium', 'Bold & dynamic'];
 
   const extraNeeds = language === 'fr'
-    ? ['Fiche Google Business', 'Réseaux sociaux', 'Logo / identité de marque', 'Référencement (SEO)', 'Avis clients', 'Rédaction de contenu']
-    : ['Google Business profile', 'Social media', 'Logo / brand identity', 'SEO', 'Customer reviews', 'Content writing'];
+    ? ['Réseaux sociaux (vidéos + publications)', 'Fiche Google Business', 'Logo / identité de marque', 'Référencement (SEO)', 'Avis clients', 'Rédaction de contenu']
+    : ['Social media (videos + posting)', 'Google Business profile', 'Logo / brand identity', 'SEO', 'Customer reviews', 'Content writing'];
 
   const stepLabels = language === 'fr'
     ? ['Votre activité', 'Situation actuelle', 'Votre projet', 'Détails']
@@ -214,7 +211,7 @@ const GetStarted = () => {
                     ? "Je reviens vers vous sous 24h avec un brief de ce que je propose de construire."
                     : "I'll get back to you within 24h with a brief of what I propose to build."}
                 </p>
-                <p className="text-xs text-muted-foreground/60">
+                <p className="text-xs text-muted-foreground">
                   {language === 'fr' ? 'Questions ? elie@elieageron.com' : 'Questions? elie@elieageron.com'}
                 </p>
               </motion.div>
@@ -226,7 +223,7 @@ const GetStarted = () => {
                     <span className="text-xs font-semibold text-primary uppercase tracking-wider">
                       {language === 'fr' ? `Étape ${currentStep} sur ${TOTAL_STEPS}` : `Step ${currentStep} of ${TOTAL_STEPS}`}
                     </span>
-                    <span className="text-xs text-muted-foreground/60">{stepLabels[currentStep - 1]}</span>
+                    <span className="text-xs text-muted-foreground">{stepLabels[currentStep - 1]}</span>
                   </div>
                   <div className="w-full h-1.5 bg-muted rounded-full overflow-hidden">
                     <motion.div
@@ -276,26 +273,6 @@ const GetStarted = () => {
                               <option value="" disabled>{language === 'fr' ? 'Choisissez...' : 'Choose...'}</option>
                               {businessTypes.map(t => <option key={t} value={t}>{t}</option>)}
                             </select>
-                            {isEventProducer && (
-                              <motion.p
-                                initial={{ opacity: 0, y: -5 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                className="text-xs text-primary mt-2 flex items-center gap-1.5"
-                              >
-                                <span aria-hidden="true">→</span>
-                                <span>
-                                  {language === 'fr'
-                                    ? "Nous avons un formulaire dédié pour vous : "
-                                    : 'We have a dedicated form for you: '}
-                                  <Link
-                                    to="/event-production#apply"
-                                    className="underline underline-offset-4 font-semibold"
-                                  >
-                                    {language === 'fr' ? 'formulaire événementiel' : 'event form'}
-                                  </Link>
-                                </span>
-                              </motion.p>
-                            )}
                           </div>
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div className="space-y-2">
@@ -445,7 +422,7 @@ const GetStarted = () => {
                           <div className="space-y-2">
                             <Label htmlFor="gs-site-ref">
                               {language === 'fr' ? 'Un site que vous aimez ? (référence de style)' : 'A site you like? (style reference)'}
-                              {' '}<span className="text-muted-foreground/60 text-xs">({language === 'fr' ? 'optionnel' : 'optional'})</span>
+                              {' '}<span className="text-muted-foreground text-xs">({language === 'fr' ? 'optionnel' : 'optional'})</span>
                             </Label>
                             <Input
                               id="gs-site-ref"
@@ -475,7 +452,7 @@ const GetStarted = () => {
                           <div className="space-y-2">
                             <Label htmlFor="gs-google-business">
                               {language === 'fr' ? 'Nom de votre page Google Business (si vous en avez une)' : 'Your Google Business name (if you have one)'}
-                              {' '}<span className="text-muted-foreground/60 text-xs">({language === 'fr' ? 'optionnel' : 'optional'})</span>
+                              {' '}<span className="text-muted-foreground text-xs">({language === 'fr' ? 'optionnel' : 'optional'})</span>
                             </Label>
                             <Input
                               id="gs-google-business"
@@ -507,11 +484,11 @@ const GetStarted = () => {
                               {language === 'fr'
                                 ? 'Vous avez aussi besoin de… ?'
                                 : 'Do you also need…?'}{' '}
-                              <span className="text-muted-foreground/60 text-xs">
+                              <span className="text-muted-foreground text-xs">
                                 ({language === 'fr' ? 'optionnel, plusieurs choix' : 'optional, multiple choices'})
                               </span>
                             </Label>
-                            <p className="text-xs text-muted-foreground/70">
+                            <p className="text-xs text-muted-foreground">
                               {language === 'fr'
                                 ? "Au-delà du site, je peux gérer toute votre présence en ligne."
                                 : 'Beyond the site, I can manage your whole online presence.'}
@@ -561,7 +538,7 @@ const GetStarted = () => {
                                 : 'Describe your business in a few sentences'}{' '}
                               <span className="text-primary" aria-hidden="true">*</span>
                             </Label>
-                            <p className="text-xs text-muted-foreground/70">
+                            <p className="text-xs text-muted-foreground">
                               {language === 'fr'
                                 ? "Qui vous êtes, ce que vous vendez, à qui, ce qui vous distingue."
                                 : "Who you are, what you sell, to whom, what sets you apart."}
@@ -580,7 +557,7 @@ const GetStarted = () => {
                               onChange={e => setFormData({ ...formData, description: e.target.value })}
                               className="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 resize-none mt-1"
                             />
-                            <p className="text-right text-xs text-muted-foreground/50">
+                            <p className="text-right text-xs text-muted-foreground">
                               {formData.description.length}/600
                             </p>
                           </div>
@@ -589,7 +566,7 @@ const GetStarted = () => {
                               {language === 'fr'
                                 ? 'Une chose à absolument avoir sur le site'
                                 : 'One thing you absolutely want on the site'}{' '}
-                              <span className="text-muted-foreground/60 text-xs">
+                              <span className="text-muted-foreground text-xs">
                                 ({language === 'fr' ? 'optionnel' : 'optional'})
                               </span>
                             </Label>
@@ -655,7 +632,7 @@ const GetStarted = () => {
                 </div>
 
                 {currentStep === TOTAL_STEPS && (
-                  <p className="text-center text-xs text-muted-foreground/60 mt-4">
+                  <p className="text-center text-xs text-muted-foreground mt-4">
                     {language === 'fr'
                       ? 'Réponse sous 24h · Sans engagement · Sans appel'
                       : 'Reply within 24h · No commitment · No call'}

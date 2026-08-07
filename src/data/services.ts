@@ -27,10 +27,17 @@ export interface ServiceItem {
   recurring?: boolean;
   /** Future service, shown as "coming soon" */
   soon?: boolean;
-  /** Optional internal link (e.g. websites point to the pricing page) */
+  /** Optional internal link (e.g. social media points to its dedicated page) */
   to?: string;
+  /** Label for the `to` link. Defaults to a generic "learn more" wording. */
+  ctaLabel?: { fr: string; en: string };
 }
 
+/**
+ * Ordre volontaire : les deux gros services (sites web, réseaux sociaux) d'abord,
+ * le reste ensuite. Cet ordre pilote la page /services, la section écosystème
+ * de la home et le catalogue d'offres JSON-LD.
+ */
 export const services: ServiceItem[] = [
   {
     id: 'sites',
@@ -53,6 +60,37 @@ export const services: ServiceItem[] = [
     price: { fr: 'dès 500€', en: 'from €500' },
   },
   {
+    id: 'reseaux',
+    icon: Share2,
+    anchor: 'reseaux-sociaux',
+    kicker: { fr: 'Votre présence quotidienne', en: 'Your daily presence' },
+    title: { fr: 'Réseaux sociaux', en: 'Social media' },
+    short: {
+      fr: 'On filme une demi-journée, je publie vos vidéos tout le mois. Vous ne touchez à rien.',
+      en: 'We film for half a day, I post your videos all month. You touch nothing.',
+    },
+    desc: {
+      fr: "J'arrive chez vous avec le matériel et un plan de tournage déjà prêt : les sujets, les questions, ce qu'on filme et dans quel ordre. On tourne une demi-journée, parfois une journée entière. Ensuite je monte, je sous-titre et je publie 2 à 3 vidéos par semaine sur Instagram, Facebook, TikTok ou YouTube Shorts, pendant tout le mois. Vous, vous retournez travailler.",
+      en: "I show up with the gear and a shooting plan already written: the topics, the questions, what we film and in what order. We shoot for half a day, sometimes a full one. Then I edit, subtitle and publish 2 to 3 videos a week on Instagram, Facebook, TikTok or YouTube Shorts, all month long. You go back to work.",
+    },
+    bullets: {
+      fr: [
+        'Un plan de tournage et des idées de sujets, préparés en amont',
+        'Une demi-journée de tournage, tout le matériel fourni',
+        '2 à 3 vidéos verticales publiées par semaine, tout le mois',
+      ],
+      en: [
+        'A shooting plan and topic ideas, prepared in advance',
+        'Half a day of filming, all equipment provided',
+        '2 to 3 vertical videos published every week, all month',
+      ],
+    },
+    price: { fr: 'dès 450€/mois', en: 'from €450/mo' },
+    recurring: true,
+    to: '/reseaux-sociaux',
+    ctaLabel: { fr: 'Voir comment ça marche', en: 'See how it works' },
+  },
+  {
     id: 'google-business',
     icon: MapPin,
     anchor: 'google-business',
@@ -71,27 +109,6 @@ export const services: ServiceItem[] = [
       en: ['Profile creation or optimization', 'Polished photos, hours and descriptions', 'Local SEO (Google Maps)'],
     },
     price: { fr: 'dès 250€', en: 'from €250' },
-  },
-  {
-    id: 'reseaux',
-    icon: Share2,
-    anchor: 'reseaux-sociaux',
-    kicker: { fr: 'Votre communauté', en: 'Your community' },
-    title: { fr: 'Réseaux sociaux', en: 'Social media' },
-    short: {
-      fr: 'Création de contenu et gestion de vos comptes, sans que vous y pensiez.',
-      en: 'Content creation and account management, without you lifting a finger.',
-    },
-    desc: {
-      fr: "Rester présent sur Instagram et Facebook demande du temps que vous n'avez pas. Je crée le contenu, je publie régulièrement et je garde vos comptes vivants pour entretenir le lien avec vos clients.",
-      en: "Staying active on Instagram and Facebook takes time you don't have. I create the content, post regularly and keep your accounts alive to maintain the link with your clients.",
-    },
-    bullets: {
-      fr: ['Création de contenu (posts, stories, vidéos)', 'Publication régulière et planifiée', 'Comptes Instagram & Facebook gérés'],
-      en: ['Content creation (posts, stories, videos)', 'Regular, scheduled publishing', 'Instagram & Facebook accounts managed'],
-    },
-    price: { fr: 'dès 250€/mois', en: 'from €250/mo' },
-    recurring: true,
   },
   {
     id: 'branding',

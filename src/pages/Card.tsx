@@ -142,7 +142,7 @@ const Card = () => {
           >
             <div className="flex items-center gap-3 mb-3">
               <div className="flex-1 h-px bg-border" />
-              <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground/70">
+              <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
                 M'envoyer un message
               </span>
               <div className="flex-1 h-px bg-border" />
@@ -177,7 +177,7 @@ const Card = () => {
           {/* Pied discret */}
           <a
             href="https://elieageron.com"
-            className="mt-8 text-xs text-muted-foreground/70 hover:text-primary transition-colors"
+            className="mt-8 text-xs text-muted-foreground hover:text-primary transition-colors"
           >
             elieageron.com
           </a>

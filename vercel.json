@@ -10,6 +10,21 @@
       "permanent": true
     },
     {
+      "source": "/pricing",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/event-production",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/event-production/:path*",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
       "source": "/web-designer-chambery",
       "destination": "/web-designer-annecy",
       "permanent": true

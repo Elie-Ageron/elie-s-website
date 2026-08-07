@@ -8,7 +8,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/" />
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -19,7 +19,18 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/services" />
     <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/services" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/services" />
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Reseaux sociaux : tournage + publication -->
+  <url>
+    <loc>https://elieageron.com/reseaux-sociaux</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/reseaux-sociaux" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/reseaux-sociaux" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/reseaux-sociaux" />
+    <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -30,31 +41,31 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/contact" />
     <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/contact" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/contact" />
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Démarrer un projet -->
+  <!-- Demarrer un projet -->
   <url>
     <loc>https://elieageron.com/get-started</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/get-started" />
     <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/get-started" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/get-started" />
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Test de conversion (assessment) -->
+  <!-- Test de conversion -->
   <url>
     <loc>https://elieageron.com/assessment</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/assessment" />
     <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/assessment" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/assessment" />
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
 
   <!-- Portfolio -->
@@ -63,7 +74,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/portfolio" />
     <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/portfolio" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/portfolio" />
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -74,31 +85,53 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/why-a-website" />
     <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/why-a-website" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/why-a-website" />
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Notre méthode -->
+  <!-- Notre methode -->
   <url>
     <loc>https://elieageron.com/our-process</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/our-process" />
     <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/our-process" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/our-process" />
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Sites pour producteurs d'événements -->
+  <!-- Page ville : Savoie / Albertville -->
   <url>
-    <loc>https://elieageron.com/event-production</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/event-production" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/event-production" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/event-production" />
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://elieageron.com/web-designer-savoie</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/web-designer-savoie" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/web-designer-savoie" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/web-designer-savoie" />
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Page ville : Annecy -->
+  <url>
+    <loc>https://elieageron.com/web-designer-annecy</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/web-designer-annecy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/web-designer-annecy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/web-designer-annecy" />
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Page ville : Haute-Savoie -->
+  <url>
+    <loc>https://elieageron.com/creation-site-web-haute-savoie</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/creation-site-web-haute-savoie" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/creation-site-web-haute-savoie" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/creation-site-web-haute-savoie" />
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 
   <!-- Blog -->
@@ -107,118 +140,203 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/blog" />
     <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/blog" />
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- Article : Pourquoi un site web en 2025 -->
+  <!-- Articles de blog -->
   <url>
     <loc>https://elieageron.com/blog/pourquoi-site-web-2025</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/blog/pourquoi-site-web-2025" />
     <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog/pourquoi-site-web-2025" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/blog/pourquoi-site-web-2025" />
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- Article : Optimiser taux de conversion -->
   <url>
     <loc>https://elieageron.com/blog/optimiser-taux-conversion</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/blog/optimiser-taux-conversion" />
     <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog/optimiser-taux-conversion" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/blog/optimiser-taux-conversion" />
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- Article : SEO local guide complet -->
   <url>
     <loc>https://elieageron.com/blog/seo-local-guide-complet</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/blog/seo-local-guide-complet" />
     <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog/seo-local-guide-complet" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/blog/seo-local-guide-complet" />
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- Article : Landing page efficace -->
   <url>
     <loc>https://elieageron.com/blog/landing-page-efficace</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/blog/landing-page-efficace" />
     <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog/landing-page-efficace" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/blog/landing-page-efficace" />
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- Article : Combien coûte un site web -->
   <url>
     <loc>https://elieageron.com/blog/combien-coute-un-site-web</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/blog/combien-coute-un-site-web" />
     <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog/combien-coute-un-site-web" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/blog/combien-coute-un-site-web" />
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 
-  <!-- Article : Site web pour artisan -->
   <url>
     <loc>https://elieageron.com/blog/site-web-artisan</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/blog/site-web-artisan" />
     <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog/site-web-artisan" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/blog/site-web-artisan" />
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 
-  <!-- Article : Pourquoi mon site n'est pas sur Google -->
   <url>
     <loc>https://elieageron.com/blog/pourquoi-site-pas-sur-google</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/blog/pourquoi-site-pas-sur-google" />
     <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog/pourquoi-site-pas-sur-google" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/blog/pourquoi-site-pas-sur-google" />
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Pages villes : SEO local -->
-  <url>
-    <loc>https://elieageron.com/web-designer-annecy</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/web-designer-annecy" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/web-designer-annecy" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/web-designer-annecy" />
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://elieageron.com/creation-site-web-haute-savoie</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/creation-site-web-haute-savoie" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/creation-site-web-haute-savoie" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/creation-site-web-haute-savoie" />
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://elieageron.com/blog/reseaux-sociaux-artisan-savoie</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/blog/reseaux-sociaux-artisan-savoie" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog/reseaux-sociaux-artisan-savoie" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/blog/reseaux-sociaux-artisan-savoie" />
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.7</priority>
   </url>
 
-  <!-- Page ville : web designer Savoie / Albertville -->
   <url>
-    <loc>https://elieageron.com/web-designer-savoie</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/web-designer-savoie" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/web-designer-savoie" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/web-designer-savoie" />
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://elieageron.com/blog/video-courte-entreprise-locale</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/blog/video-courte-entreprise-locale" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog/video-courte-entreprise-locale" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/blog/video-courte-entreprise-locale" />
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://elieageron.com/blog/combien-publier-reseaux-sociaux</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/blog/combien-publier-reseaux-sociaux" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog/combien-publier-reseaux-sociaux" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/blog/combien-publier-reseaux-sociaux" />
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://elieageron.com/blog/filmer-avec-son-telephone</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/blog/filmer-avec-son-telephone" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog/filmer-avec-son-telephone" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/blog/filmer-avec-son-telephone" />
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://elieageron.com/blog/therapeute-reseaux-sociaux-clients</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/blog/therapeute-reseaux-sociaux-clients" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog/therapeute-reseaux-sociaux-clients" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/blog/therapeute-reseaux-sociaux-clients" />
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://elieageron.com/blog/idees-contenu-reseaux-sociaux</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/blog/idees-contenu-reseaux-sociaux" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog/idees-contenu-reseaux-sociaux" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/blog/idees-contenu-reseaux-sociaux" />
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://elieageron.com/blog/pourquoi-mes-videos-ne-font-pas-de-vues</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/blog/pourquoi-mes-videos-ne-font-pas-de-vues" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog/pourquoi-mes-videos-ne-font-pas-de-vues" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/blog/pourquoi-mes-videos-ne-font-pas-de-vues" />
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://elieageron.com/blog/reseaux-sociaux-ou-site-web</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/blog/reseaux-sociaux-ou-site-web" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog/reseaux-sociaux-ou-site-web" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/blog/reseaux-sociaux-ou-site-web" />
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://elieageron.com/blog/deleguer-reseaux-sociaux</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/blog/deleguer-reseaux-sociaux" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog/deleguer-reseaux-sociaux" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/blog/deleguer-reseaux-sociaux" />
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://elieageron.com/blog/algorithme-reseaux-sociaux-comprendre</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/blog/algorithme-reseaux-sociaux-comprendre" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog/algorithme-reseaux-sociaux-comprendre" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/blog/algorithme-reseaux-sociaux-comprendre" />
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Pages legales -->
+  <!-- Mentions legales -->
+  <url>
+    <loc>https://elieageron.com/mentions-legales</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/mentions-legales" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/mentions-legales" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/mentions-legales" />
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Politique de confidentialite -->
+  <url>
+    <loc>https://elieageron.com/politique-confidentialite</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/politique-confidentialite" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/politique-confidentialite" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/politique-confidentialite" />
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 
 </urlset>

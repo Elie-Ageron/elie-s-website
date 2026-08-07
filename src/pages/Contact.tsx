@@ -82,7 +82,7 @@ const Contact = () => {
                       <span className="px-2.5 py-0.5 rounded-full bg-primary text-primary-foreground text-xs font-semibold">
                         {language === 'fr' ? 'Recommandé' : 'Recommended'}
                       </span>
-                      <span className="text-xs text-muted-foreground/70">
+                      <span className="text-xs text-muted-foreground">
                         {language === 'fr' ? 'Sans appel · 4 étapes · 5 min' : 'No call · 4 steps · 5 min'}
                       </span>
                     </div>
@@ -110,7 +110,7 @@ const Contact = () => {
             {/* Divider */}
             <div className="flex items-center gap-4 py-2">
               <div className="flex-1 h-px bg-border/50" />
-              <span className="text-xs text-muted-foreground/50 uppercase tracking-widest">
+              <span className="text-xs text-muted-foreground uppercase tracking-widest">
                 {language === 'fr' ? 'ou' : 'or'}
               </span>
               <div className="flex-1 h-px bg-border/50" />
@@ -129,7 +129,7 @@ const Contact = () => {
                 aria-label="Contact via WhatsApp"
               >
                 <div className="p-3 rounded-xl bg-green-500/10 shrink-0">
-                  <MessageCircle className="w-6 h-6 text-green-600" aria-hidden="true" />
+                  <MessageCircle className="w-6 h-6 text-green-700" aria-hidden="true" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">WhatsApp</h3>
@@ -138,7 +138,7 @@ const Contact = () => {
                       ? 'Réponse rapide, généralement en quelques minutes.'
                       : 'Quick response, usually within minutes.'}
                   </p>
-                  <div className="flex items-center gap-1.5 text-green-600 font-medium text-sm group-hover:gap-2.5 transition-all">
+                  <div className="flex items-center gap-1.5 text-green-700 font-medium text-sm group-hover:gap-2.5 transition-all">
                     {language === 'fr' ? 'Écrire maintenant' : 'Write now'}
                     <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </div>
@@ -168,16 +168,16 @@ const Contact = () => {
               </a>
             </motion.div>
 
-            {/* Event producer nudge */}
+            {/* Social media nudge */}
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="text-center text-sm text-muted-foreground/60 pt-2"
+              className="text-center text-sm text-muted-foreground pt-2"
             >
-              {language === 'fr' ? "Producteur d'événements ? " : 'Event producer? '}
-              <Link to="/event-production#apply" className="text-primary hover:underline underline-offset-4 font-medium">
-                {language === 'fr' ? 'Formulaire dédié ici →' : 'Dedicated form here →'}
+              {language === 'fr' ? "C'est pour vos réseaux sociaux ? " : "Is it about your social media? "}
+              <Link to="/reseaux-sociaux" className="text-primary hover:underline underline-offset-4 font-medium">
+                {language === 'fr' ? "Voir comment je travaille →" : 'See how I work →'}
               </Link>
             </motion.p>
 

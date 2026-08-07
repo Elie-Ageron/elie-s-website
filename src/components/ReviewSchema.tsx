@@ -1,6 +1,15 @@
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
 
+/**
+ * Avis clients + note globale.
+ *
+ * Ce composant est le SEUL porteur de `aggregateRating` et de `review` sur le
+ * site, et il les rattache au noeud entreprise canonique `#business` (le meme
+ * @id que le LocalBusiness statique de index.html). Auparavant quatre entites
+ * distinctes (#business, #service, #organization, #localbusiness) declaraient
+ * chacune la meme note : Google y voyait quatre entreprises notees 5/5.
+ */
 const ReviewSchema = () => {
   const { language } = useLanguage();
   const baseUrl = 'https://elieageron.com';
@@ -8,11 +17,11 @@ const ReviewSchema = () => {
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
-    '@id': `${baseUrl}/#service`,
-    name: language === 'fr' ? 'Elie Ageron Web Design' : 'Elie Ageron Web Design',
+    '@id': `${baseUrl}/#business`,
+    name: 'Elie Ageron Web Design',
     description: language === 'fr'
-      ? 'Services de création de sites web premium qui convertissent les visiteurs en clients'
-      : 'Premium web design services that convert visitors into paying clients',
+      ? "Création de sites web qui convertissent, et production de contenu vidéo pour les réseaux sociaux"
+      : 'Websites built to convert, and social media video content produced end to end',
     image: `${baseUrl}/og-image.png`,
     url: baseUrl,
     telephone: '+33695555318',
@@ -21,16 +30,27 @@ const ReviewSchema = () => {
       '@type': 'PostalAddress',
       addressLocality: 'Albertville',
       addressRegion: 'Savoie',
+      postalCode: '73200',
       addressCountry: 'FR',
     },
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '5',
-      reviewCount: '4',
+      reviewCount: '5',
       bestRating: '5',
       worstRating: '1',
     },
     review: [
+      {
+        '@type': 'Review',
+        author: { '@type': 'Person', name: 'Nora Aamara' },
+        datePublished: '2026-07-15',
+        publisher: { '@type': 'Organization', name: 'Google' },
+        reviewBody: language === 'fr'
+          ? "J'ai eu le plaisir de collaborer avec Elie pour la création du site internet de Naura Conseils, et je suis pleinement satisfaite du résultat. Dès le début du projet, il a été à l'écoute de mes besoins, de mes idées et de ma vision. Aujourd'hui, mon site est à la fois moderne, clair, fonctionnel et parfaitement adapté à mon activité. Je recommande Elie sans hésitation."
+          : "I had the pleasure of working with Elie on the website for Naura Conseils, and I'm fully satisfied with the result. From the very start he listened to my needs, my ideas and my vision. Today my site is modern, clear, functional and perfectly suited to my business. I recommend Elie without hesitation.",
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      },
       {
         '@type': 'Review',
         author: { '@type': 'Person', name: 'Gabriel Ageron' },
