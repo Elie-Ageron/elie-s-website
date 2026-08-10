@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, FileText, Briefcase, HelpCircle, BookOpen, Share2, LayoutGrid, MapPin, GraduationCap } from 'lucide-react';
+import { ArrowRight, FileText, Briefcase, HelpCircle, BookOpen, Share2, LayoutGrid, MapPin, GraduationCap, Landmark } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface InternalLinksProps {
-  currentPage: 'home' | 'services' | 'why' | 'process' | 'portfolio' | 'contact' | 'blog' | 'social' | 'guides' | 'about';
+  currentPage: 'home' | 'services' | 'why' | 'process' | 'portfolio' | 'contact' | 'blog' | 'social' | 'lieux' | 'guides' | 'about';
 }
 
 const InternalLinks = ({ currentPage }: InternalLinksProps) => {
@@ -25,6 +25,17 @@ const InternalLinks = ({ currentPage }: InternalLinksProps) => {
       icon: Share2,
       title: language === 'fr' ? 'Réseaux sociaux' : 'Social media',
       desc: language === 'fr' ? 'Je filme, je monte, je publie tout le mois' : 'I film, edit and post all month long',
+      anchor: '',
+    },
+    {
+      id: 'lieux',
+      path: '/lieux-de-reception',
+      icon: Landmark,
+      title: language === 'fr' ? 'Lieux de réception' : 'Reception venues',
+      desc:
+        language === 'fr'
+          ? 'Domaines et salles : film au drone et tarifs'
+          : 'Venues: drone films and pricing',
       anchor: '',
     },
     {
