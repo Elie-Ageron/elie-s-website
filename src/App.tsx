@@ -22,7 +22,6 @@ const Contact = lazy(() => import("./pages/Contact"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 const SocialMedia = lazy(() => import("./pages/SocialMedia"));
-const LieuxDeReception = lazy(() => import("./pages/LieuxDeReception"));
 const GetStarted = lazy(() => import("./pages/GetStarted"));
 const Assessment = lazy(() => import("./pages/Assessment"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -120,8 +119,6 @@ const App = () => (
                         <Route path="/blog/categorie/:slug" element={<BlogCategory />} />
                         <Route path="/blog/:slug" element={<BlogPost />} />
                         <Route path="/reseaux-sociaux" element={<SocialMedia />} />
-                        {/* Page segment : lieux de reception. Seule page du site qui affiche une grille de prix. */}
-                        <Route path="/lieux-de-reception" element={<LieuxDeReception />} />
                         {/* Page Événements retirée (août 2026) : l'événementiel n'est plus un service à part. Redirection SEO. */}
                         <Route path="/event-production" element={<Navigate to="/services" replace />} />
                         <Route path="/get-started" element={<GetStarted />} />

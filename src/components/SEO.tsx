@@ -2,7 +2,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface SEOProps {
-  page: 'home' | 'services' | 'social' | 'lieux' | 'why' | 'process' | 'pricing' | 'portfolio' | 'contact' | 'blog' | 'apps' | 'guides' | 'about';
+  page: 'home' | 'services' | 'social' | 'why' | 'process' | 'pricing' | 'portfolio' | 'contact' | 'blog' | 'apps' | 'guides' | 'about';
   /** Force la langue du document, pour les contenus servis en francais seul. */
   forceLang?: 'fr' | 'en';
   customTitle?: string;
@@ -21,7 +21,6 @@ const pageKeywords = {
     home: 'Elie Ageron, web design, web designer, conversion optimization, website, Savoie, Haute-Savoie, Albertville, Annecy, France',
     services: 'web partner, digital partner, web designer Savoie, web designer Annecy, Google Business, social media management, brand identity, local SEO, content writing, web agency Savoie Haute-Savoie',
     social: 'social media management Savoie, short form video production France, Instagram Reels for small business, TikTok content creation, social media content creator Annecy, done-for-you social media',
-    lieux: 'wedding venue video Savoie, drone film wedding venue France, venue social media management Annecy, reception venue marketing Haute-Savoie',
     why: 'why a website, need website 2025, website business benefits, online presence, digital visibility',
     process: 'web design process, how to build a website, website creation steps, web designer workflow',
     pricing: 'web design pricing, website cost, landing page price, showcase site price, affordable web design',
@@ -36,7 +35,6 @@ const pageKeywords = {
     home: 'Elie Ageron, web design, création site web, optimisation conversion, site internet, Savoie, Haute-Savoie, Albertville, Annecy',
     services: 'partenaire web, partenaire digital, web designer Savoie, web designer Annecy, fiche Google Business, gestion réseaux sociaux, identité de marque, référencement local, rédaction de contenu, agence web Savoie Haute-Savoie',
     social: 'gestion réseaux sociaux Savoie, création contenu vidéo Savoie, vidéo verticale Instagram, reels professionnels, community manager Albertville, community manager Annecy, création contenu TikTok, gestion Instagram artisan, vidéaste réseaux sociaux Haute-Savoie',
-    lieux: 'vidéo domaine mariage Savoie, film drone domaine mariage, vidéo salle de réception Annecy, réseaux sociaux domaine de mariage, vidéaste lieu de réception Haute-Savoie, communication domaine mariage Chambéry, film de lieu Albertville',
     why: 'pourquoi site web, besoin site internet 2025, bénéfices site web, présence en ligne, visibilité digitale',
     process: 'processus création site web, comment créer site internet, étapes création site web',
     pricing: 'tarif web design, prix site internet, coût landing page, tarif site vitrine, web design Savoie, web design Annecy',
@@ -59,10 +57,6 @@ const seoData = {
     services: {
       title: 'Web Partner in Savoie | Elie Ageron',
       description: 'More than websites: social media content, Google Business, branding, local SEO. Your all-in-one web partner in Savoie & Haute-Savoie. Free strategy call.',
-    },
-    lieux: {
-      title: 'Video for Wedding Venues | Savoie & Annecy',
-      description: 'Drone films, Google profile and monthly posting for reception venues in Savoie, Haute-Savoie and around Annecy. Prices shown. Three venues at a time.',
     },
     social: {
       title: 'Social Media Content, Done For You | Elie Ageron',
@@ -113,10 +107,6 @@ const seoData = {
     services: {
       title: 'Partenaire Web en Savoie | Elie Ageron',
       description: "Bien plus qu'un site : vidéos pour vos réseaux, fiche Google, identité de marque, SEO local. Votre partenaire web en Savoie et Haute-Savoie. Appel gratuit.",
-    },
-    lieux: {
-      title: 'Vidéo pour Domaines et Lieux de Réception | Savoie',
-      description: 'Film de votre domaine au drone, fiche Google et publication tous les mois. Savoie, Annecy, Chambéry. Tarifs affichés, 3 lieux à la fois.',
     },
     social: {
       title: 'Gestion Réseaux Sociaux Savoie | Elie Ageron',
@@ -169,7 +159,6 @@ const SEO = ({ page, forceLang, customTitle, customDescription, customCanonical,
     home: '',
     services: '/services',
     social: '/reseaux-sociaux',
-    lieux: '/lieux-de-reception',
     why: '/why-a-website',
     process: '/our-process',
     pricing: '/pricing',

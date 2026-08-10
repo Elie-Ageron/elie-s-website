@@ -339,29 +339,6 @@ const SocialMedia = () => {
         </div>
       </section>
 
-      {/* ─────────── Aiguillage vers la page segment ─────────── */}
-      {/* Un gérant de domaine qui atterrit ici ne se reconnaît pas dans une offre
-          généraliste. Ce bandeau existe pour le router vers sa page, où les tarifs
-          sont affichés. C'est le lien interne le plus rentable de la page. */}
-      <section className="border-b border-border/50" aria-label="Offre dédiée aux lieux de réception">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-5">
-          <Link
-            to="/lieux-de-reception"
-            className="group flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-center text-sm sm:text-base text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <span>
-              {language === 'fr'
-                ? 'Vous gérez un domaine ou une salle de réception ?'
-                : 'You run a wedding venue or a reception hall?'}
-            </span>
-            <span className="inline-flex items-center gap-1.5 font-semibold text-primary">
-              {language === 'fr' ? 'Il y a une offre dédiée, tarifs affichés' : 'There is a dedicated offer, prices shown'}
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-            </span>
-          </Link>
-        </div>
-      </section>
-
       {/* ─────────── Preuve chiffrée ─────────── */}
       <section className="py-16 sm:py-24 bg-secondary/30 border-y border-border/50" aria-labelledby="social-proof-heading">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
