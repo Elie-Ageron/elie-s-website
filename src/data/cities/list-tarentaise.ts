@@ -68,7 +68,7 @@ export const tarentaiseCities: CityData[] = [
       blocks: [
         {
           title: 'Ce que je fais pour les entreprises du bassin',
-          body: "Un site clair qui explique ce que vous faites, où vous intervenez et comment on vous joint. Une fiche Google Business remplie et entretenue, parce que c'est ce qui vous fait sortir sur la carte quand quelqu'un tape votre métier depuis son téléphone. Et si vous le souhaitez, une demi-journée de tournage par mois pour alimenter vos réseaux sans que vous ayez à filmer quoi que ce soit.",
+          body: "Un site clair qui explique ce que vous faites, où vous intervenez et comment on vous joint. Une fiche Google Business remplie et entretenue, parce que c'est ce qui vous fait sortir sur la carte quand quelqu'un tape votre métier depuis son téléphone. Et si vous le souhaitez, une journée de tournage par mois pour alimenter vos réseaux sans que vous ayez à filmer quoi que ce soit.",
         },
         {
           title: 'Le rendez-vous sur place, sans facturation',

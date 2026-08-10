@@ -235,7 +235,7 @@ const GuidePage = () => {
               Vous préférez que quelqu'un s'en occupe ?
             </h2>
             <p className="mt-3 text-base text-muted-foreground leading-relaxed">
-              C'est mon métier. Je viens filmer une demi-journée par mois chez mes clients, je monte, je
+              C'est mon métier. Je viens filmer une journée par mois chez mes clients, je monte, je
               sous-titre et je publie, et je m'occupe aussi de leur site et de leur fiche Google.
             </p>
             <p className="mt-5 flex flex-wrap gap-4">

@@ -18,10 +18,17 @@ import SEO from '@/components/SEO';
 
 /**
  * Page dédiée au service réseaux sociaux (lancé en 2026).
- * Promesse : Elie vient filmer une demi-journée, puis publie 2-3 vidéos
- * verticales par semaine pendant tout le mois. Le client ne touche à rien.
- * Pas de prix affiché (tout est sur devis) et pas de grille de cartes :
- * l'info est présentée en listes éditoriales.
+ * Promesse : Elie vient filmer une journée, puis publie 6 à 12 vidéos
+ * verticales dans le mois. Le client ne touche à rien.
+ *
+ * Périmètre et prix revus en août 2026. Deux choses à ne pas réintroduire :
+ *  - la « demi-journée » de tournage : le tournage est une journée entière ;
+ *  - une formule où le client filme lui-même. Elle a été écartée volontairement,
+ *    pour la raison expliquée dans l'article « combien coûte la gestion des
+ *    réseaux sociaux » : sans production sur place, il ne sort plus rien au bout
+ *    de six semaines.
+ * Le plancher public est « à partir de 890 € par mois ». Pas de grille complète
+ * en ligne et pas de cartes : l'info est présentée en listes éditoriales.
  */
 
 /* ── Étapes du mois type ── */
@@ -35,8 +42,8 @@ const useSteps = () => {
       title: language === 'fr' ? "J'arrive avec le plan et le matériel" : 'I show up with the plan and the gear',
       desc:
         language === 'fr'
-          ? "Avant de venir, j'ai déjà écrit les sujets, les questions à vous poser et l'ordre de tournage. Vous n'avez rien à préparer, pas de script à apprendre. Je débarque avec la caméra, les micros et la lumière, et on tourne une demi-journée. Parfois une journée entière quand il y a de quoi faire."
-          : "Before I arrive, the topics, the questions I'll ask you and the shooting order are already written. Nothing to prepare on your side, no script to learn. I show up with the camera, the mics and the lights, and we shoot for half a day. Sometimes a full one when there's enough to cover.",
+          ? "Avant de venir, j'ai déjà écrit les sujets, les questions à vous poser et l'ordre de tournage. Vous n'avez rien à préparer, pas de script à apprendre. Je débarque avec la caméra, les micros, la lumière et le drone, et on tourne une journée. C'est la seule journée du mois où vous me voyez."
+          : "Before I arrive, the topics, the questions I'll ask you and the shooting order are already written. Nothing to prepare on your side, no script to learn. I show up with the camera, the mics, the lights and the drone, and we shoot for a full day. That is the only day of the month you see me.",
     },
     {
       icon: Scissors,
@@ -45,8 +52,8 @@ const useSteps = () => {
       title: language === 'fr' ? 'Je monte, je sous-titre, je découpe' : 'I edit, subtitle and cut it up',
       desc:
         language === 'fr'
-          ? "De cette demi-journée je sors une dizaine de vidéos courtes, au format vertical, montées et sous-titrées. Chacune tient debout toute seule : une accroche dans les deux premières secondes, une idée claire, une fin qui donne envie de vous suivre."
-          : "From that half day I pull about ten short vertical videos, edited and subtitled. Each one stands on its own: a hook in the first two seconds, one clear idea, an ending that makes people want to follow you.",
+          ? "De cette journée je sors 6 à 12 vidéos courtes, au format vertical, montées et sous-titrées. Chacune tient debout toute seule : une accroche dans les deux premières secondes, une idée claire, une fin qui donne envie de vous suivre."
+          : "From that day I pull 6 to 12 short vertical videos, edited and subtitled. Each one stands on its own: a hook in the first two seconds, one clear idea, an ending that makes people want to follow you.",
     },
     {
       icon: CalendarCheck,
@@ -55,8 +62,8 @@ const useSteps = () => {
       title: language === 'fr' ? 'Je publie, vous ne touchez à rien' : "I post, you don't lift a finger",
       desc:
         language === 'fr'
-          ? "2 à 3 publications par semaine sur Instagram, Facebook, TikTok ou YouTube Shorts, selon les réseaux qui comptent pour vous. Je choisis les horaires, j'écris les légendes, je gère les hashtags. Vous voyez vos vidéos sortir sans avoir rien à faire, et le mois suivant on recommence."
-          : "2 to 3 posts a week on Instagram, Facebook, TikTok or YouTube Shorts, depending on which networks matter to you. I pick the timing, write the captions, handle the hashtags. You watch your videos go out without doing anything, and the next month we start again.",
+          ? "Vos vidéos sortent tout au long du mois sur Instagram, Facebook, TikTok ou YouTube Shorts, selon les réseaux qui comptent pour vous. Je choisis les horaires, j'écris les légendes, je gère les hashtags. Vous les voyez sortir sans avoir rien à faire, et le mois suivant on recommence."
+          : "Your videos go out through the month on Instagram, Facebook, TikTok or YouTube Shorts, depending on which networks matter to you. I pick the timing, write the captions, handle the hashtags. You watch them go out without doing anything, and the next month we start again.",
     },
   ];
 };
@@ -67,20 +74,20 @@ const useIncluded = () => {
   return language === 'fr'
     ? [
         'Un plan de tournage écrit avant chaque session',
-        'Une demi-journée de tournage chez vous ou sur le terrain',
-        'Tout le matériel : caméra, micros, lumière',
+        'Une journée de tournage chez vous ou sur le terrain',
+        'Tout le matériel : caméra, micros, lumière, drone',
         'Montage vertical, sous-titres et musique',
-        '2 à 3 publications par semaine, tout le mois',
+        '6 à 12 vidéos publiées dans le mois',
         'Légendes et hashtags rédigés',
         'Publication sur les réseaux de votre choix',
         'Les fichiers vidéo vous appartiennent',
       ]
     : [
         'A written shooting plan before every session',
-        'Half a day of filming at your place or on location',
-        'All the gear: camera, mics, lighting',
+        'A full day of filming at your place or on location',
+        'All the gear: camera, mics, lighting, drone',
         'Vertical editing, subtitles and music',
-        '2 to 3 posts a week, all month long',
+        '6 to 12 videos published over the month',
         'Captions and hashtags written for you',
         'Publishing on the networks you care about',
         'The video files are yours to keep',
@@ -98,7 +105,11 @@ const useFaq = () => {
         },
         {
           q: "Combien de temps je dois y consacrer chaque mois ?",
-          a: "Une demi-journée. C'est tout. Le reste du mois, vous ne faites rien : ni écrire, ni monter, ni publier, ni penser à ce que vous allez raconter. Si vous voulez valider les vidéos avant qu'elles sortent, on met ça en place, mais beaucoup de clients préfèrent me laisser publier directement.",
+          a: "Une journée, une seule fois dans le mois. C'est tout. Le reste du temps vous ne faites rien : ni écrire, ni monter, ni publier, ni penser à ce que vous allez raconter. Si vous voulez valider les vidéos avant qu'elles sortent, on met ça en place, mais beaucoup de clients préfèrent me laisser publier directement.",
+        },
+        {
+          q: "Je peux filmer moi-même et vous n'avez qu'à monter ?",
+          a: "Je ne propose pas cette formule, et c'est volontaire. Presque tout le monde a l'intention de filmer, et presque personne ne le fait une fois la semaine chargée. Au bout de six semaines il n'y a plus de matière, je publie du remplissage, et vous payez pour un compte qui ne ressemble plus à rien. Je préfère venir une journée par mois et repartir avec de quoi tenir jusqu'à la suivante. C'est pour ça que le déplacement fait partie de l'offre, toujours.",
         },
         {
           q: "Ça marche pour mon métier ? Je ne suis pas une marque connue.",
@@ -118,7 +129,7 @@ const useFaq = () => {
         },
         {
           q: "Combien ça coûte ?",
-          a: "Ça dépend du nombre de vidéos, du nombre de réseaux et de la fréquence de tournage. Je ne mets pas de grille de prix en ligne parce que je préfère vous donner un chiffre juste plutôt qu'un chiffre au hasard. Un appel de trente minutes suffit pour que je vous envoie un devis clair, sans engagement.",
+          a: "À partir de 890 euros par mois, journée de tournage comprise. Au-dessus, ça dépend du nombre de vidéos et du nombre de réseaux. Je ne mets pas la grille complète en ligne parce que je préfère vous donner un chiffre juste plutôt qu'un chiffre au hasard, mais vous savez au moins d'où ça part avant de m'appeler. Un appel de trente minutes suffit pour que je vous envoie un devis clair, sans engagement.",
         },
         {
           q: "Vous vous déplacez où ?",
@@ -132,7 +143,11 @@ const useFaq = () => {
         },
         {
           q: 'How much of my time does this take each month?',
-          a: "Half a day. That's it. The rest of the month you do nothing: no writing, no editing, no posting, no thinking about what to say. If you want to approve videos before they go out, we can set that up, but many clients prefer to let me publish directly.",
+          a: "One day, once a month. That's it. The rest of the time you do nothing: no writing, no editing, no posting, no thinking about what to say. If you want to approve videos before they go out, we can set that up, but many clients prefer to let me publish directly.",
+        },
+        {
+          q: 'Can I film it myself and you just edit?',
+          a: "I do not offer that, and it is on purpose. Almost everyone intends to film, and almost nobody does once the week gets busy. After six weeks there is no footage left, I end up posting filler, and you are paying for an account that no longer looks like anything. I would rather come for one day a month and leave with enough to last until the next one. That is why the shoot is always part of the offer.",
         },
         {
           q: "Does this work for my line of work? I'm not a known brand.",
@@ -152,7 +167,7 @@ const useFaq = () => {
         },
         {
           q: 'How much does it cost?',
-          a: 'It depends on the number of videos, the number of networks and how often we film. I do not put a price grid online because I would rather give you a fair number than a random one. A thirty-minute call is enough for me to send you a clear quote, no strings attached.',
+          a: 'From 890 euros a month, filming day included. Above that it depends on the number of videos and the number of networks. I do not put the full grid online because I would rather give you a fair number than a random one, but at least you know where it starts before calling me. A thirty-minute call is enough for me to send you a clear quote, no strings attached.',
         },
         {
           q: 'Where do you travel?',
@@ -193,10 +208,25 @@ const SocialMedia = () => {
     serviceType: language === 'fr' ? 'Gestion de réseaux sociaux' : 'Social media management',
     description:
       language === 'fr'
-        ? "Tournage vidéo sur place une demi-journée par mois, puis montage vertical, sous-titrage et publication de 2 à 3 vidéos courtes par semaine sur Instagram, Facebook, TikTok et YouTube Shorts."
-        : 'On-site video shoot half a day a month, then vertical editing, subtitling and publishing of 2 to 3 short videos a week on Instagram, Facebook, TikTok and YouTube Shorts.',
+        ? "Tournage vidéo sur place une journée par mois, puis montage vertical, sous-titrage et publication de 6 à 12 vidéos courtes dans le mois sur Instagram, Facebook, TikTok et YouTube Shorts."
+        : 'On-site video shoot one day a month, then vertical editing, subtitling and publishing of 6 to 12 short videos over the month on Instagram, Facebook, TikTok and YouTube Shorts.',
     url: 'https://elieageron.com/reseaux-sociaux',
     provider: { '@id': 'https://elieageron.com/#person' },
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'EUR',
+      price: 890,
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        priceCurrency: 'EUR',
+        price: 890,
+        minPrice: 890,
+        unitCode: 'MON',
+        billingIncrement: 1,
+      },
+      availability: 'https://schema.org/InStock',
+      url: 'https://elieageron.com/reseaux-sociaux',
+    },
     areaServed: [
       { '@type': 'AdministrativeArea', name: 'Savoie' },
       { '@type': 'AdministrativeArea', name: 'Haute-Savoie' },
@@ -211,8 +241,8 @@ const SocialMedia = () => {
           name: language === 'fr' ? 'Journée de tournage' : 'Filming session',
           description:
             language === 'fr'
-              ? "Plan de tournage préparé, matériel fourni, une demi-journée ou une journée de captation sur place."
-              : 'Prepared shooting plan, gear provided, half a day or a full day of on-site filming.',
+              ? "Plan de tournage préparé, matériel fourni, une journée de captation sur place chaque mois."
+              : 'Prepared shooting plan, gear provided, one full day of on-site filming every month.',
         },
         {
           '@type': 'Offer',
@@ -227,8 +257,8 @@ const SocialMedia = () => {
           name: language === 'fr' ? 'Publication mensuelle' : 'Monthly publishing',
           description:
             language === 'fr'
-              ? '2 à 3 publications par semaine sur Instagram, Facebook, TikTok ou YouTube Shorts, légendes incluses.'
-              : '2 to 3 posts a week on Instagram, Facebook, TikTok or YouTube Shorts, captions included.',
+              ? '6 à 12 publications dans le mois sur Instagram, Facebook, TikTok ou YouTube Shorts, légendes incluses.'
+              : '6 to 12 posts over the month on Instagram, Facebook, TikTok or YouTube Shorts, captions included.',
         },
       ],
     },
@@ -270,7 +300,7 @@ const SocialMedia = () => {
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-[1.05]"
             >
               <span className="text-foreground">
-                {language === 'fr' ? 'On filme une demi-journée.' : 'We film for half a day.'}
+                {language === 'fr' ? 'On filme une journée.' : 'We film for one day.'}
               </span>
               <br />
               <span className="text-primary">
@@ -280,8 +310,8 @@ const SocialMedia = () => {
 
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               {language === 'fr'
-                ? "J'arrive avec le matériel et un plan de tournage déjà prêt. On tourne, je monte, et je publie vos vidéos 2 à 3 fois par semaine sur vos réseaux pendant tout le mois. Vous, vous ne touchez à rien."
-                : "I show up with the gear and a shooting plan already written. We film, I edit, and I post your videos 2 to 3 times a week on your accounts, all month long. You touch nothing."}
+                ? "J'arrive avec le matériel et un plan de tournage déjà prêt. On tourne, je monte, et je publie 6 à 12 vidéos sur vos réseaux pendant tout le mois. Vous, vous ne touchez à rien."
+                : "I show up with the gear and a shooting plan already written. We film, I edit, and I post 6 to 12 videos on your accounts across the month. You touch nothing."}
             </p>
 
             <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -484,8 +514,8 @@ const SocialMedia = () => {
               </p>
               <p className="mt-5 text-sm text-muted-foreground">
                 {language === 'fr'
-                  ? 'Le montant dépend du nombre de vidéos et de réseaux. On le fixe ensemble sur un appel.'
-                  : 'The amount depends on the number of videos and networks. We set it together on a call.'}
+                  ? 'À partir de 890 € par mois, journée de tournage comprise. Au-dessus, ça dépend du nombre de vidéos et de réseaux, et on le fixe ensemble sur un appel.'
+                  : 'From €890 a month, filming day included. Above that it depends on the number of videos and networks, and we set it together on a call.'}
               </p>
             </motion.div>
 

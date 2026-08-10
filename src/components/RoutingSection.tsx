@@ -30,8 +30,8 @@ const RoutingSection = () => {
     {
       label: language === 'fr' ? "Je veux exister sur les réseaux" : 'I want to show up on social',
       desc: language === 'fr'
-        ? 'On filme une demi-journée, je publie tout le mois. Vous, vous ne touchez à rien.'
-        : 'We film for half a day, I post all month. You touch nothing.',
+        ? 'On filme une journée, je publie tout le mois. Vous, vous ne touchez à rien.'
+        : 'We film for one day, I post all month. You touch nothing.',
       href: '/reseaux-sociaux',
       cta: language === 'fr' ? "Voir comment ça marche" : 'See how it works',
       primary: false,

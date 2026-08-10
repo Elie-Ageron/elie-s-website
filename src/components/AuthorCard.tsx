@@ -39,8 +39,8 @@ const AuthorCard = () => {
               </p>
               <p className="mt-3 text-base text-muted-foreground leading-relaxed">
                 {fr
-                  ? "Je construis des sites pour des artisans, des commerçants et des indépendants, et je m'occupe de leurs réseaux sociaux : je viens filmer une demi-journée par mois, je monte et je publie. Tout ce que j'écris ici vient de ce que je vois chez mes clients, pas de théorie."
-                  : 'I build websites for tradespeople, shop owners and independents, and I run their social media: I come and film for half a day each month, then edit and publish. Everything here comes from what I see with clients, not from theory.'}
+                  ? "Je construis des sites pour des artisans, des commerçants et des indépendants, et je m'occupe de leurs réseaux sociaux : je viens filmer une journée par mois, je monte et je publie. Tout ce que j'écris ici vient de ce que je vois chez mes clients, pas de théorie."
+                  : 'I build websites for tradespeople, shop owners and independents, and I run their social media: I come and film for a full day each month, then edit and publish. Everything here comes from what I see with clients, not from theory.'}
               </p>
               <p className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm">
                 <Link

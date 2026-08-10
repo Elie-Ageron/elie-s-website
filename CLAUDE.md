@@ -15,7 +15,13 @@ Site vitrine / portfolio de **Elie Ageron**, web designer et partenaire web bas�
 ## Services proposés
 Les 7 services (source unique : `src/data/services.ts`, **l'ordre du tableau pilote l'affichage**) :
 - **Sites web** (pilier 1) — landing dès 500€, vitrine dès 1500€, pack lancement dès 3500€
-- **Réseaux sociaux** (pilier 2, page dédiée `/reseaux-sociaux`) — tournage sur place une demi-journée par mois, montage vertical, sous-titres, puis 2 à 3 publications par semaine sur Instagram / Facebook / TikTok / YouTube Shorts. Récurrent, dès 450€/mois en interne.
+- **Réseaux sociaux** (pilier 2, page dédiée `/reseaux-sociaux`) — tournage sur place **une journée** par mois, montage vertical, sous-titres, puis **6 à 12 publications dans le mois** sur Instagram / Facebook / TikTok / YouTube Shorts. Récurrent, **à partir de 890€/mois**.
+  > ⚠️ **Révisé en août 2026, deux points à ne jamais réintroduire.**
+  > 1. **La « demi-journée » de tournage n'existe plus** : c'est une journée entière. L'ancien périmètre (demi-journée + 2 à 3 publications par semaine) représentait environ 23 h de travail pour 450 €, soit 19 €/h brut.
+  > 2. **Aucune formule où le client filme lui-même.** Écartée volontairement : sans production sur place, la matière s'épuise en six semaines et le compte retombe. C'est le raisonnement de l'article `/blog/prix-gestion-reseaux-sociaux`, il doit rester cohérent avec l'offre.
+  >
+  > Le plancher **890 € est le seul prix affiché publiquement** (page `/reseaux-sociaux`, FAQ et section « ce qui est compris », `llms.txt`, schéma `Offer`). La grille complète reste hors ligne.
+  > Sources internes : `création de contenue/ressources, data/15-CLIENTS/_MOI/02-offre.md`.
 - **Google Business** — création / optimisation de la fiche
 - **Identité de marque** — logo, charte (réalisée avec son frère, designer)
 - **Référencement local (SEO)** — suivi continu (Elie monte en compétence dessus)

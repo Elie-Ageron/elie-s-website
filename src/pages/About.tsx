@@ -60,7 +60,7 @@ const About = () => {
         {
           title: 'Ce que je fais, concrètement',
           body: [
-            "Deux choses, de poids égal. Je construis des sites pour des entreprises qui n'ont pas de service communication, et je produis le contenu vidéo de leurs réseaux sociaux. Pour ce second point, je viens filmer une demi-journée par mois sur place, puis je monte, je sous-titre, j'écris et je publie deux à trois vidéos par semaine. Le client ne touche à rien.",
+            "Deux choses, de poids égal. Je construis des sites pour des entreprises qui n'ont pas de service communication, et je produis le contenu vidéo de leurs réseaux sociaux. Pour ce second point, je viens filmer une journée par mois sur place, puis je monte, je sous-titre, j'écris et je publie six à douze vidéos dans le mois. Le client ne touche à rien.",
             "Autour de ces deux piliers, je m'occupe de ce qui les rend utiles : la fiche Google Business, la collecte et les réponses aux avis, le référencement local, les textes, et l'identité de marque quand il en faut une.",
           ],
         },
@@ -68,7 +68,7 @@ const About = () => {
           title: 'Avec qui je travaille',
           body: [
             "Des TPE, des artisans, des thérapeutes, des formateurs et des PME locales. Des structures où la personne qui décide est aussi celle qui fait le travail, et qui n'a donc pas trois heures par semaine à consacrer à sa communication.",
-            "Je travaille avec un petit nombre de clients à la fois. Ce n'est pas une posture commerciale : filmer sur place une demi-journée par mois et suivre les résultats prend du temps, et au delà d'un certain nombre la qualité tombe.",
+            "Je travaille avec un petit nombre de clients à la fois. Ce n'est pas une posture commerciale : filmer sur place une journée par mois et suivre les résultats prend du temps, et au delà d'un certain nombre la qualité tombe.",
           ],
         },
         {
@@ -106,7 +106,7 @@ const About = () => {
         {
           title: 'What I actually do',
           body: [
-            'Two things, equally weighted. I build websites for businesses with no communications team, and I produce the video content for their social media. For the second, I come and film on site for half a day each month, then edit, subtitle, write and publish two to three videos a week. The client touches nothing.',
+            'Two things, equally weighted. I build websites for businesses with no communications team, and I produce the video content for their social media. For the second, I come and film on site for one full day each month, then edit, subtitle, write and publish six to twelve videos over the month. The client touches nothing.',
             'Around those two pillars I handle what makes them work: the Google Business Profile, review collection and replies, local SEO, copy, and brand identity when one is needed.',
           ],
         },
@@ -171,7 +171,7 @@ const About = () => {
             </h1>
             <p className="mt-5 text-base sm:text-lg text-muted-foreground leading-relaxed">
               {fr
-                ? "Je construis des sites pour des entreprises locales et je m'occupe de leurs réseaux sociaux. Une demi-journée de tournage par mois chez elles, et deux à trois publications par semaine ensuite, sans qu'elles aient à filmer ou monter quoi que ce soit."
+                ? "Je construis des sites pour des entreprises locales et je m'occupe de leurs réseaux sociaux. Une journée de tournage par mois chez elles, et six à douze publications dans le mois ensuite, sans qu'elles aient à filmer ou monter quoi que ce soit."
                 : 'I build websites for local businesses and run their social media. Half a day of filming on site each month, then two to three posts a week, without them having to film or edit anything.'}
             </p>
           </motion.header>

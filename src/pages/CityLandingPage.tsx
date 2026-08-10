@@ -359,7 +359,7 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
                   to="/reseaux-sociaux"
                   className="inline-flex items-center gap-1.5 min-h-[24px] text-primary font-medium hover:underline underline-offset-4"
                 >
-                  Voir comment se passe une demi-journée de tournage
+                  Voir comment se passe une journée de tournage
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
               </p>

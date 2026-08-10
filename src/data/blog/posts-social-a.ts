@@ -153,7 +153,7 @@ Ouvrez la plateforme que vous avez choisie et regardez ce que publient trois con
 
 Ensuite, écrivez dix questions que vos clients vous posent au téléphone. Vous venez de trouver vos dix premières vidéos. Rien d'autre à inventer.
 
-Si vous voulez que quelqu'un s'occupe de tout ça, c'est exactement ce que je fais : [je viens filmer une demi-journée par mois](/reseaux-sociaux) et je publie ensuite deux à trois vidéos par semaine sur vos comptes. Vous pouvez aussi [me poser la question directement](/contact), je vous dirai franchement si vous avez besoin de réseaux sociaux ou de tout autre chose.
+Si vous voulez que quelqu'un s'occupe de tout ça, c'est exactement ce que je fais : [je viens filmer une journée par mois](/reseaux-sociaux) et je publie ensuite six à douze vidéos dans le mois sur vos comptes. Vous pouvez aussi [me poser la question directement](/contact), je vous dirai franchement si vous avez besoin de réseaux sociaux ou de tout autre chose.
     `,
   },
   {
@@ -268,7 +268,7 @@ Je précise aussi que c'est un exemple isolé, pas une moyenne, et certainement 
 
 C'est le cas le plus fréquent, et c'est légitime. Vous avez un métier, ce n'est pas celui là.
 
-[Je viens filmer chez vous une demi-journée par mois](/reseaux-sociaux), je monte, je sous titre, j'écris les légendes et je publie deux à trois fois par semaine sur vos comptes Instagram et Facebook. Vous ne touchez à rien. Si vous voulez qu'on regarde ensemble ce qui a du sens pour votre activité, [écrivez moi](/contact).
+[Je viens filmer chez vous une journée par mois](/reseaux-sociaux), je monte, je sous titre, j'écris les légendes et je publie tout au long du mois sur vos comptes Instagram et Facebook. Vous ne touchez à rien. Si vous voulez qu'on regarde ensemble ce qui a du sens pour votre activité, [écrivez moi](/contact).
     `,
   },
   {
@@ -632,7 +632,7 @@ C'est là que le calendrier prend tout son sens. Une fois le mois planifié, vou
 
 Vous bloquez une demi-journée, vous changez de haut entre les prises pour que ça ne se voie pas, et vous sortez le mois entier. La méthode complète est dans [tourner plusieurs vidéos en une seule journée](/blog/tourner-plusieurs-videos-une-journee).
 
-C'est exactement le fonctionnement que j'utilise avec mes clients : je viens filmer une demi-journée, et ça alimente les quatre semaines suivantes.
+C'est exactement le fonctionnement que j'utilise avec mes clients : je viens filmer une journée, et ça alimente les quatre semaines suivantes.
 
 ## Étape 6 : programmer, puis oublier
 

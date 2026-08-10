@@ -262,7 +262,7 @@ Un micro cravate sans fil avec sa bonnette. Ensuite, une pièce qui ne résonne 
 
 Le reste peut attendre. Vous serez surpris de voir à quel point une vidéo au téléphone avec un son propre paraît professionnelle.
 
-Et si vous préférez ne rien acheter du tout, c'est aussi une option : [je viens filmer chez vous avec mon matériel](/reseaux-sociaux), une demi-journée par mois, et vous n'avez rien à gérer. [Écrivez moi](/contact) si vous voulez en savoir plus.
+Et si vous préférez ne rien acheter du tout, c'est aussi une option : [je viens filmer chez vous avec mon matériel](/reseaux-sociaux), une journée par mois, et vous n'avez rien à gérer. [Écrivez moi](/contact) si vous voulez en savoir plus.
     `,
   },
   {
@@ -387,7 +387,7 @@ Une lumière correcte suffit. Personne sur Instagram n'attend une image de ciné
 
 Ce qu'il faut éviter, c'est l'image qui gêne : le visage dans le noir, le contre jour, l'écran qui clignote. Une fois ces défauts écartés, remettez votre attention sur ce qui décide réellement de la portée, à savoir [vos trois premières secondes](/blog/accroche-video-3-secondes).
 
-Et si vous préférez que quelqu'un vienne avec le matériel et le sens du cadrage, [c'est ce que je fais une demi-journée par mois chez mes clients](/reseaux-sociaux). [Dites moi où vous en êtes](/contact).
+Et si vous préférez que quelqu'un vienne avec le matériel et le sens du cadrage, [c'est ce que je fais une journée par mois chez mes clients](/reseaux-sociaux). [Dites moi où vous en êtes](/contact).
     `,
   },
   {
@@ -516,7 +516,7 @@ Au total, vous ajoutez environ trois minutes par vidéo pour rendre votre conten
 
 C'est le meilleur rapport effort résultat de toute la production vidéo, largement devant l'achat de matériel.
 
-Si tout ça vous semble être beaucoup de manipulations pour quelqu'un qui a déjà un métier, c'est la partie que je prends en charge : [je monte, je sous titre et je publie](/reseaux-sociaux) à partir d'une demi-journée de tournage par mois. [Écrivez moi](/contact) si vous voulez qu'on regarde votre cas.
+Si tout ça vous semble être beaucoup de manipulations pour quelqu'un qui a déjà un métier, c'est la partie que je prends en charge : [je monte, je sous titre et je publie](/reseaux-sociaux) à partir d'une journée de tournage par mois. [Écrivez moi](/contact) si vous voulez qu'on regarde votre cas.
     `,
   },
   {
@@ -561,7 +561,7 @@ La régularité est le seul facteur qui compte vraiment sur les réseaux sociaux
 
 La solution n'est pas d'être plus discipliné. C'est de changer la structure du travail : au lieu de filmer un peu souvent, on filme beaucoup rarement.
 
-C'est le principe que j'applique avec tous mes clients. Je viens une demi-journée par mois, on sort huit à douze vidéos, et ça couvre les quatre semaines suivantes.
+C'est le principe que j'applique avec tous mes clients. Je viens une journée par mois, on sort six à douze vidéos, et ça couvre les quatre semaines suivantes.
 
 ## Pourquoi le tournage groupé change tout
 
@@ -647,7 +647,7 @@ Préparation, une heure. Tournage, trois heures. Montage, trois à quatre heures
 
 Environ une journée de travail pour un mois de présence sur trois ou quatre plateformes. Réparti sur quatre semaines, ça représente deux heures par semaine, ce qui est très inférieur à ce que la plupart des gens imaginent.
 
-Et si cette journée est celle que vous n'avez pas, c'est exactement le service que je propose : [je viens filmer une demi-journée par mois](/reseaux-sociaux), je repars avec les rushes, et vous n'avez plus rien à faire. [Parlons en](/contact) si le format vous intéresse.
+Et si cette journée est celle que vous n'avez pas, c'est exactement le service que je propose : [je viens filmer une journée par mois](/reseaux-sociaux), je repars avec les rushes, et vous n'avez plus rien à faire. [Parlons en](/contact) si le format vous intéresse.
     `,
   },
   {
@@ -893,7 +893,7 @@ Une vidéo correcte publiée aujourd'hui vaut infiniment plus qu'une vidéo exce
 
 Fixez vous une limite de temps par vidéo et tenez la, même si le résultat vous semble moyen. Votre trentième vidéo sera meilleure que votre première, quoi que vous fassiez, et elle n'arrivera jamais si vous passez deux heures sur chacune.
 
-Si le montage est précisément la partie que vous ne voulez pas apprendre, [c'est celle que je prends en charge](/reseaux-sociaux) : je viens filmer une demi-journée, je monte, je sous titre, je publie. [Écrivez moi](/contact) si ça vous parle.
+Si le montage est précisément la partie que vous ne voulez pas apprendre, [c'est celle que je prends en charge](/reseaux-sociaux) : je viens filmer une journée, je monte, je sous titre, je publie. [Écrivez moi](/contact) si ça vous parle.
     `,
   },
 ];

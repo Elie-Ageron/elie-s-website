@@ -894,7 +894,7 @@ Si vous le faites seul et correctement : deux à trois heures par semaine, entre
 
 Ce n'est pas un manque de motivation. C'est qu'après une journée de chantier, personne n'a envie d'ouvrir une appli de montage.
 
-Il y a trois issues possibles. Vous tenez le rythme (rare). Vous arrêtez (le plus fréquent). Ou vous déléguez, ce qui est exactement le service que je propose : je viens filmer une demi-journée, et vos vidéos sortent tout le mois sans que vous y pensiez.
+Il y a trois issues possibles. Vous tenez le rythme (rare). Vous arrêtez (le plus fréquent). Ou vous déléguez, ce qui est exactement le service que je propose : je viens filmer une journée, et vos vidéos sortent tout le mois sans que vous y pensiez.
 
 ## Si vous voulez essayer seul d'abord
 
@@ -951,7 +951,7 @@ Doing it yourself and doing it properly: two to three hours a week, between film
 
 It is not a motivation problem. It is that after a day on site, nobody wants to open an editing app.
 
-There are three outcomes. You keep the rhythm (rare). You stop (most common). Or you hand it off, which is exactly the service I offer: I come and film for half a day, and your videos go out all month without you thinking about it.
+There are three outcomes. You keep the rhythm (rare). You stop (most common). Or you hand it off, which is exactly the service I offer: I come and film for one day, and your videos go out all month without you thinking about it.
 
 ## If you want to try it yourself first
 
@@ -1044,7 +1044,7 @@ Ce n'est ni le matériel, ni le talent, ni l'algorithme. C'est la régularité.
 
 Une vidéo isolée ne fait rien, même si elle marche. Ce qui produit un effet, c'est 8 à 12 vidéos publiées sur deux mois, sans trou. C'est là que la plupart des gens décrochent, parce que personne n'a le temps de faire ça en plus de son métier.
 
-Ma réponse à ce problème est simple : je viens filmer une demi-journée, et j'ai de quoi publier pendant un mois entier.
+Ma réponse à ce problème est simple : je viens filmer une journée, et j'ai de quoi publier pendant un mois entier.
 
 ---
 
@@ -1111,7 +1111,7 @@ It is not the gear, the talent or the algorithm. It is consistency.
 
 A single video does nothing, even a successful one. What produces an effect is 8 to 12 videos published across two months with no gaps. That is where most people drop off, because nobody has time to do that on top of running a business.
 
-My answer to that problem is simple: I come and film for half a day, and I have enough to publish for a full month.
+My answer to that problem is simple: I come and film for one day, and I have enough to publish for a full month.
 
 ---
 
@@ -1172,7 +1172,7 @@ Ce n'est presque jamais le fait de publier. Appuyer sur un bouton prend trente s
 
 Ce qui bloque, c'est de trouver quoi dire, puis de filmer, puis de monter. Trois obstacles empilés, à chaque publication, pour toujours.
 
-C'est exactement le raisonnement qui m'a poussé à construire ma prestation comme je l'ai construite. Au lieu de répartir l'effort sur tout le mois, on le concentre sur une demi-journée : un seul tournage produit une dizaine de vidéos, et il n'y a plus rien à décider ni à faire pendant quatre semaines.
+C'est exactement le raisonnement qui m'a poussé à construire ma prestation comme je l'ai construite. Au lieu de répartir l'effort sur tout le mois, on le concentre sur une journée : un seul tournage produit six à douze vidéos, et il n'y a plus rien à décider ni à faire pendant quatre semaines.
 
 ## Est-ce qu'il faut publier à la même heure
 
@@ -1231,7 +1231,7 @@ It is almost never the posting. Pressing a button takes thirty seconds.
 
 What stops people is finding something to say, then filming it, then editing it. Three obstacles stacked, on every post, forever.
 
-That is exactly the reasoning behind how I built my service. Instead of spreading the effort across the month, we concentrate it into half a day: one shoot produces about ten videos, and there is nothing left to decide or do for four weeks.
+That is exactly the reasoning behind how I built my service. Instead of spreading the effort across the month, we concentrate it into one day: one shoot produces six to twelve videos, and there is nothing left to decide or do for four weeks.
 
 ## Do you have to post at the same time
 
@@ -1335,7 +1335,7 @@ C'est un travail de régularité plus que de technique. Si vous voulez tester pa
 
 ---
 
-[Voici comment je gère ça pour mes clients](/reseaux-sociaux), une demi-journée par mois.
+[Voici comment je gère ça pour mes clients](/reseaux-sociaux), une journée par mois.
     `,
     contentEn: `
 ## The gear is not your problem
@@ -1401,7 +1401,7 @@ It is a consistency job more than a technical one. If you want to test it yourse
 
 ---
 
-[Here is how I handle it for clients](/reseaux-sociaux), half a day a month.
+[Here is how I handle it for clients](/reseaux-sociaux), one day a month.
     `,
   },
   {
@@ -1616,7 +1616,7 @@ Avant chaque tournage, j'arrive avec une liste écrite. Quinze à vingt sujets, 
 
 Sur place, je ne donne pas le script à la personne. Je pose la question et je la laisse répondre. C'est la différence entre une vidéo qui sonne comme un communiqué et une vidéo qui sonne comme quelqu'un qui parle.
 
-D'une demi-journée, je sors une dizaine de vidéos exploitables. Ça couvre un mois complet de publications, et le mois suivant on recommence avec la liste suivante.
+D'une journée, je sors six à douze vidéos exploitables. Ça couvre un mois complet de publications, et le mois suivant on recommence avec la liste suivante.
 
 ## Ce qu'il ne faut pas faire
 
@@ -1677,7 +1677,7 @@ Before every shoot I arrive with a written list. Fifteen to twenty subjects, sor
 
 On the day, I do not hand the person a script. I ask the question and let them answer. That is the difference between a video that sounds like a press release and a video that sounds like a person talking.
 
-From half a day I get around ten usable videos. That covers a full month of posting, and the next month we start again with the next list.
+From one day I get six to twelve usable videos. That covers a full month of posting, and the next month we start again with the next list.
 
 ## What not to do
 
@@ -1989,7 +1989,7 @@ Not sure which case you are in? [Tell me about your situation](/contact) and I w
     excerptEn: "Most people assume they will have to supply ideas, approve captions and film themselves. Here is what a month actually looks like when someone else handles it.",
     seoTitleFr: 'Déléguer ses Réseaux Sociaux | Elie Ageron',
     seoTitleEn: 'Outsourcing Your Social Media | Elie Ageron',
-    seoDescFr: 'Une demi-journée de tournage par mois, et plus rien à faire. Le déroulé réel d\'une prestation réseaux sociaux, côté client.',
+    seoDescFr: 'Une journée de tournage par mois, et plus rien à faire. Le déroulé réel d\'une prestation réseaux sociaux, côté client.',
     seoDescEn: 'Half a day of filming a month, then nothing to do. What a done-for-you social media service really looks like.',
     readTime: '6 min',
     categoryFr: 'Réseaux sociaux',
@@ -2008,7 +2008,7 @@ Ce que je fais est différent sur un point : je viens sur place, je filme, et le
 
 ## Le mois type, du côté du client
 
-Une demi-journée dans le mois. C'est le seul moment où vous êtes impliqué.
+Une journée dans le mois. C'est le seul moment où vous êtes impliqué.
 
 Vous n'avez rien à préparer avant. Pas de sujets à trouver, pas de texte à écrire, pas de tenue particulière à prévoir au-delà de ce que vous portez normalement pour travailler. J'arrive avec la liste des sujets déjà écrite, la caméra, les micros et la lumière.
 
@@ -2018,7 +2018,7 @@ Ensuite vous retournez travailler, et pendant les quatre semaines suivantes vos 
 
 ## Ce qui se passe de mon côté entre deux tournages
 
-Le montage, d'abord. D'une demi-journée je sors une dizaine de vidéos verticales. Chacune est coupée pour tenir seule : une accroche dans les deux premières secondes, une idée, une fin nette.
+Le montage, d'abord. D'une journée je sors six à douze vidéos verticales. Chacune est coupée pour tenir seule : une accroche dans les deux premières secondes, une idée, une fin nette.
 
 Le sous-titrage ensuite, avec relecture. Les sous-titres automatiques massacrent systématiquement le vocabulaire technique et les noms propres, donc je repasse dessus à la main.
 
@@ -2077,7 +2077,7 @@ Then you go back to work, and for the next four weeks your videos go out 2 to 3 
 
 ## What happens on my side between shoots
 
-Editing first. From half a day I get around ten vertical videos. Each one is cut to stand alone: a hook in the first two seconds, one idea, a clean ending.
+Editing first. From one day I get six to twelve vertical videos. Each one is cut to stand alone: a hook in the first two seconds, one idea, a clean ending.
 
 Subtitling next, with a proofread. Automatic subtitles butcher technical vocabulary and proper nouns every time, so I go over them by hand.
 

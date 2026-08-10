@@ -60,7 +60,7 @@ const seoData = {
     },
     social: {
       title: 'Social Media Content, Done For You | Elie Ageron',
-      description: 'I come film for half a day, then post 2 to 3 short videos a week on your accounts. 56,619 views on a client first post. Free call, custom quote.',
+      description: 'I come film for one day a month, then post 6 to 12 short videos on your accounts. 56,619 views on a client first post. Free call, custom quote.',
     },
     why: {
       title: 'Why You Need a Website | Elie Ageron',
@@ -110,7 +110,7 @@ const seoData = {
     },
     social: {
       title: 'Gestion Réseaux Sociaux Savoie | Elie Ageron',
-      description: 'Je viens filmer une demi-journée, puis je publie 2 à 3 vidéos par semaine sur vos réseaux. 56 619 vues dès la première publication. Appel gratuit.',
+      description: 'Je viens filmer une journée par mois, puis je publie 6 à 12 vidéos sur vos réseaux. 56 619 vues dès la première publication. Appel gratuit.',
     },
     why: {
       title: 'Pourquoi un Site Web | Elie Ageron',

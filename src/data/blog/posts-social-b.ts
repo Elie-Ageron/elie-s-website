@@ -144,7 +144,7 @@ Six mois, deux publications par semaine, sans regarder les chiffres avant le tro
 
 Si vous ne pouvez pas vous engager là dessus, ne commencez pas seul. Ce n'est pas un jugement, c'est une question de charge : entre les chantiers, les devis et la comptabilité, la vidéo est toujours la première chose qui saute.
 
-C'est exactement la raison pour laquelle [je viens filmer une demi-journée par mois chez mes clients](/reseaux-sociaux) et que je m'occupe du reste. La régularité ne dépend plus de leur emploi du temps. Si vous voulez qu'on regarde votre cas, [écrivez moi](/contact).
+C'est exactement la raison pour laquelle [je viens filmer une journée par mois chez mes clients](/reseaux-sociaux) et que je m'occupe du reste. La régularité ne dépend plus de leur emploi du temps. Si vous voulez qu'on regarde votre cas, [écrivez moi](/contact).
     `,
   },
   {
@@ -501,7 +501,7 @@ Publier régulièrement, y compris les semaines pleines, c'est ce qui construit 
 
 C'est le cas de la plupart des restaurateurs que je rencontre. Vous ne pouvez pas filmer et cuisiner en même temps, et personne dans l'équipe n'a le temps de monter des vidéos après la fermeture.
 
-C'est exactement pour ça que [je viens filmer une demi-journée sur place](/reseaux-sociaux) et que je m'occupe ensuite du montage et de la publication pendant un mois. Vous cuisinez, je filme, et vous ne touchez plus à rien. [Écrivez moi](/contact) si vous voulez qu'on en parle, et n'hésitez pas à me dire aussi ce que vous avez déjà essayé.
+C'est exactement pour ça que [je viens filmer une journée sur place](/reseaux-sociaux) et que je m'occupe ensuite du montage et de la publication pendant un mois. Vous cuisinez, je filme, et vous ne touchez plus à rien. [Écrivez moi](/contact) si vous voulez qu'on en parle, et n'hésitez pas à me dire aussi ce que vous avez déjà essayé.
     `,
   },
   {
@@ -626,7 +626,7 @@ Un salon qui publie deux avant après par semaine pendant six mois accumule une 
 
 C'est un argument de vente qui travaille tout seul, y compris les jours où vous ne publiez rien. Et contrairement à une campagne publicitaire, il ne s'arrête pas quand vous arrêtez de payer.
 
-Si vous préférez confier tout ça, [je viens filmer une demi-journée par mois dans votre salon](/reseaux-sociaux) et je publie ensuite pendant quatre semaines. [Dites moi où vous en êtes](/contact) et je vous dirai franchement ce que je ferais à votre place.
+Si vous préférez confier tout ça, [je viens filmer une journée par mois dans votre salon](/reseaux-sociaux) et je publie ensuite pendant quatre semaines. [Dites moi où vous en êtes](/contact) et je vous dirai franchement ce que je ferais à votre place.
     `,
   },
 ];

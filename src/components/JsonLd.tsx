@@ -113,8 +113,8 @@ const JsonLd = () => {
             name: language === 'fr' ? 'Gestion des réseaux sociaux' : 'Social media management',
             url: `${baseUrl}/reseaux-sociaux`,
             description: language === 'fr'
-              ? "Tournage vidéo sur place une demi-journée par mois, montage vertical, sous-titrage et publication de 2 à 3 vidéos courtes par semaine sur Instagram, Facebook, TikTok et YouTube Shorts"
-              : 'On-site video shoot half a day a month, vertical editing, subtitling and publishing of 2 to 3 short videos a week on Instagram, Facebook, TikTok and YouTube Shorts',
+              ? "Tournage vidéo sur place une journée par mois, montage vertical, sous-titrage et publication de 6 à 12 vidéos courtes dans le mois sur Instagram, Facebook, TikTok et YouTube Shorts"
+              : 'On-site video shoot one day a month, vertical editing, subtitling and publishing of 6 to 12 short videos over the month on Instagram, Facebook, TikTok and YouTube Shorts',
           },
         },
         {
