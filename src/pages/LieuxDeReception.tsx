@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Check, Plane, MapPin, CalendarCheck } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { ArrowRight, Check, Plane, MapPin, CalendarCheck, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { useToast } from '@/hooks/use-toast';
 import { useCalendly } from '@/contexts/CalendlyContext';
 import {
   Accordion,
@@ -145,6 +148,104 @@ const faq = [
     a: "Personne ne peut vous garantir un chiffre, et méfiez-vous de ceux qui le font. Ce que je garantis, c'est le livrable et le rythme : le film, la fiche, la page, et les vidéos publiées chaque mois. Le reste dépend de votre lieu, de votre marché et de la saison.",
   },
 ];
+
+/**
+ * Formulaire d'audit, deux champs et pas un de plus.
+ *
+ * C'est la voie lente du funnel : celui qui n'est pas pret a reserver un appel
+ * doit pouvoir demander quelque chose sans avoir a se justifier. Chaque champ
+ * ajoute ici coute des demandes. Le lien du site n'est pas demande : il se
+ * retrouve en dix secondes a partir du nom du lieu.
+ *
+ * Poste vers le meme endpoint Google Apps Script que le formulaire de contact
+ * global, pour que les demandes arrivent la ou Elie regarde deja.
+ */
+const FORM_ENDPOINT =
+  'https://script.google.com/macros/s/AKfycbxu13-AnjyCaXr818JdA-hCSohWEE2ii1ELGXM-PeQ_sGYYB8rvEhXr_NYh7YWedA4qyg/exec';
+
+const AuditForm = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [lieu, setLieu] = useState('');
+  const [email, setEmail] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: lieu,
+          email,
+          message: `DEMANDE D'AUDIT (page lieux de réception)\nLieu : ${lieu}`,
+        }),
+      });
+
+      toast({
+        title: 'Demande reçue',
+        description: 'Vous recevez votre audit en vidéo sous 48 h. Rien d’autre à faire.',
+      });
+
+      setLieu('');
+      setEmail('');
+    } catch (error) {
+      console.error('Audit form error:', error);
+      toast({
+        title: 'L’envoi a échoué',
+        description: 'Écrivez-moi directement à elie@elieageron.com, ça marchera.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="mt-8 space-y-4 text-left">
+      <div className="grid sm:grid-cols-2 gap-4">
+        <div className="space-y-2">
+          <Label htmlFor="audit-lieu">Le nom de votre lieu</Label>
+          <Input
+            id="audit-lieu"
+            required
+            value={lieu}
+            onChange={(e) => setLieu(e.target.value)}
+            placeholder="Domaine de …"
+            autoComplete="organization"
+          />
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="audit-email">Où je vous l’envoie</Label>
+          <Input
+            id="audit-email"
+            type="email"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="vous@votredomaine.fr"
+            autoComplete="email"
+          />
+        </div>
+      </div>
+
+      <Button type="submit" variant="hero" size="lg" className="w-full group" disabled={isSubmitting}>
+        <span className="flex items-center justify-center gap-2">
+          {isSubmitting ? 'Envoi…' : 'Recevoir mon audit'}
+          <Send className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
+        </span>
+      </Button>
+
+      <p className="text-xs text-muted-foreground text-center">
+        Deux champs, rien d’autre. Je trouve votre site tout seul. Vous recevez la vidéo sous 48 h,
+        et je ne vous rappelle pas derrière si vous ne le demandez pas.
+      </p>
+    </form>
+  );
+};
 
 const LieuxDeReception = () => {
   const { openCalendly } = useCalendly();
@@ -298,7 +399,7 @@ const LieuxDeReception = () => {
                 </Button>
               </MagneticButton>
               <Button variant="neonOutline" size="lg" className="w-full sm:w-auto" asChild>
-                <Link to="/contact">Recevoir un audit gratuit</Link>
+                <a href="#audit">Recevoir un audit gratuit</a>
               </Button>
             </div>
 
@@ -673,30 +774,41 @@ const LieuxDeReception = () => {
       </section>
 
       {/* ─────────── CTA final, deux sorties ─────────── */}
-      <section className="py-12 sm:py-20" aria-label="Passer à l’action">
+      {/* Voie rapide : l'appel, pour ceux qui sont prets.
+          Voie lente : l'audit, pour ceux qui veulent voir avant.
+          Les deux sont toujours presentes ensemble. Jamais un seul bouton. */}
+      <section id="audit" className="py-12 sm:py-20 scroll-mt-24" aria-label="Passer à l’action">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-5 leading-tight text-foreground">
               Deux façons de commencer
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-8">
-              Si vous savez déjà que ça vous intéresse, prenez vingt minutes au téléphone. Si vous
-              préférez voir de quoi je parle avant, je regarde votre présence en ligne et je vous
-              envoie quatre minutes de vidéo avec ce qui marche et les trois endroits où vous perdez
-              des demandes. Rien à payer, et je ne vous rappelle pas derrière.
+              Si vous savez déjà que ça vous intéresse, prenez vingt minutes au téléphone.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <MagneticButton>
-                <Button variant="hero" size="lg" className="group w-full sm:w-auto" onClick={openCalendly}>
-                  <span className="flex items-center gap-2">
-                    Réserver mes 20 minutes
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-                  </span>
-                </Button>
-              </MagneticButton>
-              <Button variant="neonOutline" size="lg" className="w-full sm:w-auto" asChild>
-                <Link to="/contact">Recevoir mon audit gratuit</Link>
+
+            <MagneticButton>
+              <Button variant="hero" size="lg" className="group w-full sm:w-auto" onClick={openCalendly}>
+                <span className="flex items-center gap-2">
+                  Réserver mes 20 minutes
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                </span>
               </Button>
+            </MagneticButton>
+
+            <div className="mt-14 pt-12 border-t border-border/60">
+              <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
+                Ou regardez d’abord ce que je vois chez vous
+              </h3>
+              <p className="text-base text-muted-foreground max-w-xl mx-auto leading-relaxed">
+                Je passe une demi-heure sur votre fiche Google, votre profil et la page où
+                atterrissent les gens, et je vous enregistre quatre minutes de vidéo : ce qui marche
+                déjà, et les trois endroits où vous perdez des demandes sans le voir. C’est gratuit
+                et vous en faites ce que vous voulez.
+              </p>
+              <div className="max-w-xl mx-auto">
+                <AuditForm />
+              </div>
             </div>
           </motion.div>
         </div>
