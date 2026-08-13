@@ -36,19 +36,15 @@ un projet dans les six mois.
 | quelles photos mettre sur son site | Couvert | [photos-pour-son-site-web](/blog/photos-pour-son-site-web) |
 | formulaire de contact qui marche | Couvert | [formulaire-contact-qui-convertit](/blog/formulaire-contact-qui-convertit) |
 | site web artisan | Couvert | [site-web-artisan](/blog/site-web-artisan) |
-| **combien de temps pour créer un site web** | Trou | à écrire |
-| **Wix, WordPress ou sur mesure : faire soi-même ou pas** | Trou | à écrire |
-| **nom de domaine et hébergement : qui possède quoi** | Trou | à écrire |
-| **mentions légales, RGPD, cookies : le minimum légal** | Trou | à écrire |
-| **agence web, freelance ou plateforme : lequel choisir** | Trou | à écrire |
+| combien de temps pour créer un site web | Couvert | [combien-de-temps-creer-site-web](/blog/combien-de-temps-creer-site-web) |
+| Wix, WordPress ou sur mesure : faire soi-même ou pas | Couvert | [faire-son-site-soi-meme-ou-pro](/blog/faire-son-site-soi-meme-ou-pro) |
+| nom de domaine et hébergement : qui possède quoi | Couvert | [nom-de-domaine-hebergement-comprendre](/blog/nom-de-domaine-hebergement-comprendre) |
+| mentions légales, RGPD, cookies : le minimum légal | Couvert | [mentions-legales-rgpd-cookies-site](/blog/mentions-legales-rgpd-cookies-site) |
+| agence web, freelance ou plateforme : lequel choisir | Couvert | [agence-web-freelance-ou-plateforme](/blog/agence-web-freelance-ou-plateforme) |
+| pilier : le guide de la création de site pour une TPE | Couvert | [creer-site-web-tpe](/guides/creer-site-web-tpe) |
 | **récupérer un site fait par quelqu'un d'autre (accès perdus)** | Trou | à écrire |
 | site vitrine ou boutique en ligne | Trou | à écrire |
-| accessibilité d'un site vitrine (obligation 2025) | Trou | à écrire |
-| pilier : le guide de la création de site pour une TPE | Trou | 4e guide à créer |
-
-Note : il n'existe aujourd'hui aucun **guide pilier** sur la création de site,
-alors que c'est le premier des trois fronts. Les trois piliers existants
-couvrent réseaux sociaux, vidéo au smartphone et visibilité Google.
+| accessibilité d'un site vitrine | Trou | à écrire |
 
 ## Front 2 : être visible sur Google
 
@@ -61,12 +57,11 @@ Requêtes à intention forte, concurrence locale faible en Savoie.
 | obtenir des avis Google | Couvert | [obtenir-avis-google](/blog/obtenir-avis-google) |
 | pourquoi mon site n'apparaît pas sur Google | Couvert | [pourquoi-site-pas-sur-google](/blog/pourquoi-site-pas-sur-google) |
 | référencement local, vue d'ensemble | Couvert | [seo-local-guide-complet](/blog/seo-local-guide-complet), guide [visibilite-google-locale](/guides/visibilite-google-locale) |
-| **créer sa fiche Google Business de zéro** | Trou | à écrire |
-| **répondre à un avis négatif** | Trou | à écrire |
-| **faire supprimer un faux avis** | Trou | à écrire |
-| **apparaître sur Google Maps / je ne me trouve pas** | Trou | à écrire |
-| **combien de temps avant d'être référencé** | Trou | à écrire |
-| **annuaires et citations locales : lesquels valent le coup** | Trou | à écrire |
+| créer sa fiche Google Business de zéro | Couvert | [creer-fiche-google-business](/blog/creer-fiche-google-business) |
+| répondre à un avis négatif, faire supprimer un faux avis | Couvert | [repondre-avis-negatif-google](/blog/repondre-avis-negatif-google) |
+| apparaître sur Google Maps / je ne me trouve pas | Couvert | [apparaitre-sur-google-maps](/blog/apparaitre-sur-google-maps) |
+| combien de temps avant d'être référencé | Couvert | [combien-de-temps-referencement-google](/blog/combien-de-temps-referencement-google) |
+| annuaires et citations locales : lesquels valent le coup | Couvert | [annuaires-locaux-visibilite](/blog/annuaires-locaux-visibilite) |
 | **trouver les mots que tapent vos clients** | Trou | à écrire |
 | publier des posts sur sa fiche Google | Trou | à écrire |
 | fiche Google suspendue ou en attente de validation | Trou | à écrire |
@@ -109,9 +104,10 @@ Quatre métiers couverts sur la douzaine qui compte en Savoie.
 | restaurant | Couvert ([restaurant-reseaux-sociaux](/blog/restaurant-reseaux-sociaux)) |
 | coiffeur et esthétique | Couvert ([coiffeur-esthetique-reseaux-sociaux](/blog/coiffeur-esthetique-reseaux-sociaux)) |
 | thérapeute | Couvert ([therapeute-reseaux-sociaux-clients](/blog/therapeute-reseaux-sociaux-clients)) |
-| **location saisonnière et meublé de tourisme** | Trou, forte valeur en Tarentaise |
-| **hôtel et hébergement de station** | Trou, forte valeur |
-| **moniteur de ski, guide, accompagnateur** | Trou, saisonnalité forte |
+| location saisonnière et meublé de tourisme | Couvert ([location-saisonniere-reservation-directe](/blog/location-saisonniere-reservation-directe)) |
+| hôtel, gîte, chambre d'hôtes de montagne | Couvert ([hebergement-station-reseaux-sociaux](/blog/hebergement-station-reseaux-sociaux)) |
+| moniteur de ski, guide, accompagnateur | Couvert ([moniteur-guide-montagne-visibilite](/blog/moniteur-guide-montagne-visibilite)) |
+| activité saisonnière, transversal | Couvert ([entreprise-saisonniere-communication](/blog/entreprise-saisonniere-communication)) |
 | **agent immobilier** | Trou |
 | **paysagiste et entretien d'extérieur** | Trou |
 | coach sportif | Trou |
@@ -136,13 +132,22 @@ mal que de bien. Le manque de pages n'est pas le problème le plus urgent.
 
 ## Ordre d'attaque
 
-1. Le cluster **création de site** : combien de temps, faire soi-même ou pas,
-   domaine et hébergement, légal, qui choisir. Puis le 4e guide pilier qui les
-   relie.
-2. Le cluster **Google** : créer sa fiche, avis négatif, Maps, délais, annuaires.
-3. Les **métiers du tourisme de montagne**, vein la moins concurrencée de la zone.
-4. Les trous de second rang sur les réseaux sociaux.
+1. Fait. Cluster **création de site** plus le 4e guide pilier.
+2. Fait. Cluster **Google** : fiche, avis négatif, Maps, délais, annuaires.
+3. Fait. **Métiers de la montagne**, la veine la moins concurrencée de la zone.
+4. En cours. Trous de second rang sur les réseaux sociaux : stories contre
+   reels, droits sur la musique, gestion des commentaires et messages, achat
+   d'abonnés.
+5. Ensuite. Métiers manquants hors montagne : paysagiste, agent immobilier,
+   commerce de centre-ville, coach sportif.
+6. Ensuite. Trouver les mots que tapent ses clients, publier sur sa fiche
+   Google, récupérer un site dont on a perdu les accès.
 
 ## Journal
 
 - 13 août 2026 : carte établie. 47 articles, 11 pages locales, 3 guides.
+- 13 août 2026 : cluster création de site, 5 articles, plus le guide pilier
+  `/guides/creer-site-web-tpe`. 4 guides.
+- 13 août 2026 : cluster visibilité Google, 5 articles, raccrochés au pilier
+  `/guides/visibilite-google-locale`.
+- 13 août 2026 : cluster métiers de la montagne, 4 articles. 61 articles.
