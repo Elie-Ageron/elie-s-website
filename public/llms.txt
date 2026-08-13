@@ -150,7 +150,7 @@ France entière (travail 100% à distance possible). Belgique, Suisse.
 - Site web : https://elieageron.com/blog/categorie/site-web
 - Conversion : https://elieageron.com/blog/categorie/conversion
 
-## Articles du blog (114)
+## Articles du blog (119)
 
 - Acheter des abonnés : ce qui se passe réellement après : https://elieageron.com/blog/acheter-abonnes-pourquoi-non
 - Agence, freelance ou plateforme : à qui confier son site : https://elieageron.com/blog/agence-web-freelance-ou-plateforme
@@ -181,8 +181,10 @@ France entière (travail 100% à distance possible). Belgique, Suisse.
 - Être cité par ChatGPT et les moteurs de réponse : https://elieageron.com/blog/chatgpt-perplexite-entreprise-locale
 - Faire son site soi-même ou passer par quelqu'un : https://elieageron.com/blog/faire-son-site-soi-meme-ou-pro
 - Faire un calendrier éditorial quand on n'a pas le temps : https://elieageron.com/blog/calendrier-editorial-reseaux-sociaux
+- Faut-il afficher ses prix sur son site : https://elieageron.com/blog/afficher-ses-prix-ou-pas
 - Faut-il un site en anglais quand on reçoit des clients étrangers : https://elieageron.com/blog/site-bilingue-clientele-etrangere
 - Fiche Google suspendue ou refusée : que faire : https://elieageron.com/blog/fiche-google-suspendue-que-faire
+- Filmer avec ses salariés sans mettre personne mal à l'aise : https://elieageron.com/blog/filmer-avec-son-equipe
 - Filmer avec une bonne lumière sans acheter de matériel : https://elieageron.com/blog/lumiere-video-smartphone
 - Filmer soi-même avec son téléphone : ce qui marche vraiment : https://elieageron.com/blog/filmer-avec-son-telephone
 - Formateur indépendant : se faire connaître sans dépendre des plateformes : https://elieageron.com/blog/formateur-independant-trouver-clients
@@ -232,6 +234,7 @@ France entière (travail 100% à distance possible). Belgique, Suisse.
 - Quand refaire son site, et quand il vaut mieux le garder : https://elieageron.com/blog/refonte-site-web-quand
 - Quel réseau social choisir quand on a une entreprise locale : https://elieageron.com/blog/quel-reseau-social-choisir-entreprise-locale
 - Quoi écrire sur son site quand on ne sait pas quoi dire : https://elieageron.com/blog/quoi-ecrire-sur-son-site
+- Rater moins d'appels quand on travaille avec les mains : https://elieageron.com/blog/rater-moins-d-appels
 - Recruter quand on est une petite entreprise de vallée : https://elieageron.com/blog/recruter-avec-son-site-et-ses-reseaux
 - Récupérer un site dont on a perdu les accès : https://elieageron.com/blog/recuperer-site-web-acces-perdus
 - Refaire son site sans perdre sa place sur Google : https://elieageron.com/blog/refaire-son-site-sans-perdre-google
@@ -260,8 +263,10 @@ France entière (travail 100% à distance possible). Belgique, Suisse.
 - Un concurrent copie vos contenus : quoi faire : https://elieageron.com/blog/concurrent-copie-mes-contenus
 - Un devis qui se signe : ce qui se joue dans le document : https://elieageron.com/blog/devis-qui-se-signe
 - Un site à 300 euros : ce qu'il y a dedans, et ce qu'il n'y a pas : https://elieageron.com/blog/site-web-pas-cher-ce-que-ca-cache
+- Vos emails arrivent en indésirables : pourquoi et comment le régler : https://elieageron.com/blog/emails-pro-en-indesirables
 - Votre fiche Google Business vaut plus que votre site web : https://elieageron.com/blog/fiche-google-business-optimiser
 - Votre formulaire de contact fait fuir la moitié des gens : https://elieageron.com/blog/formulaire-contact-qui-convertit
+- Votre site a été piraté : les premières heures : https://elieageron.com/blog/site-pirate-que-faire
 - Votre site est lent sur mobile, et ça vous coûte des clients : https://elieageron.com/blog/vitesse-site-web-mobile
 - Vous ne savez pas quoi publier ? Voici comment je trouve les sujets : https://elieageron.com/blog/idees-contenu-reseaux-sociaux
 - WhatsApp Business quand on est artisan ou commerçant : https://elieageron.com/blog/whatsapp-business-entreprise-locale
