@@ -46,6 +46,8 @@ La question arrive souvent sous la forme d'un pourcentage : combien de mon chiff
 
 Les chiffres qui circulent viennent d'entreprises qui n'ont rien à voir avec un artisan de vallée. Je préfère raisonner autrement.
 
+Cet article traite le montant et l'ordre de dépense. Si votre question est plutôt de choisir entre un site et les réseaux avec un budget serré, c'est [réseaux sociaux ou site web](/blog/reseaux-sociaux-ou-site-web).
+
 ## Le seul calcul qui vaut
 
 Combien vaut un client chez vous.
@@ -80,7 +82,7 @@ Un site sert à deux choses : recevoir les gens que la fiche Google et le bouche
 
 Le budget dépend entièrement de la part de travail que vous déléguez. Le détail est dans [combien coûte un site web](/blog/combien-coute-un-site-web).
 
-Ajoutez les frais récurrents qu'on oublie systématiquement : le nom de domaine, l'hébergement, les emails professionnels. Comptez quelques dizaines d'euros par an pour l'ensemble sur un site vitrine, et méfiez-vous des abonnements qui facturent bien davantage sans dire ce qu'ils contiennent.
+Ajoutez les frais récurrents qu'on oublie systématiquement : le nom de domaine, l'hébergement, les emails professionnels. Comptez une quinzaine d'euros par an pour le domaine, quelques euros par mois pour un hébergement mutualisé, et un montant du même ordre par boîte email professionnelle. Méfiez-vous en revanche des abonnements qui facturent bien davantage sans dire ce qu'ils contiennent.
 
 ### Étape deux : la production de contenu
 
@@ -232,7 +234,7 @@ Fermer les commentaires et disparaître. Le silence est interprété comme un av
 
 C'est là que se joue le vrai résultat, et c'est mécanique.
 
-Le levier n'est pas la suppression, c'est le volume. Quinze avis récents et honnêtes remettent trois mauvais avis à leur juste place, alors que trois mauvais avis sur douze au total pèsent lourd.
+Le levier n'est pas la suppression, c'est le volume. Quelques mauvais avis noyés dans une centaine pèsent beaucoup moins lourd que les mêmes sur une douzaine au total.
 
 Relancez donc la collecte, auprès de vos clients satisfaits, sans expliquer pourquoi. Le rythme normal, sans salve. La méthode est dans [obtenir des avis Google](/blog/obtenir-avis-google).
 

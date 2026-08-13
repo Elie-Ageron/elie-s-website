@@ -46,6 +46,8 @@ Les offres à quelques centaines d'euros existent, elles sont réelles, et elles
 
 Le problème est qu'elles sont comparées à des prestations complètes, comme si c'était le même produit. Ça ne l'est pas, et personne ne l'explique.
 
+Cet article ne redonne pas les fourchettes de prix du marché : elles sont dans [combien coûte un site web](/blog/combien-coute-un-site-web). Il traite ce que contient réellement une offre à bas prix et ce qu'il faut vérifier avant de signer.
+
 Cet article traite uniquement ce que contient une offre à bas prix et les clauses à vérifier. Pour l'arbitrage entre le faire vous-même et le faire faire, c'est [faire son site soi-même ou passer par quelqu'un](/blog/faire-son-site-soi-meme-ou-pro). Pour le choix du type de prestataire, c'est [agence, freelance ou plateforme](/blog/agence-web-freelance-ou-plateforme).
 
 ## Ce que vous achetez réellement
@@ -84,7 +86,7 @@ Le coût d'une modification. Demandez le tarif d'un changement de texte et d'ajo
 
 Le démarchage téléphonique avec engagement long. C'est le schéma classique visant les créateurs d'entreprise : un appel, une offre pressante, un contrat de plusieurs années, un site générique, et l'impossibilité de sortir. Si vous n'avez pas cherché le prestataire, méfiez-vous.
 
-La facture pour une inscription jamais demandée. Ce n'est pas une facture, ne payez pas, et vérifiez ce que vous avez signé.
+La facture pour une inscription que vous n'avez jamais demandée. Ne réglez pas dans la précipitation : ressortez ce que vous avez signé, et faites regarder le document avant de payer quoi que ce soit.
 
 La promesse de première place sur Google. Personne ne contrôle le classement, donc personne ne peut le garantir. Les délais réels sont dans [combien de temps avant d'être référencé](/blog/combien-de-temps-referencement-google).
 
@@ -300,7 +302,7 @@ Partir proprement, sans mise en cause publique, coûte moins cher à tout le mon
     faqFr: [
       {
         q: 'La page à propos est-elle vraiment consultée ?',
-        a: "C'est souvent la deuxième ou la troisième page la plus vue d'un site de petite entreprise, juste après l'accueil et la page de la prestation. Les gens veulent savoir à qui ils vont confier leur argent.",
+        a: "Elle fait partie des pages les plus consultées d'un site de petite entreprise, avec l'accueil et la page de la prestation. Les gens veulent savoir à qui ils vont confier leur argent.",
       },
       {
         q: 'Faut-il y mettre l\'histoire de l\'entreprise ?',

@@ -356,7 +356,7 @@ Vous n'avez pas à tout écrire en une fois, et c'est même contre-productif.
 
 Une page par mois, pendant six mois. Chacune écrite sérieusement, à partir des questions réelles de vos clients.
 
-Au bout de six mois, vous avez un site qui couvre vos prestations principales, et Google a vu un site qui vit régulièrement plutôt qu'un site qui a déversé son contenu en un jour.
+Au bout de six mois, vous avez un site qui couvre vos prestations principales, écrit à partir de ce que vos clients demandent réellement plutôt qu'imaginé d'un coup.
 
 C'est le rythme que je conseille systématiquement, et c'est celui que la majorité des gens ne tiennent pas, ce qui laisse la place libre.
     `,

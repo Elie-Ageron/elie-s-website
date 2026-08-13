@@ -156,7 +156,7 @@ C'est tout. Tenu six mois, dans une commune de deux mille habitants, ça change 
       },
     ],
     contentFr: `
-La plupart des artisans que je croise travaillent à quatre-vingt-dix pour cent pour des particuliers, et ils le subissent : saisonnalité forte, décisions lentes, budgets serrés, un chantier ne prépare pas le suivant.
+La plupart des artisans que je croise travaillent presque exclusivement pour des particuliers, et ils le subissent : saisonnalité forte, décisions lentes, budgets serrés, un chantier ne prépare pas le suivant.
 
 À côté, il existe une clientèle qui a des budgets récurrents, une échéance annuelle, et un vrai problème pour trouver des entreprises fiables.
 
@@ -284,7 +284,7 @@ En un an, cela fait une cinquantaine d'interlocuteurs professionnels de votre zo
       },
     ],
     contentFr: `
-Un couvreur me disait : "je ne peux pas fidéliser, une toiture se refait tous les trente ans."
+L'objection tombe toujours de la même façon : on ne peut pas fidéliser quand une toiture se refait tous les trente ans.
 
 C'est vrai pour le rachat. C'est faux pour tout le reste.
 

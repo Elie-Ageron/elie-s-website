@@ -44,7 +44,7 @@ export const devisPosts: BlogPost[] = [
     contentFr: `
 Tout le travail de visibilité sert à obtenir une demande. Le devis est ce qui la transforme en argent, et c'est le document le moins soigné de toute la chaîne.
 
-J'ai vu des entreprises très bien référencées, avec des demandes en quantité, qui signaient un devis sur cinq. Le problème n'était jamais leur prix.
+On peut être très bien référencé, recevoir des demandes en quantité, et n'en transformer qu'une petite partie. Le problème n'est presque jamais le prix.
 
 ## Ce que fait un client avec trois devis
 
@@ -166,9 +166,9 @@ Aucun travail de visibilité ne produit ce résultat aussi vite et aussi bon mar
       },
     ],
     contentFr: `
-Un artisan me disait qu'il ne relançait jamais, par principe : "si le client veut, il rappelle."
+Il y a une position que j'entends souvent, et elle se tient en apparence : si le client veut vraiment, il rappellera.
 
-Il avait envoyé quatorze devis dans le trimestre, en avait signé trois, et n'avait aucune idée de ce qui s'était passé pour les onze autres.
+Le problème est ce qu'elle laisse derrière. Des devis envoyés, quelques-uns signés, et aucune idée de ce qui s'est passé pour tous les autres.
 
 ## Ce que le silence veut vraiment dire
 
@@ -336,7 +336,7 @@ Ce qui décrédibilise : trois témoignages anonymes, tous enthousiastes, sans a
 
 ## Ce qui est interdit, et le rappel utile
 
-N'achetez pas d'avis. C'est illégal, c'est détectable, et une entreprise sanctionnée perd bien plus que ce qu'elle avait gagné.
+N'achetez pas d'avis. La publication de faux avis de consommateurs est sanctionnée en droit français au titre des pratiques commerciales trompeuses, c'est détectable par les plateformes, et une entreprise prise en défaut perd bien plus que ce qu'elle avait gagné.
 
 Ne filtrez pas les clients pour ne solliciter que ceux dont vous êtes sûr d'avoir un bon retour, en les triant par une enquête préalable. Les plateformes l'interdisent et la pratique est mal vue.
 
@@ -362,7 +362,7 @@ C'est peu, c'est tenable, et c'est déjà davantage que la quasi-totalité de vo
     slug: 'photos-professionnelles-ou-smartphone',
     titleFr: 'Photos professionnelles ou smartphone : où mettre l\'argent',
     excerptFr:
-      "Un téléphone récent suffit pour quatre-vingts pour cent des besoins d'une TPE. Reste vingt pour cent où il ne suffit pas.",
+      "Un téléphone récent suffit pour la plus grande partie des besoins d'une TPE. Reste une poignée de cas où il ne suffit pas.",
     seoTitleFr: 'Photos Pro ou Smartphone : que Choisir',
     seoDescFr:
       "Quand un smartphone suffit et quand un photographe se justifie pour une petite entreprise, et comment obtenir de bonnes images sans budget.",
@@ -426,7 +426,7 @@ Le cadrage ensuite. Enlevez ce qui traîne avant de photographier. Un chantier f
 
 Tenez le téléphone droit. Les lignes verticales penchées sont le défaut le plus visible sur les photos d'intérieur et de bâtiment.
 
-Nettoyez l'objectif. Ça paraît idiot, c'est la cause d'un quart des photos floues ou voilées.
+Nettoyez l'objectif. Ça paraît idiot, et c'est une cause de flou et de voile bien plus fréquente qu'on ne l'imagine.
 
 Prenez-en beaucoup. Vingt photos du même sujet coûtent le même prix qu'une, et vous en garderez trois.
 

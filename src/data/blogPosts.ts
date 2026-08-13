@@ -1933,7 +1933,7 @@ L'ordre inverse marche moins bien. Faire six mois de vidéos sans destination, c
 
 ## La vraie différence : le rythme du retour
 
-Un site produit son effet vite puis se stabilise. Vous le mettez en ligne, vous apparaissez sur Google en quelques semaines, et ça continue de tourner sans que vous y touchiez.
+Un site met du temps à démarrer, puis il travaille longtemps. Comptez plusieurs mois avant de ressortir sur des recherches disputées, et une fois la position prise, elle tient tant que le contenu reste à jour.
 
 Les réseaux produisent leur effet lentement et de façon cumulative. Rien pendant deux mois, puis ça monte, puis ça ne redescend plus tant que vous publiez.
 

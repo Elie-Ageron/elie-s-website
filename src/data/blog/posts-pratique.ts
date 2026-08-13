@@ -250,7 +250,7 @@ Pendant sept jours, notez chaque appel manqué et ce qu'il est devenu.
 
 Rappelé le jour même et abouti. Rappelé trop tard et perdu. Jamais rappelé.
 
-À la fin de la semaine, vous aurez un chiffre. Chez la plupart des artisans à qui j'ai fait faire cet exercice, ce chiffre est le plus gros levier de leur année, et il ne demande aucun investissement.
+À la fin de la semaine, vous aurez un chiffre. Pour beaucoup d'artisans, ce chiffre est le plus gros levier de leur année, et il ne demande aucun investissement.
     `,
   },
   {
@@ -338,7 +338,7 @@ Demandez enfin le réexamen à Google, une fois seulement que le site est propre
 
 ## Prévenir, ce qui est beaucoup moins cher
 
-Les mises à jour. C'est la cause de la quasi-totalité des piratages de sites de petites entreprises : un système laissé en version d'il y a trois ans, avec une faille publiquement documentée.
+Les mises à jour. C'est la cause la plus fréquente de très loin : un système laissé en version d'il y a trois ans, avec une faille publiquement documentée.
 
 Les sauvegardes automatiques, stockées ailleurs que sur le serveur du site. Une sauvegarde qui vit sur la machine piratée ne sert à rien.
 
@@ -406,9 +406,9 @@ Comparé à ça, une mise à jour trimestrielle et une sauvegarde automatique co
       },
     ],
     contentFr: `
-Un artisan m'a expliqué qu'il perdait des chantiers sans comprendre : il envoyait ses devis, personne ne répondait, et quand il rappelait, le client disait n'avoir rien reçu.
+Il existe une panne qu'on ne soupçonne jamais et qui fait perdre des chantiers en silence. Vous envoyez vos devis, personne ne répond, et quand vous rappelez, le client dit n'avoir rien reçu.
 
-Ses devis arrivaient dans le dossier des indésirables. Depuis deux ans.
+Les devis arrivent dans le dossier des indésirables, parfois depuis des années.
 
 ## Pourquoi c'est un vrai sujet commercial
 

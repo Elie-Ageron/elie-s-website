@@ -46,6 +46,8 @@ Le mot fait peur, et c'est en grande partie parce qu'on l'entoure de jargon.
 
 Je vais l'expliquer comme je le fais à un client au premier rendez vous, sans acronyme. Une fois qu'on a compris trois mécanismes, on arrête de se faire vendre n'importe quoi.
 
+Cet article explique le fonctionnement. Pour la méthode à appliquer ensuite, étape par étape, c'est [le guide du référencement local](/blog/seo-local-guide-complet).
+
 ## Mécanisme 1 : Google doit trouver vos pages
 
 Google parcourt le web en suivant des liens, de page en page, en permanence.
@@ -72,11 +74,11 @@ C'est l'étape où presque tout se joue, et celle qu'on explique le moins.
 
 Votre page ne s'ajoute pas à une liste : elle doit déplacer quelqu'un. Pour trancher entre plusieurs pages qui parlent du même sujet, Google tient compte de plusieurs signaux.
 
-L'ancienneté et l'accumulation d'historique du site.
+L'antériorité du site et tout ce qu'il a accumulé au fil du temps. Google conteste que l'âge du domaine soit un facteur en soi, mais un site installé depuis des années part rarement avec un handicap.
 
 Ce que d'autres sites disent de vous. Une mention sur le site d'un fournisseur, d'une fédération, d'un journal de commune compte comme un signal de confiance.
 
-Le comportement des gens. Est ce qu'ils restent sur votre page, ou repartent-ils immédiatement vers un autre résultat.
+Le comportement des gens, dans une mesure que personne ne connaît précisément. Google ne détaille pas ce qu'il regarde, et il vaut mieux retenir le principe que la mécanique : une page qui déçoit ses visiteurs finit rarement par monter.
 
 Et pour une recherche locale, la proximité géographique, qui pèse énormément.
 
@@ -310,7 +312,7 @@ Ce qu'un client écrit dans un avis. Vous pouvez répondre, pas effacer.
 
 L'exactitude de vos informations. Horaires, adresse, téléphone, prestations, zone, tarifs. Partout, et à jour. C'est gratuit et c'est ce qui coûte le plus cher quand c'est négligé.
 
-Ce que contiennent vos pages. Les questions traitées, les prix affichés, les photos, la clarté. C'est ce qui décide si le visiteur reste ou repart, et ce comportement remonte ensuite à Google.
+Ce que contiennent vos pages. Les questions traitées, les prix affichés, les photos, la clarté. C'est ce qui décide si le visiteur reste ou repart, et une page qui déçoit ses visiteurs finit rarement par progresser.
 
 La collecte d'avis. Le nombre, la régularité, la fraîcheur. Personne d'autre que vous ne peut demander à vos clients.
 
@@ -346,7 +348,7 @@ Trois réflexes, dans l'ordre.
 
 Attendez. Les positions bougent pendant plusieurs semaines après un changement, dans les deux sens. Réagir à chaud conduit à défaire ce qui marchait.
 
-Vérifiez que rien n'a changé chez vous. Un site refait, une migration, des pages supprimées, un blocage d'exploration. Neuf fois sur dix, c'est là qu'est la cause, pas dans une mise à jour.
+Vérifiez que rien n'a changé chez vous. Un site refait, une migration, des pages supprimées, un blocage d'exploration. C'est là qu'est la cause le plus souvent, bien plus que dans une mise à jour.
 
 Regardez si la baisse touche tout le site ou quelques pages. Le diagnostic n'est pas le même, et la console de recherche vous le dit. Voir [la console de recherche expliquée simplement](/blog/search-console-pour-debutant).
 
@@ -406,6 +408,8 @@ Quand je regarde le dispositif d'une petite entreprise, je retrouve à peu près
 
 Ce ne sont pas des erreurs de stratégie. Ce sont des choses concrètes, corrigeables vite, qui coûtent des clients tous les mois sans que rien ne le signale.
 
+C'est une liste de vérification transversale. Pour un diagnostic centré sur le site seul, c'est [mon site ne génère aucun contact](/blog/mon-site-ne-genere-aucun-contact).
+
 ## 1. Les horaires faux sur la fiche Google
 
 De loin le plus coûteux par rapport à l'effort de correction.
@@ -448,7 +452,7 @@ Correction : deux créneaux de dix minutes par jour, tous les jours.
 
 ## 6. Aucun avis, ou aucun avis récent
 
-Trois avis datant de 2023 pèsent moins qu'on ne le croit, et la fraîcheur compte autant que le nombre.
+Trois avis datant de 2023 pèsent moins qu'on ne le croit : la fraîcheur compte, en plus du nombre.
 
 C'est le levier le plus puissant pour une entreprise locale, et il ne dépend que de votre organisation.
 
@@ -488,7 +492,7 @@ Correction : cinq minutes de vérification, et une demande de transfert si néce
 
 Huit de ces dix corrections se font en une journée. Aucune ne demande de compétence technique. Aucune ne coûte d'argent.
 
-Et pourtant, sur la quasi-totalité des entreprises que je regarde, au moins six sont présentes en même temps.
+Et pourtant, sur les entreprises que je regarde, il est rare qu'il n'y en ait pas plusieurs en même temps.
 
 C'est aussi une bonne nouvelle : cela veut dire qu'il reste énormément de marge sans rien dépenser, et que vos concurrents ont exactement les mêmes.
 
@@ -556,9 +560,9 @@ Ce n'est pas une faute du prestataire, ni du client. C'est simplement ce qui arr
 
 ## Pourquoi la visibilité se construit dans la durée
 
-C'est mécanique, et ça découle de la façon dont Google fonctionne.
+Ce n'est pas une règle publiée par Google, c'est ce que je constate.
 
-Une page met des mois à trouver sa position. Dix pages publiées sur un an valent mieux que dix pages publiées le même jour, parce que Google voit un site qui vit.
+Une page met des mois à trouver sa position. En pratique, dix pages étalées sur un an donnent de meilleurs résultats que dix pages publiées le même jour, ne serait-ce que parce qu'elles sont écrites à partir de questions réelles au lieu d'être imaginées d'un coup.
 
 Les avis pèsent par leur volume et leur fraîcheur, ce qui suppose une collecte continue.
 
