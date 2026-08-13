@@ -183,6 +183,7 @@ correction.
 | Descriptions sous 110 caractères | 6 | 0 |
 | Ancres non descriptives | 176 | 0 |
 | Erreurs TypeScript du projet | 2 | 0 |
+| JS chargé par l'accueil pour afficher 6 liens | 1028 Ko | 36 Ko |
 
 Le plus grave, et de loin : **`/a-propos` et `/guides` affichaient « Erreur de
 rendu » à tous les visiteurs français.** `seoData.fr` s'arrêtait à la clef
@@ -195,6 +196,13 @@ ne puisse plus faire tomber une page entière.
 Autre conflit corrigé : `/get-started` déclarait un canonical vers `/contact`
 tout en figurant au sitemap en priorité 0.9. Les deux signaux se contredisaient.
 La page a désormais sa propre identité.
+
+La dernière ligne est une régression que j'ai moi-même introduite en posant le
+maillage descendant : `src/data/blogPosts.ts` embarque le texte intégral des
+139 articles, donc un seul import faisait tomber tout le corpus dans le lot de
+téléchargement de la page. Corrigé par un index léger généré, `blogIndex.ts`.
+**Règle à retenir : ne jamais importer `@/data/blogPosts` depuis une page qui
+n'affiche pas d'article.**
 
 `scripts/prerender.mjs` contrôle maintenant ce qu'il a réellement écrit. Il
 supprime les pages figées sur l'écran d'erreur, parce qu'un fichier cassé
