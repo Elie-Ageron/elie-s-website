@@ -3,154 +3,186 @@
 Tableau de bord de la couverture éditoriale de elieageron.com.
 Dernière mise à jour : 13 août 2026.
 
+État : **94 articles, 11 pages locales, 4 guides piliers, 129 URL au sitemap.**
+Point de départ du jour : 47 articles, 11 pages locales, 3 guides, 81 URL.
+
 ## Comment lire ce document
 
 Chaque ligne est une question qu'un artisan, un commerçant, un thérapeute ou une
-TPE de Savoie ou Haute-Savoie tape réellement sur Google. Trois états :
+TPE de Savoie ou Haute-Savoie tape réellement sur Google.
 
 - **Couvert** : une page du site répond à la requête, et elle répond bien.
-- **Partiel** : le sujet est effleuré dans une page qui traite d'autre chose. Un
-  visiteur qui cherche précisément ça ne trouve pas sa réponse au premier écran.
-- **Trou** : rien sur le site.
+- **Trou** : rien sur le site, ou seulement une mention en passant.
 
-Les trous sont classés par valeur commerciale : ce qui amène un client qui paie,
-avant ce qui amène du trafic.
-
-État au 13 août 2026 : 47 articles, 11 pages locales, 3 guides piliers.
+Les trous restants sont classés par valeur commerciale.
 
 ---
 
 ## Front 1 : créer un site
 
-Le front le plus rentable. Quelqu'un qui tape ces requêtes a un budget en tête et
-un projet dans les six mois.
-
-| Requête type | État | Page |
-|---|---|---|
-| combien coûte un site web / prix création site internet | Couvert | [combien-coute-un-site-web](/blog/combien-coute-un-site-web) |
-| pourquoi avoir un site web quand on a déjà Facebook | Couvert | [pourquoi-site-web-2025](/blog/pourquoi-site-web-2025), [reseaux-sociaux-ou-site-web](/blog/reseaux-sociaux-ou-site-web) |
-| quoi mettre sur son site / quoi écrire | Couvert | [quoi-ecrire-sur-son-site](/blog/quoi-ecrire-sur-son-site) |
-| quand refaire son site / refonte | Couvert | [refonte-site-web-quand](/blog/refonte-site-web-quand) |
-| mon site ne me rapporte rien | Couvert | [mon-site-ne-genere-aucun-contact](/blog/mon-site-ne-genere-aucun-contact) |
-| site lent sur mobile | Couvert | [vitesse-site-web-mobile](/blog/vitesse-site-web-mobile) |
-| quelles photos mettre sur son site | Couvert | [photos-pour-son-site-web](/blog/photos-pour-son-site-web) |
-| formulaire de contact qui marche | Couvert | [formulaire-contact-qui-convertit](/blog/formulaire-contact-qui-convertit) |
-| site web artisan | Couvert | [site-web-artisan](/blog/site-web-artisan) |
-| combien de temps pour créer un site web | Couvert | [combien-de-temps-creer-site-web](/blog/combien-de-temps-creer-site-web) |
-| Wix, WordPress ou sur mesure : faire soi-même ou pas | Couvert | [faire-son-site-soi-meme-ou-pro](/blog/faire-son-site-soi-meme-ou-pro) |
-| nom de domaine et hébergement : qui possède quoi | Couvert | [nom-de-domaine-hebergement-comprendre](/blog/nom-de-domaine-hebergement-comprendre) |
-| mentions légales, RGPD, cookies : le minimum légal | Couvert | [mentions-legales-rgpd-cookies-site](/blog/mentions-legales-rgpd-cookies-site) |
-| agence web, freelance ou plateforme : lequel choisir | Couvert | [agence-web-freelance-ou-plateforme](/blog/agence-web-freelance-ou-plateforme) |
-| pilier : le guide de la création de site pour une TPE | Couvert | [creer-site-web-tpe](/guides/creer-site-web-tpe) |
-| **récupérer un site fait par quelqu'un d'autre (accès perdus)** | Trou | à écrire |
-| site vitrine ou boutique en ligne | Trou | à écrire |
-| accessibilité d'un site vitrine | Trou | à écrire |
+| Requête type | État |
+|---|---|
+| combien coûte un site web | [combien-coute-un-site-web](/blog/combien-coute-un-site-web) |
+| combien de temps pour créer un site | [combien-de-temps-creer-site-web](/blog/combien-de-temps-creer-site-web) |
+| faire soi-même ou passer par un pro | [faire-son-site-soi-meme-ou-pro](/blog/faire-son-site-soi-meme-ou-pro) |
+| agence, freelance ou plateforme | [agence-web-freelance-ou-plateforme](/blog/agence-web-freelance-ou-plateforme) |
+| nom de domaine et hébergement | [nom-de-domaine-hebergement-comprendre](/blog/nom-de-domaine-hebergement-comprendre) |
+| récupérer un site, accès perdus | [recuperer-site-web-acces-perdus](/blog/recuperer-site-web-acces-perdus) |
+| mentions légales, RGPD, cookies | [mentions-legales-rgpd-cookies-site](/blog/mentions-legales-rgpd-cookies-site) |
+| accessibilité d'un site | [accessibilite-site-web-tpe](/blog/accessibilite-site-web-tpe) |
+| site vitrine ou boutique en ligne | [site-vitrine-ou-boutique-en-ligne](/blog/site-vitrine-ou-boutique-en-ligne) |
+| quoi écrire sur son site | [quoi-ecrire-sur-son-site](/blog/quoi-ecrire-sur-son-site) |
+| quelles photos | [photos-pour-son-site-web](/blog/photos-pour-son-site-web) |
+| formulaire de contact | [formulaire-contact-qui-convertit](/blog/formulaire-contact-qui-convertit) |
+| site lent sur mobile | [vitesse-site-web-mobile](/blog/vitesse-site-web-mobile) |
+| mon site ne rapporte rien | [mon-site-ne-genere-aucun-contact](/blog/mon-site-ne-genere-aucun-contact) |
+| quand refaire son site | [refonte-site-web-quand](/blog/refonte-site-web-quand) |
+| refonte sans perdre Google | [refaire-son-site-sans-perdre-google](/blog/refaire-son-site-sans-perdre-google) |
+| site en anglais, clientèle étrangère | [site-bilingue-clientele-etrangere](/blog/site-bilingue-clientele-etrangere) |
+| prise de rendez-vous en ligne | [prendre-rendez-vous-en-ligne](/blog/prendre-rendez-vous-en-ligne) |
+| faut-il un blog | [faut-il-un-blog-quand-on-est-artisan](/blog/faut-il-un-blog-quand-on-est-artisan) |
+| pilier | [creer-site-web-tpe](/guides/creer-site-web-tpe) |
+| **logo et identité visuelle pour une TPE** | Trou |
+| **hébergement, nom de domaine : changer de prestataire** | couvert en partie, à surveiller |
 
 ## Front 2 : être visible sur Google
 
-Requêtes à intention forte, concurrence locale faible en Savoie.
-
-| Requête type | État | Page |
-|---|---|---|
-| être premier sur Google dans sa ville | Couvert | [etre-premier-google-dans-sa-ville](/blog/etre-premier-google-dans-sa-ville) |
-| optimiser sa fiche Google Business | Couvert | [fiche-google-business-optimiser](/blog/fiche-google-business-optimiser) |
-| obtenir des avis Google | Couvert | [obtenir-avis-google](/blog/obtenir-avis-google) |
-| pourquoi mon site n'apparaît pas sur Google | Couvert | [pourquoi-site-pas-sur-google](/blog/pourquoi-site-pas-sur-google) |
-| référencement local, vue d'ensemble | Couvert | [seo-local-guide-complet](/blog/seo-local-guide-complet), guide [visibilite-google-locale](/guides/visibilite-google-locale) |
-| créer sa fiche Google Business de zéro | Couvert | [creer-fiche-google-business](/blog/creer-fiche-google-business) |
-| répondre à un avis négatif, faire supprimer un faux avis | Couvert | [repondre-avis-negatif-google](/blog/repondre-avis-negatif-google) |
-| apparaître sur Google Maps / je ne me trouve pas | Couvert | [apparaitre-sur-google-maps](/blog/apparaitre-sur-google-maps) |
-| combien de temps avant d'être référencé | Couvert | [combien-de-temps-referencement-google](/blog/combien-de-temps-referencement-google) |
-| annuaires et citations locales : lesquels valent le coup | Couvert | [annuaires-locaux-visibilite](/blog/annuaires-locaux-visibilite) |
-| **trouver les mots que tapent vos clients** | Trou | à écrire |
-| publier des posts sur sa fiche Google | Trou | à écrire |
-| fiche Google suspendue ou en attente de validation | Trou | à écrire |
-| Google Ads ou référencement naturel | Trou | à écrire (position honnête : Elie ne fait pas d'ads) |
-| une adresse ou pas : la zone de chalandise sans local | Trou | à écrire |
+| Requête type | État |
+|---|---|
+| créer sa fiche Google Business | [creer-fiche-google-business](/blog/creer-fiche-google-business) |
+| optimiser sa fiche | [fiche-google-business-optimiser](/blog/fiche-google-business-optimiser) |
+| publier sur sa fiche | [publications-fiche-google-business](/blog/publications-fiche-google-business) |
+| fiche suspendue ou refusée | [fiche-google-suspendue-que-faire](/blog/fiche-google-suspendue-que-faire) |
+| je n'apparais pas sur Maps | [apparaitre-sur-google-maps](/blog/apparaitre-sur-google-maps) |
+| zone d'intervention sans local | [zone-de-chalandise-sans-local](/blog/zone-de-chalandise-sans-local) |
+| être premier dans sa ville | [etre-premier-google-dans-sa-ville](/blog/etre-premier-google-dans-sa-ville) |
+| mon site n'apparaît pas | [pourquoi-site-pas-sur-google](/blog/pourquoi-site-pas-sur-google) |
+| combien de temps pour être référencé | [combien-de-temps-referencement-google](/blog/combien-de-temps-referencement-google) |
+| trouver ses mots-clés | [trouver-mots-cles-clients](/blog/trouver-mots-cles-clients) |
+| obtenir des avis | [obtenir-avis-google](/blog/obtenir-avis-google) |
+| répondre à un avis négatif, faux avis | [repondre-avis-negatif-google](/blog/repondre-avis-negatif-google) |
+| annuaires : lesquels valent le coup | [annuaires-locaux-visibilite](/blog/annuaires-locaux-visibilite) |
+| Google Ads ou SEO | [google-ads-ou-referencement-naturel](/blog/google-ads-ou-referencement-naturel) |
+| être cité par ChatGPT et les IA | [chatgpt-perplexite-entreprise-locale](/blog/chatgpt-perplexite-entreprise-locale) |
+| vue d'ensemble | [seo-local-guide-complet](/blog/seo-local-guide-complet), pilier [visibilite-google-locale](/guides/visibilite-google-locale) |
+| **mon concurrent est devant moi, pourquoi** | Trou |
+| **Google Business : plusieurs établissements** | Trou, faible priorité |
 
 ## Front 3 : le contenu court
 
-Le pilier le mieux couvert. Les trous restants sont de second rang.
+| Requête type | État |
+|---|---|
+| quel réseau choisir | [quel-reseau-social-choisir-entreprise-locale](/blog/quel-reseau-social-choisir-entreprise-locale) |
+| Instagram ou Facebook | [instagram-ou-facebook-entreprise-locale](/blog/instagram-ou-facebook-entreprise-locale) |
+| TikTok | [tiktok-entreprise-locale](/blog/tiktok-entreprise-locale) |
+| LinkedIn pour une TPE | [linkedin-tpe-locale](/blog/linkedin-tpe-locale) |
+| stories ou reels | [stories-ou-reels-entreprise](/blog/stories-ou-reels-entreprise) |
+| à quelle fréquence publier | [combien-publier-reseaux-sociaux](/blog/combien-publier-reseaux-sociaux) |
+| idées de contenu | [idees-contenu-reseaux-sociaux](/blog/idees-contenu-reseaux-sociaux) |
+| calendrier éditorial | [calendrier-editorial-reseaux-sociaux](/blog/calendrier-editorial-reseaux-sociaux) |
+| algorithme | [algorithme-reseaux-sociaux-comprendre](/blog/algorithme-reseaux-sociaux-comprendre) |
+| hashtags | [hashtags-encore-utiles](/blog/hashtags-encore-utiles) |
+| musique et droits | [musique-reels-droits](/blog/musique-reels-droits) |
+| acheter des abonnés | [acheter-abonnes-pourquoi-non](/blog/acheter-abonnes-pourquoi-non) |
+| commentaires et messages privés | [repondre-commentaires-messages-prives](/blog/repondre-commentaires-messages-prives) |
+| avant et après | [avant-apres-artisan-contenu](/blog/avant-apres-artisan-contenu) |
+| témoignage client en vidéo | [temoignage-client-video](/blog/temoignage-client-video) |
+| prix d'une gestion de réseaux | [prix-gestion-reseaux-sociaux](/blog/prix-gestion-reseaux-sociaux) |
+| déléguer | [deleguer-reseaux-sociaux](/blog/deleguer-reseaux-sociaux) |
+| filmer, son, lumière, montage, sous-titres | cluster vidéo, pilier [video-smartphone-entreprise](/guides/video-smartphone-entreprise) |
+| **YouTube Shorts et Pinterest** | Trou, second rang |
+| **un concurrent copie mes contenus** | Trou, second rang |
 
-| Requête type | État | Page |
-|---|---|---|
-| quel réseau social choisir | Couvert | [quel-reseau-social-choisir-entreprise-locale](/blog/quel-reseau-social-choisir-entreprise-locale) |
-| Instagram ou Facebook | Couvert | [instagram-ou-facebook-entreprise-locale](/blog/instagram-ou-facebook-entreprise-locale) |
-| TikTok pour une entreprise locale | Couvert | [tiktok-entreprise-locale](/blog/tiktok-entreprise-locale) |
-| à quelle fréquence publier | Couvert | [combien-publier-reseaux-sociaux](/blog/combien-publier-reseaux-sociaux) |
-| idées de contenu | Couvert | [idees-contenu-reseaux-sociaux](/blog/idees-contenu-reseaux-sociaux) |
-| calendrier éditorial | Couvert | [calendrier-editorial-reseaux-sociaux](/blog/calendrier-editorial-reseaux-sociaux) |
-| comprendre l'algorithme | Couvert | [algorithme-reseaux-sociaux-comprendre](/blog/algorithme-reseaux-sociaux-comprendre) |
-| hashtags | Couvert | [hashtags-encore-utiles](/blog/hashtags-encore-utiles) |
-| prix d'une gestion de réseaux sociaux | Couvert | [prix-gestion-reseaux-sociaux](/blog/prix-gestion-reseaux-sociaux) |
-| déléguer ses réseaux | Couvert | [deleguer-reseaux-sociaux](/blog/deleguer-reseaux-sociaux) |
-| filmer, son, lumière, montage, sous-titres | Couvert | cluster vidéo, guide [video-smartphone-entreprise](/guides/video-smartphone-entreprise) |
-| stories ou reels : à quoi sert quoi | Couvert | [stories-ou-reels-entreprise](/blog/stories-ou-reels-entreprise) |
-| musique sur les reels : ce qu'on a le droit d'utiliser | Couvert | [musique-reels-droits](/blog/musique-reels-droits) |
-| répondre aux commentaires et aux messages privés | Couvert | [repondre-commentaires-messages-prives](/blog/repondre-commentaires-messages-prives) |
-| acheter des abonnés : pourquoi c'est perdu | Couvert | [acheter-abonnes-pourquoi-non](/blog/acheter-abonnes-pourquoi-non) |
-| LinkedIn pour une TPE locale | Trou | à écrire |
-| YouTube Shorts et Pinterest | Trou | second rang |
-| faire des avant/après quand on est artisan | Trou | à écrire |
+## Canaux hors réseaux
+
+| Requête type | État |
+|---|---|
+| liste d'emails et newsletter | [newsletter-tpe-locale](/blog/newsletter-tpe-locale) |
+| WhatsApp Business | [whatsapp-business-entreprise-locale](/blog/whatsapp-business-entreprise-locale) |
+| **supports imprimés, véhicule, panneaux** | Trou |
+| **salons et marchés professionnels** | Trou |
+| **parrainage et bouche à oreille organisé** | Trou |
+
+## Pilotage
+
+| Requête type | État |
+|---|---|
+| savoir si ça rapporte | [mesurer-si-sa-communication-rapporte](/blog/mesurer-si-sa-communication-rapporte) |
+| combien de temps y consacrer | [temps-par-semaine-communication](/blog/temps-par-semaine-communication) |
+| se lancer, par où commencer | [se-faire-connaitre-quand-on-demarre](/blog/se-faire-connaitre-quand-on-demarre) |
+| combien de temps avant des résultats | [combien-de-temps-resultats-reseaux-sociaux](/blog/combien-de-temps-resultats-reseaux-sociaux) |
 
 ## Pages par métier
 
-Le format qui convertit le mieux : la personne se reconnaît immédiatement.
-Quatre métiers couverts sur la douzaine qui compte en Savoie.
-
 | Métier | État |
 |---|---|
-| artisan du bâtiment | Couvert ([site-web-artisan](/blog/site-web-artisan), [reseaux-sociaux-artisan-savoie](/blog/reseaux-sociaux-artisan-savoie)) |
-| restaurant | Couvert ([restaurant-reseaux-sociaux](/blog/restaurant-reseaux-sociaux)) |
-| coiffeur et esthétique | Couvert ([coiffeur-esthetique-reseaux-sociaux](/blog/coiffeur-esthetique-reseaux-sociaux)) |
-| thérapeute | Couvert ([therapeute-reseaux-sociaux-clients](/blog/therapeute-reseaux-sociaux-clients)) |
-| location saisonnière et meublé de tourisme | Couvert ([location-saisonniere-reservation-directe](/blog/location-saisonniere-reservation-directe)) |
-| hôtel, gîte, chambre d'hôtes de montagne | Couvert ([hebergement-station-reseaux-sociaux](/blog/hebergement-station-reseaux-sociaux)) |
-| moniteur de ski, guide, accompagnateur | Couvert ([moniteur-guide-montagne-visibilite](/blog/moniteur-guide-montagne-visibilite)) |
-| activité saisonnière, transversal | Couvert ([entreprise-saisonniere-communication](/blog/entreprise-saisonniere-communication)) |
-| **agent immobilier** | Trou |
-| **paysagiste et entretien d'extérieur** | Trou |
-| coach sportif | Trou |
-| garage automobile | Trou |
-| commerce de centre-ville | Trou |
-| profession du chiffre et du conseil | Trou |
+| artisan du bâtiment | [site-web-artisan](/blog/site-web-artisan), [reseaux-sociaux-artisan-savoie](/blog/reseaux-sociaux-artisan-savoie) |
+| restaurant | [restaurant-reseaux-sociaux](/blog/restaurant-reseaux-sociaux) |
+| coiffeur et esthétique | [coiffeur-esthetique-reseaux-sociaux](/blog/coiffeur-esthetique-reseaux-sociaux) |
+| thérapeute | [therapeute-reseaux-sociaux-clients](/blog/therapeute-reseaux-sociaux-clients) |
+| formateur indépendant | [formateur-independant-trouver-clients](/blog/formateur-independant-trouver-clients) |
+| paysagiste | [paysagiste-jardinier-visibilite](/blog/paysagiste-jardinier-visibilite) |
+| agent immobilier | [agent-immobilier-local-visibilite](/blog/agent-immobilier-local-visibilite) |
+| commerce de centre-ville | [commerce-centre-ville-visibilite](/blog/commerce-centre-ville-visibilite) |
+| coach sportif et yoga | [coach-sportif-trouver-clients](/blog/coach-sportif-trouver-clients) |
+| garage automobile | [garage-automobile-visibilite](/blog/garage-automobile-visibilite) |
+| menuisier, cuisiniste, agenceur | [menuisier-cuisiniste-visibilite](/blog/menuisier-cuisiniste-visibilite) |
+| traiteur et food truck | [traiteur-food-truck-visibilite](/blog/traiteur-food-truck-visibilite) |
+| location saisonnière | [location-saisonniere-reservation-directe](/blog/location-saisonniere-reservation-directe) |
+| hébergement de montagne | [hebergement-station-reseaux-sociaux](/blog/hebergement-station-reseaux-sociaux) |
+| moniteur, guide, accompagnateur | [moniteur-guide-montagne-visibilite](/blog/moniteur-guide-montagne-visibilite) |
+| activité saisonnière, transversal | [entreprise-saisonniere-communication](/blog/entreprise-saisonniere-communication) |
+| **électricien et plombier chauffagiste** | Trou, couvert en partie par l'artisan générique |
+| **auto-école, taxi, transport** | Trou |
+| **cabinet comptable et conseil** | Trou |
 
 ## Pages locales
 
-11 pages en ligne : Albertville, Chambéry, Aix-les-Bains, Ugine, Moûtiers,
+11 en ligne : Albertville, Chambéry, Aix-les-Bains, Ugine, Moûtiers,
 Bourg-Saint-Maurice, Saint-Jean-de-Maurienne, La Ravoire, Annecy, Savoie,
 Haute-Savoie.
 
-Communes candidates, à ne créer que si on a du contenu réellement propre à
-écrire dessus : Thonon-les-Bains, Cluses et la vallée de l'Arve, Sallanches,
-Rumilly, La Roche-sur-Foron, Beaufort, Val d'Isère et Tignes.
+Candidates avec de la matière réelle à écrire, par ordre d'intérêt :
 
-Règle : une page locale sans tissu économique décrit correctement fait plus de
-mal que de bien. Le manque de pages n'est pas le problème le plus urgent.
+- **Cluses et la vallée de l'Arve**, bassin du décolletage, tissu industriel dense
+- **Thonon-les-Bains et le Chablais**, deuxième bassin de Haute-Savoie
+- **Sallanches et le pays du Mont-Blanc**
+- **Rumilly et l'Albanais**, agroalimentaire et industrie
+- La Roche-sur-Foron, Beaufort, Val d'Isère et Tignes
+
+Règle inchangée : une page locale sans tissu économique décrit correctement fait
+plus de mal que de bien.
 
 ---
 
 ## Ordre d'attaque
 
-1. Fait. Cluster **création de site** plus le 4e guide pilier.
-2. Fait. Cluster **Google** : fiche, avis négatif, Maps, délais, annuaires.
-3. Fait. **Métiers de la montagne**, la veine la moins concurrencée de la zone.
-4. Fait. Trous de second rang sur les réseaux sociaux : stories contre reels,
-   droits sur la musique, gestion des commentaires et messages, achat
-   d'abonnés.
-5. Suivant. Métiers manquants hors montagne : paysagiste, agent immobilier,
-   commerce de centre-ville, coach sportif.
-6. Suivant. Trouver les mots que tapent ses clients, publier sur sa fiche
-   Google, récupérer un site dont on a perdu les accès, site vitrine ou
-   boutique en ligne, LinkedIn pour une TPE.
+1. Fait. Cluster création de site plus le 4e guide pilier.
+2. Fait. Cluster Google, de la création de fiche aux annuaires.
+3. Fait. Métiers de la montagne.
+4. Fait. Trous de second rang réseaux sociaux.
+5. Fait. Métiers hors montagne, deux vagues.
+6. Fait. Arbitrages techniques, canaux email et messagerie, pilotage.
+7. **Suivant.** Pages locales Haute-Savoie, avec du contenu réellement propre à
+   chaque bassin.
+8. Ensuite. Supports physiques, salons, parrainage, identité visuelle.
+9. Ensuite. Métiers restants : électricien et plombier, auto-école, conseil.
 
 ## Journal
 
 - 13 août 2026 : carte établie. 47 articles, 11 pages locales, 3 guides.
 - 13 août 2026 : cluster création de site, 5 articles, plus le guide pilier
-  `/guides/creer-site-web-tpe`. 4 guides.
-- 13 août 2026 : cluster visibilité Google, 5 articles, raccrochés au pilier
-  `/guides/visibilite-google-locale`.
-- 13 août 2026 : cluster métiers de la montagne, 4 articles. 61 articles.
-- 13 août 2026 : trous de second rang réseaux sociaux, 4 articles. 65 articles,
-  11 pages locales, 4 guides, 100 URL au sitemap.
+  `/guides/creer-site-web-tpe`.
+- 13 août 2026 : cluster visibilité Google, 5 articles.
+- 13 août 2026 : cluster métiers de la montagne, 4 articles.
+- 13 août 2026 : trous de second rang réseaux sociaux, 4 articles.
+- 13 août 2026 : métiers hors montagne, 4 articles.
+- 13 août 2026 : arbitrages et décisions techniques, 5 articles.
+- 13 août 2026 : fiche Google avancée et formats, 5 articles.
+- 13 août 2026 : canaux email, messagerie, rendez-vous, migration, 5 articles.
+- 13 août 2026 : deuxième vague métiers, 5 articles.
+- 13 août 2026 : pilotage, IA de recherche, mesure, 5 articles.
+  **94 articles, 4 guides, 129 URL.**
+- 13 août 2026 : correction d'un écart avec CLAUDE.md. `index.html` annonçait
+  encore « publication 2 à 3 fois par semaine » dans le fallback noscript servi
+  aux crawleurs. `check:content` scanne désormais `index.html` et `llms.txt`.
