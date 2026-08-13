@@ -13,6 +13,7 @@ import {
 import MagneticButton from '@/components/animations/MagneticButton';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
 import InternalLinks from '@/components/InternalLinks';
+import ServiceResources from '@/components/ServiceResources';
 import ScrollArrow from '@/components/ScrollArrow';
 import SEO from '@/components/SEO';
 
@@ -650,6 +651,9 @@ const SocialMedia = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Maillage descendant vers le blog et le guide pilier */}
+      <ServiceResources variant="social" />
 
       <InternalLinks currentPage="social" />
       <ContactMethodsSection />

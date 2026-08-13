@@ -6,6 +6,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import MagneticButton from '@/components/animations/MagneticButton';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
 import InternalLinks from '@/components/InternalLinks';
+import ServiceResources from '@/components/ServiceResources';
 import ScrollArrow from '@/components/ScrollArrow';
 import SEO from '@/components/SEO';
 import ServiceMockup from '@/components/ServiceMockups';
@@ -346,6 +347,9 @@ const Services = () => {
       </section>
 
       {/* Internal Links */}
+      {/* Maillage descendant vers le blog et le guide pilier */}
+      <ServiceResources variant="services" />
+
       <InternalLinks currentPage="services" />
 
       {/* Contact Methods */}
