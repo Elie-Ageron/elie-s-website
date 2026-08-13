@@ -69,6 +69,8 @@ Les allers retours de validation. Chaque cycle de retour ajoute quelques jours, 
 
 Autrement dit, un projet de site n'est pas un chantier technique. C'est un chantier de décisions.
 
+C'est aussi pour ça qu'il faut distinguer deux durées qu'on mélange tout le temps. Le temps de production, c'est-à-dire mes jours de travail à moi, se compte en jours ouvrés et il est assez stable. Le temps calendaire, celui que vous vivez entre le premier appel et la mise en ligne, dépend surtout des allers-retours. Quand on me demande un délai, je donne le second, parce que c'est celui qui vous concerne.
+
 ## Le déroulé réel, semaine par semaine
 
 Semaine 1 : on se parle. Je pose des questions sur votre activité, vos clients, ce qui vous amène des demandes aujourd'hui, ce que vous voulez que le site déclenche. Je repars avec une structure de site et une liste de ce qu'il me faut de votre côté.
