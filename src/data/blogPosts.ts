@@ -5,6 +5,7 @@ import { socialPostsB } from './blog/posts-social-b';
 import { videoPosts } from './blog/posts-video';
 import { localPosts } from './blog/posts-local';
 import { webPosts } from './blog/posts-web';
+import { creationPosts } from './blog/posts-creation';
 
 export type { BlogPost, BlogCategory, CategorySlug, BlogFaqItem } from './blog/types';
 export { blogCategories, getCategory, getCategorySlug } from './blog/types';
@@ -2289,6 +2290,7 @@ export const blogPosts: BlogPost[] = [
   ...videoPosts,
   ...localPosts,
   ...webPosts,
+  ...creationPosts,
 ].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : Number(b.id) - Number(a.id)));
 
 export const getPostBySlug = (slug: string): BlogPost | undefined =>
