@@ -49,6 +49,29 @@ const Contact = () => {
                 ? "Vous avez une idée, un projet, une question. Il y a une option pour chaque situation."
                 : "You have an idea, a project, a question. There's an option for every situation."}
             </p>
+            {/* Le premier ecran d'une page de contact ne contenait aucune action :
+                les options arrivaient sous la ligne de flottaison. Quelqu'un qui
+                a clique sur "contact" veut contacter, pas faire defiler. */}
+            {language === 'fr' && (
+              <p className="mt-6 text-base text-muted-foreground">
+                Le plus rapide reste le téléphone :{' '}
+                <a
+                  href="tel:+33695555318"
+                  className="font-semibold text-primary hover:underline underline-offset-4"
+                >
+                  06 95 55 53 18
+                </a>
+                <span className="mx-2 text-border" aria-hidden="true">
+                  ·
+                </span>
+                <a
+                  href="mailto:elie@elieageron.com"
+                  className="font-medium text-primary hover:underline underline-offset-4"
+                >
+                  elie@elieageron.com
+                </a>
+              </p>
+            )}
           </motion.header>
           <ScrollArrow />
         </div>

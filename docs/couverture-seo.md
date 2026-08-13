@@ -115,9 +115,29 @@ inventés, une promesse de position sur une page locale, une réintroduction de 
 « demi-journée de tournage », et à ajouter des phrases de périmètre pour séparer
 les articles qui visaient la même requête.
 
+## Le maillage interne, dans les deux sens
+
+C'était le trou le plus coûteux du site : tout montait vers les pages
+commerciales, rien ne redescendait vers le corpus. État après correction.
+
+| Page | Renvoie vers |
+|---|---|
+| Accueil | 6 articles, 4 guides, 15 pages locales, toutes les pages principales |
+| `/services` | le guide pilier création de site, 8 articles d'avant-achat |
+| `/reseaux-sociaux` | le guide pilier réseaux sociaux, 8 articles d'avant-achat |
+| 15 pages locales | 6 articles choisis pour le bassin, 3 à 6 pages locales voisines |
+| `/blog` | les 6 catégories, les guides, 13 articles |
+| 6 pages catégorie | tous les articles de la catégorie, le guide pilier |
+| Chaque article | son pilier, ses articles voisins, une page de service |
+| Pied de page | 15 pages locales, les guides |
+
+Les 139 articles sont tous liés depuis leur page catégorie en HTML statique,
+donc aucun n'est orphelin. `check:content` valide désormais chaque slug
+référencé : une faute de frappe faisait disparaître un lien sans rien signaler.
+
 ## Funnel et conversion
 
-Le contenu ne sert à rien si le chemin vers la demande est cassé. Sept fuites
+Le contenu ne sert à rien si le chemin vers la demande est cassé. Huit fuites
 trouvées et corrigées le 13 août :
 
 1. **Les 139 articles finissaient sur le même bouton Calendly**, sans aucun lien
@@ -140,6 +160,9 @@ trouvées et corrigées le 13 août :
    minimum. Corrigé, avec une sortie de secours visible.
 7. **Le bloc de contact global n'offrait pas le téléphone** : Calendly, WhatsApp
    et email seulement, sur une clientèle locale dont c'est le canal majoritaire.
+8. **Le premier écran de `/contact` ne contenait aucune action.** Les options
+   arrivaient sous la ligne de flottaison. Quelqu'un qui clique sur « contact »
+   veut contacter, pas faire défiler. Téléphone et email ajoutés dans le hero.
 
 Point technique restant à surveiller : le formulaire envoie en `no-cors`. La
 réponse du serveur est opaque, donc une erreur côté traitement ne peut pas être
@@ -192,6 +215,17 @@ chaque exécution, jamais les mêmes.
   [afficher-ses-prix-ou-pas](/blog/afficher-ses-prix-ou-pas), vers lequel le
   guide renvoie désormais.
 
+## À vérifier de ton côté
+
+1. **Le formulaire de contact envoie en `no-cors`.** La réponse du serveur est
+   opaque : si le script Google Apps échoue côté traitement, le visiteur voit
+   quand même « message envoyé » et tu ne reçois rien. Fais un envoi réel depuis
+   ton téléphone et vérifie qu'il arrive dans la feuille. Je n'ai pas voulu
+   déposer un faux message de test dans tes données.
+2. **Le pré-rendu prend maintenant 12 minutes** parce qu'il tourne en séquentiel.
+   C'est le prix de la fiabilité, et il ne s'exécute pas sur Vercel, seulement en
+   local via `npm run build:prerender`.
+
 ## Suite possible
 
 1. Pages locales Haute-Savoie restantes, seulement si le contenu propre existe.
@@ -209,6 +243,11 @@ chaque exécution, jamais les mêmes.
   terrain, moment de la décision, outils, problèmes concrets, structure du site,
   acquisition hors Google, visibilité avancée, fondamentaux.
 - 13 août : 4e guide pilier `creer-site-web-tpe`, 4 pages locales Haute-Savoie,
-  générateur `llms.txt`, trois corrections d'écarts avec CLAUDE.md, une passe de
-  corrections issues d'un audit éditorial.
-- **Total : 139 articles, 15 pages locales, 4 guides, 178 URL.**
+  générateurs `llms.txt` et `llms-full.txt`, deux passes de corrections issues
+  d'audits éditoriaux.
+- 13 août, soir : travail de funnel et de santé technique. Huit fuites de
+  conversion corrigées, maillage descendant posé sur l'accueil, les deux pages
+  de service et les 15 pages locales, et surtout **deux pages qui plantaient
+  pour tous les visiteurs français**, trouvées en auditant le HTML pré-rendu.
+- **Total : 139 articles, 15 pages locales, 4 guides, 178 URL. Zéro anomalie au
+  contrôle du pré-rendu, zéro erreur TypeScript.**
