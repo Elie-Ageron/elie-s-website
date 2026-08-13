@@ -539,7 +539,7 @@ export const guides: Guide[] = [
       },
       {
         q: 'Faut-il afficher ses prix ?',
-        a: "Au minimum un ordre de grandeur ou une méthode de chiffrage. L'absence totale d'indication fait fuir les visiteurs sérieux, parce qu'elle laisse craindre le pire et qu'un concurrent, lui, aura donné un chiffre.",
+        a: "Au minimum un ordre de grandeur ou une méthode de chiffrage. L'absence totale d'indication fait fuir les visiteurs sérieux, parce qu'elle laisse craindre le pire et qu'un concurrent, lui, aura donné un chiffre. Le cas où un chiffre isolé induirait en erreur existe aussi, et je détaille cet arbitrage, y compris pour mon propre site, dans [faut-il afficher ses prix](/blog/afficher-ses-prix-ou-pas).",
       },
       {
         q: 'Que se passe-t-il après la livraison ?',

@@ -191,7 +191,8 @@ Les 7 services (source unique : `src/data/services.ts`, **l'ordre du tableau pil
 
 Le contenu du site est passé au filtre "signes d'écriture IA". À maintenir :
 - **Aucun tiret cadratin ni demi-cadratin** (— –) nulle part.
-- Pas de titres en Title Case en français, pas de gras décoratif, pas de listes à en-tête gras.
+- Pas de titres en Title Case en français dans le **corps** des contenus (H2, H3, titres d'articles, titres de sections), pas de gras décoratif, pas de listes à en-tête gras.
+  > Exception assumée : les balises `seoTitleFr` et les `seoTitle` de guides utilisent le Title Case depuis l'origine, sur tout le corpus. C'est la convention du site, décidée en août 2026 après audit. Ne pas la « corriger » : réécrire les balises title de toutes les pages indexées d'un coup est un risque SEO sans bénéfice mesurable.
 - Pas de règle de trois systématique, pas de "il est important de", "dans un monde où", "chaque détail compte".
 - Ton : première personne, phrases de longueurs variées, détails concrets et vérifiables (villes, chiffres, délais).
 
