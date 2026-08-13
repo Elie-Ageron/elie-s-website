@@ -10,6 +10,7 @@ import { googlePosts } from './blog/posts-google';
 import { tourismePosts } from './blog/posts-tourisme';
 import { socialPostsC } from './blog/posts-social-c';
 import { metiersPosts } from './blog/posts-metiers';
+import { decisionsPosts } from './blog/posts-decisions';
 
 export type { BlogPost, BlogCategory, CategorySlug, BlogFaqItem } from './blog/types';
 export { blogCategories, getCategory, getCategorySlug } from './blog/types';
@@ -2303,6 +2304,7 @@ export const blogPosts: BlogPost[] = [
   ...tourismePosts,
   ...socialPostsC,
   ...metiersPosts,
+  ...decisionsPosts,
 ].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : Number(b.id) - Number(a.id)));
 
 export const getPostBySlug = (slug: string): BlogPost | undefined =>
