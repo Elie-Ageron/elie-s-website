@@ -150,6 +150,44 @@ const BlogPost = () => {
   const faq = fr ? rawPost.faqFr ?? [] : [];
   const wordCount = post.content.split(/\s+/).filter(Boolean).length;
 
+  /**
+   * Appel a l'action de fin d'article, contextualise par categorie.
+   *
+   * Avant, les 139 articles se terminaient sur le meme bouton Calendly, sans
+   * lien reel : rien pour les crawleurs, et une seule sortie possible, la plus
+   * engageante de toutes. Quelqu'un qui vient de lire un article technique
+   * n'est pas pret a reserver trente minutes, mais il clique volontiers vers
+   * la page qui traite son sujet.
+   */
+  const cta = useMemo(() => {
+    const social = {
+      title: 'Vous n’avez pas le temps de tenir ce rythme ?',
+      body: 'Je viens filmer une journée par mois chez vous, et vos publications sortent ensuite sans que vous ayez à y penser. À partir de 890 euros par mois.',
+      to: '/reseaux-sociaux',
+      label: 'Voir comment ça se passe',
+    };
+    const site = {
+      title: 'Vous voulez que quelqu’un s’en occupe ?',
+      body: 'Je crée des sites qui répondent aux questions de vos clients et qui amènent des demandes, en Savoie et en Haute-Savoie. Chiffré sur devis, après un appel.',
+      to: '/services',
+      label: 'Voir ce que je fais',
+    };
+    const map: Record<string, typeof site> = {
+      'reseaux-sociaux': social,
+      video: social,
+      'seo-local': {
+        title: 'Vous voulez sortir sur Google dans votre commune ?',
+        body: 'Fiche Google, avis, pages locales et contenu : c’est le travail que je fais pour mes clients de Savoie et de Haute-Savoie, dans la durée.',
+        to: '/services',
+        label: 'Voir ce que je fais',
+      },
+      'site-web': site,
+      conversion: site,
+      strategie: site,
+    };
+    return map[categorySlug] ?? site;
+  }, [categorySlug]);
+
   const formatDate = (dateString: string) =>
     new Date(dateString).toLocaleDateString(fr ? 'fr-FR' : 'en-US', {
       year: 'numeric',
@@ -380,21 +418,44 @@ const BlogPost = () => {
             className="glass-card rounded-2xl p-6 sm:p-8 text-center"
           >
             <h2 className="text-xl sm:text-2xl font-semibold text-foreground leading-snug">
-              {fr ? 'Envie d\'en parler de vive voix ?' : 'Want to talk it through?'}
+              {fr ? cta.title : 'Want to talk it through?'}
             </h2>
             <p className="mt-3 text-base text-muted-foreground">
               {fr
-                ? "Trente minutes, gratuit, sans engagement. Je vous dis franchement ce que je ferais à votre place, y compris quand la réponse est de ne rien faire."
+                ? cta.body
                 : 'Thirty minutes, free, no strings. I will tell you honestly what I would do in your place, including when the answer is to do nothing.'}
             </p>
-            <Button
-              variant="hero"
-              size="lg"
-              className="mt-6 min-h-[52px] active:scale-[0.98] transition-transform"
-              onClick={openCalendly}
-            >
-              {fr ? 'Réserver un appel gratuit' : 'Book a free call'}
-            </Button>
+            <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
+              <Button
+                variant="hero"
+                size="lg"
+                className="w-full sm:w-auto min-h-[52px] active:scale-[0.98] transition-transform"
+                onClick={openCalendly}
+              >
+                {fr ? 'Réserver un appel gratuit' : 'Book a free call'}
+              </Button>
+              {fr && (
+                <Button asChild variant="outline" size="lg" className="w-full sm:w-auto min-h-[52px]">
+                  <Link to={cta.to}>{cta.label}</Link>
+                </Button>
+              )}
+            </div>
+            {fr && (
+              <p className="mt-5 text-sm text-muted-foreground">
+                Trente minutes, gratuit, sans engagement. Vous préférez écrire ?{' '}
+                <Link to="/contact" className="font-medium text-primary hover:underline underline-offset-4">
+                  Envoyez-moi un message
+                </Link>
+                , ou appelez le{' '}
+                <a
+                  href="tel:+33695555318"
+                  className="font-medium text-primary hover:underline underline-offset-4"
+                >
+                  06 95 55 53 18
+                </a>
+                .
+              </p>
+            )}
           </motion.div>
         </div>
       </section>

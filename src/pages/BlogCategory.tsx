@@ -15,6 +15,46 @@ import { guides } from '@/data/guides';
 
 const baseUrl = 'https://elieageron.com';
 
+/** Sortie commerciale proposee en bas de chaque page categorie. */
+const categoryCtas: Record<CategorySlug, { title: string; body: string; to: string; label: string }> = {
+  'reseaux-sociaux': {
+    title: 'Vous n’avez pas le temps de tenir ce rythme ?',
+    body: 'Je viens filmer une journée par mois chez vous, puis je monte, sous-titre et publie. Vous n’avez rien à faire entre deux tournages. À partir de 890 euros par mois.',
+    to: '/reseaux-sociaux',
+    label: 'Voir comment ça se passe',
+  },
+  video: {
+    title: 'Filmer et monter chaque mois, sans y penser',
+    body: 'Une journée de tournage sur place, le montage vertical, les sous-titres et la publication. C’est ce que je fais pour mes clients de Savoie et de Haute-Savoie.',
+    to: '/reseaux-sociaux',
+    label: 'Voir comment ça se passe',
+  },
+  'seo-local': {
+    title: 'Vous voulez sortir sur Google dans votre commune ?',
+    body: 'Fiche Google, avis, pages locales et contenu régulier : c’est un travail de fond, et c’est celui que je mène avec mes clients dans la durée.',
+    to: '/services',
+    label: 'Voir ce que je fais',
+  },
+  'site-web': {
+    title: 'Un site qui amène des demandes, pas juste une vitrine',
+    body: 'Je crée des sites construits autour des questions que vos clients posent avant d’appeler. Chiffré sur devis, après un appel gratuit.',
+    to: '/services',
+    label: 'Voir ce que je fais',
+  },
+  conversion: {
+    title: 'Vous recevez des visites mais pas de demandes ?',
+    body: 'C’est le problème le plus courant, et il se règle rarement en refaisant le site. Je regarde ce qui bloque et je vous le dis franchement.',
+    to: '/services',
+    label: 'Voir ce que je fais',
+  },
+  strategie: {
+    title: 'Par où commencer, dans votre cas précis',
+    body: 'Trente minutes au téléphone suffisent en général à savoir ce qui vous rapportera le plus vite. Y compris quand la réponse est de ne rien acheter.',
+    to: '/services',
+    label: 'Voir ce que je fais',
+  },
+};
+
 /** Guide pilier mis en avant pour chaque famille de sujets. */
 const categoryPillar: Partial<Record<CategorySlug, string>> = {
   'reseaux-sociaux': 'reseaux-sociaux-entreprise-locale',
@@ -45,6 +85,7 @@ const BlogCategory = () => {
   const canonical = `${baseUrl}/blog/categorie/${category.slug}`;
   const otherCategories = getActiveCategories(language).filter((c) => c.slug !== category.slug);
   const pillar = guides.find((g) => g.slug === categoryPillar[category.slug]);
+  const categoryCta = categoryCtas[category.slug];
 
   const formatDate = (iso: string) =>
     new Date(iso).toLocaleDateString(fr ? 'fr-FR' : 'en-US', {
@@ -185,6 +226,46 @@ const BlogCategory = () => {
           </ul>
         </div>
       </section>
+
+      {/* Sortie commerciale. Les pages categorie recoivent du trafic de recherche
+          et n'offraient aucun chemin vers une prestation. */}
+      {fr && (
+        <section className="pb-4" aria-labelledby="category-cta">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6">
+            <div className="glass-card rounded-2xl p-6 sm:p-8 text-center">
+              <h2 id="category-cta" className="text-xl sm:text-2xl font-semibold text-foreground leading-snug">
+                {categoryCta.title}
+              </h2>
+              <p className="mt-3 text-base text-muted-foreground">{categoryCta.body}</p>
+              <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
+                <Link
+                  to={categoryCta.to}
+                  className="inline-flex items-center justify-center gap-2 w-full sm:w-auto min-h-[52px] px-7 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity"
+                >
+                  {categoryCta.label}
+                  <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                </Link>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center w-full sm:w-auto min-h-[52px] px-7 rounded-full border border-border/70 font-medium text-foreground hover:border-primary/50 hover:text-primary transition-colors"
+                >
+                  Me poser une question
+                </Link>
+              </div>
+              <p className="mt-5 text-sm text-muted-foreground">
+                Basé à Albertville, j&rsquo;interviens en Savoie et en Haute-Savoie. Ou appelez le{' '}
+                <a
+                  href="tel:+33695555318"
+                  className="font-medium text-primary hover:underline underline-offset-4"
+                >
+                  06 95 55 53 18
+                </a>
+                .
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="py-10 sm:py-14" aria-labelledby="category-others">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">

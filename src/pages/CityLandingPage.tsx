@@ -250,12 +250,30 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
             </Button>
           </motion.div>
 
+          {/* Sortie a faible engagement : sur une page locale, une partie des
+              visiteurs preferent appeler plutot que reserver un creneau. */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+            className="mt-5 text-sm text-muted-foreground"
+          >
+            {language === 'fr' ? 'Ou appelez directement le ' : 'Or call '}
+            <a
+              href="tel:+33695555318"
+              className="font-medium text-primary hover:underline underline-offset-4"
+            >
+              06 95 55 53 18
+            </a>
+            {language === 'fr' ? '. Réponse sous 48 h aux messages.' : '. Messages answered within 48 hours.'}
+          </motion.p>
+
           {showDepth && (
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.55, duration: 0.6 }}
-              className="mt-5 flex items-center justify-center gap-2 text-xs sm:text-sm text-muted-foreground"
+              className="mt-4 flex items-center justify-center gap-2 text-xs sm:text-sm text-muted-foreground"
             >
               <Clock className="w-3.5 h-3.5 text-primary shrink-0" aria-hidden="true" />
               {depth!.travel}
