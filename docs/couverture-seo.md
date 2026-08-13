@@ -85,10 +85,10 @@ Le pilier le mieux couvert. Les trous restants sont de second rang.
 | prix d'une gestion de réseaux sociaux | Couvert | [prix-gestion-reseaux-sociaux](/blog/prix-gestion-reseaux-sociaux) |
 | déléguer ses réseaux | Couvert | [deleguer-reseaux-sociaux](/blog/deleguer-reseaux-sociaux) |
 | filmer, son, lumière, montage, sous-titres | Couvert | cluster vidéo, guide [video-smartphone-entreprise](/guides/video-smartphone-entreprise) |
-| **stories ou reels : à quoi sert quoi** | Trou | à écrire |
-| **musique sur les reels : ce qu'on a le droit d'utiliser** | Trou | à écrire |
-| **répondre aux commentaires et aux messages privés** | Trou | à écrire |
-| **acheter des abonnés : pourquoi c'est perdu** | Trou | à écrire |
+| stories ou reels : à quoi sert quoi | Couvert | [stories-ou-reels-entreprise](/blog/stories-ou-reels-entreprise) |
+| musique sur les reels : ce qu'on a le droit d'utiliser | Couvert | [musique-reels-droits](/blog/musique-reels-droits) |
+| répondre aux commentaires et aux messages privés | Couvert | [repondre-commentaires-messages-prives](/blog/repondre-commentaires-messages-prives) |
+| acheter des abonnés : pourquoi c'est perdu | Couvert | [acheter-abonnes-pourquoi-non](/blog/acheter-abonnes-pourquoi-non) |
 | LinkedIn pour une TPE locale | Trou | à écrire |
 | YouTube Shorts et Pinterest | Trou | second rang |
 | faire des avant/après quand on est artisan | Trou | à écrire |
@@ -135,13 +135,14 @@ mal que de bien. Le manque de pages n'est pas le problème le plus urgent.
 1. Fait. Cluster **création de site** plus le 4e guide pilier.
 2. Fait. Cluster **Google** : fiche, avis négatif, Maps, délais, annuaires.
 3. Fait. **Métiers de la montagne**, la veine la moins concurrencée de la zone.
-4. En cours. Trous de second rang sur les réseaux sociaux : stories contre
-   reels, droits sur la musique, gestion des commentaires et messages, achat
+4. Fait. Trous de second rang sur les réseaux sociaux : stories contre reels,
+   droits sur la musique, gestion des commentaires et messages, achat
    d'abonnés.
-5. Ensuite. Métiers manquants hors montagne : paysagiste, agent immobilier,
+5. Suivant. Métiers manquants hors montagne : paysagiste, agent immobilier,
    commerce de centre-ville, coach sportif.
-6. Ensuite. Trouver les mots que tapent ses clients, publier sur sa fiche
-   Google, récupérer un site dont on a perdu les accès.
+6. Suivant. Trouver les mots que tapent ses clients, publier sur sa fiche
+   Google, récupérer un site dont on a perdu les accès, site vitrine ou
+   boutique en ligne, LinkedIn pour une TPE.
 
 ## Journal
 
@@ -151,3 +152,5 @@ mal que de bien. Le manque de pages n'est pas le problème le plus urgent.
 - 13 août 2026 : cluster visibilité Google, 5 articles, raccrochés au pilier
   `/guides/visibilite-google-locale`.
 - 13 août 2026 : cluster métiers de la montagne, 4 articles. 61 articles.
+- 13 août 2026 : trous de second rang réseaux sociaux, 4 articles. 65 articles,
+  11 pages locales, 4 guides, 100 URL au sitemap.

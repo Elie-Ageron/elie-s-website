@@ -128,7 +128,7 @@ export const guides: Guide[] = [
           "Quatre indicateurs suffisent : la rétention sur les premières secondes, la part de non abonnés touchés, les enregistrements et partages, et les visites de profil rapportées aux vues. Aucun n'est visible depuis l'extérieur, ce qui explique probablement qu'on en parle si peu.",
           "Le seul chiffre qui compte vraiment, lui, ne se trouve dans aucune application : combien de demandes vous sont venues des réseaux ce mois-ci. Ajoutez la question dans votre formulaire de contact et notez la réponse.",
         ],
-        articles: ['statistiques-instagram-comprendre', 'abonnes-ou-clients', 'combien-de-temps-resultats-reseaux-sociaux'],
+        articles: ['statistiques-instagram-comprendre', 'abonnes-ou-clients', 'acheter-abonnes-pourquoi-non', 'combien-de-temps-resultats-reseaux-sociaux'],
       },
       {
         title: 'Transformer des vues en demandes',
@@ -137,7 +137,7 @@ export const guides: Guide[] = [
           "La vidéo ne dit pas votre métier ni votre ville. Rien n'indique quoi faire ensuite. Le profil ne prend pas le relais. Ou la destination du lien est lente et compliquée. Quatre corrections, une heure de travail, et l'effet porte sur toutes vos publications futures.",
           "Sachez aussi que la conversion est lente par nature. Beaucoup de gens vous suivent pendant des mois avant d'écrire, simplement parce qu'ils n'ont pas encore de projet. Ce délai ne se raccourcit pas, il se prépare.",
         ],
-        articles: ['transformer-vues-en-clients', 'reseaux-sociaux-ou-site-web', 'deleguer-reseaux-sociaux'],
+        articles: ['transformer-vues-en-clients', 'repondre-commentaires-messages-prives', 'reseaux-sociaux-ou-site-web', 'deleguer-reseaux-sociaux'],
       },
       {
         title: 'Diffuser partout à partir d\'une seule production',
@@ -146,7 +146,7 @@ export const guides: Guide[] = [
           "La seule précaution technique sérieuse est le filigrane : n'utilisez jamais le bouton de téléchargement d'une plateforme, exportez toujours un fichier propre depuis votre logiciel de montage. Le logo d'un concurrent réduit la diffusion.",
           "Un tournage, un montage, quatre points de sortie. C'est de la distribution, pas de la dispersion.",
         ],
-        articles: ['publier-meme-video-plusieurs-plateformes', 'montage-video-verticale-debutant'],
+        articles: ['publier-meme-video-plusieurs-plateformes', 'stories-ou-reels-entreprise', 'musique-reels-droits', 'montage-video-verticale-debutant'],
       },
       {
         title: 'Le cas de votre métier',
