@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -165,12 +166,12 @@ const GlobalContactForm = () => {
                   <>
                     Je réponds sous 48 h ouvrées. Vos coordonnées servent uniquement à répondre à
                     votre demande, elles ne sont ni revendues ni utilisées pour de la prospection.{' '}
-                    <a
-                      href="/politique-confidentialite"
+                    <Link
+                      to="/politique-confidentialite"
                       className="underline underline-offset-4 hover:text-primary"
                     >
-                      En savoir plus
-                    </a>
+                      Voir la politique de confidentialité
+                    </Link>
                     .
                   </>
                 ) : (

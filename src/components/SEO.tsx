@@ -2,7 +2,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface SEOProps {
-  page: 'home' | 'services' | 'social' | 'why' | 'process' | 'pricing' | 'portfolio' | 'contact' | 'blog' | 'apps' | 'guides' | 'about';
+  page: 'home' | 'services' | 'social' | 'why' | 'process' | 'pricing' | 'portfolio' | 'contact' | 'getStarted' | 'blog' | 'apps' | 'guides' | 'about';
   /** Force la langue du document, pour les contenus servis en francais seul. */
   forceLang?: 'fr' | 'en';
   customTitle?: string;
@@ -26,6 +26,7 @@ const pageKeywords = {
     pricing: 'web design pricing, website cost, landing page price, showcase site price, affordable web design',
     portfolio: 'web design portfolio, website examples, web design case studies, client results',
     contact: 'contact web designer, book web design call, hire web designer France, web design consultation',
+    getStarted: 'start a web project, website quote France, web design brief, request a proposal',
     blog: 'web design tips, conversion optimization, SEO guide, digital marketing, online business growth',
     apps: 'web app development, business dashboard, custom app, CRM development, SaaS development, business software',
     guides: 'social media guide for small business, smartphone video guide, local SEO guide, Google Business Profile, content marketing for local business',
@@ -40,6 +41,7 @@ const pageKeywords = {
     pricing: 'tarif web design, prix site internet, coût landing page, tarif site vitrine, web design Savoie, web design Annecy',
     portfolio: 'portfolio web design, exemples sites web, réalisations web design, résultats clients',
     contact: 'contacter web designer, réserver appel web design, embaucher web designer France',
+    getStarted: 'démarrer projet site web, demander un devis site internet, brief création site, devis web Savoie',
     blog: 'conseils réseaux sociaux, vidéo courte entreprise, conseils web design, optimisation conversion, guide SEO local, marketing digital local',
     apps: 'développement application web, dashboard entreprise, app sur mesure, CRM personnalisé, logiciel métier, outil interne',
     guides: 'guide réseaux sociaux entreprise, guide vidéo smartphone, guide référencement local, fiche Google Business, contenu vidéo TPE, guide SEO local Savoie',
@@ -78,6 +80,10 @@ const seoData = {
       title: 'Portfolio & Case Studies | Elie Ageron',
       description: 'Explore Elie Ageron portfolio. See real results from businesses that increased conversions with our premium web design solutions.',
     },
+    getStarted: {
+      title: 'Start a Web Project | Elie Ageron',
+      description: 'Describe your project in three minutes: your business, your town and what you are after. I get back to you within two working days with a quote.',
+    },
     contact: {
       title: 'Contact Elie Ageron | Web Design',
       description: 'Get in touch with Elie Ageron for your web project. Book a free strategy call and start converting more visitors into clients.',
@@ -114,7 +120,7 @@ const seoData = {
     },
     why: {
       title: 'Pourquoi un Site Web | Elie Ageron',
-      description: 'Découvrez pourquoi un site professionnel est essentiel. Capturez des leads 24/7 avec Elie Ageron Web Design.',
+      description: "Ce qu'un site change concrètement pour une entreprise locale : être trouvé sur Google, rassurer avant l'appel, et recevoir des demandes le week-end.",
     },
     process: {
       title: 'Notre Processus Web | Elie Ageron',
@@ -126,11 +132,11 @@ const seoData = {
     },
     portfolio: {
       title: 'Portfolio & Réalisations | Elie Ageron',
-      description: 'Explorez le portfolio de Elie Ageron. Découvrez les résultats concrets de nos sites web premium.',
+      description: "Des sites réalisés pour des entreprises de Savoie et de Haute-Savoie : ce qui a été fait, pourquoi, et ce que ça a changé pour elles au quotidien.",
     },
     contact: {
       title: 'Contact Elie Ageron | Création Web',
-      description: 'Contactez Elie Ageron pour votre projet. Réservez un appel gratuit et convertissez plus de visiteurs.',
+      description: "Un appel gratuit de trente minutes, ou simplement un message. Je vous dis franchement ce que je ferais à votre place, même si c'est de ne rien faire.",
     },
     blog: {
       title: 'Conseils Réseaux Sociaux & Web | Elie Ageron',
@@ -185,6 +191,7 @@ const SEO = ({ page, forceLang, customTitle, customDescription, customCanonical,
     pricing: '/pricing',
     portfolio: '/portfolio',
     contact: '/contact',
+    getStarted: '/get-started',
     blog: '/blog',
     apps: '/apps',
     guides: '/guides',

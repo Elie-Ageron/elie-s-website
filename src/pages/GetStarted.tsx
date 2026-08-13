@@ -156,7 +156,7 @@ const GetStarted = () => {
 
   return (
     <>
-      <SEO page="contact" structuredData={[breadcrumbSchema]} />
+      <SEO page="getStarted" structuredData={[breadcrumbSchema]} />
 
       {/* Hero */}
       <section className="relative grain min-h-screen flex items-center justify-center" aria-labelledby="gs-heading">
