@@ -115,6 +115,37 @@ inventés, une promesse de position sur une page locale, une réintroduction de 
 « demi-journée de tournage », et à ajouter des phrases de périmètre pour séparer
 les articles qui visaient la même requête.
 
+## Funnel et conversion
+
+Le contenu ne sert à rien si le chemin vers la demande est cassé. Sept fuites
+trouvées et corrigées le 13 août :
+
+1. **Les 139 articles finissaient sur le même bouton Calendly**, sans aucun lien
+   réel. Rien pour les crawleurs, et une seule sortie, la plus engageante de
+   toutes. Le bloc est désormais contextualisé par catégorie, avec un vrai lien
+   vers la page de service, un lien vers `/contact` et le téléphone cliquable.
+2. **Les 6 pages catégorie n'avaient aucune sortie commerciale.** Ajout d'un
+   bloc par catégorie, à deux niveaux d'engagement.
+3. **`/services` et `/reseaux-sociaux` ne pointaient vers aucun des 139
+   articles.** Le maillage ne circulait que dans un sens. Nouveau composant
+   `ServiceResources` : guide pilier plus huit articles qui traitent les
+   objections d'avant-achat.
+4. **Les 15 pages locales ne pointaient vers aucun article.** Six articles par
+   page, choisis pour le tissu économique du bassin, pas une liste générique.
+5. **`/services` n'avait aucune FAQ ni schéma `FAQPage`**, alors que c'est la
+   page qui doit vendre. Huit objections réelles, juste avant le dernier appel
+   à l'action.
+6. **Le formulaire n'avait ni champ téléphone, ni mention RGPD, ni délai de
+   réponse annoncé**, alors que trois articles du site disent que c'est le
+   minimum. Corrigé, avec une sortie de secours visible.
+7. **Le bloc de contact global n'offrait pas le téléphone** : Calendly, WhatsApp
+   et email seulement, sur une clientèle locale dont c'est le canal majoritaire.
+
+Point technique restant à surveiller : le formulaire envoie en `no-cors`. La
+réponse du serveur est opaque, donc une erreur côté traitement ne peut pas être
+détectée par le navigateur. Le message de confirmation invite à écrire
+directement en l'absence de réponse, mais un test d'envoi réel reste à faire.
+
 ## Décisions tranchées
 
 - **Title Case des balises title** : conservé. La convention historique du site
