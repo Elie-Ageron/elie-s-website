@@ -120,6 +120,7 @@ Want to talk it through? [Book a free call](/contact) and we will look at where 
     date: '2026-02-12',
     lastModified: '2026-04-19',
     author: 'Elie Ageron',
+    pillar: '/guides/creer-site-web-tpe',
     contentFr: `
 ## Le problème n'est presque jamais le trafic
 
@@ -372,6 +373,7 @@ Want a hand with your local visibility? [Write to me](/contact) and we will look
     date: '2026-04-05',
     lastModified: '2026-04-19',
     author: 'Elie Ageron',
+    pillar: '/guides/creer-site-web-tpe',
     contentFr: `
 ## Une page d'accueil et une landing page ne font pas le même métier
 
@@ -504,6 +506,7 @@ Want a page that does that job? [Let's talk about your project](/contact).
     date: '2026-04-12',
     lastModified: '2026-04-19',
     author: 'Elie Ageron',
+    pillar: '/guides/creer-site-web-tpe',
     contentFr: `
 ## La question que tout le monde se pose
 
@@ -612,6 +615,7 @@ Want to know what a site could realistically do for your business? [Let's talk, 
     date: '2026-04-19',
     lastModified: '2026-04-19',
     author: 'Elie Ageron',
+    pillar: '/guides/creer-site-web-tpe',
     contentFr: `
 ## La phrase que j'entends tout le temps
 

@@ -20,6 +20,7 @@ export const webPosts: BlogPost[] = [
     lastModified: '2026-08-07',
     author: 'Elie Ageron',
     frOnly: true,
+    pillar: '/guides/creer-site-web-tpe',
     tags: ['rédaction web', 'contenu site', 'site vitrine', 'texte'],
     related: [
       'mon-site-ne-genere-aucun-contact',
@@ -424,6 +425,7 @@ Si vous voulez que je regarde où fuit votre parcours, [envoyez moi le lien de v
     lastModified: '2026-08-07',
     author: 'Elie Ageron',
     frOnly: true,
+    pillar: '/guides/creer-site-web-tpe',
     tags: ['photos', 'images', 'site vitrine', 'confiance'],
     related: [
       'quoi-ecrire-sur-son-site',
@@ -552,6 +554,7 @@ Si vous voulez qu'on regarde ce que donnent vos photos actuelles sur votre site,
     lastModified: '2026-08-07',
     author: 'Elie Ageron',
     frOnly: true,
+    pillar: '/guides/creer-site-web-tpe',
     tags: ['performance', 'core web vitals', 'mobile', 'vitesse'],
     related: [
       'photos-pour-son-site-web',
@@ -684,6 +687,7 @@ Si vous voulez savoir où vous en êtes, [envoyez moi l'adresse de votre site](/
     lastModified: '2026-08-07',
     author: 'Elie Ageron',
     frOnly: true,
+    pillar: '/guides/creer-site-web-tpe',
     tags: ['formulaire', 'contact', 'conversion', 'ux'],
     related: [
       'mon-site-ne-genere-aucun-contact',
@@ -820,6 +824,7 @@ Si vous voulez que je regarde le vôtre, [envoyez moi l'adresse](/contact).
     lastModified: '2026-08-07',
     author: 'Elie Ageron',
     frOnly: true,
+    pillar: '/guides/creer-site-web-tpe',
     tags: ['conversion', 'diagnostic', 'site vitrine', 'demandes'],
     related: [
       'formulaire-contact-qui-convertit',
@@ -968,6 +973,7 @@ Si vous voulez un avis extérieur, [envoyez moi l'adresse de votre site](/contac
     lastModified: '2026-08-07',
     author: 'Elie Ageron',
     frOnly: true,
+    pillar: '/guides/creer-site-web-tpe',
     tags: ['refonte', 'migration', 'redirections', 'site vitrine'],
     related: [
       'mon-site-ne-genere-aucun-contact',
