@@ -199,7 +199,8 @@ Le contenu du site est passé au filtre "signes d'écriture IA". À maintenir :
 ## Bugs SEO connus à surveiller
 
 1. **Email inconsistance** : `JsonLd.tsx` et `OrganizationSchema.tsx` utilisaient `elieageron@gmail.com` → corrigé vers `elie@elieageron.com`
-2. **FAQSchema home** : FAQAccordion présent sur Home mais pas de FAQPage schema → à ajouter
+2. **FAQSchema home** : corrigé. La home émet bien un `FAQPage`, vérifié après pré-rendu. `/services` en a reçu un aussi en août 2026.
+2 bis. **`seoData` doit couvrir les deux langues.** Les clefs `guides` et `about` n'existaient qu'en anglais : `SEO.tsx` lisait `data.title` sur `undefined`, l'ErrorBoundary prenait la main, et `/a-propos` comme `/guides` affichaient « Erreur de rendu » à tous les visiteurs français. Corrigé, plus un repli dans le composant. **Toute nouvelle valeur de `page` doit être ajoutée dans `pageKeywords` ET `seoData`, en `fr` et en `en`.**
 3. **Schemas dupliqués** : Person et LocalBusiness définis à la fois dans `index.html` (statique) et dans les composants React → normal, le statique sert de fallback pour les crawlers sans JS
 5. **Une seule entité entreprise** : tous les schémas d'entreprise partagent l'`@id` `https://elieageron.com/#business`. Avant août 2026, quatre entités concurrentes (`#business`, `#service`, `#organization`, `#localbusiness`) déclaraient chacune la même note : Google y voyait quatre entreprises notées 5/5.
 6. **`aggregateRating` et `review` vivent uniquement dans `ReviewSchema.tsx`.** Ne pas les redéclarer ailleurs.

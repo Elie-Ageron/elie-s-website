@@ -27,10 +27,10 @@ const LegalPage = ({ page }: LegalPageProps) => {
           content={
             isMentions
               ? isFr
-                ? "Mentions légales d'Elie Ageron Web Design - éditeur, hébergeur, propriété intellectuelle."
+                ? "Mentions légales du site elieageron.com : éditeur, adresse à Albertville, contact, hébergeur et propriété intellectuelle. Elie Ageron, web designer en Savoie."
                 : "Legal notice for Elie Ageron Web Design - publisher, host, intellectual property."
               : isFr
-              ? "Politique de confidentialité d'Elie Ageron Web Design - données personnelles, cookies, RGPD."
+              ? "Ce que deviennent vos données quand vous remplissez le formulaire de contact : ce qui est collecté, pourquoi, combien de temps, et comment le faire supprimer."
               : "Privacy policy for Elie Ageron Web Design - personal data, cookies, GDPR."
           }
         />
