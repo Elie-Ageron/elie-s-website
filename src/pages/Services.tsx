@@ -182,9 +182,68 @@ const Services = () => {
     ],
   };
 
+  /**
+   * Objections reelles, posees juste avant le dernier appel a l'action.
+   *
+   * Double effet : elles repondent a ce qui bloque au moment de decider, et
+   * elles font exister la page sur des recherches formulees en question, que
+   * la page ne captait pas du tout jusqu'ici.
+   */
+  const faq = [
+    {
+      q: 'Combien coûte un site avec vous ?',
+      a: "Tout est chiffré sur devis, après un appel gratuit, parce que les écarts entre deux projets sont trop importants pour qu'un chiffre isolé ait un sens. En revanche je n'ai rien à cacher sur la méthode : j'ai écrit un article entier qui donne les ordres de grandeur du marché et ce qui fait varier le prix.",
+    },
+    {
+      q: 'Combien de temps avant que mon site soit en ligne ?',
+      a: "Comptez trois à huit semaines entre le premier échange et la mise en ligne pour un site vitrine. La fourchette est large parce qu'elle dépend surtout de la vitesse à laquelle vous fournissez vos textes et vos photos. Une page unique se produit en quelques jours quand le contenu existe déjà.",
+    },
+    {
+      q: 'À qui appartient le site une fois livré ?',
+      a: "À vous, entièrement. Le nom de domaine est enregistré à votre nom dès le départ, avec votre adresse email, et vous recevez tous les accès à la livraison. Si vous décidez un jour de travailler avec quelqu'un d'autre, vous partez avec votre site, votre adresse et vos emails.",
+    },
+    {
+      q: 'Faut-il s\'engager sur une durée ?',
+      a: "Non pour la création d'un site, qui est une prestation ponctuelle. Pour l'accompagnement dans la durée et la production de contenu, on cale ensemble un rythme, et ce qui est fait chaque mois est écrit noir sur blanc plutôt que laissé au flou.",
+    },
+    {
+      q: 'Vous vous déplacez où ?',
+      a: "Je suis basé à Albertville, en Savoie. Je me déplace dans toute la Savoie, en Haute-Savoie et dans le bassin annécien pour les rendez-vous de cadrage et les tournages. Le reste du travail se gère très bien à distance, y compris plus loin en France.",
+    },
+    {
+      q: 'Est-ce que vous faites de la publicité Google ou Meta ?',
+      a: "Non, et je préfère le dire. Ce n'est pas mon métier, et je n'improvise pas sur un budget qui n'est pas le mien. Je travaille sur ce qui reste quand on arrête de payer : le site, le contenu, la fiche Google, les avis. Quand un client a réellement besoin de publicité, j'oriente vers quelqu'un dont c'est le métier.",
+    },
+    {
+      q: 'Vous garantissez la première place sur Google ?',
+      a: "Personne ne peut le garantir, ni moi ni personne, parce que personne ne contrôle le classement de Google. Ce que je peux faire, c'est le travail qui produit ce résultat, vous dire des délais honnêtes, et mesurer ce qui compte réellement : le nombre de demandes que vous recevez.",
+    },
+    {
+      q: 'Et si je ne sais pas encore ce dont j\'ai besoin ?',
+      a: "C'est le cas le plus fréquent, et c'est exactement à ça que sert l'appel gratuit de trente minutes. Il m'arrive régulièrement de conclure que la priorité est ailleurs, ou qu'il vaut mieux commencer par ce qui ne coûte rien. Je le dis quand c'est le cas.",
+    },
+  ];
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a },
+    })),
+  };
+
   return (
     <>
-      <SEO page="services" structuredData={[serviceSchema, breadcrumbSchema]} />
+      <SEO
+        page="services"
+        structuredData={
+          language === 'fr'
+            ? [serviceSchema, breadcrumbSchema, faqSchema]
+            : [serviceSchema, breadcrumbSchema]
+        }
+      />
 
       {/* Hero */}
       <section className="relative grain min-h-screen flex items-center justify-center overflow-hidden" aria-labelledby="services-hero-heading">
@@ -320,6 +379,48 @@ const Services = () => {
           </div>
         </div>
       </section>
+
+      {/* Objections, juste avant le dernier appel a l'action */}
+      {language === 'fr' && (
+        <section className="py-12 sm:py-20 border-t border-border/60" aria-labelledby="services-faq">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6">
+            <motion.h2
+              id="services-faq"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-2xl sm:text-3xl md:text-4xl font-medium leading-tight mb-8"
+            >
+              Les questions qu&rsquo;on me pose avant de se décider
+            </motion.h2>
+            <dl className="divide-y divide-border/60 border-y border-border/60">
+              {faq.map((item) => (
+                <div key={item.q} className="py-6">
+                  <dt className="text-base sm:text-lg font-semibold text-foreground">{item.q}</dt>
+                  <dd className="mt-2 text-base text-muted-foreground leading-relaxed">{item.a}</dd>
+                </div>
+              ))}
+            </dl>
+            <p className="mt-6 text-sm text-muted-foreground">
+              Une question qui n&rsquo;est pas là ?{' '}
+              <Link
+                to="/contact"
+                className="font-medium text-primary hover:underline underline-offset-4"
+              >
+                Posez-la moi
+              </Link>
+              , ou appelez le{' '}
+              <a
+                href="tel:+33695555318"
+                className="font-medium text-primary hover:underline underline-offset-4"
+              >
+                06 95 55 53 18
+              </a>
+              .
+            </p>
+          </div>
+        </section>
+      )}
 
       {/* Final CTA */}
       <section className="py-12 sm:py-20" aria-label="Call to action">
