@@ -1353,6 +1353,51 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://elieageron.com/blog/page-accueil-trois-secondes</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/blog/page-accueil-trois-secondes" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog/page-accueil-trois-secondes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/blog/page-accueil-trois-secondes" />
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elieageron.com/blog/page-realisations-portfolio-artisan</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/blog/page-realisations-portfolio-artisan" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog/page-realisations-portfolio-artisan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/blog/page-realisations-portfolio-artisan" />
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elieageron.com/blog/page-service-qui-ressort</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/blog/page-service-qui-ressort" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog/page-service-qui-ressort" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/blog/page-service-qui-ressort" />
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elieageron.com/blog/site-multipage-ou-une-seule-page</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/blog/site-multipage-ou-une-seule-page" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog/site-multipage-ou-une-seule-page" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/blog/site-multipage-ou-une-seule-page" />
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elieageron.com/blog/contenu-qui-vieillit-mise-a-jour</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/blog/contenu-qui-vieillit-mise-a-jour" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog/contenu-qui-vieillit-mise-a-jour" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elieageron.com/blog/contenu-qui-vieillit-mise-a-jour" />
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://elieageron.com/blog/quoi-ecrire-sur-son-site</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://elieageron.com/blog/quoi-ecrire-sur-son-site" />
     <xhtml:link rel="alternate" hreflang="en" href="https://elieageron.com/blog/quoi-ecrire-sur-son-site" />

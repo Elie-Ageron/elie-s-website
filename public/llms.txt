@@ -150,7 +150,7 @@ France entière (travail 100% à distance possible). Belgique, Suisse.
 - Site web : https://elieageron.com/blog/categorie/site-web
 - Conversion : https://elieageron.com/blog/categorie/conversion
 
-## Articles du blog (119)
+## Articles du blog (124)
 
 - Acheter des abonnés : ce qui se passe réellement après : https://elieageron.com/blog/acheter-abonnes-pourquoi-non
 - Agence, freelance ou plateforme : à qui confier son site : https://elieageron.com/blog/agence-web-freelance-ou-plateforme
@@ -161,6 +161,7 @@ France entière (travail 100% à distance possible). Belgique, Suisse.
 - Auto-école : remplir ses places sans casser les prix : https://elieageron.com/blog/auto-ecole-trouver-eleves
 - Cabinet comptable ou de conseil : se rendre visible sans en faire trop : https://elieageron.com/blog/expert-comptable-conseil-visibilite
 - Camionnette, panneaux, cartes : le physique compte encore : https://elieageron.com/blog/supports-physiques-vehicule-panneaux
+- Ce qui vieillit sur un site, et à quel rythme le reprendre : https://elieageron.com/blog/contenu-qui-vieillit-mise-a-jour
 - Changer de prestataire web sans tout casser : https://elieageron.com/blog/changer-de-prestataire-web
 - Choisir le nom de son entreprise, en pensant à après : https://elieageron.com/blog/choisir-nom-entreprise-visibilite
 - Coach sportif, prof de yoga : trouver des clients sans vivre sur Instagram : https://elieageron.com/blog/coach-sportif-trouver-clients
@@ -198,6 +199,7 @@ France entière (travail 100% à distance possible). Belgique, Suisse.
 - La liste d'emails : le canal que personne ne peut vous retirer : https://elieageron.com/blog/newsletter-tpe-locale
 - La musique sur les reels : ce qu'on a le droit d'utiliser : https://elieageron.com/blog/musique-reels-droits
 - La page à propos : la plus lue et la moins travaillée : https://elieageron.com/blog/page-a-propos-qui-sert
+- La page réalisations : celle qui décide vraiment : https://elieageron.com/blog/page-realisations-portfolio-artisan
 - La prise de rendez-vous en ligne : pour qui ça vaut le coup : https://elieageron.com/blog/prendre-rendez-vous-en-ligne
 - Le son compte plus que l'image, et personne ne s'en occupe : https://elieageron.com/blog/son-video-smartphone
 - Les annuaires en ligne servent-ils encore à quelque chose : https://elieageron.com/blog/annuaires-locaux-visibilite
@@ -263,9 +265,12 @@ France entière (travail 100% à distance possible). Belgique, Suisse.
 - Un concurrent copie vos contenus : quoi faire : https://elieageron.com/blog/concurrent-copie-mes-contenus
 - Un devis qui se signe : ce qui se joue dans le document : https://elieageron.com/blog/devis-qui-se-signe
 - Un site à 300 euros : ce qu'il y a dedans, et ce qu'il n'y a pas : https://elieageron.com/blog/site-web-pas-cher-ce-que-ca-cache
+- Un site d'une seule page ou plusieurs : lequel pour vous : https://elieageron.com/blog/site-multipage-ou-une-seule-page
+- Une page par prestation, et pourquoi c'est non négociable : https://elieageron.com/blog/page-service-qui-ressort
 - Vos emails arrivent en indésirables : pourquoi et comment le régler : https://elieageron.com/blog/emails-pro-en-indesirables
 - Votre fiche Google Business vaut plus que votre site web : https://elieageron.com/blog/fiche-google-business-optimiser
 - Votre formulaire de contact fait fuir la moitié des gens : https://elieageron.com/blog/formulaire-contact-qui-convertit
+- Votre page d'accueil a trois secondes pour se faire comprendre : https://elieageron.com/blog/page-accueil-trois-secondes
 - Votre site a été piraté : les premières heures : https://elieageron.com/blog/site-pirate-que-faire
 - Votre site est lent sur mobile, et ça vous coûte des clients : https://elieageron.com/blog/vitesse-site-web-mobile
 - Vous ne savez pas quoi publier ? Voici comment je trouve les sujets : https://elieageron.com/blog/idees-contenu-reseaux-sociaux
