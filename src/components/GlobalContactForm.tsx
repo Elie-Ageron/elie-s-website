@@ -10,12 +10,14 @@ import { useToast } from '@/hooks/use-toast';
 import ScrollReveal from '@/components/animations/ScrollReveal';
 
 const GlobalContactForm = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const fr = language === 'fr';
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     message: '',
   });
 
@@ -31,15 +33,19 @@ const GlobalContactForm = () => {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
+          phone: formData.phone,
           message: formData.message,
         }),
       });
 
       toast({
         title: t('form.success'),
+        description: fr
+          ? 'Je réponds sous 48 h ouvrées. Sans nouvelles, écrivez à elie@elieageron.com.'
+          : 'I reply within 2 working days. If you hear nothing, write to elie@elieageron.com.',
       });
 
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', message: '' });
     } catch (error) {
       console.error('Contact form error:', error);
       toast({
@@ -77,7 +83,7 @@ const GlobalContactForm = () => {
                     maxLength={100}
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="John Doe"
+                    placeholder={fr ? 'Votre nom' : 'Your name'}
                   />
                 </div>
                 <div className="space-y-2">
@@ -89,9 +95,30 @@ const GlobalContactForm = () => {
                     maxLength={255}
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="john@example.com"
+                    placeholder={fr ? 'vous@exemple.fr' : 'you@example.com'}
                   />
                 </div>
+              </div>
+
+              {/* Facultatif et annonce comme tel : une partie des clients locaux
+                  preferent nettement etre rappeles qu'echanger par ecrit. */}
+              <div className="space-y-2">
+                <Label htmlFor="global-phone">
+                  {fr ? 'Téléphone' : 'Phone'}{' '}
+                  <span className="font-normal text-muted-foreground">
+                    {fr ? '(facultatif, si vous préférez que je vous rappelle)' : '(optional, if you prefer a call back)'}
+                  </span>
+                </Label>
+                <Input
+                  id="global-phone"
+                  type="tel"
+                  inputMode="tel"
+                  autoComplete="tel"
+                  maxLength={30}
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  placeholder="06 12 34 56 78"
+                />
               </div>
 
               <div className="space-y-2">
@@ -103,7 +130,11 @@ const GlobalContactForm = () => {
                   maxLength={1000}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  placeholder="..."
+                  placeholder={
+                    fr
+                      ? 'En deux lignes : votre activité, votre commune, et ce que vous cherchez.'
+                      : 'In two lines: your business, your town, and what you are looking for.'
+                  }
                 />
               </div>
 
@@ -126,6 +157,46 @@ const GlobalContactForm = () => {
                   </span>
                 )}
               </Button>
+
+              {/* Reassurance et mention RGPD. C'est ce que je conseille aux
+                  clients dans les articles : autant l'appliquer ici. */}
+              <p className="text-center text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                {fr ? (
+                  <>
+                    Je réponds sous 48 h ouvrées. Vos coordonnées servent uniquement à répondre à
+                    votre demande, elles ne sont ni revendues ni utilisées pour de la prospection.{' '}
+                    <a
+                      href="/politique-confidentialite"
+                      className="underline underline-offset-4 hover:text-primary"
+                    >
+                      En savoir plus
+                    </a>
+                    .
+                  </>
+                ) : (
+                  <>
+                    I reply within 2 working days. Your details are only used to answer your enquiry,
+                    never sold and never used for cold outreach.
+                  </>
+                )}
+              </p>
+
+              <p className="text-center text-sm text-muted-foreground">
+                {fr ? 'Vous préférez le téléphone ? ' : 'Prefer the phone? '}
+                <a
+                  href="tel:+33695555318"
+                  className="font-medium text-primary hover:underline underline-offset-4"
+                >
+                  06 95 55 53 18
+                </a>
+                {fr ? ' ou ' : ' or '}
+                <a
+                  href="mailto:elie@elieageron.com"
+                  className="font-medium text-primary hover:underline underline-offset-4"
+                >
+                  elie@elieageron.com
+                </a>
+              </p>
             </form>
           </div>
         </ScrollReveal>
