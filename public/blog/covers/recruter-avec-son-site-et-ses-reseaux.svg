@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#FAF8F6"/>
+  <line x1="166.66666666666669" y1="0" x2="166.66666666666669" y2="630" stroke="#E4DEDA" stroke-width="1" opacity="0.55"/><line x1="253.33333333333334" y1="0" x2="253.33333333333334" y2="630" stroke="#E4DEDA" stroke-width="1" opacity="0.55"/><line x1="340" y1="0" x2="340" y2="630" stroke="#E4DEDA" stroke-width="1" opacity="0.55"/><line x1="426.6666666666667" y1="0" x2="426.6666666666667" y2="630" stroke="#E4DEDA" stroke-width="1" opacity="0.55"/><line x1="513.3333333333333" y1="0" x2="513.3333333333333" y2="630" stroke="#E4DEDA" stroke-width="1" opacity="0.55"/><line x1="600" y1="0" x2="600" y2="630" stroke="#E4DEDA" stroke-width="1" opacity="0.55"/><line x1="686.6666666666666" y1="0" x2="686.6666666666666" y2="630" stroke="#E4DEDA" stroke-width="1" opacity="0.55"/><line x1="773.3333333333334" y1="0" x2="773.3333333333334" y2="630" stroke="#E4DEDA" stroke-width="1" opacity="0.55"/><line x1="860" y1="0" x2="860" y2="630" stroke="#E4DEDA" stroke-width="1" opacity="0.55"/><line x1="946.6666666666666" y1="0" x2="946.6666666666666" y2="630" stroke="#E4DEDA" stroke-width="1" opacity="0.55"/><line x1="1033.3333333333335" y1="0" x2="1033.3333333333335" y2="630" stroke="#E4DEDA" stroke-width="1" opacity="0.55"/>
+  <rect x="0" y="0" width="1200" height="10" fill="#C4396A"/>
+
+  <g transform="translate(920, 330)"><circle cx="0" cy="0" r="132" fill="none" stroke="#E4DEDA" stroke-width="6"/><path d="M 0 -132 A 132 132 0 0 1 0 132 Z" fill="#C4396A"/><line x1="-165" y1="0" x2="165" y2="0" stroke="#292522" stroke-width="5"/></g>
+
+  <text x="80" y="86" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="600" letter-spacing="3.4" fill="#6B6560">ELIEAGERON.COM</text>
+  <text x="80" y="150" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="2.6" fill="#C4396A">STRATÉGIE</text>
+
+  <text x="80" y="232" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="68" font-weight="600" fill="#292522">Recruter quand on</text>
+  <text x="80" y="309.52" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="68" font-weight="600" fill="#292522">est une petite</text>
+  <text x="80" y="387.03999999999996" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="68" font-weight="600" fill="#292522">entreprise de</text>
+  <text x="80" y="464.55999999999995" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="68" font-weight="600" fill="#292522">vallée</text>
+
+  <line x1="80" y1="522" x2="1120" y2="522" stroke="#E4DEDA" stroke-width="2"/>
+  <text x="80" y="566" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="24" font-weight="600" fill="#292522">Elie Ageron</text>
+  <text x="80" y="596" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="20" fill="#6B6560">Albertville, Savoie</text>
+  <text x="1120" y="596" text-anchor="end" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="600" letter-spacing="2" fill="#6B6560">ARTICLE</text>
+</svg>
