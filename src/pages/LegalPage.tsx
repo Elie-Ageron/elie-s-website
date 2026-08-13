@@ -36,6 +36,13 @@ const LegalPage = ({ page }: LegalPageProps) => {
         />
         <meta name="robots" content="noindex, follow" />
         <link rel="canonical" href={canonical} />
+        {/* Ces pages ne sont pas indexees, mais leur lien circule par message
+            et par email : sans og:title, l'apercu de partage reprend celui de
+            l'accueil et annonce autre chose que ce qu'on ouvre. */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonical} />
+        <meta property="og:title" content={title} />
+        <meta property="og:site_name" content="Elie Ageron" />
       </Helmet>
 
       <main className="max-w-3xl mx-auto px-6 py-20 sm:py-28 space-y-10">
