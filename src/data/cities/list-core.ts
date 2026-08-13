@@ -15,8 +15,9 @@ export const coreCities: CityData[] = [
     scope: 'city',
     relatedCities: [
       'creation-site-web-haute-savoie',
+      'creation-site-web-rumilly',
+      'creation-site-web-cluses',
       'web-designer-savoie',
-      'creation-site-web-albertville',
     ],
     fr: {
       name: 'Annecy',
@@ -103,7 +104,14 @@ export const coreCities: CityData[] = [
     department: 'Haute-Savoie',
     departmentCode: 'FR-74',
     scope: 'area',
-    relatedCities: ['web-designer-annecy', 'web-designer-savoie', 'creation-site-web-albertville'],
+    relatedCities: [
+      'web-designer-annecy',
+      'creation-site-web-cluses',
+      'creation-site-web-thonon-les-bains',
+      'creation-site-web-sallanches',
+      'creation-site-web-rumilly',
+      'web-designer-savoie',
+    ],
     fr: {
       name: 'Haute-Savoie',
       title: 'Création Site Web Haute-Savoie | Elie Ageron',

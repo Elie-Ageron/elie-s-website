@@ -1,6 +1,7 @@
 import { coreCities } from './cities/list-core';
 import { tarentaiseCities } from './cities/list-tarentaise';
 import { chamberyCities } from './cities/list-chambery';
+import { hauteSavoieCities } from './cities/list-haute-savoie';
 import type { CityData } from './cities/types';
 
 export type { CityData, CityDepth, CityLocale, CityBlock, CityFaq } from './cities/types';
@@ -9,7 +10,12 @@ export type { CityData, CityDepth, CityLocale, CityBlock, CityFaq } from './citi
  * Toutes les pages locales du site. L'ordre pilote la liste affichee en pied
  * de page et dans le maillage interne.
  */
-export const cities: CityData[] = [...coreCities, ...tarentaiseCities, ...chamberyCities];
+export const cities: CityData[] = [
+  ...coreCities,
+  ...tarentaiseCities,
+  ...chamberyCities,
+  ...hauteSavoieCities,
+];
 
 export const getCityBySlug = (slug: string): CityData | undefined =>
   cities.find((city) => city.slug === slug);
