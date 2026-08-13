@@ -111,6 +111,23 @@ for (const link of links) {
   if (!ok) errors.push(`lien interne mort : ${link}`);
 }
 
+// --- 4 bis. Articles references depuis les pages locales et les guides ----
+// Ces slugs ne sont pas des liens markdown : sans controle, une faute de
+// frappe fait disparaitre silencieusement un lien du maillage.
+const checkSlugRefs = (files, key) => {
+  for (const file of files) {
+    const re = new RegExp(`${key}:\\s*\\[([^\\]]*)\\]`, 'g');
+    for (const m of sources[file].matchAll(re)) {
+      for (const s of m[1].matchAll(/'([^']+)'/g)) {
+        if (!postSlugs.has(s[1])) errors.push(`${file} : ${key} pointe vers un article inconnu, ${s[1]}`);
+      }
+    }
+  }
+};
+checkSlugRefs(cityFiles, 'articles');
+checkSlugRefs(['src/data/guides.ts'], 'articles');
+checkSlugRefs(postFiles, 'related');
+
 // --- 5. Longueurs des balises SEO ----------------------------------------
 for (const file of postFiles) {
   const src = sources[file];

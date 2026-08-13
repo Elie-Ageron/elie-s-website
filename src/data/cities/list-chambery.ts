@@ -84,6 +84,14 @@ export const chamberyCities: CityData[] = [
       ],
       social:
         "Sur une agglomération de cette taille, les réseaux sociaux ne servent pas au même usage qu'en vallée. Ils servent moins à faire circuler du bouche à oreille et davantage à établir votre crédibilité auprès de gens qui vous comparent à trois concurrents. Un compte à jour, avec des réalisations récentes et un visage identifiable, fait souvent la différence au moment du choix final.",
+      articles: [
+        'concurrent-devant-moi-google',
+        'page-service-qui-ressort',
+        'expert-comptable-conseil-visibilite',
+        'therapeute-reseaux-sociaux-clients',
+        'commerce-centre-ville-visibilite',
+        'trouver-mots-cles-clients',
+      ],
       faq: [
         {
           q: 'Vous vous déplacez à Chambéry ?',
@@ -176,6 +184,14 @@ export const chamberyCities: CityData[] = [
       ],
       social:
         "Aix-les-Bains est un terrain particulièrement favorable à la vidéo, parce que les métiers du bien-être se montrent mal par écrit et très bien en images. Une courte vidéo qui présente une séance, un geste, ou simplement la personne qui reçoit, lève la barrière que le texte ne lève pas. C'est aussi un moyen de toucher les gens qui viennent en cure ou en séjour et qui cherchent sur place.",
+      articles: [
+        'therapeute-reseaux-sociaux-clients',
+        'coiffeur-esthetique-reseaux-sociaux',
+        'location-saisonniere-reservation-directe',
+        'commerce-centre-ville-visibilite',
+        'obtenir-avis-google',
+        'prendre-rendez-vous-en-ligne',
+      ],
       faq: [
         {
           q: 'Vous travaillez avec des thérapeutes et des praticiens ?',
@@ -268,6 +284,14 @@ export const chamberyCities: CityData[] = [
       ],
       social:
         "Dans une couronne périurbaine, les groupes Facebook de commune sont extrêmement actifs et servent de premier réflexe quand quelqu'un cherche un artisan ou un commerce. Y être présent régulièrement, sans y faire de promotion directe, vaut souvent mieux qu'un budget publicitaire. Les vidéos qui montrent un chantier local circulent vite parce que les gens reconnaissent la rue.",
+      articles: [
+        'commerce-centre-ville-visibilite',
+        'garage-automobile-visibilite',
+        'creer-fiche-google-business',
+        'obtenir-avis-google',
+        'zone-de-chalandise-sans-local',
+        'rater-moins-d-appels',
+      ],
       faq: [
         {
           q: 'Pourquoi cibler La Ravoire plutôt que Chambéry ?',
@@ -360,6 +384,14 @@ export const chamberyCities: CityData[] = [
       ],
       social:
         "La Maurienne offre un décor que les gens reconnaissent immédiatement, notamment autour des cols. Pour une entreprise touristique, c'est un avantage évident. Pour une entreprise industrielle ou du bâtiment, l'angle est différent mais tout aussi efficace : montrer un savoir faire technique en trente secondes intéresse à la fois les clients potentiels et les candidats au recrutement, ce qui est un vrai sujet dans la vallée.",
+      articles: [
+        'site-web-artisan',
+        'electricien-plombier-chauffagiste-visibilite',
+        'garage-automobile-visibilite',
+        'creer-fiche-google-business',
+        'entreprise-saisonniere-communication',
+        'rater-moins-d-appels',
+      ],
       faq: [
         {
           q: 'Vous vous déplacez en Maurienne ?',

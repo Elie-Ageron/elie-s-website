@@ -84,6 +84,14 @@ export const coreCities: CityData[] = [
       ],
       social:
         "Le bassin annécien est très actif sur les réseaux, avec une audience habituée à un contenu soigné. C'est plus exigeant qu'en vallée, et c'est aussi un endroit où une entreprise qui publie régulièrement se distingue vite, parce que la plupart de ses concurrents publient par à-coups.",
+      articles: [
+        'concurrent-devant-moi-google',
+        'page-service-qui-ressort',
+        'trouver-mots-cles-clients',
+        'therapeute-reseaux-sociaux-clients',
+        'coach-sportif-trouver-clients',
+        'afficher-ses-prix-ou-pas',
+      ],
       faq: [
         {
           q: 'Vous vous déplacez à Annecy ?',
@@ -167,6 +175,14 @@ export const coreCities: CityData[] = [
       ],
       social:
         "La Haute-Savoie est l'un des départements où la vidéo courte fonctionne le mieux, parce que le cadre est spectaculaire et que la population est jeune et connectée. L'écueil habituel est de faire de belles images sans jamais dire ce qu'on vend ni où l'on intervient.",
+      articles: [
+        'seo-explique-a-un-artisan',
+        'concurrent-devant-moi-google',
+        'combien-coute-un-site-web',
+        'page-service-qui-ressort',
+        'demarcher-les-professionnels',
+        'entreprise-saisonniere-communication',
+      ],
       faq: [
         {
           q: 'Vous intervenez dans tout le département ?',
@@ -256,6 +272,14 @@ export const coreCities: CityData[] = [
       ],
       social:
         "La Savoie est un terrain particulièrement favorable à la vidéo courte : décor reconnaissable, forte identité locale, groupes Facebook de commune très actifs. Une entreprise qui publie deux fois par semaine des vidéos tournées sur place se distingue rapidement, parce que très peu le font dans la durée.",
+      articles: [
+        'seo-explique-a-un-artisan',
+        'difference-site-fiche-google-reseaux',
+        'etre-premier-google-dans-sa-ville',
+        'combien-coute-un-site-web',
+        'erreurs-visibilite-tpe-locale',
+        'entreprise-saisonniere-communication',
+      ],
       faq: [
         {
           q: 'Vous intervenez dans toute la Savoie ?',

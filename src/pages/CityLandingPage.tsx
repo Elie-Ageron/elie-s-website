@@ -10,6 +10,7 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import FAQAccordion from '@/components/FAQAccordion';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
 import { cities, getRelatedCities } from '@/data/cities';
+import { getPostBySlug } from '@/data/blogPosts';
 
 interface CityLandingPageProps {
   slug: string;
@@ -29,6 +30,14 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
   const baseUrl = 'https://elieageron.com';
   const canonical = `${baseUrl}/${slug}`;
   const related = getRelatedCities(city);
+
+  /** Articles choisis pour ce bassin. Les slugs sont valides par check:content. */
+  const cityArticles = (depth?.articles ?? [])
+    .map((articleSlug) => {
+      const post = getPostBySlug(articleSlug);
+      return post ? { slug: articleSlug, title: post.titleFr, excerpt: post.excerptFr } : null;
+    })
+    .filter((p): p is { slug: string; title: string; excerpt: string } => p !== null);
 
   const localBusinessSchema = {
     '@context': 'https://schema.org',
@@ -413,6 +422,38 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
               </dl>
             </div>
           </section>
+
+          {/* Maillage vers le corpus, choisi pour le tissu economique du bassin */}
+          {cityArticles.length > 0 && (
+            <section className="py-12 sm:py-16 border-t border-border/50" aria-labelledby="city-articles">
+              <div className="max-w-3xl mx-auto px-4 sm:px-6">
+                <h2
+                  id="city-articles"
+                  className="text-2xl sm:text-3xl font-medium leading-tight text-foreground"
+                >
+                  Ce qui concerne les entreprises d&rsquo;ici
+                </h2>
+                <p className="mt-3 text-base text-muted-foreground leading-relaxed">
+                  Des articles choisis pour les métiers qu&rsquo;on trouve sur ce secteur. Tout est
+                  gratuit et rien n&rsquo;est réservé aux clients.
+                </p>
+                <ul className="mt-7 border-y border-border/60 divide-y divide-border/60">
+                  {cityArticles.map((post) => (
+                    <li key={post.slug}>
+                      <Link to={`/blog/${post.slug}`} className="group block py-5">
+                        <span className="block font-medium text-foreground group-hover:text-primary transition-colors">
+                          {post.title}
+                        </span>
+                        <span className="mt-1 block text-sm text-muted-foreground line-clamp-2">
+                          {post.excerpt}
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </section>
+          )}
         </>
       )}
 

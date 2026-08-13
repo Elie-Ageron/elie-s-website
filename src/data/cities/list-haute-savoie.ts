@@ -91,6 +91,14 @@ export const hauteSavoieCities: CityData[] = [
       ],
       social:
         "Dans la vallée de l'Arve, la vidéo courte a un avantage rare : les gestes industriels sont spectaculaires et personne ne les montre. Une pièce qui sort d'un tour à commande numérique, un contrôle au projecteur de profil, un montage de série : ce sont des images qui retiennent l'attention, qui prouvent votre capacité, et qui servent autant en recrutement qu'en prospection. Pour les commerces et les artisans du fond de vallée, la logique reste celle du local, avec les groupes de commune comme relais de recommandation.",
+      articles: [
+        'demarcher-les-professionnels',
+        'recruter-avec-son-site-et-ses-reseaux',
+        'linkedin-tpe-locale',
+        'marches-publics-petite-entreprise',
+        'electricien-plombier-chauffagiste-visibilite',
+        'page-service-qui-ressort',
+      ],
       faq: [
         {
           q: 'Vous vous déplacez dans la vallée de l\'Arve ?',
@@ -193,6 +201,14 @@ export const hauteSavoieCities: CityData[] = [
       ],
       social:
         "Dans le Chablais, les groupes de commune et les pages locales sont un canal de recommandation très actif, en partie parce que le bassin est dense et que les gens s'y connaissent. Une entreprise dont le nom revient régulièrement dans ces conversations obtient des demandes sans jamais rien payer. Les vidéos courtes qui montrent un chantier fini, un lieu reconnaissable du bord du lac ou un conseil pratique circulent bien parce que le territoire est identifiable en une image.",
+      articles: [
+        'rater-moins-d-appels',
+        'afficher-ses-prix-ou-pas',
+        'commerce-centre-ville-visibilite',
+        'therapeute-reseaux-sociaux-clients',
+        'devis-qui-se-signe',
+        'prendre-rendez-vous-en-ligne',
+      ],
       faq: [
         {
           q: 'Vous intervenez dans le Chablais ?',
@@ -291,6 +307,14 @@ export const hauteSavoieCities: CityData[] = [
       ],
       social:
         "Le décor fait une partie du travail : peu de bassins offrent des images aussi immédiatement reconnaissables. Un chantier avec le massif en arrière-plan, un chalet fini, un lever de jour sur la vallée retiennent l'attention sans effort de production. Pour les entreprises du bâtiment, l'avant et après est particulièrement efficace ici, parce que la rénovation de chalet produit des transformations spectaculaires et que la clientèle non résidente n'a que ces images pour juger.",
+      articles: [
+        'menuisier-cuisiniste-visibilite',
+        'location-saisonniere-reservation-directe',
+        'site-bilingue-clientele-etrangere',
+        'avant-apres-artisan-contenu',
+        'entreprise-saisonniere-communication',
+        'devis-qui-se-signe',
+      ],
       faq: [
         {
           q: 'Vous vous déplacez à Sallanches et dans le pays du Mont-Blanc ?',
@@ -389,6 +413,14 @@ export const hauteSavoieCities: CityData[] = [
       ],
       social:
         "Sur un territoire de petites communes, les groupes locaux et les pages de village pèsent lourd dans la recommandation. Une entreprise identifiée comme étant du coin obtient une préférence spontanée que les enseignes des zones commerciales d'Annecy n'auront jamais. La vidéo courte y sert surtout à montrer le travail réel et les visages, dans un contexte où tout le monde finit par se connaître.",
+      articles: [
+        'etre-premier-google-dans-sa-ville',
+        'electricien-plombier-chauffagiste-visibilite',
+        'demarcher-les-professionnels',
+        'creer-fiche-google-business',
+        'commerce-centre-ville-visibilite',
+        'traiteur-food-truck-visibilite',
+      ],
       faq: [
         {
           q: 'Vous vous déplacez à Rumilly et dans l\'Albanais ?',

@@ -38,6 +38,15 @@ export interface CityDepth {
   /** Angle reseaux sociaux, deuxieme pilier de l'offre. */
   social: string;
   faq: CityFaq[];
+  /**
+   * Articles du blog choisis pour le tissu economique de ce bassin.
+   *
+   * Les pages locales sont a forte intention et ne renvoyaient vers aucun
+   * article : le visiteur pas encore pret n'avait pas d'etape suivante, et le
+   * maillage entre les pages locales et le corpus etait inexistant.
+   * Les slugs sont verifies par scripts/check-content.mjs.
+   */
+  articles?: string[];
 }
 
 export interface CityData {

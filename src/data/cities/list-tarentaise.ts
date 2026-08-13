@@ -81,6 +81,14 @@ export const tarentaiseCities: CityData[] = [
       ],
       social:
         "Albertville est une ville où l'on se connaît, et les groupes Facebook locaux y sont particulièrement actifs. C'est un canal de recommandation qui pèse davantage ici que dans une grande agglomération. Pour une entreprise du bassin, publier régulièrement des vidéos courtes qui montrent le travail réel produit un effet direct sur le bouche à oreille, parce que les gens partagent ce qu'ils reconnaissent.",
+      articles: [
+        'site-web-artisan',
+        'reseaux-sociaux-artisan-savoie',
+        'creer-fiche-google-business',
+        'electricien-plombier-chauffagiste-visibilite',
+        'commerce-centre-ville-visibilite',
+        'erreurs-visibilite-tpe-locale',
+      ],
       faq: [
         {
           q: 'Vous vous déplacez à Albertville et autour ?',
@@ -165,6 +173,14 @@ export const tarentaiseCities: CityData[] = [
       ],
       social:
         "Sur une commune de cette taille, une vidéo qui montre un chantier reconnaissable circule vite. Les gens identifient la rue, le bâtiment, parfois le voisin. C'est exactement ce qui déclenche les partages, et le partage local vaut infiniment plus que la vue anonyme. Deux vidéos par semaine tournées pendant votre travail normal suffisent à installer ça.",
+      articles: [
+        'site-web-artisan',
+        'paysagiste-jardinier-visibilite',
+        'creer-fiche-google-business',
+        'zone-de-chalandise-sans-local',
+        'menuisier-cuisiniste-visibilite',
+        'rater-moins-d-appels',
+      ],
       faq: [
         {
           q: 'Vous vous déplacez à Ugine ?',
@@ -258,6 +274,14 @@ export const tarentaiseCities: CityData[] = [
       ],
       social:
         "La Tarentaise est un endroit où le contenu vidéo fonctionne particulièrement bien, pour une raison simple : le décor est spectaculaire et immédiatement reconnaissable. Une vidéo tournée sur un chantier avec les sommets derrière est identifiée en une seconde par les gens de la vallée, et elle intéresse aussi ceux qui viennent chaque hiver. C'est un avantage que peu d'entreprises exploitent.",
+      articles: [
+        'location-saisonniere-reservation-directe',
+        'hebergement-station-reseaux-sociaux',
+        'entreprise-saisonniere-communication',
+        'site-web-artisan',
+        'creer-fiche-google-business',
+        'traiteur-food-truck-visibilite',
+      ],
       faq: [
         {
           q: 'Vous intervenez jusque dans les stations ?',
@@ -352,6 +376,14 @@ export const tarentaiseCities: CityData[] = [
       ],
       social:
         "Peu d'endroits offrent un décor aussi favorable à la vidéo courte. Une descente en raft, un lever de soleil depuis un sommet, une intervention sur un chalet d'altitude : ce sont des images qui retiennent l'attention sans effort de mise en scène. L'enjeu ici n'est pas de trouver quoi filmer, c'est de le faire régulièrement et de dire clairement ce que vous vendez, sinon la belle image ne se transforme jamais en réservation.",
+      articles: [
+        'location-saisonniere-reservation-directe',
+        'moniteur-guide-montagne-visibilite',
+        'hebergement-station-reseaux-sociaux',
+        'entreprise-saisonniere-communication',
+        'site-bilingue-clientele-etrangere',
+        'obtenir-avis-google',
+      ],
       faq: [
         {
           q: 'Vous montez jusqu\'en Haute Tarentaise ?',
