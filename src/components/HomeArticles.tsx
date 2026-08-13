@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { blogPosts, getPostBySlug } from '@/data/blogPosts';
+import { blogCount, getIndexEntry } from '@/data/blogIndex';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 /**
@@ -33,8 +33,8 @@ const HomeArticles = () => {
   if (language !== 'fr') return null;
 
   const posts = FEATURED.map((slug) => {
-    const post = getPostBySlug(slug);
-    return post ? { slug, title: post.titleFr, excerpt: post.excerptFr } : null;
+    const post = getIndexEntry(slug);
+    return post ? { slug, title: post.title, excerpt: post.excerpt } : null;
   }).filter((p): p is { slug: string; title: string; excerpt: string } => p !== null);
 
   if (posts.length === 0) return null;
@@ -79,7 +79,7 @@ const HomeArticles = () => {
             to="/blog"
             className="inline-flex items-center gap-1.5 min-h-[24px] text-sm font-medium text-primary hover:underline underline-offset-4"
           >
-            Les {blogPosts.length} articles du blog
+            Les {blogCount} articles du blog
             <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </Link>
         </p>

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { blogPosts, getPostBySlug } from '@/data/blogPosts';
+import { blogCount, getIndexEntry } from '@/data/blogIndex';
 import { getGuideBySlug } from '@/data/guides';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -67,8 +67,8 @@ const ServiceResources = ({ variant }: ServiceResourcesProps) => {
   const guide = getGuideBySlug(selection.guide);
   const posts = selection.posts
     .map((slug) => {
-      const post = getPostBySlug(slug);
-      return post ? { slug, title: post.titleFr, excerpt: post.excerptFr } : null;
+      const post = getIndexEntry(slug);
+      return post ? { slug, title: post.title, excerpt: post.excerpt } : null;
     })
     .filter((p): p is { slug: string; title: string; excerpt: string } => p !== null);
 
@@ -132,7 +132,7 @@ const ServiceResources = ({ variant }: ServiceResourcesProps) => {
             to="/blog"
             className="inline-flex items-center gap-1.5 min-h-[24px] text-sm font-medium text-primary hover:underline underline-offset-4"
           >
-            Les {blogPosts.length} articles du blog
+            Les {blogCount} articles du blog
             <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </Link>
         </p>

@@ -10,7 +10,7 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import FAQAccordion from '@/components/FAQAccordion';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
 import { cities, getRelatedCities } from '@/data/cities';
-import { getPostBySlug } from '@/data/blogPosts';
+import { getIndexEntry } from '@/data/blogIndex';
 
 interface CityLandingPageProps {
   slug: string;
@@ -34,8 +34,8 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
   /** Articles choisis pour ce bassin. Les slugs sont valides par check:content. */
   const cityArticles = (depth?.articles ?? [])
     .map((articleSlug) => {
-      const post = getPostBySlug(articleSlug);
-      return post ? { slug: articleSlug, title: post.titleFr, excerpt: post.excerptFr } : null;
+      const post = getIndexEntry(articleSlug);
+      return post ? { slug: articleSlug, title: post.title, excerpt: post.excerpt } : null;
     })
     .filter((p): p is { slug: string; title: string; excerpt: string } => p !== null);
 
