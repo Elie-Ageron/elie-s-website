@@ -146,6 +146,41 @@ réponse du serveur est opaque, donc une erreur côté traitement ne peut pas ê
 détectée par le navigateur. Le message de confirmation invite à écrire
 directement en l'absence de réponse, mais un test d'envoi réel reste à faire.
 
+## Santé technique du site
+
+Audit mesuré sur les 178 pages pré-rendues, le 13 août. État avant, puis après
+correction.
+
+| Contrôle | Avant | Après |
+|---|---|---|
+| Pages plantant à l'affichage | 2 | 0 |
+| Pages sans canonical | 7 | 0 |
+| Pages sans meta description | 7 | 0 |
+| Pages sans `og:title` | 9 | 0 |
+| Descriptions sous 110 caractères | 6 | 0 |
+| Ancres non descriptives | 176 | 0 |
+| Erreurs TypeScript du projet | 2 | 0 |
+
+Le plus grave, et de loin : **`/a-propos` et `/guides` affichaient « Erreur de
+rendu » à tous les visiteurs français.** `seoData.fr` s'arrêtait à la clef
+`apps`, donc `SEO.tsx` lisait `data.title` sur `undefined`. Ce sont les deux
+pages les plus liées du site après l'accueil : `/a-propos` est le signal E-E-A-T
+principal, cité depuis chacun des 139 articles, et `/guides` est le hub des
+piliers. Corrigé, plus un repli dans le composant pour qu'un oubli du même genre
+ne puisse plus faire tomber une page entière.
+
+Autre conflit corrigé : `/get-started` déclarait un canonical vers `/contact`
+tout en figurant au sitemap en priorité 0.9. Les deux signaux se contredisaient.
+La page a désormais sa propre identité.
+
+`scripts/prerender.mjs` contrôle maintenant ce qu'il a réellement écrit. Il
+supprime les pages figées sur l'écran d'erreur, parce qu'un fichier cassé
+provoque ensuite une erreur d'hydratation chez le visiteur et vaut donc moins
+que pas de fichier du tout, et il liste les pages dont le `<head>` est
+incomplet. Il tourne en séquentiel : à deux onglets, les pages lourdes se
+disputaient le processeur et deux ou trois pages sortaient sans canonical à
+chaque exécution, jamais les mêmes.
+
 ## Décisions tranchées
 
 - **Title Case des balises title** : conservé. La convention historique du site

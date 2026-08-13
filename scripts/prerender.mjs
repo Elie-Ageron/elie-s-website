@@ -53,7 +53,11 @@ run({
   source: 'dist',
   puppeteerExecutablePath: browser,
   puppeteerArgs: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
-  concurrency: 2,
+  // Sequentiel volontairement. A deux onglets, les pages lourdes se disputaient
+  // le processeur et react-helmet n'avait pas fini d'ecrire le <head> au moment
+  // de la capture : deux ou trois pages sortaient sans canonical a chaque
+  // execution, jamais les memes. Le pre-rendu est plus long, il est stable.
+  concurrency: 1,
   // Le CSS reste dans les feuilles de style : l'inliner casse le theme sombre.
   inlineCss: false,
   skipThirdPartyRequests: true,

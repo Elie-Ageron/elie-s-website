@@ -11,6 +11,7 @@ import FAQAccordion from '@/components/FAQAccordion';
 import SEO from '@/components/SEO';
 import FAQSchema from '@/components/FAQSchema';
 import InternalLinks from '@/components/InternalLinks';
+import HomeArticles from '@/components/HomeArticles';
 
 const Home = () => {
   return (
@@ -42,6 +43,9 @@ const Home = () => {
 
       {/* FAQ - Objections avant le CTA final */}
       <FAQAccordion />
+
+      {/* Maillage descendant vers le corpus, sortie la moins engageante */}
+      <HomeArticles />
 
       {/* Routing, 3 entry paths, once the visitor is convinced */}
       <RoutingSection />
