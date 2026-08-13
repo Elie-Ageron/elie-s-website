@@ -94,7 +94,55 @@ for (const [heading, body] of Object.entries(sections)) {
 }
 
 writeFileSync(join(root, 'public/llms.txt'), out);
+
+// --- llms-full.txt ---------------------------------------------------------
+// Meme probleme : il annoncait 17 articles et 11 pages locales. On regenere
+// ses deux sections de listing, la prose reste intacte.
+const fullSrc = read('public/llms-full.txt');
+const fullHeadings = [...fullSrc.matchAll(/^## .*$/gm)].map((m) => ({ text: m[0], index: m.index }));
+
+const fullSections = {
+  '## Articles de blog (expertise publique)': [...posts]
+    .sort((a, b) => a.title.localeCompare(b.title, 'fr'))
+    .map((p, i) => `${i + 1}. **${p.title}** - ${base}/blog/${p.slug}`)
+    .join('\n'),
+  '## Pages du site': [
+    ['Accueil', '/'],
+    ['Services (partenaire web)', '/services'],
+    ['Réseaux sociaux (tournage + publication)', '/reseaux-sociaux'],
+    ['À propos de Elie Ageron', '/a-propos'],
+    ['Guides de référence', '/guides'],
+    ['Blog', '/blog'],
+    ['Contact / appel gratuit', '/contact'],
+    ['Démarrer un projet', '/get-started'],
+    ['Portfolio', '/portfolio'],
+    ['Pourquoi un site web', '/why-a-website'],
+    ['Notre processus', '/our-process'],
+  ]
+    .map(([t, u]) => line(t, u))
+    .concat(guides.map((g) => line(`Guide : ${g.title}`, `/guides/${g.slug}`)))
+    .concat(cities.map((c) => line(c.title, `/${c.slug}`)))
+    .join('\n'),
+};
+
+let fullOut = fullSrc;
+for (const [heading, body] of Object.entries(fullSections)) {
+  const found = fullHeadings.find((h) => h.text === heading);
+  if (!found) {
+    console.warn(`section absente de llms-full.txt, ignoree : ${heading}`);
+    continue;
+  }
+  const next = fullHeadings.find((h) => h.index > found.index);
+  const end = next ? next.index : fullSrc.length;
+  const slice = fullSrc.slice(found.index, end);
+  // On conserve le separateur horizontal quand la section en avait un.
+  const trailer = slice.trimEnd().endsWith('---') ? '\n---\n\n' : '\n\n';
+  fullOut = fullOut.replace(slice, `${heading}\n\n${body}\n${trailer}`);
+}
+
+writeFileSync(join(root, 'public/llms-full.txt'), fullOut);
+
 console.log(
-  `llms.txt : ${posts.length} articles, ${cities.length} pages locales, ` +
+  `llms.txt et llms-full.txt : ${posts.length} articles, ${cities.length} pages locales, ` +
     `${guides.length} guides, ${categories.length} categories`
 );
