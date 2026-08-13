@@ -10,7 +10,7 @@ const baseUrl = 'https://elieageron.com';
 
 /**
  * Index des pages piliers. Sert de point d'entree editorial et distribue
- * l'autorite vers les trois guides et vers les categories du blog.
+ * l'autorite vers les guides et vers les categories du blog.
  */
 const GuidesIndex = () => {
   const categories = getActiveCategories('fr');
@@ -60,7 +60,7 @@ const GuidesIndex = () => {
               Guides
             </span>
             <h1 id="guides-heading" className="text-3xl sm:text-4xl md:text-5xl font-medium leading-[1.1] text-balance">
-              Trois guides, et de quoi vous en sortir seul.
+              {guides.length} guides, et de quoi vous en sortir seul.
             </h1>
             <p className="mt-5 text-base sm:text-lg text-muted-foreground leading-relaxed">
               Ce que je ferais à votre place, expliqué de bout en bout. Vous pouvez tout appliquer sans moi. Si

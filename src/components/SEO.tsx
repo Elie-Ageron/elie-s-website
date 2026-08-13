@@ -140,6 +140,18 @@ const seoData = {
       title: 'Apps & Dashboards pour Entreprises | Elie Ageron',
       description: 'Développement d\'applications web sur mesure : dashboards, CRM, portails clients, automatisation. Des apps qui font vraiment travailler votre équipe.',
     },
+    // Ces deux entrees manquaient cote francais alors que la version anglaise
+    // les avait. Le site etant francais par defaut, /guides et /a-propos
+    // levaient une TypeError et affichaient l'ecran d'erreur a tous les
+    // visiteurs. Voir le garde-fou dans le composant plus bas.
+    guides: {
+      title: 'Guides Gratuits Visibilité Locale | Elie Ageron',
+      description: "Quatre guides complets et gratuits : créer son site, sortir sur Google, tenir ses réseaux sociaux et filmer au smartphone. Tout est applicable seul.",
+    },
+    about: {
+      title: 'Qui est Elie Ageron | Web Designer Savoie',
+      description: "Web designer et partenaire web à Albertville, en Savoie. Mon parcours, ma façon de travailler, ce que je ne fais pas, et comment se passe un projet.",
+    },
   },
 };
 
@@ -147,13 +159,22 @@ const SEO = ({ page, forceLang, customTitle, customDescription, customCanonical,
   const { language: uiLanguage } = useLanguage();
   // Certains contenus (articles francais seuls) doivent rester annonces en fr.
   const language = forceLang ?? uiLanguage;
-  const data = seoData[language][page];
+  /**
+   * Garde-fou : une clef manquante dans seoData faisait planter la page entiere,
+   * pas seulement ses balises. C'est arrive sur /guides et /a-propos, absents
+   * du dictionnaire francais, qui affichaient l'ecran d'erreur a tous les
+   * visiteurs. On retombe donc sur l'autre langue, puis sur l'accueil.
+   */
+  const data =
+    seoData[language]?.[page] ??
+    seoData[language === 'fr' ? 'en' : 'fr']?.[page] ??
+    seoData[language].home;
   const baseUrl = 'https://elieageron.com';
-  
+
   // Use custom values if provided, otherwise fall back to page defaults
   const title = customTitle || data.title;
   const description = customDescription || data.description;
-  const keywords = pageKeywords[language][page];
+  const keywords = pageKeywords[language]?.[page] ?? pageKeywords[language].home;
   
   const pathMap: Record<string, string> = {
     home: '',
