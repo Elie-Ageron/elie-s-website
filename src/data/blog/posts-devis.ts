@@ -294,6 +294,8 @@ La question revient souvent : faut-il aussi collecter des avis ailleurs que sur 
 
 La réponse courte est que Google reste le seul indispensable, et que les autres se justifient au cas par cas.
 
+Le sujet voisin, celui des annuaires et des citations locales, est traité à part dans [les annuaires en ligne servent-ils encore](/blog/annuaires-locaux-visibilite) : ce sont deux choses différentes qu'on confond souvent.
+
 ## Pourquoi Google domine
 
 C'est le seul endroit où les avis apparaissent directement dans les résultats de recherche et sur la carte, au moment exact où quelqu'un choisit entre trois entreprises.
@@ -395,6 +397,8 @@ C'est peu, c'est tenable, et c'est déjà davantage que la quasi-totalité de vo
 La question se pose à peu près à chaque projet : faut-il payer un photographe, ou est ce que le téléphone suffit ?
 
 Ma réponse est presque toujours un partage, et je la donne d'autant plus librement que je ne fais pas de photographie professionnelle.
+
+Cet article traite l'arbitrage de budget. Pour savoir quelles images mettre, à quel endroit et pourquoi, c'est [quelles photos mettre sur son site](/blog/photos-pour-son-site-web).
 
 ## Ce que le téléphone fait très bien
 

@@ -165,6 +165,8 @@ C'est une des phrases que j'entends le plus souvent, et elle est toujours dite a
 
 C'est vrai, et ce n'est pas injuste. Google ne classe pas l'esthétique. Il y a toujours une raison, et dans presque tous les cas elle est visible en trente minutes.
 
+Cet article suppose que vous êtes visible et mal classé. Si vous n'apparaissez nulle part, le diagnostic est différent et il est dans [mon entreprise n'apparaît pas sur Google Maps](/blog/apparaitre-sur-google-maps).
+
 ## Avant tout : vérifiez qu'il est vraiment devant
 
 Google personnalise les résultats selon votre position et votre historique. Depuis votre bureau, avec votre compte connecté, vous ne voyez pas ce que voient vos clients.
@@ -187,7 +189,7 @@ C'est la cause la plus fréquente après la proximité, et la plus facile à vé
 
 Quatre-vingt-dix avis dont douze du dernier trimestre battent trente avis dont le dernier date de l'an dernier. Le volume compte, la fraîcheur aussi.
 
-C'est aussi la cause la plus rattrapable, parce qu'elle ne dépend que de votre organisation. Demander un avis à chaque client satisfait pendant six mois change complètement la donne. La méthode est dans [obtenir des avis Google](/blog/obtenir-avis-google).
+C'est aussi la cause la plus rattrapable, parce qu'elle ne dépend que de votre organisation. Demander un avis à chaque client satisfait pendant six mois change complètement la donne. Tout est dans [obtenir des avis Google](/blog/obtenir-avis-google).
 
 ## Raison 3 : sa catégorie est mieux choisie
 

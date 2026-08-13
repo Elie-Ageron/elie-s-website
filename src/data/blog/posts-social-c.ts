@@ -112,7 +112,7 @@ Deux reels par semaine, quelques stories quand il se passe quelque chose. Tenu s
 
 Ce rythme ne tient que si la production est groupée : on tourne beaucoup en une fois, on monte groupé, on programme. C'est le seul système que j'ai vu tenir chez des gens qui ont un métier à côté, et il est décrit dans [tourner plusieurs vidéos en une journée](/blog/tourner-plusieurs-videos-une-journee).
 
-C'est aussi exactement ce que je fais pour mes clients : une journée de tournage sur place, puis six à douze publications dans le mois. Le détail est sur [la page réseaux sociaux](/reseaux-sociaux).
+C'est le principe sur lequel je travaille chez mes clients : la production est groupée sur une seule venue, et la diffusion s'étale ensuite. Le détail est sur [la page réseaux sociaux](/reseaux-sociaux).
     `,
   },
   {

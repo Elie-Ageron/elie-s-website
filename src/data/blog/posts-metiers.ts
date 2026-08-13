@@ -110,7 +110,7 @@ Et les photos, toujours les vôtres. Une fiche avec quarante photos de chantiers
 
 Le meilleur moment pour demander un avis, c'est la fin du chantier, quand le client regarde son jardin et qu'il est content. Pas trois semaines après par email.
 
-Sur un métier où la confiance est en jeu et où on vous laisse entrer chez soi, trente avis récents dans votre vallée vous placent devant à peu près tout le monde. La méthode est dans [obtenir des avis Google](/blog/obtenir-avis-google).
+Sur un métier où la confiance est en jeu et où on vous laisse entrer chez soi, trente avis récents dans votre vallée vous placent devant à peu près tout le monde. Le bon moment pour demander et la formulation qui marche sont dans [obtenir des avis Google](/blog/obtenir-avis-google).
 
 ## Lisser les mois creux
 
@@ -252,9 +252,9 @@ Une page à vous, avec votre secteur nommé commune par commune, vos ventes réc
 
 Un point de marché écrit par commune, deux fois par an.
 
-Une vidéo par semaine sur une question de vendeur, filmée au téléphone.
+Des vidéos courtes sur les questions de vendeurs, filmées au téléphone et tournées en une seule fois pour plusieurs semaines.
 
-Rien là dedans ne demande un budget. Ça demande de la régularité, et c'est exactement ce que 90 % de vos concurrents ne feront pas. Si vous voulez qu'on en parle, [écrivez moi](/contact).
+Rien là dedans ne demande un budget. Ça demande de la régularité, et c'est précisément ce que la plupart de vos concurrents ne tiendront pas. Si vous voulez qu'on en parle, [écrivez moi](/contact).
     `,
   },
   {

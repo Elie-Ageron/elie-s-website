@@ -45,7 +45,9 @@ export const googlePosts: BlogPost[] = [
     contentFr: `
 Si vous n'avez qu'une heure à consacrer à votre visibilité ce mois-ci, mettez la ici.
 
-Pour une entreprise locale, la fiche Google Business rapporte des demandes plus vite qu'un site, plus vite que les réseaux sociaux, et elle ne coûte rien. Je le dis alors que mon métier est de faire des sites : c'est la première chose que je regarde chez un nouveau client, et c'est souvent la première chose qu'on corrige.
+Pour une entreprise locale, la fiche Google Business rapporte des demandes plus vite
+
+Précision de périmètre : cet article traite la création et la vérification, quand vous partez de rien. Si votre fiche existe déjà et que vous voulez la régler finement, allez directement à [optimiser sa fiche Google Business](/blog/fiche-google-business-optimiser). qu'un site, plus vite que les réseaux sociaux, et elle ne coûte rien. Je le dis alors que mon métier est de faire des sites : c'est la première chose que je regarde chez un nouveau client, et c'est souvent la première chose qu'on corrige.
 
 ## Ce que c'est, concrètement
 
@@ -292,6 +294,8 @@ Si votre fiche Google a pris quelques mauvais avis et que vous ne savez pas par 
 C'est un des messages que je reçois le plus souvent. "Je suis sur Google Maps, mais quand un client cherche mon métier, je ne sors pas."
 
 Dans presque tous les cas, la cause est dans cette liste, et elle se vérifie en vingt minutes.
+
+Cet article traite un cas précis : vous n'apparaissez pas du tout. Si vous apparaissez mais derrière un concurrent identifié, c'est [pourquoi mon concurrent passe devant moi](/blog/concurrent-devant-moi-google). Et pour la méthode de fond sur la durée, c'est [être premier sur Google dans sa ville](/blog/etre-premier-google-dans-sa-ville).
 
 ## Avant tout : vous ne pouvez pas vous tester vous-même
 

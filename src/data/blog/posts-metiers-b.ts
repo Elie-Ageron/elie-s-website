@@ -612,7 +612,7 @@ La sortie de cette boucle est simple et un peu inconfortable : faites vos premi�
 
 Si vous démarrez avec des tarifs réduits, assumez le et dites pourquoi. Un client qui sait qu'il bénéficie d'un tarif de lancement en échange d'un avis honnête accepte volontiers, et vous ne créez pas d'attente fausse sur vos prix futurs.
 
-Dix avis en deux mois vous mettent devant des entreprises installées depuis cinq ans qui n'ont jamais pensé à en demander. La méthode est dans [obtenir des avis Google](/blog/obtenir-avis-google).
+Dix avis en deux mois vous mettent devant des entreprises installées depuis cinq ans qui n'ont jamais pensé à en demander. Comment demander sans insister, c'est [ici](/blog/obtenir-avis-google).
 
 ### 3. Une page, pas un site
 

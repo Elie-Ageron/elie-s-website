@@ -442,6 +442,8 @@ Une refonte est le seul moment où un site correctement positionné peut tout pe
 
 Ce n'est pas une fatalité et ça n'a rien de sorcier. C'est une checklist, et elle se fait avant, pas après.
 
+Cet article traite le comment : la migration technique, sans perdre ce que Google vous a accordé. Pour savoir si la refonte se justifie, c'est une autre question, et elle est traitée dans [quand refaire son site](/blog/refonte-site-web-quand).
+
 ## Ce qui se passe quand on rate la migration
 
 Google connaît vos anciennes pages, avec leurs adresses exactes. Ces adresses sont ce qu'il a indexé, classé et éventuellement mis en avant.

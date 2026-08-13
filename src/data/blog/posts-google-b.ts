@@ -350,7 +350,7 @@ Il existe une façon d'exister au-delà de votre rayon naturel, et ce n'est pas 
 
 Les avis de clients qui habitent la commune visée. Quand quelqu'un écrit qu'il vous a fait venir à Moûtiers et que ça s'est bien passé, cette information est publique, lisible, et elle vaut plus que n'importe quelle déclaration de zone.
 
-Demandez donc systématiquement un avis à vos clients les plus éloignés. Ce sont les plus précieux, et personne ne pense à le faire. La méthode est dans [obtenir des avis Google](/blog/obtenir-avis-google).
+Demandez donc systématiquement un avis à vos clients les plus éloignés. Ce sont les plus précieux, et personne ne pense à le faire. Voir [obtenir des avis Google](/blog/obtenir-avis-google) pour la marche à suivre.
 
 ## Le cas du prestataire qui travaille à distance
 

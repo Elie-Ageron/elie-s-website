@@ -132,7 +132,7 @@ Ce que vous découvrirez, c'est ce que ces outils savent de votre marché local.
     slug: 'mesurer-si-sa-communication-rapporte',
     titleFr: 'Savoir si votre communication rapporte quelque chose',
     excerptFr:
-      "La plupart des indépendants ne savent pas d'où viennent leurs clients. Une question posée systématiquement règle 80 % du problème.",
+      "La plupart des indépendants ne savent pas d'où viennent leurs clients. Une seule question, posée systématiquement, suffit à le savoir.",
     seoTitleFr: 'Savoir si sa Communication Rapporte',
     seoDescFr:
       "Comment mesurer ce que rapportent votre site, vos réseaux et votre fiche Google, sans outil compliqué et sans se mentir sur les chiffres.",
@@ -324,7 +324,7 @@ Et une heure par trimestre pour regarder ce que ça donne, comme décrit dans [s
 
 Le principe qui change tout : ne faites jamais une chose à la fois.
 
-Une session de tournage d'une demi-journée par mois produit de quoi publier plusieurs semaines, alors que tourner une vidéo par semaine coûte quatre fois plus de temps pour le même résultat. La méthode est dans [tourner plusieurs vidéos en une journée](/blog/tourner-plusieurs-videos-une-journee).
+Une seule session de tournage dans le mois produit de quoi publier plusieurs semaines, alors que sortir la caméra chaque semaine coûte beaucoup plus de temps pour le même résultat. La méthode est dans [tourner plusieurs vidéos en une journée](/blog/tourner-plusieurs-videos-une-journee).
 
 Même chose pour l'écriture : une session de deux heures qui produit quatre textes bat quatre sessions de trente minutes.
 
@@ -332,7 +332,7 @@ La raison est le temps de mise en route. Sortir le matériel, se remettre dans l
 
 ## Le mois type
 
-Une demi-journée, une fois par mois : tournage, photos, écriture. C'est le gros morceau.
+Une session groupée, une fois par mois : tournage, photos, écriture. C'est le gros morceau.
 
 Une heure dans la foulée : montage, programmation, calendrier.
 

@@ -329,7 +329,7 @@ export const hauteSavoieCities: CityData[] = [
       h1Highlight: 'Rumilly',
       h2: "Un bassin de travail, entre Annecy et Aix-les-Bains.",
       intro:
-        "L'Albanais est un territoire de production plus que de tourisme, coincé entre deux agglomérations qui aspirent l'attention. C'est aussi un bassin où la concurrence en ligne est nettement plus faible qu'à Annecy, ce qui en fait un des endroits où l'on obtient des résultats le plus vite.",
+        "L'Albanais est un territoire de production plus que de tourisme, coincé entre deux agglomérations qui aspirent l'attention. C'est aussi un bassin où la concurrence en ligne est nettement plus faible qu'à Annecy, ce qui rend le travail de visibilité nettement moins disputé qu'à côté.",
       breadcrumb: 'Création Site Web Rumilly',
     },
     en: {
@@ -367,7 +367,7 @@ export const hauteSavoieCities: CityData[] = [
       context: [
         "Rumilly est la ville centre de l'Albanais, un territoire de plaine et de collines entre Annecy et Aix-les-Bains. Contrairement à ses deux voisines, ce n'est pas un bassin touristique : c'est un bassin de production, avec de l'industrie, de l'agroalimentaire, de l'agriculture et un artisanat de fabrication.",
         "La position entre deux agglomérations a un effet paradoxal. Beaucoup d'habitants travaillent à Annecy ou à Chambéry, ce qui vide le territoire en journée, mais l'activité économique locale reste réelle et les entreprises d'ici servent souvent un rayon large.",
-        "Pour la visibilité en ligne, c'est une bonne nouvelle. La concurrence sur les recherches locales y est nettement plus faible qu'à Annecy, où le moindre métier est disputé par des dizaines d'entreprises installées. Une fiche Google bien tenue et quelques pages sérieuses suffisent souvent à prendre la première place en quelques mois.",
+        "Pour la visibilité en ligne, c'est une bonne nouvelle. La concurrence sur les recherches locales y est nettement plus faible qu'à Annecy, où le moindre métier est disputé par des dizaines d'entreprises installées. Une fiche Google bien tenue et quelques pages sérieuses y pèsent donc plus lourd qu'ailleurs, même si personne ne peut promettre une position : le classement de Google ne se contrôle pas.",
       ],
       blocks: [
         {

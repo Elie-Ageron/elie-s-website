@@ -101,7 +101,7 @@ C'est un avantage rare : dans la plupart des stations, la concurrence sur ce can
 
 Le déroulé de création est ici : [créer sa fiche Google Business](/blog/creer-fiche-google-business). Deux points spécifiques à la location : choisissez la catégorie la plus précise que Google propose pour votre type d'hébergement, et remplissez sérieusement les photos et la description.
 
-Ensuite, demandez des avis Google à vos locataires satisfaits, en plus des avis qu'ils laissent sur les plateformes. Ce sont deux systèmes séparés, et les avis Google, eux, vous appartiennent au sens où ils restent visibles quoi qu'il arrive à votre annonce. La méthode est dans [obtenir des avis Google](/blog/obtenir-avis-google).
+Ensuite, demandez des avis Google à vos locataires satisfaits, en plus des avis qu'ils laissent sur les plateformes. Ce sont deux systèmes séparés, et les avis Google, eux, vous appartiennent au sens où ils restent visibles quoi qu'il arrive à votre annonce. Le déroulé est dans [obtenir des avis Google](/blog/obtenir-avis-google).
 
 ## Les réseaux sociaux, pour ce qu'ils font vraiment
 
@@ -249,7 +249,7 @@ Deux publications par semaine hors saison, une par semaine en pleine saison. C'e
 
 Ce rythme ne tient que si la matière est déjà tournée. C'est tout l'intérêt de filmer en saison pour publier après : la partie difficile est faite au moment où vous êtes de toute façon sur place.
 
-C'est exactement le principe sur lequel je travaille avec mes clients : une journée de tournage sur place, puis les publications s'étalent sur le mois. Le fonctionnement est décrit sur [la page réseaux sociaux](/reseaux-sociaux).
+C'est le fonctionnement que j'applique chez mes clients : tout se tourne en une seule venue, et les publications sortent ensuite, six à douze dans le mois. Le détail est sur [la page réseaux sociaux](/reseaux-sociaux).
 
 Si vous tenez un hébergement en Tarentaise, en Beaufortain ou dans la combe de Savoie et que le compte dort dix mois par an, [écrivez moi](/contact). Je suis à Albertville, on peut en parler sur place.
     `,

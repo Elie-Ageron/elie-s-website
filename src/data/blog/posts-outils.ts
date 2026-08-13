@@ -46,6 +46,8 @@ Les offres à quelques centaines d'euros existent, elles sont réelles, et elles
 
 Le problème est qu'elles sont comparées à des prestations complètes, comme si c'était le même produit. Ça ne l'est pas, et personne ne l'explique.
 
+Cet article traite uniquement ce que contient une offre à bas prix et les clauses à vérifier. Pour l'arbitrage entre le faire vous-même et le faire faire, c'est [faire son site soi-même ou passer par quelqu'un](/blog/faire-son-site-soi-meme-ou-pro). Pour le choix du type de prestataire, c'est [agence, freelance ou plateforme](/blog/agence-web-freelance-ou-plateforme).
+
 ## Ce que vous achetez réellement
 
 À ce niveau de prix, vous achetez une mise en ligne.
@@ -169,6 +171,8 @@ Ce qui n'est jamais acceptable, quel que soit le prix, c'est de ne pas posséder
 Il y a un ordre à respecter, et il n'est pas intuitif.
 
 L'erreur consiste à annoncer d'abord et à s'organiser ensuite. À partir de l'annonce, la personne en face n'a plus aucune raison de vous répondre vite, et une partie des transitions se bloquent exactement là.
+
+Cet article suppose que vous avez encore le contact avec votre prestataire. S'il ne répond plus du tout, la marche à suivre n'est pas celle-ci : allez directement à [récupérer un site dont on a perdu les accès](/blog/recuperer-site-web-acces-perdus).
 
 ## Avant tout : est-ce vraiment le prestataire
 
