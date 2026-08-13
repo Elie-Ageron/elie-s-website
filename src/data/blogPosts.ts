@@ -2022,7 +2022,7 @@ Vous n'avez rien à préparer avant. Pas de sujets à trouver, pas de texte à �
 
 On tourne. Je pose des questions, vous répondez. On refait autant de prises qu'il faut. La plupart des gens sont crispés les vingt premières minutes puis oublient la caméra.
 
-Ensuite vous retournez travailler, et pendant les quatre semaines suivantes vos vidéos sortent 2 à 3 fois par semaine sans que vous ayez à y penser.
+Ensuite vous retournez travailler, et pendant les quatre semaines suivantes vos vidéos sortent, six à douze dans le mois, sans que vous ayez à y penser.
 
 ## Ce qui se passe de mon côté entre deux tournages
 

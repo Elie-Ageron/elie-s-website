@@ -61,9 +61,15 @@ const offerPatterns = [
   /je viens filmer une demi-journ[ée]e/gi,
   /demi-journ[ée]e de tournage par mois/gi,
   /2 [àa] 3 vid[ée]os par semaine/gi,
+  /2 [àa] 3 fois par semaine/gi,
   /deux [àa] trois publications par semaine/gi,
+  /publication 2-3 fois par semaine/gi,
 ];
-for (const [file, src] of Object.entries(sources)) {
+// index.html et llms.txt decrivent aussi l'offre, hors du dossier data :
+// le fallback noscript est lu par les crawleurs, llms.txt par les moteurs
+// de reponse. Une offre perimee y reste invisible en relecture.
+const offerFiles = { ...sources, 'index.html': read('index.html'), 'public/llms.txt': read('public/llms.txt') };
+for (const [file, src] of Object.entries(offerFiles)) {
   for (const re of offerPatterns) {
     const hits = src.match(re);
     if (hits) errors.push(`${file} : offre perimee "${hits[0]}" (CLAUDE.md : journee entiere, 6 a 12 publications)`);
