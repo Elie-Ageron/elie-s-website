@@ -67,7 +67,10 @@ function drawCover(ctx: CanvasRenderingContext2D, img: HTMLImageElement, cw: num
 }
 
 // ─── Version mobile : 3 cartes statiques ─────────────────────────────────────
-const MobilePhases = ({ phases }: { phases: typeof PHASES.fr }) => (
+/** Forme d'une phase, independante de la langue. */
+type Phase = { label: string; line1: string; line2: string; body: string };
+
+const MobilePhases = ({ phases }: { phases: readonly Phase[] }) => (
   <section style={{ background: 'hsl(30 20% 98%)', padding: '4rem 1.25rem' }}>
     <div style={{ maxWidth: 480, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
       {phases.map((phase, i) => (
@@ -122,7 +125,7 @@ const MobilePhases = ({ phases }: { phases: typeof PHASES.fr }) => (
 );
 
 // ─── Version desktop : canvas scroll-driven ───────────────────────────────────
-const DesktopScrollVideo = ({ phases, language }: { phases: typeof PHASES.fr; language: string }) => {
+const DesktopScrollVideo = ({ phases, language }: { phases: readonly Phase[]; language: string }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef    = useRef<HTMLCanvasElement>(null);
   const hiddenVideo  = useRef<HTMLVideoElement>(null);

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { ElementType } from 'react';
-import { Calendar, MessageCircle, Mail, ArrowRight } from 'lucide-react';
+import { Calendar, MessageCircle, Mail, Phone, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useCalendly } from '@/contexts/CalendlyContext';
 import ScrollReveal from '@/components/animations/ScrollReveal';
@@ -11,7 +11,8 @@ interface ContactMethodsSectionProps {
 }
 
 const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMethodsSectionProps) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const fr = language === 'fr';
   const { openCalendly } = useCalendly();
 
   const contactMethods: Array<{
@@ -31,6 +32,18 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
       cta: t('home.contact.call.cta'),
       onClick: openCalendly,
       recommended: true,
+      newTab: false,
+    },
+    {
+      // Manquait alors que c'est le canal majoritaire d'une clientele locale.
+      icon: Phone,
+      title: fr ? 'Téléphone' : 'Phone',
+      description: fr
+        ? "Le plus direct. Si je ne réponds pas, c'est que je suis en rendez-vous, et je rappelle dans la journée."
+        : 'The most direct. If I do not pick up I am in a meeting, and I call back the same day.',
+      cta: '06 95 55 53 18',
+      href: 'tel:+33695555318',
+      recommended: false,
       newTab: false,
     },
     {
@@ -79,7 +92,7 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
           </ScrollReveal>
         )}
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {contactMethods.map((method, index) => {
             const sharedMotionProps = {
               initial: {
@@ -93,7 +106,7 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
               whileHover: { 
                 y: -6, 
                 scale: 1.01,
-                transition: { duration: 0.15, ease: "easeOut" }
+                transition: { duration: 0.15, ease: "easeOut" as const }
               },
               className: `relative glass-card rounded-xl sm:rounded-2xl p-5 sm:p-8 pt-8 sm:pt-10 cursor-pointer transition-all group active:scale-[0.98] ${
                 method.recommended ? 'neon-border' : 'hover:border-primary/30'
