@@ -211,15 +211,16 @@ Le contenu du site est passé au filtre "signes d'écriture IA". À maintenir :
 
 ## Architecture de contenu (refonte SEO, août 2026)
 
-### Hub and spoke : 3 pages piliers + 47 articles
+### Hub and spoke : 4 pages piliers + 139 articles
 Source unique : `src/data/guides.ts`. Chaque guide est un hub long, découpé en chapitres, qui renvoie vers ses articles satellites. Les articles remontent vers leur pilier via leur champ `pillar`.
 
 - `/guides/reseaux-sociaux-entreprise-locale` (11 chapitres) — pilier 1
 - `/guides/video-smartphone-entreprise` (8 chapitres) — production au smartphone
 - `/guides/visibilite-google-locale` (8 chapitres) — fiche Google, avis, pages villes
+- `/guides/creer-site-web-tpe` (10 chapitres) — création de site, le front n°1
 - `/guides` — index, lié depuis le header, le footer et le blog
 
-### Blog : 47 articles, 6 catégories indexées
+### Blog : 139 articles, 6 catégories indexées
 - Articles pré-août 2026 : bilingues, dans `src/data/blogPosts.ts` (`legacyPosts`)
 - Articles depuis août 2026 : **français uniquement** (`frOnly: true`), répartis dans `src/data/blog/posts-*.ts`
 - Types et catégories : `src/data/blog/types.ts`
@@ -228,10 +229,12 @@ Source unique : `src/data/guides.ts`. Chaque guide est un hub long, découpé en
 - Chaque article porte : `categorySlug`, `tags`, `related`, `pillar`, `faqFr` (rendu + schéma FAQPage)
 - `getRelatedPosts()` respecte d'abord `related`, puis complète par catégorie et tags partagés
 
-### Pages locales : 11 villes
+### Pages locales : 15 villes
 Source : `src/data/cities/`. Chaque page porte un `depthFr` avec contexte économique réel, secteurs, communes desservies, temps de trajet depuis Albertville, blocs éditoriaux, angle réseaux sociaux et FAQ propre.
 
-Albertville, Chambéry, Aix-les-Bains, Ugine, Moûtiers, Bourg-Saint-Maurice, Saint-Jean-de-Maurienne, La Ravoire, Annecy, Savoie, Haute-Savoie.
+Albertville, Chambéry, Aix-les-Bains, Ugine, Moûtiers, Bourg-Saint-Maurice, Saint-Jean-de-Maurienne, La Ravoire, Annecy, Savoie, Haute-Savoie, Cluses, Thonon-les-Bains, Sallanches, Rumilly.
+
+Chaque page porte aussi un `depthFr.articles` : six articles du blog choisis pour le tissu économique du bassin. Les slugs sont validés par `check:content`.
 
 > Une page locale sans contenu spécifique ne sert à rien et peut desservir. Ne jamais dupliquer une page en changeant seulement le nom de la commune.
 
@@ -245,8 +248,11 @@ Signal E-E-A-T principal. `AuthorCard.tsx` est affiché en bas de chaque article
 Trois scripts remplacent du travail manuel qu'on oubliait de refaire :
 
 - `npm run gen:covers` — visuels de partage 1200x630 (SVG + PNG) dans `public/blog/covers/`. Style éditorial imprimé : fond papier, filet rose, grille de colonnes, titre typographique et marque géométrique déterministe. **Aucun dégradé diffus ni sphère lumineuse** : ce sont les signatures d'une image générée automatiquement.
-- `npm run gen:sitemap` — reconstruit `public/sitemap.xml` depuis les sources (81 URL). **Ne plus éditer le sitemap à la main.**
-- `npm run gen:all` — les deux.
+- `npm run gen:sitemap` — reconstruit `public/sitemap.xml` depuis les sources. **Ne plus éditer le sitemap à la main.**
+- `npm run gen:llms` — régénère les sections de listing de `public/llms.txt` et de `public/llms-full.txt`. La prose écrite à la main est conservée. **Ne plus lister les articles à la main :** les deux fichiers annonçaient encore 47 et 17 articles alors que le blog en comptait 139.
+- `npm run gen:index` — régénère `src/data/blogIndex.ts`, l'index léger des articles.
+  > ⚠️ **Ne jamais importer `@/data/blogPosts` depuis une page qui n'affiche pas d'article.** Ce module embarque le texte intégral et pèse environ 1 Mo une fois compilé : un seul import y fait tomber tout le corpus dans le lot de téléchargement de la page. Pour afficher des liens, importer `@/data/blogIndex` (36 Ko). C'est arrivé en août 2026 sur l'accueil, les deux pages de service et les quinze pages locales.
+- `npm run gen:all` — les quatre.
 
 À lancer après tout ajout d'article, de ville ou de guide.
 
@@ -254,7 +260,7 @@ Trois scripts remplacent du travail manuel qu'on oubliait de refaire :
 
 ## Pré-rendu HTML
 
-`scripts/prerender.mjs` produit un HTML complet pour les 82 routes après `vite build`.
+`scripts/prerender.mjs` produit un HTML complet pour les 179 routes après `vite build`, puis **contrôle ce qu'il a réellement écrit**.
 
 Pourquoi : sans lui, chaque URL est servie comme une coquille vide. Google finit par exécuter le JS, avec du retard. Les moteurs de réponse (ChatGPT, Perplexity) ne l'exécutent pas et ne voient rien.
 
@@ -262,6 +268,8 @@ Pourquoi : sans lui, chaque URL est servie comme une coquille vide. Google finit
 - **S'il ne trouve aucun navigateur, il sort en succès** : un pré-rendu impossible ne casse jamais un déploiement
 - Sur Vercel, l'image de build n'a pas de Chromium : le pré-rendu est donc ignoré sauf si `PRERENDER_BROWSER` est défini. Pour vérifier en local : `npm run build:prerender`
 - `react-snap` n'est plus appelé directement (son Chromium 1.x ne se télécharge plus)
+- Il tourne **en séquentiel** (`concurrency: 1`, `waitFor: 2500`). À deux onglets, les pages lourdes se disputaient le processeur et deux ou trois sortaient sans `canonical` à chaque exécution, jamais les mêmes. Compter environ 12 minutes.
+- **Le script vérifie sa propre sortie** : il supprime les pages figées sur l'écran d'erreur, parce qu'un fichier cassé provoque ensuite une erreur d'hydratation chez le visiteur et vaut moins que pas de fichier, et il liste les pages dont le `<head>` est incomplet. Une sortie propre affiche « Aucune anomalie ».
 
 ---
 
