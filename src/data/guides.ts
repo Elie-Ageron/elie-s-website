@@ -323,7 +323,7 @@ export const guides: Guide[] = [
           "Beaucoup d'entreprises travaillent la mauvaise zone pendant des mois. Elles investissent dans leur site alors que l'essentiel du trafic local part dans le bloc carte, qui ne se gagne pas avec un site mais avec une fiche Google et des avis.",
           "Le bloc carte est aussi le plus accessible pour une petite structure, parce que la concurrence y est géographique. Vous ne vous battez pas contre des annuaires nationaux, vous vous battez contre les quatre autres entreprises de votre commune.",
         ],
-        articles: ['etre-premier-google-dans-sa-ville', 'pourquoi-site-pas-sur-google'],
+        articles: ['etre-premier-google-dans-sa-ville', 'pourquoi-site-pas-sur-google', 'apparaitre-sur-google-maps'],
       },
       {
         title: 'La fiche Google Business, avant tout le reste',
@@ -332,7 +332,7 @@ export const guides: Guide[] = [
           "Trois réglages pèsent plus que les autres : la catégorie principale, qui doit être exactement votre métier dans les termes de Google et non une catégorie plus large ; la description, qui doit nommer vos communes en toutes lettres ; et les photos, qu'il faut ajouter au moins une fois par mois.",
           "Deux erreurs coûtent particulièrement cher. Mettre un mot clé dans le nom de l'entreprise est une infraction explicite, régulièrement signalée par les concurrents. Et abandonner la fiche après l'avoir créée : une fiche complète mais figée depuis deux ans perd du terrain face à une fiche moins complète mais entretenue.",
         ],
-        articles: ['fiche-google-business-optimiser'],
+        articles: ['creer-fiche-google-business', 'fiche-google-business-optimiser', 'apparaitre-sur-google-maps'],
       },
       {
         title: 'Les avis, le nerf de la guerre',
@@ -341,7 +341,7 @@ export const guides: Guide[] = [
           "Le seul point qui compte vraiment est le moment de la demande. Demandez quand la personne exprime sa satisfaction, pas trois jours plus tard par email. Ce moment se présente plusieurs fois par semaine dans presque tous les métiers.",
           "Répondre est aussi important que collecter, en particulier sur les avis négatifs. Le lecteur d'un avis négatif ne cherche pas qui a raison, il cherche comment vous réagissez quand ça se passe mal. C'est une information qu'il ne peut obtenir nulle part ailleurs.",
         ],
-        articles: ['obtenir-avis-google'],
+        articles: ['obtenir-avis-google', 'repondre-avis-negatif-google'],
       },
       {
         title: 'Des pages qui répondent à des recherches réelles',
@@ -386,7 +386,7 @@ export const guides: Guide[] = [
           "Les résultats classiques demandent trois à six mois, parfois davantage sur une ville disputée. Il n'y a pas de raccourci, et toute personne qui vous en promet un devrait vous inquiéter.",
           "Un dernier avertissement : si vous refaites votre site, conservez les adresses de vos pages ou mettez en place des redirections. C'est le moment où l'on perd en une journée ce qui s'est construit en quatre ans, et personne ne le mentionne dans les devis.",
         ],
-        articles: ['refonte-site-web-quand', 'combien-coute-un-site-web'],
+        articles: ['combien-de-temps-referencement-google', 'annuaires-locaux-visibilite'],
       },
     ],
     faq: [
