@@ -150,11 +150,12 @@ France entière (travail 100% à distance possible). Belgique, Suisse.
 - Site web : https://elieageron.com/blog/categorie/site-web
 - Conversion : https://elieageron.com/blog/categorie/conversion
 
-## Articles du blog (124)
+## Articles du blog (129)
 
 - Acheter des abonnés : ce qui se passe réellement après : https://elieageron.com/blog/acheter-abonnes-pourquoi-non
 - Agence, freelance ou plateforme : à qui confier son site : https://elieageron.com/blog/agence-web-freelance-ou-plateforme
 - Agent immobilier indépendant : exister à côté des portails : https://elieageron.com/blog/agent-immobilier-local-visibilite
+- Aller chercher les clients professionnels quand on est artisan : https://elieageron.com/blog/demarcher-les-professionnels
 - Anatomie d'une landing page qui convertit : https://elieageron.com/blog/landing-page-efficace
 - Artisan en Savoie : les réseaux sociaux servent-ils vraiment à quelque chose ? : https://elieageron.com/blog/reseaux-sociaux-artisan-savoie
 - Artisan, avez-vous vraiment besoin d'un site web ? : https://elieageron.com/blog/site-web-artisan
@@ -180,9 +181,11 @@ France entière (travail 100% à distance possible). Belgique, Suisse.
 - Déléguer ses réseaux sociaux : comment ça se passe concrètement : https://elieageron.com/blog/deleguer-reseaux-sociaux
 - Électricien, plombier, chauffagiste : deux métiers dans un seul : https://elieageron.com/blog/electricien-plombier-chauffagiste-visibilite
 - Être cité par ChatGPT et les moteurs de réponse : https://elieageron.com/blog/chatgpt-perplexite-entreprise-locale
+- Faire revenir ses clients quand on vend une fois tous les dix ans : https://elieageron.com/blog/fideliser-ses-clients-artisan
 - Faire son site soi-même ou passer par quelqu'un : https://elieageron.com/blog/faire-son-site-soi-meme-ou-pro
 - Faire un calendrier éditorial quand on n'a pas le temps : https://elieageron.com/blog/calendrier-editorial-reseaux-sociaux
 - Faut-il afficher ses prix sur son site : https://elieageron.com/blog/afficher-ses-prix-ou-pas
+- Faut-il mettre une IA qui répond sur son site : https://elieageron.com/blog/chatbot-ia-site-tpe
 - Faut-il un site en anglais quand on reçoit des clients étrangers : https://elieageron.com/blog/site-bilingue-clientele-etrangere
 - Fiche Google suspendue ou refusée : que faire : https://elieageron.com/blog/fiche-google-suspendue-que-faire
 - Filmer avec ses salariés sans mettre personne mal à l'aise : https://elieageron.com/blog/filmer-avec-son-equipe
@@ -204,7 +207,9 @@ France entière (travail 100% à distance possible). Belgique, Suisse.
 - Le son compte plus que l'image, et personne ne s'en occupe : https://elieageron.com/blog/son-video-smartphone
 - Les annuaires en ligne servent-ils encore à quelque chose : https://elieageron.com/blog/annuaires-locaux-visibilite
 - Les avis ailleurs que sur Google : lesquels comptent : https://elieageron.com/blog/avis-clients-autres-plateformes
+- Les groupes de commune : le canal que personne ne pilote : https://elieageron.com/blog/groupes-facebook-commune
 - Les hashtags servent-ils encore à quelque chose en 2026 : https://elieageron.com/blog/hashtags-encore-utiles
+- Les marchés publics quand on est une petite entreprise : https://elieageron.com/blog/marches-publics-petite-entreprise
 - Les photos de votre site en disent plus que vos textes : https://elieageron.com/blog/photos-pour-son-site-web
 - Les réglages à faire sur un compte Instagram professionnel : https://elieageron.com/blog/compte-instagram-professionnel-reglages
 - Les seules statistiques Instagram qui méritent votre attention : https://elieageron.com/blog/statistiques-instagram-comprendre
