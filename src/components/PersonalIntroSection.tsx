@@ -57,7 +57,14 @@ const PersonalIntroSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="order-2 md:order-1 md:col-span-4"
+            /* 🔴 Le portrait portait `order-2` : sur telephone il arrivait
+               apres le titre, les deux paragraphes et le lien, donc apres tout
+               le texte. Cette section a ete remontee juste avant le formulaire
+               pour que le visage tombe avant la demande de numero ; le laisser
+               en dernier annulait le deplacement sur l'appareil ou la plupart
+               des gens arrivent. L'ordre du DOM suffit : photo, puis nom. Sur
+               grand ecran `md:col-span-4` le remet a gauche, rien ne change. */
+            className="md:col-span-4"
           >
             <img
               src={eliePortrait}
@@ -66,7 +73,7 @@ const PersonalIntroSection = () => {
                   ? 'Elie Ageron, web designer et créateur de contenu à Albertville, en Savoie'
                   : 'Elie Ageron, web designer and content creator in Albertville, Savoie'
               }
-              className="soft-shadow mx-auto aspect-[4/5] w-full max-w-[220px] rounded-2xl object-cover sm:max-w-[260px] md:mx-0 md:max-w-none"
+              className="soft-shadow mx-auto aspect-[4/5] w-full max-w-[240px] rounded-2xl object-cover sm:max-w-[280px] md:mx-0 md:max-w-none"
               width={320}
               height={400}
               loading="lazy"
@@ -79,7 +86,7 @@ const PersonalIntroSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="order-1 md:order-2 md:col-span-8"
+            className="md:col-span-8"
           >
             <h2 id="intro-heading" className="section-title">
               <span className="text-foreground">{fr ? "Je m'appelle Elie Ageron. " : 'My name is Elie Ageron. '}</span>

@@ -123,7 +123,7 @@ const useFaq = () => {
     ? [
         {
           q: "C'est vraiment gratuit ? Où est le piège ?",
-          a: "Il n'y en a pas, et la raison est simple : je prends trois clients à la fois. Je n'ai aucun intérêt à courir après tout le monde, j'ai intérêt à ce que les bonnes personnes sachent que j'existe. Un audit me prend trente à quarante-cinq minutes. Si ça vous parle, vous me recontactez. Si ça ne vous parle pas, j'aurai passé quarante-cinq minutes à apprendre un métier de plus.",
+          a: "Il n'y en a pas. Un audit me prend trente à quarante-cinq minutes, et je le fais parce que c'est la façon la moins pénible de rencontrer des gens : je regarde leur entreprise avant de leur parler, au lieu de leur téléphoner à froid. Si ça vous parle, vous me recontactez. Si ça ne vous parle pas, j'aurai passé quarante-cinq minutes à apprendre un métier de plus.",
         },
         {
           q: 'Combien de temps avant de la recevoir ?',
@@ -527,8 +527,8 @@ const AuditGratuit = () => {
             </p>
             <p className="mt-7 text-sm text-muted-foreground">
               {fr
-                ? 'Elie Ageron, Albertville. Je prends trois clients à la fois.'
-                : 'Elie Ageron, Albertville. I take three clients at a time.'}
+                ? "Elie Ageron, Albertville. Je filme en Savoie, en Haute-Savoie, et je travaille à distance ailleurs."
+                : 'Elie Ageron, Albertville. I film across Savoie and Haute-Savoie, and work remotely elsewhere.'}
             </p>
           </div>
 

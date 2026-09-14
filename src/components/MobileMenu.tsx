@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { X } from 'lucide-react';
+import { MessageCircle, Phone, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useCalendly } from '@/contexts/CalendlyContext';
@@ -163,6 +163,32 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                 >
                   {t('nav.book')}
                 </Button>
+
+                {/* 🔴 Appeler et ecrire directement etaient au dix-huitieme
+                    ecran, dans le pied de page. Une relectrice deja decidee l'a
+                    releve : sur un telephone, quelqu'un qui veut simplement
+                    appeler doit traverser toute la page pour trouver le numero,
+                    alors qu'il tient l'appareil qui sert a telephoner. Les deux
+                    canaux directs sont maintenant a une touche du menu, sous
+                    les deux actions principales et non a leur place. */}
+                <div className="flex items-center justify-center gap-6 pt-1">
+                  <a
+                    href="tel:+33695555318"
+                    onClick={onClose}
+                    className="inline-flex min-h-[44px] items-center gap-2 text-sm font-semibold text-foreground transition-colors hover:text-primary"
+                  >
+                    <Phone className="h-4 w-4 text-primary" aria-hidden="true" />
+                    06 95 55 53 18
+                  </a>
+                  <a
+                    href="https://wa.me/33695555318"
+                    onClick={onClose}
+                    className="inline-flex min-h-[44px] items-center gap-2 text-sm font-semibold text-foreground transition-colors hover:text-primary"
+                  >
+                    <MessageCircle className="h-4 w-4 text-primary" aria-hidden="true" />
+                    WhatsApp
+                  </a>
+                </div>
               </motion.div>
             </div>
           </motion.div>

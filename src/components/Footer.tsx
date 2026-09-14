@@ -1,5 +1,5 @@
 ﻿import { motion } from 'framer-motion';
-import { Heart, Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 import logo from '@/assets/logo.webp';
@@ -49,15 +49,22 @@ const Footer = () => {
                   Elie Ageron
                 </span>
               </Link>
+              {/* 🔴 Finissait par « Toute votre presence en ligne, geree par une
+                  seule personne. » Elie avait fait retirer exactement cette
+                  formule du titre de `/services` : *« ca fait un peu chelou, je
+                  ferais pas confiance »*. Elle se voulait rassurante et elle
+                  inquietait, parce qu'elle nomme une limite au lieu d'un
+                  service. Elle avait survecu ici, donc sur les quatorze pages.
+
+                  🔴 Et « Fait avec passion ❤️ » a saute avec elle : un coeur
+                  rouge et un mot que tout le monde ecrit ne disent rien sur ce
+                  qu'on achete, et ils sont a deux lignes du numero de
+                  telephone, qui lui est verifiable. */}
               <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
                 {language === 'fr'
-                  ? "Votre partenaire web de A à Z : site internet, vidéos et publications pour vos réseaux sociaux, fiche Google, identité de marque. Toute votre présence en ligne, gérée par une seule personne."
-                  : 'Your all-in-one web partner: website, videos and posts for your social media, Google profile, brand identity. Your entire online presence, managed by one person.'}
+                  ? "Votre partenaire web de A à Z : site internet, vidéos et publications pour vos réseaux sociaux, fiche Google, identité de marque. Basé à Albertville, en Savoie."
+                  : 'Your all-in-one web partner: website, videos and posts for your social media, Google profile, brand identity. Based in Albertville, Savoie.'}
               </p>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground pt-1">
-                {t('footer.made')}
-                <Heart className="w-3.5 h-3.5 text-primary fill-primary" aria-hidden="true" />
-              </div>
             </div>
 
             {/* Navigation Column */}

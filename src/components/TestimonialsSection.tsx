@@ -320,7 +320,13 @@ const TestimonialsSection = () => {
             className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth -mx-4 px-4 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
             {cards.map((item, i) => {
-              const isLong = item.text.length > 120;
+              /* Seuil monte de 120 a 240 caracteres, et la coupe passe de 4 a
+                 6 lignes. Sur un telephone, trois des quatre avis se faisaient
+                 couper a « je recommande Elie sa... » : un temoignage qu'on ne
+                 peut pas lire n'est plus une preuve, et il demande un clic de
+                 plus au seul endroit ou on n'en veut aucun. Seul l'avis long de
+                 Naura garde le bouton. */
+              const isLong = item.text.length > 240;
               const isOpen = expandedCards[i];
               return (
               <article
@@ -347,7 +353,7 @@ const TestimonialsSection = () => {
                 <blockquote className="flex-1">
                   <p
                     className={`text-[1.05rem] text-foreground/90 leading-relaxed text-pretty ${
-                      isLong && !isOpen ? 'line-clamp-4 sm:line-clamp-none' : ''
+                      isLong && !isOpen ? 'line-clamp-6 sm:line-clamp-none' : ''
                     }`}
                   >
                     {item.text}
@@ -376,8 +382,12 @@ const TestimonialsSection = () => {
                     />
                   </div>
                   <div className="min-w-0">
-                    <p className="text-sm font-semibold text-foreground leading-tight truncate">{item.founder}</p>
-                    <p className="text-xs text-muted-foreground truncate">
+                    <p className="text-sm font-semibold leading-tight text-foreground">{item.founder}</p>
+                    {/* `truncate` coupait « Fondatrice, Naura Conseils Finance… »
+                        sur telephone, donc l'entreprise qui signe l'avis. Ce
+                        nom est la moitie de la valeur du temoignage : il passe
+                        a la ligne au lieu d'etre ampute. */}
+                    <p className="text-sm leading-snug text-muted-foreground">
                       {item.role} · {item.date}
                     </p>
                   </div>

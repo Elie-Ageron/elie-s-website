@@ -168,8 +168,19 @@ const SocialPillarSection = () => {
             faut que tu le remontes pour qu'il soit a cote des trois points, il
             est trop bas ». Le telephone demarre maintenant au niveau du titre
             et se termine au-dessus du prix plancher. */}
+        {/* 🔴 Sur telephone, le telephone arrivait en dernier.
+            La grille empile ses colonnes : le visiteur lisait le titre, les
+            deux chapos, les trois etapes et le bloc de fin, soit cinq ecrans,
+            avant de voir la maquette. C'est la piece qu'Elie prefere dans la
+            page, et c'est la seule qui montre le livrable au lieu de le
+            decrire. Elle est maintenant le troisieme element, juste apres le
+            chapo, sur l'appareil ou la plupart des gens arrivent.
+
+            Les trois enfants sont places explicitement en `col-start` et
+            `row-start` pour le bureau, ou rien ne bouge : titre puis etapes a
+            gauche, telephone colle a droite sur les deux rangees. */}
         <div className="grid items-start gap-14 lg:grid-cols-[1fr_340px] lg:gap-20">
-          <div>
+          <div className="lg:col-start-1 lg:row-start-1">
             <ScrollReveal direction="up">
               <h2 id="social-pillar-heading" className="section-title">
                 {fr ? 'Un jour de tournage. ' : 'One day of filming. '}
@@ -184,12 +195,30 @@ const SocialPillarSection = () => {
               </p>
               <p className="section-lede mt-4">
                 {fr
-                  ? 'Je travaille avec des artisans, des restaurateurs, des thérapeutes et des formateurs, entre Albertville, Chambéry et Annecy. Plus votre métier se voit, plus il est facile à filmer.'
-                  : 'I work with tradespeople, restaurant owners, therapists and trainers, between Albertville, Chambéry and Annecy. The more physical your trade, the easier it is to film.'}
+                  ? 'Je travaille avec des artisans, des commerçants, des salons, des restaurants et des thérapeutes, entre Albertville, Chambéry et Annecy. Plus votre métier se voit, plus il est facile à filmer.'
+                  : 'I work with tradespeople, shopkeepers, salons, restaurants and therapists, between Albertville, Chambéry and Annecy. The more physical your trade, the easier it is to film.'}
               </p>
             </ScrollReveal>
+          </div>
 
-            <div className="mt-14 space-y-12 sm:mt-16 sm:space-y-14">
+          {/* Le telephone derive au defilement, en plus d'etre colle en haut.
+              Elie : « j'aimais bien quand le telephone a droite bouge en meme
+              temps qu'on scrolle, c'est ca qui rend bien. » Le ressort evite
+              l'effet saccade, et `useReducedMotion` coupe tout pour qui a
+              demande moins d'animation.
+
+              Il est le deuxieme enfant de la grille, donc deuxieme dans l'ordre
+              de lecture sur telephone. Sur grand ecran, `row-span-2` le remet a
+              cheval sur les deux rangees de la colonne de droite. */}
+          <motion.div
+            style={{ y: derive }}
+            className="lg:sticky lg:top-28 lg:col-start-2 lg:row-start-1 lg:row-span-2"
+          >
+            <PostingCalendar />
+          </motion.div>
+
+          <div className="lg:col-start-1 lg:row-start-2">
+            <div className="space-y-12 sm:space-y-14">
               {steps.map((step, i) => (
                 <ScrollReveal key={step.num} direction="up" delay={i * 0.05}>
                   <article className="flex gap-6 sm:gap-8">
@@ -231,15 +260,6 @@ const SocialPillarSection = () => {
               </div>
             </ScrollReveal>
           </div>
-
-          {/* Le telephone derive au defilement, en plus d'etre colle en haut.
-              Elie : « j'aimais bien quand le telephone a droite bouge en meme
-              temps qu'on scrolle, c'est ca qui rend bien. » Le ressort evite
-              l'effet saccade, et `useReducedMotion` coupe tout pour qui a
-              demande moins d'animation. */}
-          <motion.div style={{ y: derive }} className="lg:sticky lg:top-28">
-            <PostingCalendar />
-          </motion.div>
         </div>
 
         <ScrollReveal direction="up">
@@ -250,8 +270,8 @@ const SocialPillarSection = () => {
               </p>
               <p className="mt-2.5 text-sm text-muted-foreground">
                 {fr
-                  ? 'Déplacement, tournage, montage et publication compris. Engagement de 3 mois.'
-                  : 'Travel, filming, editing and posting included. Three month commitment.'}
+                  ? "Déplacement, tournage, montage et publication compris. Trois mois minimum, le temps qu'un compte reparte."
+                  : 'Travel, filming, editing and posting included. Three months minimum, the time it takes for an account to pick up.'}
               </p>
             </div>
             <Link

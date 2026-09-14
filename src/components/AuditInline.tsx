@@ -34,7 +34,7 @@ const AuditInline = () => {
     <section className="px-4 pb-4 sm:px-6 sm:pb-10" aria-labelledby="audit-milieu-heading">
       <div className="mx-auto max-w-5xl">
         <ScrollReveal direction="up">
-          <div className="soft-shadow grid grid-cols-1 gap-12 rounded-3xl border border-border bg-card p-8 sm:p-14 lg:grid-cols-[1fr_24rem] lg:gap-16">
+          <div className="soft-shadow grid grid-cols-1 gap-12 rounded-3xl border border-border bg-card p-6 sm:p-10 lg:p-14 lg:grid-cols-[1fr_24rem] lg:gap-16">
             <div>
               {/* ⚠️ Le titre disait « Avant de decider, voyez ce que ca
                   donnerait chez vous. » Elie : « ce titre est pas hyper

@@ -605,7 +605,7 @@ const translations = {
     'services.title1': 'La formule',
     'services.title2': "qu'il vous faut",
     'services.subtitle': 'Que vous démarriez ou que vous construisiez tout d\'un coup, il y a une option qui correspond à où vous en êtes.',
-    'services.quote.note': "Ce sont des prix de départ, pas un catalogue. Le chiffre final tombe après un appel gratuit, une fois que je sais ce qu'il vous faut vraiment.",
+    'services.quote.note': "Ce sont des planchers, pas des forfaits fermés. Le prix bouge selon le nombre de pages et les textes à écrire, et je vous le donne par écrit avant qu'on commence quoi que ce soit.",
     'services.quote.link': 'Demander un devis',
     'services.landing.title': 'Site Une Page',
     'services.landing.price': 'dès 500 €',
@@ -623,7 +623,7 @@ const translations = {
     'services.authority.feature1': 'Plusieurs pages : accueil, services, à propos, contact',
     'services.authority.feature2': 'Référencement Google soigné : votre commune et votre métier sont écrits partout où Google les cherche',
     'services.authority.feature3': 'Les visiteurs peuvent vous contacter directement depuis le site',
-    'services.authority.feature4': 'Rapide et parfait sur mobile (7 visiteurs sur 10 sont sur téléphone)',
+    'services.authority.feature4': 'Rapide et lisible sur téléphone, où arrive la majorité de vos visiteurs',
     'services.authority.cta': 'Avoir mon site',
     'services.authority.popular': 'Le plus populaire',
     

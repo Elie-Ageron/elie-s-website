@@ -180,7 +180,11 @@ const AuditForm = ({ source }: AuditFormProps) => {
               ? "Il me faut un numéro de téléphone à dix chiffres. C'est le seul moyen que j'ai de vous joindre vite."
               : 'I need a full phone number. It is the only way I have to reach you quickly.'
             : fr
-              ? "Je vous appelle quand elle est prête. Si vous ne décrochez pas, je vous l'envoie par message."
+              /* Deux relecteurs sur cinq ont lu cet appel comme une relance
+                 deguisee : « un coup de fil non sollicite, c'est une relance ».
+                 Promettre une fois de plus qu'il n'y en a pas ne convainc
+                 personne. Dire combien de temps il dure, si. */
+              ? "Un appel de deux minutes pour vous l'envoyer, et c'est le seul. Si vous ne décrochez pas, elle part par message."
               : 'I call you once it is ready. If you do not pick up, I send it over by message.'}
         </p>
       </div>

@@ -8,7 +8,7 @@
  *
  * Usage : node scripts/captures.mjs [url ...] [--mobile] [--base http://localhost:8080]
  */
-import { existsSync, mkdirSync, rmSync } from 'node:fs';
+import { existsSync, mkdirSync, readdirSync, rmSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { join } from 'node:path';
 
@@ -47,8 +47,15 @@ if (!executablePath) {
 const largeur = mobile ? 390 : 1440;
 const hauteur = mobile ? 844 : 900;
 const dossier = join(process.cwd(), '.captures');
-if (existsSync(dossier)) rmSync(dossier, { recursive: true, force: true });
-mkdirSync(dossier, { recursive: true });
+/* 🔴 Le dossier entier etait efface a chaque execution. Il contient aussi les
+   fichiers texte de relecture (`parcours-mobile.txt`), que des relecteurs
+   lisent parfois pendant qu'on recapture : une capture lancee au mauvais
+   moment leur retirait le fichier des mains. On ne supprime donc que les
+   images, c'est a dire ce que ce script a lui-meme ecrit. */
+if (!existsSync(dossier)) mkdirSync(dossier, { recursive: true });
+for (const fichier of readdirSync(dossier)) {
+  if (fichier.endsWith('.png')) rmSync(join(dossier, fichier), { force: true });
+}
 
 const navigateur = await puppeteer.launch({ executablePath, headless: 'new', args: ['--no-sandbox'] });
 
