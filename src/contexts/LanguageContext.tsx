@@ -21,14 +21,14 @@ const translations = {
     // Home Page
     'hero.headline1': 'Your social accounts run all month.',
     'hero.headline2': "Without you thinking about it.",
-    'hero.subtitle': "One day of filming a month at your place, then I edit, I write and I post. And if your website cannot keep up, I rebuild it. Albertville, Savoie and Haute-Savoie.",
+    'hero.subtitle': "One day of filming a month at your place, and your accounts run until the next one. I also build the website those videos point people to. Albertville, Savoie and Haute-Savoie.",
     'hero.badge': 'Three clients at a time · Albertville, Savoie',
     'hero.cta': 'Get my free audit',
     'hero.secondaryCta': 'See my work',
     'hero.cta.call': 'Book a free call',
     'hero.cta.assessment': 'Get my free audit',
     'hero.cta.nocall': 'Already know what you want? Start without a call',
-    'hero.friction': 'Free · 4 minutes of video about your business · Within 48h',
+    'hero.friction': 'Free · A full review of your online presence · Within 48h',
     'hero.trustedby': 'Trusted by',
     'hero.review.text': 'Sharp, professional, exactly what we wanted.',
     'hero.review.author': 'Austin Talley · VM Producers',
@@ -444,14 +444,28 @@ const translations = {
     // Home Page
     'hero.headline1': 'Vos réseaux tournent tout le mois.',
     'hero.headline2': "Sans que vous y pensiez.",
-    'hero.subtitle': "Je viens filmer une journée par mois chez vous, puis je monte, j'écris et je publie. Et si votre site ne suit pas, je le refais. Albertville, Savoie et Haute-Savoie.",
+    /* 🔴 Disait « puis je monte, j'écris et je publie. Et si votre site ne suit
+       pas, je le refais. » Deux defauts. Le site y etait une reparation, pas
+       une offre, alors que c'est le pilier n°2 et qu'il est de rang egal. Et
+       les mots-cles qui amenent le plus de monde sont « creation site web
+       Savoie » et « web designer Savoie » : quelqu'un qui cherche un site
+       tombait sur une page de video, ou son site etait presente comme un
+       probleme. La phrase relie maintenant les deux offres au lieu d'en
+       subordonner une. */
+    'hero.subtitle': "Je viens filmer une journée par mois chez vous, et vos comptes tournent jusqu'à la suivante. Je construis aussi le site vers lequel ces vidéos renvoient. Albertville, Savoie et Haute-Savoie.",
     'hero.badge': 'Trois clients à la fois · Albertville, Savoie',
     'hero.cta': 'Obtenir mon audit gratuit',
     'hero.secondaryCta': 'Voir mes réalisations',
     'hero.cta.call': 'Réserver un appel gratuit',
     'hero.cta.assessment': 'Recevoir mon audit gratuit',
     'hero.cta.nocall': 'Vous savez déjà ce que vous voulez ? Démarrer sans appel',
-    'hero.friction': 'Gratuit · 4 minutes de vidéo sur votre entreprise · Sous 48 h',
+    /* 🔴 Disait « 4 minutes de video sur votre entreprise ». Elie : « 4 min de
+       video est pas tres evocateur, en un coup d'oeil ils doivent comprendre
+       qu'ils recoivent une analyse de leur presence web complete, et
+       gratuitement. » La duree decrit le contenant, pas ce qu'on y trouve. La
+       correction avait ete faite sur `AuditInline` et `/audit-gratuit`, et
+       oubliee ici, c'est a dire a l'endroit le plus vu du site. */
+    'hero.friction': 'Gratuit · L\'analyse complète de votre présence en ligne · Sous 48 h',
     'hero.trustedby': 'Ils m\'ont fait confiance',
     'hero.review.text': 'Percutant, professionnel, exactement ce qu\'on voulait.',
     'hero.review.author': 'Austin Talley · VM Producers',

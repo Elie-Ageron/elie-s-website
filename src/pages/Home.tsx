@@ -22,16 +22,21 @@ import InternalLinks from '@/components/InternalLinks';
  * visiteur qui ne connait pas Elie. Lus a la suite, les titres racontent
  * l'offre en entier :
  *
- *   Vos reseaux tournent tout le mois sans que vous y pensiez
+ *   Vos reseaux tournent tout le mois. Sans que vous y pensiez.
  *   Un jour de tournage. Un mois de publications.
- *   Avant de decider, voyez ce que ca donnerait chez vous.
+ *   Je m'appelle Elie Ageron. Je rends votre metier visible.
+ *   Recevez un audit complet de votre presence en ligne. Gratuitement.
  *   Ils etaient a votre place. Ils ont accepte d'en parler.
- *   Je ne peux pas prendre trente clients.
- *   Si le site ne suit pas, je le refais.
+ *   Chaque activite merite une presence a la hauteur.
  *   La formule qu'il vous faut
  *   Un seul interlocuteur pour tout le reste.
  *   Ce qu'on me demande le plus souvent.
- *   Je regarde votre presence en ligne. C'est gratuit.
+ *   Ce que vos clients voient de vous, et ce qui vous coute des clients.
+ *
+ * Lus a la suite : ce que je fais, comment, qui je suis, ce que je vous
+ * propose, qui le confirme, ce que j'ai livre, combien, le reste, vos
+ * objections, la demande. **L'ordre de la confiance avant l'ordre du
+ * catalogue.**
  *
  * ── Trois sections ont disparu, et il ne faut pas les remettre ─────────────
  *
@@ -76,15 +81,31 @@ const Home = () => {
       {/* Pilier n°1 : les réseaux sociaux, et comment ça se passe */}
       <SocialPillarSection />
 
-      {/* Le formulaire, au sommet de l'interet : juste apres le prix.
+      {/* 🔴 Qui est en face, remonte le 14 septembre 2026, juste avant la
+          demande. Cette section etait en cinquieme position, donc **apres** le
+          formulaire : on demandait un numero de telephone a quelqu'un qui
+          n'avait encore vu ni visage, ni nom, ni commune.
+
+          Or c'est la seule objection que le formulaire ne traite pas lui-meme.
+          Il dit deja qu'il est gratuit, qu'il fait deux champs et qu'il n'y a
+          aucune relance derriere. Ce qu'il ne peut pas dire, c'est qui recoit
+          le numero. Le portrait, le prenom et « vous avez mon numero, pas un
+          formulaire de support » repondent exactement a ca.
+
+          ⚠️ C'est un seul deplacement, pas un remaniement. Les avis restent
+          colles au portfolio : les quatre parlent de sites web, aucun ne parle
+          de reseaux sociaux, donc les poser apres l'offre reseaux les faisait
+          passer pour une preuve qu'ils ne sont pas. Ils tombent maintenant
+          juste avant les sites qu'ils decrivent. */}
+      <PersonalIntroSection />
+
+      {/* Le formulaire, au sommet de l'interet : juste apres le prix, et
+          maintenant juste apres le visage.
           Il etait en onzieme position sur onze. Voir la note de `AuditInline`. */}
       <AuditInline />
 
-      {/* La preuve humaine */}
+      {/* La preuve humaine, collée au pilier qu'elle prouve */}
       <TestimonialsSection />
-
-      {/* Qui est en face */}
-      <PersonalIntroSection />
 
       {/* Pilier n°2 : les sites livrés */}
       <PortfolioShowcaseSection />

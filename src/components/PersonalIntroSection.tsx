@@ -99,9 +99,15 @@ const PersonalIntroSection = () => {
                 : 'I film, I edit, and I write the site. You get my phone number, not a support form. I am based in Albertville and I travel to film, in Savoie and beyond.'}
             </p>
 
+            {/* ⚠️ C'etait un bouton cercle de bordure, en 52 px de haut. Depuis
+                que cette section est remontee juste avant le formulaire, ce
+                bouton etait le dernier element avant la demande : une sortie
+                du site, dessinee comme une action principale, a l'endroit
+                precis ou on demande un numero. Il reste disponible pour qui
+                veut en savoir plus, en lien de texte. */}
             <Link
               to="/a-propos"
-              className="mt-8 inline-flex min-h-[52px] items-center gap-2 rounded-full border border-foreground px-7 text-sm font-semibold text-foreground transition-colors hover:bg-foreground hover:text-background"
+              className="mt-7 inline-flex min-h-[44px] items-center gap-1.5 text-sm font-semibold text-primary underline-offset-4 hover:underline"
             >
               {fr ? 'Comment je travaille' : 'How I work'}
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
