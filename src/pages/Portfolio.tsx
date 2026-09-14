@@ -1,16 +1,16 @@
 ﻿import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { ExternalLink, Sparkles, ArrowRight, Quote } from 'lucide-react';
+import { ExternalLink, ArrowRight, Quote } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
 import InternalLinks from '@/components/InternalLinks';
+import SocialClientsSection from '@/components/SocialClientsSection';
 import SEO from '@/components/SEO';
 import ScrollArrow from '@/components/ScrollArrow';
 import portfolioMyWebGlory from '@/assets/portfolio-mywebglory.webp';
 import portfolioSolarFusion from '@/assets/portfolio-solar-fusion.webp';
 import portfolioVmProducers from '@/assets/portfolio-vm-producers.webp';
-import portfolioMyDrop from '@/assets/portfolio-mydrop.webp';
 import portfolioNaura from '@/assets/portfolio-naura.webp';
 
 interface PortfolioItemProps {
@@ -154,14 +154,6 @@ const Portfolio = () => {
           ? 'Site vitrine pour label de production musicale'
           : 'Showcase website for a music production label',
       },
-      {
-        '@type': 'WebSite',
-        name: 'MyDrop',
-        url: 'https://mydropai.com',
-        description: language === 'fr'
-          ? 'Site web pour une plateforme SaaS de gestion des réseaux sociaux par IA'
-          : 'Website for an AI-powered social media management SaaS platform',
-      },
     ],
   };
 
@@ -223,19 +215,6 @@ const Portfolio = () => {
         : 'Elie understood our world straight away. The result is sharp, professional, and exactly what we were after.',
       quoteAuthor: 'Austin Talley, VM Producers',
     },
-    {
-      image: portfolioMyDrop,
-      name: 'MyDrop',
-      url: 'https://mydropai.com',
-      categoryKey: 'portfolio.showcase.mydrop.category',
-      ctaKey: 'portfolio.showcase.mydrop.cta',
-      descKey: 'portfolio.showcase.mydrop.desc',
-      alt: 'MyDrop - Site web pour une plateforme SaaS de gestion des réseaux sociaux créé par Elie Ageron Web Design',
-      quote: language === 'fr'
-        ? 'Elie a su comprendre ce qu\'on construisait et l\'a traduit en un site qui fonctionne vraiment. Rapide, clair, et il pousse les visiteurs à s\'inscrire.'
-        : 'Elie really understood what we were building and translated it into a site that works. Fast, clear, and it pushes visitors to sign up.',
-      quoteAuthor: 'Gabriel Ageron, Fondateur, MyDrop',
-    },
   ];
 
   return (
@@ -253,7 +232,7 @@ const Portfolio = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 id="portfolio-hero-heading" className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
+            <h1 id="portfolio-hero-heading" className="hero-title mb-4 sm:mb-6">
               <span className="text-foreground">{t('portfolio.title1')}</span>{' '}
               <span className="inline-block text-primary">{t('portfolio.title2')}</span>
             </h1>
@@ -276,24 +255,24 @@ const Portfolio = () => {
 
       {/* Portfolio Showcase */}
       <section className="py-8 sm:py-12 md:py-16" aria-labelledby="projects-heading">
-        <h2 id="projects-heading" className="sr-only">Web Design Projects by Elie Ageron</h2>
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           
-          {/* Badge */}
-          <motion.div
+          {/* C'etait une pastille rose bordee de deux etoiles scintillantes,
+              au centre, qui annoncait « Ce site pourrait etre le votre ». Un
+              intertitre suffit, et il dit ce qu'on regarde. */}
+          {/* ⚠️ Le titre de section etait un `sr-only` en anglais, « Web Design
+              Projects by Elie Ageron », sur une page francaise. Invisible pour
+              le visiteur et faux pour un lecteur d'ecran francophone. Il porte
+              maintenant le libelle visible. */}
+          <motion.h2
+            id="projects-heading"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-10"
+            className="section-title mb-10"
           >
-            <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-primary/15 border-2 border-primary/40 shadow-lg shadow-primary/10">
-              <Sparkles className="w-6 h-6 text-primary" />
-              <span className="text-primary font-bold text-lg sm:text-xl tracking-wide">
-                {t('portfolio.badge')}
-              </span>
-              <Sparkles className="w-6 h-6 text-primary" />
-            </div>
-          </motion.div>
+            {t('portfolio.badge')}
+          </motion.h2>
 
           {/* Projects */}
           <div className="space-y-16 sm:space-y-20">
@@ -303,6 +282,12 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
+
+      {/* Les comptes reseaux geres. Ils etaient sur l'accueil, Elie les a fait
+          descendre ici : « ca ne fait pas assez longtemps que je gere et ca ne
+          fait pas une tres belle vitrine ». Sur le portfolio ils sont a leur
+          place, apres les sites, comme une seconde categorie de realisations. */}
+      <SocialClientsSection />
 
       {/* Internal Links */}
       <InternalLinks currentPage="portfolio" />

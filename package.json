@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:prerender": "vite build && node scripts/prerender.mjs",
+    "build:prerender": "vite build && node scripts/prerender.mjs && node scripts/prerender-head.mjs",
     "gen:covers": "node scripts/generate-blog-covers.mjs",
     "gen:sitemap": "node scripts/generate-sitemap.mjs",
     "gen:llms": "node scripts/generate-llms.mjs",
@@ -17,7 +17,17 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "prerender:head": "node scripts/prerender-head.mjs",
+    "check:writing": "node scripts/check-writing.mjs",
+    "check:tags": "node scripts/check-seo-tags.mjs",
+    "check": "npm run check:content && npm run check:tags && npm run check:writing",
+    "check:build": "node scripts/check-build-seo.mjs",
+    "check:a11y": "node scripts/check-a11y.mjs",
+    "check:overflow": "node scripts/check-overflow.mjs",
+    "check:navigateur": "npm run check:a11y && npm run check:overflow",
+    "captures": "node scripts/captures.mjs",
+    "verify": "npm run build && npm run prerender:head && npm run check:build && npm run check"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

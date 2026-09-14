@@ -88,7 +88,7 @@ const OurProcess = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 id="process-hero-heading" className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
+            <h1 id="process-hero-heading" className="hero-title mb-4 sm:mb-6">
               <span className="text-foreground">{t('process.title1')}</span>{' '}
               <span className="inline-block text-primary">{t('process.title2')}</span>
             </h1>

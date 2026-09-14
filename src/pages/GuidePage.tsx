@@ -90,13 +90,9 @@ const GuidePage = () => {
           </nav>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <span className="inline-flex items-center gap-2 text-sm font-medium text-primary mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary" aria-hidden="true" />
-              {guide.kicker}
-            </span>
             <h1
               id="guide-title"
-              className="text-3xl sm:text-4xl md:text-5xl font-medium leading-[1.1] text-balance"
+              className="section-title"
             >
               {guide.title}
             </h1>
@@ -136,7 +132,7 @@ const GuidePage = () => {
                   href={`#chapitre-${i + 1}`}
                   className="group flex items-baseline gap-4 py-3 text-muted-foreground hover:text-primary transition-colors"
                 >
-                  <span className="text-xs font-mono text-primary/70 shrink-0">
+                  <span className="text-xs font-mono text-primary shrink-0">
                     {String(i + 1).padStart(2, '0')}
                   </span>
                   <span className="min-h-[24px]">{chapter.title}</span>
@@ -169,7 +165,7 @@ const GuidePage = () => {
                 className="scroll-mt-24 py-10 sm:py-12 border-t border-border/60"
                 aria-labelledby={`chapitre-titre-${i + 1}`}
               >
-                <span className="text-xs font-mono text-primary/70">{String(i + 1).padStart(2, '0')}</span>
+                <span className="text-xs font-mono text-primary">{String(i + 1).padStart(2, '0')}</span>
                 <h2
                   id={`chapitre-titre-${i + 1}`}
                   className="mt-1 text-2xl sm:text-3xl font-medium leading-tight text-balance"
@@ -185,8 +181,8 @@ const GuidePage = () => {
                 </div>
 
                 {articles.length > 0 && (
-                  <div className="mt-7 pl-4 sm:pl-6 border-l-2 border-primary/30">
-                    <h3 className="text-xs font-semibold uppercase tracking-wide text-foreground mb-3">
+                  <div className="mt-8 border-t border-border pt-6">
+                    <h3 className="mb-3 text-sm font-semibold text-foreground">
                       Pour aller plus loin
                     </h3>
                     <ul className="space-y-2">

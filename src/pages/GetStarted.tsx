@@ -171,7 +171,7 @@ const GetStarted = () => {
             </span>
           </motion.div>
           <motion.header initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}>
-            <h1 id="gs-heading" className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
+            <h1 id="gs-heading" className="hero-title mb-4 sm:mb-6">
               <span className="text-foreground">
                 {language === 'fr' ? 'Votre site web,' : 'Your website,'}
               </span>{' '}

@@ -146,7 +146,7 @@ const BlogCategory = () => {
             </Link>
           </nav>
           <motion.header initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <h1 id="category-heading" className="text-3xl sm:text-4xl md:text-5xl font-medium leading-[1.1] text-balance">
+            <h1 id="category-heading" className="section-title">
               {fr ? category.fr : category.en}
             </h1>
             <p className="mt-5 text-base sm:text-lg text-muted-foreground leading-relaxed">
@@ -280,7 +280,7 @@ const BlogCategory = () => {
                   className="inline-flex items-center gap-2 min-h-[36px] px-4 rounded-full border border-border/70 text-sm text-muted-foreground hover:border-primary/50 hover:text-primary transition-colors"
                 >
                   {fr ? c.fr : c.en}
-                  <span className="text-xs text-primary/70">{c.count}</span>
+                  <span className="text-xs text-primary">{c.count}</span>
                 </Link>
               </li>
             ))}

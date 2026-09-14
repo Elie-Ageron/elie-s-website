@@ -6,44 +6,38 @@ import { Button } from '@/components/ui/button';
 import ScrollReveal from './animations/ScrollReveal';
 import { services } from '@/data/services';
 
-// Section "Votre présence en ligne, gérée de A à Z", index éditorial (refonte juillet 2026)
+/**
+ * L'index des sept services, sur l'accueil.
+ *
+ * Le titre disait « Le site n'est que le point de depart ». C'etait un reste
+ * de l'epoque ou la page vendait d'abord des sites : il presentait les reseaux
+ * sociaux comme une suite du site, alors que c'est l'inverse depuis aout 2026.
+ * Le titre porte maintenant ce que le visiteur achete reellement ici, un seul
+ * prestataire au lieu de quatre.
+ */
 const ServicesEcosystem = () => {
   const { language } = useLanguage();
 
   return (
     <section
-      className="py-20 sm:py-28 relative overflow-hidden"
+      className="py-24 sm:py-36 relative"
       aria-labelledby="ecosystem-heading"
     >
-      {/* Soft brand accent, top-right */}
-      <div
-        aria-hidden="true"
-        className="absolute -top-24 right-[-10%] w-[32rem] h-[32rem] bg-primary/10 rounded-full blur-[120px] pointer-events-none"
-      />
-
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* ─── Narrative (sticky on desktop) ─── */}
           <ScrollReveal direction="up" className="lg:col-span-5 lg:sticky lg:top-28 text-center lg:text-left">
-            <span className="inline-flex items-center gap-2 text-sm font-medium text-primary mb-5">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary" aria-hidden="true" />
-              {language === 'fr' ? 'Au-delà du site' : 'Beyond the site'}
-            </span>
-
-            <h2
-              id="ecosystem-heading"
-              className="text-3xl sm:text-4xl md:text-[2.75rem] font-medium leading-[1.1] text-balance"
-            >
-              {language === 'fr' ? "Le site n'est que " : 'The site is only '}
+            <h2 id="ecosystem-heading" className="section-title">
+              {language === 'fr' ? 'Un seul interlocuteur ' : 'One person '}
               <span className="text-primary">
-                {language === 'fr' ? 'le point de départ' : 'the starting point'}
+                {language === 'fr' ? 'pour tout le reste.' : 'for everything else.'}
               </span>
             </h2>
 
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-md mx-auto lg:mx-0">
+            <p className="section-lede mt-6 mx-auto lg:mx-0">
               {language === 'fr'
-                ? "Des vidéos qui tournent sur vos réseaux, une fiche Google qui remonte, une identité cohérente. Au lieu de jongler entre plusieurs prestataires, un seul partenaire s'occupe de tout."
-                : 'Videos running on your social accounts, a Google profile that climbs, a consistent identity. Instead of juggling several providers, one partner handles it all.'}
+                ? "La fiche Google, les avis, le logo, les textes. Ce sont les quatre choses qu'on confie d'habitude à quatre personnes différentes qui ne se parlent pas. Ici c'est le même devis et le même numéro."
+                : 'The Google profile, the reviews, the logo, the copy. Those are the four things usually handed to four different people who never talk to each other. Here it is one quote and one phone number.'}
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row lg:flex-col gap-4 items-center lg:items-start">
@@ -58,7 +52,10 @@ const ServicesEcosystem = () => {
               </Button>
               <p className="text-sm text-muted-foreground">
                 {language === 'fr'
-                  ? 'Un seul interlocuteur, un seul devis.'
+                  /* Disait « Un seul interlocuteur, un seul devis. », a douze
+                     lignes du titre « Un seul interlocuteur pour tout le
+                     reste ». La meme idee deux fois de suite ne renforce rien. */
+                  ? 'Et un seul devis à la fin du mois.'
                   : 'One contact, one quote.'}
               </p>
             </div>

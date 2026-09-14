@@ -1,5 +1,5 @@
 {
-  "buildCommand": "bunx vite build && node scripts/prerender.mjs",
+  "buildCommand": "bunx vite build && node scripts/prerender.mjs && node scripts/prerender-head.mjs",
   "outputDirectory": "dist",
   "installCommand": "bun install",
   "trailingSlash": false,

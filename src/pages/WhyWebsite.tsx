@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
 import SEO from '@/components/SEO';
-import FAQSchema from '@/components/FAQSchema';
 import FAQAccordion from '@/components/FAQAccordion';
 import InternalLinks from '@/components/InternalLinks';
 import ScrollArrow from '@/components/ScrollArrow';
@@ -38,8 +37,16 @@ const WhyWebsite = () => {
   return (
     <>
       <SEO page="why" structuredData={breadcrumbSchema} />
-      <FAQSchema page="why" />
-      
+      {/* 🔴 `<FAQSchema page="why" />` a ete retire le 14 septembre 2026.
+          Cette page affiche `FAQAccordion`, c'est a dire les questions de
+          l'accueil, et envoyait a Google huit questions **completement
+          differentes**, qu'aucun visiteur ne pouvait voir. Une FAQPage dont les
+          questions ne sont pas visibles a l'ecran est une infraction aux regles
+          de Google, et celle-ci promettait en plus « une garantie satisfaction
+          100 % » et « 40 % de leads en plus le premier mois ».
+          L'accueil garde le sien, qui correspond bien a ce qu'elle affiche. Ne
+          pas remettre un second FAQPage ici : ce serait un doublon du sien. */}
+
       {/* Hero */}
       <section className="relative grain min-h-screen flex items-center justify-center" aria-labelledby="why-hero-heading">
         <div className="absolute inset-0" aria-hidden="true">
@@ -51,7 +58,7 @@ const WhyWebsite = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 id="why-hero-heading" className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
+            <h1 id="why-hero-heading" className="hero-title mb-4 sm:mb-6">
               <span className="text-foreground">{t('why.title1')}</span>{' '}
               <span className="inline-block text-primary">{t('why.title2')}</span>
             </h1>
@@ -112,7 +119,7 @@ const WhyWebsite = () => {
             className="text-center mb-10 sm:mb-14"
           >
             <span className="inline-block text-xs font-semibold uppercase tracking-widest text-primary mb-3">{t('why.solution.label')}</span>
-            <h2 id="solution-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold">
+            <h2 id="solution-heading" className="section-title">
               <span className="text-foreground">{t('why.solution.title1')}</span>{' '}
               <span className="inline-block text-primary">{t('why.solution.title2')}</span>
             </h2>
@@ -145,7 +152,7 @@ const WhyWebsite = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 sm:py-24 md:py-32 relative overflow-hidden" aria-labelledby="stats-heading">
+      <section className="py-20 sm:py-32 md:py-32 relative overflow-hidden" aria-labelledby="stats-heading">
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-primary/5 rounded-full blur-[140px]" />
         </div>

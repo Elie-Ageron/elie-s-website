@@ -150,8 +150,8 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                   className="w-full min-h-[56px] text-base active:scale-[0.98]"
                   asChild
                 >
-                  <Link to="/get-started" onClick={onClose}>
-                    {language === 'fr' ? 'Démarrer mon projet →' : 'Start my project →'}
+                  <Link to="/audit-gratuit" onClick={onClose}>
+                    {language === 'fr' ? 'Mon audit gratuit →' : 'My free audit →'}
                   </Link>
                 </Button>
                 <Button

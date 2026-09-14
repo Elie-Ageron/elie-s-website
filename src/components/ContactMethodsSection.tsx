@@ -1,186 +1,210 @@
-import { motion } from 'framer-motion';
-import { ElementType } from 'react';
-import { Calendar, MessageCircle, Mail, Phone, ArrowRight } from 'lucide-react';
+import { Calendar, Check, MessageCircle, Mail, Phone } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useCalendly } from '@/contexts/CalendlyContext';
 import ScrollReveal from '@/components/animations/ScrollReveal';
+import AuditForm from '@/components/AuditForm';
 
 interface ContactMethodsSectionProps {
   showTitle?: boolean;
   compact?: boolean;
 }
 
+/**
+ * La fin de page, sur les quatorze pages du site.
+ *
+ * ── Deux refontes le meme jour ────────────────────────────────────────────
+ *
+ * 1. C'etaient quatre cartes de verre avec une icone chacune et une pastille
+ *    « recommande » qui pulsait en boucle. Quatre propositions de meme poids,
+ *    donc aucune. Elles arrivaient en plus apres « Par ou commencer ? » et
+ *    « Continuer votre exploration », soit trois blocs d'appel a l'action
+ *    d'affilee.
+ * 2. La premiere correction posait le formulaire nu dans une colonne, avec les
+ *    canaux directs dans l'autre. Elie : « le form n'est pas beau, on comprend
+ *    rien, la mise en page c'est clairement a ameliorer. » Il avait raison :
+ *    deux champs flottant dans du vide ne disent pas ce qu'on demande ni ce
+ *    qu'on recoit.
+ *
+ * ── Ce qui est en place ───────────────────────────────────────────────────
+ *
+ * A gauche, **ce que le visiteur recoit**, quatre lignes. A droite, le
+ * formulaire **dans un panneau delimite**, parce qu'un formulaire a besoin
+ * d'un contenant : c'est ce qui dit « c'est ici qu'on remplit ». Un panneau
+ * n'est pas une grille de cartes, la regle contre les cartes ne s'applique
+ * pas ici. Les canaux directs passent en dessous, sur une seule ligne.
+ *
+ * Les props sont conservees parce que quatorze pages appellent ce composant,
+ * mais `compact` ne joue que sur l'espacement vertical.
+ */
 const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMethodsSectionProps) => {
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
   const fr = language === 'fr';
   const { openCalendly } = useCalendly();
 
-  const contactMethods: Array<{
-    icon: ElementType;
-    title: string;
-    description: string;
-    cta: string;
-    href?: string;
-    onClick?: () => void;
-    recommended: boolean;
-    newTab: boolean;
-  }> = [
-    {
-      icon: Calendar,
-      title: t('home.contact.call.title'),
-      description: t('home.contact.call.desc'),
-      cta: t('home.contact.call.cta'),
-      onClick: openCalendly,
-      recommended: true,
-      newTab: false,
-    },
-    {
-      // Manquait alors que c'est le canal majoritaire d'une clientele locale.
-      icon: Phone,
-      title: fr ? 'Téléphone' : 'Phone',
-      description: fr
-        ? "Le plus direct. Si je ne réponds pas, c'est que je suis en rendez-vous, et je rappelle dans la journée."
-        : 'The most direct. If I do not pick up I am in a meeting, and I call back the same day.',
-      cta: '06 95 55 53 18',
-      href: 'tel:+33695555318',
-      recommended: false,
-      newTab: false,
-    },
-    {
-      icon: MessageCircle,
-      title: 'WhatsApp',
-      description: t('home.contact.whatsapp.desc'),
-      cta: t('home.contact.whatsapp.cta'),
-      href: 'https://wa.me/33695555318',
-      recommended: false,
-      newTab: false,
-    },
-    {
-      icon: Mail,
-      title: 'Email',
-      description: t('home.contact.email.desc'),
-      cta: 'elie@elieageron.com',
-      href: 'mailto:elie@elieageron.com',
-      recommended: false,
-      newTab: false,
-    },
+  const contenu = fr
+    ? [
+        'Votre fiche Google, ce qui y manque et ce que ça vous coûte.',
+        'Vos réseaux, vus par quelqu’un qui ne vous connaît pas.',
+        'Votre site, le premier écran et ce qu’il fait comprendre.',
+        'Votre position sur « votre métier + votre commune ».',
+      ]
+    : [
+        'Your Google profile, what is missing and what it costs you.',
+        'Your social accounts, seen by someone who does not know you.',
+        'Your website, the first screen and what it gets across.',
+        'Where you rank on your trade plus your town.',
+      ];
+
+  const canaux = [
+    { icon: Phone, texte: '06 95 55 53 18', href: 'tel:+33695555318' },
+    { icon: MessageCircle, texte: 'WhatsApp', href: 'https://wa.me/33695555318' },
+    { icon: Mail, texte: 'elie@elieageron.com', href: 'mailto:elie@elieageron.com' },
   ];
 
   return (
-    <section className={compact ? 'py-8 sm:py-12' : 'py-12 sm:py-16 md:py-20'}>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <section
+      className={`px-4 sm:px-6 ${compact ? 'py-16 sm:py-24' : 'py-24 sm:py-36'}`}
+      aria-labelledby="fin-de-page-heading"
+    >
+      <div className="mx-auto max-w-5xl">
         {showTitle && (
-          <ScrollReveal direction="up" className="text-center mb-8 sm:mb-12">
-            <motion.h2 
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-3 sm:mb-4 leading-tight"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <span className="text-foreground">{t('home.contact.title1')}</span>{' '}
-              <span className="inline-block text-primary">{t('home.contact.title2')}</span>
-            </motion.h2>
-            <motion.p 
-              className="text-sm sm:text-base text-muted-foreground"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-            >
-              {t('home.contact.subtitle')}
-            </motion.p>
+          <ScrollReveal direction="up" className="mb-10 sm:mb-14">
+            {/* ⚠️ Le titre disait « Je regarde votre presence en ligne. C'est
+                gratuit. » Elie : « on peut faire mieux sur ce titre la, en
+                montrant bien la valeur que je vais rapporter. » Il avait
+                raison : il decrivait mon action, pas ce que le visiteur y
+                gagne. La gratuite est passee en premier mot du chapo, ou elle
+                leve l'objection sans occuper la moitie du titre. */}
+            <h2 id="fin-de-page-heading" className="section-title max-w-3xl">
+              <span className="text-foreground">
+                {fr ? 'Ce que vos clients voient de vous, ' : 'What your clients see of you, '}
+              </span>
+              <span className="text-primary">
+                {/* « des appels » a ete remplace par « des clients » : un
+                    restaurant perd des couverts, un therapeute perd des
+                    rendez-vous. Le mot d'origine ne parlait qu'aux artisans,
+                    soit la moitie de la clientele visee. */}
+                {fr ? 'et ce qui vous coûte des clients.' : 'and what is costing you clients.'}
+              </span>
+            </h2>
+            <p className="section-lede mt-6">
+              {fr
+                ? "C'est gratuit et je ne vends rien dedans. Je passe une trentaine de minutes sur votre fiche Google, vos réseaux et votre site, puis je vous renvoie quatre minutes de vidéo sous 48 h ouvrées."
+                : 'It is free and I sell nothing in it. I spend about thirty minutes on your Google profile, your social accounts and your site, then send you four minutes of video within two business days.'}
+            </p>
           </ScrollReveal>
         )}
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          {contactMethods.map((method, index) => {
-            const sharedMotionProps = {
-              initial: {
-                opacity: 0, 
-                x: index === 0 ? -50 : index === 2 ? 50 : 0,
-                y: index === 1 ? 50 : 0
-              },
-              whileInView: { opacity: 1, x: 0, y: 0 },
-              viewport: { once: true },
-              transition: { delay: index * 0.15, duration: 0.7 },
-              whileHover: { 
-                y: -6, 
-                scale: 1.01,
-                transition: { duration: 0.15, ease: "easeOut" as const }
-              },
-              className: `relative glass-card rounded-xl sm:rounded-2xl p-5 sm:p-8 pt-8 sm:pt-10 cursor-pointer transition-all group active:scale-[0.98] ${
-                method.recommended ? 'neon-border' : 'hover:border-primary/30'
-              }`,
-            };
+        <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[1fr_26rem] lg:gap-16">
+          <ScrollReveal direction="up">
+            <p className="text-lg font-bold tracking-tight text-foreground">
+              {fr ? 'Ce que vous recevez' : 'What you get'}
+            </p>
+            <ul className="mt-5 space-y-4">
+              {contenu.map((ligne) => (
+                <li key={ligne} className="flex gap-3.5 leading-relaxed text-muted-foreground">
+                  <Check className="mt-1 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+                  {ligne}
+                </li>
+              ))}
+            </ul>
 
-            const innerContent = (
-              <>
-                <motion.div 
-                  className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl sm:rounded-2xl"
-                />
-                {method.recommended && (
-                  <motion.div 
-                    className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 sm:px-4 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full whitespace-nowrap"
-                    animate={{ scale: [1, 1.05, 1] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  >
-                    {t('home.contact.recommended')}
-                  </motion.div>
-                )}
-                <div 
-                  className={`inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl mb-4 sm:mb-6 relative z-10 sm:transition-transform sm:duration-300 sm:group-hover:scale-110 ${
-                    method.recommended ? 'bg-primary/20' : 'bg-secondary'
-                  }`}
-                >
-                  <method.icon className={`w-6 h-6 sm:w-7 sm:h-7 ${
-                    method.recommended ? 'text-primary' : 'text-foreground'
-                  }`} />
-                </div>
-                <h3 className={`text-lg sm:text-xl font-bold mb-2 sm:mb-3 relative z-10 ${
-                  method.recommended ? 'text-primary' : 'text-foreground'
-                }`}>
-                  {method.title}
-                </h3>
-                <p className="text-muted-foreground text-sm mb-4 sm:mb-6 relative z-10 leading-relaxed">
-                  {method.description}
-                </p>
-                <motion.div 
-                  className="flex items-center gap-2 text-primary font-medium relative z-10"
-                  whileHover={{ x: 5 }}
-                >
-                  <span className="text-sm">{method.cta}</span>
-                  <ArrowRight className="w-4 h-4" />
-                </motion.div>
-              </>
-            );
-
-            if (method.onClick) {
-              return (
-                <motion.button
-                  key={index}
-                  type="button"
-                  onClick={method.onClick}
-                  {...sharedMotionProps}
-                  className={sharedMotionProps.className + ' text-left w-full'}
-                >
-                  {innerContent}
-                </motion.button>
-              );
-            }
-
-            return (
-              <motion.a
-                key={index}
-                href={method.href}
-                target={method.newTab ? '_blank' : undefined}
-                rel={method.newTab ? 'noopener noreferrer' : undefined}
-                {...sharedMotionProps}
+            <p className="mt-8 text-sm text-muted-foreground">
+              {fr ? 'Vous avez déjà un projet précis ? ' : 'Already have a specific project? '}
+              <Link
+                to="/contact"
+                className="inline-flex min-h-[24px] items-center font-semibold text-primary underline-offset-4 hover:underline"
               >
-                {innerContent}
-              </motion.a>
-            );
-          })}
+                {fr ? 'Décrivez-le moi' : 'Tell me about it'}
+              </Link>
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal direction="up" delay={0.08}>
+            {/* ⚠️ Le panneau doit se lire en une seconde. Elie : « il faut
+                qu'on comprenne de maniere tres facile et effortless qu'il y a
+                un form a remplir, que ca prend deux secondes, que c'est
+                gratuit et que ca apporte de la valeur. Comme ca les gens se
+                disent : ah OK, pourquoi pas le faire. »
+
+                Les trois reperes au-dessus des champs repondent aux trois
+                questions dans l'ordre ou elles se posent : combien ca coute,
+                combien ca me prend, quand je recois. Ils sont au-dessus du
+                premier champ parce qu'une note posee sous le bouton arrive
+                apres la decision. */}
+            <div className="soft-shadow rounded-3xl border border-border bg-card p-6 sm:p-8">
+              {/* 🔴 L'accroche a ete testee en relecture aveugle, puis changee.
+                  Elie avait propose « vous voulez savoir si vos concurrents
+                  sont meilleurs ». Version posee sur la page, elle a braque les
+                  trois profils de relecture sur trois :
+                  le plombier (« elle me dit que je perds, alors que je refuse
+                  des chantiers »), la restauratrice (« je sais deja pourquoi,
+                  ca me rappelle juste que je suis en retard »), et le visiteur
+                  sans contexte (« c'est l'ouverture d'un demarcheur »).
+                  Une accroche qui presuppose une defaite ferme la porte avant
+                  d'avoir montre quoi que ce soit. Celle-ci decrit simplement le
+                  geste, et le geste est deja la promesse. */}
+              <p className="text-lg font-bold leading-snug tracking-tight text-foreground">
+                {fr
+                  ? 'Je tape le nom de votre entreprise sur Google, et je vous dis ce que je vois.'
+                  : 'I type your business name into Google, and I tell you what I see.'}
+              </p>
+
+              <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
+                {(fr
+                  ? ['Gratuit', 'Deux champs', 'Vidéo sous 48 h']
+                  : ['Free', 'Two fields', 'Video within 48h']
+                ).map((repere) => (
+                  <li
+                    key={repere}
+                    className="inline-flex items-center gap-1.5 rounded-full bg-secondary px-3 py-1.5 text-sm font-medium text-foreground"
+                  >
+                    <Check className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
+                    {repere}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-6">
+                <AuditForm source="fin-de-page" />
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
+
+        {/* Les canaux directs, sur une ligne. Ils ne concurrencent pas le
+            formulaire, ils rattrapent celui qui prefere appeler. */}
+        <ScrollReveal direction="up" delay={0.12}>
+          {/* ⚠️ Centre et a la taille du corps de texte. Elie : « c'est un peu
+              petit et c'est pas centre, il faut que ce soit centre ». C'etait
+              une ligne en `text-sm` alignee a gauche sous une grille centree. */}
+          <div className="mt-12 border-t border-border pt-8 text-center sm:mt-14">
+            <p className="text-base text-muted-foreground">{fr ? 'Ou directement' : 'Or directly'}</p>
+
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-x-9 gap-y-4">
+              <button
+                type="button"
+                onClick={openCalendly}
+                className="inline-flex min-h-[40px] items-center gap-2.5 text-base font-semibold text-foreground transition-colors hover:text-primary"
+              >
+                <Calendar className="h-[18px] w-[18px] text-primary" aria-hidden="true" />
+                {fr ? 'Réserver un appel' : 'Book a call'}
+              </button>
+
+              {canaux.map((canal) => (
+                <a
+                  key={canal.href}
+                  href={canal.href}
+                  className="inline-flex min-h-[40px] items-center gap-2.5 text-base font-semibold text-foreground transition-colors hover:text-primary"
+                >
+                  <canal.icon className="h-[18px] w-[18px] text-primary" aria-hidden="true" />
+                  {canal.texte}
+                </a>
+              ))}
+            </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

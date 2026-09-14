@@ -92,7 +92,7 @@ const MobilePhases = ({ phases }: { phases: readonly Phase[] }) => (
         >
           <p style={{
             fontSize: 10, fontFamily: 'monospace', letterSpacing: '0.2em',
-            textTransform: 'uppercase', marginBottom: 12, color: 'hsl(340 65% 47%)',
+            textTransform: 'uppercase', marginBottom: 12, color: 'hsl(var(--primary))',
           }}>
             {phase.label}
           </p>
@@ -101,7 +101,7 @@ const MobilePhases = ({ phases }: { phases: readonly Phase[] }) => (
             fontSize: '1.75rem', marginBottom: 12, color: 'hsl(30 10% 12%)',
           }}>
             {phase.line1}<br />
-            <span style={{ color: 'hsl(340 65% 47%)' }}>{phase.line2}</span>
+            <span style={{ color: 'hsl(var(--primary))' }}>{phase.line2}</span>
           </h2>
           <div style={{ height: 1, background: 'hsl(30 10% 88%)', margin: '12px 0' }} />
           <p style={{ fontSize: 14, lineHeight: 1.7, color: 'hsl(30 8% 38%)', margin: 0 }}>
@@ -113,7 +113,7 @@ const MobilePhases = ({ phases }: { phases: readonly Phase[] }) => (
               <div key={j} style={{
                 height: 4, borderRadius: 2,
                 width: j === i ? 20 : 4,
-                background: j === i ? 'hsl(340 65% 47%)' : 'hsl(30 10% 80%)',
+                background: j === i ? 'hsl(var(--primary))' : 'hsl(30 10% 80%)',
                 transition: 'width 0.3s',
               }} />
             ))}
@@ -266,11 +266,11 @@ const DesktopScrollVideo = ({ phases, language }: { phases: readonly Phase[]; la
               style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column',
                        alignItems: 'center', justifyContent: 'center', gap: 20, background: 'hsl(30 20% 98%)' }}>
               <p style={{ fontSize: 11, fontFamily: 'monospace', letterSpacing: '0.22em',
-                           textTransform: 'uppercase', color: 'hsl(340 65% 47%)' }}>
+                           textTransform: 'uppercase', color: 'hsl(var(--primary))' }}>
                 {language === 'fr' ? 'Préparation' : 'Loading'} {loadPct}%
               </p>
               <div style={{ width: 160, height: 1, background: 'hsl(30 10% 88%)', overflow: 'hidden', borderRadius: 2 }}>
-                <motion.div style={{ height: '100%', background: 'hsl(340 65% 47%)', borderRadius: 2 }}
+                <motion.div style={{ height: '100%', background: 'hsl(var(--primary))', borderRadius: 2 }}
                   animate={{ width: `${loadPct}%` }} transition={{ duration: 0.1 }} />
               </div>
             </motion.div>
@@ -298,7 +298,7 @@ const DesktopScrollVideo = ({ phases, language }: { phases: readonly Phase[]; la
                   initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 6 }}
                   transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
                   style={{ fontSize: 10, fontFamily: 'monospace', letterSpacing: '0.22em',
-                           textTransform: 'uppercase', marginBottom: 20, color: 'hsl(340 65% 47%)' }}>
+                           textTransform: 'uppercase', marginBottom: 20, color: 'hsl(var(--primary))' }}>
                   {phases[phase].label}
                 </motion.p>
               </AnimatePresence>
@@ -309,7 +309,7 @@ const DesktopScrollVideo = ({ phases, language }: { phases: readonly Phase[]; la
                   style={{ fontWeight: 600, lineHeight: 1.02, letterSpacing: '-0.03em',
                            marginBottom: 16, fontSize: 'clamp(2rem, 3.8vw, 3.2rem)', color: 'hsl(30 10% 12%)' }}>
                   {phases[phase].line1}<br />
-                  <span style={{ color: 'hsl(340 65% 47%)' }}>{phases[phase].line2}</span>
+                  <span style={{ color: 'hsl(var(--primary))' }}>{phases[phase].line2}</span>
                 </motion.h2>
               </AnimatePresence>
               <AnimatePresence mode="wait">
@@ -326,7 +326,7 @@ const DesktopScrollVideo = ({ phases, language }: { phases: readonly Phase[]; la
                   <motion.div key={i}
                     animate={{ width: i === phase ? 22 : 5, opacity: i === phase ? 1 : 0.25 }}
                     transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                    style={{ height: 5, borderRadius: 3, background: 'hsl(340 65% 47%)' }} />
+                    style={{ height: 5, borderRadius: 3, background: 'hsl(var(--primary))' }} />
                 ))}
                 <span style={{ marginLeft: 10, fontSize: 10, fontFamily: 'monospace',
                                letterSpacing: '0.15em', color: 'hsl(30 5% 55%)', textTransform: 'uppercase' }}>
@@ -340,7 +340,7 @@ const DesktopScrollVideo = ({ phases, language }: { phases: readonly Phase[]; la
         <div style={{ position: 'absolute', bottom: 36, left: 0, right: 0,
           padding: '0 clamp(1.5rem, 5vw, 5rem)', pointerEvents: 'none', zIndex: 11 }}>
           <div style={{ height: 1, background: 'hsl(30 10% 82% / 0.6)', borderRadius: 1, overflow: 'hidden' }}>
-            <motion.div style={{ height: '100%', background: 'hsl(340 65% 47% / 0.7)', borderRadius: 1 }}
+            <motion.div style={{ height: '100%', background: 'hsl(var(--primary) / 0.7)', borderRadius: 1 }}
               animate={{ width: `${progress * 100}%` }} transition={{ duration: 0.05 }} />
           </div>
         </div>

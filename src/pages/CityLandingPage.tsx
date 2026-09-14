@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { MapPin, ArrowRight, ArrowUpRight, Clock, CheckCircle, Star, Shield, Users } from 'lucide-react';
+import { MapPin, ArrowRight, ArrowUpRight, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -8,6 +8,7 @@ import { useCalendly } from '@/contexts/CalendlyContext';
 import ServicesSection from '@/components/ServicesSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import FAQAccordion from '@/components/FAQAccordion';
+import FaqSection from '@/components/FaqSection';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
 import { cities, getRelatedCities } from '@/data/cities';
 import { getIndexEntry } from '@/data/blogIndex';
@@ -38,6 +39,12 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
       return post ? { slug: articleSlug, title: post.title, excerpt: post.excerpt } : null;
     })
     .filter((p): p is { slug: string; title: string; excerpt: string } => p !== null);
+
+  /* « de » s'elide devant une voyelle ou un h muet. Sans ca, les pages
+     locales affichaient « Autour de Albertville », « Autour de Annecy »,
+     « Autour de Aix-les-Bains » et « Autour de Ugine » : quatre fautes
+     visibles sur quinze pages indexees. */
+  const de = (nom: string) => (/^[aeiouyàâéèêëîïôöùûüh]/i.test(nom) ? `d'${nom}` : `de ${nom}`);
 
   const localBusinessSchema = {
     '@context': 'https://schema.org',
@@ -136,12 +143,6 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
     ],
   };
 
-  const proofItems = [
-    { icon: Users, label: language === 'fr' ? '12+ clients accompagnés' : '12+ clients served' },
-    { icon: CheckCircle, label: language === 'fr' ? '100% Satisfaits' : '100% Satisfied' },
-    { icon: Star, label: language === 'fr' ? 'Avis 5 étoiles' : '5-star reviews' },
-    { icon: Shield, label: language === 'fr' ? 'Suivi personnalisé' : 'Personal follow-up' },
-  ];
 
   return (
     <>
@@ -203,7 +204,7 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight drop-shadow-lg"
+            className="hero-title mb-6"
           >
             <span className="text-foreground">{d.h1Pre}</span>
             <span className="inline-block text-primary">{d.h1Highlight}</span>
@@ -289,26 +290,29 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
             </motion.p>
           )}
 
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.6 }}
-            className="mt-10 flex flex-wrap items-center justify-center gap-4 sm:gap-6"
-          >
-            {proofItems.map((item, i) => (
-              <div key={i} className="flex items-center gap-2.5 text-foreground/70 text-sm font-medium">
-                <item.icon className="w-5 h-5 text-primary shrink-0" aria-hidden="true" />
-                <span>{item.label}</span>
-              </div>
-            ))}
-          </motion.div>
+          {/* 🔴 Une bande de quatre pastilles vivait ici, sur les quinze pages
+              locales : « 12+ clients accompagnes », « 100 % Satisfaits »,
+              « Avis 5 etoiles », « Suivi personnalise ». Retiree le
+              14 septembre 2026, pour trois raisons qui se cumulent.
+
+              1. **Deux des quatre sont invendables.** « 100 % Satisfaits » ne
+                 repose sur rien et se lit comme un slogan de prospectus ; Elie
+                 refuse d'afficher un chiffre qu'il ne peut pas sourcer.
+              2. **Elle repetait les deux lignes juste au-dessus**, qui disent
+                 la meme chose en vrai : le numero direct, la reponse sous 48 h
+                 et le temps de trajet depuis Albertville.
+              3. Le label etait en `text-foreground/70`, soit une opacite sur du
+                 texte, ce que la regle d'accessibilite du projet interdit.
+
+              ⚠️ Ne pas la remplacer par une autre rangee de pastilles. Si une
+              preuve manque sur ces pages, elle se pose en phrase. */}
         </div>
       </section>
 
       {showDepth && (
         <>
           {/* Contexte local, la partie qui distingue cette page d'une page dupliquee */}
-          <section className="py-14 sm:py-20 border-t border-border/50" aria-labelledby="city-context">
+          <section className="py-16 sm:py-24 border-t border-border/50" aria-labelledby="city-context">
             <div className="max-w-3xl mx-auto px-4 sm:px-6">
               <h2 id="city-context" className="text-2xl sm:text-3xl font-medium leading-tight text-balance mb-6">
                 {`Le contexte à ${d.name}`}
@@ -354,7 +358,7 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
                     className="py-8 sm:py-10 grid grid-cols-1 sm:grid-cols-12 gap-3 sm:gap-8"
                   >
                     <div className="sm:col-span-4">
-                      <span className="text-xs font-mono text-primary/70">
+                      <span className="text-xs font-mono text-primary">
                         {String(i + 1).padStart(2, '0')}
                       </span>
                       <h3 className="mt-1 text-lg sm:text-xl font-semibold leading-snug text-foreground">
@@ -371,12 +375,8 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
           </section>
 
           {/* Reseaux sociaux, deuxieme pilier */}
-          <section className="py-14 sm:py-20" aria-labelledby="city-social">
+          <section className="py-16 sm:py-24" aria-labelledby="city-social">
             <div className="max-w-3xl mx-auto px-4 sm:px-6">
-              <span className="inline-flex items-center gap-2 text-sm font-medium text-primary mb-4">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary" aria-hidden="true" />
-                Réseaux sociaux
-              </span>
               <h2 id="city-social" className="text-2xl sm:text-3xl font-medium leading-tight text-balance mb-5">
                 {`Et si on filmait chez vous, à ${d.name} ?`}
               </h2>
@@ -397,7 +397,7 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
           <section className="py-12 sm:py-16 bg-secondary/40 border-y border-border/50" aria-labelledby="city-nearby">
             <div className="max-w-3xl mx-auto px-4 sm:px-6">
               <h2 id="city-nearby" className="text-lg sm:text-xl font-semibold text-foreground mb-4">
-                {`Autour de ${d.name}`}
+                {`Autour ${de(d.name)}`}
               </h2>
               <p className="text-base text-muted-foreground leading-relaxed">
                 Je me déplace aussi à {depth!.nearby.slice(0, -1).join(', ')} et {depth!.nearby.slice(-1)}. Si
@@ -406,22 +406,21 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
             </div>
           </section>
 
-          {/* FAQ locale, alignee sur le schema FAQPage */}
-          <section className="py-14 sm:py-20" aria-labelledby="city-faq">
-            <div className="max-w-3xl mx-auto px-4 sm:px-6">
-              <h2 id="city-faq" className="text-2xl sm:text-3xl font-medium leading-tight mb-8">
-                Questions fréquentes
-              </h2>
-              <dl className="divide-y divide-border/60 border-y border-border/60">
-                {depth!.faq.map((item) => (
-                  <div key={item.q} className="py-6">
-                    <dt className="text-base sm:text-lg font-semibold text-foreground">{item.q}</dt>
-                    <dd className="mt-2 text-base text-muted-foreground leading-relaxed">{item.a}</dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-          </section>
+          {/* FAQ locale, alignee sur le schema FAQPage.
+              ⚠️ C'etait une liste `dl` depliee avec ses propres classes. Voir
+              la note de `FaqSection` : meme presentation sur les quatre pages
+              qui portent une FAQ, seules les questions changent. */}
+          <FaqSection
+            id="city-faq"
+            className="px-4 py-14 sm:px-6 sm:py-20"
+            items={depth!.faq.map((item) => ({ question: item.q, answer: item.a }))}
+            titre={
+              <>
+                <span className="text-foreground">Les questions qu&rsquo;on me pose </span>
+                <span className="text-primary">à {d.name}.</span>
+              </>
+            }
+          />
 
           {/* Maillage vers le corpus, choisi pour le tissu economique du bassin */}
           {cityArticles.length > 0 && (

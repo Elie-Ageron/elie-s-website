@@ -9,6 +9,7 @@ import JsonLd from '@/components/JsonLd';
 import ReviewSchema from '@/components/ReviewSchema';
 import OrganizationSchema from '@/components/OrganizationSchema';
 import { ReactNode, lazy, Suspense, useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 // Lazy load non-critical visual components
 const FloatingParticles = lazy(() => import('@/components/animations/FloatingParticles'));
@@ -19,7 +20,22 @@ interface LayoutProps {
   children: ReactNode;
 }
 
+/**
+ * ⚠️ Le formulaire libre « Parlez-moi de votre projet » ne s'affiche plus que
+ * sur `/contact`.
+ *
+ * Il etait injecte au bas des quatorze pages, sous la section de contact qui
+ * porte deja le formulaire d'audit. Chaque page se terminait donc par deux
+ * formulaires a la suite, l'un a deux champs et l'autre a quatre, sans que
+ * rien n'explique la difference. Deux demandes de meme poids, donc aucune.
+ *
+ * L'audit reste la porte d'entree partout parce qu'il se remplit en dix
+ * secondes. Celui qui prefere decrire son projet a un lien vers `/contact`
+ * juste sous le formulaire d'audit.
+ */
 const Layout = ({ children }: LayoutProps) => {
+  const { pathname } = useLocation();
+  const pageDeContact = pathname === '/contact';
   // Delay loading decorative elements until after initial paint
   const [showDecorations, setShowDecorations] = useState(false);
   // Delay contact form long enough for lazy page chunks to load and render,
@@ -109,12 +125,33 @@ const Layout = ({ children }: LayoutProps) => {
             )}
           </Suspense>
         )}
+        {/* Lien d'evitement. WCAG 2.4.1 : sans lui, un visiteur au clavier doit
+            traverser les neuf entrees du menu, le selecteur de langue et les
+            deux boutons d'action avant d'atteindre le contenu, sur chaque page.
+            Invisible tant qu'il n'a pas le focus. */}
+        <a
+          href="#contenu"
+          onClick={(e) => {
+            // Le saut est fait a la main. Un simple `href="#contenu"` ne
+            // deplacait pas le focus : le routeur intercepte la navigation et
+            // le fragment n'etait jamais applique. Or c'est le deplacement du
+            // focus qui compte, pas le defilement.
+            e.preventDefault();
+            const cible = document.getElementById('contenu');
+            if (!cible) return;
+            cible.focus({ preventScroll: true });
+            cible.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }}
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[400] focus:rounded-full focus:bg-primary focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:text-primary-foreground focus:shadow-lg"
+        >
+          Aller au contenu
+        </a>
         <Header />
         <PageTransition>
-          <main className="pt-24 relative z-[1]">
+          <main id="contenu" tabIndex={-1} className="pt-24 relative z-[1]">
             <Breadcrumb />
             {children}
-            {showContactForm && <GlobalContactForm />}
+            {pageDeContact && showContactForm && <GlobalContactForm />}
           </main>
         </PageTransition>
         <Footer />

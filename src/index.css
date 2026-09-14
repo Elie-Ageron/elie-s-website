@@ -114,6 +114,7 @@ All colors MUST be HSL.
     @apply font-heading;
     font-weight: 500;
     letter-spacing: -0.02em;
+    text-wrap: balance;
   }
 
   h1 {
@@ -128,10 +129,154 @@ All colors MUST be HSL.
   html {
     scroll-behavior: smooth;
   }
+
+  /* Anneau de focus global.
+     Les composants Button et Input portent deja le leur, mais les liens et les
+     boutons ecrits a la main n'avaient que le contour par defaut du navigateur,
+     tres peu visible sur ce fond clair. Cette regle couvre tout le reste, et
+     `:focus-visible` fait qu'elle n'apparait qu'au clavier, jamais a la souris. */
+  :where(a, button, [role='button'], summary):focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* La cible du lien d'evitement ne doit pas dessiner d'anneau : c'est un
+     conteneur, pas une commande. */
+  main:focus,
+  main:focus-visible {
+    outline: none;
+  }
 }
 
 /* Subtle utilities for light theme */
 @layer components {
+  /* ── Les graisses disponibles, et il n'y en a que quatre ─────────────────
+     🔴 `index.html` charge General Sans en **faces statiques** :
+     `f[]=general-sans@400,500,600,700`. Ce n'est pas une police variable, et
+     un commentaire de ce fichier a longtemps affirme le contraire.
+
+     Consequence : une valeur intermediaire n'est pas rendue, le navigateur
+     retombe sur la face la plus proche selon l'algorithme CSS. `450` tombe sur
+     500, `550` tombe sur 600. Ecrire `font-weight: 450` donne donc exactement
+     le meme rendu que `500`, et laisse croire qu'on a un reglage fin qu'on n'a
+     pas.
+
+     Donc : **le seul pas de graisse disponible est de 100**. Quand Elie dit
+     « baisse legerement », la reponse est un cran, pas une demi-mesure. */
+
+  /* Le titre de section, defini une seule fois pour tout le site.
+     Elie a choisi ce poids et cette echelle sur la section reseaux sociaux de
+     l'accueil : « j'aime bien l'epaisseur du titre noir, je veux ca sur tous
+     les titres ». Avant, chaque section portait sa propre taille et son propre
+     poids (font-medium ici, font-bold la, six paliers differents), et parcourir
+     la page ne donnait aucune hierarchie.
+
+     La regle de redaction qui va avec : un titre se lit seul. Quelqu'un qui
+     fait defiler sans lire un seul paragraphe doit comprendre toute l'offre
+     rien qu'avec les titres. Donc court, une idee, pas de sous-phrase. */
+  .section-title {
+    /* 600 et non 700. Elie : « baisse legerement le gras pour augmenter
+       l'effet premium ». Un titre tres gras crie ; a 52 px, 600 tient la
+       hierarchie sans forcer. Valide par Elie, ne pas y toucher : le hero est
+       un cran en dessous parce qu'il est 20 px plus grand, pas parce que la
+       regle a change. */
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+    text-wrap: balance;
+    font-size: clamp(1.875rem, 4.6vw, 3.25rem);
+  }
+
+  /* ── Le rapport entre les deux membres du titre ──────────────────────────
+     Le premier membre est noir, gras et grand : c'est lui qui porte l'idee.
+     Le second est rose, plus leger et plus petit : il complete.
+
+     Elie, deux fois : « le noir doit etre gras, quand c'est la meme epaisseur
+     les deux lignes c'est galere a lire », puis « le noir dit le plus
+     important, le rose plus petit complete, et ca partout ».
+
+     Deux lignes de meme taille et de meme graisse forment un pave : l'oeil n'a
+     aucun point d'entree et il lit tout ou rien. La reference est le titre du
+     hero de l'accueil, que ces valeurs reproduisent.
+
+     `em` et non `rem` : la taille suit le `clamp()` du parent, donc le rapport
+     tient a toutes les largeurs d'ecran. */
+  /* 🔴 Le piege, et il a coute deux allers-retours.
+     `@layer base` contient `p, span, a, li { font-weight: 400 }`. Cette regle
+     s'applique DIRECTEMENT aux `span` du titre, donc elle bat l'heritage du
+     `h2` : le membre noir retombait a 400 pendant que le rose montait a 500.
+     Elie : « noir fin, inverse ». Il fallait donc regraisser les span
+     explicitement avant de degraisser le rose. */
+  .section-title,
+  .section-title > span {
+    font-weight: 600;
+  }
+
+  /* Meme correction sur les onze `h1` de page : leurs membres sont aussi des
+     `span`, donc ils retombaient a 400 alors que le `h1` est en 600 ou 700.
+     `inherit` les rattache a la graisse du titre au lieu de la figer. */
+  h1 > span {
+    font-weight: inherit;
+  }
+
+  .section-title .text-primary,
+  h1 .text-primary {
+    font-weight: 450;
+    font-size: 0.85em;
+  }
+
+  /* ── Le titre de hero ────────────────────────────────────────────────────
+     Une seule classe pour les onze pages qui en portent un. Avant, chacune
+     ecrivait sa propre echelle a la main, et la plus repandue etait
+     `text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold` : 72 px en 700,
+     recopiee sur sept pages. Elie : « je trouve les titres des hero un peu
+     trop gras, ca fait cheap ».
+
+     Il a raison, et la raison est optique : la graisse percue monte avec la
+     taille. Un 600 qui tient parfaitement a 52 px (`.section-title`) devient
+     un pave a 72 px. Une typo d'affichage se degraisse quand elle grandit,
+     c'est l'inverse du reflexe. Le hero est donc **un cran sous le titre de
+     section**, pas au-dessus.
+
+     500 et non 550 : voir la note sur les quatre faces statiques en tete de
+     couche. 550 retomberait sur 600, donc ne changerait rien.
+
+     La taille reste celle de l'accueil, en `clamp()` et non en paliers : a
+     320 px le titre tombait a 40 px, prenait cinq lignes et poussait le bouton
+     sous la ligne de flottaison. Une page qui a besoin d'un titre plus petit
+     (`/audit-gratuit`, dont le hero partage sa largeur avec le formulaire)
+     surcharge la seule `font-size`. */
+  .hero-title {
+    font-weight: 500;
+    line-height: 1.06;
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+    font-size: clamp(1.75rem, 7.5vw, 4.5rem);
+  }
+
+  /* Meme piege que sur `.section-title` : `p, span, a, li { font-weight: 400 }`
+     vise directement les `span` du titre. Il faut donc les regraisser
+     explicitement, sinon le membre noir tombe a 400 et passe sous le rose. */
+  .hero-title > span {
+    font-weight: 500;
+  }
+
+  /* Le membre rose garde un cran d'ecart avec le noir, comme sur les titres de
+     section. Les deux descendent ensemble, l'ecart ne bouge pas. */
+  .hero-title .text-primary {
+    font-weight: 400;
+    font-size: 0.85em;
+  }
+
+  /* Le paragraphe qui suit un titre de section. */
+  .section-lede {
+    max-width: 36rem;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: hsl(var(--muted-foreground));
+  }
+
   .glass {
     background: hsl(0 0% 100% / 0.7);
     backdrop-filter: blur(12px);

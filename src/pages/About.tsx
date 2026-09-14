@@ -163,7 +163,7 @@ const About = () => {
               <MapPin className="w-4 h-4" aria-hidden="true" />
               Albertville, Savoie
             </span>
-            <h1 id="about-heading" className="text-3xl sm:text-4xl md:text-5xl font-medium leading-[1.1] text-balance">
+            <h1 id="about-heading" className="section-title">
               {fr ? 'Elie Ageron, ' : 'Elie Ageron, '}
               <span className="text-primary">
                 {fr ? 'partenaire web en Savoie.' : 'web partner in Savoie.'}
@@ -194,7 +194,7 @@ const About = () => {
                 className="py-9 sm:py-11 border-b border-border/60"
                 aria-labelledby={`about-section-${i}`}
               >
-                <span className="text-xs font-mono text-primary/70">{String(i + 1).padStart(2, '0')}</span>
+                <span className="text-xs font-mono text-primary">{String(i + 1).padStart(2, '0')}</span>
                 <h3
                   id={`about-section-${i}`}
                   className="mt-1 text-xl sm:text-2xl font-medium leading-snug text-balance"

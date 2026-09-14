@@ -2,7 +2,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface SEOProps {
-  page: 'home' | 'services' | 'social' | 'why' | 'process' | 'pricing' | 'portfolio' | 'contact' | 'getStarted' | 'blog' | 'apps' | 'guides' | 'about';
+  page: 'home' | 'services' | 'social' | 'why' | 'process' | 'pricing' | 'portfolio' | 'contact' | 'getStarted' | 'blog' | 'apps' | 'guides' | 'about' | 'audit';
   /** Force la langue du document, pour les contenus servis en francais seul. */
   forceLang?: 'fr' | 'en';
   customTitle?: string;
@@ -31,6 +31,7 @@ const pageKeywords = {
     apps: 'web app development, business dashboard, custom app, CRM development, SaaS development, business software',
     guides: 'social media guide for small business, smartphone video guide, local SEO guide, Google Business Profile, content marketing for local business',
     about: 'Elie Ageron, web designer Savoie, freelance web designer France, about, portfolio, Albertville',
+    audit: 'free online presence audit, free website review, Google Business Profile audit, social media audit, free marketing audit France, Savoie',
   },
   fr: {
     home: 'Elie Ageron, web design, création site web, optimisation conversion, site internet, Savoie, Haute-Savoie, Albertville, Annecy',
@@ -46,6 +47,7 @@ const pageKeywords = {
     apps: 'développement application web, dashboard entreprise, app sur mesure, CRM personnalisé, logiciel métier, outil interne',
     guides: 'guide réseaux sociaux entreprise, guide vidéo smartphone, guide référencement local, fiche Google Business, contenu vidéo TPE, guide SEO local Savoie',
     about: 'Elie Ageron, web designer Savoie, partenaire web Albertville, freelance création site web, qui suis-je',
+    audit: 'audit gratuit présence en ligne, audit site web gratuit, audit fiche Google Business, audit réseaux sociaux gratuit, diagnostic visibilité Savoie, audit vidéo gratuit Albertville',
   },
 };
 
@@ -54,15 +56,15 @@ const seoData = {
   en: {
     home: {
       title: 'Websites & Social Media Content | Elie Ageron',
-      description: 'Websites that turn visitors into clients, plus short videos posted every week on your social accounts. Based in Savoie, working across France. Free call.',
+      description: 'Social media from 890 €/month, websites from 500 €, live in 7 to 14 days. Based in Albertville, Savoie. Free presence audit within 48 hours.',
     },
     services: {
       title: 'Web Partner in Savoie | Elie Ageron',
-      description: 'More than websites: social media content, Google Business, branding, local SEO. Your all-in-one web partner in Savoie & Haute-Savoie. Free strategy call.',
+      description: 'Websites from 500 €, social media from 890 €/month, plus Google Business, branding and local SEO. Web partner in Savoie. Free audit in 48 hours.',
     },
     social: {
       title: 'Social Media Content, Done For You | Elie Ageron',
-      description: 'I come film for one day a month, then post 6 to 12 short videos on your accounts. 56,619 views on a client first post. Free call, custom quote.',
+      description: 'From 890 €/month: I film for one day at your place, then post 6 to 12 videos through the month. You touch nothing. Albertville and Savoie.',
     },
     why: {
       title: 'Why You Need a Website | Elie Ageron',
@@ -74,7 +76,7 @@ const seoData = {
     },
     pricing: {
       title: 'Web Design Pricing | Elie Ageron',
-      description: 'Custom quotes by Elie Ageron. Landing pages, showcase sites & full launch packs, priced around your project. No hidden fees, 100% satisfaction guaranteed.',
+      description: 'Custom quotes by Elie Ageron. Landing pages, showcase sites and full launch packs, priced around your project. No hidden fees.',
     },
     portfolio: {
       title: 'Portfolio & Case Studies | Elie Ageron',
@@ -104,19 +106,23 @@ const seoData = {
       title: 'About Elie Ageron | Web Designer',
       description: 'Web designer based in Albertville, Savoie. How I work, who I work with, and why I stay involved after a site goes live.',
     },
+    audit: {
+      title: 'Free Online Presence Audit | Elie Ageron',
+      description: 'I review your Google listing, your socials and your site, then send you a 4 minute video within 48 hours. Free, no follow-up call. Two fields to fill.',
+    },
   },
   fr: {
     home: {
       title: 'Site Web & Réseaux Sociaux Savoie | Elie Ageron',
-      description: 'Des sites qui transforment vos visiteurs en clients, et des vidéos publiées chaque semaine sur vos réseaux. Savoie, Haute-Savoie et France. Sur devis.',
+      description: "Réseaux sociaux dès 890 €/mois, site web dès 500 €, en ligne en 7 à 14 jours. Albertville et Savoie. Audit gratuit de votre présence sous 48 h.",
     },
     services: {
       title: 'Partenaire Web en Savoie | Elie Ageron',
-      description: "Bien plus qu'un site : vidéos pour vos réseaux, fiche Google, identité de marque, SEO local. Votre partenaire web en Savoie et Haute-Savoie. Appel gratuit.",
+      description: "Site dès 500 €, réseaux sociaux dès 890 €/mois, plus fiche Google, marque et SEO local. Partenaire web en Savoie. Audit gratuit sous 48 h.",
     },
     social: {
       title: 'Gestion Réseaux Sociaux Savoie | Elie Ageron',
-      description: 'Je viens filmer une journée par mois, puis je publie 6 à 12 vidéos sur vos réseaux. 56 619 vues dès la première publication. Appel gratuit.',
+      description: "Dès 890 €/mois : je filme une journée chez vous, puis je publie 6 à 12 vidéos dans le mois. Vous ne touchez à rien. Albertville et Savoie.",
     },
     why: {
       title: 'Pourquoi un Site Web | Elie Ageron',
@@ -128,15 +134,19 @@ const seoData = {
     },
     pricing: {
       title: 'Tarifs Web Design | Elie Ageron',
-      description: 'Devis sur mesure. Landing pages, sites vitrines et packs lancement, chiffrés selon votre projet. Sans frais cachés, satisfaction garantie.',
+      description: 'Devis sur mesure. Landing pages, sites vitrines et packs lancement, chiffrés selon votre projet. Sans frais cachés.',
     },
     portfolio: {
       title: 'Portfolio & Réalisations | Elie Ageron',
-      description: "Des sites réalisés pour des entreprises de Savoie et de Haute-Savoie : ce qui a été fait, pourquoi, et ce que ça a changé pour elles au quotidien.",
+      description: "Des sites livrés en 7 à 14 jours pour des entreprises de Savoie et de Haute-Savoie : ce qui a été fait, pourquoi, et ce que ça a changé pour elles.",
     },
     contact: {
       title: 'Contact Elie Ageron | Création Web',
-      description: "Un appel gratuit de trente minutes, ou simplement un message. Je vous dis franchement ce que je ferais à votre place, même si c'est de ne rien faire.",
+      description: "Réponse sous 24 h, appel gratuit de trente minutes. Je vous dis franchement ce que je ferais à votre place, même si c'est de ne rien faire.",
+    },
+    getStarted: {
+      title: 'Démarrer un Projet Web | Elie Ageron',
+      description: "Décrivez votre projet en trois minutes : votre activité, votre ville et ce que vous cherchez. Je vous réponds sous 48 h ouvrées avec un chiffrage.",
     },
     blog: {
       title: 'Conseils Réseaux Sociaux & Web | Elie Ageron',
@@ -157,6 +167,10 @@ const seoData = {
     about: {
       title: 'Qui est Elie Ageron | Web Designer Savoie',
       description: "Web designer et partenaire web à Albertville, en Savoie. Mon parcours, ma façon de travailler, ce que je ne fais pas, et comment se passe un projet.",
+    },
+    audit: {
+      title: 'Audit Gratuit de Votre Présence en Ligne',
+      description: "Je regarde votre fiche Google, vos réseaux et votre site, et je vous envoie 4 minutes de vidéo sous 48 h. Gratuit, sans rappel derrière. Deux champs à remplir.",
     },
   },
 };
@@ -196,6 +210,7 @@ const SEO = ({ page, forceLang, customTitle, customDescription, customCanonical,
     apps: '/apps',
     guides: '/guides',
     about: '/a-propos',
+    audit: '/audit-gratuit',
   };
   
   const currentPath = pathMap[page] || '';

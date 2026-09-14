@@ -55,11 +55,7 @@ const GuidesIndex = () => {
         </div>
         <div className="max-w-3xl mx-auto px-4 sm:px-6 relative z-10">
           <motion.header initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <span className="inline-flex items-center gap-2 text-sm font-medium text-primary mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary" aria-hidden="true" />
-              Guides
-            </span>
-            <h1 id="guides-heading" className="text-3xl sm:text-4xl md:text-5xl font-medium leading-[1.1] text-balance">
+            <h1 id="guides-heading" className="section-title">
               {guides.length} guides, et de quoi vous en sortir seul.
             </h1>
             <p className="mt-5 text-base sm:text-lg text-muted-foreground leading-relaxed">
@@ -130,7 +126,7 @@ const GuidesIndex = () => {
                   className="inline-flex items-center gap-2 min-h-[36px] px-4 rounded-full border border-border/70 text-sm text-muted-foreground hover:border-primary/50 hover:text-primary transition-colors"
                 >
                   {category.fr}
-                  <span className="text-xs text-primary/70">{category.count}</span>
+                  <span className="text-xs text-primary">{category.count}</span>
                 </Link>
               </li>
             ))}

@@ -501,7 +501,7 @@ Publier régulièrement, y compris les semaines pleines, c'est ce qui construit 
 
 C'est le cas de la plupart des restaurateurs que je rencontre. Vous ne pouvez pas filmer et cuisiner en même temps, et personne dans l'équipe n'a le temps de monter des vidéos après la fermeture.
 
-C'est exactement pour ça que [je viens filmer une journée sur place](/reseaux-sociaux) et que je m'occupe ensuite du montage et de la publication pendant un mois. Vous cuisinez, je filme, et vous ne touchez plus à rien. [Écrivez moi](/contact) si vous voulez qu'on en parle, et n'hésitez pas à me dire aussi ce que vous avez déjà essayé.
+C'est exactement pour ça que [je viens filmer une journée sur place](/reseaux-sociaux) et que je m'occupe ensuite du montage et de la publication pendant un mois. Vous cuisinez, je filme, et vous ne touchez plus à rien. [Écrivez moi](/contact) si vous voulez qu'on en parle, et dites-moi aussi ce que vous avez déjà essayé.
     `,
   },
   {

@@ -321,7 +321,7 @@ const Assessment = () => {
 
           <motion.h1
             id="assess-heading"
-            className="text-3xl sm:text-5xl md:text-6xl font-bold mb-5 leading-tight"
+            className="hero-title mb-5"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -388,7 +388,7 @@ const Assessment = () => {
 
       {/* ===== Quiz + Result ===== */}
       {view !== 'intro' && (
-        <section ref={quizRef} className="py-16 sm:py-24 relative scroll-mt-24">
+        <section ref={quizRef} className="py-20 sm:py-32 relative scroll-mt-24">
           <div className="max-w-2xl mx-auto px-4 sm:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

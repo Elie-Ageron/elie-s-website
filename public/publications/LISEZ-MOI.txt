@@ -1,0 +1,10 @@
+Deposer ici les couvertures de publication, en .webp vertical 4:5 :
+
+  menuiserie.webp    restaurant.webp    plomberie.webp
+  therapeute.webp    coiffure.webp      boulangerie.webp
+
+Les prompts de generation et les regles de cadrage sont dans
+docs/photos-de-publication.md
+
+Tant qu'un fichier est absent, un degrade rose tient la place et la mise en
+page ne bouge pas. Il n'y a rien a recompiler apres avoir depose une image.

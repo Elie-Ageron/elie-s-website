@@ -105,11 +105,7 @@ const Blog = () => {
             transition={{ duration: 0.5 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <span className="inline-flex items-center gap-2 text-sm font-medium text-primary mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary" aria-hidden="true" />
-              Blog
-            </span>
-            <h1 id="blog-hero-heading" className="text-3xl sm:text-4xl md:text-5xl font-medium leading-[1.1] text-balance">
+            <h1 id="blog-hero-heading" className="section-title">
               {fr ? 'Des conseils concrets pour ' : 'Practical advice to '}
               <span className="text-primary">
                 {fr ? 'trouver des clients en ligne.' : 'win clients online.'}
@@ -162,7 +158,7 @@ const Blog = () => {
                     className="inline-flex items-center gap-2 min-h-[36px] px-4 rounded-full border border-border/70 text-sm text-muted-foreground hover:border-primary/50 hover:text-primary transition-colors"
                   >
                     {fr ? category.fr : category.en}
-                    <span className="text-xs text-primary/70">{category.count}</span>
+                    <span className="text-xs text-primary">{category.count}</span>
                   </Link>
                 </li>
               ))}

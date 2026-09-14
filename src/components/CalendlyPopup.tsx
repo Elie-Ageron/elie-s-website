@@ -55,6 +55,17 @@ export function CalendlyPopup() {
         aria-modal={isOpen ? true : undefined}
         aria-hidden={!isOpen}
         aria-label="Prendre rendez-vous"
+        /**
+         * `inert` retire du parcours clavier tout ce que contient la fenetre
+         * quand elle est fermee.
+         *
+         * Sans lui, `aria-hidden` masquait la fenetre aux lecteurs d'ecran mais
+         * laissait le bouton de fermeture et l'iframe Calendly dans l'ordre de
+         * tabulation : un visiteur au clavier tabulait dans des commandes
+         * invisibles, sur chaque page du site. Releve par axe-core le
+         * 13 septembre 2026, gravite « serious », regle `aria-hidden-focus`.
+         */
+        {...(isOpen ? {} : { inert: '' })}
       >
         <div
           className={`relative bg-white rounded-2xl w-full max-w-2xl shadow-2xl transition-transform duration-300 ${

@@ -1,100 +1,112 @@
-﻿import { motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import eliePortrait from '@/assets/elie-ageron-portrait.webp';
 
+/**
+ * Qui est derriere tout ca.
+ *
+ * Remontee en septembre 2026, du bas de page vers le milieu. Elle etait
+ * coincee entre la FAQ et trois sections d'appel a l'action : personne ne
+ * lisait la seule partie de la page qui repond a la question qu'un artisan se
+ * pose en premier, a savoir qui je vais avoir au telephone.
+ *
+ * 🔴 **Deux titres ont ete rejetes ici, ne pas y revenir.**
+ *
+ * | Titre | Verdict d'Elie |
+ * |---|---|
+ * | « Un projet a la fois. Le votre. » | *« c'est faux, je fais plusieurs projets »* |
+ * | « Je ne peux pas prendre trente clients. » | *« c'est quoi ca ? C'est pourri, c'est tellement nul »* |
+ * | « Je suis a Albertville, et je viens chez vous. » | *« ce texte doit pas trop limiter en geographie »* |
+ *
+ * Les deux cherchaient un argument de rarete. Le second etait vrai mais il
+ * s'ouvrait sur une limite, donc il vendait ce qu'Elie ne sait pas faire au
+ * lieu de ce qu'il fait. Ce qu'il a demande a la place : *« un truc qui me
+ * presente, que je suis a Albertville, que j'aide les gens a avoir du reseau.
+ * C'est pas complique. »*
+ *
+ * **La section presente une personne et ce qu'elle apporte.** Elie : *« il doit
+ * surtout me presenter, et dire a celui qui lit comment je peux l'aider avec
+ * son entreprise. »*
+ *
+ * ⚠️ **La geographie reste, mais en dernier et sans borne.** Un titre qui
+ * annonce Albertville disqualifie tout lecteur qui n'est pas de la vallee,
+ * alors que la zone declaree va jusqu'a la France entiere. La ville vit
+ * maintenant dans la derniere phrase, avec « en Savoie comme ailleurs ».
+ * Le SEO local n'y perd rien : Albertville, Chambery et Annecy sont nommes
+ * plus haut dans la section reseaux sociaux, et sur les quinze pages locales.
+ *
+ * Le texte parlait aussi uniquement de sites (« du brief a la mise en ligne »,
+ * « un site concu pour convertir »), reste de l'epoque ou le site etait le
+ * pilier n°1. Il couvre maintenant les deux offres.
+ *
+ * La colonne de texte a ete elargie : le titre tombait dans trois cinquiemes
+ * de la largeur et se cassait sur quatre lignes contre le bord gauche.
+ */
 const PersonalIntroSection = () => {
   const { language } = useLanguage();
+  const fr = language === 'fr';
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 relative overflow-hidden" aria-labelledby="intro-heading">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-10 items-center">
-          {/* Image - Left side - smaller on mobile, balanced on desktop */}
+    <section className="relative px-4 py-20 sm:px-6 sm:py-28" aria-labelledby="intro-heading">
+      <div className="mx-auto max-w-5xl">
+        <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-14">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative order-2 md:order-1 md:col-span-2"
+            className="order-2 md:order-1 md:col-span-4"
           >
-            <div className="relative mx-auto md:mx-0 max-w-[180px] sm:max-w-[220px] md:max-w-[280px]">
-              {/* Decorative elements - scaled down */}
-              <div className="absolute -inset-3 bg-gradient-to-br from-primary/15 to-transparent rounded-2xl blur-lg" aria-hidden="true" />
-              <div className="absolute -top-1.5 -left-1.5 w-12 h-12 sm:w-16 sm:h-16 border-t-2 border-l-2 border-primary/40 rounded-tl-xl" aria-hidden="true" />
-              <div className="absolute -bottom-1.5 -right-1.5 w-12 h-12 sm:w-16 sm:h-16 border-b-2 border-r-2 border-primary/40 rounded-br-xl" aria-hidden="true" />
-              
-              {/* Image - optimized loading */}
-              <img
-                src={eliePortrait}
-                alt="Elie Ageron - Web Designer & Conversion Expert spécialisé en sites haute conversion en Savoie et Haute-Savoie"
-                className="relative rounded-xl shadow-xl w-full object-cover aspect-[4/5]"
-                width={280}
-                height={350}
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
+            <img
+              src={eliePortrait}
+              alt={
+                fr
+                  ? 'Elie Ageron, web designer et créateur de contenu à Albertville, en Savoie'
+                  : 'Elie Ageron, web designer and content creator in Albertville, Savoie'
+              }
+              className="soft-shadow mx-auto aspect-[4/5] w-full max-w-[220px] rounded-2xl object-cover sm:max-w-[260px] md:mx-0 md:max-w-none"
+              width={320}
+              height={400}
+              loading="lazy"
+              decoding="async"
+            />
           </motion.div>
 
-          {/* Content - Right side - more space */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="order-1 md:order-2 md:col-span-3 text-center md:text-left"
+            className="order-1 md:order-2 md:col-span-8"
           >
-            <h2
-              id="intro-heading"
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-4 sm:mb-5 leading-tight"
-            >
-              <span className="text-foreground">
-                {language === 'fr' ? 'Un projet à la fois.' : 'One project at a time.'}
-              </span>
-              <br />
-              <span className="inline-block text-primary">
-                {language === 'fr' ? 'Le vôtre.' : 'Yours.'}
+            <h2 id="intro-heading" className="section-title">
+              <span className="text-foreground">{fr ? "Je m'appelle Elie Ageron. " : 'My name is Elie Ageron. '}</span>
+              <span className="text-primary">
+                {fr ? 'Je rends votre métier visible.' : 'I make your trade visible.'}
               </span>
             </h2>
 
-            <p className="text-muted-foreground text-base sm:text-lg mb-8 max-w-lg mx-auto md:mx-0 leading-relaxed">
-              {language === 'fr'
-                ? 'Je suis Elie. Je ne jongle pas entre trente clients. Quand on travaille ensemble, votre projet reçoit toute mon attention, du brief à la mise en ligne. Un interlocuteur unique, une livraison en 7 à 14 jours, et un site conçu pour convertir, pas juste pour exister.'
-                : "I'm Elie. I don't juggle thirty clients at once. When we work together, your project gets my full focus, from brief to launch. One point of contact, delivered in 7 to 14 days, built to convert, not just to exist."}
+            <p className="section-lede mt-6 max-w-xl">
+              {fr
+                ? "Je filme, je monte et je publie pour des entreprises qui n'ont ni le temps ni l'envie de s'en occuper, et je construis les sites sur lesquels ces vidéos renvoient. Autrement dit : vous faites votre métier, et moi je m'occupe de ce que les gens trouvent quand ils cherchent votre nom."
+                : 'I film, edit and post for businesses that have neither the time nor the appetite for it, and I build the sites those videos point to. Put simply: you do your job, and I take care of what people find when they look you up.'}
+            </p>
+            <p className="section-lede mt-4 max-w-xl">
+              {fr
+                ? "C'est moi qui filme, moi qui monte, et moi qui écris le site. Vous avez mon numéro, pas un formulaire de support. Je suis basé à Albertville et je me déplace pour tourner, en Savoie comme ailleurs."
+                : 'I film, I edit, and I write the site. You get my phone number, not a support form. I am based in Albertville and I travel to film, in Savoie and beyond.'}
             </p>
 
-            <div className="hidden md:block">
-              <Button
-                variant="hero"
-                size="lg"
-                className="group min-h-[52px] active:scale-[0.98] transition-transform"
-                asChild
-              >
-                <Link to="/get-started" className="flex items-center gap-2">
-                  {language === 'fr' ? 'Démarrer mon projet' : 'Start my project'}
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-                </Link>
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* CTA - Mobile only, after photo */}
-        <div className="md:hidden flex justify-center mt-6">
-          <Button
-            variant="hero"
-            size="lg"
-            className="group min-h-[52px] active:scale-[0.98] transition-transform"
-            asChild
-          >
-            <Link to="/get-started" className="flex items-center gap-2">
-              {language === 'fr' ? 'Démarrer mon projet' : 'Start my project'}
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+            <Link
+              to="/a-propos"
+              className="mt-8 inline-flex min-h-[52px] items-center gap-2 rounded-full border border-foreground px-7 text-sm font-semibold text-foreground transition-colors hover:bg-foreground hover:text-background"
+            >
+              {fr ? 'Comment je travaille' : 'How I work'}
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
-          </Button>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -25,3 +25,8 @@ dist-ssr
 
 # Scripts de capture locaux
 _zoom.cjs
+.cache-captures/
+
+# Captures de relecture (scripts/captures.mjs)
+.captures/
+.tmpwork/

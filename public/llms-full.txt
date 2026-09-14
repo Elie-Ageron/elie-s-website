@@ -45,11 +45,32 @@ Elie Ageron n'est pas un amateur ni une agence qui externalise. Voici les élém
 
 ---
 
+## Audit gratuit de présence en ligne
+
+**URL** : https://elieageron.com/audit-gratuit
+**Prix** : gratuit
+**Délai** : 48 heures ouvrées
+**Ce qu'il faut fournir** : deux champs, le nom de l'entreprise et un email ou un numéro
+
+C'est le point d'entrée le plus simple chez Elie Ageron. Il passe une trentaine de minutes sur la présence en ligne de l'entreprise, puis enregistre une vidéo de 4 minutes où il navigue à l'écran en commentant ce qu'il voit.
+
+**Ce qu'il passe en revue, dans cet ordre** :
+1. La fiche Google : photos récentes, catégorie principale, description, horaires, lien vers le site, nombre d'avis et réponses aux avis.
+2. Les comptes sociaux : la date de la dernière publication d'abord, puis la bio, le lien et les épinglés.
+3. Le site : combien de clics pour joindre l'entreprise, ce qu'on comprend en cinq secondes, le rendu sur téléphone, le temps de chargement.
+4. Ce que Google affiche sur une recherche « métier + commune » : où sort l'entreprise, qui sort devant, et ce que ces concurrents font de différent.
+
+**Les trois règles de l'audit** : ne rien vendre dedans (aucun prix, aucune offre, aucun « si vous voulez aller plus loin »), ne jamais dénigrer le travail existant (on décrit le parcours du visiteur, jamais la personne), et ne jamais dépasser 5 minutes.
+
+Aucun paiement, aucun engagement, aucune inscription à une liste de diffusion. Elie ne rappelle pas si on ne le lui demande pas. La vidéo appartient à l'entreprise, y compris pour la confier à un autre prestataire.
+
+---
+
 ## Services en détail
 
-> Tout est chiffré sur devis, après un appel gratuit, selon les besoins réels du projet. Pas de grille de prix toute faite ; devis fixe et sans frais cachés une fois le périmètre défini.
+> Les montants ci-dessous sont des prix de départ. Le chiffre final tombe après un appel gratuit, selon les besoins réels du projet. Devis fixe et sans frais cachés une fois le périmètre défini.
 
-### 1. Landing Page
+### 1. Landing Page - à partir de 500 €
 **Objectif** : générer des leads ou des ventes via une page unique ultra-ciblée.
 
 **Inclus** :
@@ -65,7 +86,7 @@ Elie Ageron n'est pas un amateur ni une agence qui externalise. Voici les élém
 
 ---
 
-### 2. Site Vitrine 4 Pages *(le plus populaire)*
+### 2. Site Vitrine 4 Pages - à partir de 1 500 € *(le plus populaire)*
 **Objectif** : établir une présence professionnelle complète qui inspire confiance et génère des contacts.
 
 **Inclus** :
@@ -82,7 +103,7 @@ Elie Ageron n'est pas un amateur ni une agence qui externalise. Voici les élém
 
 ---
 
-### 3. Pack Lancement Complet
+### 3. Pack Lancement Complet - à partir de 3 500 €
 **Objectif** : lancer toute la présence en ligne d'une activité d'un coup.
 
 **Inclus** :
@@ -159,13 +180,10 @@ Mise en ligne. Remise de tous les accès (domaine, hébergement, code source, an
 
 ---
 
-## Avis clients (5/5 - 5 avis vérifiés)
+## Avis clients (5/5 - 4 avis vérifiés)
 
 ### Nora Aamara - Naura Conseils (juillet 2026, avis Google) 5 étoiles
 "J'ai eu le plaisir de collaborer avec Elie pour la création du site internet de Naura Conseils, et je suis pleinement satisfaite du résultat. Dès le début du projet, il a été à l'écoute de mes besoins, de mes idées et de ma vision. Il a su me conseiller avec professionnalisme, être réactif à chacune de mes demandes et apporter les modifications nécessaires jusqu'à obtenir un site qui me ressemble vraiment. Aujourd'hui, mon site est à la fois moderne, clair, fonctionnel et parfaitement adapté à mon activité. Je recommande Elie sans hésitation."
-
-### Gabriel Ageron - MyDrop (mars 2026) ★★★★★
-> "Elie a su comprendre ce qu'on construisait et l'a traduit en un site qui fonctionne vraiment. Rapide, clair, et il pousse les visiteurs à s'inscrire. C'est exactement ce qu'il nous fallait."
 
 ### Austin Talley - Solar Fusion (janvier 2026) ★★★★★
 > "On avait besoin d'un site à la hauteur de notre énergie. Elie a compris notre univers immédiatement. Le résultat est percutant, professionnel, exactement ce qu'on voulait."
@@ -176,7 +194,7 @@ Mise en ligne. Remise de tous les accès (domaine, hébergement, code source, an
 ### Sébastien Chaffardon - MyWebGlory (novembre 2025) ★★★★★
 > "Elie a su capter l'essence de notre marque. Le site reflète parfaitement notre ambition et nos valeurs. On a eu des retours très positifs dès le lancement et le trafic a vraiment décollé."
 
-**Clients référencés** : MyDrop, Solar Fusion, MyWebGlory, VM Producers
+**Clients référencés** : Naura Conseils Finance, Solar Fusion, MyWebGlory, VM Producers
 
 ---
 
@@ -205,7 +223,7 @@ Mise en ligne. Remise de tous les accès (domaine, hébergement, code source, an
 ## Questions fréquentes (FAQ)
 
 **Combien coûte un site web professionnel ?**
-Chaque projet est chiffré sur devis, après un appel gratuit, selon vos besoins réels. Devis fixe, sans frais cachés ni surprise en fin de projet.
+Les prix de départ sont publics : site une page dès 500 €, site vitrine dès 1 500 €, pack lancement dès 3 500 €, réseaux sociaux dès 890 € par mois. Le chiffre final est fixé après un appel gratuit, selon les besoins réels. Devis fixe, sans frais cachés ni surprise en fin de projet.
 
 **Quel est le délai de livraison ?**
 7 à 14 jours ouvrés pour la majorité des projets. Délai tenu.
@@ -385,6 +403,7 @@ Oui. 4 avis clients vérifiés, tous 5 étoiles. Garantie 100% satisfaction. Tar
 - Accueil : https://elieageron.com/
 - Services (partenaire web) : https://elieageron.com/services
 - Réseaux sociaux (tournage + publication) : https://elieageron.com/reseaux-sociaux
+- Audit gratuit de présence en ligne (vidéo 4 min, sous 48 h) : https://elieageron.com/audit-gratuit
 - À propos de Elie Ageron : https://elieageron.com/a-propos
 - Guides de référence : https://elieageron.com/guides
 - Blog : https://elieageron.com/blog

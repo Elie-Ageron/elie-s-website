@@ -22,6 +22,10 @@ const Contact = lazy(() => import("./pages/Contact"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 const SocialMedia = lazy(() => import("./pages/SocialMedia"));
+const AuditGratuit = lazy(() => import("./pages/AuditGratuit"));
+// Page d'essai locale. `import.meta.env.DEV` est remplace par `false` au build,
+// donc l'import dynamique est elimine et rien de tout ca ne part en production.
+const Labo = import.meta.env.DEV ? lazy(() => import("./pages/Labo")) : null;
 const GetStarted = lazy(() => import("./pages/GetStarted"));
 const Assessment = lazy(() => import("./pages/Assessment"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -119,6 +123,8 @@ const App = () => (
                         <Route path="/blog/categorie/:slug" element={<BlogCategory />} />
                         <Route path="/blog/:slug" element={<BlogPost />} />
                         <Route path="/reseaux-sociaux" element={<SocialMedia />} />
+                        <Route path="/audit-gratuit" element={<AuditGratuit />} />
+                        {Labo && <Route path="/labo" element={<Labo />} />}
                         {/* Page Événements retirée (août 2026) : l'événementiel n'est plus un service à part. Redirection SEO. */}
                         <Route path="/event-production" element={<Navigate to="/services" replace />} />
                         <Route path="/get-started" element={<GetStarted />} />

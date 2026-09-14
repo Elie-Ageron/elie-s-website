@@ -75,13 +75,13 @@ const Header = () => {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-6" role="navigation" aria-label="Primary navigation">
+            <div className="hidden xl:flex items-center gap-6" role="navigation" aria-label="Primary navigation">
               {/* Flat nav items */}
               {flatNavItems.map((item) => (
                 <Link
                   key={item.href}
                   to={item.href}
-                  className={`text-sm font-medium transition-colors relative group ${
+                  className={`relative group whitespace-nowrap text-sm font-medium transition-colors ${
                     isActive(item.href)
                       ? 'text-primary'
                       : 'text-muted-foreground hover:text-foreground'
@@ -100,7 +100,7 @@ const Header = () => {
             </div>
 
             {/* Right section - Desktop */}
-            <div className="hidden lg:flex items-center gap-4">
+            <div className="hidden xl:flex items-center gap-4">
               {/* Language Toggle */}
               <div className="flex items-center gap-1 bg-secondary/50 rounded-full p-1" role="group" aria-label="Language selection">
                 <button
@@ -138,9 +138,11 @@ const Header = () => {
               >
                 {t('nav.book')}
               </Button>
+              {/* L'audit gratuit remplace « Démarrer » : c'est l'entrée du funnel
+                  et il demande deux champs au lieu d'un brief en quatre étapes. */}
               <Button variant="hero" size="sm" asChild>
-                <Link to="/get-started">
-                  {language === 'fr' ? 'Démarrer →' : 'Start →'}
+                <Link to="/audit-gratuit">
+                  {language === 'fr' ? 'Audit gratuit →' : 'Free audit →'}
                 </Link>
               </Button>
             </div>
@@ -148,7 +150,7 @@ const Header = () => {
             {/* Mobile Menu Button - Animated Hamburger with 48x48 touch target */}
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden min-w-[48px] min-h-[48px] flex items-center justify-center text-foreground rounded-xl active:bg-primary/10 transition-colors"
+              className="xl:hidden min-w-[48px] min-h-[48px] flex items-center justify-center text-foreground rounded-xl active:bg-primary/10 transition-colors"
               aria-expanded={isMenuOpen}
               aria-controls="mobile-menu"
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}

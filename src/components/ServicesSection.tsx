@@ -1,87 +1,39 @@
 import { motion } from 'framer-motion';
-import { Check, Zap, Crown, Sparkles } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ScrollReveal from './animations/ScrollReveal';
 
-interface ServiceCardProps {
-  title: string;
-  tagline: string;
-  description: string;
-  features: string[];
-  cta: string;
-  icon: React.ReactNode;
-  popular?: boolean;
-  delay: number;
-}
-
-const ServiceCard = ({ title, tagline, description, features, cta, icon, popular, delay }: ServiceCardProps) => {
-  const { t } = useLanguage();
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-60px' }}
-      transition={{ delay: delay * 0.1, duration: 0.5, ease: "easeOut" }}
-      className={`relative glass-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col h-full transition-all duration-300 hover:-translate-y-1 ${
-        popular ? 'border-primary/40 shadow-lg shadow-primary/10' : 'hover:border-border'
-      }`}
-    >
-      {popular && (
-        <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full">
-          {t('services.popular')}
-        </div>
-      )}
-
-      <div className="flex items-center gap-3 mb-4">
-        <div className={`p-3 rounded-xl ${popular ? 'bg-primary/20' : 'bg-secondary'}`}>
-          {icon}
-        </div>
-        <h3 className="text-xl font-semibold text-foreground">{title}</h3>
-      </div>
-
-      <p className="text-base font-medium text-primary mb-4 leading-snug">{tagline}</p>
-
-      <p className="text-muted-foreground mb-6">{description}</p>
-
-      <ul className="space-y-3 mb-8 flex-grow">
-        {features.map((feature, index) => (
-          <li key={index} className="flex items-center gap-3 text-sm text-foreground/80">
-            <Check className="w-4 h-4 text-primary flex-shrink-0" />
-            {feature}
-          </li>
-        ))}
-      </ul>
-
-      <Button
-        variant={popular ? 'hero' : 'neonOutline'}
-        size="lg"
-        className="w-full"
-        asChild
-      >
-        <Link to="/get-started">{cta}</Link>
-      </Button>
-    </motion.div>
-  );
-};
-
+/**
+ * Les trois formules de site, sur l'accueil.
+ *
+ * Refonte de septembre 2026 : c'etaient trois cartes de verre identiques avec
+ * une pastille « le plus populaire » et un bouton chacune, soit le patron de
+ * grille de tarifs qu'on voit sur toutes les pages SaaS. La grille est devenue
+ * trois colonnes editoriales separees par un filet, avec un seul bouton en
+ * dessous. Rien n'a change cote contenu.
+ *
+ * Les prix planchers restent affiches : tous les concurrents locaux en
+ * annoncent un dans leur extrait Google, et un prix qu'il faut demander est un
+ * prix qu'on peut negocier.
+ *
+ * Les trois faits de livraison en bas viennent de l'ancienne section « Vos
+ * clients vous cherchent sur Google ». Ils y etaient incomprehensibles : le
+ * titre parlait de recherche Google et les chiffres parlaient de delais. Ici
+ * ils repondent a la question que la grille de prix vient de poser.
+ */
 const ServicesSection = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const fr = language === 'fr';
 
-  const services = [
+  const formules = [
     {
       title: t('services.landing.title'),
       tagline: t('services.landing.tag'),
       description: t('services.landing.desc'),
-      features: [
-        t('services.landing.feature1'),
-        t('services.landing.feature2'),
-        t('services.landing.feature3'),
-      ],
-      cta: t('services.landing.cta'),
-      icon: <Zap className="w-6 h-6 text-primary" />,
-      delay: 1,
+      features: [t('services.landing.feature1'), t('services.landing.feature2'), t('services.landing.feature3')],
+      price: t('services.landing.price'),
     },
     {
       title: t('services.authority.title'),
@@ -93,10 +45,7 @@ const ServicesSection = () => {
         t('services.authority.feature3'),
         t('services.authority.feature4'),
       ],
-      cta: t('services.authority.cta'),
-      icon: <Crown className="w-6 h-6 text-primary" />,
-      popular: true,
-      delay: 2,
+      price: t('services.authority.price'),
     },
     {
       title: t('services.custom.title'),
@@ -110,56 +59,93 @@ const ServicesSection = () => {
         t('services.custom.feature5'),
         t('services.custom.feature6'),
       ],
-      cta: t('services.custom.cta'),
-      icon: <Sparkles className="w-6 h-6 text-primary" />,
-      delay: 3,
+      price: t('services.custom.price'),
+    },
+  ];
+
+  const faits = [
+    {
+      valeur: fr ? '7 à 14 jours' : '7 to 14 days',
+      desc: fr ? 'entre le brief et la mise en ligne.' : 'from brief to going live.',
+    },
+    {
+      valeur: fr ? 'Moins de 24 h' : 'Under 24 h',
+      desc: fr ? 'pour une réponse à votre demande.' : 'to get a reply to your request.',
+    },
+    {
+      valeur: fr ? 'Un interlocuteur' : 'One contact',
+      desc: fr ? 'du brief à la maintenance, toujours moi.' : 'from brief to maintenance, always me.',
     },
   ];
 
   return (
-    <section id="services" className="py-16 sm:py-24 relative overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-        {/* Section Header */}
-        <ScrollReveal direction="up" className="text-center mb-10 sm:mb-16">
-          <motion.h2 
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+    <section id="services" className="relative px-4 py-20 sm:px-6 sm:py-28">
+      <div className="mx-auto max-w-6xl">
+        <ScrollReveal direction="up" className="mb-12 sm:mb-16">
+          <h2 className="section-title max-w-2xl">
             <span className="text-foreground">{t('services.title1')}</span>{' '}
-            <span className="inline-block text-primary">{t('services.title2')}</span>
-          </motion.h2>
-          <motion.p 
-            className="text-lg text-muted-foreground max-w-2xl mx-auto"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
-            {t('services.subtitle')}
-          </motion.p>
+            <span className="text-primary">{t('services.title2')}</span>
+          </h2>
+          <p className="section-lede mt-6">{t('services.subtitle')}</p>
         </ScrollReveal>
 
-        {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => (
-            <ServiceCard key={index} {...service} />
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-8">
+          {formules.map((formule, index) => (
+            <motion.div
+              key={formule.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ delay: index * 0.08, duration: 0.5 }}
+              className="border-t-2 border-foreground pt-6"
+            >
+              <h3 className="text-xl font-bold tracking-tight text-foreground sm:text-2xl">{formule.title}</h3>
+              <p className="mt-1 text-sm text-muted-foreground">{formule.tagline}</p>
+
+              <p className="mt-5 font-heading text-3xl font-bold tabular-nums text-primary">{formule.price}</p>
+
+              <p className="mt-4 leading-relaxed text-muted-foreground">{formule.description}</p>
+
+              <ul className="mt-6 space-y-3">
+                {formule.features.map((feature) => (
+                  <li key={feature} className="flex gap-3 text-sm leading-relaxed text-foreground">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
           ))}
         </div>
 
-        {/* Custom-quote note */}
-        <motion.p
-          className="text-center text-sm text-muted-foreground max-w-xl mx-auto mt-8 sm:mt-10"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-        >
-          {t('services.quote.note')}{' '}
-          <Link to="/get-started" className="inline-flex items-center min-h-[24px] text-primary font-medium hover:underline underline-offset-4">
-            {t('services.quote.link')}
-          </Link>
-        </motion.p>
+        <ScrollReveal direction="up">
+          <div className="mt-12 flex flex-col items-start gap-5 sm:mt-14 sm:flex-row sm:items-center sm:justify-between">
+            <p className="max-w-xl text-sm text-muted-foreground">{t('services.quote.note')}</p>
+            <Link
+              to="/get-started"
+              className="inline-flex min-h-[52px] shrink-0 items-center justify-center gap-2 rounded-full bg-primary px-7 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+            >
+              {t('services.quote.link')}
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </div>
+        </ScrollReveal>
+
+        {/* Les faits de livraison, en pied de section. */}
+        <div className="mt-14 grid grid-cols-1 gap-8 border-t border-border pt-10 sm:mt-16 sm:grid-cols-3">
+          {faits.map((fait, index) => (
+            <motion.div
+              key={fait.valeur}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ delay: index * 0.07, duration: 0.45 }}
+            >
+              <p className="font-heading text-2xl font-bold tracking-tight text-foreground">{fait.valeur}</p>
+              <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{fait.desc}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

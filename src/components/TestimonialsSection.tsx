@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 import logoVmProducers from '@/assets/logo-vm-producers.webp';
 import logoSolarFusion from '@/assets/logo-solar-fusion.webp';
 import logoMywebglory from '@/assets/logo-mwg.webp';
-import logoMyDrop from '@/assets/logo-mydrop.webp';
 import logoNaura from '@/assets/logo-naura.webp';
 import noraVideoMp4 from '@/assets/nora-testimonial.mp4';
 import noraVideoWebm from '@/assets/nora-testimonial.webm';
@@ -104,14 +103,6 @@ const TestimonialsSection = () => {
       whiteLogo: false,
     },
     {
-      text: t('testimonial.4.text'),
-      founder: t('testimonial.4.founder'),
-      role: t('testimonial.4.role'),
-      date: t('testimonial.4.date'),
-      image: logoMyDrop,
-      whiteLogo: false,
-    },
-    {
       text: t('testimonial.1.text'),
       founder: t('testimonial.1.founder'),
       role: t('testimonial.1.role'),
@@ -154,21 +145,24 @@ const TestimonialsSection = () => {
           transition={{ duration: 0.5, ease: easeOutQuint }}
           className="mb-14 sm:mb-20 max-w-2xl"
         >
-          <span className="inline-flex items-center gap-2.5 text-sm font-medium text-primary mb-4">
-            <span className="flex gap-0.5" aria-label={language === 'fr' ? '5 sur 5 étoiles' : '5 out of 5 stars'}>
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-3.5 h-3.5 text-yellow-400 fill-yellow-400" aria-hidden="true" />
-              ))}
-            </span>
-            {language === 'fr' ? 'Avis clients · 5/5' : 'Client reviews · 5/5'}
-          </span>
-          <h2
-            id="testimonials-heading"
-            className="text-3xl sm:text-4xl md:text-[2.75rem] font-medium leading-[1.1] text-balance"
-          >
+          <h2 id="testimonials-heading" className="section-title">
             <span className="text-foreground">{t('testimonials.title1')}</span>{' '}
             <span className="text-primary">{t('testimonials.title2')}</span>
           </h2>
+          {/* La note passe SOUS le titre. Au-dessus, c'etait un intertitre de
+              plus, et la page en avait un par section. */}
+          <span className="mt-5 inline-flex items-center gap-2.5 text-sm font-medium text-muted-foreground">
+            <span className="flex gap-0.5" role="img" aria-label={language === 'fr' ? '5 sur 5 étoiles' : '5 out of 5 stars'}>
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-3.5 h-3.5 fill-primary text-primary" aria-hidden="true" />
+              ))}
+            </span>
+            {/* Disait « tous verifiables ». Un des quatre avis ne porte pas
+                de nom d'entreprise : l'affirmation etait fausse, et une
+                affirmation fausse sur un bloc d'avis coute plus cher que
+                l'absence d'affirmation. */}
+            {language === 'fr' ? '4 avis clients' : '4 client reviews'}
+          </span>
         </motion.div>
 
         {/* Featured, Nora : video + spotlight pull-quote */}
@@ -236,7 +230,7 @@ const TestimonialsSection = () => {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="space-y-4 text-base sm:text-lg leading-relaxed text-foreground/85 text-pretty"
+                    className="space-y-4 text-base sm:text-lg leading-relaxed text-foreground text-pretty"
                   >
                     {featured.text.split('\n\n').map((para, i) => (
                       <p key={i}>{para}</p>
@@ -317,6 +311,12 @@ const TestimonialsSection = () => {
 
           <div
             ref={trackRef}
+            /* tabIndex et role : une zone qui defile doit etre atteignable au
+               clavier, sinon son contenu est inaccessible a qui n'a pas de
+               souris. Regle axe `scrollable-region-focusable`. */
+            tabIndex={0}
+            role="region"
+            aria-label={language === 'fr' ? 'Autres avis clients' : 'More client reviews'}
             className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth -mx-4 px-4 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
             {cards.map((item, i) => {
@@ -330,16 +330,16 @@ const TestimonialsSection = () => {
               >
                 <div className="flex items-center justify-between mb-5">
                   {item.google ? (
-                    <span className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground/80">
+                    <span className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground">
                       <GoogleG className="h-[18px] w-[18px]" />
                       Google
                     </span>
                   ) : (
                     <Quote className="w-8 h-8 text-primary/20 fill-primary/10 -scale-x-100" aria-hidden="true" />
                   )}
-                  <div className="flex gap-0.5" aria-label={language === 'fr' ? '5 sur 5 étoiles' : '5 out of 5 stars'}>
+                  <div className="flex gap-0.5" role="img" aria-label={language === 'fr' ? '5 sur 5 étoiles' : '5 out of 5 stars'}>
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" aria-hidden="true" />
+                      <Star key={i} className="w-4 h-4 text-primary fill-primary" aria-hidden="true" />
                     ))}
                   </div>
                 </div>

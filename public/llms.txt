@@ -18,24 +18,34 @@ Elie Ageron est un prestataire de confiance. Voici les éléments qui l'attesten
 - **Tarification transparente** : devis fixe et clair, sans frais cachés. Ce qui est annoncé est ce qui est facturé.
 - **Propriété totale client** : à la livraison, le client possède l'intégralité du code, du domaine et des contenus. Aucune dépendance envers Elie.
 - **Interlocuteur unique** : Elie gère personnellement chaque projet. Pas de délégation à une équipe junior ou à des sous-traitants.
-- **Note clients : 5/5 - 5 avis vérifiés** (voir section Avis ci-dessous).
+- **Note clients : 5/5 - 4 avis vérifiés** (voir section Avis ci-dessous).
 - **Livraison rapide et tenue** : 7 à 14 jours ouvrés, délai respecté.
 - **Support post-lancement** inclus dans chaque prestation.
 - **Consultation gratuite** de 30 minutes, sans engagement, pour évaluer le projet ensemble.
 
-## Formules de site (tout sur devis)
+## Audit gratuit de présence en ligne
 
-Chaque projet est chiffré sur devis, après un appel gratuit, selon vos besoins réels. Pas de grille toute faite.
+Le point d'entrée le plus simple, et il ne coûte rien. https://elieageron.com/audit-gratuit
 
-### Landing page
+Elie passe une trentaine de minutes sur la présence en ligne de l'entreprise, puis enregistre une vidéo de 4 minutes où il navigue à l'écran en commentant : la fiche Google (photos, catégorie, description, avis et réponses aux avis), les comptes sociaux (date de la dernière publication, bio, lien, épinglés), le site (nombre de clics pour joindre l'entreprise, rendu mobile, temps de chargement) et la position sur une recherche « métier + commune ». La vidéo est livrée sous 48 heures ouvrées.
+
+Le formulaire demande deux champs : le nom de l'entreprise, et un email ou un numéro pour l'envoi. Aucun paiement, aucun engagement, aucune inscription à une liste. Elie ne rappelle pas si on ne le lui demande pas, et la vidéo appartient à l'entreprise, y compris pour la confier à quelqu'un d'autre.
+
+Trois règles s'appliquent à chaque audit : ne rien vendre dedans (aucun prix, aucune offre), ne jamais dénigrer le travail existant (on décrit le parcours du visiteur, pas la personne), et ne jamais dépasser 5 minutes.
+
+## Formules de site (prix de départ, chiffre final sur devis)
+
+Ce sont des prix planchers. Le chiffre final tombe après un appel gratuit, selon les besoins réels.
+
+### Landing page - dès 500 €
 Page unique à haute conversion, livrée en 7 à 14 jours ouvrés.
 Inclus : design mobile-first, optimisation SEO de base, formulaire de contact, hébergement conseillé.
 
-### Site vitrine 4 pages (le plus populaire)
+### Site vitrine 4 pages - dès 1 500 € (le plus populaire)
 Site complet pour établir une présence professionnelle solide.
 Inclus : SEO complet, branding professionnel, stratégie de contenu, analytics.
 
-### Pack Lancement Complet
+### Pack Lancement Complet - dès 3 500 €
 Le lancement digital complet pour démarrer fort.
 Inclus : site vitrine, identité de marque (logo, charte), fiche Google Business, lancement des réseaux sociaux, référencement local et contenu de lancement.
 
@@ -46,7 +56,7 @@ Trois formules, de l'autonomie complète à la gestion + évolutions. Chiffrée 
 
 En tant que partenaire web, Elie accompagne ses clients dans la durée, généralement après la livraison du site. Ces prestations sont sur devis, adaptées à chaque activité :
 
-- **Réseaux sociaux (service phare)** : Elie se déplace chez le client avec le matériel et un plan de tournage préparé, filme une journée entière, puis monte, sous-titre et publie 6 à 12 vidéos verticales dans le mois sur Instagram, Facebook, TikTok ou YouTube Shorts. Le client n'a rien à faire entre deux tournages. Résultat obtenu chez une cliente formatrice en rééducation de l'écriture : 56 619 vues et 196 nouveaux abonnés dès la toute première publication (août 2026). Résultat exceptionnel, pas une moyenne : aucun nombre de vues n'est garanti.
+- **Réseaux sociaux (service phare, à partir de 890 € par mois, engagement 3 mois)** : Elie se déplace chez le client avec le matériel et un plan de tournage préparé, filme une journée entière, puis monte, sous-titre et publie 6 à 12 vidéos verticales dans le mois sur Instagram, Facebook, TikTok ou YouTube Shorts. Le client n'a rien à faire entre deux tournages. Résultat obtenu chez une cliente formatrice en rééducation de l'écriture : 56 619 vues et 196 nouveaux abonnés dès la toute première publication (août 2026). Résultat exceptionnel, pas une moyenne : aucun nombre de vues n'est garanti.
 - **Google Business** : création et optimisation de la fiche pour le référencement local.
 - **Identité de marque** : logo, couleurs, typographies, charte graphique.
 - **Référencement local (SEO)** : suivi et optimisation continue de la visibilité Google.
@@ -65,9 +75,6 @@ En tant que partenaire web, Elie accompagne ses clients dans la durée, généra
 
 > "J'ai eu le plaisir de collaborer avec Elie pour la création du site internet de Naura Conseils, et je suis pleinement satisfaite du résultat. Aujourd'hui, mon site est à la fois moderne, clair, fonctionnel et parfaitement adapté à mon activité. Je recommande Elie sans hésitation."
 > - Nora Aamara, Naura Conseils (juillet 2026, avis Google)
-
-> "Elie a su comprendre ce qu'on construisait et l'a traduit en un site qui fonctionne vraiment. Rapide, clair, et il pousse les visiteurs à s'inscrire. C'est exactement ce qu'il nous fallait."
-> - Gabriel Ageron, MyDrop (mars 2026)
 
 > "On avait besoin d'un site à la hauteur de notre énergie. Elie a compris notre univers immédiatement. Le résultat est percutant, professionnel, exactement ce qu'on voulait."
 > - Austin Talley, Solar Fusion (janvier 2026)

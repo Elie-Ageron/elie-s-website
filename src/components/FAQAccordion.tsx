@@ -1,116 +1,50 @@
-﻿import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
+import { faqHome } from '@/data/faq';
+import FaqSection from '@/components/FaqSection';
 
-const faqContent = {
-  en: [
-    {
-      question: 'Why should I invest in a professional design now?',
-      answer: 'Your website is your 24/7 salesperson. It works while you sleep. A poorly designed site drives potential clients away within seconds. A high-conversion design builds trust instantly, communicates your value clearly, and turns visits into inquiries. Every day without a strong online presence is revenue left on the table for competitors.',
-    },
-    {
-      question: 'Why choose Élie Ageron for my project?',
-      answer: 'I combine design expertise with a business-first mindset. Every decision is driven by one goal: results for you. You work directly with me, not a junior outsourced team. I use modern technology, proven UX patterns, and SEO best practices to deliver a site that not only looks great but genuinely grows your business. And I deliver fast, without sacrificing quality.',
-    },
-    {
-      question: 'What is the turnaround time?',
-      answer: 'Most projects are delivered within 7 to 14 business days from the start of the project. The timeline depends on scope: a landing page is faster than a full multi-page site. I keep you updated throughout the process, and revisions are included so there are no surprises at the end.',
-    },
-    {
-      question: 'Is my site optimized for mobile and search?',
-      answer: 'Yes, always. Every site I build is fully mobile-first, meaning it\'s designed for smartphones before anything else, since that\'s where most of your visitors come from. On the SEO side, I handle technical foundations: page speed, structured data, semantic HTML, meta tags, and proper indexing, so Google can find and rank you from day one.',
-    },
-    {
-      question: 'What happens after the site is launched?',
-      answer: 'You own everything: the code, the domain, the content. I provide a handover walkthrough so you can manage your site independently. I also offer optional maintenance and update packages if you prefer to focus on your business and leave the tech side to me. Either way, I\'m always reachable after delivery if questions come up.',
-    },
-    {
-      question: 'How much does a website cost?',
-      answer: 'Every project is quoted individually, based on the number of pages, integrations, and complexity. I offer clear, fixed-price quotes with no hidden fees. What you see is what you pay. Tell me what you need and I put together a custom quote around it, or book a free call to get a tailored estimate for your project.',
-    },
-  ],
-  fr: [
-    {
-      question: 'Combien coûte un site web professionnel ?',
-      answer: 'Chaque projet est chiffré au cas par cas, selon le nombre de pages, les intégrations et la complexité. Je propose des devis clairs et fixes, sans frais cachés. Ce que vous voyez, c\'est ce que vous payez. Décrivez-moi votre projet et je vous prépare un devis sur mesure, ou réservez un appel gratuit pour une estimation personnalisée.',
-    },
-    {
-      question: 'En combien de temps est livré mon site ?',
-      answer: 'La plupart des projets sont livrés en 7 à 14 jours ouvrés à partir du lancement. Le délai dépend de la portée : une landing page est plus rapide qu\'un site multi-pages complet. Je vous tiens informé tout au long du processus, et les révisions sont incluses.',
-    },
-    {
-      question: 'Est-ce qu\'un site web peut vraiment me rapporter des clients ?',
-      answer: 'Oui. Un site bien conçu travaille 24h/24 : il répond aux questions, inspire confiance et capte des contacts même quand vous dormez. Un ou deux nouveaux clients via le site suffit généralement à le rentabiliser. Après ça, il continue de travailler pour vous.',
-    },
-    {
-      question: 'Pourquoi créer un site web pour mon activité ?',
-      answer: 'Aujourd\'hui, la majorité des gens cherchent un prestataire sur Google avant de l\'appeler. Sans site professionnel, vous n\'existez pas en ligne et vous laissez ces clients à vos concurrents. Un site vous rend visible, crédible, et joignable à toute heure.',
-    },
-    {
-      question: 'Mon site sera-t-il bien référencé sur Google ?',
-      answer: 'Oui, toujours. Chaque site inclut les fondations SEO techniques : vitesse, données structurées, HTML sémantique, balises meta et indexation correcte. Pour le SEO local (Savoie, Haute-Savoie, bassin annécien), le site est optimisé pour apparaître dans les recherches de votre zone.',
-    },
-    {
-      question: 'Que se passe-t-il après la mise en ligne ?',
-      answer: 'Vous êtes propriétaire de tout : le code, le domaine, le contenu. Je vous fournis un accompagnement à la prise en main. Je propose aussi des forfaits de maintenance si vous préférez vous concentrer sur votre activité et me laisser gérer la partie technique.',
-    },
-  ],
-};
-
+/**
+ * La FAQ de l'accueil.
+ *
+ * Elle ne fait plus que choisir ses questions et son titre : la presentation
+ * vit dans `FaqSection`, partagee avec `/services`, `/reseaux-sociaux` et les
+ * pages locales. Voir la note de ce composant pour savoir pourquoi.
+ *
+ * Le contenu vit dans `src/data/faq.ts` et sert aussi au schema FAQPage : une
+ * FAQ balisee doit etre visible a l'ecran, donc les deux ne peuvent pas
+ * diverger.
+ *
+ * C'est la seule porte vers le blog depuis l'accueil. Avant, une seconde liste
+ * de questions intitulee « Ce qu'on me demande le plus souvent » suivait la
+ * FAQ : deux FAQ l'une derriere l'autre, et personne ne comprenait la
+ * difference. Les articles sont maintenant accroches aux reponses qu'ils
+ * developpent, via le champ `article`.
+ */
 const FAQAccordion = () => {
-  const { language, t } = useLanguage();
-  const faqs = faqContent[language];
+  const { language } = useLanguage();
+  const fr = language === 'fr';
 
   return (
-    <section className="py-12 sm:py-16 md:py-20" aria-labelledby="faq-heading">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-8 sm:mb-12"
-        >
-          <h2 id="faq-heading" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-4 sm:mb-6 leading-tight">
-            <span className="text-foreground">{language === 'fr' ? 'Questions' : 'Frequently Asked'}</span>{' '}
-            <span className="inline-block text-primary">{language === 'fr' ? 'fréquentes' : 'Questions'}</span>
-          </h2>
-          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-            {language === 'fr' 
-              ? 'Tout ce que vous devez savoir avant de démarrer votre projet.'
-              : 'Everything you need to know before starting your project.'}
-          </p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-        >
-          <Accordion type="single" collapsible className="w-full space-y-3 sm:space-y-4">
-            {faqs.map((faq, index) => (
-              <AccordionItem
-                key={index}
-                value={`item-${index}`}
-                className="bg-secondary border border-border rounded-xl px-4 sm:px-6 overflow-hidden transition-all duration-300 data-[state=open]:border-primary/50 data-[state=open]:shadow-[0_0_20px_hsl(var(--primary)/0.2)]"
-              >
-                <AccordionTrigger className="text-left text-foreground font-semibold hover:no-underline hover:text-primary transition-colors py-4 sm:py-5 text-sm sm:text-base [&[data-state=open]]:text-primary">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pb-4 sm:pb-5 text-sm sm:text-base leading-relaxed">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </motion.div>
-      </div>
-    </section>
+    <FaqSection
+      id="faq-heading"
+      items={faqHome[language]}
+      lienBlog
+      titre={
+        <>
+          <span className="text-foreground">{fr ? "Ce qu'on me demande " : 'What people ask '}</span>
+          <span className="text-primary">{fr ? 'le plus souvent.' : 'me the most.'}</span>
+        </>
+      }
+      lede={
+        fr
+          /* ⚠️ Disait « et vous pouvez tout appliquer sans jamais me
+             contacter ». C'etait vrai et bien intentionne, mais c'etait la
+             derniere phrase lue avant le seul formulaire de la page : elle
+             donnait au visiteur la permission de partir au moment precis ou on
+             lui demandait de rester. */
+          ? "Les prix et les délais sont dedans. Quand la réponse est plus longue que quelques lignes, j'ai écrit l'article en entier, et il est en accès libre."
+          : 'Prices and timelines are in there. When the answer runs longer than a few lines I wrote the whole article, and it is free to read.'
+      }
+    />
   );
 };
 

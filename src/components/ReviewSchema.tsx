@@ -36,7 +36,7 @@ const ReviewSchema = () => {
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '5',
-      reviewCount: '5',
+      reviewCount: '4',
       bestRating: '5',
       worstRating: '1',
     },
@@ -49,15 +49,6 @@ const ReviewSchema = () => {
         reviewBody: language === 'fr'
           ? "J'ai eu le plaisir de collaborer avec Elie pour la création du site internet de Naura Conseils, et je suis pleinement satisfaite du résultat. Dès le début du projet, il a été à l'écoute de mes besoins, de mes idées et de ma vision. Aujourd'hui, mon site est à la fois moderne, clair, fonctionnel et parfaitement adapté à mon activité. Je recommande Elie sans hésitation."
           : "I had the pleasure of working with Elie on the website for Naura Conseils, and I'm fully satisfied with the result. From the very start he listened to my needs, my ideas and my vision. Today my site is modern, clear, functional and perfectly suited to my business. I recommend Elie without hesitation.",
-        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-      },
-      {
-        '@type': 'Review',
-        author: { '@type': 'Person', name: 'Gabriel Ageron' },
-        datePublished: '2026-03-01',
-        reviewBody: language === 'fr'
-          ? "Elie a su comprendre ce qu'on construisait et l'a traduit en un site qui fonctionne vraiment. Rapide, clair, et il pousse les visiteurs à s'inscrire. C'est exactement ce qu'il nous fallait."
-          : "Elie really understood what we were building and translated it into a site that works. Fast, clear, and it pushes visitors to sign up. Exactly what we needed.",
         reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
       },
       {

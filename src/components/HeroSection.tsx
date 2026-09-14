@@ -1,5 +1,5 @@
-﻿import { motion } from 'framer-motion';
-import { ArrowDown, ArrowRight, Star } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -10,17 +10,37 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import logoVmProducers from '@/assets/logo-vm-producers.webp';
 import logoSolarFusion from '@/assets/logo-solar-fusion.webp';
 import logoMywebglory from '@/assets/logo-mwg.webp';
-import logoMyDrop from '@/assets/logo-mydrop.webp';
 import logoNaura from '@/assets/logo-naura.webp';
 
-// Real client logos shown as above-the-fold social proof.
-// `white: true` logos are dark-on-transparent and need the brightness-0 trick.
+/**
+ * Le hero.
+ *
+ * Direction : sobre et aere. Un seul accent, le rose de la marque. Beaucoup de
+ * vide autour du titre, peu d'elements, aucun decor.
+ *
+ * Trois choses ont ete essayees puis retirees. Ne pas les remettre :
+ *
+ * 1. Un fond sombre. Elie n'en veut pas, et un fond noir sous une marque dont
+ *    toute l'identite est claire ne tient pas debout.
+ * 2. Un accent jaune. Ce n'est pas une couleur de la marque.
+ * 3. Un bandeau de chiffres (vues, abonnes, note). C'est le patron
+ *    « gros chiffre, petit label, stats de soutien », un cliche de page SaaS.
+ *    Elie ne veut pas vendre sur des chiffres de performance : un resultat
+ *    client n'est pas une promesse tenable. La preuve vit dans le portfolio et
+ *    dans les temoignages, pas au-dessus de la ligne de flottaison.
+ */
+
+// Logos clients reels, affiches en pleine opacite.
+// Ils etaient a 55 % « pour ne pas concurrencer le titre » : a l'ecran on ne
+// les lisait plus, et un logo qu'on ne lit pas ne rassure personne. Ce sont
+// quatre vrais clients, c'est la seule preuve au-dessus de la ligne de
+// flottaison, elle a le droit d'etre nette.
 const CLIENT_LOGOS = [
-  { src: logoNaura, name: 'Naura Conseils', white: false },
-  { src: logoMyDrop, name: 'MyDrop', white: false },
-  { src: logoMywebglory, name: 'MyWebGlory', white: false },
-  { src: logoVmProducers, name: 'VM Producers', white: true },
-  { src: logoSolarFusion, name: 'Solar Fusion', white: false },
+  { src: logoNaura, name: 'Naura Conseils', flat: false },
+  { src: logoMywebglory, name: 'MyWebGlory', flat: false },
+  // Dessine en sombre sur transparent : sans `brightness-0` il disparait.
+  { src: logoVmProducers, name: 'VM Producers', flat: true },
+  { src: logoSolarFusion, name: 'Solar Fusion', flat: false },
 ];
 
 // Defer 3D scene loading
@@ -45,13 +65,11 @@ const HeroSection = () => {
   const [show3D, setShow3D] = useState(false);
   const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Avoid loading WebGL during pre-render / first paint on mobile.
   useEffect(() => {
     setMounted(true);
   }, []);
 
   // Delay 3D scene to prioritize text content (LCP) - desktop only.
-  // 800ms ensures the hero text, CTA and social proof paint before WebGL initialises.
   useEffect(() => {
     if (!mounted) return;
     if (!isMobile && !prefersReducedMotion) {
@@ -62,11 +80,10 @@ const HeroSection = () => {
   }, [isMobile, mounted]);
 
   return (
-    <section 
-      className="relative min-h-screen flex items-center justify-center overflow-hidden grain px-4 sm:px-6"
+    <section
+      className="relative overflow-hidden px-4 pb-16 pt-8 sm:px-6 sm:pb-28 sm:pt-24"
       aria-labelledby="hero-heading"
     >
-      {/* 3D Scene Background - Desktop only, deferred, isolated from page error boundary */}
       {mounted && show3D && (
         <Scene3DErrorBoundary>
           <Suspense fallback={null}>
@@ -74,140 +91,95 @@ const HeroSection = () => {
           </Suspense>
         </Scene3DErrorBoundary>
       )}
-      
-      {/* Gradient overlays for depth */}
-      <div className="absolute inset-0 z-[1] pointer-events-none" aria-hidden="true">
-        <div className="absolute top-1/4 left-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-primary/10 rounded-full blur-[100px] sm:blur-[128px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-56 sm:w-80 h-56 sm:h-80 bg-primary/5 rounded-full blur-[80px] sm:blur-[100px]" />
+
+      <div className="pointer-events-none absolute inset-0 z-[1]" aria-hidden="true">
+        <div className="absolute left-1/4 top-1/4 h-72 w-72 rounded-full bg-primary/[0.07] blur-[120px] sm:h-96 sm:w-96" />
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto py-16 sm:py-20 text-center -mt-16 sm:-mt-32">
+      <div className="relative z-10 mx-auto w-full max-w-4xl text-center">
         <motion.header
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          {/* Badge */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full glass-card mb-6 sm:mb-8"
-            aria-label="Fast and affordable web design"
-          >
-            <span className="w-2 h-2 bg-primary rounded-full animate-pulse" aria-hidden="true" />
-            <span className="text-xs sm:text-sm text-muted-foreground">{t('hero.badge')}</span>
-          </motion.div>
-
-          {/* Main Headline - Responsive typography */}
-          <h1 id="hero-heading" className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-4 sm:mb-6 leading-tight sm:leading-tight">
-            <span className="text-foreground">{t('hero.headline1')}</span>
+          {/* `hero-title` porte la taille fluide, la graisse et l'interlettrage
+              pour les onze heros du site. Ce titre les ecrivait a la main et
+              servait de reference aux autres : la classe reprend ses valeurs,
+              au poids pres. Voir la note de `index.css`. */}
+          <h1 id="hero-heading" className="hero-title text-foreground">
+            {t('hero.headline1')}
             <br />
-            <span className="inline-block text-primary">{t('hero.headline2')}</span>
+            <span className="text-primary">{t('hero.headline2')}</span>
           </h1>
 
-          {/* Subtitle, concrete promise */}
           <motion.p
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto mb-8 sm:mb-10"
+            transition={{ delay: 0.12, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="mx-auto mt-8 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground sm:mt-10 sm:text-lg"
           >
             {t('hero.subtitle')}
           </motion.p>
 
-          {/* CTAs, primary: book a call (solid) · secondary: assessment (lighter, subordinate to the headline) */}
           <motion.div
-            className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
+            transition={{ delay: 0.22, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-10 flex flex-col items-center justify-center gap-3 sm:mt-12 sm:flex-row sm:gap-6"
           >
             <Button
               variant="hero"
               size="lg"
-              className="px-7 sm:px-8 text-sm sm:text-base active:scale-[0.98] transition-transform w-full sm:w-auto"
+              className="w-full px-8 text-sm transition-transform active:scale-[0.98] sm:w-auto sm:text-base"
+              asChild
+            >
+              <Link to="/audit-gratuit">
+                {t('hero.cta.assessment')}
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </Button>
+            <button
+              type="button"
               onClick={openCalendly}
+              className="inline-flex min-h-[44px] items-center text-sm text-muted-foreground underline-offset-[6px] transition-colors hover:text-foreground hover:underline sm:text-base"
               aria-label={language === 'fr' ? 'Réserver un appel gratuit avec Elie Ageron' : 'Book a free call with Elie Ageron'}
             >
               {t('hero.cta.call')}
-              <ArrowRight className="w-4 h-4" aria-hidden="true" />
-            </Button>
-            <Button
-              variant="neonOutline"
-              size="lg"
-              className="px-6 sm:px-7 text-sm sm:text-base w-full sm:w-auto"
-              asChild
-            >
-              <Link to="/assessment">{t('hero.cta.assessment')}</Link>
-            </Button>
+            </button>
           </motion.div>
 
-          {/* Friction reducers, directly under the CTA */}
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.5 }}
-            className="mt-4 text-xs sm:text-sm text-muted-foreground font-medium"
+            transition={{ delay: 0.32, duration: 0.5 }}
+            className="mt-6 text-xs text-muted-foreground sm:text-sm"
           >
             {t('hero.friction')}
           </motion.p>
-
-          {/* Social proof, real client logos + one verified review */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.6 }}
-            className="mt-9 sm:mt-11"
-          >
-            <p className="text-[11px] sm:text-xs uppercase tracking-widest text-muted-foreground mb-4">
-              {t('hero.trustedby')}
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-x-7 gap-y-4 sm:gap-x-10">
-              {CLIENT_LOGOS.map((logo) => (
-                <img
-                  key={logo.name}
-                  src={logo.src}
-                  alt={`Logo ${logo.name}, client d'Elie Ageron`}
-                  className={`h-6 sm:h-7 w-auto object-contain ${logo.white ? 'brightness-0' : ''}`}
-                  loading="eager"
-                  decoding="async"
-                />
-              ))}
-            </div>
-
-            {/* One real, attributed review, replace/extend as you collect more */}
-            <div className="mt-6 flex flex-col items-center gap-1.5">
-              <div className="flex gap-0.5" aria-label="5 sur 5 étoiles">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-3.5 h-3.5 text-yellow-400 fill-yellow-400" aria-hidden="true" />
-                ))}
-              </div>
-              <p className="text-sm sm:text-base text-foreground/80 italic max-w-md">
-                «&nbsp;{t('hero.review.text')}&nbsp;»
-              </p>
-              <p className="text-xs text-muted-foreground">{t('hero.review.author')}</p>
-            </div>
-          </motion.div>
         </motion.header>
 
-        {/* Scroll indicator - Hidden on mobile for cleaner look */}
-        <motion.button
+        {/* Preuve sociale discrete, loin sous le titre. */}
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.6 }}
-          className="hidden sm:flex absolute bottom-4 left-1/2 -translate-x-1/2 flex-col items-center gap-2 cursor-pointer group"
-          onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}
-          aria-label="Défiler vers le bas"
+          transition={{ delay: 0.5, duration: 0.7 }}
+          className="mt-20 sm:mt-24"
         >
-          <span className="text-xs text-muted-foreground group-hover:text-primary transition-colors">{t('hero.scroll')}</span>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 1.5 }}
-          >
-            <ArrowDown className="w-5 h-5 text-primary" />
-          </motion.div>
-        </motion.button>
+          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 sm:gap-x-14">
+            {CLIENT_LOGOS.map((logo) => (
+              <img
+                key={logo.name}
+                src={logo.src}
+                alt={`Logo ${logo.name}, client d'Elie Ageron`}
+                width={120}
+                height={28}
+                className={`h-7 w-auto object-contain sm:h-8 ${logo.flat ? 'brightness-0' : ''}`}
+                loading="eager"
+                decoding="async"
+              />
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

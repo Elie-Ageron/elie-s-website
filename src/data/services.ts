@@ -117,7 +117,7 @@ export const services: ServiceItem[] = [
     kicker: { fr: 'Votre image', en: 'Your image' },
     title: { fr: 'Identité de marque', en: 'Brand identity' },
     short: {
-      fr: 'Logo, couleurs et typographies : une image cohérente et mémorable.',
+      fr: 'Logo, couleurs et typographies, pour que votre devis, votre camion et votre site se ressemblent.',
       en: 'Logo, colors and typography: a coherent, memorable image.',
     },
     desc: {

@@ -45,7 +45,7 @@ const LegalPage = ({ page }: LegalPageProps) => {
         <meta property="og:site_name" content="Elie Ageron" />
       </Helmet>
 
-      <main className="max-w-3xl mx-auto px-6 py-20 sm:py-28 space-y-10">
+      <main className="max-w-3xl mx-auto px-6 py-24 sm:py-36 space-y-10">
         {isMentions ? (
           <>
             <h1 className="text-3xl sm:text-4xl font-bold text-foreground">

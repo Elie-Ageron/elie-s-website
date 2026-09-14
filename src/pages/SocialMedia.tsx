@@ -12,8 +12,9 @@ import {
 } from '@/components/ui/accordion';
 import MagneticButton from '@/components/animations/MagneticButton';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
+import FaqSection from '@/components/FaqSection';
+import PublicationsReelles from '@/components/PublicationsReelles';
 import InternalLinks from '@/components/InternalLinks';
-import ServiceResources from '@/components/ServiceResources';
 import ScrollArrow from '@/components/ScrollArrow';
 import SEO from '@/components/SEO';
 
@@ -38,7 +39,7 @@ const useSteps = () => {
   return [
     {
       icon: Camera,
-      num: '01',
+      num: '1',
       when: language === 'fr' ? 'Début du mois' : 'Start of the month',
       title: language === 'fr' ? "J'arrive avec le plan et le matériel" : 'I show up with the plan and the gear',
       desc:
@@ -48,7 +49,7 @@ const useSteps = () => {
     },
     {
       icon: Scissors,
-      num: '02',
+      num: '2',
       when: language === 'fr' ? 'Les jours suivants' : 'The following days',
       title: language === 'fr' ? 'Je monte, je sous-titre, je découpe' : 'I edit, subtitle and cut it up',
       desc:
@@ -58,12 +59,12 @@ const useSteps = () => {
     },
     {
       icon: CalendarCheck,
-      num: '03',
+      num: '3',
       when: language === 'fr' ? 'Tout le reste du mois' : 'All the rest of the month',
-      title: language === 'fr' ? 'Je publie, vous ne touchez à rien' : "I post, you don't lift a finger",
+      title: language === 'fr' ? 'Je publie tout le mois' : 'I post all month long',
       desc:
         language === 'fr'
-          ? "Vos vidéos sortent tout au long du mois sur Instagram, Facebook, TikTok ou YouTube Shorts, selon les réseaux qui comptent pour vous. Je choisis les horaires, j'écris les légendes, je gère les hashtags. Vous les voyez sortir sans avoir rien à faire, et le mois suivant on recommence."
+          ? "Vos vidéos sortent tout au long du mois sur Instagram, Facebook, TikTok ou YouTube Shorts, selon les réseaux qui comptent pour vous. Je choisis les horaires, j'écris les légendes, je gère les hashtags. Vous les voyez sortir, et si un sujet vous vient entre deux tournages, vous me l'envoyez et je l'ajoute au lot."
           : "Your videos go out through the month on Instagram, Facebook, TikTok or YouTube Shorts, depending on which networks matter to you. I pick the timing, write the captions, handle the hashtags. You watch them go out without doing anything, and the next month we start again.",
     },
   ];
@@ -74,24 +75,24 @@ const useIncluded = () => {
   const { language } = useLanguage();
   return language === 'fr'
     ? [
-        'Un plan de tournage écrit avant chaque session',
-        'Une journée de tournage chez vous ou sur le terrain',
-        'Tout le matériel : caméra, micros, lumière, drone',
-        'Montage vertical, sous-titres et musique',
-        '6 à 12 vidéos publiées dans le mois',
-        'Légendes et hashtags rédigés',
-        'Publication sur les réseaux de votre choix',
-        'Les fichiers vidéo vous appartiennent',
+        { label: 'Un plan de tournage', detail: 'écrit avant chaque session' },
+        { label: 'Une journée de tournage', detail: 'chez vous ou sur le terrain' },
+        { label: 'Tout le matériel', detail: 'caméra, micros, lumière, drone' },
+        { label: 'Montage vertical', detail: 'sous-titres et musique' },
+        { label: '6 à 12 vidéos', detail: 'publiées dans le mois' },
+        { label: 'Légendes et hashtags', detail: 'rédigés pour chaque publication' },
+        { label: 'Publication', detail: 'sur les réseaux de votre choix' },
+        { label: 'Les fichiers vidéo', detail: 'vous appartiennent' },
       ]
     : [
-        'A written shooting plan before every session',
-        'A full day of filming at your place or on location',
-        'All the gear: camera, mics, lighting, drone',
-        'Vertical editing, subtitles and music',
-        '6 to 12 videos published over the month',
-        'Captions and hashtags written for you',
-        'Publishing on the networks you care about',
-        'The video files are yours to keep',
+        { label: 'A written shooting plan', detail: 'before every session' },
+        { label: 'A full day of filming', detail: 'at your place or on location' },
+        { label: 'All the gear', detail: 'camera, mics, lighting, drone' },
+        { label: 'Vertical editing', detail: 'subtitles and music' },
+        { label: '6 to 12 videos', detail: 'published over the month' },
+        { label: 'Captions and hashtags', detail: 'written for every post' },
+        { label: 'Publishing', detail: 'on the networks you care about' },
+        { label: 'The video files', detail: 'are yours to keep' },
       ];
 };
 
@@ -135,6 +136,16 @@ const useFaq = () => {
         {
           q: "Vous vous déplacez où ?",
           a: "Je suis basé à Albertville, en Savoie. Je me déplace pour tourner en Savoie, en Haute-Savoie et dans le bassin annécien sans supplément. Pour le reste de la France, on regroupe plusieurs sessions de tournage sur un même déplacement pour que ça reste raisonnable.",
+        },
+        {
+          // Ajoutee apres relecture aveugle. La therapeute de Chambery : « on
+          // me dit que je n'ouvre jamais l'application. Une patiente qui ecrit
+          // en message prive pour un rendez-vous, elle tombe sur qui ? Pour un
+          // cabinet, c'est la question numero un. » Elle n'etait traitee nulle
+          // part, et « vous n'ouvrez jamais l'application » la posait sans y
+          // repondre.
+          q: "Qui répond aux messages privés ?",
+          a: "Vous. Je publie et je gère les commentaires généraux, mais tout ce qui ressemble à une demande de rendez-vous vous revient : c'est votre métier, pas le mien, et une réponse de ma part se verrait tout de suite. Je vous préviens quand une publication part, pour que vous sachiez qu'il va y avoir du monde dans la boîte de réception ce jour là.",
         },
       ]
     : [
@@ -291,48 +302,60 @@ const SocialMedia = () => {
 
         <div className="max-w-4xl mx-auto text-center relative z-10 -mt-20 sm:-mt-24">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-7 text-xs sm:text-sm font-medium text-muted-foreground">
-              <span className="w-2 h-2 bg-primary rounded-full animate-pulse" aria-hidden="true" />
+            {/* 🔴 Le point portait `animate-pulse` et la pastille `glass-card`.
+                Elie a banni les deux : « pas de badge qui pulse », et le verre
+                depoli decoratif fait partie de ce qu'il appelle
+                « vraiment intelligence artificielle ». Un point qui clignote en
+                boucle sous un titre attire l'oeil sans rien annoncer, et il ne
+                s'arrete jamais. La pastille prend le meme fond que celles du
+                reste du site. */}
+            <span className="mb-7 inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-2 text-xs font-medium text-muted-foreground sm:text-sm">
+              <span className="h-1.5 w-1.5 rounded-full bg-primary" aria-hidden="true" />
               {language === 'fr' ? 'Vidéo et réseaux sociaux, clé en main' : 'Video and social media, done for you'}
             </span>
 
             <h1
               id="social-hero-heading"
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-[1.05]"
+              className="hero-title mb-6"
             >
               <span className="text-foreground">
                 {language === 'fr' ? 'On filme une journée.' : 'We film for one day.'}
               </span>
               <br />
               <span className="text-primary">
-                {language === 'fr' ? 'Un mois de posts.' : 'A month of posts.'}
+                {/* « posts » remplace par « publications » : le reste du site
+                    dit publications, et le mot anglais detonne sur une page
+                    qui s'adresse a des artisans de Savoie. */}
+                {language === 'fr' ? 'Un mois de publications.' : 'A month of posts.'}
               </span>
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               {language === 'fr'
-                ? "J'arrive avec le matériel et un plan de tournage déjà prêt. On tourne, je monte, et je publie 6 à 12 vidéos sur vos réseaux pendant tout le mois. Vous, vous ne touchez à rien."
-                : "I show up with the gear and a shooting plan already written. We film, I edit, and I post 6 to 12 videos on your accounts across the month. You touch nothing."}
+                ? "J'arrive avec le matériel et un plan de tournage déjà prêt. On tourne, je monte, et je publie 6 à 12 vidéos sur vos réseaux pendant tout le mois. Vous, vous ne touchez à rien. Artisans, restaurateurs, thérapeutes et formateurs, en Savoie et en Haute-Savoie."
+                : "I show up with the gear and a shooting plan already written. We film, I edit, and I post 6 to 12 videos on your accounts across the month. You touch nothing. Tradespeople, restaurant owners, therapists and trainers, across Savoie and Haute-Savoie."}
             </p>
 
             <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">
               <MagneticButton>
-                <Button variant="hero" size="lg" className="group w-full sm:w-auto" onClick={openCalendly}>
-                  <span className="flex items-center gap-2">
-                    {language === 'fr' ? 'En parler 30 min, gratuitement' : 'Talk it through, free 30 min'}
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-                  </span>
+                <Button variant="hero" size="lg" className="group w-full sm:w-auto" asChild>
+                  <Link to="/audit-gratuit">
+                    <span className="flex items-center gap-2">
+                      {language === 'fr' ? 'Recevoir mon audit gratuit' : 'Get my free audit'}
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                    </span>
+                  </Link>
                 </Button>
               </MagneticButton>
-              <Button variant="neonOutline" size="lg" className="w-full sm:w-auto" asChild>
-                <Link to="/get-started">{language === 'fr' ? 'Décrire mon projet' : 'Describe my project'}</Link>
+              <Button variant="neonOutline" size="lg" className="w-full sm:w-auto" onClick={openCalendly}>
+                {language === 'fr' ? 'Réserver un appel' : 'Book a call'}
               </Button>
             </div>
 
             <p className="mt-4 text-xs sm:text-sm text-muted-foreground font-medium">
               {language === 'fr'
-                ? 'Sans engagement · Réponse sous 24h · Savoie, Haute-Savoie et France'
-                : 'No commitment · Reply within 24h · Savoie, Haute-Savoie and across France'}
+                ? 'Gratuit · Deux champs · Vidéo sous 48 h · Savoie, Haute-Savoie et France'
+                : 'Free · Two fields · Video within 48h · Savoie, Haute-Savoie and across France'}
             </p>
           </motion.div>
 
@@ -340,67 +363,21 @@ const SocialMedia = () => {
         </div>
       </section>
 
-      {/* ─────────── Preuve chiffrée ─────────── */}
-      <section className="py-16 sm:py-24 bg-secondary/30 border-y border-border/50" aria-labelledby="social-proof-heading">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-xs font-semibold uppercase tracking-[0.22em] text-primary mb-6"
-          >
-            {language === 'fr' ? 'Ce que ça donne' : 'What it looks like'}
-          </motion.p>
-
-          <motion.h2
-            id="social-proof-heading"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="font-bold text-foreground leading-[0.95] tracking-tight"
-          >
-            <span className="block text-6xl sm:text-7xl md:text-8xl text-primary tabular-nums">56 619</span>
-            <span className="mt-3 block text-2xl sm:text-3xl md:text-4xl">
-              {language === 'fr' ? 'vues dès la première publication.' : 'views on the very first post.'}
-            </span>
-          </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="mt-7 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed"
-          >
-            {language === 'fr'
-              ? "C'est la toute première publication que j'ai faite pour une cliente formatrice en rééducation de l'écriture. Pas la dixième, pas celle d'après six mois de rodage : la première. Elle a aussi ramené 196 abonnés, et 99 % des vues venaient de gens qui ne la suivaient pas encore. Elle n'a rien fait d'autre que répondre à mes questions devant une caméra."
-              : "That was the very first post I published for a client who teaches handwriting rehabilitation. Not the tenth, not one after six months of practice: the first. It also brought her 196 followers, and 99% of the views came from people who were not following her yet. All she did was answer my questions in front of a camera."}
-          </motion.p>
-
-          {/* Mention legale : ce chiffre est un exemple reel, pas une promesse commerciale. */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="mt-6 text-xs text-muted-foreground max-w-2xl mx-auto leading-relaxed"
-          >
-            {language === 'fr'
-              ? "Résultat obtenu chez une cliente sur une publication précise (Reel Facebook, août 2026). C'est un exemple, pas une moyenne et pas une garantie : les résultats dépendent de votre activité, de votre audience et des plateformes, et aucun nombre de vues ne peut être promis."
-              : 'Result measured for one client on one specific post (Facebook Reel, August 2026). It is an example, not an average and not a guarantee: results depend on your business, your audience and the platforms, and no view count can be promised.'}
-          </motion.p>
-        </div>
-      </section>
-
+      {/* ⚠️ « Le probleme » est passe devant « Preuve, en prose ».
+          Elie : « j'aime bien le truc, vous savez qu'il faut poster, le
+          probleme n'a jamais ete la. Ca faut que ce soit tout en haut, la
+          premiere section. » Il a raison : cette section nomme l'objection
+          que le visiteur a deja en tete, donc elle doit tomber avant qu'on lui
+          raconte une histoire de cliente. */}
       {/* ─────────── Le problème ─────────── */}
-      <section className="py-16 sm:py-24" aria-labelledby="social-problem-heading">
+      <section className="py-20 sm:py-32" aria-labelledby="social-problem-heading">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <motion.h2
             id="social-problem-heading"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground leading-tight mb-7"
+            className="section-title text-foreground mb-7"
           >
             {language === 'fr' ? 'Vous savez qu’il faut poster.' : 'You know you should be posting.'}{' '}
             <span className="text-primary">
@@ -434,32 +411,31 @@ const SocialMedia = () => {
         </div>
       </section>
 
-      {/* ─────────── Comment ça marche ─────────── */}
-      <section className="py-16 sm:py-24 bg-secondary/30" aria-labelledby="social-how-heading">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <motion.span
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-primary"
-          >
-            <span className="h-px w-6 bg-primary/50" aria-hidden="true" />
-            {language === 'fr' ? 'Un mois type' : 'A typical month'}
-          </motion.span>
+      {/* 🔴 Il y avait ici la section « Vous repondez, je fais le reste »,
+          qui racontait les 56 619 vues de la premiere publication d'une
+          cliente, suivies d'un disclaimer de trois lignes.
+          Elie l'a fait retirer le 14 septembre 2026. Elle cumulait trois
+          defauts : un chiffre de performance en argument de vente, ce qu'il
+          refuse depuis le debut ; un disclaimer qui annulait le chiffre juste
+          apres l'avoir donne ; et une cliente decrite comme anonyme alors
+          qu'elle est nommee plus bas sur la meme page.
+          ⚠️ Ne pas la reintroduire, et ne pas replacer ce chiffre ailleurs. */}
 
+      {/* ─────────── Comment ça marche ─────────── */}
+      <section className="py-20 sm:py-32 bg-secondary/30" aria-labelledby="social-how-heading">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <motion.h2
             id="social-how-heading"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground leading-tight mb-12 sm:mb-16 max-w-2xl"
+            className="section-title text-foreground mb-12 sm:mb-16 max-w-2xl"
           >
             {language === 'fr' ? 'Comment ça se passe, concrètement' : 'How it actually works'}
           </motion.h2>
 
           <ol className="space-y-0">
             {steps.map((step, index) => {
-              const Icon = step.icon;
               return (
                 <motion.li
                   key={step.num}
@@ -471,17 +447,21 @@ const SocialMedia = () => {
                     index === 0 ? '' : 'border-t border-border/60'
                   }`}
                 >
-                  <div className="flex sm:flex-col items-center sm:items-start gap-3 sm:gap-2">
-                    <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/12 shrink-0">
-                      <Icon className="h-5 w-5 text-primary" strokeWidth={1.75} aria-hidden="true" />
-                    </span>
-                    <span className="font-heading text-sm font-bold text-primary tabular-nums">{step.num}</span>
-                  </div>
+                  {/* ⚠️ C'etait une pastille d'icone de 44 px et le numero en
+                      text-sm en dessous. Elie : « pourquoi ils sont en
+                      minuscules comme ca, et les petites icones ils sont tout
+                      petits. » Le numero est maintenant le repere, a la meme
+                      echelle que sur l'accueil, et l'icone a disparu : elle ne
+                      disait rien que le titre ne disait deja. */}
+                  <span
+                    className="font-heading text-5xl font-bold leading-none text-primary tabular-nums sm:text-6xl"
+                    aria-hidden="true"
+                  >
+                    {step.num}
+                  </span>
 
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground mb-2">
-                      {step.when}
-                    </p>
+                    <p className="mb-2 text-sm font-medium text-muted-foreground">{step.when}</p>
                     <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3 leading-snug">{step.title}</h3>
                     <p className="text-base text-muted-foreground leading-relaxed max-w-2xl">{step.desc}</p>
                   </div>
@@ -489,11 +469,84 @@ const SocialMedia = () => {
               );
             })}
           </ol>
+
+          {/* Le paiement de la liste, demande par Elie le 14 septembre 2026 :
+              « ajoute apres le point 3 que c'est effortless pour eux, ils ont
+              rien a preparer, a apprendre, a bosser. Tout est gere pour eux,
+              selon leurs preferences. »
+
+              ⚠️ Ce n'est volontairement pas une quatrieme etape numerotee. Les
+              trois numeros sont une chronologie (le jour du tournage, les jours
+              d'apres, le reste du mois) ; ce bloc ne raconte pas un quatrieme
+              moment, il dit ce que le visiteur fait pendant les trois. Lui
+              donner un « 4 » casserait la lecture du deroule.
+
+              ⚠️ La seconde moitie est la part « selon leurs preferences », et
+              elle compte autant que la premiere. « Je m'occupe de tout » tout
+              seul se lit comme une perte de controle : le visiteur imagine ses
+              videos publiees sans lui. Le cadre pose au depart, et le choix de
+              voir ou non les videos avant leur sortie, rendent l'absence de
+              travail supportable. */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.5 }}
+            className="border-t border-border/60 pt-8 sm:pt-10"
+          >
+            <h3 className="text-xl sm:text-2xl font-bold text-foreground leading-snug">
+              {language === 'fr'
+                ? "Votre part du travail tient dans une journée."
+                : 'Your share of the work fits in a single day.'}
+            </h3>
+            <p className="mt-3 text-base text-muted-foreground leading-relaxed max-w-2xl">
+              {language === 'fr'
+                ? "Le reste du mois se passe sans vous. Vous n'avez aucun outil à installer, aucun calendrier à tenir, aucune légende à écrire."
+                : 'The rest of the month happens without you. There is no tool to install, no calendar to keep, no caption to write.'}
+            </p>
+            <p className="mt-4 text-base text-muted-foreground leading-relaxed max-w-2xl">
+              {language === 'fr'
+                ? "On fixe au départ ce dont vous voulez parler et ce que vous préférez garder pour vous, et je travaille dans ce cadre. Si vous voulez voir les vidéos avant qu'elles sortent, je vous les envoie la veille. Sinon, vous les découvrez en ligne comme tout le monde."
+                : 'We agree up front on what you want to talk about and what you would rather keep to yourself, and I work inside that. If you want to see the videos before they go out, I send them the day before. Otherwise you find them online like everyone else.'}
+            </p>
+          </motion.div>
+
+          {/* Ce que la journee produit. Une liste d'etapes decrit le service,
+              trois couvertures de video le montrent.
+
+              ⚠️ La meme bande avait ete posee sur l'accueil et retiree tout de
+              suite : elle arrivait sans titre, donc sans raison d'etre la. Ici
+              elle repond a la question que la liste d'etapes vient de poser, et
+              le titre au-dessus le dit. Une image de gens qui sourient ne se
+              pose jamais toute seule. */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mt-14 border-t border-border/60 pt-12"
+          >
+            {/* Le titre etait en `text-xl`, plus petit que tous les titres de
+                la page. Il porte une preuve verifiable, il merite l'echelle
+                normale. */}
+            <h3 className="section-title">
+              <span className="text-foreground">
+                {language === 'fr' ? 'Des vidéos réellement ' : 'Videos that are actually '}
+              </span>
+              <span className="text-primary">{language === 'fr' ? 'en ligne.' : 'live.'}</span>
+            </h3>
+            <p className="section-lede mt-5">
+              {language === 'fr'
+                ? "Format vertical, le sujet en une phrase posée sur l'image, et la personne qui parle de son métier. Cliquez, elles sont publiques."
+                : 'Vertical format, the topic in one line over the image, and someone talking about their trade. Click through, they are public.'}
+            </p>
+            <PublicationsReelles className="mt-8" />
+          </motion.div>
         </div>
       </section>
 
       {/* ─────────── Ce qui est inclus ─────────── */}
-      <section className="py-16 sm:py-24" aria-labelledby="social-included-heading">
+      <section className="py-20 sm:py-32" aria-labelledby="social-included-heading">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             <motion.div
@@ -504,7 +557,7 @@ const SocialMedia = () => {
             >
               <h2
                 id="social-included-heading"
-                className="text-3xl sm:text-4xl font-bold text-foreground leading-tight mb-5"
+                className="section-title text-foreground mb-5"
               >
                 {language === 'fr' ? 'Ce qui est compris' : "What's included"}
               </h2>
@@ -520,20 +573,33 @@ const SocialMedia = () => {
               </p>
             </motion.div>
 
-            <ul className="lg:col-span-7 -my-1">
+            {/* ⚠️ La liste etait en 15 px, gris a 85 %, avec une pastille de
+                20 px devant chaque ligne. Elie : « c'est du petit texte la
+                qu'on a du mal a voir ». Elle est maintenant a la taille du
+                corps de texte, en couleur pleine, et la coche fait 18 px. */}
+            <ul className="lg:col-span-7">
               {included.map((item, index) => (
                 <motion.li
-                  key={item}
+                  key={item.label}
                   initial={{ opacity: 0, y: 12 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-40px' }}
                   transition={{ delay: index * 0.04, duration: 0.4 }}
-                  className={`flex items-start gap-4 py-4 ${index === 0 ? '' : 'border-t border-border/60'}`}
+                  className="flex items-start gap-4 border-t border-border py-5"
                 >
-                  <span className="mt-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-primary/12 shrink-0">
-                    <Check className="h-3 w-3 text-primary" aria-hidden="true" />
+                  <Check className="mt-1 h-[18px] w-[18px] shrink-0 text-primary" aria-hidden="true" />
+                  {/* Le libelle porte l'information, le detail la precise.
+                      Elie : « mets les elements importants en gras, comme
+                      journee de tournage, materiel, et a cote en police fine le
+                      detail. » Sur une liste de huit lignes de meme graisse,
+                      l'oeil doit tout lire pour savoir ce qu'il y a dedans.
+                      ⚠️ Cette forme est reservee aux listes de specifications.
+                      Dans la prose du blog, la liste a en-tete gras reste
+                      interdite et `check:writing` la signale. */}
+                  <span className="text-base leading-relaxed sm:text-lg">
+                    <span className="font-bold text-foreground">{item.label}</span>
+                    <span className="text-muted-foreground">, {item.detail}</span>
                   </span>
-                  <span className="text-[15px] sm:text-base text-foreground/85 leading-relaxed">{item}</span>
                 </motion.li>
               ))}
             </ul>
@@ -541,15 +607,25 @@ const SocialMedia = () => {
         </div>
       </section>
 
-      {/* ─────────── Le combo site + réseaux ─────────── */}
-      <section className="py-16 sm:py-24 bg-secondary/30 border-y border-border/50" aria-labelledby="social-combo-heading">
+      {/* ─────────── Le combo site + réseaux ───────────
+          🔴 Ce paragraphe disait : « Une video a 56 000 vues sans rien
+          derriere [...] C'est exactement ce qui s'est passe : beaucoup de vues,
+          et aucune page pour recevoir les gens. » Deux relectures aveugles sur
+          deux l'ont releve : le seul resultat chiffre du site etait presente
+          comme n'ayant rapporte aucun client. L'ebeniste sceptique : « c'est
+          moi qui aurais du dire ca, pas lui. » La therapeute : « donc a 890 €
+          seul, il ne se passe rien ? »
+          L'argument site + reseaux reste, l'aveu qui detruisait la preuve est
+          parti. Ne pas le reintroduire pour faire honnete : l'honnetete du site
+          vit dans les trois interdits de l'audit, pas dans l'auto-sabotage. */}
+      <section className="py-20 sm:py-32 bg-secondary/30 border-y border-border/50" aria-labelledby="social-combo-heading">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <motion.h2
             id="social-combo-heading"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl sm:text-4xl font-bold text-foreground leading-tight mb-6"
+            className="section-title text-foreground mb-6"
           >
             {language === 'fr' ? 'Les réseaux amènent les gens. ' : 'Social brings people in. '}
             <span className="text-primary">
@@ -565,8 +641,8 @@ const SocialMedia = () => {
             className="text-base sm:text-lg text-muted-foreground leading-relaxed"
           >
             {language === 'fr'
-              ? "Une vidéo à 56 000 vues sans rien derrière, c'est de l'attention qui retombe. C'est exactement ce qui s'est passé : beaucoup de vues, et aucune page pour recevoir les gens. Avec un site qui explique ce que vous faites et propose un rendez-vous, cette attention devient des clients. C'est pour ça que je fais les deux."
-              : "A video at 56,000 views with nothing behind it is attention that fades. That is exactly what happened: plenty of views, and no page to receive anyone. With a site that explains what you do and offers a booking, that attention becomes clients. That is why I do both."}
+              ? "Une vidéo qui marche envoie des gens quelque part. S'il n'y a rien au bout, l'attention retombe et vous ne vous en apercevez même pas. C'est pour ça que je regarde toujours le site avant de proposer des réseaux : une page qui explique ce que vous faites et qui propose un rendez-vous transforme cette attention en demandes."
+              : 'A video that works sends people somewhere. If there is nothing at the end of it, the attention fades and you never even notice. That is why I always look at the site before proposing social: a page that explains what you do and offers a booking turns that attention into enquiries.'}
           </motion.p>
 
           <motion.div
@@ -594,66 +670,31 @@ const SocialMedia = () => {
       </section>
 
       {/* ─────────── FAQ ─────────── */}
-      <section className="py-16 sm:py-24" aria-labelledby="social-faq-heading">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <motion.h2
-            id="social-faq-heading"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground text-center leading-tight mb-10 sm:mb-14"
-          >
-            {language === 'fr' ? 'Les questions ' : 'The questions '}
-            <span className="text-primary">{language === 'fr' ? "qu'on me pose" : 'people ask me'}</span>
-          </motion.h2>
+      {/* ⚠️ C'etait un troisieme accordeon, avec ses propres classes : fond
+          gris, coins arrondis, bordure rose a l'ouverture. Voir la note de
+          `FaqSection`, la presentation est la meme sur les quatre pages. */}
+      <FaqSection
+        id="social-faq-heading"
+        items={faq.map((item) => ({ question: item.q, answer: item.a }))}
+        titre={
+          <>
+            <span className="text-foreground">{language === 'fr' ? 'Les questions ' : 'The questions '}</span>
+            <span className="text-primary">{language === 'fr' ? "qu'on me pose." : 'people ask me.'}</span>
+          </>
+        }
+      />
 
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <Accordion type="single" collapsible className="w-full space-y-3 sm:space-y-4">
-              {faq.map((item, index) => (
-                <AccordionItem
-                  key={index}
-                  value={`social-faq-${index}`}
-                  className="bg-secondary border border-border rounded-xl px-4 sm:px-6 overflow-hidden transition-all duration-300 data-[state=open]:border-primary/50"
-                >
-                  <AccordionTrigger className="text-left text-foreground font-semibold hover:no-underline hover:text-primary transition-colors py-4 sm:py-5 text-sm sm:text-base [&[data-state=open]]:text-primary">
-                    {item.q}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground pb-4 sm:pb-5 text-sm sm:text-base leading-relaxed">
-                    {item.a}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </motion.div>
-        </div>
-      </section>
+      {/* Il y avait ici un dernier appel a l'action, « On tourne quand ? »,
+          avant le maillage, les liens internes et la section de contact. La
+          section de contact porte maintenant le formulaire d'audit : une page
+          se termine par une seule proposition, sur tout le site. */}
 
-      {/* ─────────── CTA final ─────────── */}
-      <section className="py-12 sm:py-20" aria-label={language === 'fr' ? 'Passer à l’action' : 'Call to action'}>
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-5 leading-tight">
-              <span className="text-foreground">{language === 'fr' ? 'On tourne quand ?' : 'When do we shoot?'}</span>
-            </h2>
-            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-8">
-              {language === 'fr'
-                ? "Trente minutes au téléphone. Vous me racontez votre activité, je vous dis ce que je filmerais et à quelle fréquence. Si ça ne colle pas, je vous le dis aussi."
-                : "Thirty minutes on the phone. You tell me about your business, I tell you what I would film and how often. If it is not a fit, I will say so too."}
-            </p>
-            <MagneticButton>
-              <Button variant="hero" size="lg" className="group" onClick={openCalendly}>
-                <span className="flex items-center gap-2">
-                  {language === 'fr' ? 'Réserver mon appel gratuit' : 'Book my free call'}
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-                </span>
-              </Button>
-            </MagneticButton>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Maillage descendant vers le blog et le guide pilier */}
-      <ServiceResources variant="social" />
+      {/* ⚠️ Il y avait ici `ServiceResources`, un bloc de liens vers le blog
+          et le guide pilier. Elie : « le truc de blog, ca fait plein de liens,
+          comprends rien, c'est moche, faut enlever ». Le maillage vers le
+          corpus passe par la FAQ de l'accueil, par le pied de page et par
+          `InternalLinks`, qui suffisent : le rapport Liens de la Search
+          Console ne perd rien. */}
 
       <InternalLinks currentPage="social" />
       <ContactMethodsSection />

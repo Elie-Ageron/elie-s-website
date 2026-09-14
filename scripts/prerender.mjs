@@ -66,7 +66,7 @@ run({
   // et le controle de fin de script les rattrapait. 2500 ms rend ca stable.
   waitFor: 2500,
   // Routes non atteignables par simple crawl depuis la page d'accueil.
-  include: ['/', '/blog', '/guides', '/a-propos', '/services', '/reseaux-sociaux'],
+  include: ['/', '/blog', '/guides', '/a-propos', '/services', '/reseaux-sociaux', '/audit-gratuit'],
 })
   .then(() => {
     console.log('Pre-rendu termine');
