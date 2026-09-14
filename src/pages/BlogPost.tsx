@@ -361,7 +361,7 @@ const BlogPost = () => {
             className="group flex items-start gap-3 rounded-xl border border-border/60 bg-secondary/40 p-4 hover:border-primary/40 transition-colors"
           >
             <span className="min-w-0">
-              <span className="block text-xs font-semibold uppercase tracking-wide text-primary">
+              <span className="block text-sm font-semibold text-primary">
                 {fr ? 'Extrait du guide' : 'Part of the guide'}
               </span>
               <span className="mt-1 block font-medium group-hover:text-primary transition-colors">

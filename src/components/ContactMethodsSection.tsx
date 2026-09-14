@@ -90,8 +90,14 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
             </h2>
             <p className="section-lede mt-6">
               {fr
-                ? "C'est gratuit et je ne vends rien dedans. Je passe une trentaine de minutes sur votre fiche Google, vos réseaux et votre site, puis je vous renvoie quatre minutes de vidéo sous 48 h ouvrées."
-                : 'It is free and I sell nothing in it. I spend about thirty minutes on your Google profile, your social accounts and your site, then send you four minutes of video within two business days.'}
+                /* ⚠️ Disait « je vous renvoie quatre minutes de video ». Meme
+                   correction que sur le hero et sur `AuditInline` : la duree
+                   decrit le contenant, pas ce qu'on y trouve. Elle garde sa
+                   place dans la fiche technique de `/audit-gratuit`, pas dans
+                   la phrase qui vend. Ce bloc est en pied des quatorze pages,
+                   donc c'etait la formulation la plus repandue du site. */
+                ? "C'est gratuit et je ne vends rien dedans. Je passe une trentaine de minutes sur votre fiche Google, vos réseaux et votre site, puis je vous envoie l'analyse en vidéo sous 48 h ouvrées."
+                : 'It is free and I sell nothing in it. I spend about thirty minutes on your Google profile, your social accounts and your site, then send you the whole review as a video within two business days.'}
             </p>
           </ScrollReveal>
         )}

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowUpRight, ArrowRight, Clock } from 'lucide-react';
+import { ArrowUpRight, ArrowRight } from 'lucide-react';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import SEO from '@/components/SEO';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
@@ -87,12 +87,6 @@ const BlogCategory = () => {
   const pillar = guides.find((g) => g.slug === categoryPillar[category.slug]);
   const categoryCta = categoryCtas[category.slug];
 
-  const formatDate = (iso: string) =>
-    new Date(iso).toLocaleDateString(fr ? 'fr-FR' : 'en-US', {
-      day: 'numeric',
-      month: 'short',
-      year: 'numeric',
-    });
 
   const collectionSchema = {
     '@context': 'https://schema.org',
@@ -163,18 +157,22 @@ const BlogCategory = () => {
       {pillar && fr && (
         <section className="pb-8" aria-labelledby="category-pillar">
           <div className="max-w-3xl mx-auto px-4 sm:px-6">
+            {/* 🔴 C'etait une carte de verre coiffee de « COMMENCER PAR LE
+                GUIDE » en majuscules espacees, sur les six pages categorie.
+                Meme correction que sur `/blog` : l'intertitre en capitales est
+                banni, et le verre depoli decoratif aussi. Le bloc garde son
+                role de tete de gondole grace a un filet et a un fond discret,
+                pas grace a un effet. */}
             <Link
               to={`/guides/${pillar.slug}`}
-              className="group block glass-card rounded-2xl p-5 sm:p-6 transition-colors hover:border-primary/40"
+              className="group block rounded-2xl border border-border/60 bg-secondary/40 p-6 transition-colors hover:border-primary/40 sm:p-7"
             >
-              <span className="text-xs font-semibold uppercase tracking-wide text-primary">
-                Commencer par le guide
-              </span>
-              <h2 id="category-pillar" className="mt-2 text-lg sm:text-xl font-semibold group-hover:text-primary transition-colors">
+              <span className="text-sm font-semibold text-primary">Le guide qui couvre tout le sujet</span>
+              <h2 id="category-pillar" className="mt-2 text-lg font-bold leading-snug tracking-tight transition-colors group-hover:text-primary sm:text-xl">
                 {pillar.title}
               </h2>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{pillar.excerpt}</p>
-              <span className="mt-4 inline-flex items-center gap-1.5 min-h-[24px] text-sm font-medium text-primary">
+              <p className="mt-2 text-base leading-relaxed text-muted-foreground">{pillar.excerpt}</p>
+              <span className="mt-4 inline-flex min-h-[24px] items-center gap-1.5 text-sm font-medium text-primary">
                 Lire le guide complet
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </span>
@@ -199,20 +197,21 @@ const BlogCategory = () => {
               >
                 <Link
                   to={`/blog/${post.slug}`}
-                  className="group grid grid-cols-1 sm:grid-cols-12 gap-2 sm:gap-8 items-baseline py-7 sm:px-4 sm:-mx-4 rounded-2xl transition-colors duration-300 hover:bg-secondary/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                  className="group grid grid-cols-1 sm:grid-cols-12 gap-2 sm:gap-8 items-baseline py-8 sm:py-9 sm:px-4 sm:-mx-4 rounded-2xl transition-colors duration-300 hover:bg-secondary/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
                 >
-                  <div className="sm:col-span-3 flex sm:flex-col gap-2 sm:gap-1 text-xs sm:text-sm text-muted-foreground">
-                    <time dateTime={post.date}>{formatDate(post.date)}</time>
-                    <span className="inline-flex items-center gap-1">
-                      <Clock className="w-3.5 h-3.5" aria-hidden="true" />
-                      {post.readTime}
-                    </span>
-                  </div>
-                  <div className="sm:col-span-8 min-w-0">
+                  {/* La colonne de gauche a disparu. Sur `/blog` elle porte la
+                      categorie, la seule metadonnee qui varie ; ici tous les
+                      articles ont la meme, elle est deja dans le `h1`. Il ne
+                      restait que la date (identique sur les 139 articles) et le
+                      temps de lecture (« 8 min » pour 51 articles sur 122).
+                      Une colonne qui ne contient que des valeurs constantes
+                      occupe un quart de la largeur pour ne rien dire : le titre
+                      la recupere. */}
+                  <div className="sm:col-span-11 min-w-0">
                     <h3 className="text-lg sm:text-xl font-semibold leading-snug text-foreground group-hover:text-primary transition-colors">
                       {post.title}
                     </h3>
-                    <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{post.excerpt}</p>
+                    <p className="mt-2 text-base text-muted-foreground leading-relaxed">{post.excerpt}</p>
                   </div>
                   <div className="hidden sm:flex sm:col-span-1 justify-end self-center">
                     <ArrowUpRight

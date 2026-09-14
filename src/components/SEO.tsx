@@ -170,7 +170,7 @@ const seoData = {
     },
     audit: {
       title: 'Audit Gratuit de Votre Présence en Ligne',
-      description: "Je regarde votre fiche Google, vos réseaux et votre site, et je vous envoie 4 minutes de vidéo sous 48 h. Gratuit, sans rappel derrière. Deux champs à remplir.",
+      description: "L'analyse complète de votre présence en ligne, en vidéo, sous 48 h : fiche Google, réseaux, site. Gratuit, deux champs à remplir, aucune relance.",
     },
   },
 };

@@ -333,7 +333,7 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
               </div>
 
               <div className="mt-10 pt-8 border-t border-border/60">
-                <h3 className="text-sm font-semibold uppercase tracking-wide text-foreground mb-3">
+                <h3 className="mb-3 text-lg font-bold tracking-tight text-foreground">
                   Les métiers que j'accompagne ici
                 </h3>
                 <p className="text-base text-muted-foreground leading-relaxed">

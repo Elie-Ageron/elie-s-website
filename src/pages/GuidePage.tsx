@@ -122,7 +122,7 @@ const GuidePage = () => {
       {/* Sommaire, utile pour la lecture et pour les liens de sections dans les SERP */}
       <section className="pb-8" aria-labelledby="guide-toc">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <h2 id="guide-toc" className="text-sm font-semibold uppercase tracking-wide text-foreground mb-4">
+          <h2 id="guide-toc" className="mb-4 text-lg font-bold tracking-tight text-foreground sm:text-xl">
             Au programme
           </h2>
           <ol className="border-y border-border/60 divide-y divide-border/60">

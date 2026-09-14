@@ -122,22 +122,34 @@ const Blog = () => {
 
       {/* Guides piliers, en tete de blog */}
       {fr && (
-        <section className="pb-8" aria-labelledby="blog-guides">
+        <section className="pb-10" aria-labelledby="blog-guides">
           <div className="max-w-5xl mx-auto px-4 sm:px-6">
-            <h2 id="blog-guides" className="text-sm font-semibold uppercase tracking-wide text-foreground mb-3">
-              Commencer par un guide
+            {/* 🔴 Le titre etait « COMMENCER PAR UN GUIDE » en `text-sm
+                uppercase tracking-wide`. C'est l'intertitre en majuscules
+                espacees, banni par le skill `impeccable` et par la tendance n°7
+                d'Elie. Il annoncait en plus quatre cartes bordees posees en
+                `grid-cols-3`, donc trois en haut et une orpheline en bas.
+
+                A la place : une phrase qui dit ce que le lecteur trouve, et une
+                liste editoriale a deux colonnes separee par des filets. Quatre
+                items sur deux colonnes tombent juste, sans orphelin. */}
+            <h2 id="blog-guides" className="text-lg font-bold tracking-tight text-foreground sm:text-xl">
+              Si vous débutez, commencez par un guide
             </h2>
-            <ul className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+            <p className="mt-2 text-base text-muted-foreground">
+              Quatre méthodes complètes, du début à la fin. Les articles creusent ensuite un point précis.
+            </p>
+            <ul className="mt-6 grid grid-cols-1 border-t border-border/60 sm:grid-cols-2 sm:gap-x-12">
               {guides.map((guide) => (
-                <li key={guide.slug}>
+                <li key={guide.slug} className="border-b border-border/60">
                   <Link
                     to={`/guides/${guide.slug}`}
-                    className="group flex h-full flex-col justify-between gap-3 rounded-xl border border-border/60 p-4 hover:border-primary/40 transition-colors"
+                    className="group flex items-baseline justify-between gap-6 py-5 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
                   >
-                    <span className="font-medium leading-snug group-hover:text-primary transition-colors">
+                    <span className="text-base font-semibold leading-snug text-foreground transition-colors group-hover:text-primary sm:text-lg">
                       {guide.label}
                     </span>
-                    <span className="text-xs text-muted-foreground">{guide.readTime} de lecture</span>
+                    <span className="shrink-0 text-sm text-muted-foreground">{guide.readTime}</span>
                   </Link>
                 </li>
               ))}
@@ -220,7 +232,7 @@ const Blog = () => {
                 to={`/blog/${featured.slug}`}
                 className="group block py-10 sm:py-14 sm:px-4 sm:-mx-4 rounded-2xl transition-colors duration-300 hover:bg-secondary/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
               >
-                <div className="flex items-center gap-3 text-xs sm:text-sm text-muted-foreground mb-4">
+                <div className="mb-4 flex items-center gap-3 text-sm text-muted-foreground">
                   <span className="font-medium text-primary">{featured.categoryLabel}</span>
                   <span aria-hidden="true">·</span>
                   <time dateTime={featured.date}>{formatDate(featured.date)}</time>
@@ -256,17 +268,34 @@ const Blog = () => {
               >
                 <Link
                   to={`/blog/${post.slug}`}
-                  className="group grid grid-cols-1 sm:grid-cols-12 gap-2 sm:gap-8 items-baseline py-7 sm:py-8 sm:px-4 sm:-mx-4 rounded-2xl transition-colors duration-300 hover:bg-secondary/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                  className="group grid grid-cols-1 sm:grid-cols-12 gap-2 sm:gap-8 items-baseline py-8 sm:py-9 sm:px-4 sm:-mx-4 rounded-2xl transition-colors duration-300 hover:bg-secondary/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
                 >
-                  <div className="sm:col-span-3 flex sm:flex-col gap-2 sm:gap-1 text-xs sm:text-sm text-muted-foreground">
+                  {/* 🔴 Il y avait la date sous la categorie. Les 139 articles
+                      portent la meme, « 13 août 2026 », parce que le corpus a
+                      ete publie d'un bloc : repetee 139 fois dans la colonne de
+                      gauche, elle ne renseignait rien et signalait surtout un
+                      versement en masse.
+
+                      Le temps de lecture l'avait remplacee, et c'etait a peine
+                      mieux : 51 articles sur 122 affichent « 8 min », et tout
+                      le corpus tient entre 6 et 10. Une valeur quasi constante
+                      repetee a chaque ligne est du bruit, quel que soit son
+                      nom. Il ne reste donc que la categorie, la seule qui varie
+                      et la seule sur laquelle on choisit.
+
+                      La date reste sur l'article en vedette et sur la page de
+                      l'article, ou le schema Article la porte. */}
+                  <div className="sm:col-span-3 text-sm text-muted-foreground">
                     <span className="font-medium text-primary">{post.categoryLabel}</span>
-                    <time dateTime={post.date}>{formatDate(post.date)}</time>
                   </div>
                   <div className="sm:col-span-8 min-w-0">
                     <h3 className="text-lg sm:text-xl font-semibold leading-snug text-foreground group-hover:text-primary transition-colors duration-300">
                       {post.title}
                     </h3>
-                    <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed line-clamp-2">
+                    {/* `text-sm` gris, coupe au milieu d'un mot : c'etait la
+                        bouillie que voyait un lecteur de telephone. Meme taille
+                        que le reste du corps de texte du site. */}
+                    <p className="mt-2 text-base text-muted-foreground leading-relaxed line-clamp-2">
                       {post.excerpt}
                     </p>
                   </div>

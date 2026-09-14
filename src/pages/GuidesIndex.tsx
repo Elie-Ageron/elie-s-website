@@ -58,9 +58,15 @@ const GuidesIndex = () => {
             <h1 id="guides-heading" className="section-title">
               {guides.length} guides, et de quoi vous en sortir seul.
             </h1>
+            {/* 🔴 Disait « Vous pouvez tout appliquer sans moi. Si vous
+                préférez déléguer, c'est aussi possible, mais ce n'est pas le
+                sujet de ces pages. » La relecture aveugle avait fait retirer la
+                même formule sur la FAQ de l'accueil : elle donne au lecteur la
+                permission de partir. Et la seconde phrase le pousse dehors deux
+                fois. La gratuité se dit sans inviter personne à s'en aller. */}
             <p className="mt-5 text-base sm:text-lg text-muted-foreground leading-relaxed">
-              Ce que je ferais à votre place, expliqué de bout en bout. Vous pouvez tout appliquer sans moi. Si
-              vous préférez déléguer, c'est aussi possible, mais ce n'est pas le sujet de ces pages.
+              Ce que je ferais à votre place, expliqué de bout en bout, avec les décisions dans l'ordre où elles
+              se posent. Rien n'y est réservé aux clients.
             </p>
           </motion.header>
         </div>
@@ -84,7 +90,7 @@ const GuidesIndex = () => {
                   to={`/guides/${guide.slug}`}
                   className="group block py-8 sm:py-10 sm:px-4 sm:-mx-4 rounded-2xl transition-colors duration-300 hover:bg-secondary/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
                 >
-                  <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm text-muted-foreground mb-3">
+                  <div className="mb-3 flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
                     <span className="font-medium text-primary">{guide.kicker}</span>
                     <span aria-hidden="true">·</span>
                     <span className="inline-flex items-center gap-1">
@@ -115,7 +121,7 @@ const GuidesIndex = () => {
           <h2 id="guides-categories" className="text-lg sm:text-xl font-semibold text-foreground mb-2">
             Ou parcourez les articles par thème
           </h2>
-          <p className="text-sm text-muted-foreground mb-5">
+          <p className="mb-5 text-base text-muted-foreground">
             Les guides posent la méthode. Les articles creusent un point précis.
           </p>
           <ul className="flex flex-wrap gap-2">

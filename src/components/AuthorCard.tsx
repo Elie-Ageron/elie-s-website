@@ -16,7 +16,7 @@ const AuthorCard = () => {
     <section className="py-10 sm:py-14" aria-labelledby="author-heading">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <div className="border-y border-border/60 py-8">
-          <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-4">
+          <p className="mb-4 text-sm font-semibold text-primary">
             {fr ? 'Écrit par' : 'Written by'}
           </p>
           <div className="flex flex-col sm:flex-row sm:items-start gap-5">
