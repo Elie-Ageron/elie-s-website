@@ -29,8 +29,15 @@ const JsonLd = () => {
       postalCode: '73200',
       addressCountry: 'FR',
     },
+    /* La fiche Google Business, ajoutee le 16 septembre 2026. Elle n'etait
+       declaree nulle part, alors que c'est le premier levier en recherche
+       locale. L'identifiant vient du lien de partage d'Elie :
+       maps.app.goo.gl/rZ9cY6kz6dG32ecQ8 redirige vers une fiche dont le FID
+       est 0x478bc3783d27ffe3:0x8de1f75d4ab27b78, et le CID est la moitie
+       droite convertie en decimal. C'est la forme stable et documentee. */
     sameAs: [
       'https://www.linkedin.com/in/elie-ageron-289636394',
+      'https://maps.google.com/?cid=10223724609164966776',
     ],
     knowsAbout: [
       'Web Design',

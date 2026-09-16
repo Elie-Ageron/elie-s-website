@@ -83,6 +83,8 @@ const SocialCityPage = ({ slug }: SocialCityPageProps) => {
     telephone: '+33695555318',
     email: 'elie@elieageron.com',
     priceRange: '€€',
+    // La fiche Google Business de l'entreprise, meme entite partout.
+    hasMap: 'https://maps.google.com/?cid=10223724609164966776',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Albertville',

@@ -1,5 +1,5 @@
 ﻿import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Star } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 import logo from '@/assets/logo.webp';
@@ -113,6 +113,21 @@ const Footer = () => {
                     Albertville, Savoie, France
                   </address>
                 </div>
+                {/* 🔴 La fiche Google Business n'etait liee nulle part sur le
+                    site, et declaree dans aucun schema. C'est le premier
+                    levier en recherche locale, et c'est aussi le seul chemin
+                    pour qu'un client satisfait laisse un avis sans qu'on ait
+                    a lui envoyer un lien a la main. Ajoutee le 16 septembre
+                    2026. */}
+                <a
+                  href="https://maps.google.com/?cid=10223724609164966776"
+                  target="_blank"
+                  rel="noopener"
+                  className="inline-flex items-center gap-2.5 min-h-[24px] text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <Star className="w-4 h-4 shrink-0" aria-hidden="true" />
+                  {language === 'fr' ? 'Ma fiche Google' : 'My Google listing'}
+                </a>
               </div>
             </div>
           </motion.div>
