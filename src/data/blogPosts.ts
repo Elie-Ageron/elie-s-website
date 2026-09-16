@@ -9,6 +9,7 @@ import { creationPosts } from './blog/posts-creation';
 import { googlePosts } from './blog/posts-google';
 import { tourismePosts } from './blog/posts-tourisme';
 import { socialPostsC } from './blog/posts-social-c';
+import { socialPostsD } from './blog/posts-social-d';
 import { metiersPosts } from './blog/posts-metiers';
 import { decisionsPosts } from './blog/posts-decisions';
 import { googlePostsB } from './blog/posts-google-b';
@@ -45,6 +46,7 @@ export const blogPosts: BlogPost[] = [
   ...googlePosts,
   ...tourismePosts,
   ...socialPostsC,
+  ...socialPostsD,
   ...metiersPosts,
   ...decisionsPosts,
   ...googlePostsB,

@@ -538,11 +538,7 @@ Les délais avant que ça produise quelque chose sont détaillés dans [combien 
     frOnly: true,
     pillar: '/guides/visibilite-google-locale',
     tags: ['google ads', 'publicité', 'seo', 'budget'],
-    related: [
-      'combien-de-temps-referencement-google',
-      'etre-premier-google-dans-sa-ville',
-      'creer-fiche-google-business',
-    ],
+    related: ['combien-de-temps-referencement-google', 'etre-premier-google-dans-sa-ville', 'creer-fiche-google-business', 'publicite-instagram-facebook-tpe'],
     faqFr: [
       {
         q: 'La publicité Google fait-elle monter le référencement naturel ?',

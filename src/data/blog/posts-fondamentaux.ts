@@ -376,11 +376,7 @@ C'est moins satisfaisant qu'une garantie, et c'est la seule approche qui tient s
     frOnly: true,
     pillar: '/guides/visibilite-google-locale',
     tags: ['erreurs', 'diagnostic', 'checklist', 'corrections'],
-    related: [
-      'mon-site-ne-genere-aucun-contact',
-      'difference-site-fiche-google-reseaux',
-      'rater-moins-d-appels',
-    ],
+    related: ['mon-site-ne-genere-aucun-contact', 'difference-site-fiche-google-reseaux', 'rater-moins-d-appels', 'publicite-instagram-facebook-tpe'],
     faqFr: [
       {
         q: 'Quelle est l\'erreur la plus coûteuse ?',

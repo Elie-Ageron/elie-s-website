@@ -165,11 +165,7 @@ C'est exactement la raison pour laquelle [je viens filmer une journée par mois 
     frOnly: true,
     pillar: '/guides/reseaux-sociaux-entreprise-locale',
     tags: ['hashtags', 'instagram', 'tiktok', 'référencement social'],
-    related: [
-      'algorithme-reseaux-sociaux-comprendre',
-      'statistiques-instagram-comprendre',
-      'accroche-video-3-secondes',
-    ],
+    related: ['algorithme-reseaux-sociaux-comprendre', 'statistiques-instagram-comprendre', 'accroche-video-3-secondes', 'shadowban-instagram-realite'],
     faqFr: [
       {
         q: 'Combien de hashtags mettre sur Instagram ?',

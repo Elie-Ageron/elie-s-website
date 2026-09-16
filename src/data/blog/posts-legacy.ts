@@ -1048,6 +1048,8 @@ Commencez par un seul réseau, celui où sont déjà vos clients. En Savoie, pou
 
 Et regardez ce qui se passe au bout de huit semaines. Pas au bout de deux : les huit premières publications ne servent qu'à ce que l'algorithme comprenne qui vous êtes et à qui vous montrer.
 
+Deux choses comptent particulièrement ici et nulle part ailleurs. [Les groupes Facebook de commune](/blog/groupes-facebook-commune), où passe une bonne part des recommandations entre habitants. Et l'avant après, qui est le format le plus regardé quand le travail se voit : [comment le filmer sans y passer la journée](/blog/avant-apres-artisan-contenu).
+
 ---
 
 Vous voulez que quelqu'un s'en occupe à votre place ? [Voici comment je travaille sur les réseaux sociaux](/reseaux-sociaux), ou [écrivez-moi directement](/contact).
@@ -1207,6 +1209,8 @@ Ce n'est ni le matériel, ni le talent, ni l'algorithme. C'est la régularité.
 Une vidéo isolée ne fait rien, même si elle marche. Ce qui produit un effet, c'est 8 à 12 vidéos publiées sur deux mois, sans trou. C'est là que la plupart des gens décrochent, parce que personne n'a le temps de faire ça en plus de son métier.
 
 Ma réponse à ce problème est simple : je viens filmer une journée, et j'ai de quoi publier pendant un mois entier.
+
+Reste la question que ce chiffre ne résout pas : ce que les vues deviennent. [Elles ne se transforment en demandes que s'il y a un endroit où aller ensuite](/blog/transformer-vues-en-clients). Et viser la grosse sortie est rarement le bon calcul quand on travaille sur une vallée : [voilà pourquoi](/blog/devenir-viral-entreprise-locale).
 
 ---
 
@@ -1370,6 +1374,8 @@ Ne changez rien avant huit semaines. Pas de refonte de stratégie au bout de dix
 
 Au bout de huit semaines, regardez les trois vidéos qui ont le mieux marché, comprenez ce qu'elles ont en commun, et faites-en plus.
 
+Ne perdez pas de temps sur la question de l'horaire, qui arrive toujours juste après celle du rythme. [L'heure de publication a un effet marginal](/blog/meilleur-moment-pour-publier) à côté de la régularité. Le moyen de tenir ce rythme sans y passer vos soirées, c'est [de tourner plusieurs vidéos d'un coup](/blog/tourner-plusieurs-videos-une-journee).
+
 ---
 
 Si tenir ce rythme vous semble impossible avec votre activité, [c'est exactement le problème que je résous](/reseaux-sociaux).
@@ -1530,6 +1536,8 @@ Sans sous-titres, ils passent. Instagram et TikTok en génèrent automatiquement
 Vous pouvez très bien filmer et publier vous-même. Ce qui est difficile à tenir, c'est le reste : trouver un sujet chaque semaine, garder le même niveau quand la semaine a été chargée, et surtout ne pas s'arrêter au bout de deux mois.
 
 C'est un travail de régularité plus que de technique. Si vous voulez tester par vous-même, allez-y avec ces réglages, ils suffisent largement. Si vous savez déjà que vous ne tiendrez pas, ne perdez pas six semaines à le vérifier.
+
+Deux points méritent un article à eux seuls, parce que ce sont ceux qui font le plus de dégâts quand on les rate : [le son](/blog/son-video-smartphone) et [la lumière](/blog/lumiere-video-smartphone). Et si vous filmez vos salariés, [il y a un cadre à poser avant d'allumer la caméra](/blog/filmer-avec-son-equipe).
 
 ---
 
@@ -1698,6 +1706,8 @@ Vos vidéos doivent mener quelque part. Un profil avec un lien vers une page qui
 
 Sans ça, vous faites un travail de notoriété gratuit dont vous ne récupérez qu'une partie. Beaucoup de gens qui vous découvrent ne vous écriront jamais en message privé, mais cliqueront volontiers sur un lien pour lire tranquillement.
 
+Deux questions reviennent ensuite, toujours dans cet ordre. Celle de la caméra, quand on n'aime pas se voir : [on peut commencer sans jamais y passer](/blog/parler-face-camera-timide). Et celle des messages privés, qui arrivent dès que le compte tourne : [savoir qui y répond et comment](/blog/repondre-commentaires-messages-prives) se décide avant, pas après.
+
 ---
 
 Si vous voulez que quelqu'un vienne filmer et publie à votre place, [voilà comment ça se passe](/reseaux-sociaux). Et si vous n'avez pas encore de page pour recevoir ces gens, [on peut aussi s'en occuper](/services).
@@ -1860,6 +1870,8 @@ Ne planifiez pas trois mois de contenu à l'avance dans un tableau. Personne ne 
 
 Et ne gardez pas vos meilleures idées "pour plus tard, quand j'aurai plus d'abonnés". Publiez-les maintenant. Ce sont elles qui vous donneront ces abonnés.
 
+Une fois que vous avez vos sujets, il reste à les poser quelque part pour ne plus jamais avoir à chercher la veille. [Tenir un calendrier éditorial simple](/blog/calendrier-editorial-reseaux-sociaux) demande une heure par mois, et c'est ce qui fait la différence entre un compte qui dure et un compte qui s'arrête en février.
+
 ---
 
 Si vous préférez ne pas gérer cette partie du tout, [c'est exactement ce que je fais](/reseaux-sociaux) : j'arrive avec les sujets, on filme, et vos vidéos sortent tout le mois.
@@ -1946,7 +1958,7 @@ If you would rather not handle this part at all, [that is exactly what I do](/re
     categorySlug: 'reseaux-sociaux',
     pillar: '/guides/reseaux-sociaux-entreprise-locale',
     tags: ["vues", "portée", "rétention", "algorithme"],
-    related: ['accroche-video-3-secondes', 'algorithme-reseaux-sociaux-comprendre', 'statistiques-instagram-comprendre'],
+    related: ['accroche-video-3-secondes', 'algorithme-reseaux-sociaux-comprendre', 'statistiques-instagram-comprendre', 'devenir-viral-entreprise-locale'],
     faqFr: [
       {
         q: "Pourquoi mes vidéos ne font-elles aucune vue ?",
@@ -2023,6 +2035,8 @@ Ne supprimez pas les vidéos qui ont peu marché. Ça ne "nettoie" rien, et une 
 N'achetez jamais d'abonnés. Vous vous retrouvez avec une audience qui ne réagit à rien, ce qui fait chuter tous vos taux et détruit votre diffusion pour de bon.
 
 Et ne changez pas de stratégie toutes les deux semaines. La plupart des gens abandonnent une approche juste avant qu'elle commence à fonctionner.
+
+Deux pièges valent la peine d'être écartés avant de chercher plus loin. Le premier est de viser la grosse sortie : [une vidéo virale ne rapporte presque rien à une entreprise locale](/blog/devenir-viral-entreprise-locale), et la chercher fait perdre du temps sur ce qui marche vraiment. Le second est de croire à une sanction cachée, alors que [le shadowban ne ressemble pas à ce qu'on en dit](/blog/shadowban-instagram-realite).
 
 ---
 
@@ -2186,6 +2200,8 @@ Les réseaux produisent leur effet lentement et de façon cumulative. Rien penda
 
 Si vous avez besoin de clients le mois prochain, le site. Si vous construisez sur un an, les réseaux. Si vous pouvez faire les deux, faites les deux, parce que c'est là qu'ils deviennent vraiment intéressants : les vidéos amènent le trafic, le site le transforme.
 
+Si la question se pose vraiment, c'est souvent qu'un troisième élément manque et coûte moins cher que les deux : [la différence entre un site, une fiche Google et un compte](/blog/difference-site-fiche-google-reseaux) se joue sur ce que chacun sait faire. Et si votre site existe déjà sans rien rapporter, [le problème est ailleurs](/blog/mon-site-ne-genere-aucun-contact).
+
 ---
 
 Pas sûr de votre cas ? [Racontez-moi votre situation](/contact), je vous dirai honnêtement par quoi commencer, même si la réponse est "pas encore par moi".
@@ -2340,6 +2356,8 @@ Et ce n'est pas immédiat. Les deux premiers mois servent surtout à installer l
 
 Un appel de trente minutes suffit. Vous me racontez ce que vous faites, je vous dis ce que je filmerais et à quel rythme, et vous recevez un devis clair. Si je pense que ça n'a pas de sens pour vous, je vous le dis aussi.
 
+Sur le prix, je détaille ailleurs ce qu'il y a derrière chaque tranche du marché, [de deux cents à trois mille euros par mois](/blog/prix-gestion-reseaux-sociaux). Et sur le délai, la réponse honnête est [qu'il faut compter plusieurs mois](/blog/combien-de-temps-resultats-reseaux-sociaux), pas plusieurs semaines.
+
 ---
 
 [Le détail complet de la prestation est ici](/reseaux-sociaux), ou [écrivez-moi directement](/contact).
@@ -2424,7 +2442,7 @@ A thirty-minute call is enough. You tell me what you do, I tell you what I would
     categorySlug: 'reseaux-sociaux',
     pillar: '/guides/reseaux-sociaux-entreprise-locale',
     tags: ["algorithme", "portée", "signaux", "rétention"],
-    related: ['pourquoi-mes-videos-ne-font-pas-de-vues', 'hashtags-encore-utiles', 'meilleur-moment-pour-publier'],
+    related: ['pourquoi-mes-videos-ne-font-pas-de-vues', 'hashtags-encore-utiles', 'meilleur-moment-pour-publier', 'shadowban-instagram-realite'],
     faqFr: [
       {
         q: "Comment fonctionne l'algorithme des réseaux sociaux ?",
@@ -2505,6 +2523,8 @@ Il arrive que tout ralentisse pendant deux ou trois semaines sans raison identif
 Ne changez rien pendant ces périodes. La réaction la plus courante est de tout modifier d'un coup, ce qui rend impossible de comprendre ce qui marchait avant.
 
 Publiez, attendez, continuez.
+
+Un dernier mot sur la rumeur qui revient dès qu'un compte ralentit. [Ce qu'Instagram limite réellement est affiché dans vos paramètres](/blog/shadowban-instagram-realite), et ça n'a rien du bannissement invisible qu'on décrit sur les forums. Dans presque tous les cas, une chute de portée vient [d'une des cinq causes très concrètes](/blog/pourquoi-mes-videos-ne-font-pas-de-vues).
 
 ---
 

@@ -22,7 +22,7 @@ export const visibilitePosts: BlogPost[] = [
     frOnly: true,
     pillar: '/guides/creer-site-web-tpe',
     tags: ['budget', 'investissement', 'priorités', 'arbitrage'],
-    related: ['se-faire-connaitre-quand-on-demarre', 'mesurer-si-sa-communication-rapporte', 'google-ads-ou-referencement-naturel', 'travailler-avec-un-partenaire-web'],
+    related: ['se-faire-connaitre-quand-on-demarre', 'mesurer-si-sa-communication-rapporte', 'google-ads-ou-referencement-naturel', 'travailler-avec-un-partenaire-web', 'publicite-instagram-facebook-tpe'],
     faqFr: [
       {
         q: 'Quel pourcentage du chiffre d\'affaires faut-il y consacrer ?',
@@ -484,11 +484,7 @@ Et si on vous vend l'un en promettant l'autre, vous savez maintenant ce qu'il en
     frOnly: true,
     pillar: '/guides/reseaux-sociaux-entreprise-locale',
     tags: ['horaires', 'publication', 'algorithme', 'statistiques'],
-    related: [
-      'algorithme-reseaux-sociaux-comprendre',
-      'statistiques-instagram-comprendre',
-      'combien-publier-reseaux-sociaux',
-    ],
+    related: ['algorithme-reseaux-sociaux-comprendre', 'statistiques-instagram-comprendre', 'combien-publier-reseaux-sociaux', 'shadowban-instagram-realite'],
     faqFr: [
       {
         q: 'Existe-t-il une meilleure heure pour publier ?',

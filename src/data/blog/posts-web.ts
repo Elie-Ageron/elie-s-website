@@ -173,7 +173,7 @@ Quand je fais un site, je pose les questions et j'écris à partir des réponses
     frOnly: true,
     pillar: '/guides/reseaux-sociaux-entreprise-locale',
     tags: ['abonnés', 'métriques', 'vanité', 'conversion'],
-    related: ['transformer-vues-en-clients', 'statistiques-instagram-comprendre', 'tiktok-entreprise-locale', 'acheter-abonnes-pourquoi-non'],
+    related: ['transformer-vues-en-clients', 'statistiques-instagram-comprendre', 'tiktok-entreprise-locale', 'acheter-abonnes-pourquoi-non', 'devenir-viral-entreprise-locale'],
     faqFr: [
       {
         q: 'Combien faut-il d\'abonnés pour avoir des clients ?',
@@ -292,11 +292,7 @@ Si vous voulez qu'on regarde ensemble ce que vos chiffres racontent vraiment, [e
     frOnly: true,
     pillar: '/guides/reseaux-sociaux-entreprise-locale',
     tags: ['conversion', 'appel à action', 'profil', 'demandes'],
-    related: [
-      'abonnes-ou-clients',
-      'compte-instagram-professionnel-reglages',
-      'formulaire-contact-qui-convertit',
-    ],
+    related: ['abonnes-ou-clients', 'compte-instagram-professionnel-reglages', 'formulaire-contact-qui-convertit', 'devenir-viral-entreprise-locale'],
     faqFr: [
       {
         q: 'Faut-il mettre un appel à l\'action dans chaque vidéo ?',
