@@ -1,7 +1,8 @@
+import { useEffect, useRef } from 'react';
 import { useReducedMotion } from 'framer-motion';
 
 /**
- * Le champ de points du hero, en CSS.
+ * Le champ de points du hero, en CSS, avec répulsion au curseur.
  *
  * 🔴 **Ce qu'il remplace, et ce que ça coûtait.** Le hero affichait une scène
  * WebGL construite avec Three.js et react-three-fiber : `HeroScene3D`, 515
@@ -10,10 +11,9 @@ import { useReducedMotion } from 'framer-motion';
  *
  * Le prix, mesuré le 16 septembre 2026 : **776 ko bruts, 208 ko compressés**,
  * plus une boucle de rendu réglée sur `frameloop="always"`, donc qui tourne en
- * permanence même quand rien ne bouge, plus un écouteur de mouvement de souris
- * sur la fenêtre. Pour des points roses derrière un titre.
+ * permanence même quand rien ne bouge. Pour des points roses derrière un titre.
  *
- * Deux raisons de le retirer, et la seconde pèse plus lourd que la première.
+ * Deux raisons de l'avoir retiré, et la seconde pèse plus lourd que la première.
  *
  * 1. Le coût. 208 ko compressés sur la page la plus importante du site, c'est
  *    plus que tout le reste du JavaScript de cette page réuni.
@@ -23,10 +23,16 @@ import { useReducedMotion } from 'framer-motion';
  *    vestige que la refonte n'avait pas vu parce qu'il était dessiné dans un
  *    canvas.
  *
- * Et les pastilles flottantes sont nommément ce qu'Elie appelle « vraiment
- * intelligence artificielle » dans la liste de ses retours récurrents.
+ * 🔴 **La répulsion, elle, est revenue le 16 septembre au soir.** Elie :
+ * *« les points étaient beaucoup mieux avant, c'était interactif avec la
+ * souris et tout, ça je kiffais. »* Ce qu'il regrettait était l'interaction,
+ * pas la technique qui la portait. Elle est refaite ici en transformations CSS
+ * pilotées par un seul écouteur, **pour zéro kilo-octet ajouté** : pas de
+ * bibliothèque, pas de canvas, pas de boucle qui tourne dans le vide.
  *
- * Ce composant rend la même chose, les points, pour zéro kilo-octet.
+ * ⚠️ **Ne pas réintroduire les pastilles flottantes avec.** C'est nommément ce
+ * qu'Elie appelle *« vraiment intelligence artificielle »* dans la liste de ses
+ * retours récurrents, et leur texte était faux.
  *
  * ⚠️ Les positions sont écrites en dur, pas tirées au hasard. Un rendu
  * aléatoire donnerait une image différente à chaque visite, et surtout une
@@ -46,26 +52,126 @@ const POINTS: [number, number, number, number, number, number][] = [
   [88, 70, 3, 0.25, 26, 5],
 ];
 
+/**
+ * Rayon d'influence du curseur, en pixels, et poussée maximale.
+ *
+ * ⚠️ **Le rayon se règle contre l'espacement des points, pas au feeling.**
+ * Vingt-cinq points sur un hero de 1000 x 830 px, ça fait environ 180 px entre
+ * voisins : à 170 de rayon, un seul point bougeait à la fois, et un point seul
+ * qui se décale ne se voit pas. À 280, trois à cinq points répondent ensemble
+ * et le champ a l'air vivant. Si on change le nombre de points, on revérifie
+ * ce chiffre.
+ */
+const RAYON = 280;
+const POUSSEE = 30;
+
 const HeroDots = () => {
   const reduit = useReducedMotion();
+  const conteneur = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    /* Pas de curseur à suivre sur un téléphone, et pas de mouvement du tout
+       quand le visiteur a demandé qu'on lui en épargne. Dans les deux cas on
+       n'attache rien : un écouteur qui ne sert à rien coûte quand même. */
+    if (reduit || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+    const racine = conteneur.current;
+    if (!racine) return;
+    const points = Array.from(racine.children) as HTMLElement[];
+
+    let cadre = 0;
+    let x = 0;
+    let y = 0;
+    let dedans = false;
+
+    /* Le rectangle est relu au défilement et au redimensionnement, jamais à
+       chaque mouvement de souris : `getBoundingClientRect` force un calcul de
+       mise en page, et l'appeler soixante fois par seconde est exactement ce
+       qui rend une animation saccadée. */
+    let zone = racine.getBoundingClientRect();
+    const remesurer = () => {
+      zone = racine.getBoundingClientRect();
+    };
+
+    const peindre = () => {
+      cadre = 0;
+      for (const point of points) {
+        if (!dedans) {
+          point.style.transform = '';
+          continue;
+        }
+        const px = zone.left + (parseFloat(point.dataset.x ?? '0') / 100) * zone.width;
+        const py = zone.top + (parseFloat(point.dataset.y ?? '0') / 100) * zone.height;
+        const dx = px - x;
+        const dy = py - y;
+        const distance = Math.hypot(dx, dy);
+        if (distance > RAYON || distance === 0) {
+          point.style.transform = '';
+          continue;
+        }
+        const force = ((RAYON - distance) / RAYON) ** 2 * POUSSEE;
+        point.style.transform = `translate(${(dx / distance) * force}px, ${(dy / distance) * force}px)`;
+      }
+    };
+
+    const bouger = (e: PointerEvent) => {
+      x = e.clientX;
+      y = e.clientY;
+      dedans = x >= zone.left && x <= zone.right && y >= zone.top && y <= zone.bottom;
+      if (!cadre) cadre = requestAnimationFrame(peindre);
+    };
+
+    const sortir = () => {
+      dedans = false;
+      if (!cadre) cadre = requestAnimationFrame(peindre);
+    };
+
+    window.addEventListener('pointermove', bouger, { passive: true });
+    window.addEventListener('pointerleave', sortir, { passive: true });
+    window.addEventListener('scroll', remesurer, { passive: true });
+    window.addEventListener('resize', remesurer);
+    return () => {
+      window.removeEventListener('pointermove', bouger);
+      window.removeEventListener('pointerleave', sortir);
+      window.removeEventListener('scroll', remesurer);
+      window.removeEventListener('resize', remesurer);
+      if (cadre) cancelAnimationFrame(cadre);
+    };
+  }, [reduit]);
 
   return (
-    <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
+    <div
+      ref={conteneur}
+      className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
+      aria-hidden="true"
+    >
       {POINTS.map(([x, y, taille, opacite, duree, retard], i) => (
+        /* Deux éléments imbriqués, et ce n'est pas du zèle : la dérive est une
+           animation CSS sur `transform`, la répulsion est un `transform` écrit
+           par le script. Sur le même élément, le second écrase la première. */
         <span
           key={i}
-          className="absolute rounded-full bg-primary"
+          data-x={x}
+          data-y={y}
+          className="absolute will-change-transform"
           style={{
             left: `${x}%`,
             top: `${y}%`,
             width: taille,
             height: taille,
-            opacity: opacite,
-            // Le mouvement est une dérive de quelques pixels, pas une animation.
-            // Il doit se remarquer si on le cherche, et pas autrement.
-            animation: reduit ? undefined : `hero-derive ${duree}s ease-in-out ${retard}s infinite`,
+            transition: 'transform 420ms cubic-bezier(0.22, 1, 0.36, 1)',
           }}
-        />
+        >
+          <span
+            className="block h-full w-full rounded-full bg-primary"
+            style={{
+              opacity: opacite,
+              // Le mouvement est une dérive de quelques pixels, pas une animation.
+              // Il doit se remarquer si on le cherche, et pas autrement.
+              animation: reduit ? undefined : `hero-derive ${duree}s ease-in-out ${retard}s infinite`,
+            }}
+          />
+        </span>
       ))}
     </div>
   );
