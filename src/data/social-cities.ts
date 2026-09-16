@@ -509,6 +509,262 @@ export const socialCities: SocialCityData[] = [
     ],
     webPage: 'creation-site-web-haute-savoie',
   },
+  {
+    slug: 'community-manager-moutiers',
+    name: 'Moûtiers',
+    scope: 'city',
+    postalCode: '73600',
+    lat: 45.4847,
+    lng: 6.5322,
+    department: 'Savoie',
+    departmentCode: 'FR-73',
+    seoTitle: 'Community Manager Moûtiers | Elie Ageron',
+    seoDesc:
+      "Je filme une journée par mois chez vous à Moûtiers, puis je publie 6 à 12 vidéos dans le mois. Dès 890 €/mois, deux saisons couvertes.",
+    h1Pre: 'Community manager à ',
+    h1Highlight: 'Moûtiers',
+    lede:
+      "Je viens filmer une journée par mois dans votre entreprise, et vos comptes tournent jusqu'à la suivante. Ici, la vraie question n'est pas de publier : c'est de publier avant que la saison commence.",
+    travel: 'Environ trente minutes depuis Albertville.',
+    nearby: ['Salins-Fontaine', 'Aigueblanche', 'Brides-les-Bains', 'Bozel', 'Aime-la-Plagne', 'Saint-Bon-Tarentaise', 'Les Allues'],
+    terrain: [
+      "Moûtiers est le verrou de la Tarentaise. Tout ce qui monte vers Courchevel, Méribel, Les Menuires ou Val Thorens passe par ici, et une bonne partie de l'économie locale vit de ce passage. C'est une position que peu de villes de cette taille ont.",
+      "Ça veut dire deux clientèles qui ne se ressemblent pas. Les habitants de la vallée, présents toute l'année, qui cherchent un artisan ou un service de proximité. Et les acteurs des stations, saisonniers, avec des besoins concentrés sur quelques semaines et des budgets qui se décident vite.",
+      "Presque personne ne parle aux deux. Les comptes qui existent visent soit le touriste, avec des photos de sommets, soit personne en particulier. Une entreprise qui montre son travail réel, dans la vallée, s'adresse à ceux qui vivent ici toute l'année et que les cartes postales n'intéressent pas.",
+    ],
+    platforms:
+      "Facebook porte la vie de la vallée, commune par commune, et c'est là que circulent les recommandations entre habitants. Instagram touche les saisonniers et les prestataires des stations, qui sont jeunes et qui arrivent chaque année sans connaître personne. Les deux se nourrissent de la même vidéo.",
+    filmer: [
+      {
+        title: "Publier en octobre pour décembre",
+        body: "Un compte met plusieurs semaines à retrouver de la portée après une pause. Celui qui commence en décembre a déjà perdu la saison. Une journée de tournage en octobre couvre novembre et décembre, et vous publiez pendant le coup de feu sans y toucher.",
+      },
+      {
+        title: "Le travail que le passage ne voit pas",
+        body: "Les gens traversent Moûtiers sans voir ce qui s'y fait. Un atelier, une cuisine, un chantier de rénovation d'appartement entre deux saisons : ce sont des images que personne ne montre, et qui répondent à la question que tout le monde se pose avant d'appeler.",
+      },
+      {
+        title: 'Parler aux saisonniers qui arrivent',
+        body: "Chaque automne, des centaines de personnes s'installent dans la vallée pour quelques mois. Elles ne connaissent aucun commerce, aucun garage, aucun coiffeur. Une vidéo qui dit où vous êtes et ce que vous faites, publiée fin octobre, touche exactement ces gens là.",
+      },
+    ],
+    faq: [
+      {
+        q: 'Vous montez en Tarentaise ?',
+        a: "Oui, Moûtiers est à une demi-heure d'Albertville, et je monte aussi dans les stations quand le tournage le demande. Le déplacement est compris dans le tarif mensuel.",
+      },
+      {
+        q: 'Ça vaut le coup si mon activité est saisonnière ?',
+        a: "C'est même là que le calendrier compte le plus. On tourne en intersaison, quand vous avez le temps, et les vidéos sortent pendant la saison, quand vous n'en avez plus. L'erreur classique est de vouloir commencer en décembre.",
+      },
+      {
+        q: 'Je travaille surtout pour les stations, pas pour les habitants.',
+        a: "Alors on filme ce que les stations achètent : la réactivité, le savoir faire technique, le fait que vous soyez à vingt minutes et pas à Lyon. C'est un contenu différent, avec la même journée de tournage.",
+      },
+    ],
+    articles: [
+      'entreprise-saisonniere-communication',
+      'hebergement-station-reseaux-sociaux',
+      'reseaux-sociaux-artisan-savoie',
+      'groupes-facebook-commune',
+      'combien-de-temps-resultats-reseaux-sociaux',
+      'prix-gestion-reseaux-sociaux',
+    ],
+    related: ['community-manager-bourg-saint-maurice', 'community-manager-albertville', 'gestion-reseaux-sociaux-savoie'],
+    webPage: 'creation-site-web-moutiers',
+  },
+  {
+    slug: 'community-manager-bourg-saint-maurice',
+    name: 'Bourg-Saint-Maurice',
+    scope: 'city',
+    postalCode: '73700',
+    lat: 45.6183,
+    lng: 6.7692,
+    department: 'Savoie',
+    departmentCode: 'FR-73',
+    seoTitle: 'Community Manager Bourg-Saint-Maurice | Elie Ageron',
+    seoDesc:
+      "Tournage une journée par mois à Bourg-Saint-Maurice, montage vertical et publication suivie. Dès 890 €/mois, pour les deux saisons.",
+    h1Pre: 'Community manager à ',
+    h1Highlight: 'Bourg-Saint-Maurice',
+    lede:
+      "Je viens filmer chez vous une journée par mois, puis je publie 6 à 12 vidéos dans le mois. Ici, une entreprise qui ne communique que l'hiver laisse la moitié de son potentiel de côté.",
+    travel: 'Environ cinquante minutes depuis Albertville.',
+    nearby: ['Séez', 'Landry', 'Aime-la-Plagne', 'Montvalezan', 'Sainte-Foy-Tarentaise', "Val-d'Isère", 'Tignes'],
+    terrain: [
+      "Bourg-Saint-Maurice a une particularité que peu de villes de montagne partagent : elle vit correctement l'été. L'Isère y attire les activités d'eaux vives, la randonnée et le vélo remplissent les vallées, et la ville garde une population permanente qui fait tourner les commerces à l'année.",
+      "Cette double saison change complètement le travail de visibilité. Un compte qui publie de décembre à avril puis se tait sept mois repart de zéro chaque hiver. Un compte qui tourne à l'année garde sa portée, et il la garde justement au moment où les autres essaient de la reconstruire.",
+      "Sur le terrain, c'est encore très vide. Les hébergeurs et les professionnels de l'eau vive publient un peu, souvent en photo et souvent en anglais. Les artisans, les garages, les commerces de la rue principale, presque rien. Personne ne se dispute l'attention des gens qui vivent ici.",
+    ],
+    platforms:
+      "Instagram porte les activités de plein air et l'hébergement, avec une audience qui prépare son séjour des semaines à l'avance. Facebook porte la vie locale et les recommandations entre habitants, de Séez à Landry. Pour un professionnel de l'eau vive, YouTube Shorts marche étonnamment bien.",
+    filmer: [
+      {
+        title: "Filmer l'été pour l'hiver, et l'inverse",
+        body: "Ce qui se tourne en juin sert à remplir l'été suivant autant que celui en cours, parce qu'une vidéo reste en ligne et continue d'être servie. Deux journées de tournage bien placées dans l'année couvrent les deux saisons sans jamais filmer en pleine activité.",
+      },
+      {
+        title: "Le décor fait la moitié du travail",
+        body: "L'Isère, les cols, la vallée : vous avez un arrière plan que personne ne peut acheter. La règle est de ne pas s'arrêter là. Un plan de paysage retient trois secondes, un geste de métier retient trente. Le décor sert à situer, pas à raconter.",
+      },
+      {
+        title: 'La clientèle qui ne parle pas français',
+        body: "Une part réelle de vos clients d'hiver vient de l'étranger. Des sous-titres en anglais sur une vidéo sur deux coûtent quelques minutes de montage et élargissent votre audience sans changer votre contenu.",
+      },
+    ],
+    faq: [
+      {
+        q: "Vous montez jusqu'à Bourg-Saint-Maurice ?",
+        a: "Oui, comptez environ cinquante minutes depuis Albertville, et je monte aussi à Séez, Landry et dans les stations au dessus quand le tournage le demande.",
+      },
+      {
+        q: 'Mon activité est très saisonnière, quel rythme ?',
+        a: "Le même toute l'année, et c'est justement l'intérêt. Publier en intersaison coûte le même prix et garde votre portée, ce qui fait que vous démarrez la saison avec un compte vivant au lieu d'un compte à réveiller.",
+      },
+      {
+        q: 'Vous filmez en extérieur, sur l\'eau ou en montagne ?',
+        a: "Oui, dans la limite de ce qui est sûr et de ce que le matériel supporte. On cale ça au rendez vous de départ, avec les conditions et les créneaux qui vous arrangent.",
+      },
+    ],
+    articles: [
+      'entreprise-saisonniere-communication',
+      'hebergement-station-reseaux-sociaux',
+      'location-saisonniere-reservation-directe',
+      'moniteur-guide-montagne-visibilite',
+      'sous-titres-videos',
+      'prix-gestion-reseaux-sociaux',
+    ],
+    related: ['community-manager-moutiers', 'community-manager-albertville', 'gestion-reseaux-sociaux-savoie'],
+    webPage: 'creation-site-web-bourg-saint-maurice',
+  },
+  {
+    slug: 'community-manager-saint-jean-de-maurienne',
+    name: 'Saint-Jean-de-Maurienne',
+    scope: 'city',
+    postalCode: '73300',
+    lat: 45.2761,
+    lng: 6.3486,
+    department: 'Savoie',
+    departmentCode: 'FR-73',
+    seoTitle: 'Community Manager Saint-Jean-de-Maurienne',
+    seoDesc:
+      "Je filme une journée par mois dans votre entreprise en Maurienne, puis je publie 6 à 12 vidéos dans le mois. Dès 890 €/mois, tout compris.",
+    h1Pre: 'Community manager à ',
+    h1Highlight: 'Saint-Jean-de-Maurienne',
+    lede:
+      "Je viens filmer chez vous une journée par mois, et vos comptes tournent jusqu'à la suivante. En Maurienne, la vidéo sert autant à trouver des clients qu'à trouver des salariés.",
+    travel: "Environ une heure depuis Albertville.",
+    nearby: ['La Chambre', 'Saint-Michel-de-Maurienne', 'Villargondran', 'Fontcouverte-la-Toussuire', "Saint-Sorlin-d'Arves", 'Valloire', 'Modane'],
+    terrain: [
+      "Saint-Jean-de-Maurienne est une ville industrielle dans une vallée qui vit aussi du tourisme. L'aluminium y a une histoire longue, les grands chantiers d'infrastructure y font travailler beaucoup de monde, et les cols attirent chaque été une clientèle cycliste venue de toute l'Europe.",
+      "Cette diversité est une chance et un piège. Une chance parce que la demande existe toute l'année, ce qui est rare en vallée. Un piège parce qu'un compte qui essaie de parler à la fois au cycliste néerlandais et à l'entreprise de la zone industrielle ne parle à personne.",
+      "Il y a ici un usage de la vidéo qu'on ne trouve nulle part ailleurs en Savoie, et presque personne ne l'exploite : le recrutement. Les entreprises du bâtiment et de l'industrie de la vallée cherchent des gens en permanence. Montrer le travail réel, l'équipe et l'atelier fait plus pour une candidature qu'une annonce.",
+    ],
+    platforms:
+      "Facebook reste dominant dans la vallée, et c'est là que les offres et les recommandations circulent entre habitants. Instagram touche la clientèle sportive et touristique de l'été. Pour le recrutement, une vidéo publiée sur les deux et relayée dans les groupes de commune fait plus qu'un site d'annonces.",
+    filmer: [
+      {
+        title: 'Le geste technique se filme très bien',
+        body: "Une soudure, un réglage au micron, une pièce qui sort d'usinage : ce sont des images que personne ne voit jamais et que tout le monde regarde jusqu'au bout. Les entreprises industrielles de la vallée ont la meilleure matière de la région et ne s'en servent pas.",
+      },
+      {
+        title: 'Recruter avec la même journée de tournage',
+        body: "Une vidéo qui montre l'équipe, l'atelier et une journée type répond aux questions qu'un candidat se pose et n'ose pas poser. Ça ne coûte rien de plus : c'est le même tournage, avec deux ou trois plans en plus et une légende différente.",
+      },
+      {
+        title: "L'été des cols",
+        body: "Le Galibier, la Croix de Fer, le Glandon : de juin à septembre, la vallée se remplit d'une clientèle qui prépare son séjour longtemps à l'avance et qui cherche en ligne. Un hébergeur, un loueur ou un restaurateur qui publie au printemps travaille pour tout l'été.",
+      },
+    ],
+    faq: [
+      {
+        q: 'Vous descendez en Maurienne ?',
+        a: "Oui, comptez environ une heure depuis Albertville. La Chambre, Saint-Michel et Villargondran sont dans le même déplacement, et le trajet est compris dans le tarif mensuel.",
+      },
+      {
+        q: 'Est-ce que ça sert vraiment pour une entreprise industrielle ?',
+        a: "Pour trouver des clients, ça dépend de votre marché. Pour trouver des salariés, oui, et c'est souvent le besoin le plus urgent dans la vallée. Une vidéo d'atelier circule mieux qu'une annonce et elle reste en ligne.",
+      },
+      {
+        q: 'On peut filmer dans un atelier en activité ?',
+        a: "Oui, c'est même le meilleur endroit. On travaille avec vos consignes de sécurité et sans arrêter la production : je tourne pendant que ça travaille, c'est ce qui rend les images vraies.",
+      },
+    ],
+    articles: [
+      'recruter-avec-son-site-et-ses-reseaux',
+      'reseaux-sociaux-artisan-savoie',
+      'entreprise-saisonniere-communication',
+      'groupes-facebook-commune',
+      'avant-apres-artisan-contenu',
+      'prix-gestion-reseaux-sociaux',
+    ],
+    related: ['community-manager-albertville', 'community-manager-chambery', 'gestion-reseaux-sociaux-savoie'],
+    webPage: 'creation-site-web-saint-jean-de-maurienne',
+  },
+  {
+    slug: 'community-manager-ugine',
+    name: 'Ugine',
+    scope: 'city',
+    postalCode: '73400',
+    lat: 45.7461,
+    lng: 6.4147,
+    department: 'Savoie',
+    departmentCode: 'FR-73',
+    seoTitle: 'Community Manager Ugine | Elie Ageron',
+    seoDesc:
+      "Je filme une journée par mois chez vous à Ugine, puis je publie 6 à 12 vidéos dans le mois. Dès 890 €/mois. À quinze minutes d'Albertville.",
+    h1Pre: 'Community manager à ',
+    h1Highlight: 'Ugine',
+    lede:
+      "Je suis à quinze minutes. Je viens filmer une journée par mois dans votre entreprise, je monte, je publie, et vous n'avez rien à faire entre deux tournages.",
+    travel: "Environ quinze minutes depuis Albertville.",
+    nearby: ['Marthod', 'Thénésol', 'Flumet', 'Praz-sur-Arly', 'Crest-Voland', 'Notre-Dame-de-Bellecombe', 'Faverges-Seythenex'],
+    terrain: [
+      "Ugine a une identité industrielle forte, avec tout ce que ça implique de savoir faire technique et de sous traitance autour. À côté vit un tissu de commerces et d'artisans qui travaillent pour les habitants de la vallée et pour le Val d'Arly juste au dessus.",
+      "Sur une commune de cette taille, la concurrence en ligne est faible, et c'est une bonne nouvelle que presque personne n'exploite. Il n'y a pas de bataille d'attention à gagner : il y a une place vide à prendre. Deux publications par semaine suffisent à devenir le seul de votre métier qu'on voit passer.",
+      "L'autre particularité, c'est la proximité du Val d'Arly. Flumet, Praz-sur-Arly, Crest-Voland et Notre-Dame-de-Bellecombe sont à un quart d'heure, avec une saison d'hiver et une clientèle de résidences secondaires qui cherche des prestataires de confiance et ne connaît personne.",
+    ],
+    platforms:
+      "Facebook porte tout ici, commune par commune, et les groupes d'habitants d'Ugine et du Val d'Arly servent d'annuaire officieux. Instagram vaut surtout pour la vérification avant l'appel, et pour toucher les propriétaires de résidences secondaires qui préparent leur saison de loin.",
+    filmer: [
+      {
+        title: 'La sous-traitance se montre mal et gagnerait à se montrer',
+        body: "Un atelier d'usinage, une pièce en cours, un contrôle qualité : les entreprises de sous traitance pensent que ça n'intéresse personne. C'est faux, et c'est aussi ce qui les distingue quand un donneur d'ordre compare trois fournisseurs sur son téléphone.",
+      },
+      {
+        title: 'Le Val d\'Arly est à un quart d\'heure',
+        body: "Nommer Flumet, Praz-sur-Arly ou Crest-Voland dans une vidéo touche une clientèle qui a les moyens et qui cherche un artisan de confiance sans en connaître un seul. Ces recherches sont beaucoup moins disputées que celles qui visent Albertville.",
+      },
+      {
+        title: 'Une place vide, pas une bataille',
+        body: "Sur une commune de sept mille habitants, être vu chaque semaine ne demande pas de gros volumes. Quelques centaines de vues locales répétées suffisent à ce que votre nom devienne celui qui vient à l'esprit. C'est mécanique et c'est rapide.",
+      },
+    ],
+    faq: [
+      {
+        q: "Vous êtes loin d'Ugine ?",
+        a: "Un quart d'heure. C'est la commune la plus proche de ma base après Albertville, ce qui permet des tournages courts et fréquents si vous le préférez à une grosse journée.",
+      },
+      {
+        q: 'Ça vaut le coup dans une commune de cette taille ?',
+        a: "Oui, et pour une raison que les grandes villes n'ont pas : il n'y a presque personne en face. Vous ne vous battez pas pour de l'attention, vous occupez une place que personne ne tient.",
+      },
+      {
+        q: 'Vous couvrez le Val d\'Arly ?',
+        a: "Oui. Flumet, Praz-sur-Arly, Crest-Voland et Notre-Dame-de-Bellecombe sont dans le même déplacement, et la clientèle de résidences secondaires y cherche exactement le genre de prestataire qu'on peut mettre en avant en vidéo.",
+      },
+    ],
+    articles: [
+      'reseaux-sociaux-artisan-savoie',
+      'groupes-facebook-commune',
+      'demarcher-les-professionnels',
+      'entreprise-saisonniere-communication',
+      'zone-de-chalandise-sans-local',
+      'prix-gestion-reseaux-sociaux',
+    ],
+    related: ['community-manager-albertville', 'community-manager-moutiers', 'gestion-reseaux-sociaux-savoie'],
+    webPage: 'creation-site-web-ugine',
+  },
 ];
 
 export const getSocialCity = (slug: string) => socialCities.find((c) => c.slug === slug);

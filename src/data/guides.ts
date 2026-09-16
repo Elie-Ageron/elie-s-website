@@ -117,6 +117,7 @@ export const guides: Guide[] = [
         ],
         articles: [
           'algorithme-reseaux-sociaux-comprendre',
+          'shadowban-instagram-realite',
           'hashtags-encore-utiles',
           'pourquoi-mes-videos-ne-font-pas-de-vues',
         ],
@@ -137,7 +138,7 @@ export const guides: Guide[] = [
           "La vidéo ne dit pas votre métier ni votre ville. Rien n'indique quoi faire ensuite. Le profil ne prend pas le relais. Ou la destination du lien est lente et compliquée. Quatre corrections, une heure de travail, et l'effet porte sur toutes vos publications futures.",
           "Sachez aussi que la conversion est lente par nature. Beaucoup de gens vous suivent pendant des mois avant d'écrire, simplement parce qu'ils n'ont pas encore de projet. Ce délai ne se raccourcit pas, il se prépare.",
         ],
-        articles: ['transformer-vues-en-clients', 'repondre-commentaires-messages-prives', 'reseaux-sociaux-ou-site-web', 'deleguer-reseaux-sociaux'],
+        articles: ['transformer-vues-en-clients', 'devenir-viral-entreprise-locale', 'repondre-commentaires-messages-prives', 'reseaux-sociaux-ou-site-web'],
       },
       {
         title: 'Diffuser partout à partir d\'une seule production',
@@ -168,7 +169,7 @@ export const guides: Guide[] = [
           "Déléguer se chiffre selon un seul critère : qui produit les images. Une prestation où vous fournissez la matière coûte peu et s'arrête généralement au bout de six semaines faute de matière. Une prestation avec tournage sur place coûte davantage et résout le problème réel.",
           "Quel que soit votre choix, engagez-vous sur six mois. En dessous, vous dépenserez sans jamais atteindre le point où ça commence à produire.",
         ],
-        articles: ['prix-gestion-reseaux-sociaux', 'deleguer-reseaux-sociaux', 'parler-face-camera-timide'],
+        articles: ['prix-gestion-reseaux-sociaux', 'deleguer-reseaux-sociaux', 'publicite-instagram-facebook-tpe', 'parler-face-camera-timide'],
       },
     ],
     faq: [
