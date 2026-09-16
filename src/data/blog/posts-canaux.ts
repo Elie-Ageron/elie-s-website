@@ -403,9 +403,9 @@ Si vous hésitez à en installer un, [écrivez moi](/contact) en me disant votre
     titleFr: 'Refaire son site sans perdre sa place sur Google',
     excerptFr:
       "Le moment le plus risqué de la vie d'un site. Trois entreprises sur dix perdent des positions pour une raison qui s'évitait en une heure.",
-    seoTitleFr: 'Refonte de Site : Ne Pas Perdre Google',
+    seoTitleFr: "Refonte : ne Redirigez pas Tout vers l'Accueil",
     seoDescFr:
-      "Redirections, adresses de pages, contenus à conserver : la méthode pour changer de site sans effacer des années de référencement.",
+      'Chaque ancienne adresse doit pointer vers la page qui traite le même sujet. Sans redirection, vous perdez les visiteurs et la position que Google lui donnait.',
     readTime: '9 min',
     categoryFr: 'Site web',
     categorySlug: 'site-web',
@@ -537,9 +537,9 @@ Et avant même de vous lancer, la vraie question est de savoir si la refonte est
     titleFr: 'Faut-il un site en anglais quand on reçoit des clients étrangers',
     excerptFr:
       "En station, une part de la clientèle ne lit pas le français. Traduire tout le site est rarement la bonne réponse.",
-    seoTitleFr: 'Site en Anglais : Utile ou Pas',
+    seoTitleFr: 'Site en Anglais : Traduisez ce qui Décide',
     seoDescFr:
-      "Hébergement, commerce ou prestataire recevant une clientèle étrangère : quoi traduire, comment le faire proprement, et ce qui ne sert à rien.",
+      "L'accueil, l'offre, les informations pratiques, le contact. Un blog traduit à moitié coûte plus qu'il ne rapporte. Et pourquoi l'automatique se fait relire.",
     readTime: '8 min',
     categoryFr: 'Site web',
     categorySlug: 'site-web',

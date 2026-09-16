@@ -247,9 +247,9 @@ Et joignez ces réalisations à vos devis. Deux photos d'un chantier comparable 
     titleFr: 'Une page par prestation, et pourquoi c\'est non négociable',
     excerptFr:
       "La liste de huit services en trois lignes chacun ne ressort sur rien. Huit pages sérieuses ressortent sur huit familles de recherches.",
-    seoTitleFr: 'Une Page par Prestation : Comment Faire',
+    seoTitleFr: 'Une Page par Prestation : entre 4 et 8 en Général',
     seoDescFr:
-      "Pourquoi une page dédiée par prestation change tout pour le référencement local, et ce qu'il faut mettre dedans pour qu'elle convertisse.",
+      'Une par prestation que vous vendez réellement et régulièrement. En créer une pour ce que vous faites une fois par an ne sert à rien. La longueur qui convient.',
     readTime: '8 min',
     categoryFr: 'Site web',
     categorySlug: 'site-web',
@@ -363,9 +363,9 @@ C'est le rythme que je conseille systématiquement, et c'est celui que la majori
     titleFr: 'Un site d\'une seule page ou plusieurs : lequel pour vous',
     excerptFr:
       "La page unique a une vraie qualité et un défaut rédhibitoire selon les cas. Le critère qui tranche tient en une question.",
-    seoTitleFr: 'Site d\'Une Page ou Plusieurs Pages',
+    seoTitleFr: 'Une Seule Page : Chaque Sujet Dilue les Autres',
     seoDescFr:
-      "Page unique ou site multipage pour une petite entreprise : ce que chacun permet, ce qu'il coûte en visibilité, et comment choisir.",
+      'Une page unique se classe bien sur une seule famille de recherches. Dès que vous vendez plusieurs prestations, elle ne tient plus tous les sujets à la fois.',
     readTime: '7 min',
     categoryFr: 'Site web',
     categorySlug: 'site-web',
@@ -459,9 +459,9 @@ Le nombre de pages n'a jamais fait signer personne. Ce qui fait signer, c'est de
     titleFr: 'Ce qui vieillit sur un site, et à quel rythme le reprendre',
     excerptFr:
       "Un site n'est pas un objet qu'on livre. Six choses y périment, et deux d'entre elles coûtent des clients tous les jours.",
-    seoTitleFr: 'Mettre son Site à Jour : Quoi et Quand',
+    seoTitleFr: 'Mise à Jour : Améliorer Bat Publier du Neuf',
     seoDescFr:
-      "Ce qui périme sur un site de TPE, ce qui coûte cher quand ce n'est pas repris, et une routine annuelle qui tient en deux heures.",
+      "Une page qui a déjà une position monte plus vite qu'une page neuve. Et ce qui coûte des clients sans rien signaler : tarifs périmés, horaires faux, photos.",
     readTime: '7 min',
     categoryFr: 'Site web',
     categorySlug: 'site-web',

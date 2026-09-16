@@ -10,9 +10,9 @@ export const webPosts: BlogPost[] = [
     titleFr: "Quoi écrire sur son site quand on ne sait pas quoi dire",
     excerptFr:
       "La page blanche du site vitrine. La solution n'est pas de mieux écrire, c'est d'arrêter de parler de soi.",
-    seoTitleFr: 'Quoi Écrire sur son Site Vitrine',
+    seoTitleFr: 'Quoi Écrire : 400 à 800 Mots par Prestation',
     seoDescFr:
-      "Les textes qui manquent sur presque tous les sites d'artisans et de TPE, et comment les écrire à partir de ce que vos clients vous demandent déjà.",
+      "Assez pour répondre aux questions qu'un client se pose avant d'appeler. Le volume compte moins que le fait de couvrir les vraies objections, une par une.",
     readTime: '8 min',
     categoryFr: 'Site web',
     categorySlug: 'site-web',
@@ -403,9 +403,9 @@ Si vous voulez que je regarde où fuit votre parcours, [envoyez moi le lien de v
     titleFr: "Les photos de votre site en disent plus que vos textes",
     excerptFr:
       "Une image de banque d'images repérée en une seconde annule tout le travail d'écriture. Voilà quoi photographier et comment.",
-    seoTitleFr: 'Quelles Photos Mettre sur son Site Web',
+    seoTitleFr: "Photos du Site : Jamais de Banque d'Images",
     seoDescFr:
-      "Photos de réalisations, portraits, banques d'images : ce qui rassure un visiteur et ce qui le fait douter, avec les réglages techniques utiles.",
+      'Pas pour votre équipe, vos locaux ou vos réalisations : les visiteurs les reconnaissent et en tirent des conclusions. Le téléphone suffit, sauf le portrait.',
     readTime: '7 min',
     categoryFr: 'Site web',
     categorySlug: 'site-web',

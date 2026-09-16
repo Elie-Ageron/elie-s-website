@@ -128,9 +128,9 @@ Si vous avez une date en tête, une ouverture, une saison qui démarre, un salon
     titleFr: 'Faire son site soi-même ou passer par quelqu\'un',
     excerptFr:
       "Wix et les autres tiennent leur promesse : vous aurez un site. La question est ce que ce site vous coûte en temps et en demandes perdues.",
-    seoTitleFr: 'Faire son Site Soi-même ou Passer par un Pro',
+    seoTitleFr: "Site Soi-même : le Problème n'est Jamais l'Outil",
     seoDescFr:
-      "Wix, WordPress ou sur mesure : le coût réel du site fait maison pour un artisan ou une TPE, les cas où c'est le bon choix, et ceux où ça finit mal.",
+      "Un site Wix bien rempli fonctionne et se référence. Ce qui manque, c'est le temps d'écrire des pages qui répondent aux questions de vos clients. Le coût réel.",
     readTime: '9 min',
     categoryFr: 'Site web',
     categorySlug: 'site-web',
@@ -236,9 +236,9 @@ Et si vous voulez un avis extérieur sur ce que vous avez déjà, [envoyez moi l
     titleFr: 'Nom de domaine et hébergement : qui possède quoi',
     excerptFr:
       "Le sujet le plus ennuyeux du web, et celui qui coince le plus de gens le jour où ils veulent changer de prestataire.",
-    seoTitleFr: 'Nom de Domaine et Hébergement : Qui Possède Quoi',
+    seoTitleFr: 'Nom de Domaine : il Doit Être à Votre Nom',
     seoDescFr:
-      "Domaine, hébergement, emails : ce que vous payez, ce qui vous appartient vraiment, et la vérification à faire ce soir pour ne pas rester bloqué un jour.",
+      "Le titulaire inscrit chez le bureau d'enregistrement décide de tout. Un prestataire qui refuse de vous le transférer est un signal suffisant pour partir.",
     readTime: '8 min',
     categoryFr: 'Site web',
     categorySlug: 'site-web',
@@ -348,9 +348,9 @@ Si vous avez un doute sur ce que vous possédez réellement aujourd'hui, [écriv
     titleFr: 'Mentions légales, RGPD, cookies : le minimum sur un site vitrine',
     excerptFr:
       "Trois obligations distinctes qu'on mélange tout le temps, et ce qu'il faut réellement mettre sur un site d'artisan ou de TPE.",
-    seoTitleFr: 'Mentions Légales et RGPD sur un Site Vitrine',
+    seoTitleFr: 'Mentions Légales : le Bandeau Cookies pas Toujours',
     seoDescFr:
-      "Mentions légales, politique de confidentialité, bandeau cookies : ce qui est obligatoire sur un site de TPE, ce qui ne l'est pas, et comment le mettre en place.",
+      "Un site qui ne dépose que des cookies nécessaires n'a pas à recueillir de consentement. Ce qui est obligatoire, ce qui ne l'est pas, et comment s'en occuper.",
     readTime: '8 min',
     categoryFr: 'Site web',
     categorySlug: 'site-web',
@@ -460,9 +460,9 @@ Si vous avez un site en ligne et que vous ne savez pas où vous en êtes, [envoy
     titleFr: 'Agence, freelance ou plateforme : à qui confier son site',
     excerptFr:
       "Quatre façons de faire faire son site, quatre budgets, quatre risques. La question qui tranche n'est pas le prix.",
-    seoTitleFr: 'Agence Web, Freelance ou Plateforme : Choisir',
+    seoTitleFr: 'Agence ou Freelance : Demandez 3 Sites Livrés',
     seoDescFr:
-      "Agence, freelance, plateforme ou stagiaire : ce que vous payez vraiment dans chaque cas, les signaux d'alerte, et les questions à poser avant de signer.",
+      'Puis contactez un de ces clients. Un prestataire sérieux donne ses références sans hésiter, et accepte que le domaine soit à votre nom. Ce que vous payez.',
     readTime: '9 min',
     categoryFr: 'Site web',
     categorySlug: 'site-web',

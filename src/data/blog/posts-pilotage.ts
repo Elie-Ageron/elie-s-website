@@ -387,9 +387,9 @@ Deux heures par semaine pendant six mois battent dix heures par semaine pendant 
     titleFr: 'Un blog quand on est artisan : est-ce que ça sert vraiment',
     excerptFr:
       "Réponse courte : oui, mais pas comme vous l'imaginez, et sûrement pas avec des articles d'actualité.",
-    seoTitleFr: 'Faut-il un Blog Quand on est Artisan',
+    seoTitleFr: "Blog d'Artisan : en Dessous de 5 Articles, Rien",
     seoDescFr:
-      "Ce qu'un blog rapporte réellement à une entreprise locale, combien d'articles il faut, et pourquoi la plupart des blogs d'artisans ne servent à rien.",
+      "Une quinzaine d'articles qui répondent chacun à une vraie question donnent des résultats mesurables. Et pourquoi les actualités n'y ont pas leur place.",
     readTime: '8 min',
     categoryFr: 'Site web',
     categorySlug: 'site-web',
@@ -513,9 +513,9 @@ Dans tous les autres cas, c'est le travail le plus rentable à long terme que je
     titleFr: 'Obtenir un témoignage client en vidéo, sans mettre personne mal à l\'aise',
     excerptFr:
       "C'est le contenu le plus convaincant qui existe, et celui que presque personne ne demande. Voilà comment le faire sans que ça sonne faux.",
-    seoTitleFr: 'Témoignage Client en Vidéo : Comment Faire',
+    seoTitleFr: 'Témoignage Client : Demandez à la Fin du Chantier',
     seoDescFr:
-      "Demander, filmer et utiliser un témoignage client en vidéo : le moment, les questions à poser, et ce qui rend un témoignage crédible.",
+      'Quand le résultat est encore sous ses yeux. Trois semaines plus tard, par message, vous obtenez beaucoup moins de oui et un témoignage plus flou. Et le repli.',
     readTime: '8 min',
     categoryFr: 'Vidéo',
     categorySlug: 'video',

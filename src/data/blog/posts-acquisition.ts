@@ -373,9 +373,9 @@ C'est le canal le moins cher qui existe, et il ne demande que de la régularité
     titleFr: 'Faut-il mettre une IA qui répond sur son site',
     excerptFr:
       "Ça paraît moderne et ça résout un vrai problème. Ça en crée deux autres, dont un qui coûte des clients.",
-    seoTitleFr: 'Un Chatbot IA sur son Site : Bonne Idée ?',
+    seoTitleFr: "Chatbot IA : s'il Répond Faux, ça Vous Engage",
     seoDescFr:
-      "Agent conversationnel sur un site de petite entreprise : ce que ça règle, ce que ça casse, et les alternatives moins risquées.",
+      "Un agent qui annonce un prix ou un délai inexact crée un litige que vous n'aviez pas. Ce qu'il règle vraiment, et les solutions moins risquées pour une TPE.",
     readTime: '7 min',
     categoryFr: 'Site web',
     categorySlug: 'site-web',

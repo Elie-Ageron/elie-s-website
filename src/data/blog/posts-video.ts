@@ -148,9 +148,9 @@ Quand je m'occupe des réseaux d'un client, j'écris les accroches avant de veni
     titleFr: "Le son compte plus que l'image, et personne ne s'en occupe",
     excerptFr:
       "On pardonne une image moyenne. On ne pardonne jamais un son pourri. C'est pourtant là que les gens investissent le moins.",
-    seoTitleFr: 'Son Vidéo au Smartphone : ce qui Compte',
+    seoTitleFr: 'Son Vidéo : un Micro Dès que Vous Filmez à 1 m',
     seoDescFr:
-      "Micro cravate, distance, pièce, vent : comment obtenir un son propre en vidéo avec un simple téléphone, sans matériel coûteux.",
+      "Un micro cravate d'entrée de gamme améliore plus le rendu final que n'importe quel accessoire d'image au même prix. Et comment tuer l'écho d'une pièce vide.",
     readTime: '6 min',
     categoryFr: 'Vidéo',
     categorySlug: 'video',
@@ -271,9 +271,9 @@ Et si vous préférez ne rien acheter du tout, c'est aussi une option : [je vien
     titleFr: "Filmer avec une bonne lumière sans acheter de matériel",
     excerptFr:
       "La différence entre une vidéo qui fait sérieux et une vidéo qui fait bricolé tient souvent à l'endroit où vous vous placez dans la pièce.",
-    seoTitleFr: 'Lumière Vidéo au Smartphone, sans Matériel',
+    seoTitleFr: 'Visage Sombre en Vidéo : la Fenêtre est Derrière',
     seoDescFr:
-      "Où se placer, quelle heure choisir, quoi éviter : obtenir une image nette et flatteuse en vidéo avec la lumière déjà présente chez vous.",
+      "Le téléphone expose pour la zone la plus lumineuse et assombrit tout le reste. Tournez-vous face à la fenêtre. Et pourquoi l'anneau lumineux se voit toujours.",
     readTime: '6 min',
     categoryFr: 'Vidéo',
     categorySlug: 'video',
@@ -396,9 +396,9 @@ Et si vous préférez que quelqu'un vienne avec le matériel et le sens du cadra
     titleFr: "Sous-titrer ses vidéos : pourquoi ce n'est pas optionnel",
     excerptFr:
       "Une bonne partie de votre audience regarde sans le son. Sans sous-titres, votre vidéo est muette pour eux.",
-    seoTitleFr: 'Sous-titrer ses Vidéos : Pourquoi et Comment',
+    seoTitleFr: 'Sous-titres : aux Deux Tiers, Jamais Tout en Bas',
     seoDescFr:
-      "Lisibilité, accessibilité, rétention : pourquoi les sous-titres changent la portée d'une vidéo courte, et comment les faire proprement.",
+      "Les interfaces recouvrent le bas de l'écran avec la légende et les boutons. Et pourquoi la transcription automatique se relit, surtout sur les noms de communes.",
     readTime: '6 min',
     categoryFr: 'Vidéo',
     categorySlug: 'video',
@@ -521,9 +521,9 @@ Si tout ça vous semble être beaucoup de manipulations pour quelqu'un qui a dé
     titleFr: "Tourner un mois de vidéos en une demi-journée",
     excerptFr:
       "La méthode qui rend la régularité possible quand on a un métier à plein temps : on ne filme pas souvent, on filme groupé.",
-    seoTitleFr: 'Tourner un Mois de Vidéos en une Demi-Journée',
+    seoTitleFr: 'Tourner un Mois de Vidéos : 8 à 12 en une Session',
     seoDescFr:
-      "Préparation, changement de tenue, ordre de tournage : la méthode pour produire quatre semaines de contenu vidéo en une seule session.",
+      "Avec les sujets préparés d'avance. Sans préparation, on tombe à trois ou quatre, le temps partant en réflexion. Trois tenues et deux décors suffisent au reste.",
     readTime: '7 min',
     categoryFr: 'Vidéo',
     categorySlug: 'video',
@@ -652,9 +652,9 @@ Et si cette journée est celle que vous n'avez pas, c'est exactement le service 
     titleFr: "Parler face caméra quand on déteste ça",
     excerptFr:
       "Presque personne n'aime se voir à l'écran. Voilà les solutions concrètes, y compris celle qui consiste à ne jamais montrer son visage.",
-    seoTitleFr: 'Parler Face Caméra Quand on est Mal à l\'Aise',
+    seoTitleFr: 'Face Caméra : Parlez à Une Personne Précise',
     seoDescFr:
-      "Techniques concrètes pour être naturel devant une caméra, et alternatives pour publier des vidéos sans jamais apparaître à l'écran.",
+      "Beaucoup y arrivent en imaginant un client qu'ils connaissent, ou en filmant en marchant. Et comment faire des vidéos sans jamais montrer son visage.",
     readTime: '6 min',
     categoryFr: 'Vidéo',
     categorySlug: 'video',
@@ -761,9 +761,9 @@ Ce n'est pas seulement la technique. C'est qu'il est beaucoup plus facile de par
     titleFr: "Monter une vidéo verticale quand on n'y connaît rien",
     excerptFr:
       "Vingt minutes de montage suffisent pour une vidéo de trente secondes. Voici l'ordre des opérations qui évite d'y passer la soirée.",
-    seoTitleFr: 'Monter une Vidéo Verticale : Guide Débutant',
+    seoTitleFr: 'Monter une Vidéo Verticale : 15 à 45 Secondes',
     seoDescFr:
-      "L'ordre des opérations pour monter un Reel ou un Short proprement : coupes, sous-titres, musique, export. Sans logiciel compliqué.",
+      "Une vidéo courte regardée en entier vaut mieux qu'une longue abandonnée au milieu. Une application mobile suffit, et les logiciels de bureau attendront.",
     readTime: '7 min',
     categoryFr: 'Vidéo',
     categorySlug: 'video',

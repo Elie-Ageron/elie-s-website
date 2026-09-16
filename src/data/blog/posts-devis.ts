@@ -359,9 +359,9 @@ C'est peu, c'est tenable, et c'est déjà davantage que la quasi-totalité de vo
     titleFr: 'Photos professionnelles ou smartphone : où mettre l\'argent',
     excerptFr:
       "Un téléphone récent suffit pour la plus grande partie des besoins d'une TPE. Reste une poignée de cas où il ne suffit pas.",
-    seoTitleFr: 'Photos Pro ou Smartphone : que Choisir',
+    seoTitleFr: 'Photos : le Téléphone Suffit, Sauf pour 4 Cas',
     seoDescFr:
-      "Quand un smartphone suffit et quand un photographe se justifie pour une petite entreprise, et comment obtenir de bonnes images sans budget.",
+      "Chantier, produit, ambiance : un téléphone récent suffit si la lumière est soignée. Les quatre cas où le résultat dépend d'une compétence, pas d'un matériel.",
     readTime: '8 min',
     categoryFr: 'Vidéo',
     categorySlug: 'video',

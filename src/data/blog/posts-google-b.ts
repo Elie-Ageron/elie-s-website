@@ -483,9 +483,9 @@ Ce que je constate, c'est que les entreprises qui vendent à d'autres entreprise
     titleFr: 'L\'avant et après : le format que les artisans sous-utilisent',
     excerptFr:
       "Le contenu le plus efficace de tout le bâtiment, et il échoue presque toujours pour la même raison : la photo d'avant n'existe pas.",
-    seoTitleFr: 'Avant Après : le Format qui Marche',
+    seoTitleFr: 'Avant Après : Reprenez la Photo du Même Endroit',
     seoDescFr:
-      "Comment réussir un avant et après quand on est artisan : la photo d'avant, le cadrage, la lumière, et où le publier pour qu'il rapporte.",
+      "Le cerveau ne compare que ce qui est comparable. Changez l'angle entre les deux prises et l'effet disparaît. Et quand demander l'accord du client, pas à la fin.",
     readTime: '7 min',
     categoryFr: 'Vidéo',
     categorySlug: 'video',

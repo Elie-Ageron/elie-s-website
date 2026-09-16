@@ -11,9 +11,9 @@ export const decisionsPosts: BlogPost[] = [
     titleFr: 'Récupérer un site dont on a perdu les accès',
     excerptFr:
       "Le prestataire ne répond plus, personne ne sait où est hébergé le site, et l'échéance du domaine approche. Voilà l'ordre dans lequel s'y prendre.",
-    seoTitleFr: 'Récupérer un Site : Accès et Domaine Perdus',
+    seoTitleFr: 'Récupérer son Site : le Titulaire est Public',
     seoDescFr:
-      "Prestataire injoignable, accès perdus, domaine à un autre nom : la méthode pour récupérer la main sur son site, et ce qui est réellement récupérable.",
+      "Qui possède le nom de domaine et où le site est hébergé se consultent publiquement. C'est ce qui décide si vous reprenez la main seul, ou par procédure.",
     readTime: '9 min',
     categoryFr: 'Site web',
     categorySlug: 'site-web',
@@ -135,9 +135,9 @@ Si vous êtes bloqué en ce moment, [envoyez moi le nom de votre domaine](/conta
     titleFr: 'Site vitrine ou boutique en ligne : lequel vous faut-il',
     excerptFr:
       "Ajouter un panier semble anodin. C'est en réalité changer de métier, et beaucoup de gens s'en aperçoivent trop tard.",
-    seoTitleFr: 'Site Vitrine ou Boutique en Ligne : Choisir',
+    seoTitleFr: 'Boutique en Ligne : le Coût Vient Après',
     seoDescFr:
-      "Faut-il vendre en ligne quand on est un commerce ou un artisan de Savoie ? Ce que change vraiment un panier, et les solutions intermédiaires.",
+      'Stocks, fiches produits, expéditions, retours, service client : du travail permanent, pas un investissement. Et comment vendre sans boutique complète.',
     readTime: '9 min',
     categoryFr: 'Site web',
     categorySlug: 'site-web',
@@ -257,9 +257,9 @@ Si vous hésitez entre les deux, [écrivez moi](/contact) en décrivant ce que v
     titleFr: 'L\'accessibilité d\'un site, sans le jargon',
     excerptFr:
       "On en parle comme d'une contrainte légale. C'est d'abord une question de clients qui repartent parce qu'ils n'arrivent pas à lire.",
-    seoTitleFr: 'Accessibilité d\'un Site Web : l\'Essentiel',
+    seoTitleFr: 'Accessibilité : un Téléphone en Plein Soleil Aussi',
     seoDescFr:
-      "Contrastes, tailles de texte, images, formulaires : les corrections d'accessibilité qui changent vraiment quelque chose sur un site de TPE.",
+      "Une presbytie, une main occupée, une connexion faible produisent les mêmes difficultés qu'un handicap déclaré. Les corrections qui changent quelque chose.",
     readTime: '8 min',
     categoryFr: 'Site web',
     categorySlug: 'site-web',

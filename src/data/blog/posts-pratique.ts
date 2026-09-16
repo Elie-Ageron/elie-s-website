@@ -469,9 +469,9 @@ Si un seul des trois le trouve en indésirables, vous avez un problème de confi
     titleFr: 'Filmer avec ses salariés sans mettre personne mal à l\'aise',
     excerptFr:
       "Vos salariés sont votre meilleur contenu et votre plus grosse résistance. La question du consentement se règle avant la caméra.",
-    seoTitleFr: 'Filmer avec ses Salariés : Comment Faire',
+    seoTitleFr: 'Filmer ses Salariés : le Refus Doit Être Possible',
     seoDescFr:
-      "Impliquer son équipe dans les vidéos de l'entreprise : le cadre à poser, l'accord à demander, et comment filmer ceux qui ne veulent pas parler.",
+      "Le lien de subordination rend le droit à l'image plus délicat encore. Accord écrit, refus accepté. Et les images sans visage, souvent les plus efficaces.",
     readTime: '8 min',
     categoryFr: 'Vidéo',
     categorySlug: 'video',

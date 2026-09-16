@@ -139,9 +139,9 @@ Ce qui n'est jamais acceptable, quel que soit le prix, c'est de ne pas posséder
     titleFr: 'Changer de prestataire web sans tout casser',
     excerptFr:
       "La rupture se prépare avant l'annonce. Une fois le message envoyé, il est souvent trop tard pour récupérer proprement.",
-    seoTitleFr: 'Changer de Prestataire Web Proprement',
+    seoTitleFr: 'Changer de Prestataire : Récupérez Tout Avant',
     seoDescFr:
-      "Quitter son prestataire web sans perdre son site, son domaine, ses emails ni ses positions : la checklist dans le bon ordre.",
+      "Domaine, hébergement, mesure, fiche Google, réseaux, sauvegarde des contenus. Après l'annonce, tout devient plus lent. Et pourquoi chercher le suivant d'abord.",
     readTime: '8 min',
     categoryFr: 'Site web',
     categorySlug: 'site-web',
@@ -283,9 +283,9 @@ Partir proprement, sans mise en cause publique, coûte moins cher à tout le mon
     titleFr: 'La page à propos : la plus lue et la moins travaillée',
     excerptFr:
       "Presque tout le monde la remplit avec une histoire d'entreprise que personne ne lit. C'est pourtant une des pages qui décident.",
-    seoTitleFr: 'La Page À Propos qui Sert à Quelque Chose',
+    seoTitleFr: 'Page À Propos : une des Plus Consultées du Site',
     seoDescFr:
-      "Ce qu'il faut vraiment écrire sur sa page à propos quand on est une petite entreprise, et pourquoi elle pèse plus qu'on ne croit.",
+      "Les gens veulent savoir à qui ils vont confier leur argent. Une chronologie de déménagements n'intéresse personne, ce que vous avez fait avant, beaucoup plus.",
     readTime: '7 min',
     categoryFr: 'Site web',
     categorySlug: 'site-web',
