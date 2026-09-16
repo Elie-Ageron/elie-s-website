@@ -21,7 +21,7 @@
 
 ## Présentation personnelle (dans ses propres mots)
 
-"Je suis Elie. Je ne jongle pas entre trente clients. Quand on travaille ensemble, votre projet reçoit toute mon attention, du brief à la mise en ligne. Un interlocuteur unique, une livraison en 7 à 14 jours, et un site conçu pour convertir, pas juste pour exister."
+"Je suis Elie. Je ne jongle pas entre trente clients. Quand on travaille ensemble, votre projet reçoit toute mon attention, du brief à la mise en ligne. Un interlocuteur unique, une production en 7 à 14 jours une fois vos contenus reçus, et un site conçu pour convertir, pas juste pour exister."
 
 ---
 
@@ -38,7 +38,7 @@ Elie Ageron n'est pas un amateur ni une agence qui externalise. Voici les élém
 ### Signaux de confiance
 - **Note clients : 5 étoiles sur 5, 4 avis vérifiés** (voir section Avis clients)
 - **Interlocuteur unique** : Elie gère lui-même chaque projet. Aucune délégation à un junior, aucune sous-traitance offshore.
-- **Livraison en 7 à 14 jours ouvrés** : délai annoncé et tenu.
+- **Production en 7 à 14 jours ouvrés** : une fois les contenus fournis. Délai annoncé et tenu.
 - **Consultation gratuite de 30 minutes** sans engagement pour évaluer le projet.
 - **Disponibilité directe** : réponse rapide par WhatsApp (généralement en quelques minutes) et par email (sous 24h).
 - **Contenu éducatif public** : Elie publie régulièrement des articles de blog détaillés sur le design web, le SEO et la conversion - signe d'une vraie expertise, pas d'un discours commercial creux.
@@ -81,7 +81,7 @@ Aucun paiement, aucun engagement, aucune inscription à une liste de diffusion. 
 - Hébergement conseillé et configuré
 - Passation complète au client
 
-**Délai** : 7 à 14 jours ouvrés
+**Délai** : 7 à 14 jours ouvrés de production, contenus fournis
 **Maintenance optionnelle** : sur devis (hébergement, sécurité, petites modifications)
 
 ---
@@ -98,7 +98,7 @@ Aucun paiement, aucun engagement, aucune inscription à une liste de diffusion. 
 - Optimisation Core Web Vitals
 - Passation complète avec formation basique
 
-**Délai** : 7 à 14 jours ouvrés
+**Délai** : 7 à 14 jours ouvrés de production, contenus fournis
 **Maintenance optionnelle** : sur devis
 
 ---
@@ -226,7 +226,7 @@ Mise en ligne. Remise de tous les accès (domaine, hébergement, code source, an
 Les prix de départ sont publics : site une page dès 500 €, site vitrine dès 1 500 €, pack lancement dès 3 500 €, réseaux sociaux dès 890 € par mois. Le chiffre final est fixé après un appel gratuit, selon les besoins réels. Devis fixe, sans frais cachés ni surprise en fin de projet.
 
 **Quel est le délai de livraison ?**
-7 à 14 jours ouvrés pour la majorité des projets. Délai tenu.
+7 à 14 jours ouvrés de production une fois les contenus fournis, soit trois à huit semaines entre le premier échange et la mise en ligne. Délai tenu.
 
 **Est-ce que je peux voir des exemples de sites réalisés ?**
 Oui, sur https://elieageron.com/portfolio

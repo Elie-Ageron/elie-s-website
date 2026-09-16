@@ -28,7 +28,7 @@ const PHASES = {
       label: '03. Lancement',
       line1: 'Votre site',
       line2: 'prêt à convertir',
-      body: "Mise en ligne en 7 à 14 jours. SEO, performance, mobile : tout est optimisé avant que vos premiers visiteurs arrivent.",
+      body: "En ligne 7 à 14 jours après réception de vos contenus. SEO, performance, mobile : tout est optimisé avant vos premiers visiteurs.",
     },
   ],
   en: [
@@ -48,7 +48,7 @@ const PHASES = {
       label: '03. Launch',
       line1: 'Your site',
       line2: 'ready to convert',
-      body: "Live in 7 to 14 days. SEO, performance, mobile: everything is optimised before your first visitors arrive.",
+      body: "Live 7 to 14 days after your content arrives. SEO, performance, mobile: everything is optimised before your first visitors.",
     },
   ],
 } as const;

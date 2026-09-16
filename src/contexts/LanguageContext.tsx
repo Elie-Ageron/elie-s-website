@@ -193,7 +193,7 @@ const translations = {
     'services.landing.desc': 'Everything you need on one sharp page, so visitors find you, trust you, and reach out to you.',
     'services.landing.feature1': 'Looks great on every device (phone, tablet, desktop)',
     'services.landing.feature2': 'Visible on Google in your area (basic SEO included)',
-    'services.landing.feature3': 'Live in 7 to 14 business days',
+    'services.landing.feature3': 'Live 7 to 14 business days after your content arrives',
     'services.landing.cta': 'Get started',
     
     'services.authority.title': 'Showcase Website',
@@ -613,7 +613,7 @@ const translations = {
     'services.landing.desc': 'Une page claire et efficace pour présenter votre offre et pousser les visiteurs à vous contacter.',
     'services.landing.feature1': 'S\'affiche parfaitement sur tous les appareils (téléphone, tablette, ordinateur)',
     'services.landing.feature2': 'Visible sur Google dans votre ville (référencement de base inclus)',
-    'services.landing.feature3': 'En ligne en 7 à 14 jours ouvrés',
+    'services.landing.feature3': 'En ligne 7 à 14 jours après réception de vos contenus',
     'services.landing.cta': 'Commencer',
     
     'services.authority.title': 'Site Vitrine',

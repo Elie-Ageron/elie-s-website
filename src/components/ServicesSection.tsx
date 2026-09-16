@@ -66,7 +66,7 @@ const ServicesSection = () => {
   const faits = [
     {
       valeur: fr ? '7 à 14 jours' : '7 to 14 days',
-      desc: fr ? 'entre le brief et la mise en ligne.' : 'from brief to going live.',
+      desc: fr ? 'de production, une fois vos textes et vos photos reçus.' : 'of production, once your copy and photos are in.',
     },
     {
       valeur: fr ? 'Moins de 24 h' : 'Under 24 h',

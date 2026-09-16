@@ -165,7 +165,7 @@ const seoData = {
     },
     portfolio: {
       title: 'Portfolio & Réalisations | Elie Ageron',
-      description: "Des sites livrés en 7 à 14 jours pour des entreprises de Savoie et de Haute-Savoie : ce qui a été fait, pourquoi, et ce que ça a changé pour elles.",
+      description: "Quatre sites en ligne, pour du courtage, du solaire et deux agences. Ce qui a été fait sur chacun, pourquoi, et ce que ça a changé pour eux ensuite.",
     },
     contact: {
       title: 'Contact Elie Ageron | Création Web',

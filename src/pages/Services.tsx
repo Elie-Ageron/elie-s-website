@@ -196,7 +196,7 @@ const Services = () => {
     },
     {
       q: 'Combien de temps avant que mon site soit en ligne ?',
-      a: "Comptez trois à huit semaines entre le premier échange et la mise en ligne pour un site vitrine. La fourchette est large parce qu'elle dépend surtout de la vitesse à laquelle vous fournissez vos textes et vos photos. Une page unique se produit en quelques jours quand le contenu existe déjà.",
+      a: "Trois à huit semaines entre le premier échange et la mise en ligne. La production, elle, prend 7 à 14 jours ouvrés : le reste du délai, c'est le temps qu'il vous faut pour fournir vos textes et vos photos. Une page unique sort en quelques jours quand le contenu existe déjà.",
     },
     {
       q: 'À qui appartient le site une fois livré ?',

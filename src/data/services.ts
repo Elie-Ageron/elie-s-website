@@ -50,8 +50,8 @@ export const services: ServiceItem[] = [
       en: 'Fast, Google-optimized sites built to turn visitors into clients.',
     },
     desc: {
-      fr: "Le socle de votre présence en ligne. Landing page ou site vitrine multi-pages, livré en 7 à 14 jours, optimisé pour Google et impeccable sur mobile.",
-      en: 'The foundation of your online presence. Landing page or multi-page showcase site, delivered in 7-14 days, optimized for Google and flawless on mobile.',
+      fr: "Le socle de votre présence en ligne. Landing page ou site vitrine multi-pages, produit en 7 à 14 jours une fois vos contenus reçus, optimisé pour Google et impeccable sur mobile.",
+      en: 'The foundation of your online presence. Landing page or multi-page showcase site, built in 7 to 14 days once your content is in, optimized for Google and flawless on mobile.',
     },
     bullets: {
       fr: ['Landing page ou site vitrine multi-pages', 'Référencement Google inclus', 'Parfait sur mobile, tablette et ordinateur'],
