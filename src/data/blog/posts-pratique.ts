@@ -251,9 +251,9 @@ Rappelé le jour même et abouti. Rappelé trop tard et perdu. Jamais rappelé.
     titleFr: 'Votre site a été piraté : les premières heures',
     excerptFr:
       "Redirections bizarres, pages inconnues, avertissement de Google. Ce qu'il faut faire, dans l'ordre, et ce qu'il ne faut surtout pas faire.",
-    seoTitleFr: 'Site Piraté : que Faire en Premier',
+    seoTitleFr: 'Site Piraté : Copiez Tout Avant de Supprimer',
     seoDescFr:
-      "Site infecté, pages inconnues, alerte Google : la marche à suivre pour reprendre la main, nettoyer, et éviter que ça recommence.",
+      "Supprimer tout de suite détruit les traces qui expliquent par où l'intrusion est passée. Les signaux qui doivent alerter, et la marche à suivre dans l'ordre.",
     readTime: '8 min',
     categoryFr: 'Site web',
     categorySlug: 'site-web',
@@ -367,9 +367,9 @@ Comparé à ça, une mise à jour trimestrielle et une sauvegarde automatique co
     titleFr: 'Vos emails arrivent en indésirables : pourquoi et comment le régler',
     excerptFr:
       "Vos devis n'arrivent pas. Le client pense que vous ne répondez pas. Le problème est technique, invisible, et il se corrige.",
-    seoTitleFr: 'Emails en Spam : Pourquoi et Comment Régler',
+    seoTitleFr: 'Emails en Spam : 3 Enregistrements à Ajouter',
     seoDescFr:
-      "Devis et réponses qui atterrissent en indésirables : les causes techniques, ce qu'il faut demander à son prestataire, et les réflexes qui évitent ça.",
+      "Votre domaine n'a pas les enregistrements qui prouvent que vous pouvez envoyer en son nom. Trois lignes à ajouter, une demi-heure, et l'effet est durable.",
     readTime: '8 min',
     categoryFr: 'Site web',
     categorySlug: 'site-web',

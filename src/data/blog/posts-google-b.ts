@@ -127,9 +127,9 @@ Si vous n'avez que dix minutes ce mois-ci, demandez un avis plutôt que de publi
     titleFr: 'Fiche Google suspendue ou refusée : que faire',
     excerptFr:
       "Du jour au lendemain, vous n'apparaissez plus nulle part. C'est brutal, c'est rattrapable, et il ne faut surtout pas s'agiter.",
-    seoTitleFr: 'Fiche Google Suspendue : la Marche à Suivre',
+    seoTitleFr: 'Fiche Google Suspendue : ne Renvoyez pas la Demande',
     seoDescFr:
-      "Fiche Google Business suspendue, refusée ou en attente de validation : les causes réelles, la démarche de rétablissement, et les erreurs à éviter.",
+      'Nom bourré de mots-clés, adresse sans activité réelle, catégorie hors sujet : les causes fréquentes. Et multiplier les demandes rallonge le délai.',
     readTime: '8 min',
     categoryFr: 'Référencement local',
     categorySlug: 'seo-local',

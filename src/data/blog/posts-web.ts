@@ -528,9 +528,9 @@ Si vous voulez qu'on regarde ce que donnent vos photos actuelles sur votre site,
     titleFr: "Votre site est lent sur mobile, et ça vous coûte des clients",
     excerptFr:
       "Trois secondes de chargement au fond d'une vallée en 4G, et la moitié des visiteurs sont déjà repartis. Les causes sont presque toujours les mêmes.",
-    seoTitleFr: 'Site Lent sur Mobile : Causes et Solutions',
+    seoTitleFr: 'Site Lent sur Mobile : Testez en 4G, pas en Wifi',
     seoDescFr:
-      "Images trop lourdes, polices, scripts, hébergement : les vraies causes d'un site lent sur mobile et comment mesurer la vitesse réelle.",
+      'Votre site est rapide chez vous parce que vous le testez en wifi, sur un téléphone récent. Les causes réelles de lenteur, et la mesure gratuite qui les montre.',
     readTime: '7 min',
     categoryFr: 'Site web',
     categorySlug: 'site-web',
@@ -939,9 +939,9 @@ Si vous voulez un avis extérieur, [envoyez moi l'adresse de votre site](/contac
     titleFr: "Quand refaire son site, et quand il vaut mieux le garder",
     excerptFr:
       "Refaire un site coûte cher et fait souvent perdre le référencement acquis. Voici les cas où c'est justifié, et ceux où c'est du gaspillage.",
-    seoTitleFr: 'Quand Refaire son Site Web',
+    seoTitleFr: 'Quand Refaire son Site : un Bon Site Tient 7 Ans',
     seoDescFr:
-      "Les cinq situations qui justifient une refonte, celles qui n'en valent pas la peine, et comment ne pas perdre son référencement en cours de route.",
+      "Il n'y a pas de durée de vie fixe. Un site clair, rapide et à jour peut servir sept ans. Un site illisible sur mobile se reprend tout de suite, à tout âge.",
     readTime: '8 min',
     categoryFr: 'Site web',
     categorySlug: 'site-web',

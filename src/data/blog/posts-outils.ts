@@ -405,9 +405,9 @@ Un fait n'est pas une prétention. Il permet simplement à quelqu'un de décider
     titleFr: 'La console de recherche Google, expliquée simplement',
     excerptFr:
       "L'outil gratuit qui dit exactement ce que les gens tapent avant d'arriver chez vous. Presque personne ne l'installe.",
-    seoTitleFr: 'Search Console : le Guide pour Débutant',
+    seoTitleFr: 'Search Console : les Recherches qui Vous Affichent',
     seoDescFr:
-      "Installer la console de recherche Google et lire les trois chiffres qui comptent, quand on est une petite entreprise et pas technicien.",
+      "Gratuit, et fourni par Google : c'est le seul endroit où vous voyez les recherches réelles qui affichent votre site. Les trois rapports à lire, sans jargon.",
     readTime: '8 min',
     categoryFr: 'Référencement local',
     categorySlug: 'seo-local',

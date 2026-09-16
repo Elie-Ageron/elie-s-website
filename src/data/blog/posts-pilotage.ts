@@ -11,9 +11,9 @@ export const pilotagePosts: BlogPost[] = [
     titleFr: 'Être cité par ChatGPT et les moteurs de réponse',
     excerptFr:
       "Une partie de vos clients ne cherchent plus, ils demandent. Et l'outil répond avec une poignée de sources, sans liste de résultats.",
-    seoTitleFr: 'Être Cité par ChatGPT et les IA de Recherche',
+    seoTitleFr: 'Être Cité par ChatGPT : Peu de Monde, Très Avancés',
     seoDescFr:
-      "Comment une entreprise locale peut apparaître dans les réponses de ChatGPT, Perplexity ou les résumés Google, et ce qui ne sert à rien.",
+      'Peu de volume pour une entreprise locale, mais des visiteurs déjà décidés. Ce qui se fait citer est ce qui marche aussi sur Google, rien de spécial à faire.',
     readTime: '9 min',
     categoryFr: 'Référencement local',
     categorySlug: 'seo-local',

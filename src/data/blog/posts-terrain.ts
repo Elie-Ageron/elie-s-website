@@ -128,7 +128,7 @@ Si vous hésitez sur ce dont vous avez besoin, [écrivez moi](/contact). Il m'ar
       "Son site est moins beau, son travail n'est pas meilleur, et pourtant il sort premier. Il y a toujours une raison, et elle est identifiable.",
     seoTitleFr: 'Pourquoi mon Concurrent est Devant sur Google',
     seoDescFr:
-      "Les sept raisons réelles qui font qu'un concurrent vous passe devant sur Google, et comment vérifier laquelle vous concerne.",
+      "Sa fiche, ses avis, ses catégories, ses pages : tout est public. Une demi-heure d'observation suffit à voir ce qui le place devant, et ce qu'il ne traite pas.",
     readTime: '9 min',
     categoryFr: 'Référencement local',
     categorySlug: 'seo-local',

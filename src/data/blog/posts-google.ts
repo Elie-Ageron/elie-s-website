@@ -12,9 +12,9 @@ export const googlePosts: BlogPost[] = [
     titleFr: 'Créer sa fiche Google Business quand on part de zéro',
     excerptFr:
       "Le levier le plus rentable pour une entreprise locale, et il est gratuit. Voilà comment le mettre en place proprement en une heure.",
-    seoTitleFr: 'Créer sa Fiche Google Business : le Guide',
+    seoTitleFr: "Créer sa Fiche Google Business : c'est Gratuit",
     seoDescFr:
-      "Créer sa fiche Google Business étape par étape : catégorie, adresse ou zone d'intervention, vérification, photos. Le levier local le plus rentable et gratuit.",
+      'La création, la vérification, les photos et les avis ne coûtent rien. Les appels qui proposent de gérer votre fiche contre paiement ne viennent pas de Google.',
     readTime: '9 min',
     categoryFr: 'Référencement local',
     categorySlug: 'seo-local',
@@ -140,9 +140,9 @@ Si vous voulez que je regarde votre fiche et que je vous dise ce qui manque, [é
     titleFr: 'Répondre à un avis négatif sur Google',
     excerptFr:
       "Le premier réflexe est toujours le mauvais. Ce que vous écrivez n'est pas pour la personne qui se plaint, c'est pour les cinquante qui vont lire.",
-    seoTitleFr: 'Répondre à un Avis Négatif sur Google',
+    seoTitleFr: 'Avis Négatif sur Google : Votre Réponse est Lue',
     seoDescFr:
-      "Comment répondre à un avis négatif sans aggraver les choses, quoi faire face à un faux avis, et pourquoi une mauvaise note peut vous servir.",
+      "Un avis ne se fait pas supprimer parce qu'il est négatif. Sans réponse de votre part, la version du client reste la seule que liront les visiteurs suivants.",
     readTime: '9 min',
     categoryFr: 'Référencement local',
     categorySlug: 'seo-local',
@@ -480,9 +480,9 @@ C'est aussi pour ça que je travaille dans la durée plutôt qu'en projet ponctu
     titleFr: 'Les annuaires en ligne servent-ils encore à quelque chose',
     excerptFr:
       "Pages Jaunes, annuaires de ville, plateformes de mise en relation. Ce qui vaut encore le coup, ce qui vous coûte de l'argent pour rien.",
-    seoTitleFr: 'Annuaires en Ligne : Lesquels Valent le Coup',
+    seoTitleFr: 'Annuaires : une Dizaine Valent Mieux que Cent',
     seoDescFr:
-      "Pages Jaunes, annuaires locaux, plateformes de mise en relation : lesquels aident vraiment un artisan à être visible, et lesquels vous facturent du vent.",
+      "L'objectif n'est pas le volume, c'est que vos informations soient identiques partout. Lesquels valent encore le coup, et la question à poser avant de payer.",
     readTime: '8 min',
     categoryFr: 'Référencement local',
     categorySlug: 'seo-local',

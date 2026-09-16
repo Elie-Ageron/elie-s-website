@@ -257,9 +257,9 @@ C'est toute la différence, et elle se construit un avis à la fois, longtemps a
     titleFr: 'Faire ressortir ses photos dans Google Images',
     excerptFr:
       "Un canal gratuit que presque aucun artisan n'exploite, alors que son métier est précisément visuel.",
-    seoTitleFr: 'Référencement des Images sur Google',
+    seoTitleFr: "Référencer ses Photos : Décrire ce qu'on Voit",
     seoDescFr:
-      "Nommer, décrire et alléger ses photos pour qu'elles ressortent dans Google Images et attirent des visiteurs, quand on est artisan ou commerçant.",
+      "Écrivez « terrasse en bois de 20 m² réalisée à Ugine » plutôt qu'une liste de mots-clés. Sur les métiers visuels, une photo ramène un visiteur déjà en projet.",
     readTime: '7 min',
     categoryFr: 'Référencement local',
     categorySlug: 'seo-local',
@@ -369,9 +369,9 @@ Quatre gestes, une minute. C'est tout, et c'est déjà plus que ce que fait la q
     titleFr: 'Avoir des étoiles dans les résultats Google : ce qui marche vraiment',
     excerptFr:
       "On vous vend parfois du balisage pour faire apparaître des étoiles sous votre site. Pour une entreprise locale, ça ne fonctionne pas comme ça.",
-    seoTitleFr: 'Étoiles dans Google : Comment les Obtenir',
+    seoTitleFr: 'Étoiles dans Google : Elles ne Viennent pas du Site',
     seoDescFr:
-      "D'où viennent réellement les étoiles affichées dans Google pour une entreprise locale, et pourquoi le balisage sur votre propre site ne suffit pas.",
+      "Baliser les avis de son propre site ne produit plus d'étoiles, Google les a coupées. Elles viennent de la fiche Google Business, et voici comment les obtenir.",
     readTime: '7 min',
     categoryFr: 'Référencement local',
     categorySlug: 'seo-local',

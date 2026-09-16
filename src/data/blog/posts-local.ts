@@ -11,9 +11,9 @@ export const localPosts: BlogPost[] = [
     titleFr: "Votre fiche Google Business vaut plus que votre site web",
     excerptFr:
       "Elle est gratuite, elle s'affiche avant tous les résultats classiques, et la plupart des entreprises la remplissent à moitié puis n'y touchent plus.",
-    seoTitleFr: 'Optimiser sa Fiche Google Business',
+    seoTitleFr: 'Optimiser sa Fiche Google : par Quoi Commencer',
     seoDescFr:
-      "Catégories, photos, horaires, questions, publications : la méthode complète pour remplir et entretenir une fiche Google Business locale.",
+      "Une fiche remplie à moitié ressort mal, et la plupart le sont. Ce qui fait bouger une fiche déjà créée, dans l'ordre où je m'en occupe chez un client.",
     readTime: '9 min',
     categoryFr: 'Référencement local',
     categorySlug: 'seo-local',
@@ -315,9 +315,9 @@ Si vous voulez que quelqu'un mette le système en place et suive les réponses, 
     titleFr: "Sortir en premier sur Google dans sa ville : ce qui marche vraiment",
     excerptFr:
       "Il y a trois blocs de résultats différents sur une recherche locale, et ils ne se gagnent pas de la même façon. Beaucoup travaillent le mauvais.",
-    seoTitleFr: 'Être Premier sur Google dans sa Ville',
+    seoTitleFr: 'Sortir Premier sur Google dans sa Ville : 3 à 6 Mois',
     seoDescFr:
-      "Bloc carte, résultats classiques, annuaires : comment fonctionne une recherche locale et où mettre ses efforts pour sortir devant.",
+      "Le bloc carte peut bouger en quelques semaines si la fiche était mal remplie. Les résultats classiques demandent trois à six mois. L'ordre dans lequel agir.",
     readTime: '9 min',
     categoryFr: 'Référencement local',
     categorySlug: 'seo-local',
