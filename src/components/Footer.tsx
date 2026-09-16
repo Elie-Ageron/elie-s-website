@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import logo from '@/assets/logo.webp';
 import { cities } from '@/data/cities';
 import { socialCities } from '@/data/social-cities';
+import { servicePages } from '@/data/service-pages';
 import { guides } from '@/data/guides';
 
 const Footer = () => {
@@ -177,6 +178,24 @@ const Footer = () => {
                   className="inline-flex items-center min-h-[24px] text-sm text-muted-foreground hover:text-primary transition-colors w-fit"
                 >
                   {city[language].breadcrumb}
+                </Link>
+              ))}
+            </div>
+
+            {/* Une page par prestation. Elles n'existaient que comme des
+                ancres de /services, donc elles n'etaient liees de nulle part
+                et ne pouvaient se classer sur rien. */}
+            <h3 className="mt-6 text-sm font-semibold text-foreground mb-3">
+              {language === 'fr' ? 'Prestations' : 'Services'}
+            </h3>
+            <div className="flex flex-wrap gap-x-5 gap-y-2">
+              {servicePages.map((service) => (
+                <Link
+                  key={service.slug}
+                  to={`/${service.slug}`}
+                  className="inline-flex items-center min-h-[24px] text-sm text-muted-foreground hover:text-primary transition-colors w-fit"
+                >
+                  {service.name}
                 </Link>
               ))}
             </div>

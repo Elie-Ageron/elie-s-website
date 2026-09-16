@@ -114,6 +114,7 @@ const categories = [];
 const guidesListe = [];
 const villes = [];
 const villesReseaux = [];
+const pagesServices = [];
 
 /* ── Articles ── */
 {
@@ -193,11 +194,34 @@ const villesReseaux = [];
  */
 {
   const src = lire('src/data/social-cities.ts');
-  const positions = [...src.matchAll(/^    slug: '([^']+)',$/gm)];
+  /* Le motif tolere les deux fins de ligne. Sous Windows, git reecrit les
+     fichiers en CRLF a chaque aller-retour, et `$` en mode multiligne ne
+     matche que devant le saut de ligne, pas devant le retour chariot qui le
+     precede. Sans cette tolerance, le motif ne trouve plus aucun slug, le
+     script se tait, et des pages disparaissent du sitemap ou du pre-rendu
+     sans que rien ne le signale. Repere le 16 septembre 2026 sur
+     generate-llms.mjs, qui avait perdu les dix pages locales reseaux. */
+  const positions = [...src.matchAll(/^    slug: '([^']+)',\s*$/gm)];
   positions.forEach((m, i) => {
     const bloc = src.slice(m.index, positions[i + 1]?.index ?? src.length);
     ajouter(`/${m[1]}`, champ(bloc, 'seoTitle'), champ(bloc, 'seoDesc'));
     villesReseaux.push({ slug: m[1], ancre: `Réseaux sociaux ${champ(bloc, 'name') ?? m[1]}` });
+  });
+}
+
+/* ── Une page par prestation ──
+ *
+ * Cinq des sept services n'existaient que comme des ancres de `/services`.
+ * Une ancre n'a ni balise title, ni canonical, ni classement propre. Voir
+ * l'en-tete de `src/data/service-pages.ts`.
+ */
+{
+  const src = lire('src/data/service-pages.ts');
+  const positions = [...src.matchAll(/^    slug: '([^']+)',\s*$/gm)];
+  positions.forEach((m, i) => {
+    const bloc = src.slice(m.index, positions[i + 1]?.index ?? src.length);
+    ajouter(`/${m[1]}`, champ(bloc, 'seoTitle'), champ(bloc, 'seoDesc'));
+    pagesServices.push({ slug: m[1], ancre: champ(bloc, 'name') ?? m[1] });
   });
 }
 
@@ -285,7 +309,7 @@ const liensDePage = (chemin) => {
     return articles.filter((a) => a.categorie === cat[1]).map((a) => lien(`/blog/${a.slug}`, a.ancre));
   }
   if (chemin === '/services' || chemin === '/portfolio') {
-    return [...villes, ...villesReseaux].map((v) => lien(`/${v.slug}`, v.ancre));
+    return [...pagesServices, ...villes, ...villesReseaux].map((v) => lien(`/${v.slug}`, v.ancre));
   }
   /* La page pilier des reseaux pousse vers ses pages locales, en HTML brut, et
      l'accueil aussi. Sans ca, les six pages ne sont atteignables que par le
@@ -294,7 +318,7 @@ const liensDePage = (chemin) => {
      L'accueil est la page la plus exploree, donc c'est de la que part le plus
      d'autorite. */
   if (chemin === '/reseaux-sociaux' || chemin === '/' || chemin === '') {
-    return villesReseaux.map((v) => lien(`/${v.slug}`, v.ancre));
+    return [...pagesServices, ...villesReseaux].map((v) => lien(`/${v.slug}`, v.ancre));
   }
   return [];
 };

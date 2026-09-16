@@ -146,7 +146,14 @@ checkSlugRefs(postFiles, 'related');
 // --- 4 ter. Coherence des pages locales du pilier reseaux -----------------
 {
   const src = sources[socialCitiesFile];
-  const socialSlugs = new Set([...src.matchAll(/^    slug: '([^']+)',$/gm)].map((m) => m[1]));
+  /* Le motif tolere les deux fins de ligne. Sous Windows, git reecrit les
+     fichiers en CRLF a chaque aller-retour, et `$` en mode multiligne ne
+     matche que devant le saut de ligne, pas devant le retour chariot qui le
+     precede. Sans cette tolerance, le motif ne trouve plus aucun slug, le
+     script se tait, et des pages disparaissent du sitemap ou du pre-rendu
+     sans que rien ne le signale. Repere le 16 septembre 2026 sur
+     generate-llms.mjs, qui avait perdu les dix pages locales reseaux. */
+  const socialSlugs = new Set([...src.matchAll(/^    slug: '([^']+)',\s*$/gm)].map((m) => m[1]));
   for (const m of src.matchAll(/related:\s*\[([^\]]*)\]/g)) {
     for (const r of m[1].matchAll(/'([^']+)'/g)) {
       if (!socialSlugs.has(r[1])) errors.push(`${socialCitiesFile} : related pointe vers une page inconnue, ${r[1]}`);

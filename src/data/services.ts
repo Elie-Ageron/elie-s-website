@@ -109,6 +109,8 @@ export const services: ServiceItem[] = [
       en: ['Profile creation or optimization', 'Polished photos, hours and descriptions', 'Local SEO (Google Maps)'],
     },
     price: { fr: 'dès 250€', en: 'from €250' },
+    to: '/fiche-google-business',
+    ctaLabel: { fr: 'Voir le détail', en: 'See details' },
   },
   {
     id: 'branding',
@@ -129,6 +131,8 @@ export const services: ServiceItem[] = [
       en: ['Logo and variations', 'Color palette & typography', 'Brand guidelines and usage rules'],
     },
     price: { fr: 'dès 600€', en: 'from €600' },
+    to: '/identite-de-marque',
+    ctaLabel: { fr: 'Voir le détail', en: 'See details' },
   },
   {
     id: 'seo',
@@ -150,6 +154,8 @@ export const services: ServiceItem[] = [
     },
     price: { fr: 'dès 150€/mois', en: 'from €150/mo' },
     recurring: true,
+    to: '/referencement-local',
+    ctaLabel: { fr: 'Voir le détail', en: 'See details' },
   },
   {
     id: 'avis',
@@ -171,6 +177,8 @@ export const services: ServiceItem[] = [
     },
     price: { fr: 'dès 90€/mois', en: 'from €90/mo' },
     recurring: true,
+    to: '/avis-google',
+    ctaLabel: { fr: 'Voir le détail', en: 'See details' },
   },
   {
     id: 'contenu',
@@ -191,5 +199,7 @@ export const services: ServiceItem[] = [
       en: ['Website and service-page copy', 'SEO-optimized blog articles', 'Captions and social posts'],
     },
     price: { fr: 'dès 90€', en: 'from €90' },
+    to: '/redaction-web',
+    ctaLabel: { fr: 'Voir le détail', en: 'See details' },
   },
 ];

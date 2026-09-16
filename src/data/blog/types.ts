@@ -113,7 +113,12 @@ export const blogCategories: BlogCategory[] = [
       'Sortir sur Google quand quelqu\'un cherche votre métier dans votre ville. Fiche Google Business, avis, pages locales.',
     introEn:
       'Showing up on Google when someone searches your trade in your town. Google Business Profile, reviews, local pages.',
-    seoTitleFr: 'Référencement Local en Savoie | Elie Ageron',
+    /* 🔴 S'appelait « Référencement Local en Savoie », exactement le titre de
+       la page de service `/referencement-local` creee le 16 septembre 2026.
+       Meme regle que pour `/reseaux-sociaux` et les pages locales : la page
+       qui vend porte la requete commerciale, la page qui explique porte la
+       requete informationnelle. Les deux se renvoient l'une a l'autre. */
+    seoTitleFr: 'Conseils en Référencement Local | Elie Ageron',
     seoDescFr:
       'Fiche Google Business, avis clients, pages par ville : comment apparaître quand on cherche votre métier près de chez vous.',
   },

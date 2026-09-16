@@ -12,6 +12,7 @@ import { CalendlyProvider } from "./contexts/CalendlyContext";
 import { CalendlyPopup } from "./components/CalendlyPopup";
 import { cities } from "./data/cities";
 import { socialCities } from "./data/social-cities";
+import { servicePages } from "./data/service-pages";
 
 // Lazy-load all pages so only the current page's JS is downloaded on first visit
 const Home = lazy(() => import("./pages/Home"));
@@ -33,6 +34,7 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 const LegalPage = lazy(() => import("./pages/LegalPage"));
 const CityLandingPage = lazy(() => import("./pages/CityLandingPage"));
 const SocialCityPage = lazy(() => import("./pages/SocialCityPage"));
+const ServicePage = lazy(() => import("./pages/ServicePage"));
 const BlogCategory = lazy(() => import("./pages/BlogCategory"));
 const GuidesIndex = lazy(() => import("./pages/GuidesIndex"));
 const GuidePage = lazy(() => import("./pages/GuidePage"));
@@ -155,6 +157,18 @@ const App = () => (
                             key={city.slug}
                             path={`/${city.slug}`}
                             element={<SocialCityPage slug={city.slug} />}
+                          />
+                        ))}
+                        {/* Une page par service. Cinq des sept n existaient
+                            que comme des ancres de /services, et une ancre ne
+                            se classe pas : pas de balise title, pas de
+                            canonical, aucun classement propre. Voir l en-tete
+                            de src/data/service-pages.ts. */}
+                        {servicePages.map((service) => (
+                          <Route
+                            key={service.slug}
+                            path={`/${service.slug}`}
+                            element={<ServicePage slug={service.slug} />}
                           />
                         ))}
                         <Route path="/mentions-legales" element={<LegalPage page="mentions" />} />

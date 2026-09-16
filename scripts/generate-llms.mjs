@@ -55,8 +55,15 @@ const cities = dedupe(cityFiles.flatMap((f) => pairs(read(f), 'breadcrumb', 1200
    question du type « qui gere les reseaux sociaux a Albertville » trouve une
    URL, pas la famille de pages a laquelle elle appartient. */
 const socialCities = [
-  ...read('src/data/social-cities.ts').matchAll(/slug: '([^']+)',\n\s*name: '([^']+)'/g),
+  ...read('src/data/social-cities.ts').matchAll(/slug: '([^']+)',\s*name: '([^']+)'/g),
 ].map((m) => ({ slug: m[1], title: `Gestion de reseaux sociaux ${m[2]}` }));
+
+/* Une page par prestation. Un moteur de reponse a qui on demande « qui
+   s'occupe des fiches Google en Savoie » doit trouver une URL, pas une ancre
+   de page. Voir l'en-tete de `src/data/service-pages.ts`. */
+const services = [
+  ...read('src/data/service-pages.ts').matchAll(/slug: '([^']+)',\s*name: '([^']+)'/g),
+].map((m) => ({ slug: m[1], title: m[2] }));
 
 const typesSrc = read('src/data/blog/types.ts');
 const categories = [
@@ -71,7 +78,7 @@ const sections = {
   '## Guides longs (contenu de reference)': guides
     .map((g) => line(g.title, `/guides/${g.slug}`))
     .join('\n'),
-  '## Pages locales': [...cities, ...socialCities].map((c) => line(c.title, `/${c.slug}`)).join('\n'),
+  '## Pages locales': [...services, ...cities, ...socialCities].map((c) => line(c.title, `/${c.slug}`)).join('\n'),
   '## Categories du blog': categories
     .map((c) => line(c.title, `/blog/categorie/${c.slug}`))
     .join('\n'),
@@ -129,7 +136,7 @@ const fullSections = {
   ]
     .map(([t, u]) => line(t, u))
     .concat(guides.map((g) => line(`Guide : ${g.title}`, `/guides/${g.slug}`)))
-    .concat([...cities, ...socialCities].map((c) => line(c.title, `/${c.slug}`)))
+    .concat([...services, ...cities, ...socialCities].map((c) => line(c.title, `/${c.slug}`)))
     .join('\n'),
 };
 

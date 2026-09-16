@@ -58,7 +58,20 @@ const collectCities = () => {
  */
 const collectSocialCities = () => {
   const src = readFileSync(join(root, 'src/data/social-cities.ts'), 'utf8');
-  return [...src.matchAll(/^    slug: '([^']+)',$/gm)].map((m) => m[1]);
+  /* Le motif tolere les deux fins de ligne. Sous Windows, git reecrit les
+     fichiers en CRLF a chaque aller-retour, et `$` en mode multiligne ne
+     matche que devant le saut de ligne, pas devant le retour chariot qui le
+     precede. Sans cette tolerance, le motif ne trouve plus aucun slug, le
+     script se tait, et des pages disparaissent du sitemap ou du pre-rendu
+     sans que rien ne le signale. Repere le 16 septembre 2026 sur
+     generate-llms.mjs, qui avait perdu les dix pages locales reseaux. */
+  return [...src.matchAll(/^    slug: '([^']+)',\s*$/gm)].map((m) => m[1]);
+};
+
+/** Une page par prestation. Voir l'en-tete de `src/data/service-pages.ts`. */
+const collectServicePages = () => {
+  const src = readFileSync(join(root, 'src/data/service-pages.ts'), 'utf8');
+  return [...src.matchAll(/^    slug: '([^']+)',\s*$/gm)].map((m) => m[1]);
 };
 
 const collectGuides = () => {
@@ -111,6 +124,7 @@ const urlEntry = ({ loc, lastmod, changefreq, priority }) => {
 const posts = collectPosts();
 const cities = collectCities();
 const socialCities = collectSocialCities();
+const services = collectServicePages();
 const guides = collectGuides();
 const categories = collectCategories();
 
@@ -124,6 +138,7 @@ const entries = [
   })),
   ...cities.map((slug) => ({ loc: `/${slug}`, lastmod: today, changefreq: 'monthly', priority: '0.8' })),
   ...socialCities.map((slug) => ({ loc: `/${slug}`, lastmod: today, changefreq: 'monthly', priority: '0.9' })),
+  ...services.map((slug) => ({ loc: `/${slug}`, lastmod: today, changefreq: 'monthly', priority: '0.9' })),
   ...categories.map((slug) => ({
     loc: `/blog/categorie/${slug}`,
     lastmod: today,
@@ -148,5 +163,5 @@ ${entries.map(urlEntry).join('\n')}
 
 writeFileSync(join(root, 'public', 'sitemap.xml'), xml, 'utf8');
 console.log(
-  `sitemap.xml : ${entries.length} URL (${staticPages.length} fixes, ${guides.length} guides, ${cities.length} villes, ${socialCities.length} villes reseaux, ${categories.length} categories, ${posts.length} articles)`
+  `sitemap.xml : ${entries.length} URL (${staticPages.length} fixes, ${guides.length} guides, ${cities.length} villes, ${socialCities.length} villes reseaux, ${services.length} services, ${categories.length} categories, ${posts.length} articles)`
 );
