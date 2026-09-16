@@ -21,13 +21,15 @@
     "prerender:head": "node scripts/prerender-head.mjs",
     "check:writing": "node scripts/check-writing.mjs",
     "check:tags": "node scripts/check-seo-tags.mjs",
-    "check": "npm run check:content && npm run check:tags && npm run check:writing",
+    "check": "npm run check:types && npm run check:content && npm run check:tags && npm run check:writing",
     "check:build": "node scripts/check-build-seo.mjs",
     "check:a11y": "node scripts/check-a11y.mjs",
     "check:overflow": "node scripts/check-overflow.mjs",
-    "check:navigateur": "npm run check:a11y && npm run check:overflow",
+    "check:navigateur": "npm run check:a11y && npm run check:overflow && npm run check:vitals",
     "captures": "node scripts/captures.mjs",
-    "verify": "npm run build && npm run prerender:head && npm run check:build && npm run check"
+    "verify": "npm run build && npm run prerender:head && npm run check:build && npm run check",
+    "check:types": "tsc -p tsconfig.app.json --noEmit",
+    "check:vitals": "node scripts/check-vitals.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

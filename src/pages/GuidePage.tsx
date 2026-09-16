@@ -5,7 +5,9 @@ import SEO from '@/components/SEO';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
 import AuthorCard from '@/components/AuthorCard';
 import { getGuideBySlug, guides } from '@/data/guides';
-import { getPostBySlug, getLocalizedPost } from '@/data/blogPosts';
+/* Un guide affiche des liens vers ses articles satellites, jamais leur
+   texte. L'index leger suffit, et evite les 1,1 Mo de `blogPosts`. */
+import { getIndexEntry, localizeIndexEntry } from '@/data/blogIndex';
 
 const baseUrl = 'https://elieageron.com';
 
@@ -149,8 +151,8 @@ const GuidePage = () => {
           {guide.chapters.map((chapter, i) => {
             const articles = (chapter.articles ?? [])
               .map((articleSlug) => {
-                const raw = getPostBySlug(articleSlug);
-                return raw ? getLocalizedPost(raw, 'fr') : null;
+                const raw = getIndexEntry(articleSlug);
+                return raw ? localizeIndexEntry(raw, 'fr') : null;
               })
               .filter(Boolean);
 

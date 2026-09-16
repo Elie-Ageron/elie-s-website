@@ -4,13 +4,16 @@ import { Link, useParams, Navigate } from 'react-router-dom';
 import SEO from '@/components/SEO';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
 import { useLanguage } from '@/contexts/LanguageContext';
+/* Cette page liste des articles, elle n'en affiche aucun. Elle passe donc par
+   l'index leger et non par `blogPosts`, qui pese 1,1 Mo compile. Voir
+   l'en-tete de `blogIndex.ts`. */
 import {
-  blogCategories,
-  getActiveCategories,
-  getPostsByCategory,
-  getLocalizedPost,
-} from '@/data/blogPosts';
-import type { CategorySlug } from '@/data/blogPosts';
+  getIndexByCategory,
+  localizeIndexEntry,
+  getActiveCategoriesFromIndex,
+} from '@/data/blogIndex';
+import { blogCategories } from '@/data/blog/types';
+import type { CategorySlug } from '@/data/blog/types';
 import { guides } from '@/data/guides';
 
 const baseUrl = 'https://elieageron.com';
@@ -76,14 +79,14 @@ const BlogCategory = () => {
   const category = blogCategories.find((c) => c.slug === slug);
   if (!category) return <Navigate to="/blog" replace />;
 
-  const posts = getPostsByCategory(category.slug, language).map((post) =>
-    getLocalizedPost(post, language)
+  const posts = getIndexByCategory(category.slug, language).map((entry) =>
+    localizeIndexEntry(entry, language)
   );
   if (posts.length === 0) return <Navigate to="/blog" replace />;
 
   const fr = language === 'fr';
   const canonical = `${baseUrl}/blog/categorie/${category.slug}`;
-  const otherCategories = getActiveCategories(language).filter((c) => c.slug !== category.slug);
+  const otherCategories = getActiveCategoriesFromIndex(language).filter((c) => c.slug !== category.slug);
   const pillar = guides.find((g) => g.slug === categoryPillar[category.slug]);
   const categoryCta = categoryCtas[category.slug];
 
@@ -189,7 +192,7 @@ const BlogCategory = () => {
           <ul className="border-y border-border/60 divide-y divide-border/60">
             {posts.map((post, index) => (
               <motion.li
-                key={post.id}
+                key={post.slug}
                 initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}

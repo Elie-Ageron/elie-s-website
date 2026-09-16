@@ -7,16 +7,21 @@ import { useCalendly } from '@/contexts/CalendlyContext';
 import SEO from '@/components/SEO';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
 import AuthorCard from '@/components/AuthorCard';
-import {
-  getPostBySlug,
-  getLocalizedPost,
-  getRelatedPosts,
-  getCategory,
-  getCategorySlug,
-  getPostImage,
-} from '@/data/blogPosts';
+/* 🔴 Cette page importait `@/data/blogPosts`, qui agrege les 139 articles avec
+   leur texte : 1,1 Mo compile pour en afficher un seul. Mesure du 16 septembre
+   2026, production, telephone en 4G lente : 594 ko de JavaScript, premier texte
+   affiche a 7,2 s, fil principal bloque 1,9 s.
+
+   Maintenant : l'index leger porte tout ce qui s'affiche avant le corps (titre,
+   accroche, dates, categorie, balises SEO, lectures suivantes), donc l'entete
+   et le `<head>` sortent immediatement. Seul le texte est charge a la demande,
+   et seulement le fichier qui le contient. Voir `blogContent.ts`. */
+import { getIndexEntry, localizeIndexEntry, getIndexImage } from '@/data/blogIndex';
+import { loadPost, getRelatedFromIndex } from '@/data/blogContent';
+import { getCategory } from '@/data/blog/types';
+import type { BlogPost as BlogPostType } from '@/data/blog/types';
 import { getGuideByPath } from '@/data/guides';
-import { useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 const baseUrl = 'https://elieageron.com';
 
@@ -124,31 +129,53 @@ const BlogPost = () => {
   const { language } = useLanguage();
   const { openCalendly } = useCalendly();
 
-  const rawPost = useMemo(() => (slug ? getPostBySlug(slug) : undefined), [slug]);
-  const post = useMemo(
-    () => (rawPost ? getLocalizedPost(rawPost, language) : null),
-    [rawPost, language]
-  );
+  /* L'entree d'index est synchrone : elle suffit a tout ce qui s'affiche avant
+     le corps de l'article, donc rien n'attend le reseau pour le premier rendu. */
+  const entree = useMemo(() => (slug ? getIndexEntry(slug) : undefined), [slug]);
+
+  /* Le texte, lui, arrive du fichier qui le porte. `undefined` = en cours. */
+  const [contenu, setContenu] = useState<BlogPostType | null | undefined>(undefined);
+  useEffect(() => {
+    if (!slug || !entree) return;
+    let annule = false;
+    setContenu(undefined);
+    loadPost(slug).then((p) => {
+      if (!annule) setContenu(p ?? null);
+    });
+    return () => {
+      annule = true;
+    };
+  }, [slug, entree]);
+
+  const post = useMemo(() => (entree ? localizeIndexEntry(entree, language) : null), [entree, language]);
 
   const relatedPosts = useMemo(
-    () => (rawPost ? getRelatedPosts(rawPost, language, 3).map((p) => getLocalizedPost(p, language)) : []),
-    [rawPost, language]
+    () =>
+      entree
+        ? getRelatedFromIndex(entree, contenu?.related, language, 3).map((e) =>
+            localizeIndexEntry(e, language)
+          )
+        : [],
+    [entree, contenu, language]
   );
 
-  if (!rawPost || !post) {
+  /* La redirection ne depend que de l'index, jamais du chargement : sinon tout
+     article partirait vers /blog pendant la seconde ou son texte arrive. */
+  if (!entree || !post) {
     return <Navigate to="/blog" replace />;
   }
 
   // Les articles francais seuls restent annonces en fr, quelle que soit l'interface.
-  const contentLang = post.contentLanguage;
-  const fr = contentLang === 'fr';
-  const canonical = `${baseUrl}/blog/${rawPost.slug}`;
-  const categorySlug = getCategorySlug(rawPost);
+  const fr = language === 'fr' || entree.frOnly;
+  const contentLang: 'fr' | 'en' = fr ? 'fr' : 'en';
+  const canonical = `${baseUrl}/blog/${entree.slug}`;
+  const categorySlug = entree.category;
   const category = getCategory(categorySlug);
   const categoryLabel = fr ? category.fr : category.en;
-  const pillar = getGuideByPath(rawPost.pillar);
-  const faq = fr ? rawPost.faqFr ?? [] : [];
-  const wordCount = post.content.split(/\s+/).filter(Boolean).length;
+  const pillar = getGuideByPath(entree.pillar ?? undefined);
+  const faq = fr ? contenu?.faqFr ?? [] : [];
+  const texte = contenu ? (fr ? contenu.contentFr : contenu.contentEn ?? contenu.contentFr) : '';
+  const wordCount = texte.split(/\s+/).filter(Boolean).length;
 
   /**
    * Appel a l'action de fin d'article, contextualise par categorie.
@@ -213,16 +240,16 @@ const BlogPost = () => {
     '@id': `${canonical}#article`,
     headline: post.title,
     description: post.excerpt,
-    datePublished: rawPost.date,
-    dateModified: rawPost.lastModified || rawPost.date,
+    datePublished: entree.date,
+    dateModified: entree.lastModified || entree.date,
     author: { '@type': 'Person', '@id': `${baseUrl}/#person`, name: 'Elie Ageron', url: `${baseUrl}/a-propos` },
     publisher: { '@id': `${baseUrl}/#organization` },
-    image: getPostImage(rawPost),
+    image: getIndexImage(entree),
     url: canonical,
     mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
     inLanguage: fr ? 'fr-FR' : 'en-US',
     articleSection: categoryLabel,
-    keywords: (rawPost.tags ?? []).join(', ') || undefined,
+    keywords: entree.tags.join(', ') || undefined,
     wordCount,
     // Rattache l'article a son guide pilier quand il en a un, au site sinon.
     isPartOf: pillar
@@ -274,13 +301,13 @@ const BlogPost = () => {
       <SEO
         page="blog"
         forceLang={contentLang}
-        customTitle={post.seoTitle}
-        customDescription={post.seoDesc}
+        customTitle={post.seoTitleFinal}
+        customDescription={post.seoDescFinal}
         customCanonical={canonical}
-        ogImage={getPostImage(rawPost)}
+        ogImage={getIndexImage(entree)}
         ogType="article"
-        articlePublishedTime={rawPost.date}
-        articleModifiedTime={rawPost.lastModified || rawPost.date}
+        articlePublishedTime={entree.date ?? undefined}
+        articleModifiedTime={entree.lastModified || entree.date || undefined}
         articleSection={categoryLabel}
         structuredData={schemas}
       />
@@ -327,13 +354,13 @@ const BlogPost = () => {
             <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-muted-foreground">
               <span className="inline-flex items-center gap-1.5">
                 <Calendar className="w-4 h-4" aria-hidden="true" />
-                <time dateTime={rawPost.date}>{formatDate(rawPost.date)}</time>
+                <time dateTime={entree.date ?? undefined}>{formatDate(entree.date ?? '')}</time>
               </span>
-              {rawPost.lastModified && rawPost.lastModified !== rawPost.date && (
+              {entree.lastModified && entree.lastModified !== entree.date && (
                 <span className="inline-flex items-center gap-1.5">
                   <RefreshCw className="w-4 h-4" aria-hidden="true" />
                   {fr ? 'Mis à jour le ' : 'Updated '}
-                  <time dateTime={rawPost.lastModified}>{formatDate(rawPost.lastModified)}</time>
+                  <time dateTime={entree.lastModified}>{formatDate(entree.lastModified)}</time>
                 </span>
               )}
               <span className="inline-flex items-center gap-1.5">
@@ -384,7 +411,24 @@ const BlogPost = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.15 }}
           >
-            {renderContent(post.content)}
+            {contenu ? (
+              renderContent(texte)
+            ) : (
+              /* Squelette de lecture pendant que le fichier de l'article
+                 arrive. L'entete est deja affiche au-dessus, donc le visiteur
+                 voit le titre, l'accroche et la date sans attendre. */
+              <div className="space-y-4" aria-live="polite" aria-busy="true">
+                <span className="sr-only">Chargement de l&rsquo;article</span>
+                {[...Array(8)].map((_, i) => (
+                  <div
+                    key={i}
+                    className="h-4 animate-pulse rounded bg-secondary"
+                    style={{ width: `${[100, 96, 88, 100, 92, 70, 100, 84][i]}%` }}
+                    aria-hidden="true"
+                  />
+                ))}
+              </div>
+            )}
           </motion.div>
         </div>
       </article>
@@ -471,7 +515,7 @@ const BlogPost = () => {
             </h2>
             <ul className="border-y border-border/60 divide-y divide-border/60">
               {relatedPosts.map((related) => (
-                <li key={related.id}>
+                <li key={related.slug}>
                   <Link
                     to={`/blog/${related.slug}`}
                     className="group grid grid-cols-1 sm:grid-cols-12 gap-1 sm:gap-6 py-5 transition-colors"

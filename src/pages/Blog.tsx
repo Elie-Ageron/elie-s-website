@@ -6,12 +6,17 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import SEO from '@/components/SEO';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
 import InternalLinks from '@/components/InternalLinks';
+/* 🔴 Importait `@/data/blogPosts`, soit 1,1 Mo compile, pour afficher une
+   liste de titres. Mesure du 16 septembre 2026 en 4G : 594 ko de JavaScript
+   et un LCP a 7,2 s. L'index porte maintenant la categorie, la date, le temps
+   de lecture et les etiquettes, donc plus aucune raison de charger le corpus.
+   Voir l'en-tete de `blogIndex.ts`. */
 import {
-  getPostsForLanguage,
-  getLocalizedPost,
-  getActiveCategories,
-  getPostImage,
-} from '@/data/blogPosts';
+  getIndexForLanguage,
+  localizeIndexEntry,
+  getActiveCategoriesFromIndex,
+  getIndexImage,
+} from '@/data/blogIndex';
 import { guides } from '@/data/guides';
 
 const baseUrl = 'https://elieageron.com';
@@ -31,11 +36,11 @@ const Blog = () => {
     });
 
   const allPosts = useMemo(
-    () => getPostsForLanguage(language).map((post) => getLocalizedPost(post, language)),
+    () => getIndexForLanguage(language).map((entry) => localizeIndexEntry(entry, language)),
     [language]
   );
 
-  const categories = useMemo(() => getActiveCategories(language), [language]);
+  const categories = useMemo(() => getActiveCategoriesFromIndex(language), [language]);
 
   // Recherche cote client sur titre, resume et mots-cles. Suffisant a cette echelle.
   const filtered = useMemo(() => {
@@ -75,7 +80,7 @@ const Blog = () => {
       datePublished: post.date,
       dateModified: post.lastModified || post.date,
       author: { '@id': `${baseUrl}/#person` },
-      image: getPostImage(post),
+      image: getIndexImage(post),
       url: `${baseUrl}/blog/${post.slug}`,
     })),
   };
@@ -259,7 +264,7 @@ const Blog = () => {
           <ul className={isSearching ? 'border-t border-border/60' : 'mt-2'}>
             {shown.map((post, index) => (
               <motion.li
-                key={post.id}
+                key={post.slug}
                 initial={{ opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}

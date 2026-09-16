@@ -58,7 +58,13 @@ for (const [file, src] of Object.entries(sources)) {
   const curly = [...src].filter((c) => '“”‘'.includes(c)).length;
   if (curly > 0) errors.push(`${file} : ${curly} guillemet(s) courbe(s)`);
 }
-const emoji = [...new Set(all.match(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/gu) ?? [])];
+/* 🔴 Les emoji sont interdits dans le CONTENU, pas dans les commentaires de
+   documentation, ou le projet s'en sert pour marquer les regles dures. Le
+   controle s'est mis a hurler le jour ou les articles herites ont ete sortis
+   dans `posts-legacy.ts`, dont l'en-tete porte un marqueur comme tout le reste
+   du code. On retire donc les commentaires avant de chercher. */
+const sansCommentaires = all.replace(/\/\*[\s\S]*?\*\//g, '').replace(/^\s*\/\/[^\n]*$/gm, '');
+const emoji = [...new Set(sansCommentaires.match(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/gu) ?? [])];
 if (emoji.length) errors.push(`emoji dans le contenu : ${emoji.join(' ')}`);
 
 // --- 3. Coherence de l'offre reseaux sociaux -----------------------------

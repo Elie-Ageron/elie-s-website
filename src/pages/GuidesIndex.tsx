@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import SEO from '@/components/SEO';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
 import { guides } from '@/data/guides';
-import { getActiveCategories } from '@/data/blogPosts';
+// Cette page n'affiche aucun article : elle compte des categories.
+import { getActiveCategoriesFromIndex } from '@/data/blogIndex';
 
 const baseUrl = 'https://elieageron.com';
 
@@ -13,7 +14,7 @@ const baseUrl = 'https://elieageron.com';
  * l'autorite vers les guides et vers les categories du blog.
  */
 const GuidesIndex = () => {
-  const categories = getActiveCategories('fr');
+  const categories = getActiveCategoriesFromIndex('fr');
 
   const collectionSchema = {
     '@context': 'https://schema.org',
