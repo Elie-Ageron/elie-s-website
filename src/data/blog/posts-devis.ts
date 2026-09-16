@@ -259,9 +259,9 @@ Remerciez, et gardez le contact. Un chantier perdu aujourd'hui est parfois un ch
     titleFr: 'Les avis ailleurs que sur Google : lesquels comptent',
     excerptFr:
       "Google reste le seul indispensable. Les autres ont leur utilité, à condition de savoir laquelle et de ne pas s'éparpiller.",
-    seoTitleFr: 'Avis Clients : Quelles Plateformes Comptent',
+    seoTitleFr: "Plateformes d'Avis : Google, Puis une ou Deux",
     seoDescFr:
-      "Facebook, plateformes sectorielles, sites d'avis : lesquelles valent le coup pour une entreprise locale, et comment ne pas se disperser.",
+      'Disperser les demandes sur cinq sites revient à en avoir peu partout au lieu de beaucoup là où ça compte. Et ne demandez jamais deux choses à la même personne.',
     readTime: '7 min',
     categoryFr: 'Référencement local',
     categorySlug: 'seo-local',
@@ -471,9 +471,9 @@ Si la réponse est non sur plusieurs images, le problème n'est probablement pas
     titleFr: 'Choisir le nom de son entreprise, en pensant à après',
     excerptFr:
       "Un nom se dicte au téléphone des milliers de fois, se cherche sur Google, et se floque sur un camion. Trois contraintes qu'on oublie au moment de choisir.",
-    seoTitleFr: "Choisir le Nom de son Entreprise",
+    seoTitleFr: "Nom d'Entreprise : le Métier Dedans Vous Enferme",
     seoDescFr:
-      "Les critères pratiques d'un bon nom d'entreprise locale : dictée au téléphone, disponibilité du domaine, recherche Google et lisibilité.",
+      "On comprend tout de suite ce que vous faites, sur un camion comme dans une liste de résultats. Et ça coince le jour où l'activité évolue. Idem pour la ville.",
     readTime: '8 min',
     categoryFr: 'Stratégie',
     categorySlug: 'strategie',

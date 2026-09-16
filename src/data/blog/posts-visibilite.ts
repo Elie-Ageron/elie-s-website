@@ -141,9 +141,9 @@ Une dépense qui ne produit pas de demandes au bout de six mois se remet en ques
     titleFr: 'Quand tout va mal en ligne : gérer une vague d\'avis négatifs',
     excerptFr:
       "Un litige qui déborde, un client qui mobilise son entourage, une publication qui tourne. Les premières heures décident du reste.",
-    seoTitleFr: 'Vague d\'Avis Négatifs : Comment Réagir',
+    seoTitleFr: "Vague d'Avis Négatifs : ne Répondez pas dans l'Heure",
     seoDescFr:
-      "Litige qui déborde en ligne, avis négatifs en série, publication qui tourne : la marche à suivre pour une petite entreprise, sans aggraver.",
+      'Une salve de réponses défensives écrites à chaud fait plus de dégâts que les avis eux-mêmes. Vérifier, puis répondre une fois à chacun, par les faits.',
     readTime: '8 min',
     categoryFr: 'Référencement local',
     categorySlug: 'seo-local',

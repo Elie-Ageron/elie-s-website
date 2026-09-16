@@ -11,9 +11,9 @@ export const googlePostsB: BlogPost[] = [
     titleFr: 'Publier sur sa fiche Google Business : est-ce que ça sert',
     excerptFr:
       "La fonction existe depuis des années et presque personne ne l'utilise. Voilà ce qu'elle fait réellement, et ce qu'elle ne fait pas.",
-    seoTitleFr: 'Publier sur sa Fiche Google Business',
+    seoTitleFr: 'Publications Google : Elles ne Font pas Monter',
     seoDescFr:
-      "Les publications de fiche Google Business : ce qu'elles apportent vraiment, quoi publier, à quel rythme, et pourquoi elles ne remplacent pas les avis.",
+      "Leur effet sur le classement est faible et personne de sérieux ne dira l'inverse. Elles occupent la place au moment où quelqu'un hésite entre vous et un autre.",
     readTime: '7 min',
     categoryFr: 'Référencement local',
     categorySlug: 'seo-local',
@@ -253,9 +253,9 @@ Si vous êtes en train de vivre une suspension et que vous ne trouvez pas la cau
     titleFr: 'Travailler sans local : comment définir sa zone',
     excerptFr:
       "Déclarer toute la région pour rater toutes les communes. C'est l'erreur la plus fréquente chez ceux qui se déplacent.",
-    seoTitleFr: 'Zone d\'Intervention : la Définir Correctement',
+    seoTitleFr: "Zone d'Intervention : Trop Large Vous Dilue",
     seoDescFr:
-      "Artisan ou prestataire qui se déplace : comment déclarer sa zone d'intervention sur Google, la nommer sur son site, et arrêter de viser trop large.",
+      'Un rayon démesuré affaiblit votre pertinence sur les communes où vous travaillez vraiment, sans rien vous apporter ailleurs. Et quand masquer son adresse.',
     readTime: '8 min',
     categoryFr: 'Référencement local',
     categorySlug: 'seo-local',

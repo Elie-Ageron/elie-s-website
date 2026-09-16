@@ -12,9 +12,9 @@ export const terrainPosts: BlogPost[] = [
     titleFr: 'Logo et identité visuelle : ce dont une TPE a réellement besoin',
     excerptFr:
       "Beaucoup de gens commencent par là et y mettent trop d'argent. D'autres n'y mettent rien et le paient ailleurs. Voilà le juste milieu.",
-    seoTitleFr: 'Logo et Identité Visuelle pour une TPE',
+    seoTitleFr: 'Logo : du Propre Suffit, pas du Définitif',
     seoDescFr:
-      "Ce qu'il faut vraiment comme logo, couleurs et cohérence visuelle quand on est artisan ou indépendant, et à quel moment s'en occuper.",
+      'Un nom dans une typographie choisie, avec une couleur, tient les premiers mois et évite de figer une identité avant de savoir ce que vous vendez. Et le budget.',
     readTime: '8 min',
     categoryFr: 'Stratégie',
     categorySlug: 'strategie',
@@ -256,9 +256,9 @@ Dernier point, et il compte : le classement n'est pas l'objectif. Le nombre de d
     titleFr: 'Camionnette, panneaux, cartes : le physique compte encore',
     excerptFr:
       "En vallée, un véhicule bien floqué reste un des meilleurs supports publicitaires qui existent. À condition qu'on puisse le lire à 50 km/h.",
-    seoTitleFr: 'Floquage, Panneaux et Cartes : ce qui Marche',
+    seoTitleFr: 'Camionnette : le Numéro en Gros, le Nom Après',
     seoDescFr:
-      "Véhicule floqué, panneau de chantier, carte de visite : ce qui fonctionne encore hors ligne pour une entreprise locale, et comment le relier au reste.",
+      'Le métier, la zone et le téléphone. Un passant qui ne peut pas lire votre numéro en trois secondes ne retiendra rien. Le meilleur rapport coût et exposition.',
     readTime: '8 min',
     categoryFr: 'Stratégie',
     categorySlug: 'strategie',
@@ -512,9 +512,9 @@ La méthode complète de suivi est dans [savoir si votre communication rapporte]
     titleFr: 'Salons, marchés et foires : les rentabiliser vraiment',
     excerptFr:
       "Trois jours debout, un stand payé, et rien derrière. Le problème n'est presque jamais le salon, c'est ce qui se passe la semaine suivante.",
-    seoTitleFr: 'Salons et Marchés : les Rentabiliser',
+    seoTitleFr: "Salon : ça se Joue les 2 Semaines d'Après",
     seoDescFr:
-      "Comment préparer, tenir et surtout exploiter un salon ou un marché quand on est une petite entreprise locale, sans perdre son temps.",
+      "Un stand qui produit quarante contacts jamais rappelés ne rapporte rien, quel que soit le salon. Ce qu'il faut noter au dos d'une carte, tout de suite.",
     readTime: '8 min',
     categoryFr: 'Stratégie',
     categorySlug: 'strategie',

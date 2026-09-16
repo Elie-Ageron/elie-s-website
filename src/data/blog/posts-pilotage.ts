@@ -257,9 +257,9 @@ C'est peu de travail et c'est ce qui sépare une communication pilotée d'une co
     titleFr: 'Combien de temps y consacrer quand on a déjà un métier',
     excerptFr:
       "La bonne réponse n'est pas beaucoup. C'est peu, toujours au même moment, pendant longtemps.",
-    seoTitleFr: 'Combien de Temps pour sa Communication',
+    seoTitleFr: 'Communication : 2 à 3 Heures par Semaine, Groupées',
     seoDescFr:
-      "Le budget temps réaliste d'un artisan ou d'une TPE pour son site, sa fiche Google et ses réseaux, et comment le tenir toute l'année.",
+      "Le problème n'est presque jamais le volume d'heures, c'est leur irrégularité. Trois semaines intenses puis deux mois de silence produisent moins qu'un rythme.",
     readTime: '8 min',
     categoryFr: 'Stratégie',
     categorySlug: 'strategie',

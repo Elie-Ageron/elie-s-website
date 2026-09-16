@@ -523,9 +523,9 @@ C'est tout, et c'est déjà plus de pilotage que n'en fait la majorité des entr
     titleFr: 'Recruter quand on est une petite entreprise de vallée',
     excerptFr:
       "Vous cherchez quelqu'un depuis huit mois. Les candidats regardent votre entreprise en ligne avant de postuler, et ils ne trouvent rien.",
-    seoTitleFr: 'Recruter Quand on est une Petite Entreprise',
+    seoTitleFr: 'Recruter : la Fourchette de Salaire Change Tout',
     seoDescFr:
-      "Attirer des candidats en Savoie quand on est une TPE : ce que regardent les gens avant de postuler, et comment leur donner à voir.",
+      "Un candidat cherche le nom de l'entreprise avant de postuler, et un site daté en fait renoncer une partie sans que vous le sachiez. Ce qu'il faut montrer.",
     readTime: '9 min',
     categoryFr: 'Stratégie',
     categorySlug: 'strategie',

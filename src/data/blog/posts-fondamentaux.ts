@@ -11,9 +11,9 @@ export const fondamentauxPosts: BlogPost[] = [
     titleFr: 'Le référencement expliqué à quelqu\'un qui n\'y connaît rien',
     excerptFr:
       "Trois mécanismes, pas plus. Une fois qu'on les a compris, on arrête de se faire vendre n'importe quoi.",
-    seoTitleFr: 'Le Référencement Expliqué Simplement',
+    seoTitleFr: "Le Référencement n'est ni un Logiciel ni un Abonnement",
     seoDescFr:
-      "Ce que fait Google, en trois mécanismes compréhensibles sans jargon, et ce que ça implique concrètement pour une entreprise locale.",
+      "C'est le résultat de ce que contient votre site, de ce que d'autres disent de vous, et de ce que fait votre fiche Google. Trois mécanismes, sans jargon.",
     readTime: '9 min',
     categoryFr: 'Référencement local',
     categorySlug: 'seo-local',
@@ -143,9 +143,9 @@ C'est tout, et c'est déjà davantage que ce que fait la grande majorité des en
     titleFr: 'Site, fiche Google, réseaux : qui fait quoi exactement',
     excerptFr:
       "Trois outils, trois rôles différents, et une confusion qui fait dépenser au mauvais endroit.",
-    seoTitleFr: 'Site, Fiche Google et Réseaux : Qui Fait Quoi',
+    seoTitleFr: 'Site, Fiche, Réseaux : la Fiche Produit le Plus Vite',
     seoDescFr:
-      "Ce que fait chaque canal, ce qu'il ne fait pas, et dans quel ordre les mettre en place quand on est une petite entreprise locale.",
+      'Le site prend le relais sur les recherches précises et la confiance, les réseaux entretiennent la présence. Dans quel ordre les mettre en place, et pourquoi.',
     readTime: '8 min',
     categoryFr: 'Stratégie',
     categorySlug: 'strategie',
@@ -251,9 +251,9 @@ C'est le point que je vérifie en premier chez quelqu'un qui me dit que rien ne 
     titleFr: 'Ce que personne ne contrôle sur Google, et ce que vous contrôlez',
     excerptFr:
       "Une bonne partie de l'agacement vient de là : on s'épuise sur ce qu'on ne maîtrise pas, et on néglige ce qui dépend entièrement de soi.",
-    seoTitleFr: 'Ce que Vous Contrôlez Vraiment sur Google',
+    seoTitleFr: 'Personne ne Peut Vous Garantir une Position Google',
     seoDescFr:
-      "La liste de ce qui dépend de vous et de ce qui n'en dépend pas dans votre visibilité en ligne, pour arrêter de dépenser au mauvais endroit.",
+      "C'est le premier signal d'alerte quand quelqu'un vous le promet. Et la liste de ce qui dépend entièrement de vous, qui se trouve être aussi la plus efficace.",
     readTime: '7 min',
     categoryFr: 'Référencement local',
     categorySlug: 'seo-local',
@@ -501,9 +501,9 @@ Trois gestes, une heure, et un effet visible dans la semaine.
     titleFr: 'Ce que ça change de travailler dans la durée plutôt qu\'au projet',
     excerptFr:
       "Un site livré et abandonné se fait rattraper. Voilà pourquoi je travaille en partenariat, et dans quels cas ça ne se justifie pas.",
-    seoTitleFr: 'Partenaire Web ou Prestation Ponctuelle',
+    seoTitleFr: 'Partenaire Web : pas un Hébergement Déguisé',
     seoDescFr:
-      "Faire faire son site une fois ou travailler dans la durée avec quelqu'un : ce que chaque formule apporte réellement, et à qui elle convient.",
+      "Un point régulier, des corrections au fil de l'eau, du contenu publié, quelqu'un qui répond quand ça casse. Ce qui est fait doit être visible et mesurable.",
     readTime: '8 min',
     categoryFr: 'Stratégie',
     categorySlug: 'strategie',

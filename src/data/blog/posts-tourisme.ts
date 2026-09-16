@@ -372,9 +372,9 @@ Je travaille depuis Albertville, donc la Tarentaise, le Beaufortain et la combe 
     titleFr: 'Communiquer quand on vit d\'une saison',
     excerptFr:
       "Vous êtes débordé quand il faudrait être visible, et disponible quand plus personne ne cherche. Voilà comment retourner ce calendrier.",
-    seoTitleFr: 'Communiquer Quand on Vit d\'une Saison',
+    seoTitleFr: 'Saison Creuse : Baisser les Prix est le Mauvais Réflexe',
     seoDescFr:
-      "Activité saisonnière en montagne : quand publier, quoi préparer pendant les mois pleins, et comment remplir les périodes creuses sans casser ses prix.",
+      "Une remise attire des clients qui ne reviendront qu'à ce prix, et dévalorise ce que les autres ont payé. Proposer autre chose tient mieux dans la durée.",
     readTime: '9 min',
     categoryFr: 'Stratégie',
     categorySlug: 'strategie',

@@ -126,9 +126,9 @@ Et si ça arrive, la seule chose qui compte est d'avoir un endroit où envoyer l
     titleFr: 'Faut-il payer de la publicité sur Instagram et Facebook',
     excerptFr:
       "Je ne vends pas de publicité, donc je n'ai aucun intérêt à vous dire oui. Voilà quand ça vaut le coup, quand ça n'en vaut pas, et ce que je ferais avec le même budget.",
-    seoTitleFr: 'Publicité Instagram et Facebook pour une TPE',
+    seoTitleFr: "Publicité Meta : le Bouton Booster Dépense à l'Aveugle",
     seoDescFr:
-      "Quand la publicité payante sert vraiment une entreprise locale, pourquoi le bouton Booster gaspille presque toujours, et l'alternative à budget égal.",
+      "Il optimise la portée, pas les demandes, et ne laisse presque aucun réglage. Quand la publicité est rentable pour une TPE, et quand elle ne l'est jamais.",
     readTime: '8 min',
     categoryFr: 'Stratégie',
     categoryEn: 'Strategy',

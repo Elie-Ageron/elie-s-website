@@ -477,9 +477,9 @@ Dans l'ordre inverse, vous payez pour un gadget qui parle à votre place avant d
     titleFr: 'Les marchés publics quand on est une petite entreprise',
     excerptFr:
       "Les communes, les intercommunalités et les stations achètent en permanence. Beaucoup d'artisans n'y vont pas, en croyant que ce n'est pas pour eux.",
-    seoTitleFr: 'Marchés Publics : par où Commencer',
+    seoTitleFr: "Marchés Publics : Beaucoup Reçoivent Peu d'Offres",
     seoDescFr:
-      "Répondre à une consultation publique quand on est artisan ou TPE en Savoie : où les trouver, ce qui est demandé, et par quoi commencer.",
+      'Une part importante de la commande publique passe par des lots séparés et des montants faibles, pour rester accessible aux petites entreprises locales.',
     readTime: '9 min',
     categoryFr: 'Stratégie',
     categorySlug: 'strategie',

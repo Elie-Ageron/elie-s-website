@@ -541,9 +541,9 @@ C'est le même sujet que pour les restaurants, développé dans [restaurant et r
     titleFr: 'Se faire connaître quand on vient de se lancer',
     excerptFr:
       "Zéro client, zéro avis, zéro budget. L'ordre dans lequel vous faites les choses compte plus que ce que vous faites.",
-    seoTitleFr: 'Se Faire Connaître Quand on se Lance',
+    seoTitleFr: "Se Lancer : la Fiche Google et 10 Avis d'Abord",
     seoDescFr:
-      "Vous venez de créer votre activité en Savoie : les six premières actions de visibilité, dans l'ordre, sans budget et sans perdre de temps.",
+      "Les deux sont gratuits, se mettent en place en quelques heures, et produisent des demandes avant même qu'un site existe. Ce qu'il faut sur la première page.",
     readTime: '9 min',
     categoryFr: 'Stratégie',
     categorySlug: 'strategie',

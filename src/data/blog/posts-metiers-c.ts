@@ -509,9 +509,9 @@ Ce qu'il ne faut pas faire, c'est laisser un compte avec une dernière publicati
     titleFr: 'Un concurrent copie vos contenus : quoi faire',
     excerptFr:
       "C'est agaçant, c'est plus fréquent qu'on ne croit, et la bonne réaction n'est presque jamais celle qu'on a envie d'avoir.",
-    seoTitleFr: 'Un Concurrent Copie vos Contenus',
+    seoTitleFr: "Un Concurrent Vous Copie : c'est Lui qui Risque",
     seoDescFr:
-      "Textes repris, photos volées, vidéos réutilisées : les recours réels, ce qui en vaut la peine, et pourquoi la meilleure réponse est ailleurs.",
+      "Un texte et une photo sont protégés dès leur création, sans dépôt. Et le duplicata pénalise plutôt celui qui copie, sauf s'il a un site nettement plus établi.",
     readTime: '7 min',
     categoryFr: 'Stratégie',
     categorySlug: 'strategie',

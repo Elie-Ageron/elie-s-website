@@ -399,9 +399,9 @@ Si vous voulez que je regarde votre site sur ces points, [envoyez moi l'adresse]
     titleFr: 'Trouver les mots que vos clients tapent réellement',
     excerptFr:
       "Vous employez le vocabulaire de votre métier. Vos clients emploient celui de leur problème. Tout l'écart est là.",
-    seoTitleFr: 'Trouver les Mots-clés de ses Clients',
+    seoTitleFr: 'Mots-clés : le Précis Bat le Très Recherché',
     seoDescFr:
-      "Comment savoir ce que vos clients tapent sur Google, sans outil payant, et quoi en faire concrètement sur votre site et vos vidéos.",
+      'Une recherche générale est disputée par des acteurs nationaux et attire des gens loin de la décision. Où trouver les vrais mots, sans aucun outil payant.',
     readTime: '9 min',
     categoryFr: 'Référencement local',
     categorySlug: 'seo-local',
@@ -527,9 +527,9 @@ Les délais avant que ça produise quelque chose sont détaillés dans [combien 
     titleFr: 'Google Ads ou référencement naturel : où mettre son argent',
     excerptFr:
       "Je ne fais pas de publicité en ligne, donc je n'ai rien à vous vendre là dessus. Voilà comment je poserais l'arbitrage.",
-    seoTitleFr: 'Google Ads ou Référencement Naturel',
+    seoTitleFr: 'Google Ads ne Fait pas Monter le Naturel',
     seoDescFr:
-      "Publicité Google ou référencement naturel pour une TPE de Savoie : ce que chacun coûte, ce qu'il rapporte, et dans quel ordre les envisager.",
+      'Deux systèmes séparés. En revanche une campagne montre quels mots amènent de vraies demandes, ce qui aide à décider quelles pages écrire ensuite.',
     readTime: '8 min',
     categoryFr: 'Stratégie',
     categorySlug: 'strategie',

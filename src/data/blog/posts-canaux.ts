@@ -11,9 +11,9 @@ export const canauxPosts: BlogPost[] = [
     titleFr: 'La liste d\'emails : le canal que personne ne peut vous retirer',
     excerptFr:
       "Vos abonnés appartiennent à une plateforme. Vos adresses email vous appartiennent. C'est toute la différence le jour où l'algorithme change.",
-    seoTitleFr: 'Newsletter pour une TPE : par où Commencer',
+    seoTitleFr: 'Newsletter : 100 Adresses Valent 3 000 Abonnés',
     seoDescFr:
-      "Constituer et utiliser une liste d'emails quand on est artisan, commerçant ou indépendant : ce qu'il faut écrire, à quel rythme, et le cadre légal.",
+      "Cent clients réels de votre zone pèsent plus qu'une grosse audience sociale : ils vous connaissent, et le message arrive chez eux. Le cadre légal, et le rythme.",
     readTime: '9 min',
     categoryFr: 'Stratégie',
     categorySlug: 'strategie',
