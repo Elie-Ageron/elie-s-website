@@ -27,7 +27,13 @@ const puppeteer = require('puppeteer');
 
 const args = process.argv.slice(2);
 const prod = args.includes('--prod');
-const base = prod ? 'https://elieageron.com' : 'http://localhost:8080';
+const sansTiers = args.includes('--sans-tiers');
+/* `--build` mesure le vrai build servi par `vite preview`, pas le serveur de
+   dev, qui charge des centaines de modules non groupes et ne represente rien. */
+const port = (args.find((a) => a.startsWith('--port=')) ?? '').split('=')[1];
+const base = prod
+  ? 'https://elieageron.com'
+  : `http://localhost:${port || (args.includes('--build') ? 4173 : 8080)}`;
 
 /* Meme rattrapage que dans captures.mjs : Git Bash reecrit « /route » en
    chemin Windows avant que node ne le voie. */
@@ -80,6 +86,20 @@ for (const route of PAGES) {
     uploadThroughput: (750 * 1024) / 8,
   });
   await client.send('Emulation.setCPUThrottlingRate', { rate: 4 });
+
+  /* `--sans-tiers` bloque les domaines tiers. Ce n'est pas une configuration a
+     livrer : c'est une mesure. Comparer les deux passages donne le cout reel
+     d'un marqueur, en millisecondes de fil principal bloque, au lieu d'en
+     discuter. */
+  if (sansTiers) {
+    await page.setRequestInterception(true);
+    page.on('request', (req) => {
+      const url = req.url();
+      const tiers = ['googletagmanager.com', 'google-analytics.com', 'googletagservices', 'doubleclick.net', 'calendly.com'];
+      if (tiers.some((d) => url.includes(d))) req.abort();
+      else req.continue();
+    });
+  }
 
   await page.evaluateOnNewDocument(() => {
     window.__vitals = { lcp: 0, cls: 0, longtasks: 0 };

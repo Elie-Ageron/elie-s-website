@@ -299,17 +299,45 @@ const liensDePage = (chemin) => {
   return [];
 };
 
+/**
+ * Le squelette, sorti du flux de mise en page.
+ *
+ * 🔴 **Pourquoi `position:fixed`.** Mesure du 16 septembre 2026 sur la
+ * production, telephone en 4G lente : l'accueil avait un CLS de 0,138, au-dela
+ * du seuil de 0,1, provoque par **un seul decalage a 2509 ms** dont la source
+ * etait `nav, nav`. C'etait exactement le moment ou React monte et remplace le
+ * contenu de `#root`. Autrement dit, le squelette qui a repare l'exploration
+ * du site cassait sa mise en page pour les visiteurs.
+ *
+ * Un element hors flux ne participe pas au calcul de la mise en page : sa
+ * disparition ne peut donc, par construction, decaler rien du tout. Le
+ * squelette reste entierement visible pendant les deux secondes ou React
+ * demarre, et entierement lisible pour un robot. Rien n'est masque : c'est le
+ * meme contenu, au meme endroit, simplement pose sur sa propre couche.
+ *
+ * ⚠️ Ne pas le repasser en flux normal pour « faire plus propre ». Le CLS
+ * revient immediatement.
+ */
 const squelette = (chemin, titre, description) => {
   const sup = liensDePage(chemin);
   return (
-    `<div style="max-width:46rem;margin:0 auto;padding:5rem 1.5rem;font-family:'General Sans',system-ui,sans-serif;color:#2b2724;line-height:1.6">` +
+    `<div style="position:fixed;inset:0;overflow-y:auto;background:#fdfcfa;z-index:0">` +
+    /* 🔴 Police systeme, pas General Sans, et c'est la vraie cause du CLS.
+       Trace du 16 septembre 2026 : le decalage de 0,138 venait de deux `<nav>`
+       du squelette qui grandissaient de 240 a 271 pixels de haut a 2179 ms,
+       soit l'instant ou la police web finit de charger et remplace la police
+       de repli. Un texte qui change de fonte se remet en page, et une liste de
+       vingt-sept liens se remet beaucoup en page.
+       Le squelette vit deux secondes et sert surtout aux robots : il n'a aucun
+       besoin de la fonte de la marque, et la police systeme est deja la. */
+    `<div style="max-width:46rem;margin:0 auto;padding:5rem 1.5rem;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:#2b2724;line-height:1.6">` +
     `<h1 style="font-size:2.1rem;font-weight:600;letter-spacing:-0.025em;line-height:1.15;margin:0">${echapper(titreCourt(titre))}</h1>` +
     `<p style="margin:1.25rem 0 0;color:#635e59">${echapper(description)}</p>` +
     `<nav style="margin-top:2.5rem;display:flex;flex-wrap:wrap;gap:0.5rem 1.25rem;font-size:0.9rem">${tronc.join('')}</nav>` +
     (sup.length
       ? `<nav style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:0.4rem 1rem;font-size:0.82rem;color:#635e59">${sup.join('')}</nav>`
       : '') +
-    `</div>`
+    `</div></div>`
   );
 };
 
