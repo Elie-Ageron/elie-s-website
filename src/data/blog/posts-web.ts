@@ -161,9 +161,9 @@ Quand je fais un site, je pose les questions et j'écris à partir des réponses
     titleFr: "Pourquoi 10 000 abonnés ne valent parfois rien",
     excerptFr:
       "Le nombre d'abonnés est le chiffre le plus regardé et le moins utile. Voici ceux qui prédisent réellement des demandes.",
-    seoTitleFr: 'Abonnés ou Clients : les Bons Indicateurs',
+    seoTitleFr: "Abonnés ou Clients : il n'y a pas de Seuil",
     seoDescFr:
-      "Pourquoi le nombre d'abonnés ne prédit pas le chiffre d'affaires, et quels indicateurs regarder pour savoir si vos réseaux sociaux servent à quelque chose.",
+      "Quelques centaines d'abonnés locaux génèrent des demandes régulières. Plusieurs milliers d'abonnés dispersés n'en génèrent aucune. Les indicateurs à suivre.",
     readTime: '6 min',
     categoryFr: 'Conversion',
     categorySlug: 'conversion',
@@ -280,9 +280,9 @@ Si vous voulez qu'on regarde ensemble ce que vos chiffres racontent vraiment, [e
     titleFr: "Transformer des vues en clients : le chaînon manquant",
     excerptFr:
       "Beaucoup de comptes font des vues et zéro demande. Le problème est presque toujours au même endroit, et il se règle en une phrase.",
-    seoTitleFr: 'Transformer ses Vues en Clients',
+    seoTitleFr: 'Transformer ses Vues : un Appel sur 3 Vidéos',
     seoDescFr:
-      "Le parcours complet entre une vidéo vue et un message reçu, et les quatre ruptures qui font perdre des clients en cours de route.",
+      "À chaque vidéo, la demande devient du bruit. Jamais, et personne ne sait quoi faire. Et vers où envoyer les gens, parce que l'accueil en perd une partie.",
     readTime: '7 min',
     categoryFr: 'Conversion',
     categorySlug: 'conversion',
@@ -657,9 +657,9 @@ Si vous voulez savoir où vous en êtes, [envoyez moi l'adresse de votre site](/
     titleFr: "Votre formulaire de contact fait fuir la moitié des gens",
     excerptFr:
       "Chaque champ supplémentaire coûte des demandes. La plupart des formulaires que je vois en demandent trois fois trop.",
-    seoTitleFr: 'Formulaire de Contact qui Convertit',
+    seoTitleFr: 'Formulaire de Contact : 3 à 4 Champs, pas Plus',
     seoDescFr:
-      "Nombre de champs, formulation, alternatives au formulaire : comment recevoir plus de demandes sans changer une ligne du reste du site.",
+      'Nom, moyen de contact, message. Chaque champ ajouté réduit le nombre de demandes reçues, et le téléphone est celui qui fait le plus hésiter. Quand le demander.',
     readTime: '6 min',
     categoryFr: 'Conversion',
     categorySlug: 'conversion',
@@ -790,9 +790,9 @@ Si vous voulez que je regarde le vôtre, [envoyez moi l'adresse](/contact).
     titleFr: "Mon site ne génère aucun contact : par où chercher",
     excerptFr:
       "Trois causes possibles, et elles ne se corrigent pas de la même façon. Le diagnostic prend vingt minutes et évite de refaire un site pour rien.",
-    seoTitleFr: 'Mon Site ne Génère Aucun Contact, Pourquoi',
+    seoTitleFr: "Aucun Contact : Regardez d'Abord vos Visites",
     seoDescFr:
-      "Trafic, message ou parcours : le diagnostic en trois étapes pour comprendre pourquoi un site vitrine ne produit aucune demande.",
+      'En dessous de deux cents visites par mois, une absence de demandes ne prouve rien. Sur un site local bien fait, un visiteur sur cinquante à vingt prend contact.',
     readTime: '8 min',
     categoryFr: 'Conversion',
     categorySlug: 'conversion',

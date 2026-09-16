@@ -149,9 +149,9 @@ Vous saurez en une semaine si ce canal marche chez vous, et ça ne vous aura rie
     titleFr: 'WhatsApp Business quand on est artisan ou commerçant',
     excerptFr:
       "Vos clients vous écrivent déjà dessus. Autant que ce ne soit pas votre numéro personnel, et que les demandes ne se perdent plus.",
-    seoTitleFr: 'WhatsApp Business pour un Artisan',
+    seoTitleFr: 'WhatsApp Business : Séparer le Pro du Personnel',
     seoDescFr:
-      "Séparer le pro du personnel, répondre plus vite, ne plus perdre de demandes : ce que WhatsApp Business change concrètement pour une TPE.",
+      "Le vrai gain n'est pas d'envoyer des photos gratuitement. Ce sont les messages d'absence et les réponses enregistrées, qui évitent de perdre des demandes.",
     readTime: '8 min',
     categoryFr: 'Conversion',
     categorySlug: 'conversion',
@@ -273,9 +273,9 @@ Une heure de configuration, une fois. C'est un des rares changements dont on voi
     titleFr: 'La prise de rendez-vous en ligne : pour qui ça vaut le coup',
     excerptFr:
       "Ce n'est pas un gadget pour les gros. Pour certains métiers, c'est ce qui récupère les demandes qui arrivent quand vous ne pouvez pas décrocher.",
-    seoTitleFr: 'Prise de Rendez-vous en Ligne : pour Qui',
+    seoTitleFr: 'Rendez-vous en Ligne : pas si Vous Chiffrez Après',
     seoDescFr:
-      "Réservation en ligne pour un salon, un praticien, un garage ou un coach : ce que ça change vraiment, les pièges, et les métiers pour qui c'est inutile.",
+      "Utile quand la prestation est standardisée en durée et en prix. Pour un métier qui chiffre après visite, un formulaire vaut mieux qu'un agenda grand ouvert.",
     readTime: '8 min',
     categoryFr: 'Conversion',
     categorySlug: 'conversion',

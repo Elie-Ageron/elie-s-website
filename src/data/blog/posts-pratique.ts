@@ -11,9 +11,9 @@ export const pratiquePosts: BlogPost[] = [
     titleFr: 'Faut-il afficher ses prix sur son site',
     excerptFr:
       "La question qui divise le plus, et sur laquelle je change d'avis selon les métiers. Voilà comment je tranche à chaque fois.",
-    seoTitleFr: 'Faut-il Afficher ses Prix sur son Site',
+    seoTitleFr: "Afficher ses Prix : l'Absence Fait Imaginer le Pire",
     seoDescFr:
-      "Afficher ou non ses tarifs quand on est artisan, commerçant ou indépendant : les cas où ça rapporte, ceux où ça coûte, et les solutions intermédiaires.",
+      "Un prix fait partir ceux qui n'avaient pas le budget, et c'est du temps gagné. Comment donner une information utile sans jamais donner un prix ferme.",
     readTime: '8 min',
     categoryFr: 'Conversion',
     categorySlug: 'conversion',
@@ -137,9 +137,9 @@ Si vous trouvez, demandez-vous si l'information est utile. "Sur devis" n'est pas
     titleFr: 'Rater moins d\'appels quand on travaille avec les mains',
     excerptFr:
       "Le levier le plus rentable de toute cette liste, et il ne demande ni site, ni budget, ni compétence technique.",
-    seoTitleFr: 'Rater Moins d\'Appels Quand on est Artisan',
+    seoTitleFr: "Rater Moins d'Appels : Annoncez un Délai",
     seoDescFr:
-      "Les appels manqués sont la première fuite de clients chez les artisans. Cinq façons de les récupérer sans être collé au téléphone.",
+      "Un message d'accueil qui annonce un délai de rappel réel retient une bonne partie des gens. Une sonnerie dans le vide en fait partir la majorité, sans trace.",
     readTime: '7 min',
     categoryFr: 'Conversion',
     categorySlug: 'conversion',

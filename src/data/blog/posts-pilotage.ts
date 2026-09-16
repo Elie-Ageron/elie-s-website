@@ -133,9 +133,9 @@ Ce que vous découvrirez, c'est ce que ces outils savent de votre marché local.
     titleFr: 'Savoir si votre communication rapporte quelque chose',
     excerptFr:
       "La plupart des indépendants ne savent pas d'où viennent leurs clients. Une seule question, posée systématiquement, suffit à le savoir.",
-    seoTitleFr: 'Savoir si sa Communication Rapporte',
+    seoTitleFr: "D'où Viennent vos Clients : Demandez-leur",
     seoDescFr:
-      "Comment mesurer ce que rapportent votre site, vos réseaux et votre fiche Google, sans outil compliqué et sans se mentir sur les chiffres.",
+      "Une question posée à chaque nouveau contact, notée dans un tableau, donne en trois mois une information plus fiable que n'importe quel outil de mesure.",
     readTime: '8 min',
     categoryFr: 'Conversion',
     categorySlug: 'conversion',

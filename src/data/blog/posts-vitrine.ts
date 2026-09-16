@@ -11,9 +11,9 @@ export const vitrinePosts: BlogPost[] = [
     titleFr: 'Votre page d\'accueil a trois secondes pour se faire comprendre',
     excerptFr:
       "Un visiteur décide de rester ou de partir avant d'avoir lu une phrase entière. Ce qui doit tenir dans ces trois secondes.",
-    seoTitleFr: 'La Page d\'Accueil qui Retient les Visiteurs',
+    seoTitleFr: "Page d'Accueil : 4 Infos Sans Faire Défiler",
     seoDescFr:
-      "Ce qui doit apparaître en haut d'une page d'accueil de TPE pour qu'un visiteur comprenne en trois secondes et reste, au lieu de repartir.",
+      "Ce que vous faites, pour qui, où, et comment vous joindre. Quatre informations visibles d'un coup sur un téléphone. Tout le reste peut attendre plus bas.",
     readTime: '8 min',
     categoryFr: 'Conversion',
     categorySlug: 'conversion',
@@ -129,9 +129,9 @@ Sur les sites que je reprends, c'est souvent la modification qui produit l'effet
     titleFr: 'La page réalisations : celle qui décide vraiment',
     excerptFr:
       "Un client compare trois entreprises. Il ne lit pas les trois sites, il regarde les trois pages de réalisations. C'est là que ça se joue.",
-    seoTitleFr: 'La Page Réalisations qui Fait Signer',
+    seoTitleFr: 'Page Réalisations : Mettez un Ordre de Budget',
     seoDescFr:
-      "Comment construire une page de réalisations qui convainc : combien de projets, quel contexte donner, et l'erreur qui annule tout le travail.",
+      "C'est rare, ça répond à la question que tout le monde se pose, et ça filtre les demandes avant qu'elles ne vous coûtent une visite. Dix chantiers bien racontés.",
     readTime: '8 min',
     categoryFr: 'Conversion',
     categorySlug: 'conversion',

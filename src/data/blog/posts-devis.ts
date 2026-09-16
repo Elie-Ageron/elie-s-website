@@ -11,9 +11,9 @@ export const devisPosts: BlogPost[] = [
     titleFr: 'Un devis qui se signe : ce qui se joue dans le document',
     excerptFr:
       "Vous avez gagné la visite, vous avez chiffré juste, et le client signe ailleurs. Le devis est le dernier document que personne ne travaille.",
-    seoTitleFr: 'Faire un Devis qui se Signe',
+    seoTitleFr: "Devis : le Client Choisit Celui qu'il Comprend",
     seoDescFr:
-      "Le devis est le dernier document avant la décision, et presque personne ne le soigne. Ce qui fait signer, au-delà du montant.",
+      "Face à trois devis, il prend celui qu'il comprend, envoyé par celui qui a répondu le plus vite. Le prix départage en dernier, et moins qu'on ne le croit.",
     readTime: '9 min',
     categoryFr: 'Conversion',
     categorySlug: 'conversion',
@@ -135,9 +135,9 @@ Aucun travail de visibilité ne produit ce résultat aussi vite et aussi bon mar
     titleFr: 'Relancer un devis sans passer pour un vendeur',
     excerptFr:
       "La moitié des devis sans réponse ne sont pas des refus. Ce sont des gens débordés qui ont oublié, et qui attendent qu'on les relance.",
-    seoTitleFr: 'Relancer un Devis Sans Insister',
+    seoTitleFr: 'Relancer un Devis : 10 Jours, Puis 2 Fois Maximum',
     seoDescFr:
-      "Quand et comment relancer un devis resté sans réponse, avec des formulations qui n'ont pas l'air d'une relance commerciale.",
+      "Assez de temps pour qu'il reçoive les autres devis, assez peu pour que le sujet soit encore présent. Et la dernière relance, celle qui annonce que vous arrêtez.",
     readTime: '7 min',
     categoryFr: 'Conversion',
     categorySlug: 'conversion',

@@ -223,9 +223,9 @@ Sur un contenu d'entreprise locale, ce n'est pas la musique qui décide du résu
     titleFr: 'Répondre aux commentaires et aux messages, sans y passer ses soirées',
     excerptFr:
       "Le travail invisible qui décide si vos vues deviennent des clients. Et il ne demande pas d'être connecté en permanence.",
-    seoTitleFr: 'Répondre aux Commentaires et aux Messages',
+    seoTitleFr: 'Messages Privés : Donnez un Ordre de Prix',
     seoDescFr:
-      "Commentaires, messages privés, demandes de prix : une méthode simple pour répondre vite et bien sans vivre le téléphone à la main.",
+      "Répondre « contactez-nous en privé » fait fuir et donne l'impression qu'on cache quelque chose. Une fourchette filtre les hors budget et rassure les autres.",
     readTime: '8 min',
     categoryFr: 'Conversion',
     categorySlug: 'conversion',

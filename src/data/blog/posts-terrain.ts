@@ -380,9 +380,9 @@ C'est ce critère qui explique pourquoi une camionnette bat un flyer, et pourquo
     titleFr: 'Organiser le bouche à oreille au lieu de l\'attendre',
     excerptFr:
       "C'est votre premier canal d'acquisition et le seul que vous ne pilotez pas. Trois habitudes suffisent à le rendre régulier.",
-    seoTitleFr: 'Organiser le Bouche à Oreille',
+    seoTitleFr: 'Bouche à Oreille : Demandez de Façon Précise',
     seoDescFr:
-      "Recommandation, parrainage, prescripteurs : comment rendre régulier le canal qui vous amène déjà le plus de clients, sans rien payer.",
+      "« Si vous connaissez quelqu'un qui a le même problème de toiture » obtient beaucoup plus que « n'hésitez pas à me recommander ». Et faut-il payer un apporteur.",
     readTime: '8 min',
     categoryFr: 'Conversion',
     categorySlug: 'conversion',

@@ -249,9 +249,9 @@ En un an, cela fait une cinquantaine d'interlocuteurs professionnels de votre zo
     titleFr: 'Faire revenir ses clients quand on vend une fois tous les dix ans',
     excerptFr:
       "Un client satisfait ne revient pas de lui-même sur un métier à cycle long. Il vous oublie, et il appelle quelqu'un d'autre.",
-    seoTitleFr: 'Fidéliser ses Clients Quand on est Artisan',
+    seoTitleFr: 'Fidéliser un Artisan : Viser la Recommandation',
     seoDescFr:
-      "Comment rester dans la mémoire de clients qui n'ont besoin de vous que tous les cinq ou dix ans, et transformer un chantier en plusieurs.",
+      'Quand le besoin revient tous les dix ans, le rachat est improbable. Un client content qui pense à vous une fois par an en parle à trois personnes autour de lui.',
     readTime: '8 min',
     categoryFr: 'Conversion',
     categorySlug: 'conversion',
