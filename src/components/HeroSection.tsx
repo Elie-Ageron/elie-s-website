@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useCalendly } from '@/contexts/CalendlyContext';
-import { lazy, Suspense, useState, useEffect, Component, ReactNode } from 'react';
+import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 import logoVmProducers from '@/assets/logo-vm-producers.webp';
@@ -43,19 +43,14 @@ const CLIENT_LOGOS = [
   { src: logoSolarFusion, name: 'Solar Fusion', flat: false },
 ];
 
-// Defer 3D scene loading
-const HeroScene3D = lazy(() => import('@/components/animations/HeroScene3D'));
+/* 🔴 Une scene WebGL vivait ici : Three.js et react-three-fiber, 776 ko bruts
+   et 208 ko compresses, avec une boucle de rendu permanente et un ecouteur de
+   souris sur la fenetre. Elle dessinait des points roses, et trois pastilles
+   flottantes qui annoncaient « SEO », « Design » et « Web », c'est-a-dire le
+   positionnement d'avant le pivot, dans une police qui n'est pas celle du site.
+   `HeroDots` rend les memes points en CSS, pour zero kilo-octet. */
+import HeroDots from '@/components/animations/HeroDots';
 
-// Isolated error boundary for the 3D scene, prevents WebGL crashes from
-// taking down the full page (important for SEO crawlers and unsupported environments).
-class Scene3DErrorBoundary extends Component<{ children: ReactNode }, { crashed: boolean }> {
-  state = { crashed: false };
-  static getDerivedStateFromError() { return { crashed: true }; }
-  render() {
-    if (this.state.crashed) return null; // Silently hide the 3D scene on error
-    return this.props.children;
-  }
-}
 
 const HeroSection = () => {
   const { t, language } = useLanguage();
@@ -84,13 +79,7 @@ const HeroSection = () => {
       className="relative overflow-hidden px-4 pb-16 pt-8 sm:px-6 sm:pb-28 sm:pt-24"
       aria-labelledby="hero-heading"
     >
-      {mounted && show3D && (
-        <Scene3DErrorBoundary>
-          <Suspense fallback={null}>
-            <HeroScene3D />
-          </Suspense>
-        </Scene3DErrorBoundary>
-      )}
+      {mounted && show3D && <HeroDots />}
 
       <div className="pointer-events-none absolute inset-0 z-[1]" aria-hidden="true">
         <div className="absolute left-1/4 top-1/4 h-72 w-72 rounded-full bg-primary/[0.07] blur-[120px] sm:h-96 sm:w-96" />

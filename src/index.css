@@ -383,3 +383,16 @@ All colors MUST be HSL.
     transform: translateY(-10px);
   }
 }
+
+/* Derive des points du hero. Voir `HeroDots.tsx` : ce composant a remplace une
+   scene WebGL de 208 ko compresses qui dessinait la meme chose, plus trois
+   pastilles flottantes qui annoncaient encore « SEO », « Design » et « Web ». */
+@keyframes hero-derive {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(6px, -14px, 0);
+  }
+}
