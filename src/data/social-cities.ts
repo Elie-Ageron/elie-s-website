@@ -87,7 +87,7 @@ export const socialCities: SocialCityData[] = [
     departmentCode: 'FR-73',
     seoTitle: 'Community Manager Albertville | Elie Ageron',
     seoDesc:
-      "Je filme une journée par mois chez vous à Albertville, puis je publie 6 à 12 vidéos dans le mois. Dès 890 €/mois, et vous ne touchez à rien.",
+      "Je vis et je travaille à Albertville, donc je viens filmer chez vous une journée par mois sans trajet à compter. 6 à 12 vidéos publiées, dès 890 €/mois.",
     h1Pre: 'Community manager à ',
     h1Highlight: 'Albertville',
     lede:
@@ -159,7 +159,7 @@ export const socialCities: SocialCityData[] = [
     departmentCode: 'FR-73',
     seoTitle: 'Community Manager Chambéry | Elie Ageron',
     seoDesc:
-      "Tournage sur place une journée par mois à Chambéry, montage vertical, et 6 à 12 publications dans le mois. Dès 890 €/mois, sans rien à gérer.",
+      "Ni images de banque, ni citations programmées. Je viens filmer dans votre entreprise à Chambéry une journée par mois, à quarante-cinq minutes de chez moi.",
     h1Pre: 'Community manager à ',
     h1Highlight: 'Chambéry',
     lede:
@@ -232,7 +232,7 @@ export const socialCities: SocialCityData[] = [
     departmentCode: 'FR-74',
     seoTitle: 'Community Manager Annecy | Elie Ageron',
     seoDesc:
-      "Je viens filmer une journée par mois dans votre entreprise à Annecy, puis je publie 6 à 12 vidéos dans le mois. Dès 890 €/mois, tout compris.",
+      "Annecy est le bassin le plus exigeant de la région sur l'image. Je viens produire chez vous une journée par mois, et je publie le reste. Dès 890 €/mois.",
     h1Pre: 'Community manager à ',
     h1Highlight: 'Annecy',
     lede:
@@ -370,7 +370,7 @@ export const socialCities: SocialCityData[] = [
     departmentCode: 'FR-73',
     seoTitle: 'Gestion Réseaux Sociaux Savoie | Elie Ageron',
     seoDesc:
-      "Je filme une journée par mois dans votre entreprise en Savoie, puis je publie 6 à 12 vidéos dans le mois. Dès 890 €/mois, basé à Albertville.",
+      "Basé à Albertville, au milieu du département. Albertville, Chambéry, Aix-les-Bains, les deux vallées et la Tarentaise. Une journée de tournage, dès 890 €/mois.",
     h1Pre: 'Gestion de réseaux sociaux en ',
     h1Highlight: 'Savoie',
     lede:
@@ -452,7 +452,7 @@ export const socialCities: SocialCityData[] = [
     departmentCode: 'FR-74',
     seoTitle: 'Gestion Réseaux Sociaux Haute-Savoie | Elie Ageron',
     seoDesc:
-      "Une journée de tournage par mois dans votre entreprise en Haute-Savoie, puis 6 à 12 publications dans le mois. Dès 890 €/mois, tout compris.",
+      "Genevois, vallée de l'Arve, Chablais, Aravis : une clientèle qui a l'habitude de comparer. Je viens filmer une journée par mois. Dès 890 €/mois.",
     h1Pre: 'Gestion de réseaux sociaux en ',
     h1Highlight: 'Haute-Savoie',
     lede:
@@ -648,7 +648,7 @@ export const socialCities: SocialCityData[] = [
     departmentCode: 'FR-73',
     seoTitle: 'Community Manager Saint-Jean-de-Maurienne',
     seoDesc:
-      "Je filme une journée par mois dans votre entreprise en Maurienne, puis je publie 6 à 12 vidéos dans le mois. Dès 890 €/mois, tout compris.",
+      "En Maurienne, la vidéo sert autant à trouver des clients qu'à trouver des salariés. Je viens filmer une journée par mois, dès 890 €/mois. Une heure de route.",
     h1Pre: 'Community manager à ',
     h1Highlight: 'Saint-Jean-de-Maurienne',
     lede:
