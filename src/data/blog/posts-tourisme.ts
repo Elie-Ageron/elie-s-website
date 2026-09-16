@@ -12,9 +12,9 @@ export const tourismePosts: BlogPost[] = [
     titleFr: 'Location saisonnière : sortir de la dépendance aux plateformes',
     excerptFr:
       "Chaque réservation passe par un intermédiaire qui prend sa part et garde le contact du client. Voilà comment reprendre une partie du volume en direct.",
-    seoTitleFr: 'Location Saisonnière : la Réservation Directe',
+    seoTitleFr: 'Location Saisonnière : Reprendre une Part en Direct',
     seoDescFr:
-      "Reprendre des réservations en direct quand on loue un meublé en Savoie : site, fiche Google, avis et fichier client. Ce qui fonctionne réellement.",
+      "Quitter les plateformes d'un coup serait risqué. Le trio qui marche : calendrier à jour, fiche Google, et clients passés recontactés avant l'ouverture.",
     readTime: '10 min',
     categoryFr: 'Stratégie',
     categorySlug: 'strategie',
@@ -138,9 +138,9 @@ Si vous louez en Savoie ou en Haute-Savoie et que vous voulez qu'on regarde ce q
     titleFr: 'Hôtel, gîte, chambre d\'hôtes : que publier hors saison',
     excerptFr:
       "Le compte s'anime en février et se tait le reste de l'année. C'est précisément l'inverse de ce qu'il faudrait faire.",
-    seoTitleFr: 'Hébergement de Montagne : Que Publier',
+    seoTitleFr: "Hébergement en Station : Publier Dès Fin d'Été",
     seoDescFr:
-      "Hôtel, gîte ou chambre d'hôtes en station : quoi publier, à quel moment de l'année, et pourquoi les mois creux sont les plus utiles.",
+      "Les réservations d'hiver se décident avant les premières neiges. Publier en février ne fait que confirmer un choix déjà pris ailleurs. Alentours ou chambres.",
     readTime: '9 min',
     categoryFr: 'Réseaux sociaux',
     categorySlug: 'reseaux-sociaux',
@@ -252,9 +252,9 @@ Si vous tenez un hébergement en Tarentaise, en Beaufortain ou dans la combe de 
     titleFr: 'Moniteur, guide, accompagnateur : se rendre visible en indépendant',
     excerptFr:
       "Quand on travaille pour soi, la moitié de la clientèle vient du bouche à oreille. L'autre moitié se cherche, et elle se cherche en ligne.",
-    seoTitleFr: 'Moniteur et Guide : Se Rendre Visible en Ligne',
+    seoTitleFr: 'Moniteur, Guide : Peu Ont une Fiche Google',
     seoDescFr:
-      "Moniteur de ski, guide ou accompagnateur en indépendant : comment se rendre trouvable en ligne, fidéliser ses clients et remplir ses semaines creuses.",
+      "Un métier sans local déclare une zone d'intervention, pas une adresse. Peu de moniteurs et de guides indépendants le font, et ça laisse la place libre.",
     readTime: '9 min',
     categoryFr: 'Réseaux sociaux',
     categorySlug: 'reseaux-sociaux',

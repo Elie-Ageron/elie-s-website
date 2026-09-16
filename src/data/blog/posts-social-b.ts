@@ -381,9 +381,9 @@ Si vous voulez que ce flux tourne sans vous, [je m'occupe du tournage, du montag
     titleFr: "Réseaux sociaux pour un restaurant : ce qui remplit vraiment la salle",
     excerptFr:
       "Les photos de plats sont ce que tout le monde publie, et ce que personne ne regarde. Ce qui fait réserver est ailleurs.",
-    seoTitleFr: 'Réseaux Sociaux pour un Restaurant',
+    seoTitleFr: 'Restaurant : Filmez le Mouvement, pas le Plat Posé',
     seoDescFr:
-      "Ce qu'un restaurant doit publier pour remplir sa salle en semaine : formats qui marchent, erreurs classiques et lien avec la fiche Google.",
+      'Une assiette immobile ressemble à toutes les autres du fil. La cuisine en action, le service, la préparation. Et ce que fait la fiche Google à côté.',
     readTime: '7 min',
     categoryFr: 'Réseaux sociaux',
     categorySlug: 'reseaux-sociaux',
@@ -502,9 +502,9 @@ C'est exactement pour ça que [je viens filmer une journée sur place](/reseaux-
     titleFr: "Réseaux sociaux pour un salon de coiffure ou d'esthétique",
     excerptFr:
       "Un métier où le résultat se voit tout de suite. C'est le meilleur point de départ possible, et pourtant la plupart des salons publient à côté.",
-    seoTitleFr: 'Réseaux Sociaux pour un Salon de Coiffure',
+    seoTitleFr: 'Coiffure : Demandez Avant, pas Après le Résultat',
     seoDescFr:
-      "Avant après, prises de rendez-vous, fidélisation : la méthode réseaux sociaux pour un salon de coiffure ou un institut de beauté.",
+      'Une demande faite au début de la prestation obtient bien plus souvent un accord. Et quoi publier quand personne ne veut montrer son visage : le geste.',
     readTime: '7 min',
     categoryFr: 'Réseaux sociaux',
     categorySlug: 'reseaux-sociaux',

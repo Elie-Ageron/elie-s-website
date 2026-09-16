@@ -11,9 +11,9 @@ export const metiersPostsC: BlogPost[] = [
     titleFr: 'Électricien, plombier, chauffagiste : deux métiers dans un seul',
     excerptFr:
       "Le dépannage et la rénovation ne se cherchent pas de la même façon, ne se paient pas pareil, et ne devraient pas vivre sur la même page.",
-    seoTitleFr: 'Électricien et Plombier : Trouver des Clients',
+    seoTitleFr: 'Plombier, Électricien : Celui qui Décroche Gagne',
     seoDescFr:
-      "Dépannage d'urgence et rénovation : deux marchés opposés pour un même artisan. Comment les traiter séparément et remplir les deux.",
+      'Sur le dépannage, la demande se décide sur la disponibilité, pas sur le classement. Et pourquoi urgence et rénovation ne peuvent pas tenir sur la même page.',
     readTime: '9 min',
     categoryFr: 'Référencement local',
     categorySlug: 'seo-local',
@@ -141,9 +141,9 @@ C'est un travail de quelques semaines qui change durablement l'équilibre entre 
     titleFr: 'Auto-école : remplir ses places sans casser les prix',
     excerptFr:
       "Un marché où tout le monde compare le forfait et personne n'explique ce qu'il y a dedans. C'est exactement là qu'il y a de la place.",
-    seoTitleFr: 'Auto-école : Trouver des Élèves en Local',
+    seoTitleFr: 'Auto-école : ce Sont les Parents qui Comparent',
     seoDescFr:
-      "Auto-école ou moniteur indépendant : comment sortir de la comparaison sur le prix du forfait et remplir ses places durablement.",
+      "Les élèves sont sur un réseau, les parents qui paient sur un autre, et c'est le second qui décide. Et pourquoi détailler ce que le forfait ne contient pas.",
     readTime: '8 min',
     categoryFr: 'Stratégie',
     categorySlug: 'strategie',
@@ -265,9 +265,9 @@ Un contact par trimestre avec chacun suffit à construire un flux régulier, et 
     titleFr: 'Cabinet comptable ou de conseil : se rendre visible sans en faire trop',
     excerptFr:
       "Un métier où l'on ne choisit pas au hasard, et où le site sert surtout à confirmer une recommandation déjà acquise.",
-    seoTitleFr: 'Cabinet Comptable : Se Rendre Visible',
+    seoTitleFr: 'Cabinet Comptable : un Site de 8 Ans Fait Douter',
     seoDescFr:
-      "Expert-comptable, conseiller ou cabinet de gestion : comment attirer les bons clients localement sans se dévaloriser ni promettre n'importe quoi.",
+      "Un client venu sur recommandation vérifie quand même. Un site visiblement daté installe un doute sur la façon dont le cabinet travaille aujourd'hui.",
     readTime: '8 min',
     categoryFr: 'Stratégie',
     categorySlug: 'strategie',

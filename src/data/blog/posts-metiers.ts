@@ -11,9 +11,9 @@ export const metiersPosts: BlogPost[] = [
     titleFr: 'Paysagiste et entretien d\'extérieur : remplir le carnet toute l\'année',
     excerptFr:
       "Le téléphone sonne en mars et se tait en novembre. Le problème n'est pas la saison, c'est le moment où vous devenez visible.",
-    seoTitleFr: 'Paysagiste : Trouver des Clients en Ligne',
+    seoTitleFr: 'Paysagiste : Visible Avant la Saison, pas Pendant',
     seoDescFr:
-      "Paysagiste ou jardinier en Savoie : comment être trouvé au moment où les gens cherchent, montrer son travail, et lisser les mois creux.",
+      "Les devis de gros travaux d'extérieur se font en fin d'hiver. Être visible en juin, c'est arriver quand les carnets sont pleins, chez vous comme ailleurs.",
     readTime: '9 min',
     categoryFr: 'Stratégie',
     categorySlug: 'strategie',
@@ -139,9 +139,9 @@ Et si vous voulez qu'on regarde ensemble ce qui manque chez vous, [écrivez moi]
     titleFr: 'Agent immobilier indépendant : exister à côté des portails',
     excerptFr:
       "Vos annonces vivent sur des portails qui vendent aussi vos concurrents. Votre nom, lui, ne vit nulle part. C'est là que se joue la rentrée de mandats.",
-    seoTitleFr: 'Agent Immobilier : Se Rendre Visible en Local',
+    seoTitleFr: 'Agent Immobilier : le Portail Vend le Réseau',
     seoDescFr:
-      "Agent ou mandataire immobilier en Savoie : comment exister en dehors des portails, rentrer des mandats et devenir la personne qu'on appelle en premier.",
+      "Ce qui intéresse un vendeur, ce n'est pas le catalogue de biens, c'est ce que vous savez du marché de sa rue. La page à votre nom qu'il trouve après le panneau.",
     readTime: '9 min',
     categoryFr: 'Stratégie',
     categorySlug: 'strategie',
@@ -263,9 +263,9 @@ Rien là dedans ne demande un budget. Ça demande de la régularité, et c'est p
     titleFr: 'Commerce de centre-ville : être trouvé avant que les gens sortent de chez eux',
     excerptFr:
       "Votre vitrine ne travaille que pour ceux qui passent devant. Aujourd'hui, la décision se prend en amont, sur un téléphone.",
-    seoTitleFr: 'Commerce de Centre-Ville : Être Trouvé en Ligne',
+    seoTitleFr: 'Commerce : vos Horaires Google Sont-ils Justes',
     seoDescFr:
-      "Boutique, salon ou commerce de proximité en Savoie : les réglages qui décident si quelqu'un pousse votre porte, à commencer par vos horaires.",
+      "Quelqu'un qui se déplace et trouve porte close ne revient pas, et il le dit en avis. Le réglage le moins spectaculaire, et le plus cher quand il est négligé.",
     readTime: '9 min',
     categoryFr: 'Référencement local',
     categorySlug: 'seo-local',
@@ -389,9 +389,9 @@ C'est peu, c'est gratuit, et c'est déjà plus que ce que fait la majorité des 
     titleFr: 'Coach sportif, prof de yoga : trouver des clients sans vivre sur Instagram',
     excerptFr:
       "Le métier où l'on croit qu'il faut une grosse audience pour vivre. En réalité, il faut trente personnes qui habitent à vingt minutes.",
-    seoTitleFr: 'Coach Sportif : Trouver des Clients en Local',
+    seoTitleFr: 'Coach Sportif : une Audience Nationale ne Vient pas',
     seoDescFr:
-      "Coach sportif ou professeur de yoga indépendant : comment remplir ses créneaux localement sans courir après les abonnés ni publier tous les jours.",
+      'Un coach en présentiel remplit son planning avec quelques dizaines de clients qui habitent à côté. Viser les abonnés est le contresens le plus cher du métier.',
     readTime: '9 min',
     categoryFr: 'Réseaux sociaux',
     categorySlug: 'reseaux-sociaux',

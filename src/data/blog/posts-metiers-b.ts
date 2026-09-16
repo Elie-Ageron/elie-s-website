@@ -11,9 +11,9 @@ export const metiersPostsB: BlogPost[] = [
     titleFr: 'Formateur indépendant : se faire connaître sans dépendre des plateformes',
     excerptFr:
       "Vous vendez quelque chose qu'on ne peut ni toucher ni essayer. Tout votre travail de visibilité consiste à rendre ça tangible.",
-    seoTitleFr: 'Formateur Indépendant : Trouver des Clients',
+    seoTitleFr: 'Formateur : Rendre son Expérience Vérifiable',
     seoDescFr:
-      "Formateur ou consultant indépendant : comment se rendre visible, prouver sa compétence et vendre en direct plutôt que par des organismes.",
+      "Vous vendez un service immatériel à des gens qui doivent vous croire avant d'avoir rien vu. Et comment rééquilibrer entre les organismes et la vente en direct.",
     readTime: '9 min',
     categoryFr: 'Stratégie',
     categorySlug: 'strategie',
@@ -133,9 +133,9 @@ Le reste, c'est de la régularité. Deux publications par mois, un email trimest
     titleFr: 'Garage automobile : gagner la confiance avant le premier appel',
     excerptFr:
       "C'est un des métiers où la méfiance est la plus forte au départ. Tout ce qui la réduit en amont se transforme en rendez-vous.",
-    seoTitleFr: 'Garage Automobile : Trouver des Clients',
+    seoTitleFr: 'Garage : les Avis Google Avant Tout le Reste',
     seoDescFr:
-      "Garage, carrosserie ou mécanique en Savoie : comment sortir sur Google, obtenir des avis et lever la méfiance qui coûte des clients.",
+      "C'est un métier où la méfiance de départ est forte. Des avis récents avec des réponses écrites la lèvent avant le premier appel. Et les forfaits à afficher.",
     readTime: '9 min',
     categoryFr: 'Référencement local',
     categorySlug: 'seo-local',
@@ -271,9 +271,9 @@ Rien là dedans ne demande un budget. Ça demande deux heures cette semaine et d
     titleFr: 'Menuisier, cuisiniste, agenceur : vendre un projet à plusieurs milliers d\'euros',
     excerptFr:
       "Le client met six mois à décider et regarde vingt fois votre site. Ce qu'il y trouve à chaque passage décide de la suite.",
-    seoTitleFr: 'Menuisier et Cuisiniste : Trouver des Clients',
+    seoTitleFr: 'Menuisier, Cuisiniste : Donnez un Ordre de Prix',
     seoDescFr:
-      "Menuiserie, cuisine, agencement : comment convaincre sur un projet long et cher, montrer son travail et faire venir les gens à l'atelier.",
+      "Un client qui découvre le budget au troisième rendez-vous est un client qu'on a promené. Une fourchette annoncée filtre et rassure en même temps. Et vos photos.",
     readTime: '9 min',
     categoryFr: 'Stratégie',
     categorySlug: 'strategie',
@@ -409,9 +409,9 @@ Et les avis, demandés systématiquement, y compris longtemps après.
     titleFr: 'Traiteur et food truck : être là où les gens décident',
     excerptFr:
       "Un food truck doit dire où il est aujourd'hui. Un traiteur doit exister douze mois avant la date. Deux problèmes opposés.",
-    seoTitleFr: 'Traiteur et Food Truck : Se Faire Connaître',
+    seoTitleFr: 'Traiteur : les Mariages se Réservent un An Avant',
     seoDescFr:
-      "Traiteur de réception ou food truck en Savoie : comment être trouvé, gérer une saisonnalité extrême et faire circuler l'information au bon moment.",
+      'Votre travail de visibilité vise la saison suivante, pas celle en cours. Et pour un food truck, ce qui compte est de dire chaque semaine où vous serez.',
     readTime: '8 min',
     categoryFr: 'Réseaux sociaux',
     categorySlug: 'reseaux-sociaux',

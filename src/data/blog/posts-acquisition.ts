@@ -125,9 +125,9 @@ C'est tout. Tenu six mois, dans une commune de deux mille habitants, ça change 
     titleFr: 'Aller chercher les clients professionnels quand on est artisan',
     excerptFr:
       "Syndics, agences, hôtels, collectivités, entreprises : des budgets récurrents, moins saisonniers, et presque personne ne va les chercher.",
-    seoTitleFr: 'Trouver des Clients Professionnels',
+    seoTitleFr: 'Clients Pros : Payé en Janvier comme en Juin',
     seoDescFr:
-      "Syndics, agences immobilières, hôtels, entreprises : comment un artisan va chercher une clientèle professionnelle récurrente et moins saisonnière.",
+      "Un contrat d'entretien avec une copropriété ou un hôtel ne connaît pas la saison. Comment aborder un syndic ou un gestionnaire, et ce qu'il cherche vraiment.",
     readTime: '9 min',
     categoryFr: 'Stratégie',
     categorySlug: 'strategie',
