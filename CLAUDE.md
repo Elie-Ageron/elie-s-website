@@ -682,17 +682,96 @@ Facebook une Page.
 > avait déjà perdu les dix pages locales réseaux **sans rien signaler**.
 > Écrire `',\s*$` et jamais `',$`.
 
+### La passe CTR sur les 142 balises d'articles (16 septembre 2026)
+
+> Elie : *« faire en sorte que, une fois que les gens me verront, ils cliquent
+> dessus, avec un texte qui donne envie. »*
+
+**Le point de départ, mesuré avant d'écrire une ligne.** Sur les 142 articles :
+66 titres et 78 descriptions étaient bâtis en « Sujet, deux points,
+énumération ». **6 titres contenaient un chiffre. Un seul contenait un lieu.**
+Et 17 balises héritées portaient `| Elie Ageron` en dur, ce qui leur mangeait
+14 des 60 caractères disponibles alors que `withBrand()` dans `blogIndex.ts`
+ajoute déjà ce suffixe quand il rentre.
+
+Un CTR de 2,4 % en position 15 est **plus du double de la normale** à cette
+position : les balises n'étaient pas mauvaises, elles étaient interchangeables.
+
+#### La règle, et elle tient en une phrase
+
+**Le titre ne répète pas la question du visiteur, il donne la réponse.**
+
+| Avant | Après |
+|---|---|
+| Combien Coûte un Site Web ? | 500 à 3 500 € en 2026 |
+| Combien de Temps pour Être Référencé | 3 à 6 mois pour ressortir |
+| Prix de la Gestion des Réseaux Sociaux | 200 à 1 500 €/mois |
+| Apparaître sur Google Maps | Ma fiche n'apparaît pas, 6 causes |
+| Mon Site ne Génère Aucun Contact | Regardez d'abord vos visites |
+
+> 🔴 **Aucun chiffre n'a été inventé.** Chacun vient de la FAQ de l'article
+> concerné ou du plancher public de `CLAUDE.md`. Le script
+> `faits.mjs` (scratchpad) sortait les deux premières réponses de FAQ de chaque
+> article avant d'écrire sa balise. C'est la seule façon de tenir la règle n°6
+> d'Elie, *« ça, c'est faux »*, sur un lot de cette taille.
+
+#### Les neuf métiers qui disaient tous la même chose
+
+Neuf titres commençaient par **« [Métier] : Trouver des Clients »** ou
+« [Métier] : Se Rendre Visible ». Dans une page de résultats ils sont
+indistinguables entre eux, et surtout indistinguables de n'importe quel blog
+d'agence. Chacun porte maintenant la chose vraie de ce métier là, celle qui
+était déjà dans l'article : *le portail de votre réseau vend le réseau*,
+*ce sont les parents qui comparent*, *visible avant la saison, pas pendant*,
+*celui qui décroche gagne*.
+
+#### 🔴 La régression que la mesure a attrapée
+
+Après les huit premiers lots, un nouveau comptage a montré **136 titres à deux
+points sur 142**, contre 66 au départ. Le contenu était meilleur et la forme
+était devenue une formule, soit exactement le défaut que ce chantier devait
+corriger. Soixante titres sont repassés en phrase simple ou en incise.
+
+**La leçon : remesurer la chose qu'on prétendait corriger, après l'avoir
+corrigée.** Une amélioration au cas par cas peut dégrader la distribution
+d'ensemble, et rien ne le signale.
+
+Répartition finale sur 142 : 76 à deux points, 47 en phrase simple, 19 en
+incise. Le mot de la requête reste en tête de chaque titre.
+
+| | Avant | Après |
+|---|---|---|
+| Titres portant un chiffre | 6 | 32 |
+| Titres à deux points | 66 | 76 |
+| Titres gâchant 14 signes sur la marque | 17 | 0 |
+| Descriptions en énumération à deux points | 78 | 16 |
+
+#### Deux choses trouvées en route
+
+1. **Une balise annonçait encore 2025** dans une page de résultats de 2026, sur
+   l'article le plus ancien du corpus. Son titre porte maintenant la thèse
+   réelle de l'article, qui ne périme pas. Le slug `pourquoi-site-web-2025`
+   garde l'année : le changer imposerait une redirection 301, **c'est la
+   décision d'Elie.**
+2. **Les 56 619 vues sont sorties de la balise Google** de
+   `/blog/video-courte-entreprise-locale`. C'est le chiffre exact qu'Elie avait
+   fait retirer de `/reseaux-sociaux`. Le corps de l'article et son `excerptFr`
+   le gardent : réécrire la colonne vertébrale d'un article indexé n'est pas le
+   même geste, **et ça reste son choix.**
+
+> ⚠️ **Le suffixe de marque ne se remet pas en dur dans une `seoTitleFr`.**
+> `withBrand()` l'ajoute automatiquement quand le titre fait 46 caractères ou
+> moins, et le saute sinon. Un titre qui porte une réponse vaut mieux qu'un
+> titre qui porte un nom que personne ne cherche encore.
+
 ### Ce qui reste à faire, par ordre de valeur
 
-1. **Le CTR : relire les 142 balises title et description du corpus.** C'est la
-   demande explicite d'Elie (*« un texte qui donne envie »*), et c'est le levier
-   le plus direct sur le nombre de clics à position égale. Non commencé.
-2. **Le fil principal reste bloqué 1,7 s sur l'accueil**, pour 312 ko de
+1. **Le fil principal reste bloqué 1,7 s sur l'accueil**, pour 312 ko de
    JavaScript. La mesure varie trop d'un passage à l'autre pour attribuer la
    part de chacun. Google Tag Manager pèse 192 ko transférés.
-3. **Les 42 ancres de lien trop génériques**, dont environ 25 « écrivez moi »
+2. **Les 42 ancres de lien trop génériques**, dont environ 25 « écrivez moi »
    vers `/contact`. Défendable pour un appel à l'action, discutable en volume.
-4. **Les quatre pages héritées**, toujours pas tranchées par Elie.
+3. **Les quatre pages héritées**, toujours pas tranchées par Elie.
 
 ---
 
