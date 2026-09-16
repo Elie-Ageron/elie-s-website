@@ -79,8 +79,18 @@ const ajouter = (chemin, titre, description) => {
   const src = lire('src/components/SEO.tsx');
 
   const blocFr = src.slice(src.indexOf('  fr: {', src.indexOf('const seoData')));
+  /* 🔴 Meme motif fragile que dans check-seo-tags.mjs, et meme correction.
+     Il exigeait `title:` colle a l'accolade ouvrante : un commentaire pose
+     au-dessus d'un titre faisait disparaitre la page de la liste des routes,
+     et le controle de completude faisait echouer le build en annoncant que
+     deux URL du sitemap retomberaient sur le HTML de l'accueil. Le garde-fou
+     a fonctionne, mais la cause etait ici. */
+  const COMMENTAIRES = String.raw`(?:\s*(?://[^\n]*|/\*[\s\S]*?\*/))*\s*`;
   const entrees = [...blocFr.matchAll(
-    new RegExp(String.raw`(\w+):\s*\{\s*title:\s*${CHAINE},\s*description:\s*${CHAINE},`, 'g')
+    new RegExp(
+      String.raw`(\w+):\s*\{${COMMENTAIRES}title:\s*${CHAINE},${COMMENTAIRES}description:\s*${CHAINE},`,
+      'g'
+    )
   )];
 
   const blocChemins = src.slice(src.indexOf('const pathMap'), src.indexOf('};', src.indexOf('const pathMap')));

@@ -53,8 +53,18 @@ const pages = [];
   const chemins = Object.fromEntries(
     [...blocChemins.matchAll(new RegExp(String.raw`(\w+):\s*${CHAINE}`, 'g'))].map((m) => [m[1], m[2] ?? m[3]])
   );
+  /* 🔴 Le motif exigeait `title:` collé à l'accolade ouvrante. Le jour où une
+     clef a reçu un commentaire au-dessus de son titre, elle a disparu du
+     contrôle sans un mot : 12 pages annoncées au lieu de 14, et personne ne
+     regarde ce compte. Or les commentaires au-dessus d'une valeur sont la
+     convention du projet. Le motif saute donc les commentaires, avant le
+     titre comme entre le titre et la description. */
+  const COMMENTAIRES = String.raw`(?:\s*(?://[^\n]*|/\*[\s\S]*?\*/))*\s*`;
   for (const m of blocFr.matchAll(
-    new RegExp(String.raw`(\w+):\s*\{\s*title:\s*${CHAINE},\s*description:\s*${CHAINE},`, 'g')
+    new RegExp(
+      String.raw`(\w+):\s*\{${COMMENTAIRES}title:\s*${CHAINE},${COMMENTAIRES}description:\s*${CHAINE},`,
+      'g'
+    )
   )) {
     if (!(m[1] in chemins)) continue;
     pages.push({

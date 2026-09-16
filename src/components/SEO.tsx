@@ -55,12 +55,13 @@ const pageKeywords = {
 const seoData = {
   en: {
     home: {
+      // Voir la note sur la version francaise : Google jetait l'ancienne.
       title: 'Websites & Social Media Content | Elie Ageron',
-      description: 'Social media from 890 €/month, websites from 500 €, live in 7 to 14 days. Based in Albertville, Savoie. Free presence audit within 48 hours.',
+      description: 'I come and film at your place one day a month, and your accounts run until the next one. I build the website those videos point to. Albertville, Savoie.',
     },
     services: {
       title: 'Web Partner in Savoie | Elie Ageron',
-      description: 'Websites from 500 €, social media from 890 €/month, plus Google Business, branding and local SEO. Web partner in Savoie. Free audit in 48 hours.',
+      description: 'Websites, short videos for social media, Google Business profile, branding and local SEO. Based in Albertville, Savoie. Websites from 500 €.',
     },
     social: {
       title: 'Social Media Content, Done For You | Elie Ageron',
@@ -72,7 +73,7 @@ const seoData = {
     },
     process: {
       title: 'Our Web Design Process | Elie Ageron',
-      description: 'Learn how Elie Ageron builds high-converting websites. From discovery to launch, our proven process ensures your online success.',
+      description: 'How a project actually runs, from the first call to going live: what I ask of you, what I do, and how long each step takes.',
     },
     pricing: {
       title: 'Web Design Pricing | Elie Ageron',
@@ -112,13 +113,27 @@ const seoData = {
     },
   },
   fr: {
+    /* 🔴 Google jetait cette description et affichait a la place une phrase
+       de contact prise dans le corps de la page : « Vous pouvez aussi joindre
+       Elie Ageron au +33 6 95 55 53 18 ». Releve par Elie le 16 septembre 2026.
+
+       Pourquoi. L'ancienne version etait quatre fragments de prix colles bout
+       a bout, sans un seul verbe, et surtout **elle ne reprenait aucune phrase
+       de la page**. Google remplace une description qu'aucun passage du
+       document ne soutient. Celle-ci reprend le sous-titre du hero, valide par
+       Elie, donc elle existe reellement a l'ecran.
+
+       ⚠️ Le prix reste, c'est une decision du 13 septembre 2026 : tous les
+       concurrents locaux affichent un prix ou un delai dans leur extrait. Mais
+       il arrive apres la phrase, pas a la place de la phrase. */
     home: {
       title: 'Site Web & Réseaux Sociaux Savoie | Elie Ageron',
-      description: "Réseaux sociaux dès 890 €/mois, site web dès 500 €, en ligne en 7 à 14 jours. Albertville et Savoie. Audit gratuit de votre présence sous 48 h.",
+      description: "Je viens filmer chez vous une journée par mois, et vos comptes tournent jusqu'à la suivante. Je construis aussi le site. Albertville, dès 890 €/mois.",
     },
     services: {
       title: 'Partenaire Web en Savoie | Elie Ageron',
-      description: "Site dès 500 €, réseaux sociaux dès 890 €/mois, plus fiche Google, marque et SEO local. Partenaire web en Savoie. Audit gratuit sous 48 h.",
+      // Meme correction que l'accueil : c'etait une liste de prix sans verbe.
+      description: "Sites web, vidéos pour les réseaux sociaux, fiche Google, identité de marque et référencement local. Basé à Albertville, en Savoie. À partir de 500 €.",
     },
     /* 🔴 Cette page s'appelait « Gestion Réseaux Sociaux Savoie », exactement
        le titre de `/gestion-reseaux-sociaux-savoie` créée le 16 septembre 2026.
@@ -137,7 +152,12 @@ const seoData = {
     },
     process: {
       title: 'Notre Processus Web | Elie Ageron',
-      description: 'Découvrez comment Elie Ageron crée des sites haute conversion. De l\'appel au lancement, notre méthode assure votre succès.',
+      /* 🔴 Disait : « Decouvrez comment Elie Ageron cree des sites haute
+         conversion. De l'appel au lancement, notre methode assure votre
+         succes. » Trois marqueurs d'ecriture automatique dans une seule
+         phrase, plus un « notre » sur un site ecrit a la premiere personne du
+         singulier. Vestige de la version d'origine. */
+      description: "Comment se passe un projet, du premier appel à la mise en ligne : ce que je vous demande, ce que je fais, et combien de temps prend chaque étape.",
     },
     pricing: {
       title: 'Tarifs Web Design | Elie Ageron',
