@@ -580,16 +580,133 @@ qui compare trois devis, une boulangère qui ne cherche rien.
 
 ---
 
+## La campagne SEO du 16 septembre 2026
+
+> Elie ce soir-là : *« bosse le SEO au max. on doit remonter haut en recherche
+> et pop dans les résultats. »* Puis, chiffré : *« dans 1 mois je veux voir des
+> milliers d'impressions, un bon CTR et remonter, plus être à la deuxième
+> page. »* Et enfin : *« quelqu'un cherche mon service, je sors et dans les
+> premiers. »*
+
+### Le point de départ, mesuré
+
+Search Console, 3 février au 16 septembre 2026 : **49 clics, 2 080 impressions,
+2,4 % de CTR, position moyenne 15,2.** La courbe est plate de février à début
+juillet, puis décolle à partir du 10 août.
+
+Deux lectures qui comptent. Le CTR de 2,4 % en position 15 est **plus du double
+de la normale** à cette position : les balises font leur travail, le problème
+est le classement. Et la position moyenne couvre la période où les 179 URL
+servaient le même HTML avec un canonical pointant sur l'accueil, réparé
+seulement le 13 septembre.
+
+### Performance : ce qui a été mesuré, et corrigé
+
+Mesures dans un vrai Chrome, téléphone 390 px, 4G lente, processeur ralenti
+quatre fois. **Jamais en fibre sur un portable de développeur : ça donne du
+vert qui ne veut rien dire.**
+
+| | Avant | Après |
+|---|---|---|
+| JS pour lire un article | 594 ko | 52 ko compressés |
+| LCP d'un article | 7 220 ms | 1 820 ms |
+| LCP `/reseaux-sociaux` en production | 6 232 ms | 3 304 ms |
+| Fil principal bloqué, production | 1 933 ms | 432 ms |
+| CLS de l'accueil | 0,138 | 0 |
+
+Trois causes, toutes documentées dans le code :
+
+1. **`blogPosts.ts` pesait 1,1 Mo** et partait sur 150 des 185 pages. Découpé :
+   `blogIndex` porte les métadonnées, `blogContent` charge à la demande le seul
+   fichier qui contient l'article demandé. 25 lots au lieu d'un.
+2. **Le CLS venait de la police du squelette de pré-rendu.** Les liens
+   grandissaient à 2 179 ms quand General Sans finissait de charger. Le
+   squelette est passé en police système et hors flux.
+3. **776 ko de Three.js pour des points roses.** Remplacé par `HeroDots` en CSS.
+   Les pastilles flottantes disaient encore « SEO », « Design » et « Web ».
+
+> 🔴 **`npx tsc --noEmit` ne vérifiait rien.** Le `tsconfig.json` racine a
+> `"files": []` et ne fait que référencer les sous-projets. C'est ce qui a
+> laissé passer un bug d'apostrophe qui n'a explosé qu'au build. **La commande
+> qui contrôle vraiment est `npm run check:types`**, branchée dans `npm run
+> check`. Ne jamais revenir au `tsc --noEmit` nu.
+
+### Ce qui a été construit pour les impressions
+
+Une impression suppose une page qui vise une requête. Le site en avait trop peu.
+
+| Famille | Avant | Après |
+|---|---|---|
+| Pages locales réseaux sociaux | 0 | 10 |
+| Pages de service dédiées | 2 sur 7 | 7 sur 7 |
+| Articles | 139 | 142 |
+| Articles orphelins | 25 | 0 |
+| Articles sans lien sortant | 19 | 9 |
+
+Les trois articles créés visent des requêtes qui n'avaient **aucune** page :
+`devenir-viral-entreprise-locale`, `shadowban-instagram-realite`,
+`publicite-instagram-facebook-tpe`.
+
+> ⚠️ **La règle de cannibalisation, trouvée deux fois dans la même soirée par
+> `check:tags`.** Une page pilier et une page locale ne peuvent pas porter le
+> même titre, ni une page de service et une catégorie de blog. **La page qui
+> vend porte la requête commerciale, la page qui explique porte la requête
+> informationnelle.** Les deux se renvoient l'une à l'autre.
+
+### Le plafond, et il n'est pas dans le code
+
+**3 liens externes.** Search Console, rapport Liens. Aucune quantité de travail
+on-site ne compense ça.
+
+Et au 16 septembre, Elie n'avait **aucun de ses propres comptes sur son site** :
+ni Instagram, ni TikTok, ni YouTube, seulement LinkedIn et les comptes de ses
+clientes. Sa fiche Google Business n'était déclarée nulle part non plus. La
+fiche est maintenant branchée (`sameAs`, `hasMap`, lien visible en pied de
+page, CID 10223724609164966776). **Les comptes restent à créer**, et la
+décision a été prise ce soir-là : Instagram neuf, LinkedIn le profil existant,
+Facebook une Page.
+
+### Trois nouveaux contrôles
+
+| Commande | Ce qu'elle mesure |
+|---|---|
+| `npm run check:types` | Le vrai contrôle TypeScript, sur `tsconfig.app.json` |
+| `npm run check:vitals` | LCP, CLS, TBT et TTFB, téléphone bridé. `--prod`, `--build`, `--port=`, `--sans-tiers` |
+| `node scripts/diagnostic-page.mjs` | Quel élément décale la mise en page, et quand |
+| `node scripts/check-maillage.mjs` | Orphelins, culs-de-sac, ancres pauvres, pages les plus liées |
+| `node scripts/suggerer-liens.mjs` | Des parents possibles pour un article orphelin |
+
+> ⚠️ **Les motifs qui lisent les données au regex doivent tolérer le CRLF.**
+> Git réécrit les fins de ligne à chaque aller-retour sous Windows, et `$` en
+> mode multiligne ne matche que devant le saut de ligne. `generate-llms.mjs`
+> avait déjà perdu les dix pages locales réseaux **sans rien signaler**.
+> Écrire `',\s*$` et jamais `',$`.
+
+### Ce qui reste à faire, par ordre de valeur
+
+1. **Le CTR : relire les 142 balises title et description du corpus.** C'est la
+   demande explicite d'Elie (*« un texte qui donne envie »*), et c'est le levier
+   le plus direct sur le nombre de clics à position égale. Non commencé.
+2. **Le fil principal reste bloqué 1,7 s sur l'accueil**, pour 312 ko de
+   JavaScript. La mesure varie trop d'un passage à l'autre pour attribuer la
+   part de chacun. Google Tag Manager pèse 192 ko transférés.
+3. **Les 42 ancres de lien trop génériques**, dont environ 25 « écrivez moi »
+   vers `/contact`. Défendable pour un appel à l'action, discutable en volume.
+4. **Les quatre pages héritées**, toujours pas tranchées par Elie.
+
+---
+
 ## Contrôles automatiques avant de livrer
 
-Une seule commande : `npm run check`. Elle enchaîne les trois.
+Une seule commande : `npm run check`. Elle enchaîne les quatre.
 
 | Commande | Ce qu'elle vérifie |
 |---|---|
+| `npm run check:types` | **Le vrai contrôle TypeScript.** `npx tsc --noEmit` ne vérifie rien : le tsconfig racine a `"files": []` |
 | `npm run check:content` | Articles, villes, guides, les six pages locales réseaux, et les 108 liens internes pointent quelque part |
-| `npm run check:tags` | Les 184 titles et descriptions : longueur, doublons, absences. Lit les mêmes sources que le pré-rendu, donc ce qu'elle mesure est ce que Google reçoit |
+| `npm run check:tags` | Les 196 titles et descriptions : longueur, doublons, absences. Lit les mêmes sources que le pré-rendu, donc ce qu'elle mesure est ce que Google reçoit |
 | `npm run check:writing` | Les marqueurs d'écriture automatique : tirets cadratins, guillemets courbes, tournures IA, listes à en-tête gras, Title Case dans les titres de corps |
-| `npm run check:build` | **Le HTML réellement produit**, pas les sources. Ouvre les 185 fichiers de `dist/` : un seul title, une seule description, un canonical qui pointe sur la page, un seul h1, au moins 10 liens internes, JSON-LD valide, aucun doublon |
+| `npm run check:build` | **Le HTML réellement produit**, pas les sources. Ouvre les 197 fichiers de `dist/` : un seul title, une seule description, un canonical qui pointe sur la page, un seul h1, au moins 10 liens internes, JSON-LD valide, aucun doublon |
 | `npm run verify` | Build, pré-rendu, puis les quatre contrôles d'affilée. **C'est la commande à lancer avant de livrer.** |
 | `npm run check:a11y` | **axe-core en WCAG 2.1 AA**, 13 pages en 1440 px et 5 en 375 px, dans un vrai Chrome. Demande le serveur de dev allumé |
 | `npm run check:overflow` | Le débordement horizontal, 9 pages sur 7 largeurs de 320 à 1440 px. Demande le serveur de dev allumé |
@@ -709,7 +826,7 @@ Source unique : `src/data/guides.ts`. Chaque guide est un hub long, découpé en
 - `/guides/creer-site-web-tpe` (10 chapitres) — création de site, le front n°1
 - `/guides` — index, lié depuis le header, le footer et le blog
 
-### Blog : 139 articles, 6 catégories indexées
+### Blog : 142 articles, 6 catégories indexées
 - Articles pré-août 2026 : bilingues, dans `src/data/blogPosts.ts` (`legacyPosts`)
 - Articles depuis août 2026 : **français uniquement** (`frOnly: true`), répartis dans `src/data/blog/posts-*.ts`
 - Types et catégories : `src/data/blog/types.ts`
@@ -766,7 +883,7 @@ Trois scripts remplacent du travail manuel qu'on oubliait de refaire :
 
 ## Pré-rendu HTML
 
-`scripts/prerender.mjs` produit un HTML complet pour les 185 routes après `vite build`, puis **contrôle ce qu'il a réellement écrit**.
+`scripts/prerender.mjs` produit un HTML complet pour les 197 routes après `vite build`, puis **contrôle ce qu'il a réellement écrit**.
 
 Pourquoi : sans lui, chaque URL est servie comme une coquille vide. Google finit par exécuter le JS, avec du retard. Les moteurs de réponse (ChatGPT, Perplexity) ne l'exécutent pas et ne voient rien.
 
