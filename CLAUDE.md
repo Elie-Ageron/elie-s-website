@@ -766,6 +766,16 @@ incise. Le mot de la requête reste en tête de chaque titre.
 
 ### Ce qui reste à faire, par ordre de valeur
 
+0. 🔴 **Les 142 `lastModified` d'articles n'ont pas bougé, alors que leurs
+   balises ont toutes changé.** Le `lastmod` du sitemap en est tiré, et c'est
+   lui qui décide si Google vient revoir une page. Tant qu'ils annoncent avril,
+   les nouveaux titres mettront des semaines à apparaître dans les résultats.
+   **Ce n'est pas corrigé parce que `lastModified` est aussi affiché au
+   lecteur** (« Mis à jour le ») : les passer tous à aujourd'hui afficherait la
+   même date sur 140 articles, et le corps des articles, lui, n'a pas changé.
+   Les deux lectures se défendent, **Elie tranche.** La voie propre, s'il dit
+   oui : découpler les deux champs, un `lastModified` éditorial pour le lecteur
+   et une date technique pour le sitemap.
 1. **Le fil principal reste bloqué 1,7 s sur l'accueil**, pour 312 ko de
    JavaScript. La mesure varie trop d'un passage à l'autre pour attribuer la
    part de chacun. Google Tag Manager pèse 192 ko transférés.
