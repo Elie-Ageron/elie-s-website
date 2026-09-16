@@ -70,31 +70,47 @@ const HeroDots = () => {
   const conteneur = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    /* Pas de curseur à suivre sur un téléphone, et pas de mouvement du tout
-       quand le visiteur a demandé qu'on lui en épargne. Dans les deux cas on
-       n'attache rien : un écouteur qui ne sert à rien coûte quand même. */
-    if (reduit || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    /* 🔴 **Ici vivait `matchMedia('(hover: hover) and (pointer: fine)')`, et il
+       coupait l'effet chez Elie.** Beaucoup de portables Windows ont un écran
+       tactile, et la requête peut alors répondre « pointeur grossier » alors
+       qu'une souris est branchée. Pire : le défaut est muet, rien ne se passe
+       et rien ne le dit.
+
+       On ne devine donc plus le matériel, on regarde ce qui arrive : un
+       `pointermove` porte son `pointerType`. Un doigt n'envoie jamais `mouse`,
+       donc l'effet reste éteint sur un téléphone sans qu'on ait à le prédire.
+       La règle générale : **tester le geste réel plutôt que le profil de
+       l'appareil.** */
+    if (reduit) return;
 
     const racine = conteneur.current;
     if (!racine) return;
     const points = Array.from(racine.children) as HTMLElement[];
 
-    let cadre = 0;
+    /* 🔴 **Ce bloc était piloté par `requestAnimationFrame`, et c'est ce qui
+       l'a rendu invisible pendant une heure.** Une frame ne se planifie que si
+       le navigateur compose réellement la page : onglet masqué, page hors
+       écran, volet d'aperçu non composé, et le rappel n'est jamais appelé. Le
+       code était juste, l'écouteur recevait bien les événements, et rien ne
+       bougeait, sans la moindre erreur.
+
+       On limite donc à la montre plutôt qu'à la frame. Le rendu est identique
+       pour le visiteur, il ne dépend plus d'une condition invisible, et il se
+       vérifie dans n'importe quel environnement. */
+    let dernier = 0;
     let x = 0;
     let y = 0;
-    let dedans = false;
 
-    /* Le rectangle est relu au défilement et au redimensionnement, jamais à
-       chaque mouvement de souris : `getBoundingClientRect` force un calcul de
-       mise en page, et l'appeler soixante fois par seconde est exactement ce
-       qui rend une animation saccadée. */
-    let zone = racine.getBoundingClientRect();
-    const remesurer = () => {
-      zone = racine.getBoundingClientRect();
-    };
+    /* Le rectangle est relu à chaque passage, et non gardé depuis le montage.
+       Au montage le hero n'a pas sa taille finale, la police n'est pas encore
+       chargée : un rectangle mis en cache là devient faux et le reste.
 
+       Une lecture de géométrie sur un seul élément, soixante fois par seconde,
+       ne coûte rien. Ce qui coûte, c'est d'alterner lecture et écriture dans
+       une boucle : ici on lit une fois, puis on écrit vingt-cinq fois. */
     const peindre = () => {
-      cadre = 0;
+      const zone = racine.getBoundingClientRect();
+      const dedans = x >= zone.left && x <= zone.right && y >= zone.top && y <= zone.bottom;
       for (const point of points) {
         if (!dedans) {
           point.style.transform = '';
@@ -115,27 +131,31 @@ const HeroDots = () => {
     };
 
     const bouger = (e: PointerEvent) => {
+      // Un doigt ou un stylet ne pousse rien : seule une souris repousse.
+      if (e.pointerType !== 'mouse') return;
       x = e.clientX;
       y = e.clientY;
-      dedans = x >= zone.left && x <= zone.right && y >= zone.top && y <= zone.bottom;
-      if (!cadre) cadre = requestAnimationFrame(peindre);
+      // Une soixantaine de passages par seconde au maximum, quoi qu'envoie la souris.
+      const maintenant = performance.now();
+      if (maintenant - dernier < 16) return;
+      dernier = maintenant;
+      peindre();
     };
 
+    /* Curseur sorti de la fenêtre : on l'envoie très loin, et l'image suivante
+       remet tous les points en place. Pas de drapeau à tenir à jour. */
     const sortir = () => {
-      dedans = false;
-      if (!cadre) cadre = requestAnimationFrame(peindre);
+      x = -1e6;
+      y = -1e6;
+      dernier = 0;
+      peindre();
     };
 
     window.addEventListener('pointermove', bouger, { passive: true });
     window.addEventListener('pointerleave', sortir, { passive: true });
-    window.addEventListener('scroll', remesurer, { passive: true });
-    window.addEventListener('resize', remesurer);
     return () => {
       window.removeEventListener('pointermove', bouger);
       window.removeEventListener('pointerleave', sortir);
-      window.removeEventListener('scroll', remesurer);
-      window.removeEventListener('resize', remesurer);
-      if (cadre) cancelAnimationFrame(cadre);
     };
   }, [reduit]);
 
