@@ -50,6 +50,24 @@ const legacyPosts: BlogPost[] = [
     date: '2026-01-20',
     lastModified: '2026-04-19',
     author: 'Elie Ageron',
+    categorySlug: 'site-web',
+    pillar: '/guides/creer-site-web-tpe',
+    tags: ["site vitrine", "crédibilité", "entreprise locale", "présence en ligne"],
+    related: ['site-web-artisan', 'difference-site-fiche-google-reseaux', 'page-accueil-trois-secondes'],
+    faqFr: [
+      {
+        q: "Une entreprise locale a-t-elle vraiment besoin d'un site ?",
+        a: "Oui, mais pas pour vendre. Pour être vérifiable. Quelqu'un qui a votre numéro par un voisin tape votre nom avant d'appeler, et ce qu'il trouve décide s'il compose ou non.",
+      },
+      {
+        q: "Une page Facebook ne suffit-elle pas ?",
+        a: "Elle aide, mais vous n'en êtes pas propriétaire. Un compte peut être suspendu, une portée peut s'effondrer du jour au lendemain, et vous n'avez aucun recours. Un site vous appartient.",
+      },
+      {
+        q: "Un site rapporte-t-il des clients tout seul ?",
+        a: "Non. Il transforme une attention déjà existante en demande. C'est la fiche Google, le bouche à oreille et les réseaux qui amènent les gens, le site qui fait qu'ils vous contactent.",
+      },
+    ],
     contentFr: `
 ## On vous cherche sur Google avant de vous appeler
 
@@ -138,7 +156,24 @@ Want to talk it through? [Book a free call](/contact) and we will look at where 
     date: '2026-02-12',
     lastModified: '2026-04-19',
     author: 'Elie Ageron',
+    categorySlug: 'conversion',
     pillar: '/guides/creer-site-web-tpe',
+    tags: ["conversion", "formulaire", "preuve", "mobile"],
+    related: ['formulaire-contact-qui-convertit', 'mon-site-ne-genere-aucun-contact', 'page-accueil-trois-secondes'],
+    faqFr: [
+      {
+        q: "Comment augmenter le taux de conversion de son site ?",
+        a: "Commencez par ce qu'on comprend en cinq secondes sur le premier écran, puis par la facilité de vous contacter. Ces deux points rapportent plus que tout le reste réuni.",
+      },
+      {
+        q: "Combien de champs faut-il dans un formulaire de contact ?",
+        a: "Le moins possible, et jamais un champ dont vous pouvez obtenir la réponse dans l'échange qui suit. Chaque champ ajouté fait partir une part des visiteurs.",
+      },
+      {
+        q: "Faut-il tester plusieurs versions en même temps ?",
+        a: "Non. Changez une seule chose à la fois, sinon vous ne saurez jamais laquelle a produit l'effet. Sur un petit volume de visites, c'est la seule méthode lisible.",
+      },
+    ],
     contentFr: `
 ## Le problème n'est presque jamais le trafic
 
@@ -251,6 +286,24 @@ Want me to look at your site with you? [Write to me](/contact) and I will tell y
     date: '2026-03-08',
     lastModified: '2026-04-19',
     author: 'Elie Ageron',
+    categorySlug: 'seo-local',
+    pillar: '/guides/visibilite-google-locale',
+    tags: ["SEO local", "fiche Google", "avis", "recherche locale"],
+    related: ['fiche-google-business-optimiser', 'etre-premier-google-dans-sa-ville', 'obtenir-avis-google'],
+    faqFr: [
+      {
+        q: "Comment être visible sur Google près de chez soi ?",
+        a: "Dans l'ordre : une fiche Google Business complète et à jour, des avis récents, puis des pages de votre site qui nomment vos prestations et vos communes. La fiche passe avant le site.",
+      },
+      {
+        q: "Combien de temps avant de voir des résultats en SEO local ?",
+        a: "Quelques semaines pour la fiche Google, trois à six mois pour les pages du site. Une commune peu disputée va plus vite qu'une ville comme Annecy ou Chambéry.",
+      },
+      {
+        q: "Les avis Google comptent-ils vraiment pour le classement ?",
+        a: "Oui, en nombre, en régularité et en fraîcheur. Dix avis étalés sur l'année valent mieux que trente obtenus en une semaine, qui ressemblent à une opération.",
+      },
+    ],
     contentFr: `
 ## Ce que voit vraiment quelqu'un qui cherche "plombier Albertville"
 
@@ -391,7 +444,24 @@ Want a hand with your local visibility? [Write to me](/contact) and we will look
     date: '2026-04-05',
     lastModified: '2026-04-19',
     author: 'Elie Ageron',
+    categorySlug: 'conversion',
     pillar: '/guides/creer-site-web-tpe',
+    tags: ["landing page", "conversion", "objections", "formulaire"],
+    related: ['page-accueil-trois-secondes', 'formulaire-contact-qui-convertit', 'page-service-qui-ressort'],
+    faqFr: [
+      {
+        q: "Quelle différence entre une page d'accueil et une landing page ?",
+        a: "Une page d'accueil oriente vers plusieurs destinations. Une landing page en propose une seule et retire tout le reste, y compris le menu, parce que chaque sortie coûte une conversion.",
+      },
+      {
+        q: "Que mettre dans le premier écran d'une landing page ?",
+        a: "Le résultat que vous apportez, à qui, et une seule action. Pas votre méthode, pas votre histoire : le visiteur décide de rester avant d'avoir envie de vous connaître.",
+      },
+      {
+        q: "Faut-il répondre aux objections sur la page ?",
+        a: "Oui, avant qu'on les formule. Le prix, le délai, ce qui se passe si ça ne convient pas. Une objection non traitée ne devient pas une question, elle devient un départ.",
+      },
+    ],
     contentFr: `
 ## Une page d'accueil et une landing page ne font pas le même métier
 
@@ -524,7 +594,24 @@ Want a page that does that job? [Let's talk about your project](/contact).
     date: '2026-04-12',
     lastModified: '2026-04-19',
     author: 'Elie Ageron',
+    categorySlug: 'site-web',
     pillar: '/guides/creer-site-web-tpe',
+    tags: ["prix", "devis", "budget", "site vitrine"],
+    related: ['site-web-pas-cher-ce-que-ca-cache', 'faire-son-site-soi-meme-ou-pro', 'devis-qui-se-signe'],
+    faqFr: [
+      {
+        q: "Combien coûte un site web pour une petite entreprise ?",
+        a: "Chez moi, une page unique démarre à 500 €, un site vitrine à 1 500 € et un pack de lancement à 3 500 €. Le chiffre final dépend du nombre de pages et des textes à écrire.",
+      },
+      {
+        q: "Pourquoi des écarts de prix aussi importants sur le marché ?",
+        a: "Parce que le mot site recouvre des choses différentes : un gabarit rempli en deux heures, ou des textes écrits pour vos clients, une structure pensée pour Google et un suivi après la mise en ligne.",
+      },
+      {
+        q: "Un site moins cher peut-il fonctionner ?",
+        a: "Oui, s'il est simple et honnête sur ce qu'il fait. Ce qui ne fonctionne pas, c'est un site pas cher vendu comme complet, qui sort sans contenu réel et que personne ne trouve.",
+      },
+    ],
     contentFr: `
 ## La question que tout le monde se pose
 
@@ -633,7 +720,24 @@ Want to know what a site could realistically do for your business? [Let's talk, 
     date: '2026-04-19',
     lastModified: '2026-04-19',
     author: 'Elie Ageron',
+    categorySlug: 'site-web',
     pillar: '/guides/creer-site-web-tpe',
+    tags: ["artisan", "site vitrine", "bouche à oreille", "crédibilité"],
+    related: ['page-realisations-portfolio-artisan', 'faut-il-un-blog-quand-on-est-artisan', 'reseaux-sociaux-artisan-savoie'],
+    faqFr: [
+      {
+        q: "Un artisan a-t-il besoin d'un site web ?",
+        a: "Oui, même avec un carnet plein. Le site ne sert pas à trouver des clients de plus, il sert à choisir lesquels : un artisan visible et crédible reçoit de meilleures demandes et négocie moins.",
+      },
+      {
+        q: "Mes clients me connaissent déjà, à quoi bon ?",
+        a: "Ceux qui vous connaissent, oui. Ceux à qui ils vous recommandent, non. C'est cette deuxième personne qui tape votre nom sur son téléphone, et c'est elle que le site rassure.",
+      },
+      {
+        q: "Que faut-il sur le site d'un artisan ?",
+        a: "Des photos de vos chantiers, la zone que vous couvrez, ce que vous faites et ce que vous ne faites pas, et un numéro visible partout. Le reste est secondaire.",
+      },
+    ],
     contentFr: `
 ## La phrase que j'entends tout le temps
 
@@ -750,6 +854,24 @@ You're a tradesperson and want to know what a website could change for you? [Let
     date: '2026-04-19',
     lastModified: '2026-04-19',
     author: 'Elie Ageron',
+    categorySlug: 'seo-local',
+    pillar: '/guides/visibilite-google-locale',
+    tags: ["indexation", "Google", "nouveau site", "Search Console"],
+    related: ['search-console-pour-debutant', 'combien-de-temps-referencement-google', 'etre-premier-google-dans-sa-ville'],
+    faqFr: [
+      {
+        q: "Pourquoi mon site n'apparaît-il pas sur Google ?",
+        a: "Le plus souvent parce qu'il est trop récent et que Google ne l'a pas encore exploré. Vient ensuite le cas d'un site indexé mais classé trop loin, et enfin celui d'un blocage technique.",
+      },
+      {
+        q: "Combien de temps pour qu'un nouveau site soit indexé ?",
+        a: "De quelques jours à quelques semaines. Vous pouvez l'accélérer en déclarant le site dans la Search Console et en soumettant le sitemap, ce qui prend dix minutes.",
+      },
+      {
+        q: "Comment savoir si mon site est indexé ?",
+        a: "Tapez site: suivi de votre nom de domaine dans Google. Si rien ne sort, il n'est pas indexé. Si des pages sortent mais que personne ne vous trouve, c'est un problème de classement, pas d'indexation.",
+      },
+    ],
     contentFr: `
 ## Vous n'êtes pas seul
 
@@ -874,6 +996,24 @@ Your site isn't showing on Google and you want to understand why? [Let's look at
     date: '2026-05-14',
     lastModified: '2026-08-07',
     author: 'Elie Ageron',
+    categorySlug: 'reseaux-sociaux',
+    pillar: '/guides/reseaux-sociaux-entreprise-locale',
+    tags: ["artisan", "Savoie", "entreprise locale", "débuter"],
+    related: ['groupes-facebook-commune', 'electricien-plombier-chauffagiste-visibilite', 'avant-apres-artisan-contenu'],
+    faqFr: [
+      {
+        q: "Les réseaux sociaux servent-ils vraiment à un artisan ?",
+        a: "Oui, mais pas pour vendre directement. Ils servent à ce qu'on vous reconnaisse au moment où quelqu'un demande une recommandation, et à rassurer celui qui a déjà votre numéro et qui hésite à appeler.",
+      },
+      {
+        q: "Quel réseau choisir quand on est artisan en Savoie ?",
+        a: "Facebook pour les recommandations entre habitants et les groupes de commune, Instagram pour la vérification avant l'appel. Une seule vidéo verticale alimente les deux, donc le choix coûte peu.",
+      },
+      {
+        q: "Combien de temps avant que ça donne quelque chose ?",
+        a: "Comptez trois mois de publication régulière avant de voir un effet, et six avant que ce soit stable. Un compte qui s'arrête au bout de six semaines retombe à son point de départ.",
+      },
+    ],
     contentFr: `
 ## "Instagram, franchement, je vois pas l'intérêt"
 
@@ -1006,6 +1146,24 @@ Want someone to handle it for you? [Here is how I work on social media](/reseaux
     date: '2026-05-28',
     lastModified: '2026-08-07',
     author: 'Elie Ageron',
+    categorySlug: 'reseaux-sociaux',
+    pillar: '/guides/reseaux-sociaux-entreprise-locale',
+    tags: ["vidéo courte", "portée", "entreprise locale", "algorithme"],
+    related: ['accroche-video-3-secondes', 'transformer-vues-en-clients', 'montage-video-verticale-debutant'],
+    faqFr: [
+      {
+        q: "Pourquoi la vidéo courte marche mieux qu'une publication photo ?",
+        a: "Parce que la plateforme la montre à des gens qui ne vous suivent pas. Une photo est servie à votre audience existante, une vidéo courte est testée sur un échantillon extérieur puis élargie si les gens restent.",
+      },
+      {
+        q: "Faut-il déjà avoir des abonnés pour être vu ?",
+        a: "Non, et c'est ce qui a changé. La diffusion ne dépend plus de la taille du compte mais du temps de visionnage des premières personnes à qui la vidéo est montrée.",
+      },
+      {
+        q: "Des vues, est-ce que ça veut dire des clients ?",
+        a: "Pas mécaniquement. Une vue devient une demande seulement s'il y a un endroit où aller ensuite : une fiche Google complète, un site, un numéro visible.",
+      },
+    ],
     contentFr: `
 ## 56 619 vues, et c'était la première publication
 
@@ -1158,6 +1316,24 @@ Want to see what it would look like for you? [The full service is here](/reseaux
     date: '2026-06-09',
     lastModified: '2026-08-07',
     author: 'Elie Ageron',
+    categorySlug: 'reseaux-sociaux',
+    pillar: '/guides/reseaux-sociaux-entreprise-locale',
+    tags: ["rythme", "régularité", "calendrier", "débuter"],
+    related: ['calendrier-editorial-reseaux-sociaux', 'meilleur-moment-pour-publier', 'temps-par-semaine-communication'],
+    faqFr: [
+      {
+        q: "Combien de fois faut-il publier par semaine ?",
+        a: "Deux à trois fois. C'est le rythme qui tient quand les réseaux ne sont pas votre métier. Une fois par jour s'arrête au bout d'un mois, une fois par semaine ne suffit pas à installer une habitude.",
+      },
+      {
+        q: "Vaut-il mieux publier moins mais mieux ?",
+        a: "Les deux comptent, mais la régularité passe devant sur les premiers mois. Une vidéo moyenne publiée chaque semaine bat une vidéo parfaite publiée quand vous avez le temps.",
+      },
+      {
+        q: "Faut-il publier toujours à la même heure ?",
+        a: "Non. L'heure a un effet marginal à côté de la régularité et de l'accroche. Publiez quand vous pouvez tenir, pas quand un tableau vous dit que c'est le créneau optimal.",
+      },
+    ],
     contentFr: `
 ## La réponse courte : deux à trois fois par semaine
 
@@ -1294,6 +1470,24 @@ If keeping that rhythm feels impossible alongside your actual job, [that is exac
     date: '2026-06-22',
     lastModified: '2026-08-07',
     author: 'Elie Ageron',
+    categorySlug: 'video',
+    pillar: '/guides/video-smartphone-entreprise',
+    tags: ["smartphone", "tournage", "son", "lumière"],
+    related: ['son-video-smartphone', 'lumiere-video-smartphone', 'montage-video-verticale-debutant'],
+    faqFr: [
+      {
+        q: "Quel matériel faut-il pour filmer ses vidéos soi-même ?",
+        a: "Un téléphone récent suffit pour l'image. Le seul achat qui change vraiment quelque chose est un micro-cravate, parce qu'un mauvais son fait partir les gens avant une mauvaise image.",
+      },
+      {
+        q: "Comment avoir une bonne lumière sans matériel ?",
+        a: "Placez-vous face à une fenêtre, jamais dos à elle. La lumière du jour, de face ou de trois quarts, suffit dans presque tous les cas et ne coûte rien.",
+      },
+      {
+        q: "Faut-il mettre des sous-titres sur ses vidéos ?",
+        a: "Oui. La plupart des vidéos sont regardées sans le son au premier coup d'oeil. Sans sous-titres, le message ne passe pas et le spectateur continue de défiler.",
+      },
+    ],
     contentFr: `
 ## Le matériel n'est pas votre problème
 
@@ -1444,6 +1638,24 @@ It is a consistency job more than a technical one. If you want to test it yourse
     date: '2026-07-02',
     lastModified: '2026-08-07',
     author: 'Elie Ageron',
+    categorySlug: 'reseaux-sociaux',
+    pillar: '/guides/reseaux-sociaux-entreprise-locale',
+    tags: ["thérapeute", "praticien", "confiance", "prise de rendez-vous"],
+    related: ['coach-sportif-trouver-clients', 'parler-face-camera-timide', 'repondre-commentaires-messages-prives'],
+    faqFr: [
+      {
+        q: "Comment un thérapeute trouve-t-il des clients avec les réseaux ?",
+        a: "En répondant publiquement aux questions que les gens se posent avant de prendre rendez-vous. La décision d'appeler se joue sur la confiance, et la confiance se construit en voyant un visage et en entendant une voix.",
+      },
+      {
+        q: "Comment respecter le secret professionnel en publiant ?",
+        a: "On ne parle jamais d'un cas. On parle de la question, du déroulé d'une séance, du cadre et du lieu. Tout ce qui concerne une personne identifiable reste en dehors.",
+      },
+      {
+        q: "Faut-il apparaître à l'image quand on n'aime pas ça ?",
+        a: "Pas forcément. Les mains, le lieu, le matériel et une voix off suffisent pour démarrer. Le face caméra vient plus tard, quand il devient confortable, ou jamais.",
+      },
+    ],
     contentFr: `
 ## Votre métier se vend différemment des autres
 
@@ -1592,6 +1804,24 @@ If you want someone to come film and post for you, [here is how it works](/resea
     date: '2026-07-10',
     lastModified: '2026-08-07',
     author: 'Elie Ageron',
+    categorySlug: 'reseaux-sociaux',
+    pillar: '/guides/reseaux-sociaux-entreprise-locale',
+    tags: ["idées de contenu", "sujets", "questions clients", "calendrier"],
+    related: ['calendrier-editorial-reseaux-sociaux', 'tourner-plusieurs-videos-une-journee', 'avant-apres-artisan-contenu'],
+    faqFr: [
+      {
+        q: "Que publier quand on n'a pas d'idées ?",
+        a: "Ne cherchez pas des idées, collectez des questions. Notez pendant une semaine tout ce qu'un client vous demande : vous aurez plus de sujets que vous ne pouvez en tourner.",
+      },
+      {
+        q: "Combien de sujets faut-il avoir d'avance ?",
+        a: "De quoi tenir un mois, soit huit à douze. C'est ce qui permet de tourner groupé au lieu de chercher un sujet la veille de chaque publication.",
+      },
+      {
+        q: "Faut-il parler de soi ou de son métier ?",
+        a: "De la question du client, presque toujours. Les publications sur l'entreprise elle-même n'intéressent que ceux qui vous connaissent déjà, et ce ne sont pas eux que vous cherchez.",
+      },
+    ],
     contentFr: `
 ## Le vrai problème n'est pas le manque d'idées
 
@@ -1732,6 +1962,24 @@ If you would rather not handle this part at all, [that is exactly what I do](/re
     date: '2026-07-18',
     lastModified: '2026-08-07',
     author: 'Elie Ageron',
+    categorySlug: 'reseaux-sociaux',
+    pillar: '/guides/reseaux-sociaux-entreprise-locale',
+    tags: ["vues", "portée", "rétention", "algorithme"],
+    related: ['accroche-video-3-secondes', 'algorithme-reseaux-sociaux-comprendre', 'statistiques-instagram-comprendre'],
+    faqFr: [
+      {
+        q: "Pourquoi mes vidéos ne font-elles aucune vue ?",
+        a: "Presque toujours pour une de ces raisons : un début trop lent, un sujet qui s'adresse à tout le monde, une longueur que le contenu ne justifie pas, un rythme irrégulier, ou une vidéo qui ressemble à une publicité.",
+      },
+      {
+        q: "Est-ce que l'algorithme bride mon compte ?",
+        a: "Non. Il montre chaque vidéo à un petit échantillon et élargit si les gens restent. Une vidéo sans vues est une vidéo que l'échantillon a quittée, pas une sanction.",
+      },
+      {
+        q: "Combien de vidéos faut-il publier avant de juger ?",
+        a: "Une vingtaine. En dessous, vous n'avez pas assez de données pour distinguer un problème de fond d'une série normale de vidéos moyennes.",
+      },
+    ],
     contentFr: `
 ## D'abord : combien de vidéos avez-vous publiées ?
 
@@ -1884,6 +2132,24 @@ If you want to stop guessing, [I handle all of it](/reseaux-sociaux): the subjec
     date: '2026-07-31',
     lastModified: '2026-08-07',
     author: 'Elie Ageron',
+    categorySlug: 'strategie',
+    pillar: '/guides/reseaux-sociaux-entreprise-locale',
+    tags: ["budget", "priorité", "site web", "réseaux sociaux"],
+    related: ['difference-site-fiche-google-reseaux', 'budget-communication-tpe', 'mon-site-ne-genere-aucun-contact'],
+    faqFr: [
+      {
+        q: "Faut-il commencer par un site ou par les réseaux sociaux ?",
+        a: "Par le site si vos clients vous cherchent déjà par votre nom ou par votre métier. Par les réseaux si personne ne vous connaît encore et qu'il faut d'abord se faire voir.",
+      },
+      {
+        q: "Peut-on faire les deux avec un petit budget ?",
+        a: "Oui, en décalé. Une page simple d'abord, pour avoir où renvoyer les gens, puis la production de contenu une fois qu'elle est en ligne. L'inverse fait perdre les vues qu'on vient de gagner.",
+      },
+      {
+        q: "Un site sert-il encore quand les réseaux marchent bien ?",
+        a: "Oui, et c'est même là qu'il sert le plus. Les réseaux amènent l'attention, le site la transforme en demande, et il vous appartient alors qu'un compte ne vous appartient pas.",
+      },
+    ],
     contentFr: `
 ## La question revient à chaque appel
 
@@ -2020,6 +2286,24 @@ Not sure which case you are in? [Tell me about your situation](/contact) and I w
     date: '2026-08-05',
     lastModified: '2026-08-07',
     author: 'Elie Ageron',
+    categorySlug: 'reseaux-sociaux',
+    pillar: '/guides/reseaux-sociaux-entreprise-locale',
+    tags: ["déléguer", "prestation", "tournage", "organisation"],
+    related: ['prix-gestion-reseaux-sociaux', 'tourner-plusieurs-videos-une-journee', 'mesurer-si-sa-communication-rapporte'],
+    faqFr: [
+      {
+        q: "Comment se passe la délégation des réseaux sociaux ?",
+        a: "Une journée de tournage sur place par mois, puis le montage, l'écriture des légendes et la publication étalée sur le mois. De votre côté, il n'y a que la journée de tournage.",
+      },
+      {
+        q: "Combien coûte la gestion des réseaux sociaux ?",
+        a: "À partir de 890 € par mois, déplacement, tournage, montage et publication compris. Le prix bouge selon le nombre de plateformes et le volume de publications.",
+      },
+      {
+        q: "Faut-il valider chaque publication ?",
+        a: "Seulement si vous le souhaitez. On fixe au départ ce dont on parle et ce qu'on garde de côté, et vous recevez les vidéos la veille si vous préférez les voir avant qu'elles sortent.",
+      },
+    ],
     contentFr: `
 ## Ce que les gens imaginent, et ce que c'est vraiment
 
@@ -2156,6 +2440,24 @@ A thirty-minute call is enough. You tell me what you do, I tell you what I would
     date: '2026-07-24',
     lastModified: '2026-08-07',
     author: 'Elie Ageron',
+    categorySlug: 'reseaux-sociaux',
+    pillar: '/guides/reseaux-sociaux-entreprise-locale',
+    tags: ["algorithme", "portée", "signaux", "rétention"],
+    related: ['pourquoi-mes-videos-ne-font-pas-de-vues', 'hashtags-encore-utiles', 'meilleur-moment-pour-publier'],
+    faqFr: [
+      {
+        q: "Comment fonctionne l'algorithme des réseaux sociaux ?",
+        a: "Il montre votre publication à un petit groupe, mesure combien de personnes restent, puis élargit la diffusion ou l'arrête. Le signal le plus lourd est le temps de visionnage, loin devant les mentions j'aime.",
+      },
+      {
+        q: "Les hashtags servent-ils encore à quelque chose ?",
+        a: "Très peu pour la portée. Ils aident à classer un sujet, pas à être diffusé. Le temps passé à en chercher trente est mieux employé sur les trois premières secondes de la vidéo.",
+      },
+      {
+        q: "Qu'est-ce qui coupe vraiment la diffusion ?",
+        a: "Les liens sortants dans la publication, la musique dont vous n'avez pas les droits, une vidéo recopiée d'une autre plateforme avec son filigrane, et les longues périodes sans rien publier.",
+      },
+    ],
     contentFr: `
 ## L'algorithme ne vous en veut pas
 
