@@ -120,8 +120,15 @@ const seoData = {
       title: 'Partenaire Web en Savoie | Elie Ageron',
       description: "Site dès 500 €, réseaux sociaux dès 890 €/mois, plus fiche Google, marque et SEO local. Partenaire web en Savoie. Audit gratuit sous 48 h.",
     },
+    /* 🔴 Cette page s'appelait « Gestion Réseaux Sociaux Savoie », exactement
+       le titre de `/gestion-reseaux-sociaux-savoie` créée le 16 septembre 2026.
+       Deux pages du même site sur la même requête se coupent l'herbe sous le
+       pied, et `check:tags` l'a signalé à la seconde où la page locale est
+       née. La règle qui en sort : la page pilier porte l'offre, les pages
+       locales portent la commune ou le département. Ne pas remettre un nom de
+       lieu dans ce titre. */
     social: {
-      title: 'Gestion Réseaux Sociaux Savoie | Elie Ageron',
+      title: 'Gestion de Réseaux Sociaux Entreprise | Elie Ageron',
       description: "Dès 890 €/mois : je filme une journée chez vous, puis je publie 6 à 12 vidéos dans le mois. Vous ne touchez à rien. Albertville et Savoie.",
     },
     why: {

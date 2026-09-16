@@ -28,11 +28,18 @@ const cityFiles = readdirSync(join(root, 'src/data/cities'))
   .map((f) => `src/data/cities/${f}`);
 
 const contentFiles = [...postFiles, ...cityFiles, 'src/data/guides.ts'];
+/* Les pages locales du pilier reseaux. Lues a part : leur en-tete porte des
+   emoji de documentation, comme tout le code du projet, alors que le controle
+   emoji plus bas vise le contenu edito. Ce qui compte ici, ce sont les slugs
+   d'articles et de pages liees, ou une faute de frappe casse un lien sans
+   rien afficher. */
+const socialCitiesFile = 'src/data/social-cities.ts';
 const sources = Object.fromEntries(contentFiles.map((f) => [f, read(f)]));
 const all = Object.values(sources).join('\n');
 
 const errors = [];
 const warnings = [];
+let socialCityCount = 0;
 
 // --- 1. Tirets cadratins et demi-cadratins -------------------------------
 // Le tell le plus fiable d'un texte genere. Regle dure du projet.
@@ -125,8 +132,33 @@ const checkSlugRefs = (files, key) => {
   }
 };
 checkSlugRefs(cityFiles, 'articles');
+sources[socialCitiesFile] = read(socialCitiesFile);
+checkSlugRefs([socialCitiesFile], 'articles');
 checkSlugRefs(['src/data/guides.ts'], 'articles');
 checkSlugRefs(postFiles, 'related');
+
+// --- 4 ter. Coherence des pages locales du pilier reseaux -----------------
+{
+  const src = sources[socialCitiesFile];
+  const socialSlugs = new Set([...src.matchAll(/^    slug: '([^']+)',$/gm)].map((m) => m[1]));
+  for (const m of src.matchAll(/related:\s*\[([^\]]*)\]/g)) {
+    for (const r of m[1].matchAll(/'([^']+)'/g)) {
+      if (!socialSlugs.has(r[1])) errors.push(`${socialCitiesFile} : related pointe vers une page inconnue, ${r[1]}`);
+    }
+  }
+  for (const m of src.matchAll(/webPage:\s*'([^']+)'/g)) {
+    if (!citySlugs.has(m[1])) errors.push(`${socialCitiesFile} : webPage pointe vers une page locale inconnue, ${m[1]}`);
+  }
+  // Les memes limites que partout ailleurs, sur les balises de ces pages.
+  for (const m of src.matchAll(/slug: '([^']+)',[^]{0,800}?seoTitle:\s*'([^']*)'/g)) {
+    if (m[2].length > 60) errors.push(`${m[1]} : seoTitle de ${m[2].length} caracteres (max 60)`);
+  }
+  for (const m of src.matchAll(/slug: '([^']+)',[^]{0,1200}?seoDesc:\s*"([^"]*)"/g)) {
+    if (m[2].length > 160) errors.push(`${m[1]} : seoDesc de ${m[2].length} caracteres (max 160)`);
+    else if (m[2].length < 110) warnings.push(`${m[1]} : seoDesc courte (${m[2].length} caracteres)`);
+  }
+  socialCityCount = socialSlugs.size;
+}
 
 // --- 5. Longueurs des balises SEO ----------------------------------------
 for (const file of postFiles) {
@@ -163,7 +195,7 @@ for (const file of postFiles) {
 // --- Rapport --------------------------------------------------------------
 console.log(
   `Controle : ${postSlugs.size} articles, ${citySlugs.size} pages locales, ` +
-    `${guideSlugs.size} guides, ${linkCount} liens internes.`
+    `${guideSlugs.size} guides, ${socialCityCount} pages locales reseaux, ${linkCount} liens internes.`
 );
 if (warnings.length) {
   console.log(`\n${warnings.length} avertissement(s) :`);

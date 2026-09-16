@@ -52,6 +52,8 @@ const fichiersContenu = () => {
   const out = [];
   out.push(join(racine, 'src/data/blogPosts.ts'));
   out.push(join(racine, 'src/data/guides.ts'));
+  // Les pages locales du pilier reseaux sociaux, ecrites en septembre 2026.
+  out.push(join(racine, 'src/data/social-cities.ts'));
   for (const f of readdirSync(join(racine, 'src/data/blog')).filter((f) => f.endsWith('.ts'))) {
     out.push(join(racine, 'src/data/blog', f));
   }

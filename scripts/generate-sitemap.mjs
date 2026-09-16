@@ -49,6 +49,18 @@ const collectCities = () => {
   return [...src.matchAll(/slug:\s*'([^']+)'/g)].map((m) => m[1]);
 };
 
+/**
+ * Les pages locales du pilier reseaux sociaux.
+ *
+ * Fichier separe de `src/data/cities/` parce que ce sont deux familles de
+ * pages differentes : les unes vendent un site, les autres la gestion des
+ * reseaux. Voir l'en-tete de `src/data/social-cities.ts`.
+ */
+const collectSocialCities = () => {
+  const src = readFileSync(join(root, 'src/data/social-cities.ts'), 'utf8');
+  return [...src.matchAll(/^    slug: '([^']+)',$/gm)].map((m) => m[1]);
+};
+
 const collectGuides = () => {
   const src = readFileSync(join(root, 'src/data/guides.ts'), 'utf8');
   const re = /slug:\s*'([^']+)',[\s\S]{0,2000}?updated:\s*'(\d{4}-\d{2}-\d{2})'/g;
@@ -98,6 +110,7 @@ const urlEntry = ({ loc, lastmod, changefreq, priority }) => {
 
 const posts = collectPosts();
 const cities = collectCities();
+const socialCities = collectSocialCities();
 const guides = collectGuides();
 const categories = collectCategories();
 
@@ -110,6 +123,7 @@ const entries = [
     priority: '0.9',
   })),
   ...cities.map((slug) => ({ loc: `/${slug}`, lastmod: today, changefreq: 'monthly', priority: '0.8' })),
+  ...socialCities.map((slug) => ({ loc: `/${slug}`, lastmod: today, changefreq: 'monthly', priority: '0.9' })),
   ...categories.map((slug) => ({
     loc: `/blog/categorie/${slug}`,
     lastmod: today,
@@ -134,5 +148,5 @@ ${entries.map(urlEntry).join('\n')}
 
 writeFileSync(join(root, 'public', 'sitemap.xml'), xml, 'utf8');
 console.log(
-  `sitemap.xml : ${entries.length} URL (${staticPages.length} fixes, ${guides.length} guides, ${cities.length} villes, ${categories.length} categories, ${posts.length} articles)`
+  `sitemap.xml : ${entries.length} URL (${staticPages.length} fixes, ${guides.length} guides, ${cities.length} villes, ${socialCities.length} villes reseaux, ${categories.length} categories, ${posts.length} articles)`
 );

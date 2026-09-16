@@ -11,6 +11,7 @@ import Analytics from "./components/Analytics";
 import { CalendlyProvider } from "./contexts/CalendlyContext";
 import { CalendlyPopup } from "./components/CalendlyPopup";
 import { cities } from "./data/cities";
+import { socialCities } from "./data/social-cities";
 
 // Lazy-load all pages so only the current page's JS is downloaded on first visit
 const Home = lazy(() => import("./pages/Home"));
@@ -31,6 +32,7 @@ const Assessment = lazy(() => import("./pages/Assessment"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const LegalPage = lazy(() => import("./pages/LegalPage"));
 const CityLandingPage = lazy(() => import("./pages/CityLandingPage"));
+const SocialCityPage = lazy(() => import("./pages/SocialCityPage"));
 const BlogCategory = lazy(() => import("./pages/BlogCategory"));
 const GuidesIndex = lazy(() => import("./pages/GuidesIndex"));
 const GuidePage = lazy(() => import("./pages/GuidePage"));
@@ -140,6 +142,19 @@ const App = () => (
                             key={city.slug}
                             path={`/${city.slug}`}
                             element={<CityLandingPage slug={city.slug} />}
+                          />
+                        ))}
+                        {/* Pages locales du pilier reseaux, generees depuis
+                            src/data/social-cities. Voir l'en-tete de ce
+                            fichier de donnees : les quinze pages ci-dessus
+                            vendent toutes un site web, et une recherche
+                            « community manager Albertville » n'avait aucune
+                            page a atteindre sur ce site. */}
+                        {socialCities.map((city) => (
+                          <Route
+                            key={city.slug}
+                            path={`/${city.slug}`}
+                            element={<SocialCityPage slug={city.slug} />}
                           />
                         ))}
                         <Route path="/mentions-legales" element={<LegalPage page="mentions" />} />

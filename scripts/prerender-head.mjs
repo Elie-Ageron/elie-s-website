@@ -103,6 +103,7 @@ const articles = [];
 const categories = [];
 const guidesListe = [];
 const villes = [];
+const villesReseaux = [];
 
 /* ── Articles ── */
 {
@@ -170,6 +171,24 @@ const villes = [];
       villes.push({ slug: m[1], ancre: champ(blocFr, 'breadcrumb') ?? champ(blocFr, 'title') ?? m[1] });
     });
   }
+}
+
+/* ── Pages locales du pilier reseaux sociaux ──
+ *
+ * Famille separee des pages ci-dessus : les unes vendent un site, les autres
+ * la gestion des reseaux. Voir l'en-tete de `src/data/social-cities.ts`. Sans
+ * ce bloc, ces six URL sont dans le sitemap mais n'ont pas de fichier, et le
+ * controle de completude fait echouer le build. C'est voulu : c'est ce qui
+ * empeche une page d'etre servie avec le HTML de l'accueil.
+ */
+{
+  const src = lire('src/data/social-cities.ts');
+  const positions = [...src.matchAll(/^    slug: '([^']+)',$/gm)];
+  positions.forEach((m, i) => {
+    const bloc = src.slice(m.index, positions[i + 1]?.index ?? src.length);
+    ajouter(`/${m[1]}`, champ(bloc, 'seoTitle'), champ(bloc, 'seoDesc'));
+    villesReseaux.push({ slug: m[1], ancre: `Réseaux sociaux ${champ(bloc, 'name') ?? m[1]}` });
+  });
 }
 
 /* ── Pages qui ecrivent leur head elles-memes ──
@@ -256,7 +275,16 @@ const liensDePage = (chemin) => {
     return articles.filter((a) => a.categorie === cat[1]).map((a) => lien(`/blog/${a.slug}`, a.ancre));
   }
   if (chemin === '/services' || chemin === '/portfolio') {
-    return villes.map((v) => lien(`/${v.slug}`, v.ancre));
+    return [...villes, ...villesReseaux].map((v) => lien(`/${v.slug}`, v.ancre));
+  }
+  /* La page pilier des reseaux pousse vers ses pages locales, en HTML brut, et
+     l'accueil aussi. Sans ca, les six pages ne sont atteignables que par le
+     sitemap, ce qui est exactement la situation ou le site s'est retrouve
+     bloque en aout 2026 : quatre liens internes vus par Google sur cent huit.
+     L'accueil est la page la plus exploree, donc c'est de la que part le plus
+     d'autorite. */
+  if (chemin === '/reseaux-sociaux' || chemin === '/' || chemin === '') {
+    return villesReseaux.map((v) => lien(`/${v.slug}`, v.ancre));
   }
   return [];
 };

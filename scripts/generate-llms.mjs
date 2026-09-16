@@ -50,6 +50,13 @@ const dedupe = (items) => {
 const posts = dedupe(postFiles.flatMap((f) => pairs(read(f), 'titleFr')));
 const guides = dedupe(pairs(read('src/data/guides.ts'), 'title', 600));
 const cities = dedupe(cityFiles.flatMap((f) => pairs(read(f), 'breadcrumb', 1200)));
+/* Les pages locales du pilier reseaux sociaux. Elles sont listees avec les
+   autres pages locales : pour un moteur de reponse, ce qui compte est qu'une
+   question du type « qui gere les reseaux sociaux a Albertville » trouve une
+   URL, pas la famille de pages a laquelle elle appartient. */
+const socialCities = [
+  ...read('src/data/social-cities.ts').matchAll(/slug: '([^']+)',\n\s*name: '([^']+)'/g),
+].map((m) => ({ slug: m[1], title: `Gestion de reseaux sociaux ${m[2]}` }));
 
 const typesSrc = read('src/data/blog/types.ts');
 const categories = [
@@ -64,7 +71,7 @@ const sections = {
   '## Guides longs (contenu de reference)': guides
     .map((g) => line(g.title, `/guides/${g.slug}`))
     .join('\n'),
-  '## Pages locales': cities.map((c) => line(c.title, `/${c.slug}`)).join('\n'),
+  '## Pages locales': [...cities, ...socialCities].map((c) => line(c.title, `/${c.slug}`)).join('\n'),
   '## Categories du blog': categories
     .map((c) => line(c.title, `/blog/categorie/${c.slug}`))
     .join('\n'),
@@ -122,7 +129,7 @@ const fullSections = {
   ]
     .map(([t, u]) => line(t, u))
     .concat(guides.map((g) => line(`Guide : ${g.title}`, `/guides/${g.slug}`)))
-    .concat(cities.map((c) => line(c.title, `/${c.slug}`)))
+    .concat([...cities, ...socialCities].map((c) => line(c.title, `/${c.slug}`)))
     .join('\n'),
 };
 
@@ -144,6 +151,6 @@ for (const [heading, body] of Object.entries(fullSections)) {
 writeFileSync(join(root, 'public/llms-full.txt'), fullOut);
 
 console.log(
-  `llms.txt et llms-full.txt : ${posts.length} articles, ${cities.length} pages locales, ` +
+  `llms.txt et llms-full.txt : ${posts.length} articles, ${cities.length + socialCities.length} pages locales,` +
     `${guides.length} guides, ${categories.length} categories`
 );

@@ -119,6 +119,19 @@ for (const fichier of readdirSync(join(racine, 'src/data/cities')).filter((f) =>
   }
 }
 
+/* ── Pages locales du pilier reseaux sociaux ── */
+{
+  const src = readFileSync(join(racine, 'src/data/social-cities.ts'), 'utf8');
+  for (const p of parSlug(src, 20000)) {
+    pages.push({
+      url: `/${p.slug}`,
+      type: 'ville reseaux',
+      titre: champ(p.bloc, 'seoTitle'),
+      desc: champ(p.bloc, 'seoDesc'),
+    });
+  }
+}
+
 /* ══════════ Analyse ══════════ */
 
 const soucis = [];

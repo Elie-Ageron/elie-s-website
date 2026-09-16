@@ -4,6 +4,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 import logo from '@/assets/logo.webp';
 import { cities } from '@/data/cities';
+import { socialCities } from '@/data/social-cities';
 import { guides } from '@/data/guides';
 
 const Footer = () => {
@@ -69,7 +70,7 @@ const Footer = () => {
 
             {/* Navigation Column */}
             <div>
-              <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
+              <h3 className="text-sm font-semibold text-foreground mb-4">
                 {language === 'fr' ? 'Navigation' : 'Navigation'}
               </h3>
               <nav className="flex flex-col gap-2.5" aria-label="Footer navigation">
@@ -88,7 +89,7 @@ const Footer = () => {
 
             {/* Contact Column */}
             <div>
-              <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
+              <h3 className="text-sm font-semibold text-foreground mb-4">
                 Contact
               </h3>
               <div className="flex flex-col gap-3">
@@ -119,7 +120,7 @@ const Footer = () => {
           {/* Guides piliers : distribue l'autorite du pied de page vers les hubs de contenu */}
           {language === 'fr' && (
             <nav aria-label="Guides" className="mt-10 pt-8 border-t border-border/30">
-              <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-3">
+              <h3 className="text-sm font-semibold text-foreground mb-3">
                 Guides gratuits
               </h3>
               <div className="flex flex-wrap gap-x-5 gap-y-2">
@@ -141,7 +142,11 @@ const Footer = () => {
             aria-label={language === 'fr' ? "Zones d'intervention" : 'Service areas'}
             className="mt-8 pt-8 border-t border-border/30"
           >
-            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">
+            {/* 🔴 Ce titre etait en capitales avec un interlettrage elargi, le
+                patron que le reste du site a supprime partout ailleurs. Il
+                avait survecu ici parce que personne ne regarde le pied de
+                page. */}
+            <h3 className="text-sm font-semibold text-foreground mb-2">
               {language === 'fr' ? "Zones d'intervention" : 'Service areas'}
             </h3>
             <p className="text-sm text-muted-foreground mb-3">
@@ -157,6 +162,25 @@ const Footer = () => {
                   className="inline-flex items-center min-h-[24px] text-sm text-muted-foreground hover:text-primary transition-colors w-fit"
                 >
                   {city[language].breadcrumb}
+                </Link>
+              ))}
+            </div>
+
+            {/* Les pages locales du pilier n°2. Sans ce bloc, elles n'etaient
+                liees depuis aucune page du site rendu : uniquement depuis le
+                sitemap et le squelette de pre-rendu. Voir l'en-tete de
+                `src/data/social-cities.ts`. */}
+            <h3 className="mt-6 text-sm font-semibold text-foreground mb-3">
+              {language === 'fr' ? 'Gestion de réseaux sociaux' : 'Social media management'}
+            </h3>
+            <div className="flex flex-wrap gap-x-5 gap-y-2">
+              {socialCities.map((city) => (
+                <Link
+                  key={city.slug}
+                  to={`/${city.slug}`}
+                  className="inline-flex items-center min-h-[24px] text-sm text-muted-foreground hover:text-primary transition-colors w-fit"
+                >
+                  {city.name}
                 </Link>
               ))}
             </div>
