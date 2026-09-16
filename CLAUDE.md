@@ -70,6 +70,68 @@ Les 7 services (source unique : `src/data/services.ts`, **l'ordre du tableau pil
 - **Le CTA principal du hero et du pied de page est `/audit-gratuit`**, l'appel Calendly passe en second. Deux champs valent mieux qu'un créneau à poser pour quelqu'un qui découvre la page.
 - Schémas : `Service` (@id `/reseaux-sociaux#service`), `FAQPage`, `BreadcrumbList`.
 
+### Les six pages locales du pilier réseaux (16 septembre 2026)
+
+Source : `src/data/social-cities.ts`, rendu par `src/pages/SocialCityPage.tsx`.
+
+> 🔴 **Le trou était structurel, et il expliquait la plainte d'Elie.** *« les
+> gens me trouvent pour les sites web, je veux que quand les gens cherchent
+> réseaux sociaux Albertville ils me trouvent. »* Les quinze pages de
+> `src/data/cities/` portent toutes un titre de création de site web. Pour
+> « community manager Albertville », le site n'avait donc **qu'une seule page
+> candidate**, `/reseaux-sociaux`, régionale et générique, en concurrence
+> interne avec quinze pages de site web mieux maillées.
+>
+> Relevé de la page de résultats le même jour : les quatre sites qui tiennent
+> la première page (123digital, Luca De Sa, Comète Digital, Agence Origin) ont
+> **tous** une page dédiée dont l'URL et la balise title contiennent le métier
+> et le nom de la commune. Aucun des quatre ne se déplace pour filmer.
+
+| URL | Zone |
+|---|---|
+| `/community-manager-albertville` | la base, plus la combe et la vallée |
+| `/community-manager-chambery` | le plus gros bassin, et le seul où la concurrence se voit |
+| `/community-manager-annecy` | exigence visuelle haute, viser la commune pas la ville |
+| `/community-manager-aix-les-bains` | thermalisme, praticiens, saison de mars à octobre |
+| `/gestion-reseaux-sociaux-savoie` | quatre marchés qui ne se ressemblent pas |
+| `/gestion-reseaux-sociaux-haute-savoie` | Genevois, Arve, Chablais |
+
+**Le mot « community manager » est dans la balise title parce que c'est le mot
+que les gens tapent.** Le H1 le reprend et le premier paragraphe corrige
+aussitôt : Elie ne gère pas des publications, il vient produire la matière.
+C'est l'écart qui le distingue sur cette page de résultats, pas un défaut à
+masquer.
+
+> 🔴 **La règle de cannibalisation, trouvée le jour même par `check:tags`.**
+> `/reseaux-sociaux` s'appelait « Gestion Réseaux Sociaux Savoie », exactement
+> le titre de la nouvelle page département. Deux pages du même site sur la même
+> requête se coupent l'herbe sous le pied. **La page pilier porte l'offre, les
+> pages locales portent le lieu.** Le titre du pilier est devenu « Gestion de
+> Réseaux Sociaux Entreprise ». Ne pas y remettre un nom de lieu.
+
+⚠️ Même règle que pour les quinze autres pages locales : **chaque page doit
+dire quelque chose de vrai sur SON bassin.** Une page dupliquée où seul le nom
+de la commune change ne sert à rien et peut desservir. Chacune porte son
+terrain réel, ses angles de tournage, sa FAQ, ses articles et un renvoi croisé
+vers la page site web de la même commune.
+
+⚠️ **Le maillage est la moitié du travail.** Les six pages sont dans le
+sitemap, dans `llms.txt`, dans le pied de page, et dans le squelette HTML
+pré-rendu de l'accueil, de `/services`, de `/portfolio` et de
+`/reseaux-sociaux`. Sans ça elles n'étaient atteignables que par le sitemap,
+soit exactement la situation qui a bloqué le site en août 2026.
+
+⚠️ `SocialClientsSection` est affichée sur ces pages. Elle vit sur
+`/portfolio` et Elie l'avait fait descendre de l'accueil (*« ça ne fait pas
+assez longtemps que je gère »*). **Elle est ici parce que les deux comptes
+gérés sont à Albertville** et qu'une page qui vend une prestation sans aucune
+preuve ne tient pas. À trancher s'il n'est pas d'accord.
+
+⚠️ Toute nouvelle page de cette famille doit être ajoutée à
+`scripts/check-a11y.mjs` et `scripts/check-overflow.mjs` : les deux campagnes
+tournent sur des listes de pages fixes, et ce qui n'y est pas n'est jamais
+mesuré.
+
 ### Page Audit gratuit (`/audit-gratuit`)
 - `src/pages/AuditGratuit.tsx` + `src/components/AuditForm.tsx` — **l'aimant du funnel**, créé le 13 septembre 2026.
 - L'offre : Elie passe trente à quarante-cinq minutes sur la présence en ligne d'une entreprise, puis enregistre **4 minutes de vidéo** (fiche Google, réseaux, site, position sur « métier + commune »), livrées **sous 48 h ouvrées**.
@@ -109,6 +171,17 @@ L'accroche dit maintenant **« Je tape le nom de votre entreprise sur Google, et
 **La règle : aucun compteur nulle part.** Ni vues, ni abonnés, ni « 12+ clients », ni « 100 % satisfaits », ni pourcentage de progression. La preuve du site passe par des choses vérifiables : trois Reels publics d'Isabelle Ageron-Vicat sur `/reseaux-sociaux`, quatre sites livrés dans le portfolio, quatre avis. Un lecteur peut cliquer et vérifier chacune.
 
 Le chiffre existe toujours dans les notes internes (`création de contenue/ressources, data/15-CLIENTS/formatrice-ecriture/04-tableau-de-bord.md`) et il peut servir dans une conversation. Il ne se met plus sur une page.
+
+> 🔴 **Un survivant, repéré le 16 septembre 2026 et pas encore tranché.**
+> L'article `/blog/video-courte-entreprise-locale` est bâti sur ce chiffre :
+> il est dans le `titleFr` de la première section, dans l'`excerptFr`, et
+> surtout dans la **`seoDescFr`**, donc il s'affiche dans les résultats Google.
+> C'est la même donnée qu'Elie a fait retirer de `/reseaux-sociaux`.
+>
+> Ce n'est pas corrigé parce que la décision lui appartient : réécrire la
+> colonne vertébrale d'un article indexé n'est pas le même geste que supprimer
+> une section de page de vente, et sa note préserve l'usage du chiffre « dans
+> une conversation ». **Les deux lectures se défendent, il tranche.**
 
 > ⚠️ **Une bande de quatre pastilles vivait aussi sur les quinze pages locales** : « 12+ clients accompagnés · 100 % Satisfaits · Avis 5 étoiles · Suivi personnalisé ». Retirée le 14 septembre. Deux des quatre ne reposaient sur rien, et les deux lignes juste au-dessus disaient déjà la même chose en vrai (le numéro direct, la réponse sous 48 h, le temps de trajet).
 
@@ -513,13 +586,13 @@ Une seule commande : `npm run check`. Elle enchaîne les trois.
 
 | Commande | Ce qu'elle vérifie |
 |---|---|
-| `npm run check:content` | Articles, villes, guides, et les 108 liens internes pointent quelque part |
-| `npm run check:tags` | Les 178 titles et descriptions : longueur, doublons, absences. Lit les mêmes sources que le pré-rendu, donc ce qu'elle mesure est ce que Google reçoit |
+| `npm run check:content` | Articles, villes, guides, les six pages locales réseaux, et les 108 liens internes pointent quelque part |
+| `npm run check:tags` | Les 184 titles et descriptions : longueur, doublons, absences. Lit les mêmes sources que le pré-rendu, donc ce qu'elle mesure est ce que Google reçoit |
 | `npm run check:writing` | Les marqueurs d'écriture automatique : tirets cadratins, guillemets courbes, tournures IA, listes à en-tête gras, Title Case dans les titres de corps |
-| `npm run check:build` | **Le HTML réellement produit**, pas les sources. Ouvre les 179 fichiers de `dist/` : un seul title, une seule description, un canonical qui pointe sur la page, un seul h1, au moins 10 liens internes, JSON-LD valide, aucun doublon |
+| `npm run check:build` | **Le HTML réellement produit**, pas les sources. Ouvre les 185 fichiers de `dist/` : un seul title, une seule description, un canonical qui pointe sur la page, un seul h1, au moins 10 liens internes, JSON-LD valide, aucun doublon |
 | `npm run verify` | Build, pré-rendu, puis les quatre contrôles d'affilée. **C'est la commande à lancer avant de livrer.** |
-| `npm run check:a11y` | **axe-core en WCAG 2.1 AA**, 12 pages en 1440 px et 4 en 375 px, dans un vrai Chrome. Demande le serveur de dev allumé |
-| `npm run check:overflow` | Le débordement horizontal, 8 pages sur 7 largeurs de 320 à 1440 px. Demande le serveur de dev allumé |
+| `npm run check:a11y` | **axe-core en WCAG 2.1 AA**, 13 pages en 1440 px et 5 en 375 px, dans un vrai Chrome. Demande le serveur de dev allumé |
+| `npm run check:overflow` | Le débordement horizontal, 9 pages sur 7 largeurs de 320 à 1440 px. Demande le serveur de dev allumé |
 | `npm run check:navigateur` | Les deux d'un coup |
 | `npm run captures [/route] [--mobile]` | Écrit les captures de relecture dans `.captures/`, une par tranche d'écran. Le volet navigateur de l'éditeur rend à 800 px : on ne peut pas y juger une page dessinée pour 1440 |
 
@@ -554,7 +627,7 @@ Corrigé en une phrase par page, sans grille de cartes :
 
 ## Accessibilité : l'état réel (13 septembre 2026)
 
-Audit **axe-core 4.10 en WCAG 2.1 AA**, 12 pages en 1440 px et 4 en 375 px :
+Audit **axe-core 4.10 en WCAG 2.1 AA**, 13 pages en 1440 px et 5 en 375 px :
 **zéro violation**. Il est désormais automatisé, `npm run check:a11y`.
 
 Trois choses corrigées lors de la refonte visuelle du soir, à ne pas défaire :
@@ -645,6 +718,21 @@ Source unique : `src/data/guides.ts`. Chaque guide est un hub long, découpé en
 - Chaque article porte : `categorySlug`, `tags`, `related`, `pillar`, `faqFr` (rendu + schéma FAQPage)
 - `getRelatedPosts()` respecte d'abord `related`, puis complète par catégorie et tags partagés
 
+> 🔴 **Les dix-sept articles hérités n'avaient rien de tout ça, et ça a duré
+> jusqu'au 16 septembre 2026.** Ni `pillar`, ni `tags`, ni `related`, ni
+> `faqFr` : aucune autorité ne remontait vers un guide, ils étaient absents du
+> calcul des articles voisins, et ils n'émettaient aucun schéma FAQPage.
+>
+> Ce sont pourtant eux qui portent les requêtes les plus cherchées du pilier
+> réseaux : l'algorithme, l'absence de vues, les idées de contenu, combien
+> publier, déléguer. Dix des dix-sept.
+>
+> **Le corpus est maintenant complet : 139 articles sur 139 ont un pilier et
+> une FAQ balisée.** La catégorie réseaux sociaux passe de 21 à 29 articles, le
+> pilier réseaux de 35 à 44. Un article ajouté sans ces cinq champs retombe
+> dans le même trou : le type ne les rend pas obligatoires, seule la relecture
+> les attrape.
+
 ### Pages locales : 15 villes
 Source : `src/data/cities/`. Chaque page porte un `depthFr` avec contexte économique réel, secteurs, communes desservies, temps de trajet depuis Albertville, blocs éditoriaux, angle réseaux sociaux et FAQ propre.
 
@@ -678,7 +766,7 @@ Trois scripts remplacent du travail manuel qu'on oubliait de refaire :
 
 ## Pré-rendu HTML
 
-`scripts/prerender.mjs` produit un HTML complet pour les 179 routes après `vite build`, puis **contrôle ce qu'il a réellement écrit**.
+`scripts/prerender.mjs` produit un HTML complet pour les 185 routes après `vite build`, puis **contrôle ce qu'il a réellement écrit**.
 
 Pourquoi : sans lui, chaque URL est servie comme une coquille vide. Google finit par exécuter le JS, avec du retard. Les moteurs de réponse (ChatGPT, Perplexity) ne l'exécutent pas et ne voient rien.
 
