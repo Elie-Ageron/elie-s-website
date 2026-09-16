@@ -809,6 +809,25 @@ Une seule commande : `npm run check`. Elle enchaîne les quatre.
 > Les lancer à la main après toute refonte visuelle. La campagne du 13 septembre
 > 2026 a trouvé huit violations réelles, dont trois qui dataient d'avant.
 
+> 🔴 **Le volet navigateur de l'éditeur n'exécute pas `requestAnimationFrame`.**
+> La page n'y est pas réellement composée, donc les frames ne se planifient
+> jamais. Un effet piloté par `rAF` y paraît mort alors que le code est juste,
+> et il ne produit aucune erreur. Repéré le 16 septembre 2026 sur `HeroDots`,
+> après une heure à chercher au mauvais endroit.
+>
+> Deux règles en sortent. **Ne jamais conclure « ça ne marche pas » depuis ce
+> volet sans avoir vérifié que le rappel est appelé** : instrumenter le
+> gestionnaire, pas la sortie visuelle. Et **préférer une limitation à la
+> montre (`performance.now()`) à une limitation par frame** dans ce projet :
+> même rendu pour le visiteur, et le code redevient vérifiable.
+
+> 🔴 **Ne pas décider d'un comportement à partir du profil de l'appareil.**
+> `matchMedia('(hover: hover) and (pointer: fine)')` coupait la répulsion du
+> hero chez Elie : beaucoup de portables Windows ont un écran tactile et
+> répondent « pointeur grossier » alors qu'une souris est branchée. **On teste
+> le geste réel**, ici le `pointerType` de l'événement reçu. Un doigt n'envoie
+> jamais `mouse`, donc le téléphone reste exclu sans qu'on ait à le prédire.
+
 > ⚠️ **`check:writing` ne regarde pas `seoTitleFr` ni `seoTitle`.** Le Title Case y est la convention du site depuis l'origine, décidée après audit. Ne pas la « corriger ».
 
 > ⚠️ **Une tournure citée n'est pas une tournure employée.** Le corpus donne souvent ces formules en contre-exemple. Le contrôle ignore celles qui suivent un guillemet ouvrant. Si vous ajoutez une tournure à la liste, vérifiez qu'elle ne se déclenche pas sur ses propres contre-exemples.
