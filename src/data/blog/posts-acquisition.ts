@@ -11,9 +11,9 @@ export const acquisitionPosts: BlogPost[] = [
     titleFr: 'Les groupes de commune : le canal que personne ne pilote',
     excerptFr:
       "En Savoie, une bonne partie des recommandations passe par des groupes de village. On ne peut pas y faire de publicité, et c'est justement ce qui les rend puissants.",
-    seoTitleFr: 'Les Groupes Facebook de Commune',
+    seoTitleFr: 'Groupes Facebook de Commune : ne Vendez Jamais',
     seoDescFr:
-      "Comment exister dans les groupes de village et de vallée sans se faire exclure : ce qui est toléré, ce qui ne l'est pas, et ce qui marche.",
+      "Publier une annonce dans un groupe qui l'interdit vous fait exclure. Répondre utilement à une question vous fait contacter en privé. Plus lent, plus efficace.",
     readTime: '8 min',
     categoryFr: 'Réseaux sociaux',
     categorySlug: 'reseaux-sociaux',

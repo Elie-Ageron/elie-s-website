@@ -11,9 +11,9 @@ export const socialPostsA: BlogPost[] = [
     titleFr: "Quel réseau social choisir quand on a une entreprise locale",
     excerptFr:
       "Vous n'avez pas le temps d'être partout, et heureusement, vous n'en avez pas besoin. Voici comment choisir une plateforme et s'y tenir.",
-    seoTitleFr: 'Quel Réseau Social pour une Entreprise Locale',
+    seoTitleFr: 'Quel Réseau Choisir : un Seul, Tenu Correctement',
     seoDescFr:
-      "Instagram, Facebook, TikTok, LinkedIn : comment choisir la plateforme qui correspond à votre métier et à vos clients, sans se disperser.",
+      'Un compte tenu vaut mieux que quatre comptes abandonnés. Où sont vos clients selon votre métier, et quand ajouter une deuxième plateforme sans se planter.',
     readTime: '8 min',
     categoryFr: 'Réseaux sociaux',
     categorySlug: 'reseaux-sociaux',
@@ -158,9 +158,9 @@ Si vous voulez que quelqu'un s'occupe de tout ça, c'est exactement ce que je fa
     titleFr: "Instagram ou Facebook : lequel pour une entreprise locale",
     excerptFr:
       "Les deux appartiennent à Meta, les deux publient les mêmes vidéos, et pourtant ils ne ramènent pas du tout les mêmes clients.",
-    seoTitleFr: 'Instagram ou Facebook pour une Entreprise',
+    seoTitleFr: "Instagram ou Facebook : une Question d'Âge",
     seoDescFr:
-      "Public, portée, groupes locaux, format des vidéos : les différences réelles entre Instagram et Facebook pour une petite entreprise en 2026.",
+      'La tranche 45 à 70 ans est plus présente sur Facebook, où les groupes de commune restent actifs. Et la même vidéo se publie sur les deux en une opération.',
     readTime: '7 min',
     categoryFr: 'Réseaux sociaux',
     categorySlug: 'reseaux-sociaux',
@@ -273,9 +273,9 @@ C'est le cas le plus fréquent, et c'est légitime. Vous avez un métier, ce n'e
     titleFr: "TikTok pour une entreprise locale : est-ce que ça vaut le coup",
     excerptFr:
       "TikTok peut vous donner 40 000 vues sur une première vidéo. La vraie question, c'est de savoir combien de ces vues habitent à moins de vingt minutes de chez vous.",
-    seoTitleFr: 'TikTok pour une Entreprise Locale, Utile ?',
+    seoTitleFr: 'TikTok : Inutilisable dans un Rayon de 30 km',
     seoDescFr:
-      "TikTok donne une portée énorme mais très peu ciblée géographiquement. Dans quels cas ça sert vraiment une entreprise locale, et quand c'est du temps perdu.",
+      "TikTok est beaucoup moins géolocalisé qu'Instagram ou Facebook. Les cas où il sert quand même : clientèle jeune, vente à distance, formation, tourisme.",
     readTime: '7 min',
     categoryFr: 'Réseaux sociaux',
     categorySlug: 'reseaux-sociaux',
@@ -388,9 +388,9 @@ Si vous voulez déléguer tout ça, [voici comment je travaille](/reseaux-sociau
     titleFr: "Les réglages à faire sur un compte Instagram professionnel",
     excerptFr:
       "Vingt minutes de configuration une bonne fois pour toutes. La plupart des comptes d'entreprise que je regarde en oublient au moins la moitié.",
-    seoTitleFr: 'Compte Instagram Pro : les Bons Réglages',
+    seoTitleFr: 'Instagram Pro : le Champ Nom est le Seul Indexé',
     seoDescFr:
-      "Passer en compte professionnel, remplir la bio, activer les bons boutons, relier Facebook : la configuration complète d'un compte Instagram d'entreprise.",
+      "Votre métier et votre ville vont dans le champ nom, pas dans la bio : c'est le seul que la recherche interne lit. Et compte professionnel plutôt que créateur.",
     readTime: '8 min',
     categoryFr: 'Réseaux sociaux',
     categorySlug: 'reseaux-sociaux',
@@ -534,9 +534,9 @@ Vous pouvez maintenant vous concentrer sur la seule chose qui compte vraiment : 
     titleFr: "Faire un calendrier éditorial quand on n'a pas le temps",
     excerptFr:
       "La plupart des gens abandonnent les réseaux parce qu'ils décident quoi publier le jour même. Voilà comment on règle ça en une heure par mois.",
-    seoTitleFr: 'Calendrier Éditorial Réseaux Sociaux Simple',
+    seoTitleFr: "Calendrier Éditorial : un Mois d'Avance Suffit",
     seoDescFr:
-      "Une méthode en une heure par mois pour ne plus jamais chercher quoi publier : rotation de formats, banque d'idées et tournage groupé.",
+      "Au-delà d'un mois, vous planifiez du contenu qui ne collera plus à votre actualité. En dessous, vous repassez en urgence, et c'est là que les gens abandonnent.",
     readTime: '7 min',
     categoryFr: 'Réseaux sociaux',
     categorySlug: 'reseaux-sociaux',

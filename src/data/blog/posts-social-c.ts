@@ -11,9 +11,9 @@ export const socialPostsC: BlogPost[] = [
     titleFr: 'Stories ou reels : lequel sert à quoi',
     excerptFr:
       "Deux formats, deux publics, deux fonctions. Les confondre est la raison pour laquelle beaucoup de comptes travaillent dans le vide.",
-    seoTitleFr: 'Stories ou Reels : Lequel Sert à Quoi',
+    seoTitleFr: 'Stories ou Reels : la Story ne Cherche Personne',
     seoDescFr:
-      "Les stories parlent à ceux qui vous suivent déjà, les reels vont chercher des inconnus. Comment répartir son effort entre les deux sans y passer ses soirées.",
+      "Une story est montrée en priorité à ceux qui vous suivent déjà. Elle entretient une relation, elle ne va pas chercher d'inconnus. C'est le reel qui travaille.",
     readTime: '7 min',
     categoryFr: 'Réseaux sociaux',
     categorySlug: 'reseaux-sociaux',
@@ -333,9 +333,9 @@ Vérifiez donc trois choses : le lien de votre profil pointe vers une page utile
     titleFr: 'Acheter des abonnés : ce qui se passe réellement après',
     excerptFr:
       "Le chiffre monte en deux jours. Ce que personne ne dit, c'est ce que ça fait au compte pendant les mois suivants.",
-    seoTitleFr: 'Acheter des Abonnés : Ce qui se Passe Après',
+    seoTitleFr: 'Acheter des Abonnés : Vous Toucherez Moins de Monde',
     seoDescFr:
-      "Pourquoi acheter des abonnés casse la diffusion d'un compte, comment reconnaître un prestataire qui en vend, et quoi faire à la place.",
+      "Vos publications sont d'abord montrées à ces comptes, qui ne réagissent pas. La plateforme en déduit que ça n'intéresse personne et réduit votre diffusion.",
     readTime: '7 min',
     categoryFr: 'Réseaux sociaux',
     categorySlug: 'reseaux-sociaux',

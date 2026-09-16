@@ -365,9 +365,9 @@ Dire honnêtement où vous êtes et jusqu'où vous allez est toujours plus effic
     titleFr: 'LinkedIn quand on est une TPE locale : utile ou pas',
     excerptFr:
       "Pour un artisan qui travaille chez des particuliers, la réponse est non. Pour une partie des autres, c'est le canal le plus sous-exploité.",
-    seoTitleFr: 'LinkedIn pour une TPE : Utile ou Pas',
+    seoTitleFr: 'LinkedIn : Inutile si vos Clients Sont Particuliers',
     seoDescFr:
-      "LinkedIn a-t-il un intérêt pour une petite entreprise de Savoie ? Le critère qui tranche, et comment s'en servir sans y passer de temps.",
+      'Utile pour qui travaille avec des syndics, des collectivités ou des architectes. Et pourquoi le profil personnel circule quand la page entreprise non.',
     readTime: '8 min',
     categoryFr: 'Réseaux sociaux',
     categorySlug: 'reseaux-sociaux',

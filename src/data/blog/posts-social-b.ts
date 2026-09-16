@@ -262,9 +262,9 @@ Si tout ça vous semble être beaucoup de détails à retenir pour quelqu'un qui
     titleFr: "Publier la même vidéo sur plusieurs plateformes sans se pénaliser",
     excerptFr:
       "Une vidéo tournée une fois peut sortir sur quatre plateformes. À condition de ne pas faire les deux erreurs qui plombent la diffusion.",
-    seoTitleFr: 'Publier une Vidéo sur Plusieurs Plateformes',
+    seoTitleFr: 'Publier Partout : Attention au Filigrane',
     seoDescFr:
-      "Comment republier un Reel sur TikTok, YouTube Shorts et Facebook sans filigrane ni pénalité, et ce qu'il faut adapter à chaque plateforme.",
+      "Republier la même vidéo n'est pas pénalisé, tant que le fichier ne porte pas le logo d'une plateforme concurrente. Exportez depuis votre montage.",
     readTime: '6 min',
     categoryFr: 'Réseaux sociaux',
     categorySlug: 'reseaux-sociaux',

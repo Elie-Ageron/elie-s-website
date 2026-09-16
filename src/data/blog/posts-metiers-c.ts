@@ -387,9 +387,9 @@ Rien de spectaculaire, et c'est le point : sur ce métier, la constance et la cl
     titleFr: 'YouTube Shorts et Pinterest : faut-il y aller aussi',
     excerptFr:
       "Deux plateformes où vos vidéos existantes peuvent vivre une deuxième fois, presque sans travail. Et deux logiques très différentes.",
-    seoTitleFr: 'YouTube Shorts et Pinterest pour une TPE',
+    seoTitleFr: 'YouTube Shorts et Pinterest : en Second, Jamais Seul',
     seoDescFr:
-      "Republier ses vidéos sur YouTube et ses photos sur Pinterest : pour quels métiers ça vaut le coup, et combien de temps ça coûte réellement.",
+      "Republier une vidéo déjà montée coûte quelques minutes, et c'est tout l'intérêt. Pinterest marche sur ce qui se décide visuellement et se prépare à l'avance.",
     readTime: '7 min',
     categoryFr: 'Réseaux sociaux',
     categorySlug: 'reseaux-sociaux',
