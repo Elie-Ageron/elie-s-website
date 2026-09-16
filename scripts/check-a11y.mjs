@@ -38,8 +38,10 @@ const PAGES = [
   '/why-a-website',
   '/our-process',
   '/web-designer-savoie',
+  // La nouvelle famille de pages locales du pilier reseaux.
+  '/community-manager-albertville',
 ];
-const MOBILES = ['/', '/reseaux-sociaux', '/audit-gratuit', '/services'];
+const MOBILES = ['/', '/reseaux-sociaux', '/audit-gratuit', '/services', '/community-manager-albertville'];
 
 const chemins = [
   process.env.PRERENDER_BROWSER,

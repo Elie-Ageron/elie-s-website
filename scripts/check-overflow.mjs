@@ -19,7 +19,7 @@ const i = args.indexOf('--base');
 const base = i === -1 ? 'http://localhost:8080' : args[i + 1];
 
 const LARGEURS = [320, 375, 414, 768, 1024, 1280, 1440];
-const PAGES = ['/', '/reseaux-sociaux', '/services', '/audit-gratuit', '/portfolio', '/contact', '/blog', '/a-propos'];
+const PAGES = ['/', '/reseaux-sociaux', '/services', '/audit-gratuit', '/portfolio', '/contact', '/blog', '/a-propos', '/community-manager-albertville'];
 
 const chemins = [
   process.env.PRERENDER_BROWSER,
