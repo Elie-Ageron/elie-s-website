@@ -278,11 +278,7 @@ Si tout ça vous semble être beaucoup de détails à retenir pour quelqu'un qui
     frOnly: true,
     pillar: '/guides/reseaux-sociaux-entreprise-locale',
     tags: ['multi-plateforme', 'reels', 'shorts', 'tiktok', 'recyclage'],
-    related: [
-      'tiktok-entreprise-locale',
-      'montage-video-verticale-debutant',
-      'tourner-plusieurs-videos-une-journee',
-    ],
+    related: ['tiktok-entreprise-locale', 'montage-video-verticale-debutant', 'tourner-plusieurs-videos-une-journee', 'youtube-shorts-pinterest-entreprise'],
     faqFr: [
       {
         q: 'Est-ce pénalisé de publier la même vidéo sur plusieurs plateformes ?',

@@ -400,11 +400,7 @@ C'est peu, c'est gratuit, et c'est déjà plus que ce que fait la majorité des 
     frOnly: true,
     pillar: '/guides/reseaux-sociaux-entreprise-locale',
     tags: ['coach sportif', 'yoga', 'indépendant', 'clientèle locale'],
-    related: [
-      'therapeute-reseaux-sociaux-clients',
-      'abonnes-ou-clients',
-      'creer-fiche-google-business',
-    ],
+    related: ['therapeute-reseaux-sociaux-clients', 'abonnes-ou-clients', 'creer-fiche-google-business', 'moniteur-guide-montagne-visibilite'],
     faqFr: [
       {
         q: 'Faut-il beaucoup d\'abonnés pour vivre du coaching ?',

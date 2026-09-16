@@ -144,11 +144,7 @@ Ce que vous découvrirez, c'est ce que ces outils savent de votre marché local.
     frOnly: true,
     pillar: '/guides/reseaux-sociaux-entreprise-locale',
     tags: ['mesure', 'attribution', 'résultats', 'pilotage'],
-    related: [
-      'statistiques-instagram-comprendre',
-      'abonnes-ou-clients',
-      'transformer-vues-en-clients',
-    ],
+    related: ['statistiques-instagram-comprendre', 'abonnes-ou-clients', 'transformer-vues-en-clients', 'erreurs-visibilite-tpe-locale'],
     faqFr: [
       {
         q: 'Quel est le moyen le plus simple de savoir d\'où viennent ses clients ?',

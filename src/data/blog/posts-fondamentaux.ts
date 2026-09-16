@@ -22,11 +22,7 @@ export const fondamentauxPosts: BlogPost[] = [
     frOnly: true,
     pillar: '/guides/visibilite-google-locale',
     tags: ['seo', 'bases', 'vulgarisation', 'google'],
-    related: [
-      'etre-premier-google-dans-sa-ville',
-      'combien-de-temps-referencement-google',
-      'trouver-mots-cles-clients',
-    ],
+    related: ['etre-premier-google-dans-sa-ville', 'combien-de-temps-referencement-google', 'trouver-mots-cles-clients', 'ce-que-google-ne-controle-pas'],
     faqFr: [
       {
         q: 'Le référencement, c\'est quoi exactement ?',
@@ -158,11 +154,7 @@ C'est tout, et c'est déjà davantage que ce que fait la grande majorité des en
     frOnly: true,
     pillar: '/guides/visibilite-google-locale',
     tags: ['canaux', 'stratégie', 'priorités', 'bases'],
-    related: [
-      'reseaux-sociaux-ou-site-web',
-      'creer-fiche-google-business',
-      'budget-communication-tpe',
-    ],
+    related: ['reseaux-sociaux-ou-site-web', 'creer-fiche-google-business', 'budget-communication-tpe', 'erreurs-visibilite-tpe-locale'],
     faqFr: [
       {
         q: 'Faut-il les trois ?',

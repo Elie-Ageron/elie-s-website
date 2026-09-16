@@ -327,11 +327,7 @@ Si vous voulez que quelqu'un mette le système en place et suive les réponses, 
     frOnly: true,
     pillar: '/guides/visibilite-google-locale',
     tags: ['seo local', 'map pack', 'page ville', 'google'],
-    related: [
-      'fiche-google-business-optimiser',
-      'obtenir-avis-google',
-      'seo-local-guide-complet',
-    ],
+    related: ['fiche-google-business-optimiser', 'obtenir-avis-google', 'seo-local-guide-complet', 'ce-que-google-ne-controle-pas'],
     faqFr: [
       {
         q: 'Combien de temps pour sortir sur Google localement ?',

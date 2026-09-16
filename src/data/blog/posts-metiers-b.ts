@@ -22,11 +22,7 @@ export const metiersPostsB: BlogPost[] = [
     frOnly: true,
     pillar: '/guides/reseaux-sociaux-entreprise-locale',
     tags: ['formateur', 'consultant', 'indépendant', 'prescription'],
-    related: [
-      'therapeute-reseaux-sociaux-clients',
-      'linkedin-tpe-locale',
-      'newsletter-tpe-locale',
-    ],
+    related: ['therapeute-reseaux-sociaux-clients', 'linkedin-tpe-locale', 'newsletter-tpe-locale', 'auto-ecole-trouver-eleves'],
     faqFr: [
       {
         q: 'Un formateur a-t-il besoin d\'un site ?',
@@ -556,11 +552,7 @@ C'est le même sujet que pour les restaurants, développé dans [restaurant et r
     frOnly: true,
     pillar: '/guides/creer-site-web-tpe',
     tags: ['création entreprise', 'démarrage', 'premiers clients', 'budget serré'],
-    related: [
-      'creer-fiche-google-business',
-      'faire-son-site-soi-meme-ou-pro',
-      'obtenir-avis-google',
-    ],
+    related: ['creer-fiche-google-business', 'faire-son-site-soi-meme-ou-pro', 'obtenir-avis-google', 'choisir-nom-entreprise-visibilite'],
     faqFr: [
       {
         q: 'Par quoi commencer quand on n\'a aucun budget ?',

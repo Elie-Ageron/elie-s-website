@@ -22,11 +22,7 @@ export const vitrinePosts: BlogPost[] = [
     frOnly: true,
     pillar: '/guides/creer-site-web-tpe',
     tags: ['page accueil', 'conversion', 'structure', 'clarté'],
-    related: [
-      'mon-site-ne-genere-aucun-contact',
-      'landing-page-efficace',
-      'quoi-ecrire-sur-son-site',
-    ],
+    related: ['mon-site-ne-genere-aucun-contact', 'landing-page-efficace', 'quoi-ecrire-sur-son-site', 'pourquoi-site-web-2025'],
     faqFr: [
       {
         q: 'Que doit contenir le haut d\'une page d\'accueil ?',
@@ -378,11 +374,7 @@ C'est le rythme que je conseille systématiquement, et c'est celui que la majori
     frOnly: true,
     pillar: '/guides/creer-site-web-tpe',
     tags: ['one page', 'structure', 'landing page', 'arbitrage'],
-    related: [
-      'landing-page-efficace',
-      'page-service-qui-ressort',
-      'combien-coute-un-site-web',
-    ],
+    related: ['landing-page-efficace', 'page-service-qui-ressort', 'combien-coute-un-site-web', 'site-vitrine-ou-boutique-en-ligne'],
     faqFr: [
       {
         q: 'Une page unique peut-elle bien se référencer ?',

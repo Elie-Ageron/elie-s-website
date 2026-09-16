@@ -152,7 +152,7 @@ const BlogPost = () => {
   const relatedPosts = useMemo(
     () =>
       entree
-        ? getRelatedFromIndex(entree, contenu?.related, language, 3).map((e) =>
+        ? getRelatedFromIndex(entree, contenu?.related, language, 4).map((e) =>
             localizeIndexEntry(e, language)
           )
         : [],

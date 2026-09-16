@@ -139,11 +139,7 @@ Si vous avez une date en tête, une ouverture, une saison qui démarre, un salon
     frOnly: true,
     pillar: '/guides/creer-site-web-tpe',
     tags: ['wix', 'wordpress', 'site maison', 'budget'],
-    related: [
-      'combien-coute-un-site-web',
-      'agence-web-freelance-ou-plateforme',
-      'mon-site-ne-genere-aucun-contact',
-    ],
+    related: ['combien-coute-un-site-web', 'agence-web-freelance-ou-plateforme', 'mon-site-ne-genere-aucun-contact', 'combien-de-temps-creer-site-web'],
     faqFr: [
       {
         q: 'Wix suffit-il pour une petite entreprise ?',
@@ -251,11 +247,7 @@ Et si vous voulez un avis extérieur sur ce que vous avez déjà, [envoyez moi l
     frOnly: true,
     pillar: '/guides/creer-site-web-tpe',
     tags: ['nom de domaine', 'hébergement', 'propriété', 'email pro'],
-    related: [
-      'faire-son-site-soi-meme-ou-pro',
-      'agence-web-freelance-ou-plateforme',
-      'refonte-site-web-quand',
-    ],
+    related: ['faire-son-site-soi-meme-ou-pro', 'agence-web-freelance-ou-plateforme', 'refonte-site-web-quand', 'changer-de-prestataire-web'],
     faqFr: [
       {
         q: 'À qui doit appartenir le nom de domaine ?',
@@ -479,11 +471,7 @@ Si vous avez un site en ligne et que vous ne savez pas où vous en êtes, [envoy
     frOnly: true,
     pillar: '/guides/creer-site-web-tpe',
     tags: ['agence web', 'freelance', 'prestataire', 'devis'],
-    related: [
-      'combien-coute-un-site-web',
-      'faire-son-site-soi-meme-ou-pro',
-      'nom-de-domaine-hebergement-comprendre',
-    ],
+    related: ['combien-coute-un-site-web', 'faire-son-site-soi-meme-ou-pro', 'nom-de-domaine-hebergement-comprendre', 'travailler-avec-un-partenaire-web'],
     faqFr: [
       {
         q: 'Une agence web coûte-t-elle forcément plus cher qu\'un freelance ?',

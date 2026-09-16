@@ -270,11 +270,7 @@ Remerciez, et gardez le contact. Un chantier perdu aujourd'hui est parfois un ch
     frOnly: true,
     pillar: '/guides/visibilite-google-locale',
     tags: ['avis', 'e-réputation', 'plateformes', 'confiance'],
-    related: [
-      'obtenir-avis-google',
-      'repondre-avis-negatif-google',
-      'annuaires-locaux-visibilite',
-    ],
+    related: ['obtenir-avis-google', 'repondre-avis-negatif-google', 'annuaires-locaux-visibilite', 'garage-automobile-visibilite', 'e-reputation-crise-avis-negatifs'],
     faqFr: [
       {
         q: 'Faut-il être présent sur toutes les plateformes d\'avis ?',
@@ -374,11 +370,7 @@ C'est peu, c'est tenable, et c'est déjà davantage que la quasi-totalité de vo
     frOnly: true,
     pillar: '/guides/video-smartphone-entreprise',
     tags: ['photo', 'smartphone', 'budget', 'image'],
-    related: [
-      'photos-pour-son-site-web',
-      'filmer-avec-son-telephone',
-      'lumiere-video-smartphone',
-    ],
+    related: ['photos-pour-son-site-web', 'filmer-avec-son-telephone', 'lumiere-video-smartphone', 'filmer-avec-son-equipe'],
     faqFr: [
       {
         q: 'Un smartphone suffit-il pour les photos d\'un site ?',

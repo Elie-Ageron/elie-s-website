@@ -22,11 +22,7 @@ export const decisionsPosts: BlogPost[] = [
     frOnly: true,
     pillar: '/guides/creer-site-web-tpe',
     tags: ['accès perdus', 'nom de domaine', 'prestataire', 'récupération'],
-    related: [
-      'nom-de-domaine-hebergement-comprendre',
-      'agence-web-freelance-ou-plateforme',
-      'refonte-site-web-quand',
-    ],
+    related: ['nom-de-domaine-hebergement-comprendre', 'agence-web-freelance-ou-plateforme', 'refonte-site-web-quand', 'changer-de-prestataire-web'],
     faqFr: [
       {
         q: 'Que faire si le prestataire ne répond plus ?',

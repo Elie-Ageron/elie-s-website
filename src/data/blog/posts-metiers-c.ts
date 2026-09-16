@@ -22,11 +22,7 @@ export const metiersPostsC: BlogPost[] = [
     frOnly: true,
     pillar: '/guides/visibilite-google-locale',
     tags: ['électricien', 'plombier', 'chauffagiste', 'dépannage'],
-    related: [
-      'site-web-artisan',
-      'creer-fiche-google-business',
-      'concurrent-devant-moi-google',
-    ],
+    related: ['site-web-artisan', 'creer-fiche-google-business', 'concurrent-devant-moi-google', 'garage-automobile-visibilite'],
     faqFr: [
       {
         q: 'Faut-il séparer le dépannage et la rénovation sur son site ?',

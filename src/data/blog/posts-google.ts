@@ -151,11 +151,7 @@ Si vous voulez que je regarde votre fiche et que je vous dise ce qui manque, [é
     frOnly: true,
     pillar: '/guides/visibilite-google-locale',
     tags: ['avis google', 'e-réputation', 'avis négatif', 'faux avis'],
-    related: [
-      'obtenir-avis-google',
-      'fiche-google-business-optimiser',
-      'creer-fiche-google-business',
-    ],
+    related: ['obtenir-avis-google', 'fiche-google-business-optimiser', 'creer-fiche-google-business', 'e-reputation-crise-avis-negatifs'],
     faqFr: [
       {
         q: 'Peut-on faire supprimer un avis négatif ?',

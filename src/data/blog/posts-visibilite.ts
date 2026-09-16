@@ -22,11 +22,7 @@ export const visibilitePosts: BlogPost[] = [
     frOnly: true,
     pillar: '/guides/creer-site-web-tpe',
     tags: ['budget', 'investissement', 'priorités', 'arbitrage'],
-    related: [
-      'se-faire-connaitre-quand-on-demarre',
-      'mesurer-si-sa-communication-rapporte',
-      'google-ads-ou-referencement-naturel',
-    ],
+    related: ['se-faire-connaitre-quand-on-demarre', 'mesurer-si-sa-communication-rapporte', 'google-ads-ou-referencement-naturel', 'travailler-avec-un-partenaire-web'],
     faqFr: [
       {
         q: 'Quel pourcentage du chiffre d\'affaires faut-il y consacrer ?',

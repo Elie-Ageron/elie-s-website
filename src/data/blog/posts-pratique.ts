@@ -22,11 +22,7 @@ export const pratiquePosts: BlogPost[] = [
     frOnly: true,
     pillar: '/guides/creer-site-web-tpe',
     tags: ['prix', 'tarifs', 'transparence', 'conversion'],
-    related: [
-      'combien-coute-un-site-web',
-      'devis-qui-se-signe',
-      'quoi-ecrire-sur-son-site',
-    ],
+    related: ['combien-coute-un-site-web', 'devis-qui-se-signe', 'quoi-ecrire-sur-son-site', 'auto-ecole-trouver-eleves'],
     faqFr: [
       {
         q: 'Afficher ses prix fait-il fuir les clients ?',
@@ -152,11 +148,7 @@ Si vous trouvez, demandez-vous si l'information est utile. "Sur devis" n'est pas
     frOnly: true,
     pillar: '/guides/creer-site-web-tpe',
     tags: ['appels', 'réactivité', 'artisan', 'organisation'],
-    related: [
-      'whatsapp-business-entreprise-locale',
-      'formulaire-contact-qui-convertit',
-      'electricien-plombier-chauffagiste-visibilite',
-    ],
+    related: ['whatsapp-business-entreprise-locale', 'formulaire-contact-qui-convertit', 'electricien-plombier-chauffagiste-visibilite', 'chatbot-ia-site-tpe'],
     faqFr: [
       {
         q: 'Que faire quand on ne peut pas décrocher ?',

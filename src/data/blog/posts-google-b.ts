@@ -264,11 +264,7 @@ Si vous êtes en train de vivre une suspension et que vous ne trouvez pas la cau
     frOnly: true,
     pillar: '/guides/visibilite-google-locale',
     tags: ['zone d\'intervention', 'sans local', 'artisan', 'périmètre'],
-    related: [
-      'creer-fiche-google-business',
-      'apparaitre-sur-google-maps',
-      'etre-premier-google-dans-sa-ville',
-    ],
+    related: ['creer-fiche-google-business', 'apparaitre-sur-google-maps', 'etre-premier-google-dans-sa-ville', 'agent-immobilier-local-visibilite'],
     faqFr: [
       {
         q: 'Faut-il masquer son adresse quand on travaille de chez soi ?',

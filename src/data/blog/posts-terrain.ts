@@ -23,11 +23,7 @@ export const terrainPosts: BlogPost[] = [
     frOnly: true,
     pillar: '/guides/creer-site-web-tpe',
     tags: ['logo', 'identité visuelle', 'charte', 'cohérence'],
-    related: [
-      'se-faire-connaitre-quand-on-demarre',
-      'supports-physiques-vehicule-panneaux',
-      'photos-pour-son-site-web',
-    ],
+    related: ['se-faire-connaitre-quand-on-demarre', 'supports-physiques-vehicule-panneaux', 'photos-pour-son-site-web', 'choisir-nom-entreprise-visibilite', 'concurrent-copie-mes-contenus'],
     faqFr: [
       {
         q: 'Faut-il un logo pour démarrer ?',
@@ -141,11 +137,7 @@ Si vous hésitez sur ce dont vous avez besoin, [écrivez moi](/contact). Il m'ar
     frOnly: true,
     pillar: '/guides/visibilite-google-locale',
     tags: ['concurrence', 'classement', 'analyse', 'référencement'],
-    related: [
-      'etre-premier-google-dans-sa-ville',
-      'apparaitre-sur-google-maps',
-      'combien-de-temps-referencement-google',
-    ],
+    related: ['etre-premier-google-dans-sa-ville', 'apparaitre-sur-google-maps', 'combien-de-temps-referencement-google', 'concurrent-copie-mes-contenus'],
     faqFr: [
       {
         q: 'Peut-on savoir ce que fait un concurrent ?',
@@ -275,11 +267,7 @@ Dernier point, et il compte : le classement n'est pas l'objectif. Le nombre de d
     frOnly: true,
     pillar: '/guides/visibilite-google-locale',
     tags: ['floquage', 'panneaux', 'print', 'local'],
-    related: [
-      'identite-visuelle-tpe',
-      'obtenir-avis-google',
-      'se-faire-connaitre-quand-on-demarre',
-    ],
+    related: ['identite-visuelle-tpe', 'obtenir-avis-google', 'se-faire-connaitre-quand-on-demarre', 'salons-marches-professionnels'],
     faqFr: [
       {
         q: 'Un véhicule floqué rapporte-t-il vraiment ?',

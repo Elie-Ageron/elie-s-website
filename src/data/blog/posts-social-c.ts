@@ -234,11 +234,7 @@ Sur un contenu d'entreprise locale, ce n'est pas la musique qui décide du résu
     frOnly: true,
     pillar: '/guides/reseaux-sociaux-entreprise-locale',
     tags: ['commentaires', 'messages privés', 'réactivité', 'conversion'],
-    related: [
-      'transformer-vues-en-clients',
-      'abonnes-ou-clients',
-      'formulaire-contact-qui-convertit',
-    ],
+    related: ['transformer-vues-en-clients', 'abonnes-ou-clients', 'formulaire-contact-qui-convertit', 'fideliser-ses-clients-artisan'],
     faqFr: [
       {
         q: 'Faut-il répondre à tous les commentaires ?',

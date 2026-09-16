@@ -23,11 +23,7 @@ export const socialPostsA: BlogPost[] = [
     frOnly: true,
     pillar: '/guides/reseaux-sociaux-entreprise-locale',
     tags: ['instagram', 'facebook', 'tiktok', 'linkedin', 'choix plateforme'],
-    related: [
-      'instagram-ou-facebook-entreprise-locale',
-      'tiktok-entreprise-locale',
-      'combien-publier-reseaux-sociaux',
-    ],
+    related: ['instagram-ou-facebook-entreprise-locale', 'tiktok-entreprise-locale', 'combien-publier-reseaux-sociaux', 'youtube-shorts-pinterest-entreprise'],
     faqFr: [
       {
         q: "Faut-il être présent sur tous les réseaux sociaux ?",
@@ -675,11 +671,7 @@ Si cette journée par mois est celle que vous n'avez pas, [c'est précisément c
     frOnly: true,
     pillar: '/guides/reseaux-sociaux-entreprise-locale',
     tags: ['statistiques instagram', 'insights', 'rétention', 'mesure'],
-    related: [
-      'abonnes-ou-clients',
-      'pourquoi-mes-videos-ne-font-pas-de-vues',
-      'combien-de-temps-resultats-reseaux-sociaux',
-    ],
+    related: ['abonnes-ou-clients', 'pourquoi-mes-videos-ne-font-pas-de-vues', 'combien-de-temps-resultats-reseaux-sociaux', 'acheter-abonnes-pourquoi-non'],
     faqFr: [
       {
         q: 'Quelle est la statistique la plus importante sur Instagram ?',

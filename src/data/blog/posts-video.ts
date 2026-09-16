@@ -408,11 +408,7 @@ Et si vous préférez que quelqu'un vienne avec le matériel et le sens du cadra
     frOnly: true,
     pillar: '/guides/video-smartphone-entreprise',
     tags: ['sous-titres', 'accessibilité', 'montage', 'rétention'],
-    related: [
-      'montage-video-verticale-debutant',
-      'son-video-smartphone',
-      'accroche-video-3-secondes',
-    ],
+    related: ['montage-video-verticale-debutant', 'son-video-smartphone', 'accroche-video-3-secondes', 'musique-reels-droits'],
     faqFr: [
       {
         q: 'Les sous-titres automatiques suffisent-ils ?',
@@ -668,11 +664,7 @@ Et si cette journée est celle que vous n'avez pas, c'est exactement le service 
     frOnly: true,
     pillar: '/guides/video-smartphone-entreprise',
     tags: ['face caméra', 'confiance', 'timidité', 'tournage'],
-    related: [
-      'tourner-plusieurs-videos-une-journee',
-      'accroche-video-3-secondes',
-      'idees-contenu-reseaux-sociaux',
-    ],
+    related: ['tourner-plusieurs-videos-une-journee', 'accroche-video-3-secondes', 'idees-contenu-reseaux-sociaux', 'filmer-avec-son-equipe'],
     faqFr: [
       {
         q: 'Peut-on faire des vidéos sans montrer son visage ?',
@@ -781,11 +773,7 @@ Ce n'est pas seulement la technique. C'est qu'il est beaucoup plus facile de par
     frOnly: true,
     pillar: '/guides/video-smartphone-entreprise',
     tags: ['montage', 'capcut', 'reels', 'export'],
-    related: [
-      'sous-titres-videos',
-      'tourner-plusieurs-videos-une-journee',
-      'publier-meme-video-plusieurs-plateformes',
-    ],
+    related: ['sous-titres-videos', 'tourner-plusieurs-videos-une-journee', 'publier-meme-video-plusieurs-plateformes', 'musique-reels-droits'],
     faqFr: [
       {
         q: 'Quel logiciel pour monter des vidéos verticales ?',

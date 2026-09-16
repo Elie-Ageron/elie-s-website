@@ -23,11 +23,7 @@ export const tourismePosts: BlogPost[] = [
     frOnly: true,
     pillar: '/guides/creer-site-web-tpe',
     tags: ['location saisonnière', 'meublé de tourisme', 'réservation directe', 'montagne'],
-    related: [
-      'entreprise-saisonniere-communication',
-      'hebergement-station-reseaux-sociaux',
-      'creer-fiche-google-business',
-    ],
+    related: ['entreprise-saisonniere-communication', 'hebergement-station-reseaux-sociaux', 'creer-fiche-google-business', 'site-bilingue-clientele-etrangere'],
     faqFr: [
       {
         q: 'Faut-il quitter les plateformes de réservation ?',
@@ -153,11 +149,7 @@ Si vous louez en Savoie ou en Haute-Savoie et que vous voulez qu'on regarde ce q
     frOnly: true,
     pillar: '/guides/reseaux-sociaux-entreprise-locale',
     tags: ['hôtel', 'gîte', 'chambre d\'hôtes', 'montagne', 'saison'],
-    related: [
-      'entreprise-saisonniere-communication',
-      'location-saisonniere-reservation-directe',
-      'restaurant-reseaux-sociaux',
-    ],
+    related: ['entreprise-saisonniere-communication', 'location-saisonniere-reservation-directe', 'restaurant-reseaux-sociaux', 'site-bilingue-clientele-etrangere'],
     faqFr: [
       {
         q: 'Quand faut-il publier pour la saison d\'hiver ?',
@@ -391,11 +383,7 @@ Je travaille depuis Albertville, donc la Tarentaise, le Beaufortain et la combe 
     frOnly: true,
     pillar: '/guides/reseaux-sociaux-entreprise-locale',
     tags: ['saisonnalité', 'montagne', 'calendrier', 'anticipation'],
-    related: [
-      'location-saisonniere-reservation-directe',
-      'hebergement-station-reseaux-sociaux',
-      'calendrier-editorial-reseaux-sociaux',
-    ],
+    related: ['location-saisonniere-reservation-directe', 'hebergement-station-reseaux-sociaux', 'calendrier-editorial-reseaux-sociaux', 'moniteur-guide-montagne-visibilite'],
     faqFr: [
       {
         q: 'Quand faut-il commencer à communiquer pour une saison ?',

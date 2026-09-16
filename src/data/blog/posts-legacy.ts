@@ -578,7 +578,7 @@ Want a page that does that job? [Let's talk about your project](/contact).
     categorySlug: 'site-web',
     pillar: '/guides/creer-site-web-tpe',
     tags: ["prix", "devis", "budget", "site vitrine"],
-    related: ['site-web-pas-cher-ce-que-ca-cache', 'faire-son-site-soi-meme-ou-pro', 'devis-qui-se-signe'],
+    related: ['site-web-pas-cher-ce-que-ca-cache', 'faire-son-site-soi-meme-ou-pro', 'devis-qui-se-signe', 'site-vitrine-ou-boutique-en-ligne'],
     faqFr: [
       {
         q: "Combien coûte un site web pour une petite entreprise ?",

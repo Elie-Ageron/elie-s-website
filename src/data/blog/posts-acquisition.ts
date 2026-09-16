@@ -136,11 +136,7 @@ C'est tout. Tenu six mois, dans une commune de deux mille habitants, ça change 
     frOnly: true,
     pillar: '/guides/reseaux-sociaux-entreprise-locale',
     tags: ['B2B', 'prospection', 'syndic', 'récurrent'],
-    related: [
-      'linkedin-tpe-locale',
-      'parrainage-bouche-a-oreille',
-      'marches-publics-petite-entreprise',
-    ],
+    related: ['linkedin-tpe-locale', 'parrainage-bouche-a-oreille', 'marches-publics-petite-entreprise', 'expert-comptable-conseil-visibilite', 'salons-marches-professionnels'],
     faqFr: [
       {
         q: 'Pourquoi viser les clients professionnels ?',
@@ -492,11 +488,7 @@ Dans l'ordre inverse, vous payez pour un gadget qui parle à votre place avant d
     frOnly: true,
     pillar: '/guides/creer-site-web-tpe',
     tags: ['marchés publics', 'collectivités', 'appel d\'offres', 'B2B'],
-    related: [
-      'demarcher-les-professionnels',
-      'devis-qui-se-signe',
-      'linkedin-tpe-locale',
-    ],
+    related: ['demarcher-les-professionnels', 'devis-qui-se-signe', 'linkedin-tpe-locale', 'expert-comptable-conseil-visibilite'],
     faqFr: [
       {
         q: 'Faut-il être une grosse entreprise pour répondre ?',

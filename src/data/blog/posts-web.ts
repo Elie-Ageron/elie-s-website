@@ -22,11 +22,7 @@ export const webPosts: BlogPost[] = [
     frOnly: true,
     pillar: '/guides/creer-site-web-tpe',
     tags: ['rédaction web', 'contenu site', 'site vitrine', 'texte'],
-    related: [
-      'mon-site-ne-genere-aucun-contact',
-      'photos-pour-son-site-web',
-      'landing-page-efficace',
-    ],
+    related: ['mon-site-ne-genere-aucun-contact', 'photos-pour-son-site-web', 'landing-page-efficace', 'pourquoi-site-web-2025'],
     faqFr: [
       {
         q: 'Combien de texte faut-il sur une page de site vitrine ?',
@@ -177,11 +173,7 @@ Quand je fais un site, je pose les questions et j'écris à partir des réponses
     frOnly: true,
     pillar: '/guides/reseaux-sociaux-entreprise-locale',
     tags: ['abonnés', 'métriques', 'vanité', 'conversion'],
-    related: [
-      'transformer-vues-en-clients',
-      'statistiques-instagram-comprendre',
-      'tiktok-entreprise-locale',
-    ],
+    related: ['transformer-vues-en-clients', 'statistiques-instagram-comprendre', 'tiktok-entreprise-locale', 'acheter-abonnes-pourquoi-non'],
     faqFr: [
       {
         q: 'Combien faut-il d\'abonnés pour avoir des clients ?',
@@ -427,11 +419,7 @@ Si vous voulez que je regarde où fuit votre parcours, [envoyez moi le lien de v
     frOnly: true,
     pillar: '/guides/creer-site-web-tpe',
     tags: ['photos', 'images', 'site vitrine', 'confiance'],
-    related: [
-      'quoi-ecrire-sur-son-site',
-      'vitesse-site-web-mobile',
-      'mon-site-ne-genere-aucun-contact',
-    ],
+    related: ['quoi-ecrire-sur-son-site', 'vitesse-site-web-mobile', 'mon-site-ne-genere-aucun-contact', 'agent-immobilier-local-visibilite', 'referencement-images-google'],
     faqFr: [
       {
         q: 'Peut-on utiliser des photos de banque d\'images sur son site ?',
@@ -556,11 +544,7 @@ Si vous voulez qu'on regarde ce que donnent vos photos actuelles sur votre site,
     frOnly: true,
     pillar: '/guides/creer-site-web-tpe',
     tags: ['performance', 'core web vitals', 'mobile', 'vitesse'],
-    related: [
-      'photos-pour-son-site-web',
-      'mon-site-ne-genere-aucun-contact',
-      'pourquoi-site-pas-sur-google',
-    ],
+    related: ['photos-pour-son-site-web', 'mon-site-ne-genere-aucun-contact', 'pourquoi-site-pas-sur-google', 'referencement-images-google'],
     faqFr: [
       {
         q: 'Comment tester la vitesse de son site ?',
@@ -689,11 +673,7 @@ Si vous voulez savoir où vous en êtes, [envoyez moi l'adresse de votre site](/
     frOnly: true,
     pillar: '/guides/creer-site-web-tpe',
     tags: ['formulaire', 'contact', 'conversion', 'ux'],
-    related: [
-      'mon-site-ne-genere-aucun-contact',
-      'transformer-vues-en-clients',
-      'optimiser-taux-conversion',
-    ],
+    related: ['mon-site-ne-genere-aucun-contact', 'transformer-vues-en-clients', 'optimiser-taux-conversion', 'chatbot-ia-site-tpe', 'emails-pro-en-indesirables'],
     faqFr: [
       {
         q: 'Combien de champs dans un formulaire de contact ?',
@@ -975,11 +955,7 @@ Si vous voulez un avis extérieur, [envoyez moi l'adresse de votre site](/contac
     frOnly: true,
     pillar: '/guides/creer-site-web-tpe',
     tags: ['refonte', 'migration', 'redirections', 'site vitrine'],
-    related: [
-      'mon-site-ne-genere-aucun-contact',
-      'vitesse-site-web-mobile',
-      'combien-coute-un-site-web',
-    ],
+    related: ['mon-site-ne-genere-aucun-contact', 'vitesse-site-web-mobile', 'combien-coute-un-site-web', 'combien-de-temps-creer-site-web'],
     faqFr: [
       {
         q: 'Tous les combien faut-il refaire son site ?',

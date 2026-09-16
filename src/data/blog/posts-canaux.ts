@@ -22,11 +22,7 @@ export const canauxPosts: BlogPost[] = [
     frOnly: true,
     pillar: '/guides/creer-site-web-tpe',
     tags: ['newsletter', 'email', 'fichier client', 'fidélisation'],
-    related: [
-      'location-saisonniere-reservation-directe',
-      'entreprise-saisonniere-communication',
-      'mentions-legales-rgpd-cookies-site',
-    ],
+    related: ['location-saisonniere-reservation-directe', 'entreprise-saisonniere-communication', 'mentions-legales-rgpd-cookies-site', 'fideliser-ses-clients-artisan', 'emails-pro-en-indesirables'],
     faqFr: [
       {
         q: 'Faut-il beaucoup d\'adresses pour que ça serve ?',
