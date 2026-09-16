@@ -365,9 +365,9 @@ C'est moins satisfaisant qu'une garantie, et c'est la seule approche qui tient s
     titleFr: 'Les dix erreurs que je retrouve chez presque toutes les TPE',
     excerptFr:
       "Ce ne sont pas des erreurs de stratégie. Ce sont dix choses concrètes, corrigeables en une journée, qui coûtent des clients tous les mois.",
-    seoTitleFr: 'Les 10 Erreurs de Visibilité des TPE',
+    seoTitleFr: 'Visibilité TPE : 10 Erreurs, 8 Réglables en un Jour',
     seoDescFr:
-      "Les dix problèmes que je retrouve le plus souvent chez les artisans et TPE de Savoie, et le temps qu'il faut pour corriger chacun.",
+      'Les dix problèmes que je retrouve le plus souvent chez les artisans et TPE de Savoie. Huit se corrigent en une journée, et la plus coûteuse ne coûte rien.',
     readTime: '9 min',
     categoryFr: 'Stratégie',
     categorySlug: 'strategie',

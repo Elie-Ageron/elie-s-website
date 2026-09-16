@@ -10,9 +10,9 @@ export const socialPostsB: BlogPost[] = [
     titleFr: "Combien de temps avant que les réseaux sociaux rapportent des clients",
     excerptFr:
       "Personne ne veut donner de réponse honnête à cette question. Voici la mienne, avec les étapes qu'on traverse et le moment où la plupart des gens abandonnent.",
-    seoTitleFr: 'Réseaux Sociaux : Combien de Temps Avant Résultats',
+    seoTitleFr: 'Réseaux Sociaux : Comptez 3 à 6 Mois Avant les Demandes',
     seoDescFr:
-      "Trois à six mois avant des demandes régulières, et voici pourquoi. Les paliers réels, ce qui accélère et le moment exact où la plupart abandonnent.",
+      "Trois à six mois de publication régulière avant que les demandes deviennent prévisibles. Ce qui est normal les premières semaines, et ce qui ne l'est pas.",
     readTime: '7 min',
     categoryFr: 'Réseaux sociaux',
     categorySlug: 'reseaux-sociaux',
@@ -153,9 +153,9 @@ C'est exactement la raison pour laquelle [je viens filmer une journée par mois 
     titleFr: "Les hashtags servent-ils encore à quelque chose en 2026",
     excerptFr:
       "Réponse courte : beaucoup moins qu'avant, et pas du tout comme on vous l'a expliqué. Voilà ce qui a remplacé leur rôle.",
-    seoTitleFr: 'Hashtags en 2026 : Encore Utiles ou Pas ?',
+    seoTitleFr: 'Hashtags en 2026 : 3 à 5, dont le Nom de la Commune',
     seoDescFr:
-      "Ce que les hashtags font encore sur Instagram et TikTok, ce qu'ils ne font plus, et les signaux qui décident vraiment de la diffusion aujourd'hui.",
+      "Les blocs de trente hashtags n'apportent plus de portée mesurable. Trois à cinq, dont le nom de votre commune, est ce qui reste défendable aujourd'hui.",
     readTime: '6 min',
     categoryFr: 'Réseaux sociaux',
     categorySlug: 'reseaux-sociaux',

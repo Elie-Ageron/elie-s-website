@@ -11,9 +11,9 @@ export const visibilitePosts: BlogPost[] = [
     titleFr: 'Combien mettre par an dans sa visibilité quand on est une TPE',
     excerptFr:
       "Il n'existe pas de pourcentage magique. Il existe en revanche un ordre de dépense qui évite de payer pour ce qui ne sert pas encore.",
-    seoTitleFr: 'Budget Communication d\'une TPE : Combien',
+    seoTitleFr: "Budget Communication : Partir du Prix d'un Client",
     seoDescFr:
-      "Ce qu'un artisan ou une TPE devrait mettre par an dans sa visibilité, dans quel ordre dépenser, et ce qui ne coûte que du temps.",
+      "Les pourcentages de chiffre d'affaires qui circulent viennent d'un autre monde. La question utile : quelle dépense se rembourse avec un seul chantier de plus.",
     readTime: '8 min',
     categoryFr: 'Stratégie',
     categorySlug: 'strategie',
@@ -473,9 +473,9 @@ Et si on vous vend l'un en promettant l'autre, vous savez maintenant ce qu'il en
     titleFr: 'À quelle heure publier : la vraie réponse',
     excerptFr:
       "C'est la question la plus posée sur les réseaux sociaux, et c'est aussi celle dont la réponse compte le moins.",
-    seoTitleFr: 'Quelle Heure Publier sur les Réseaux',
+    seoTitleFr: "Meilleure Heure pour Publier : Elle n'Existe Pas",
     seoDescFr:
-      "Ce que change réellement l'heure de publication pour une entreprise locale, comment trouver la vôtre, et ce qui compte cent fois plus.",
+      "Les listes d'heures idéales sont des moyennes mondiales tous secteurs confondus. La vôtre est dans vos propres statistiques, et l'écart est faible.",
     readTime: '7 min',
     categoryFr: 'Réseaux sociaux',
     categorySlug: 'reseaux-sociaux',

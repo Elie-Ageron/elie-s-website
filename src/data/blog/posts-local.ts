@@ -176,9 +176,9 @@ Si vous voulez que quelqu'un s'en occupe, [c'est un des services que je propose]
     titleFr: "Obtenir des avis Google sans harceler ses clients",
     excerptFr:
       "Le moment où vous demandez compte plus que la façon dont vous demandez. Et répondre aux mauvais avis rapporte souvent plus que d'en collecter des bons.",
-    seoTitleFr: 'Obtenir des Avis Google : la Méthode',
+    seoTitleFr: 'Avis Google : Viser les 20 Premiers',
     seoDescFr:
-      "Quand demander un avis, comment formuler la demande, comment répondre aux avis négatifs. Une méthode simple pour une entreprise locale.",
+      "Une vingtaine d'avis constitue le premier seuil de confiance. Comment les demander sans gêne, à quel moment, et pourquoi un avis récent pèse plus qu'un ancien.",
     readTime: '8 min',
     categoryFr: 'Référencement local',
     categorySlug: 'seo-local',
@@ -458,9 +458,9 @@ Si vous voulez savoir où vous en êtes exactement, [envoyez moi l'adresse de vo
     titleFr: "Combien coûte la gestion des réseaux sociaux pour une petite entreprise",
     excerptFr:
       "Les écarts vont de 200 à 3000 euros par mois pour des prestations qui portent le même nom. Voici ce qu'il y a réellement derrière chaque tranche.",
-    seoTitleFr: 'Prix de la Gestion des Réseaux Sociaux',
+    seoTitleFr: "Prix d'un Community Manager : 200 à 1 500 €/mois",
     seoDescFr:
-      "Ce que recouvrent réellement les tarifs de gestion des réseaux sociaux, du simple planning au tournage mensuel sur place. Et comment comparer.",
+      'De 200 € pour de la simple publication à plus de 1 500 € avec tournage sur place. La différence tient à une seule question : qui produit les images.',
     readTime: '8 min',
     categoryFr: 'Stratégie',
     categorySlug: 'strategie',

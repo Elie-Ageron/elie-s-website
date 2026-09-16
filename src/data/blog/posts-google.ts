@@ -256,9 +256,9 @@ Si votre fiche Google a pris quelques mauvais avis et que vous ne savez pas par 
     titleFr: 'Mon entreprise n\'apparaît pas sur Google Maps',
     excerptFr:
       "Vous vous cherchez, vous ne vous trouvez pas. Les six causes possibles, dans l'ordre où il faut les vérifier.",
-    seoTitleFr: 'Apparaître sur Google Maps : les 6 Causes',
+    seoTitleFr: "Ma Fiche n'Apparaît pas sur Google Maps : 6 Causes",
     seoDescFr:
-      "Votre entreprise ne sort pas sur Google Maps ? Les six causes réelles, dans l'ordre de vérification, et pourquoi vous chercher vous-même fausse le test.",
+      "Vous voyez votre fiche, vos clients non : Google personnalise selon la position et l'historique. Le test en navigation privée, et les six causes réelles.",
     readTime: '8 min',
     categoryFr: 'Référencement local',
     categorySlug: 'seo-local',
@@ -370,9 +370,9 @@ Si vous avez fait le tour de cette liste sans trouver, [envoyez moi le nom de vo
     titleFr: 'Combien de temps avant d\'être référencé sur Google',
     excerptFr:
       "La question qu'on pose au mauvais moment, avec des réponses commerciales partout. Voilà les délais réels, levier par levier.",
-    seoTitleFr: 'Combien de Temps pour Être Référencé sur Google',
+    seoTitleFr: 'Référencement Google : 3 à 6 Mois pour Ressortir',
     seoDescFr:
-      "Fiche Google, site neuf, article de blog, page locale : les délais réels avant de voir des résultats sur Google, et ce qui les raccourcit vraiment.",
+      "Quelques jours pour être indexé, trois à six mois pour ressortir sur des recherches concurrentielles. Ce qui accélère vraiment, et ce qui ne s'achète pas.",
     readTime: '8 min',
     categoryFr: 'Référencement local',
     categorySlug: 'seo-local',

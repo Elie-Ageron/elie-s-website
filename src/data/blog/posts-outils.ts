@@ -11,9 +11,9 @@ export const outilsPosts: BlogPost[] = [
     titleFr: 'Un site à 300 euros : ce qu\'il y a dedans, et ce qu\'il n\'y a pas',
     excerptFr:
       "Ce n'est pas une arnaque et ce n'est pas un bon plan. C'est un produit différent, et il faut savoir lequel avant de payer.",
-    seoTitleFr: 'Site Web Pas Cher : ce que ça Cache',
+    seoTitleFr: 'Site Web Pas Cher : Qui Possède le Nom de Domaine',
     seoDescFr:
-      "Ce que contient réellement une offre de site à bas prix, quand c'est un bon choix, et les cinq clauses à vérifier avant de signer.",
+      "Le vrai piège des offres à bas prix n'est pas la qualité, c'est l'abonnement long au terme duquel vous ne possédez rien. À vérifier avant de signer.",
     readTime: '8 min',
     categoryFr: 'Site web',
     categorySlug: 'site-web',

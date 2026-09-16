@@ -12,9 +12,9 @@ export const creationPosts: BlogPost[] = [
     titleFr: 'Combien de temps faut-il pour créer un site web',
     excerptFr:
       "Trois à huit semaines pour un site vitrine. Et ce qui prend du temps là dedans n'est presque jamais la partie technique.",
-    seoTitleFr: 'Combien de Temps pour Créer un Site Web',
+    seoTitleFr: 'Créer un Site Web : 3 à 8 Semaines, Étape par Étape',
     seoDescFr:
-      "Trois à huit semaines pour un site vitrine d'artisan ou de TPE. Le déroulé étape par étape, ce qui fait déraper le planning, et comment aller plus vite.",
+      'Trois à huit semaines entre le premier échange et la mise en ligne. Ce qui fait déraper le planning est presque toujours la même chose : vos textes.',
     readTime: '8 min',
     categoryFr: 'Site web',
     categorySlug: 'site-web',

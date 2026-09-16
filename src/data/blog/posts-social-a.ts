@@ -659,9 +659,9 @@ Si cette journée par mois est celle que vous n'avez pas, [c'est précisément c
     titleFr: "Les seules statistiques Instagram qui méritent votre attention",
     excerptFr:
       "Instagram vous donne une quarantaine de chiffres. Quatre suffisent à savoir si ce que vous faites marche.",
-    seoTitleFr: 'Statistiques Instagram : les 4 Chiffres Utiles',
+    seoTitleFr: 'Statistiques Instagram : la Rétention Avant les Vues',
     seoDescFr:
-      "Taux de rétention, comptes touchés, enregistrements, visites de profil : quelles statistiques Instagram regarder et lesquelles ignorer.",
+      'La rétention décide si la plateforme montre votre vidéo à de nouvelles personnes. Les quatre chiffres qui comptent vraiment, et comment lire les vôtres.',
     readTime: '7 min',
     categoryFr: 'Réseaux sociaux',
     categorySlug: 'reseaux-sociaux',

@@ -11,9 +11,9 @@ export const videoPosts: BlogPost[] = [
     titleFr: "Les trois premières secondes décident de tout le reste",
     excerptFr:
       "Vous pouvez avoir la meilleure vidéo du monde. Si vos trois premières secondes sont molles, personne ne verra la quatrième.",
-    seoTitleFr: 'Accroche Vidéo : les 3 Premières Secondes',
+    seoTitleFr: 'Accroche Vidéo : les 3 Secondes qui Décident Tout',
     seoDescFr:
-      "Pourquoi l'accroche décide de la portée d'une vidéo courte, et huit formulations qui fonctionnent pour une entreprise locale.",
+      'Personne ne reste pour écouter une présentation. Donner une raison précise de rester dès la première seconde change la forme de vos courbes de vues.',
     readTime: '7 min',
     categoryFr: 'Vidéo',
     categorySlug: 'video',
