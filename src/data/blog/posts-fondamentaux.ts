@@ -501,7 +501,7 @@ Trois gestes, une heure, et un effet visible dans la semaine.
     titleFr: 'Ce que ça change de travailler dans la durée plutôt qu\'au projet',
     excerptFr:
       "Un site livré et abandonné se fait rattraper. Voilà pourquoi je travaille en partenariat, et dans quels cas ça ne se justifie pas.",
-    seoTitleFr: 'Partenaire Web : pas un Hébergement Déguisé',
+    seoTitleFr: "Un Partenaire Web n'est pas un Hébergement Déguisé",
     seoDescFr:
       "Un point régulier, des corrections au fil de l'eau, du contenu publié, quelqu'un qui répond quand ça casse. Ce qui est fait doit être visible et mesurable.",
     readTime: '8 min',

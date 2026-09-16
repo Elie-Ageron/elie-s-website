@@ -12,7 +12,7 @@ export const googlePosts: BlogPost[] = [
     titleFr: 'Créer sa fiche Google Business quand on part de zéro',
     excerptFr:
       "Le levier le plus rentable pour une entreprise locale, et il est gratuit. Voilà comment le mettre en place proprement en une heure.",
-    seoTitleFr: "Créer sa Fiche Google Business : c'est Gratuit",
+    seoTitleFr: 'Créer sa Fiche Google Business est Gratuit',
     seoDescFr:
       'La création, la vérification, les photos et les avis ne coûtent rien. Les appels qui proposent de gérer votre fiche contre paiement ne viennent pas de Google.',
     readTime: '9 min',
@@ -140,7 +140,7 @@ Si vous voulez que je regarde votre fiche et que je vous dise ce qui manque, [é
     titleFr: 'Répondre à un avis négatif sur Google',
     excerptFr:
       "Le premier réflexe est toujours le mauvais. Ce que vous écrivez n'est pas pour la personne qui se plaint, c'est pour les cinquante qui vont lire.",
-    seoTitleFr: 'Avis Négatif sur Google : Votre Réponse est Lue',
+    seoTitleFr: 'Votre Réponse à un Avis Négatif est Lue',
     seoDescFr:
       "Un avis ne se fait pas supprimer parce qu'il est négatif. Sans réponse de votre part, la version du client reste la seule que liront les visiteurs suivants.",
     readTime: '9 min',
@@ -480,7 +480,7 @@ C'est aussi pour ça que je travaille dans la durée plutôt qu'en projet ponctu
     titleFr: 'Les annuaires en ligne servent-ils encore à quelque chose',
     excerptFr:
       "Pages Jaunes, annuaires de ville, plateformes de mise en relation. Ce qui vaut encore le coup, ce qui vous coûte de l'argent pour rien.",
-    seoTitleFr: 'Annuaires : une Dizaine Valent Mieux que Cent',
+    seoTitleFr: "Une Dizaine d'Annuaires Valent Mieux que Cent",
     seoDescFr:
       "L'objectif n'est pas le volume, c'est que vos informations soient identiques partout. Lesquels valent encore le coup, et la question à poser avant de payer.",
     readTime: '8 min',

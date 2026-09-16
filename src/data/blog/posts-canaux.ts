@@ -149,7 +149,7 @@ Vous saurez en une semaine si ce canal marche chez vous, et ça ne vous aura rie
     titleFr: 'WhatsApp Business quand on est artisan ou commerçant',
     excerptFr:
       "Vos clients vous écrivent déjà dessus. Autant que ce ne soit pas votre numéro personnel, et que les demandes ne se perdent plus.",
-    seoTitleFr: 'WhatsApp Business : Séparer le Pro du Personnel',
+    seoTitleFr: 'Séparer le Pro du Personnel avec WhatsApp Business',
     seoDescFr:
       "Le vrai gain n'est pas d'envoyer des photos gratuitement. Ce sont les messages d'absence et les réponses enregistrées, qui évitent de perdre des demandes.",
     readTime: '8 min',
@@ -273,7 +273,7 @@ Une heure de configuration, une fois. C'est un des rares changements dont on voi
     titleFr: 'La prise de rendez-vous en ligne : pour qui ça vaut le coup',
     excerptFr:
       "Ce n'est pas un gadget pour les gros. Pour certains métiers, c'est ce qui récupère les demandes qui arrivent quand vous ne pouvez pas décrocher.",
-    seoTitleFr: 'Rendez-vous en Ligne : pas si Vous Chiffrez Après',
+    seoTitleFr: 'Faut-il un Agenda en Ligne Quand on Chiffre Après',
     seoDescFr:
       "Utile quand la prestation est standardisée en durée et en prix. Pour un métier qui chiffre après visite, un formulaire vaut mieux qu'un agenda grand ouvert.",
     readTime: '8 min',
@@ -403,7 +403,7 @@ Si vous hésitez à en installer un, [écrivez moi](/contact) en me disant votre
     titleFr: 'Refaire son site sans perdre sa place sur Google',
     excerptFr:
       "Le moment le plus risqué de la vie d'un site. Trois entreprises sur dix perdent des positions pour une raison qui s'évitait en une heure.",
-    seoTitleFr: "Refonte : ne Redirigez pas Tout vers l'Accueil",
+    seoTitleFr: "Ne Redirigez pas Toute une Refonte vers l'Accueil",
     seoDescFr:
       'Chaque ancienne adresse doit pointer vers la page qui traite le même sujet. Sans redirection, vous perdez les visiteurs et la position que Google lui donnait.',
     readTime: '9 min',
@@ -537,7 +537,7 @@ Et avant même de vous lancer, la vraie question est de savoir si la refonte est
     titleFr: 'Faut-il un site en anglais quand on reçoit des clients étrangers',
     excerptFr:
       "En station, une part de la clientèle ne lit pas le français. Traduire tout le site est rarement la bonne réponse.",
-    seoTitleFr: 'Site en Anglais : Traduisez ce qui Décide',
+    seoTitleFr: 'Traduire son Site, Seulement ce qui Décide',
     seoDescFr:
       "L'accueil, l'offre, les informations pratiques, le contact. Un blog traduit à moitié coûte plus qu'il ne rapporte. Et pourquoi l'automatique se fait relire.",
     readTime: '8 min',

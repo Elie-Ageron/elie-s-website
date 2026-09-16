@@ -11,7 +11,7 @@ export const metiersPostsB: BlogPost[] = [
     titleFr: 'Formateur indépendant : se faire connaître sans dépendre des plateformes',
     excerptFr:
       "Vous vendez quelque chose qu'on ne peut ni toucher ni essayer. Tout votre travail de visibilité consiste à rendre ça tangible.",
-    seoTitleFr: 'Formateur : Rendre son Expérience Vérifiable',
+    seoTitleFr: 'Un Formateur Rend son Expérience Vérifiable',
     seoDescFr:
       "Vous vendez un service immatériel à des gens qui doivent vous croire avant d'avoir rien vu. Et comment rééquilibrer entre les organismes et la vente en direct.",
     readTime: '9 min',
@@ -133,7 +133,7 @@ Le reste, c'est de la régularité. Deux publications par mois, un email trimest
     titleFr: 'Garage automobile : gagner la confiance avant le premier appel',
     excerptFr:
       "C'est un des métiers où la méfiance est la plus forte au départ. Tout ce qui la réduit en amont se transforme en rendez-vous.",
-    seoTitleFr: 'Garage : les Avis Google Avant Tout le Reste',
+    seoTitleFr: 'Pour un Garage, les Avis Google Avant le Reste',
     seoDescFr:
       "C'est un métier où la méfiance de départ est forte. Des avis récents avec des réponses écrites la lèvent avant le premier appel. Et les forfaits à afficher.",
     readTime: '9 min',

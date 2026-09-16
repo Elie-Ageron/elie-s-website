@@ -11,7 +11,7 @@ export const vitrinePosts: BlogPost[] = [
     titleFr: 'Votre page d\'accueil a trois secondes pour se faire comprendre',
     excerptFr:
       "Un visiteur décide de rester ou de partir avant d'avoir lu une phrase entière. Ce qui doit tenir dans ces trois secondes.",
-    seoTitleFr: "Page d'Accueil : 4 Infos Sans Faire Défiler",
+    seoTitleFr: "Quatre Infos en Haut d'une Page d'Accueil",
     seoDescFr:
       "Ce que vous faites, pour qui, où, et comment vous joindre. Quatre informations visibles d'un coup sur un téléphone. Tout le reste peut attendre plus bas.",
     readTime: '8 min',
@@ -459,7 +459,7 @@ Le nombre de pages n'a jamais fait signer personne. Ce qui fait signer, c'est de
     titleFr: 'Ce qui vieillit sur un site, et à quel rythme le reprendre',
     excerptFr:
       "Un site n'est pas un objet qu'on livre. Six choses y périment, et deux d'entre elles coûtent des clients tous les jours.",
-    seoTitleFr: 'Mise à Jour : Améliorer Bat Publier du Neuf',
+    seoTitleFr: 'Mettre son Site à Jour Bat Publier du Neuf',
     seoDescFr:
       "Une page qui a déjà une position monte plus vite qu'une page neuve. Et ce qui coûte des clients sans rien signaler : tarifs périmés, horaires faux, photos.",
     readTime: '7 min',

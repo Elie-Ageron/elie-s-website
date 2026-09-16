@@ -139,7 +139,7 @@ Et si vous voulez qu'on regarde ensemble ce qui manque chez vous, [écrivez moi]
     titleFr: 'Agent immobilier indépendant : exister à côté des portails',
     excerptFr:
       "Vos annonces vivent sur des portails qui vendent aussi vos concurrents. Votre nom, lui, ne vit nulle part. C'est là que se joue la rentrée de mandats.",
-    seoTitleFr: 'Agent Immobilier : le Portail Vend le Réseau',
+    seoTitleFr: 'Le Portail de Votre Réseau Vend le Réseau',
     seoDescFr:
       "Ce qui intéresse un vendeur, ce n'est pas le catalogue de biens, c'est ce que vous savez du marché de sa rue. La page à votre nom qu'il trouve après le panneau.",
     readTime: '9 min',

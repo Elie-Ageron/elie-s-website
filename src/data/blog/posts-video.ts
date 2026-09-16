@@ -11,7 +11,7 @@ export const videoPosts: BlogPost[] = [
     titleFr: "Les trois premières secondes décident de tout le reste",
     excerptFr:
       "Vous pouvez avoir la meilleure vidéo du monde. Si vos trois premières secondes sont molles, personne ne verra la quatrième.",
-    seoTitleFr: 'Accroche Vidéo : les 3 Secondes qui Décident Tout',
+    seoTitleFr: 'Les 3 Premières Secondes Décident de Tout',
     seoDescFr:
       'Personne ne reste pour écouter une présentation. Donner une raison précise de rester dès la première seconde change la forme de vos courbes de vues.',
     readTime: '7 min',
@@ -148,7 +148,7 @@ Quand je m'occupe des réseaux d'un client, j'écris les accroches avant de veni
     titleFr: "Le son compte plus que l'image, et personne ne s'en occupe",
     excerptFr:
       "On pardonne une image moyenne. On ne pardonne jamais un son pourri. C'est pourtant là que les gens investissent le moins.",
-    seoTitleFr: 'Son Vidéo : un Micro Dès que Vous Filmez à 1 m',
+    seoTitleFr: "Un Micro Dès que Vous Filmez à Plus d'un Mètre",
     seoDescFr:
       "Un micro cravate d'entrée de gamme améliore plus le rendu final que n'importe quel accessoire d'image au même prix. Et comment tuer l'écho d'une pièce vide.",
     readTime: '6 min',
@@ -271,7 +271,7 @@ Et si vous préférez ne rien acheter du tout, c'est aussi une option : [je vien
     titleFr: "Filmer avec une bonne lumière sans acheter de matériel",
     excerptFr:
       "La différence entre une vidéo qui fait sérieux et une vidéo qui fait bricolé tient souvent à l'endroit où vous vous placez dans la pièce.",
-    seoTitleFr: 'Visage Sombre en Vidéo : la Fenêtre est Derrière',
+    seoTitleFr: 'Votre Visage est Sombre, la Fenêtre est Derrière',
     seoDescFr:
       "Le téléphone expose pour la zone la plus lumineuse et assombrit tout le reste. Tournez-vous face à la fenêtre. Et pourquoi l'anneau lumineux se voit toujours.",
     readTime: '6 min',
@@ -652,7 +652,7 @@ Et si cette journée est celle que vous n'avez pas, c'est exactement le service 
     titleFr: "Parler face caméra quand on déteste ça",
     excerptFr:
       "Presque personne n'aime se voir à l'écran. Voilà les solutions concrètes, y compris celle qui consiste à ne jamais montrer son visage.",
-    seoTitleFr: 'Face Caméra : Parlez à Une Personne Précise',
+    seoTitleFr: 'Face Caméra, Parlez à Une Personne Précise',
     seoDescFr:
       "Beaucoup y arrivent en imaginant un client qu'ils connaissent, ou en filmant en marchant. Et comment faire des vidéos sans jamais montrer son visage.",
     readTime: '6 min',

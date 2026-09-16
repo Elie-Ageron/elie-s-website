@@ -128,7 +128,7 @@ Si vous avez une date en tête, une ouverture, une saison qui démarre, un salon
     titleFr: 'Faire son site soi-même ou passer par quelqu\'un',
     excerptFr:
       "Wix et les autres tiennent leur promesse : vous aurez un site. La question est ce que ce site vous coûte en temps et en demandes perdues.",
-    seoTitleFr: "Site Soi-même : le Problème n'est Jamais l'Outil",
+    seoTitleFr: "Faire son Site Soi-même, le Problème n'est pas l'Outil",
     seoDescFr:
       "Un site Wix bien rempli fonctionne et se référence. Ce qui manque, c'est le temps d'écrire des pages qui répondent aux questions de vos clients. Le coût réel.",
     readTime: '9 min',
@@ -236,7 +236,7 @@ Et si vous voulez un avis extérieur sur ce que vous avez déjà, [envoyez moi l
     titleFr: 'Nom de domaine et hébergement : qui possède quoi',
     excerptFr:
       "Le sujet le plus ennuyeux du web, et celui qui coince le plus de gens le jour où ils veulent changer de prestataire.",
-    seoTitleFr: 'Nom de Domaine : il Doit Être à Votre Nom',
+    seoTitleFr: 'Votre Nom de Domaine Doit Être à Votre Nom',
     seoDescFr:
       "Le titulaire inscrit chez le bureau d'enregistrement décide de tout. Un prestataire qui refuse de vous le transférer est un signal suffisant pour partir.",
     readTime: '8 min',
@@ -348,7 +348,7 @@ Si vous avez un doute sur ce que vous possédez réellement aujourd'hui, [écriv
     titleFr: 'Mentions légales, RGPD, cookies : le minimum sur un site vitrine',
     excerptFr:
       "Trois obligations distinctes qu'on mélange tout le temps, et ce qu'il faut réellement mettre sur un site d'artisan ou de TPE.",
-    seoTitleFr: 'Mentions Légales : le Bandeau Cookies pas Toujours',
+    seoTitleFr: "Un Bandeau Cookies n'est pas Toujours Obligatoire",
     seoDescFr:
       "Un site qui ne dépose que des cookies nécessaires n'a pas à recueillir de consentement. Ce qui est obligatoire, ce qui ne l'est pas, et comment s'en occuper.",
     readTime: '8 min',
@@ -460,7 +460,7 @@ Si vous avez un site en ligne et que vous ne savez pas où vous en êtes, [envoy
     titleFr: 'Agence, freelance ou plateforme : à qui confier son site',
     excerptFr:
       "Quatre façons de faire faire son site, quatre budgets, quatre risques. La question qui tranche n'est pas le prix.",
-    seoTitleFr: 'Agence ou Freelance : Demandez 3 Sites Livrés',
+    seoTitleFr: 'Demandez Trois Sites Livrés Avant de Signer',
     seoDescFr:
       'Puis contactez un de ces clients. Un prestataire sérieux donne ses références sans hésiter, et accepte que le domaine soit à votre nom. Ce que vous payez.',
     readTime: '9 min',

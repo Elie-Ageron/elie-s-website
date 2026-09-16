@@ -11,7 +11,7 @@ export const localPosts: BlogPost[] = [
     titleFr: "Votre fiche Google Business vaut plus que votre site web",
     excerptFr:
       "Elle est gratuite, elle s'affiche avant tous les résultats classiques, et la plupart des entreprises la remplissent à moitié puis n'y touchent plus.",
-    seoTitleFr: 'Optimiser sa Fiche Google : par Quoi Commencer',
+    seoTitleFr: 'Par Quoi Commencer pour Optimiser sa Fiche Google',
     seoDescFr:
       "Une fiche remplie à moitié ressort mal, et la plupart le sont. Ce qui fait bouger une fiche déjà créée, dans l'ordre où je m'en occupe chez un client.",
     readTime: '9 min',

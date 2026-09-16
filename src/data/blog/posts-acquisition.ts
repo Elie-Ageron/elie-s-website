@@ -11,7 +11,7 @@ export const acquisitionPosts: BlogPost[] = [
     titleFr: 'Les groupes de commune : le canal que personne ne pilote',
     excerptFr:
       "En Savoie, une bonne partie des recommandations passe par des groupes de village. On ne peut pas y faire de publicité, et c'est justement ce qui les rend puissants.",
-    seoTitleFr: 'Groupes Facebook de Commune : ne Vendez Jamais',
+    seoTitleFr: 'Ne Vendez Jamais dans un Groupe Facebook de Commune',
     seoDescFr:
       "Publier une annonce dans un groupe qui l'interdit vous fait exclure. Répondre utilement à une question vous fait contacter en privé. Plus lent, plus efficace.",
     readTime: '8 min',
@@ -249,7 +249,7 @@ En un an, cela fait une cinquantaine d'interlocuteurs professionnels de votre zo
     titleFr: 'Faire revenir ses clients quand on vend une fois tous les dix ans',
     excerptFr:
       "Un client satisfait ne revient pas de lui-même sur un métier à cycle long. Il vous oublie, et il appelle quelqu'un d'autre.",
-    seoTitleFr: 'Fidéliser un Artisan : Viser la Recommandation',
+    seoTitleFr: 'Fidéliser Quand le Besoin Revient Tous les Dix Ans',
     seoDescFr:
       'Quand le besoin revient tous les dix ans, le rachat est improbable. Un client content qui pense à vous une fois par an en parle à trois personnes autour de lui.',
     readTime: '8 min',
@@ -373,7 +373,7 @@ C'est le canal le moins cher qui existe, et il ne demande que de la régularité
     titleFr: 'Faut-il mettre une IA qui répond sur son site',
     excerptFr:
       "Ça paraît moderne et ça résout un vrai problème. Ça en crée deux autres, dont un qui coûte des clients.",
-    seoTitleFr: "Chatbot IA : s'il Répond Faux, ça Vous Engage",
+    seoTitleFr: 'Un Chatbot IA qui Répond Faux Vous Engage',
     seoDescFr:
       "Un agent qui annonce un prix ou un délai inexact crée un litige que vous n'aviez pas. Ce qu'il règle vraiment, et les solutions moins risquées pour une TPE.",
     readTime: '7 min',
@@ -477,7 +477,7 @@ Dans l'ordre inverse, vous payez pour un gadget qui parle à votre place avant d
     titleFr: 'Les marchés publics quand on est une petite entreprise',
     excerptFr:
       "Les communes, les intercommunalités et les stations achètent en permanence. Beaucoup d'artisans n'y vont pas, en croyant que ce n'est pas pour eux.",
-    seoTitleFr: "Marchés Publics : Beaucoup Reçoivent Peu d'Offres",
+    seoTitleFr: "Beaucoup de Marchés Publics Reçoivent Peu d'Offres",
     seoDescFr:
       'Une part importante de la commande publique passe par des lots séparés et des montants faibles, pour rester accessible aux petites entreprises locales.',
     readTime: '9 min',

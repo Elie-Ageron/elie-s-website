@@ -11,7 +11,7 @@ export const devisPosts: BlogPost[] = [
     titleFr: 'Un devis qui se signe : ce qui se joue dans le document',
     excerptFr:
       "Vous avez gagné la visite, vous avez chiffré juste, et le client signe ailleurs. Le devis est le dernier document que personne ne travaille.",
-    seoTitleFr: "Devis : le Client Choisit Celui qu'il Comprend",
+    seoTitleFr: "Le Client Choisit le Devis qu'il Comprend",
     seoDescFr:
       "Face à trois devis, il prend celui qu'il comprend, envoyé par celui qui a répondu le plus vite. Le prix départage en dernier, et moins qu'on ne le croit.",
     readTime: '9 min',
@@ -359,7 +359,7 @@ C'est peu, c'est tenable, et c'est déjà davantage que la quasi-totalité de vo
     titleFr: 'Photos professionnelles ou smartphone : où mettre l\'argent',
     excerptFr:
       "Un téléphone récent suffit pour la plus grande partie des besoins d'une TPE. Reste une poignée de cas où il ne suffit pas.",
-    seoTitleFr: 'Photos : le Téléphone Suffit, Sauf pour 4 Cas',
+    seoTitleFr: 'Le Téléphone Suffit pour vos Photos, Sauf 4 Cas',
     seoDescFr:
       "Chantier, produit, ambiance : un téléphone récent suffit si la lumière est soignée. Les quatre cas où le résultat dépend d'une compétence, pas d'un matériel.",
     readTime: '8 min',
@@ -471,7 +471,7 @@ Si la réponse est non sur plusieurs images, le problème n'est probablement pas
     titleFr: 'Choisir le nom de son entreprise, en pensant à après',
     excerptFr:
       "Un nom se dicte au téléphone des milliers de fois, se cherche sur Google, et se floque sur un camion. Trois contraintes qu'on oublie au moment de choisir.",
-    seoTitleFr: "Nom d'Entreprise : le Métier Dedans Vous Enferme",
+    seoTitleFr: 'Mettre son Métier dans le Nom Vous Enferme',
     seoDescFr:
       "On comprend tout de suite ce que vous faites, sur un camion comme dans une liste de résultats. Et ça coince le jour où l'activité évolue. Idem pour la ville.",
     readTime: '8 min',

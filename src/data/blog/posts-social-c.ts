@@ -121,7 +121,7 @@ C'est le principe sur lequel je travaille chez mes clients : la production est g
     titleFr: 'La musique sur les reels : ce qu\'on a le droit d\'utiliser',
     excerptFr:
       "Le son qui marche sur un compte personnel n'est pas toujours disponible sur un compte professionnel. Voilà pourquoi, et ce que ça change.",
-    seoTitleFr: "Musique : le Catalogue Pro n'est pas le Même",
+    seoTitleFr: "Le Catalogue Musical Pro n'est pas le Même",
     seoDescFr:
       "Les plateformes séparent les droits d'un usage privé et d'un usage commercial, d'où les titres absents de votre compte. Ce que vous risquez en passant outre.",
     readTime: '7 min',

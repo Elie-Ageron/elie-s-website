@@ -11,7 +11,7 @@ export const googlePostsB: BlogPost[] = [
     titleFr: 'Publier sur sa fiche Google Business : est-ce que ça sert',
     excerptFr:
       "La fonction existe depuis des années et presque personne ne l'utilise. Voilà ce qu'elle fait réellement, et ce qu'elle ne fait pas.",
-    seoTitleFr: 'Publications Google : Elles ne Font pas Monter',
+    seoTitleFr: 'Les Publications Google ne Font pas Monter la Fiche',
     seoDescFr:
       "Leur effet sur le classement est faible et personne de sérieux ne dira l'inverse. Elles occupent la place au moment où quelqu'un hésite entre vous et un autre.",
     readTime: '7 min',
@@ -127,7 +127,7 @@ Si vous n'avez que dix minutes ce mois-ci, demandez un avis plutôt que de publi
     titleFr: 'Fiche Google suspendue ou refusée : que faire',
     excerptFr:
       "Du jour au lendemain, vous n'apparaissez plus nulle part. C'est brutal, c'est rattrapable, et il ne faut surtout pas s'agiter.",
-    seoTitleFr: 'Fiche Google Suspendue : ne Renvoyez pas la Demande',
+    seoTitleFr: 'Fiche Google Suspendue, ne Renvoyez pas la Demande',
     seoDescFr:
       'Nom bourré de mots-clés, adresse sans activité réelle, catégorie hors sujet : les causes fréquentes. Et multiplier les demandes rallonge le délai.',
     readTime: '8 min',
@@ -253,7 +253,7 @@ Si vous êtes en train de vivre une suspension et que vous ne trouvez pas la cau
     titleFr: 'Travailler sans local : comment définir sa zone',
     excerptFr:
       "Déclarer toute la région pour rater toutes les communes. C'est l'erreur la plus fréquente chez ceux qui se déplacent.",
-    seoTitleFr: "Zone d'Intervention : Trop Large Vous Dilue",
+    seoTitleFr: "Une Zone d'Intervention Trop Large Vous Dilue",
     seoDescFr:
       'Un rayon démesuré affaiblit votre pertinence sur les communes où vous travaillez vraiment, sans rien vous apporter ailleurs. Et quand masquer son adresse.',
     readTime: '8 min',
@@ -365,7 +365,7 @@ Dire honnêtement où vous êtes et jusqu'où vous allez est toujours plus effic
     titleFr: 'LinkedIn quand on est une TPE locale : utile ou pas',
     excerptFr:
       "Pour un artisan qui travaille chez des particuliers, la réponse est non. Pour une partie des autres, c'est le canal le plus sous-exploité.",
-    seoTitleFr: 'LinkedIn : Inutile si vos Clients Sont Particuliers',
+    seoTitleFr: 'LinkedIn Sert peu Quand vos Clients Sont Particuliers',
     seoDescFr:
       'Utile pour qui travaille avec des syndics, des collectivités ou des architectes. Et pourquoi le profil personnel circule quand la page entreprise non.',
     readTime: '8 min',
@@ -483,7 +483,7 @@ Ce que je constate, c'est que les entreprises qui vendent à d'autres entreprise
     titleFr: 'L\'avant et après : le format que les artisans sous-utilisent',
     excerptFr:
       "Le contenu le plus efficace de tout le bâtiment, et il échoue presque toujours pour la même raison : la photo d'avant n'existe pas.",
-    seoTitleFr: 'Avant Après : Reprenez la Photo du Même Endroit',
+    seoTitleFr: 'Pourquoi vos Avant Après ne Fonctionnent pas',
     seoDescFr:
       "Le cerveau ne compare que ce qui est comparable. Changez l'angle entre les deux prises et l'effet disparaît. Et quand demander l'accord du client, pas à la fin.",
     readTime: '7 min',

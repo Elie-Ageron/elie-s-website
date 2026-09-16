@@ -12,7 +12,7 @@ export const terrainPosts: BlogPost[] = [
     titleFr: 'Logo et identité visuelle : ce dont une TPE a réellement besoin',
     excerptFr:
       "Beaucoup de gens commencent par là et y mettent trop d'argent. D'autres n'y mettent rien et le paient ailleurs. Voilà le juste milieu.",
-    seoTitleFr: 'Logo : du Propre Suffit, pas du Définitif',
+    seoTitleFr: 'Un Logo Propre Suffit, pas Forcément Définitif',
     seoDescFr:
       'Un nom dans une typographie choisie, avec une couleur, tient les premiers mois et évite de figer une identité avant de savoir ce que vous vendez. Et le budget.',
     readTime: '8 min',
@@ -380,7 +380,7 @@ C'est ce critère qui explique pourquoi une camionnette bat un flyer, et pourquo
     titleFr: 'Organiser le bouche à oreille au lieu de l\'attendre',
     excerptFr:
       "C'est votre premier canal d'acquisition et le seul que vous ne pilotez pas. Trois habitudes suffisent à le rendre régulier.",
-    seoTitleFr: 'Bouche à Oreille : Demandez de Façon Précise',
+    seoTitleFr: 'Demandez une Recommandation de Façon Précise',
     seoDescFr:
       "« Si vous connaissez quelqu'un qui a le même problème de toiture » obtient beaucoup plus que « n'hésitez pas à me recommander ». Et faut-il payer un apporteur.",
     readTime: '8 min',

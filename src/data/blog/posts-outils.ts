@@ -139,7 +139,7 @@ Ce qui n'est jamais acceptable, quel que soit le prix, c'est de ne pas posséder
     titleFr: 'Changer de prestataire web sans tout casser',
     excerptFr:
       "La rupture se prépare avant l'annonce. Une fois le message envoyé, il est souvent trop tard pour récupérer proprement.",
-    seoTitleFr: 'Changer de Prestataire : Récupérez Tout Avant',
+    seoTitleFr: "Récupérez Tout Avant d'Annoncer Votre Départ",
     seoDescFr:
       "Domaine, hébergement, mesure, fiche Google, réseaux, sauvegarde des contenus. Après l'annonce, tout devient plus lent. Et pourquoi chercher le suivant d'abord.",
     readTime: '8 min',

@@ -11,7 +11,7 @@ export const decisionsPosts: BlogPost[] = [
     titleFr: 'Récupérer un site dont on a perdu les accès',
     excerptFr:
       "Le prestataire ne répond plus, personne ne sait où est hébergé le site, et l'échéance du domaine approche. Voilà l'ordre dans lequel s'y prendre.",
-    seoTitleFr: 'Récupérer son Site : le Titulaire est Public',
+    seoTitleFr: "Le Titulaire d'un Nom de Domaine est Public",
     seoDescFr:
       "Qui possède le nom de domaine et où le site est hébergé se consultent publiquement. C'est ce qui décide si vous reprenez la main seul, ou par procédure.",
     readTime: '9 min',
@@ -135,7 +135,7 @@ Si vous êtes bloqué en ce moment, [envoyez moi le nom de votre domaine](/conta
     titleFr: 'Site vitrine ou boutique en ligne : lequel vous faut-il',
     excerptFr:
       "Ajouter un panier semble anodin. C'est en réalité changer de métier, et beaucoup de gens s'en aperçoivent trop tard.",
-    seoTitleFr: 'Boutique en Ligne : le Coût Vient Après',
+    seoTitleFr: "Le Coût d'une Boutique en Ligne Vient Après",
     seoDescFr:
       'Stocks, fiches produits, expéditions, retours, service client : du travail permanent, pas un investissement. Et comment vendre sans boutique complète.',
     readTime: '9 min',
@@ -257,7 +257,7 @@ Si vous hésitez entre les deux, [écrivez moi](/contact) en décrivant ce que v
     titleFr: 'L\'accessibilité d\'un site, sans le jargon',
     excerptFr:
       "On en parle comme d'une contrainte légale. C'est d'abord une question de clients qui repartent parce qu'ils n'arrivent pas à lire.",
-    seoTitleFr: 'Accessibilité : un Téléphone en Plein Soleil Aussi',
+    seoTitleFr: "Un Téléphone en Plein Soleil, c'est de l'Accessibilité",
     seoDescFr:
       "Une presbytie, une main occupée, une connexion faible produisent les mêmes difficultés qu'un handicap déclaré. Les corrections qui changent quelque chose.",
     readTime: '8 min',
@@ -399,7 +399,7 @@ Si vous voulez que je regarde votre site sur ces points, [envoyez moi l'adresse]
     titleFr: 'Trouver les mots que vos clients tapent réellement',
     excerptFr:
       "Vous employez le vocabulaire de votre métier. Vos clients emploient celui de leur problème. Tout l'écart est là.",
-    seoTitleFr: 'Mots-clés : le Précis Bat le Très Recherché',
+    seoTitleFr: 'Un Mot-clé Précis Bat un Mot-clé Très Recherché',
     seoDescFr:
       'Une recherche générale est disputée par des acteurs nationaux et attire des gens loin de la décision. Où trouver les vrais mots, sans aucun outil payant.',
     readTime: '9 min',

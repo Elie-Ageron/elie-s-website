@@ -161,7 +161,7 @@ Quand je fais un site, je pose les questions et j'écris à partir des réponses
     titleFr: "Pourquoi 10 000 abonnés ne valent parfois rien",
     excerptFr:
       "Le nombre d'abonnés est le chiffre le plus regardé et le moins utile. Voici ceux qui prédisent réellement des demandes.",
-    seoTitleFr: "Abonnés ou Clients : il n'y a pas de Seuil",
+    seoTitleFr: "Il n'y a pas de Seuil d'Abonnés pour Avoir des Clients",
     seoDescFr:
       "Quelques centaines d'abonnés locaux génèrent des demandes régulières. Plusieurs milliers d'abonnés dispersés n'en génèrent aucune. Les indicateurs à suivre.",
     readTime: '6 min',
@@ -403,7 +403,7 @@ Si vous voulez que je regarde où fuit votre parcours, [envoyez moi le lien de v
     titleFr: "Les photos de votre site en disent plus que vos textes",
     excerptFr:
       "Une image de banque d'images repérée en une seconde annule tout le travail d'écriture. Voilà quoi photographier et comment.",
-    seoTitleFr: "Photos du Site : Jamais de Banque d'Images",
+    seoTitleFr: "Pas de Banque d'Images sur les Photos de Votre Site",
     seoDescFr:
       'Pas pour votre équipe, vos locaux ou vos réalisations : les visiteurs les reconnaissent et en tirent des conclusions. Le téléphone suffit, sauf le portrait.',
     readTime: '7 min',
@@ -790,7 +790,7 @@ Si vous voulez que je regarde le vôtre, [envoyez moi l'adresse](/contact).
     titleFr: "Mon site ne génère aucun contact : par où chercher",
     excerptFr:
       "Trois causes possibles, et elles ne se corrigent pas de la même façon. Le diagnostic prend vingt minutes et évite de refaire un site pour rien.",
-    seoTitleFr: "Aucun Contact : Regardez d'Abord vos Visites",
+    seoTitleFr: "Aucun Contact, Regardez d'Abord vos Visites",
     seoDescFr:
       'En dessous de deux cents visites par mois, une absence de demandes ne prouve rien. Sur un site local bien fait, un visiteur sur cinquante à vingt prend contact.',
     readTime: '8 min',
@@ -939,7 +939,7 @@ Si vous voulez un avis extérieur, [envoyez moi l'adresse de votre site](/contac
     titleFr: "Quand refaire son site, et quand il vaut mieux le garder",
     excerptFr:
       "Refaire un site coûte cher et fait souvent perdre le référencement acquis. Voici les cas où c'est justifié, et ceux où c'est du gaspillage.",
-    seoTitleFr: 'Quand Refaire son Site : un Bon Site Tient 7 Ans',
+    seoTitleFr: 'Un Bon Site Web Tient Sept Ans Avant Refonte',
     seoDescFr:
       "Il n'y a pas de durée de vie fixe. Un site clair, rapide et à jour peut servir sept ans. Un site illisible sur mobile se reprend tout de suite, à tout âge.",
     readTime: '8 min',

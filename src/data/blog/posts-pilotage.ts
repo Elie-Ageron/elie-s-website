@@ -133,7 +133,7 @@ Ce que vous découvrirez, c'est ce que ces outils savent de votre marché local.
     titleFr: 'Savoir si votre communication rapporte quelque chose',
     excerptFr:
       "La plupart des indépendants ne savent pas d'où viennent leurs clients. Une seule question, posée systématiquement, suffit à le savoir.",
-    seoTitleFr: "D'où Viennent vos Clients : Demandez-leur",
+    seoTitleFr: "Pour Savoir d'où Viennent vos Clients, Demandez",
     seoDescFr:
       "Une question posée à chaque nouveau contact, notée dans un tableau, donne en trois mois une information plus fiable que n'importe quel outil de mesure.",
     readTime: '8 min',
@@ -513,7 +513,7 @@ Dans tous les autres cas, c'est le travail le plus rentable à long terme que je
     titleFr: 'Obtenir un témoignage client en vidéo, sans mettre personne mal à l\'aise',
     excerptFr:
       "C'est le contenu le plus convaincant qui existe, et celui que presque personne ne demande. Voilà comment le faire sans que ça sonne faux.",
-    seoTitleFr: 'Témoignage Client : Demandez à la Fin du Chantier',
+    seoTitleFr: 'Demandez le Témoignage à la Fin du Chantier',
     seoDescFr:
       'Quand le résultat est encore sous ses yeux. Trois semaines plus tard, par message, vous obtenez beaucoup moins de oui et un témoignage plus flou. Et le repli.',
     readTime: '8 min',

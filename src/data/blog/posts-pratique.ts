@@ -137,7 +137,7 @@ Si vous trouvez, demandez-vous si l'information est utile. "Sur devis" n'est pas
     titleFr: 'Rater moins d\'appels quand on travaille avec les mains',
     excerptFr:
       "Le levier le plus rentable de toute cette liste, et il ne demande ni site, ni budget, ni compétence technique.",
-    seoTitleFr: "Rater Moins d'Appels : Annoncez un Délai",
+    seoTitleFr: 'Annoncez un Délai de Rappel, Vous en Raterez Moins',
     seoDescFr:
       "Un message d'accueil qui annonce un délai de rappel réel retient une bonne partie des gens. Une sonnerie dans le vide en fait partir la majorité, sans trace.",
     readTime: '7 min',
@@ -251,7 +251,7 @@ Rappelé le jour même et abouti. Rappelé trop tard et perdu. Jamais rappelé.
     titleFr: 'Votre site a été piraté : les premières heures',
     excerptFr:
       "Redirections bizarres, pages inconnues, avertissement de Google. Ce qu'il faut faire, dans l'ordre, et ce qu'il ne faut surtout pas faire.",
-    seoTitleFr: 'Site Piraté : Copiez Tout Avant de Supprimer',
+    seoTitleFr: 'Site Piraté, Copiez Tout Avant de Supprimer',
     seoDescFr:
       "Supprimer tout de suite détruit les traces qui expliquent par où l'intrusion est passée. Les signaux qui doivent alerter, et la marche à suivre dans l'ordre.",
     readTime: '8 min',

@@ -473,7 +473,7 @@ Et si on vous vend l'un en promettant l'autre, vous savez maintenant ce qu'il en
     titleFr: 'À quelle heure publier : la vraie réponse',
     excerptFr:
       "C'est la question la plus posée sur les réseaux sociaux, et c'est aussi celle dont la réponse compte le moins.",
-    seoTitleFr: "Meilleure Heure pour Publier : Elle n'Existe Pas",
+    seoTitleFr: "La Meilleure Heure pour Publier n'Existe Pas",
     seoDescFr:
       "Les listes d'heures idéales sont des moyennes mondiales tous secteurs confondus. La vôtre est dans vos propres statistiques, et l'écart est faible.",
     readTime: '7 min',
