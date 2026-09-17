@@ -51,7 +51,43 @@ if (!existsSync(join(dist, 'index.html'))) {
   process.exit(1);
 }
 
-const gabarit = readFileSync(join(dist, 'index.html'), 'utf8');
+/**
+ * 🔴 **`dist/index.html` est a la fois le gabarit et la page d'accueil**, et ca
+ * rendait le script non rejouable, en silence.
+ *
+ * Au premier passage il ecrit le squelette de l'accueil dans ce fichier. Au
+ * passage suivant, `<div id="root"></div>` n'existe donc plus, l'injection ne
+ * matche rien, et **toutes les pages ecrites heritent du squelette de
+ * l'accueil** : les liens de l'accueil, sur une page de ville. Aucune erreur,
+ * aucun avertissement.
+ *
+ * Le build Vercel ne le voyait pas parce qu'il enchaine toujours `vite build`
+ * puis un seul passage. C'est en relancant le script a la main, pour corriger
+ * les balises Twitter le 17 septembre 2026, que le defaut est sorti.
+ *
+ * On remet donc `#root` a vide en comptant les balises ouvrantes et fermantes,
+ * plutot qu'au motif : le squelette contient lui-meme des `div`, et un motif
+ * paresseux couperait a la premiere fermeture venue.
+ */
+const videRoot = (html) => {
+  const debut = html.indexOf('<div id="root">');
+  if (debut === -1) return html;
+  const ouverture = debut + '<div id="root">'.length;
+  if (html.slice(ouverture, ouverture + 6) === '</div>') return html;
+  let profondeur = 1;
+  const motif = /<div\b|<\/div>/g;
+  motif.lastIndex = ouverture;
+  let m;
+  while ((m = motif.exec(html))) {
+    profondeur += m[0] === '</div>' ? -1 : 1;
+    if (profondeur === 0) {
+      return html.slice(0, debut) + '<div id="root"></div>' + html.slice(m.index + m[0].length);
+    }
+  }
+  return html;
+};
+
+const gabarit = videRoot(readFileSync(join(dist, 'index.html'), 'utf8'));
 const lire = (p) => readFileSync(join(racine, p), 'utf8');
 const lireTout = (fichiers) => fichiers.map((f) => readFileSync(f, 'utf8')).join('\n');
 
@@ -342,6 +378,58 @@ const liensDePage = (chemin) => {
  * ⚠️ Ne pas le repasser en flux normal pour « faire plus propre ». Le CLS
  * revient immediatement.
  */
+/**
+ * La preuve, pour qui n'execute pas JavaScript.
+ *
+ * 🔴 **Releve du 17 septembre 2026, par une relecture exterieure.** Un moteur
+ * de reponse a qui on demande « est-ce qu'Elie est fiable » lisait 144 mots sur
+ * l'accueil, dont la quasi-totalite etaient des libelles de liens. Il avait le
+ * titre, la phrase d'offre et le prix, et **aucune preuve** : pas un nom de
+ * client, pas un avis, pas une realisation. Il ne pouvait donc pas repondre.
+ *
+ * ChatGPT et Perplexity n'executent pas JavaScript, et c'est exactement par la
+ * que passent aujourd'hui les gens qui verifient un prestataire avant
+ * d'appeler.
+ *
+ * ⚠️ **Tout ce qui est ici doit etre verifiable.** Ce sont les quatre avis
+ * reels de `ReviewSchema.tsx` et les quatre clients de `Portfolio.tsx`, les
+ * memes que le visiteur voit a l'ecran. **Aucun compteur, aucun chiffre de
+ * performance** : c'est la regle du site, et un squelette n'y echappe pas.
+ *
+ * ⚠️ Pas sur les articles de blog : ils repondent a une question, et une
+ * plaque de preuve commerciale sous chacun des 142 serait hors sujet.
+ */
+const AVIS = [
+  ['Nora Aamara', 'Naura Conseils', "Il a été à l'écoute de mes besoins, de mes idées et de ma vision. Mon site est moderne, clair, fonctionnel et adapté à mon activité."],
+  ['Austin Talley', 'Virtual Producers', "On avait besoin d'un site à la hauteur de notre énergie. Elie a compris notre univers immédiatement."],
+  ['Gabriel Ageron', 'MyWebGlory', 'Notre site inspire confiance, convertit mieux, et nos clients nous le disent.'],
+  ['Sébastien Chaffardon', 'Solar Fusion', "Elie a su capter l'essence de notre marque. On a eu des retours très positifs dès le lancement."],
+];
+
+/** Les pages ou la preuve a sa place : celles ou quelqu'un decide. */
+const aBesoinDePreuve = (chemin) => !chemin.startsWith('/blog/') && chemin !== '/blog' && !chemin.startsWith('/guides/');
+
+const preuve = (chemin) => {
+  if (!aBesoinDePreuve(chemin)) return '';
+  const titreBloc = (t) =>
+    `<h2 style="font-size:1rem;font-weight:600;margin:2.25rem 0 0.75rem">${t}</h2>`;
+  return (
+    titreBloc('Ce que disent quatre clients') +
+    `<ul style="margin:0;padding:0;list-style:none;font-size:0.85rem;color:#635e59">` +
+    AVIS.map(
+      ([qui, ou, quoi]) =>
+        `<li style="margin:0 0 0.75rem"><strong style="color:#2b2724;font-weight:600">${echapper(qui)}</strong>, ${echapper(ou)} : ${echapper(quoi)}</li>`
+    ).join('') +
+    `</ul>` +
+    titreBloc('Quatre sites en ligne') +
+    `<p style="margin:0;font-size:0.85rem;color:#635e59">Naura Conseils Finance (courtage), Solar Fusion (photovoltaïque), MyWebGlory et Virtual Producers (deux agences). Visibles sur la page portfolio.</p>` +
+    titreBloc('Deux comptes gérés en ce moment') +
+    `<p style="margin:0;font-size:0.85rem;color:#635e59">Nouït, praticienne en soins énergétiques à Albertville, et Isabelle Ageron-Vicat, formatrice en rééducation de l'écriture à Albertville. Leurs publications sont publiques.</p>` +
+    titreBloc('Qui, où, combien') +
+    `<p style="margin:0;font-size:0.85rem;color:#635e59">Elie Ageron, web designer indépendant à Albertville en Savoie. Réseaux sociaux dès 890 euros par mois : tournage sur place une journée par mois, puis 6 à 12 publications dans le mois. Site une page dès 500 euros, site vitrine dès 1 500 euros. Téléphone 06 95 55 53 18, elie@elieageron.com.</p>`
+  );
+};
+
 const squelette = (chemin, titre, description) => {
   const sup = liensDePage(chemin);
   return (
@@ -361,6 +449,7 @@ const squelette = (chemin, titre, description) => {
     (sup.length
       ? `<nav style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:0.4rem 1rem;font-size:0.82rem;color:#635e59">${sup.join('')}</nav>`
       : '') +
+    preuve(chemin) +
     `</div></div>`
   );
 };
