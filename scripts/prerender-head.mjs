@@ -430,10 +430,47 @@ const preuve = (chemin) => {
   );
 };
 
+/**
+ * La barre du haut, qui fait que le squelette ressemble au site qui charge.
+ *
+ * 🔴 **Elie, le 17 septembre 2026 :** *« quand on va sur le site il y a des
+ * redirections. on voit pendant une milliseconde une page avant d'aller sur la
+ * bonne. »* Il ne voyait pas une redirection : il voyait ce squelette, puis la
+ * vraie page. Deux mises en page sans rien de commun, donc deux pages.
+ *
+ * La cause principale est corrigee dans `src/main.tsx` : React hydratait ce
+ * squelette, echouait, et refaisait tout. Restait le fait qu'un document de
+ * texte centre ne ressemble en rien a l'accueil du site. On lui donne donc la
+ * meme barre de navigation et le meme fond que le site : le passage se lit
+ * comme un chargement, pas comme un saut.
+ *
+ * ⚠️ Toujours en police systeme et sans image : voir le commentaire sur le CLS
+ * plus bas. Le nom est en texte, pas en logo, pour ne pas ajouter une requete
+ * reseau sur le chemin critique.
+ */
+const barre =
+  `<div style="border-bottom:1px solid rgba(43,39,36,0.08)">` +
+  `<div style="max-width:72rem;margin:0 auto;padding:1.1rem 1.5rem;display:flex;flex-wrap:wrap;align-items:center;gap:0.75rem 1.75rem">` +
+  `<a href="/" style="color:#2b2724;text-decoration:none;font-weight:600;font-size:1.05rem;margin-right:auto">Elie Ageron</a>` +
+  [
+    ['/services', 'Services'],
+    ['/reseaux-sociaux', 'Réseaux sociaux'],
+    ['/portfolio', 'Portfolio'],
+    ['/blog', 'Blog'],
+    ['/contact', 'Contact'],
+  ]
+    .map(([h, t]) => `<a href="${h}" style="color:#635e59;text-decoration:none;font-size:0.9rem">${echapper(t)}</a>`)
+    .join('') +
+  `</div></div>`;
+
 const squelette = (chemin, titre, description) => {
   const sup = liensDePage(chemin);
   return (
-    `<div style="position:fixed;inset:0;overflow-y:auto;background:#fdfcfa;z-index:0">` +
+    /* `data-squelette` n'est pas decoratif : `src/main.tsx` le lit pour savoir
+       qu'il ne faut PAS hydrater ce contenu. Sans lui, React tente d'hydrater
+       du HTML ecrit a la main, echoue, et rend la page une seconde fois. */
+    `<div data-squelette style="position:fixed;inset:0;overflow-y:auto;background:#fdfcfa;z-index:0;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif">` +
+    barre +
     /* 🔴 Police systeme, pas General Sans, et c'est la vraie cause du CLS.
        Trace du 16 septembre 2026 : le decalage de 0,138 venait de deux `<nav>`
        du squelette qui grandissaient de 240 a 271 pixels de haut a 2179 ms,
@@ -442,7 +479,7 @@ const squelette = (chemin, titre, description) => {
        vingt-sept liens se remet beaucoup en page.
        Le squelette vit deux secondes et sert surtout aux robots : il n'a aucun
        besoin de la fonte de la marque, et la police systeme est deja la. */
-    `<div style="max-width:46rem;margin:0 auto;padding:5rem 1.5rem;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:#2b2724;line-height:1.6">` +
+    `<div style="max-width:46rem;margin:0 auto;padding:3.5rem 1.5rem 5rem;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:#2b2724;line-height:1.6">` +
     `<h1 style="font-size:2.1rem;font-weight:600;letter-spacing:-0.025em;line-height:1.15;margin:0">${echapper(titreCourt(titre))}</h1>` +
     `<p style="margin:1.25rem 0 0;color:#635e59">${echapper(description)}</p>` +
     `<nav style="margin-top:2.5rem;display:flex;flex-wrap:wrap;gap:0.5rem 1.25rem;font-size:0.9rem">${tronc.join('')}</nav>` +

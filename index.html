@@ -1,15 +1,54 @@
 <!doctype html>
 <html lang="fr" xml:lang="fr">
   <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MTQ3GP5H');</script>
-    <!-- End Google Tag Manager -->
+    <!-- Le charset doit tenir dans les 1024 premiers octets du document : il
+         reste donc la premiere balise, avant tout commentaire et tout script. -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--
+      Google Tag Manager, charge une fois le fil principal libre.
+
+      Le fragment officiel injecte gtm.js depuis la premiere ligne du <head>.
+      Le script porte bien `async`, donc il ne bloque pas l'analyse du
+      document, mais il se telecharge et s'execute pendant que React demarre :
+      192 des 312 ko de JavaScript de l'accueil, sur le meme fil, au moment
+      exact ou le visiteur attend de voir la page.
+
+      On garde `dataLayer` disponible tout de suite, pour que rien de ce qui
+      est pousse avant le chargement ne soit perdu, et on ne va chercher gtm.js
+      qu'apres l'evenement `load`, dans un moment d'inactivite. Une premiere
+      interaction le charge immediatement, sans attendre.
+
+      Ce que ca coute : un visiteur qui repart en moins d'une seconde peut ne
+      pas etre compte. Ce que ca rapporte : ce sont les memes centaines de
+      millisecondes que le visiteur passait devant une page pas encore affichee.
+    -->
+    <script>
+      (function (w, d, id) {
+        w.dataLayer = w.dataLayer || [];
+        var fait = false;
+        var charger = function () {
+          if (fait) return;
+          fait = true;
+          w.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+          var j = d.createElement('script');
+          j.async = true;
+          j.src = 'https://www.googletagmanager.com/gtm.js?id=' + id;
+          d.head.appendChild(j);
+        };
+        var programmer = function () {
+          if (w.requestIdleCallback) w.requestIdleCallback(charger, { timeout: 3000 });
+          else w.setTimeout(charger, 1200);
+        };
+        if (d.readyState === 'complete') programmer();
+        else w.addEventListener('load', programmer, { once: true });
+        // Filet : quelqu'un qui agit avant la fin du chargement est mesure tout de suite.
+        ['pointerdown', 'keydown', 'touchstart'].forEach(function (e) {
+          w.addEventListener(e, charger, { once: true, passive: true });
+        });
+      })(window, document, 'GTM-MTQ3GP5H');
+    </script>
 
     <!-- Meta par defaut. data-rh="true" les confie a react-helmet-async,
          qui les remplace par page au lieu d'en creer un doublon. -->
