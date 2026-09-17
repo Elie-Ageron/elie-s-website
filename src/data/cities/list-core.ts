@@ -203,10 +203,16 @@ export const coreCities: CityData[] = [
     department: 'Savoie',
     departmentCode: 'FR-73',
     scope: 'area',
+    /* ⚠️ La page departement est un point d'entree : elle doit mener aux
+       vallees qu'aucune autre page ne mene. Moutiers est deja propose par
+       Albertville, la Maurienne ne l'etait par personne, et
+       `npm run check:maillage` l'a signalee orpheline le 17 septembre 2026.
+       Verifier avec ce controle avant de retoucher cette liste : elle est
+       limitee a trois, donc une entree ajoutee en pousse une dehors. */
     relatedCities: [
       'creation-site-web-albertville',
       'creation-site-web-chambery',
-      'creation-site-web-moutiers',
+      'creation-site-web-saint-jean-de-maurienne',
     ],
     fr: {
       name: 'Albertville',

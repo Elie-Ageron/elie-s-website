@@ -17,6 +17,7 @@ import PublicationsReelles from '@/components/PublicationsReelles';
 import InternalLinks from '@/components/InternalLinks';
 import ScrollArrow from '@/components/ScrollArrow';
 import SEO from '@/components/SEO';
+import { socialCities } from '@/data/social-cities';
 
 /**
  * Page dédiée au service réseaux sociaux (lancé en 2026).
@@ -194,6 +195,20 @@ const SocialMedia = () => {
   const steps = useSteps();
   const included = useIncluded();
   const faq = useFaq();
+
+  /** Un nom de zone, dans la phrase, qui est aussi le lien vers sa page locale. */
+  const zoneSociale = (i: number) => {
+    const city = socialCities[i];
+    if (!city) return null;
+    return (
+      <Link
+        to={`/${city.slug}`}
+        className="text-foreground underline-offset-4 hover:text-primary hover:underline"
+      >
+        {city.name}
+      </Link>
+    );
+  };
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -695,6 +710,29 @@ const SocialMedia = () => {
           corpus passe par la FAQ de l'accueil, par le pied de page et par
           `InternalLinks`, qui suffisent : le rapport Liens de la Search
           Console ne perd rien. */}
+
+      {/* Les six pages locales du pilier réseaux, nommées dans une phrase.
+          🔴 Elles étaient liées depuis le pied de page, dans un mur de dix
+          étiquettes qu'Elie a fait retirer le 17 septembre 2026. Leur place
+          est ici : c'est leur page pilier, et un lecteur qui descend jusque
+          là cherche justement à savoir si Elie se déplace chez lui.
+          ⚠️ C'est le seul point d'entrée du site rendu vers ces six pages.
+          Ne pas le supprimer sans leur en donner un autre. */}
+      {language === 'fr' && (
+        <section className="border-t border-border/50 py-12 sm:py-16" aria-labelledby="social-zones">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6">
+            <h2 id="social-zones" className="text-lg font-semibold text-foreground sm:text-xl">
+              Où je viens tourner.
+            </h2>
+            <p className="mt-3 max-w-2xl leading-relaxed text-muted-foreground">
+              Je tourne sur place à {zoneSociale(0)}, {zoneSociale(1)}, {zoneSociale(2)} et{' '}
+              {zoneSociale(3)}, et je me déplace dans toute la {zoneSociale(4)} et la{' '}
+              {zoneSociale(5)}. Le trajet ne se facture pas, mais il se planifie : une vallée à
+              monter, c&rsquo;est la journée entière.
+            </p>
+          </div>
+        </section>
+      )}
 
       <InternalLinks currentPage="social" />
       <ContactMethodsSection />

@@ -116,10 +116,31 @@ terrain réel, ses angles de tournage, sa FAQ, ses articles et un renvoi croisé
 vers la page site web de la même commune.
 
 ⚠️ **Le maillage est la moitié du travail.** Les six pages sont dans le
-sitemap, dans `llms.txt`, dans le pied de page, et dans le squelette HTML
-pré-rendu de l'accueil, de `/services`, de `/portfolio` et de
-`/reseaux-sociaux`. Sans ça elles n'étaient atteignables que par le sitemap,
-soit exactement la situation qui a bloqué le site en août 2026.
+sitemap, dans `llms.txt`, dans le squelette HTML pré-rendu de l'accueil, de
+`/services`, de `/portfolio` et de `/reseaux-sociaux`, et **nommées dans une
+phrase en bas de `/reseaux-sociaux`, section « Où je viens tourner »**. C'est
+leur seul point d'entrée depuis le site rendu : elles étaient dans le pied de
+page jusqu'au 17 septembre 2026, où Elie a fait retirer le mur de dix
+étiquettes. Sans point d'entrée elles ne seraient atteignables que par le
+sitemap, soit exactement la situation qui a bloqué le site en août 2026.
+**Le contrôle qui le vérifie est `npm run check:maillage`.**
+
+> 🔴 **Quatre de ces pages ont été supprimées le 17 septembre 2026**, un jour
+> après leur création : Moûtiers, Bourg-Saint-Maurice, Saint-Jean-de-Maurienne
+> et Ugine. Elie : *« fait du seo utile, pas juste créer des centaines de pages
+> pour en créer des centaines. »*
+>
+> La raison tient en un chiffre : ces communes font **4 000 à 8 000 habitants**,
+> et « community manager Moûtiers » n'est tapé par personne. Une page qui vise
+> une requête sans chercheur ne peut rien rapporter, et dix pages qui se
+> ressemblent sur le même modèle sont le patron que Google appelle page
+> satellite. Le tableau ci-dessus décrivait déjà six pages : les quatre autres
+> avaient été ajoutées sans que cette liste soit revue.
+>
+> Les quatre URL partent en 301 vers `/gestion-reseaux-sociaux-savoie`
+> (`vercel.json`). Leur contenu est conservé dans le bloc-notes de session si
+> Elie veut revenir dessus. **Le bassin, pas la commune** : une page de vallée
+> se défend, une page par village non.
 
 ⚠️ `SocialClientsSection` est affichée sur ces pages. Elle vit sur
 `/portfolio` et Elie l'avait fait descendre de l'accueil (*« ça ne fait pas
@@ -637,7 +658,7 @@ Une impression suppose une page qui vise une requête. Le site en avait trop peu
 
 | Famille | Avant | Après |
 |---|---|---|
-| Pages locales réseaux sociaux | 0 | 10 |
+| Pages locales réseaux sociaux | 0 | 10, ramenées à 6 le 17 septembre |
 | Pages de service dédiées | 2 sur 7 | 7 sur 7 |
 | Articles | 139 | 142 |
 | Articles orphelins | 25 | 0 |
@@ -764,6 +785,109 @@ incise. Le mot de la requête reste en tête de chaque titre.
 > moins, et le saute sinon. Un titre qui porte une réponse vaut mieux qu'un
 > titre qui porte un nom que personne ne cherche encore.
 
+### Le « on voit une autre page pendant une seconde » (17 septembre 2026)
+
+> Elie : *« quand on va sur le site il y a des redirections. on voit pendant
+> une milliseconde une page avant d'aller sur la bonne. google aime pas ça, il
+> croit qu'on scam le visiteur. »*
+
+Ce n'était pas une redirection. C'était **React qui jetait la page entière et
+la refaisait**, à chaque chargement, sur les 193 pages.
+
+#### La cause, en une ligne de code
+
+`src/main.tsx` choisissait entre hydrater et rendre avec :
+
+```ts
+if (import.meta.env.PROD && rootElement.hasChildNodes()) hydrateRoot(...)
+```
+
+Cette condition était juste quand la seule chose qui pouvait remplir `#root`
+était `prerender.mjs`, c'est à dire un vrai rendu React. Depuis le 16
+septembre, `prerender-head.mjs` y écrit **aussi** un squelette de liens en HTML
+écrit à la main. React tentait donc d'hydrater un arbre qui ne ressemble à rien
+de ce qu'il produit.
+
+Relevé dans la console de la production, sur un seul chargement de l'accueil :
+
+```
+22 × Minified React error #418   (l'hydratation ne correspond pas)
+ 2 × Minified React error #423   (bascule de la racine entière en rendu client)
+```
+
+Le visiteur voyait le squelette, puis un vide, puis la vraie page. Le
+processeur payait une tentative d'hydratation complète, jetée, **puis** un
+rendu complet, sur le fil principal déjà le plus chargé du site.
+
+> 🔴 **La règle : deux sources de contenu dans `#root` n'ont pas la même
+> nature, et rien dans le DOM ne le dit.** Le squelette porte donc
+> `data-squelette`, et `main.tsx` le lit. Ne jamais revenir à un
+> `hasChildNodes()` nu.
+
+#### Les deux autres réglages du même soir
+
+1. **Le squelette ressemble maintenant au site qui charge.** Il portait un h1,
+   un paragraphe et une liste de liens, centrés dans une colonne de texte :
+   aucun rapport visuel avec l'accueil. Il a maintenant la barre du haut du
+   site, le même fond papier, et le titre à peu près là où le vrai titre
+   arrive. Le passage se lit comme un chargement, pas comme un saut.
+   **Rien n'est masqué** : un robot et un visiteur voient le même contenu, ce
+   qui est exactement ce qui distingue un squelette d'un cloaking.
+2. **Google Tag Manager ne démarre plus avant la page.** Le fragment officiel
+   vit en première ligne du `<head>` et va chercher 192 des 312 ko de
+   JavaScript de l'accueil, pendant que React démarre. `dataLayer` reste
+   disponible tout de suite, gtm.js n'est chargé qu'après l'événement `load`,
+   dans un moment d'inactivité, ou immédiatement à la première interaction.
+   **Ce que ça coûte :** un visiteur qui repart en moins d'une seconde peut ne
+   pas être compté.
+
+> ⚠️ `<meta charset>` doit tenir dans les 1024 premiers octets du document.
+> C'est pour ça qu'il est passé avant le bloc GTM, et pas l'inverse.
+
+### Le pied de page est passé de 48 liens à 24
+
+> Elie, le même soir : *« le footer est méga long. simplifie. pas besoin de
+> mettre chaque page local. »*
+
+Il empilait trois murs d'étiquettes : quinze villes, cinq prestations, dix
+pages réseaux. Ils sont remplacés par **une phrase**, où les noms de lieux
+portent les liens : « Basé à Albertville, j'interviens à Chambéry, Annecy et
+Aix-les-Bains, et plus largement en Savoie et en Haute-Savoie. »
+
+| | Avant | Après |
+|---|---|---|
+| Liens dans le pied de page | 48 | 24 |
+| Hauteur mesurée, 800 px | ~1 500 px | 756 px |
+
+Ce qui a été retiré, et pourquoi rien n'est devenu orphelin :
+
+- **Les cinq pages de prestation** : `/services` les lie déjà une par une,
+  depuis la section de chaque service. Le pied de page les répétait.
+- **Les neuf autres villes** : chaque page locale propose ses trois voisines
+  via `getRelatedCities`, donc les six du pied de page ouvrent sur les quinze.
+- **Les pages réseaux locales** : nommées dans une phrase de
+  `/reseaux-sociaux`, qui est leur page pilier et leur vraie place.
+
+> 🔴 **Deux orphelines réelles ont été trouvées en le vérifiant, dont une qui
+> existait avant.** `InternalLinks.tsx` liste sept pages et en affiche trois
+> avec un `slice(0, 3)` nu : `/why-a-website` et `/our-process` sont en
+> sixième et septième position, donc ils ne sortaient sur **aucune** page. Ce
+> fichier est pourtant ce que `CLAUDE.md` citait comme leur point d'entrée. Le
+> départ de la sélection est maintenant décalé selon la page courante : le
+> rendu reste stable entre le pré-rendu et le navigateur, et les sept entrées
+> sortent toutes quelque part.
+>
+> L'autre : `/creation-site-web-saint-jean-de-maurienne`, qu'aucune des six
+> pages du pied de page n'atteignait. La page département la propose
+> maintenant à la place de Moûtiers, que la page Albertville proposait déjà.
+
+**La leçon, et c'est la troisième fois sur ce projet :** un lien qui existe
+dans le code n'est pas un lien qui existe sur le site. `check:content` vérifie
+que les liens déclarés pointent quelque part, `check-maillage` ne regarde que
+les articles. Ni l'un ni l'autre ne disait si une page était encore
+atteignable en cliquant. **C'est ce que fait `npm run check:maillage`**, dans
+un vrai navigateur, après le rendu de React.
+
 ### Ce qui reste à faire, par ordre de valeur
 
 0. 🔴 **Les 142 `lastModified` d'articles n'ont pas bougé, alors que leurs
@@ -799,6 +923,7 @@ Une seule commande : `npm run check`. Elle enchaîne les quatre.
 | `npm run verify` | Build, pré-rendu, puis les quatre contrôles d'affilée. **C'est la commande à lancer avant de livrer.** |
 | `npm run check:a11y` | **axe-core en WCAG 2.1 AA**, 13 pages en 1440 px et 5 en 375 px, dans un vrai Chrome. Demande le serveur de dev allumé |
 | `npm run check:overflow` | Le débordement horizontal, 9 pages sur 7 largeurs de 320 à 1440 px. Demande le serveur de dev allumé |
+| `npm run check:maillage` | **Est-ce qu'on peut atteindre chaque page en cliquant ?** Ouvre les pages hors articles dans un vrai Chrome, relève les liens après le rendu de React, remonte de proche en proche, et liste ce que seul le sitemap atteint. Demande le serveur de dev allumé |
 | `npm run check:navigateur` | Les deux d'un coup |
 | `npm run captures [/route] [--mobile]` | Écrit les captures de relecture dans `.captures/`, une par tranche d'écran. Le volet navigateur de l'éditeur rend à 800 px : on ne peut pas y juger une page dessinée pour 1440 |
 

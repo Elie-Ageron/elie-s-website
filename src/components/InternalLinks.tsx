@@ -86,7 +86,26 @@ const InternalLinks = ({ currentPage }: InternalLinksProps) => {
     },
   ];
 
-  const filteredLinks = links.filter((link) => link.id !== currentPage).slice(0, 3);
+  /**
+   * 🔴 **Le `slice(0, 3)` nu rendait les deux dernieres entrees inatteignables.**
+   * La liste est fixe et l'ordre aussi : `why` et `process` sont en sixieme et
+   * septieme position, donc ils n'apparaissaient sur **aucune** page du site.
+   * `CLAUDE.md` les disait pourtant lies depuis `InternalLinks`, et c'est ce
+   * qui a fait croire qu'on pouvait les retirer du pied de page sans risque.
+   * Releve le 17 septembre 2026 par `npm run check:maillage`.
+   *
+   * On decale donc le point de depart selon la page courante. Chaque page
+   * montre toujours les memes trois liens, le rendu reste stable entre le
+   * pre-rendu et le navigateur, et sur l'ensemble du site les sept entrees
+   * sortent toutes au moins une fois.
+   */
+  const candidats = links.filter((link) => link.id !== currentPage);
+  const decalage =
+    [...currentPage].reduce((somme, c) => somme + c.charCodeAt(0), 0) % Math.max(candidats.length, 1);
+  const filteredLinks = Array.from(
+    { length: Math.min(3, candidats.length) },
+    (_, i) => candidats[(decalage + i) % candidats.length]
+  );
 
   return (
     <section className="px-4 py-12 sm:px-6 sm:py-16" aria-label={fr ? 'Pages liées' : 'Related pages'}>

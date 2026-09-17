@@ -65,6 +65,26 @@
       "permanent": true
     },
     {
+      "source": "/community-manager-moutiers",
+      "destination": "/gestion-reseaux-sociaux-savoie",
+      "permanent": true
+    },
+    {
+      "source": "/community-manager-bourg-saint-maurice",
+      "destination": "/gestion-reseaux-sociaux-savoie",
+      "permanent": true
+    },
+    {
+      "source": "/community-manager-saint-jean-de-maurienne",
+      "destination": "/gestion-reseaux-sociaux-savoie",
+      "permanent": true
+    },
+    {
+      "source": "/community-manager-ugine",
+      "destination": "/gestion-reseaux-sociaux-savoie",
+      "permanent": true
+    },
+    {
       "source": "/a-propos-de-moi",
       "destination": "/a-propos",
       "permanent": true
