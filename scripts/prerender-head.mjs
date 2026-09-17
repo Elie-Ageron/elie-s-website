@@ -405,12 +405,32 @@ for (const [chemin, { titre, description }] of routes) {
   html = remplacer(html, /<title>[\s\S]*?<\/title>/, `<title>${t}</title>`, manquants, 'title');
   html = remplacer(html, /(<meta\s+data-rh="true"\s+name="description"\s+content=")[^"]*(")/, `$1${d}$2`, manquants, 'description');
   html = remplacer(html, /(<link\s+data-rh="true"\s+rel="canonical"\s+href=")[^"]*(")/, `$1${url}$2`, manquants, 'canonical');
-  html = html.replace(/(<meta\s+data-rh="true"\s+property="og:title"\s+content=")[^"]*(")/, `$1${t}$2`);
-  html = html.replace(/(<meta\s+data-rh="true"\s+property="og:description"\s+content=")[^"]*(")/, `$1${d}$2`);
-  html = html.replace(/(<meta\s+data-rh="true"\s+property="og:url"\s+content=")[^"]*(")/, `$1${url}$2`);
-  html = html.replace(/(<meta\s+data-rh="true"\s+property="twitter:title"\s+content=")[^"]*(")/, `$1${t}$2`);
-  html = html.replace(/(<meta\s+data-rh="true"\s+property="twitter:description"\s+content=")[^"]*(")/, `$1${d}$2`);
-  html = html.replace(/(<meta\s+data-rh="true"\s+property="twitter:url"\s+content=")[^"]*(")/, `$1${url}$2`);
+  /* 🔴 **Les trois lignes Twitter cherchaient `property=`, et Twitter ecrit
+     `name=`.** Elles ne matchaient donc rien, et `String.replace` sans
+     correspondance rend la chaine inchangee sans rien dire. Resultat : toutes
+     les pages pre-rendues servaient le titre, la description et l'URL de
+     l'accueil dans leurs balises Twitter, et la description servie etait en
+     plus une version perimee qui annoncait « Sur devis » apres l'affichage des
+     prix planchers. C'est ce qui s'affiche quand quelqu'un partage un lien.
+     Repere le 17 septembre 2026, par une relecture exterieure.
+
+     Les six passent maintenant par `remplacer`, donc un motif qui ne matche
+     plus est signale au lieu d'etre ignore. **Aucun remplacement de balise ne
+     doit utiliser `html.replace` nu dans ce script.** */
+  const meta = (attribut, nom, valeur) =>
+    remplacer(
+      html,
+      new RegExp(`(<meta\\s+data-rh="true"\\s+${attribut}="${nom}"\\s+content=")[^"]*(")`),
+      `$1${valeur}$2`,
+      manquants,
+      nom
+    );
+  html = meta('property', 'og:title', t);
+  html = meta('property', 'og:description', d);
+  html = meta('property', 'og:url', url);
+  html = meta('name', 'twitter:title', t);
+  html = meta('name', 'twitter:description', d);
+  html = meta('name', 'twitter:url', url);
 
   // Le <noscript> devient une simple note. Il portait un <h1> et une
   // description, ce qui faisait deux <h1> par page une fois le squelette
