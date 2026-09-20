@@ -15,7 +15,7 @@ Site vitrine / portfolio de **Elie Ageron**, web designer et partenaire web bas�
 ## Services proposés
 Les 7 services (source unique : `src/data/services.ts`, **l'ordre du tableau pilote l'affichage**) :
 - **Sites web** (pilier 1) — landing dès 500€, vitrine dès 1500€, pack lancement dès 3500€
-- **Réseaux sociaux** (pilier 2, page dédiée `/reseaux-sociaux`) — tournage sur place **une journée** par mois, montage vertical, sous-titres, puis **6 publications dans le mois** sur Instagram / Facebook / TikTok / YouTube Shorts. Récurrent, **890 €/mois, sans engagement**.
+- **Réseaux sociaux** (pilier 2, page dédiée `/reseaux-sociaux`) — tournage sur place **une journée** par mois, montage vertical, sous-titres, puis **8 vidéos, 4 carrousels et 8 stories dans le mois** sur Instagram / Facebook / TikTok / YouTube Shorts. Récurrent, **890 €/mois, sans engagement**.
   > ⚠️ **Révisé en août 2026, deux points à ne jamais réintroduire.**
   > 1. **La « demi-journée » de tournage n'existe plus** : c'est une journée entière. L'ancien périmètre (demi-journée + 2 à 3 publications par semaine) représentait environ 23 h de travail pour 450 €, soit 19 €/h brut.
   > 2. **Aucune formule où le client filme lui-même.** Écartée volontairement : sans production sur place, la matière s'épuise en six semaines et le compte retombe. C'est le raisonnement de l'article `/blog/prix-gestion-reseaux-sociaux`, il doit rester cohérent avec l'offre.
@@ -91,15 +91,17 @@ Les 7 services (source unique : `src/data/services.ts`, **l'ordre du tableau pil
   une journée de tournage chez vous, tous les mois
   le déplacement, compris en Savoie et Haute-Savoie
   tout le matériel
-  6 vidéos montées, verticales et sous-titrées
+  8 vidéos montées, verticales et sous-titrées
+  4 carrousels, photos et texte, tirés de la même journée
+  8 stories, publiées au fil du mois
   la publication sur Instagram, Facebook, TikTok, YouTube Shorts
   les légendes et le calendrier
   les photos de la journée
   un point par mois
 
   1. le premier mois, je filme deux jours
-  2. à partir du troisième mois, le site web est compris
-  3. si les 6 vidéos ne sortent pas, le mois suivant est gratuit
+  2. à partir du troisième mois, un site d'une page est compris
+  3. si les 8 vidéos ne sortent pas, le mois suivant est gratuit
 ```
 
 #### Pourquoi le « à partir de » devait sauter, et c'est mesuré
@@ -152,13 +154,24 @@ L'argument des trois mois n'a pas disparu, il a changé de bouche. Avant :
 mois, parce qu'avant on n'a rien à mettre dessus »*. Même délai, et cette fois
 c'est lui qui rend service.
 
-⚠️ **« Je vous fais votre site » veut dire une page de destination, ou un site
-vitrine si le client n'en a pas.** Pas une refonte de catalogue à quinze pages :
-ça, c'est un devis à part, et la page le dit.
+⚠️ **« Je vous fais votre site » veut dire un site d'une page, point.** Précisé
+par Elie le 20 septembre 2026 : *« site une page »*. La formule publiée disait
+« une page de destination, ou un site vitrine si vous n'en avez pas », ce qui
+ouvrait la porte à dix-huit heures de travail au lieu de quelques unes. Un site
+à quinze pages est un devis à part, et la page le dit.
 
-⚠️ **Le périmètre est passé de « 6 à 12 vidéos » à 6 fermes**, partout. Un
-intervalle ne peut pas être garanti, et la garantie de publication ne veut rien
-dire sans un nombre. 6 est aussi ce que dit la grille interne pour SOCLE.
+⚠️ **Le périmètre est passé de « 6 à 12 vidéos » à un nombre ferme**, partout.
+Un intervalle ne peut pas être garanti, et la garantie de publication ne veut
+rien dire sans un nombre. **Ce nombre est 8 depuis le 20 septembre 2026**, avec
+4 carrousels et 8 stories en plus.
+
+> 🔴 **Ce que ça coûte, et Elie l'a tranché en connaissance de cause.** La
+> charge documentée était de 19 h par client et par mois, soit 47 €/h. Deux
+> vidéos de plus, quatre carrousels et huit stories ajoutent environ 5 h, ce
+> qui place le taux horaire autour de **37 €**, sous le plancher de 40 € posé
+> le 19 septembre en écartant le « mois offert ». Le resserrement du site
+> offert à une seule page en récupère une partie. **Ne pas alourdir le
+> périmètre davantage sans refaire ce calcul.**
 
 ⚠️ **Deux lignes sont descendues de SIGNATURE (1 290 €) vers l'offre publique** :
 les photos tirée de la journée et le point mensuel. Elles ne coûtent presque

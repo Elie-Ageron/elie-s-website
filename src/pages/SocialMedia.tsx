@@ -21,7 +21,7 @@ import { socialCities } from '@/data/social-cities';
 
 /**
  * Page dédiée au service réseaux sociaux (lancé en 2026).
- * Promesse : Elie vient filmer une journée, puis publie 6 vidéos
+ * Promesse : Elie vient filmer une journée, puis publie 8 vidéos
  * verticales dans le mois. Le client ne touche à rien.
  *
  * Périmètre et prix revus en août 2026. Deux choses à ne pas réintroduire :
@@ -77,8 +77,8 @@ const useSteps = () => {
       title: language === 'fr' ? 'Je monte, je sous-titre, je découpe' : 'I edit, subtitle and cut it up',
       desc:
         language === 'fr'
-          ? "De cette journée je sors 6 vidéos courtes, au format vertical, montées et sous-titrées. Chacune tient debout toute seule : une accroche dans les deux premières secondes, une idée claire, une fin qui donne envie de vous suivre."
-          : "From that day I pull 6 short vertical videos, edited and subtitled. Each one stands on its own: a hook in the first two seconds, one clear idea, an ending that makes people want to follow you.",
+          ? "De cette journée je sors 8 vidéos courtes, au format vertical, montées et sous-titrées. Chacune tient debout toute seule : une accroche dans les deux premières secondes, une idée claire, une fin qui donne envie de vous suivre."
+          : "From that day I pull 8 short vertical videos, edited and subtitled. Each one stands on its own: a hook in the first two seconds, one clear idea, an ending that makes people want to follow you.",
     },
     {
       icon: CalendarCheck,
@@ -101,7 +101,9 @@ const useIncluded = () => {
         { label: 'Une journée de tournage', detail: 'chez vous, tous les mois' },
         { label: 'Le déplacement', detail: 'compris en Savoie et Haute-Savoie' },
         { label: 'Tout le matériel', detail: 'caméra, micros, lumière, drone' },
-        { label: '6 vidéos montées', detail: 'verticales et sous-titrées' },
+        { label: '8 vidéos montées', detail: 'verticales et sous-titrées' },
+        { label: '4 carrousels', detail: 'photos et texte, tirés de la journée' },
+        { label: '8 stories', detail: 'publiées au fil du mois' },
         { label: 'La publication', detail: 'Instagram, Facebook, TikTok, YouTube Shorts' },
         { label: 'Les légendes et le calendrier', detail: 'écrits et posés par moi' },
         { label: 'Les photos de la journée', detail: 'à vous, pour votre site et vos réseaux' },
@@ -111,7 +113,9 @@ const useIncluded = () => {
         { label: 'A full day of filming', detail: 'at your place, every month' },
         { label: 'Travel', detail: 'included across Savoie and Haute-Savoie' },
         { label: 'All the gear', detail: 'camera, mics, lighting, drone' },
-        { label: '6 edited videos', detail: 'vertical and subtitled' },
+        { label: '8 edited videos', detail: 'vertical and subtitled' },
+        { label: '4 carousels', detail: 'photos and text, from the shooting day' },
+        { label: '8 stories', detail: 'posted through the month' },
         { label: 'Publishing', detail: 'Instagram, Facebook, TikTok, YouTube Shorts' },
         { label: 'Captions and calendar', detail: 'written and scheduled by me' },
         { label: 'The photos from the day', detail: 'yours, for your site and your feeds' },
@@ -137,11 +141,11 @@ const useBonus = () => {
         {
           num: '2',
           title: 'À partir du troisième mois, je vous fais votre site',
-          desc: "Une page de destination si vous avez déjà un site, un site vitrine si vous n'en avez pas. Compris, vous ne payez pas plus. C'est mon autre métier, et une vidéo qui marche a besoin d'un endroit où envoyer les gens.",
+          desc: "Un site d'une page, écrit et dessiné pour votre activité. Compris, vous ne payez pas plus. C'est mon autre métier, et une vidéo qui marche a besoin d'un endroit où envoyer les gens.",
         },
         {
           num: '3',
-          title: 'Si les 6 vidéos ne sortent pas, le mois suivant est gratuit',
+          title: 'Si les 8 vidéos ne sortent pas, le mois suivant est gratuit',
           desc: "C'est la seule chose que je peux vous garantir sans mentir : la régularité ne dépend que de moi. Le nombre de vues dépend de votre marché, et personne ne peut vous le promettre.",
         },
       ]
@@ -154,11 +158,11 @@ const useBonus = () => {
         {
           num: '2',
           title: 'From the third month, I build your website',
-          desc: 'A landing page if you already have a site, a full brochure site if you do not. Included, you pay nothing more. It is my other trade, and a video that works needs somewhere to send people.',
+          desc: 'A one page site, written and designed for your trade. Included, you pay nothing more. It is my other trade, and a video that works needs somewhere to send people.',
         },
         {
           num: '3',
-          title: 'If the 6 videos do not go out, the next month is free',
+          title: 'If the 8 videos do not go out, the next month is free',
           desc: 'It is the only thing I can guarantee without lying: consistency depends on me alone. View counts depend on your market, and nobody can promise you those.',
         },
       ];
@@ -195,11 +199,11 @@ const useFaq = () => {
         },
         {
           q: "Et si je ne suis pas content ?",
-          a: "Vous arrêtez le mois suivant, il n'y a rien à résilier. Et il y a une chose sur laquelle je m'engage par écrit : si les 6 vidéos du mois ne sont pas publiées, le mois suivant ne vous est pas facturé. C'est la seule garantie que je peux tenir honnêtement, parce que la régularité ne dépend que de moi. Le nombre de vues, lui, dépend de votre marché : personne ne peut vous le garantir, et méfiez-vous de ceux qui le font.",
+          a: "Vous arrêtez le mois suivant, il n'y a rien à résilier. Et il y a une chose sur laquelle je m'engage par écrit : si les 8 vidéos du mois ne sont pas publiées, le mois suivant ne vous est pas facturé. C'est la seule garantie que je peux tenir honnêtement, parce que la régularité ne dépend que de moi. Le nombre de vues, lui, dépend de votre marché : personne ne peut vous le garantir, et méfiez-vous de ceux qui le font.",
         },
         {
           q: "Combien ça coûte ?",
-          a: "890 euros par mois, et c'est le seul chiffre. Dedans : la journée de tournage, le déplacement, le matériel, les 6 vidéos montées et sous-titrées, les légendes, la publication sur vos réseaux, les photos de la journée et un point mensuel. Pas de frais de démarrage, pas de supplément, pas de ligne surprise sur la facture. Si vous voulez autre chose que cette offre, plus de vidéos ou un tournage plus long par exemple, écrivez-moi et je vous réponds avec un prix.",
+          a: "890 euros par mois, et c'est le seul chiffre. Dedans : la journée de tournage, le déplacement, le matériel, les 8 vidéos montées et sous-titrées, les 4 carrousels, les 8 stories, les légendes, la publication sur vos réseaux, les photos de la journée et un point mensuel. Pas de frais de démarrage, pas de supplément, pas de ligne surprise sur la facture. Si vous voulez autre chose que cette offre, plus de vidéos ou un tournage plus long par exemple, écrivez-moi et je vous réponds avec un prix.",
         },
         {
           q: "Il y a un engagement ?",
@@ -207,7 +211,7 @@ const useFaq = () => {
         },
         {
           q: "Le site est vraiment compris ?",
-          a: "Oui, à partir du troisième mois, et sans rien payer de plus. Une page de destination si vous avez déjà un site, un site vitrine si vous n'en avez pas. C'est compris parce que ça me sert autant qu'à vous : une vidéo qui marche envoie des gens quelque part, et s'il n'y a rien au bout, tout le travail du mois retombe. Ce n'est pas une refonte de catalogue à quinze pages, ça c'est un devis à part.",
+          a: "Oui, à partir du troisième mois, et sans rien payer de plus. Un site d'une page, écrit et dessiné pour votre activité. C'est compris parce que ça me sert autant qu'à vous : une vidéo qui marche envoie des gens quelque part, et s'il n'y a rien au bout, tout le travail du mois retombe. Un site à quinze pages, c'est un devis à part.",
         },
         {
           q: "Vous vous déplacez où ?",
@@ -251,11 +255,11 @@ const useFaq = () => {
         },
         {
           q: 'What if I am not happy?',
-          a: 'You stop the following month, there is nothing to cancel. And there is one thing I commit to in writing: if the 6 videos for the month are not published, the next month is not invoiced. That is the only guarantee I can honestly hold, because consistency depends on me alone. View counts depend on your market: nobody can guarantee those, and be wary of anyone who does.',
+          a: 'You stop the following month, there is nothing to cancel. And there is one thing I commit to in writing: if the 8 videos for the month are not published, the next month is not invoiced. That is the only guarantee I can honestly hold, because consistency depends on me alone. View counts depend on your market: nobody can guarantee those, and be wary of anyone who does.',
         },
         {
           q: 'How much does it cost?',
-          a: '890 euros a month, and that is the only figure. It covers the filming day, the travel, the gear, 6 edited and subtitled videos, the captions, publishing on your networks, the photos from the day and a monthly review. No setup fee, no extras, no surprise line on the invoice. If you want something other than this offer, more videos or a longer shoot for instance, write to me and I will come back with a price.',
+          a: '890 euros a month, and that is the only figure. It covers the filming day, the travel, the gear, 8 edited and subtitled videos, 4 carousels, 8 stories, the captions, publishing on your networks, the photos from the day and a monthly review. No setup fee, no extras, no surprise line on the invoice. If you want something other than this offer, more videos or a longer shoot for instance, write to me and I will come back with a price.',
         },
         {
           q: 'Is there a commitment?',
@@ -315,8 +319,8 @@ const SocialMedia = () => {
     serviceType: language === 'fr' ? 'Gestion de réseaux sociaux' : 'Social media management',
     description:
       language === 'fr'
-        ? "890 € par mois, sans engagement : une journée de tournage sur place chaque mois, puis montage vertical, sous-titrage et publication de 6 vidéos courtes dans le mois sur Instagram, Facebook, TikTok et YouTube Shorts. Site web compris à partir du troisième mois."
-        : '€890 a month, no commitment: one full day of on-site filming every month, then vertical editing, subtitling and publishing of 6 short videos over the month on Instagram, Facebook, TikTok and YouTube Shorts. Website included from the third month.',
+        ? "890 € par mois, sans engagement : une journée de tournage sur place chaque mois, puis montage vertical, sous-titrage et publication de 8 vidéos courtes dans le mois sur Instagram, Facebook, TikTok et YouTube Shorts. Site web compris à partir du troisième mois."
+        : '€890 a month, no commitment: one full day of on-site filming every month, then vertical editing, subtitling and publishing of 8 short videos over the month on Instagram, Facebook, TikTok and YouTube Shorts. Website included from the third month.',
     url: 'https://elieageron.com/reseaux-sociaux',
     provider: { '@id': 'https://elieageron.com/#person' },
     offers: {
@@ -363,8 +367,8 @@ const SocialMedia = () => {
           name: language === 'fr' ? 'Publication mensuelle' : 'Monthly publishing',
           description:
             language === 'fr'
-              ? '6 publications dans le mois sur Instagram, Facebook, TikTok ou YouTube Shorts, légendes incluses.'
-              : '6 posts over the month on Instagram, Facebook, TikTok or YouTube Shorts, captions included.',
+              ? '8 publications dans le mois sur Instagram, Facebook, TikTok ou YouTube Shorts, légendes incluses.'
+              : '8 posts over the month on Instagram, Facebook, TikTok or YouTube Shorts, captions included.',
         },
       ],
     },
@@ -426,8 +430,8 @@ const SocialMedia = () => {
 
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               {language === 'fr'
-                ? "J'arrive avec le matériel et un plan de tournage déjà prêt. On tourne, je monte, et je publie 6 vidéos sur vos réseaux pendant tout le mois. 890 € par mois, sans engagement. Artisans, restaurateurs, thérapeutes et formateurs, en Savoie et en Haute-Savoie."
-                : "I show up with the gear and a shooting plan already written. We film, I edit, and I post 6 videos on your accounts across the month. €890 a month, no commitment. Tradespeople, restaurant owners, therapists and trainers, across Savoie and Haute-Savoie."}
+                ? "J'arrive avec le matériel et un plan de tournage déjà prêt. On tourne, je monte, et je publie 8 vidéos sur vos réseaux pendant tout le mois. 890 € par mois, sans engagement. Artisans, restaurateurs, thérapeutes et formateurs, en Savoie et en Haute-Savoie."
+                : "I show up with the gear and a shooting plan already written. We film, I edit, and I post 8 videos on your accounts across the month. €890 a month, no commitment. Tradespeople, restaurant owners, therapists and trainers, across Savoie and Haute-Savoie."}
             </p>
 
             <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">

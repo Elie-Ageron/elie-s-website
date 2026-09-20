@@ -55,8 +55,8 @@ const useSteps = () => {
       num: '2',
       title: fr ? 'Je monte et je sous-titre' : 'I edit and subtitle',
       desc: fr
-        ? "De cette journée je sors 6 vidéos verticales. Chacune tient debout toute seule : une accroche dans les deux premières secondes, une idée, une fin qui donne envie de vous suivre."
-        : 'From that day I pull 6 vertical videos. Each stands on its own: a hook in the first two seconds, one idea, an ending that makes people follow you.',
+        ? "De cette journée je sors 8 vidéos verticales. Chacune tient debout toute seule : une accroche dans les deux premières secondes, une idée, une fin qui donne envie de vous suivre."
+        : 'From that day I pull 8 vertical videos. Each stands on its own: a hook in the first two seconds, one idea, an ending that makes people follow you.',
     },
     {
       num: '3',
@@ -95,7 +95,7 @@ const PostingCalendar = () => {
               {fr ? 'Votre mois' : 'Your month'}
             </p>
             <p className="mt-0.5 text-base font-bold text-foreground">
-              {fr ? '6 publications programmées' : '6 posts scheduled'}
+              {fr ? '8 publications programmées' : '8 posts scheduled'}
             </p>
           </div>
 
@@ -273,8 +273,8 @@ const SocialPillarSection = () => {
               </p>
               <p className="mt-2.5 text-sm text-muted-foreground">
                 {fr
-                  ? "Une journée de tournage chez vous, 6 vidéos montées et publiées, déplacement compris. Et votre site à partir du troisième mois, sans rien payer de plus."
-                  : 'A full day of filming at your place, 6 edited videos posted for you, travel included. And your website from the third month, at no extra cost.'}
+                  ? "Une journée de tournage chez vous, 8 vidéos, 4 carrousels et 8 stories publiés, déplacement compris. Et votre site d'une page à partir du troisième mois, sans rien payer de plus."
+                  : 'A full day of filming at your place, 8 videos, 4 carousels and 8 stories posted for you, travel included. And your one page website from the third month, at no extra cost.'}
               </p>
             </div>
             <Link

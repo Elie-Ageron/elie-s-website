@@ -297,7 +297,7 @@ export const coreCities: CityData[] = [
         },
         {
           q: 'Vous faites aussi les réseaux sociaux ?',
-          a: "Oui, c'est mon deuxième métier autant que le premier. Je viens filmer une journée par mois, je monte, je sous-titre et je publie six vidéos dans le mois sur vos comptes.",
+          a: "Oui, c'est mon deuxième métier autant que le premier. Je viens filmer une journée par mois, je monte, je sous-titre et je publie huit vidéos dans le mois sur vos comptes.",
         },
       ],
     },

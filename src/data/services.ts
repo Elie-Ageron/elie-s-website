@@ -79,19 +79,21 @@ export const services: ServiceItem[] = [
       en: 'We film for a day, I post your videos all month. You touch nothing.',
     },
     desc: {
-      fr: "J'arrive chez vous avec le matériel et un plan de tournage déjà prêt : les sujets, les questions, ce qu'on filme et dans quel ordre. On tourne une journée. Ensuite je monte, je sous-titre et je publie 6 vidéos courtes dans le mois sur Instagram, Facebook, TikTok ou YouTube Shorts. Vous, vous retournez travailler. Je ne propose pas de formule où vous filmez vous-même : sans quelqu'un qui vient produire les images, il ne sort rien au bout de six semaines.",
-      en: "I show up with the gear and a shooting plan already written: the topics, the questions, what we film and in what order. We shoot for a full day. Then I edit, subtitle and publish 6 short videos over the month on Instagram, Facebook, TikTok or YouTube Shorts. You go back to work. I do not offer a plan where you film it yourself: without someone coming to produce the footage, nothing goes out after six weeks.",
+      fr: "J'arrive chez vous avec le matériel et un plan de tournage déjà prêt : les sujets, les questions, ce qu'on filme et dans quel ordre. On tourne une journée. Ensuite je monte, je sous-titre et je publie 8 vidéos courtes dans le mois sur Instagram, Facebook, TikTok ou YouTube Shorts. Vous, vous retournez travailler. Je ne propose pas de formule où vous filmez vous-même : sans quelqu'un qui vient produire les images, il ne sort rien au bout de six semaines.",
+      en: "I show up with the gear and a shooting plan already written: the topics, the questions, what we film and in what order. We shoot for a full day. Then I edit, subtitle and publish 8 short videos over the month on Instagram, Facebook, TikTok or YouTube Shorts. You go back to work. I do not offer a plan where you film it yourself: without someone coming to produce the footage, nothing goes out after six weeks.",
     },
     bullets: {
       fr: [
         'Un plan de tournage et des idées de sujets, préparés en amont',
         'Une journée de tournage chez vous, tout le matériel fourni',
-        '6 vidéos verticales montées et publiées dans le mois',
+        '8 vidéos verticales montées et publiées dans le mois',
+        '4 carrousels et 8 stories, tirés de la même journée',
       ],
       en: [
         'A shooting plan and topic ideas, prepared in advance',
         'A full day of filming at your place, all equipment provided',
-        '6 vertical videos edited and published over the month',
+        '8 vertical videos edited and published over the month',
+        '4 carousels and 8 stories, from the same day',
       ],
     },
     price: { fr: '890€/mois', en: '€890/mo' },

@@ -87,7 +87,7 @@ export const socialCities: SocialCityData[] = [
     departmentCode: 'FR-73',
     seoTitle: 'Community Manager Albertville | Elie Ageron',
     seoDesc:
-      "Je vis et je travaille à Albertville, donc je viens filmer chez vous une journée par mois sans trajet à compter. 6 vidéos publiées, 890 €/mois sans engagement.",
+      "Je vis et je travaille à Albertville, donc je viens filmer chez vous une journée par mois sans trajet à compter. 8 vidéos publiées, 890 €/mois sans engagement.",
     h1Pre: 'Community manager à ',
     h1Highlight: 'Albertville',
     lede:
@@ -126,7 +126,7 @@ export const socialCities: SocialCityData[] = [
       },
       {
         q: 'Combien coûte la gestion de mes réseaux ?',
-        a: "890 € par mois, sans engagement : déplacement, tournage, montage, légendes et publication de 6 vidéos. Le premier mois je filme deux jours au lieu d'un, et à partir du troisième mois je vous fais votre site sans rien payer de plus. Si les 6 vidéos ne sortent pas dans le mois, le mois suivant ne vous est pas facturé. Vous voulez autre chose, plus de vidéos par exemple : vous m'écrivez et je vous réponds avec un prix.",
+        a: "890 € par mois, sans engagement : déplacement, tournage, montage, légendes et publication de 8 vidéos, 4 carrousels et 8 stories. Le premier mois je filme deux jours au lieu d'un, et à partir du troisième mois je vous fais un site d'une page sans rien payer de plus. Si les 8 vidéos ne sortent pas dans le mois, le mois suivant ne vous est pas facturé. Vous voulez autre chose, plus de vidéos par exemple : vous m'écrivez et je vous réponds avec un prix.",
       },
       {
         q: "Est-ce que je dois apparaître à l'image ?",
@@ -310,7 +310,7 @@ export const socialCities: SocialCityData[] = [
     h1Pre: 'Community manager à ',
     h1Highlight: 'Aix-les-Bains',
     lede:
-      "Je viens filmer chez vous une journée par mois, puis je publie 6 vidéos dans le mois. Sur un bassin où la moitié des entreprises vivent du soin et du bien être, c'est le format qui rassure avant le premier rendez vous.",
+      "Je viens filmer chez vous une journée par mois, puis je publie 8 vidéos dans le mois. Sur un bassin où la moitié des entreprises vivent du soin et du bien être, c'est le format qui rassure avant le premier rendez vous.",
     travel: 'Environ cinquante minutes depuis Albertville.',
     nearby: ['Grésy-sur-Aix', 'Drumettaz-Clarafond', 'Mouxy', 'Tresserve', 'Brison-Saint-Innocent', 'Viviers-du-Lac', 'Le Bourget-du-Lac'],
     terrain: [

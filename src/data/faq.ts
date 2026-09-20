@@ -30,7 +30,7 @@ export const faqHome: { fr: FaqItem[]; en: FaqItem[] } = {
     {
       question: 'Combien coûte la gestion de mes réseaux sociaux ?',
       answer:
-        "890 € par mois, sans engagement. Le déplacement, la journée de tournage, le montage, les sous-titres, l'écriture des légendes et la publication de 6 vidéos sont compris. Pas de frais de démarrage, pas de matériel à acheter de votre côté, et votre site à partir du troisième mois sans rien payer de plus. Vous arrêtez quand vous voulez.",
+        "890 € par mois, sans engagement. Le déplacement, la journée de tournage, le montage, les sous-titres, l'écriture des légendes et la publication de 8 vidéos, 4 carrousels et 8 stories sont compris. Pas de frais de démarrage, pas de matériel à acheter de votre côté, et votre site à partir du troisième mois sans rien payer de plus. Vous arrêtez quand vous voulez.",
       article: 'prix-gestion-reseaux-sociaux',
     },
     {
@@ -65,7 +65,7 @@ export const faqHome: { fr: FaqItem[]; en: FaqItem[] } = {
     {
       question: 'How much does managing my social accounts cost?',
       answer:
-        '€890 a month, no commitment. Travel, the filming day, editing, subtitles, captions and posting 6 videos are all included. No setup fee, no equipment to buy on your side, and your website from the third month at no extra cost. You stop whenever you want.',
+        '€890 a month, no commitment. Travel, the filming day, editing, subtitles, captions and posting 8 videos, 4 carousels and 8 stories are all included. No setup fee, no equipment to buy on your side, and your website from the third month at no extra cost. You stop whenever you want.',
       article: 'prix-gestion-reseaux-sociaux',
     },
     {

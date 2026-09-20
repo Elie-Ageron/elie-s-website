@@ -65,7 +65,7 @@ const seoData = {
     },
     social: {
       title: 'Social Media Content, Done For You | Elie Ageron',
-      description: '€890/month, no commitment: I film one day at your place, then post 6 videos through the month. Website included from month three.',
+      description: '€890/month, no commitment: I film one day at your place, then post 8 videos through the month. Website included from month three.',
     },
     why: {
       title: 'Why You Need a Website | Elie Ageron',
@@ -144,7 +144,7 @@ const seoData = {
        lieu dans ce titre. */
     social: {
       title: 'Gestion de Réseaux Sociaux Entreprise | Elie Ageron',
-      description: "890 €/mois, sans engagement : je filme une journée chez vous, puis je publie 6 vidéos dans le mois. Site compris au troisième mois.",
+      description: "890 €/mois, sans engagement : je filme une journée chez vous, puis je publie 8 vidéos dans le mois. Site compris au troisième mois.",
     },
     why: {
       title: 'Pourquoi un Site Web | Elie Ageron',

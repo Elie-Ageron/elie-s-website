@@ -48,7 +48,7 @@ const etapes = [
     icone: CalendarCheck,
     titre: 'Je publie pendant tout le mois',
     texte:
-      "6 publications étalées sur Instagram, Facebook, TikTok ou YouTube Shorts. Vous les découvrez en ligne, ou la veille si vous préférez les voir avant.",
+      "8 vidéos, 4 carrousels et 8 stories étalés sur Instagram, Facebook, TikTok ou YouTube Shorts. Vous les découvrez en ligne, ou la veille si vous préférez les voir avant.",
   },
 ];
 
@@ -107,7 +107,7 @@ const SocialCityPage = ({ slug }: SocialCityPageProps) => {
     serviceType: 'Gestion de réseaux sociaux',
     description:
       `Tournage vidéo sur place une journée par mois à ${city.name}, montage vertical, sous-titrage ` +
-      'et publication de 6 vidéos courtes dans le mois sur Instagram, Facebook, TikTok et YouTube Shorts. 890 € par mois, sans engagement, site web compris à partir du troisième mois.',
+      "et publication de 8 vidéos courtes, 4 carrousels et 8 stories dans le mois. 890 € par mois, sans engagement, site web d'une page compris à partir du troisième mois.",
     url: canonical,
     provider: { '@id': `${baseUrl}/#business` },
     areaServed: { '@type': city.scope === 'area' ? 'AdministrativeArea' : 'City', name: city.name },
@@ -322,8 +322,8 @@ const SocialCityPage = ({ slug }: SocialCityPageProps) => {
 
           <p className="mt-8 text-base leading-relaxed text-muted-foreground">
             <strong className="font-semibold text-foreground">890 € par mois, sans engagement</strong> : déplacement,
-            tournage, montage, légendes et publication de 6 vidéos. Le premier mois je filme deux jours, et à partir
-            du troisième je vous fais votre site, sans rien payer de plus.
+            tournage, montage, légendes et publication de 8 vidéos, 4 carrousels et 8 stories. Le premier mois je
+            filme deux jours, et à partir du troisième je vous fais un site d'une page, sans rien payer de plus.
           </p>
         </div>
       </section>

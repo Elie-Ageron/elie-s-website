@@ -2294,7 +2294,7 @@ Not sure which case you are in? [Tell me about your situation](/contact) and I w
       },
       {
         q: "Combien coûte la gestion des réseaux sociaux ?",
-        a: "890 € par mois, sans engagement : déplacement, tournage, montage et publication de 6 vidéos. Le premier mois je filme deux jours, et à partir du troisième je fais votre site sans rien payer de plus.",
+        a: "890 € par mois, sans engagement : déplacement, tournage, montage et publication de 8 vidéos, 4 carrousels et 8 stories. Le premier mois je filme deux jours, et à partir du troisième je fais un site d'une page sans rien payer de plus.",
       },
       {
         q: "Faut-il valider chaque publication ?",
@@ -2322,7 +2322,7 @@ Ensuite vous retournez travailler, et pendant les quatre semaines suivantes vos 
 
 ## Ce qui se passe de mon côté entre deux tournages
 
-Le montage, d'abord. D'une journée je sors six vidéos verticales. Chacune est coupée pour tenir seule : une accroche dans les deux premières secondes, une idée, une fin nette.
+Le montage, d'abord. D'une journée je sors huit vidéos verticales. Chacune est coupée pour tenir seule : une accroche dans les deux premières secondes, une idée, une fin nette.
 
 Le sous-titrage ensuite, avec relecture. Les sous-titres automatiques massacrent systématiquement le vocabulaire technique et les noms propres, donc je repasse dessus à la main.
 
@@ -2352,9 +2352,9 @@ Et ce n'est pas immédiat. Les deux premiers mois servent surtout à installer l
 
 ## Combien ça coûte
 
-890 € par mois, sans engagement. Le déplacement, la journée de tournage, le montage, les sous-titres, les légendes et la publication de six vidéos sont dedans. Pas de frais de démarrage, et vous arrêtez le mois que vous voulez.
+890 € par mois, sans engagement. Le déplacement, la journée de tournage, le montage, les sous-titres, les légendes et la publication de huit vidéos, quatre carrousels et huit stories sont dedans. Pas de frais de démarrage, et vous arrêtez le mois que vous voulez.
 
-Trois choses en plus, au même prix : le premier mois je filme deux jours au lieu d'un, à partir du troisième mois je vous fais votre site, et si les six vidéos ne sortent pas dans le mois, le mois suivant ne vous est pas facturé.
+Trois choses en plus, au même prix : le premier mois je filme deux jours au lieu d'un, à partir du troisième mois je vous fais un site d'une page, et si les huit vidéos ne sortent pas dans le mois, le mois suivant ne vous est pas facturé.
 
 Si vous voulez autre chose, plus de vidéos ou un tournage plus long, écrivez-moi et je reviens vers vous avec un prix.
 
@@ -2381,7 +2381,7 @@ Nothing to prepare beforehand. No subjects to find, no captions to write, no spe
 
 We film. I ask questions, you answer. We redo takes as many times as needed. Most people are tense for the first twenty minutes then forget the camera is there.
 
-Then you go back to work, and over the next four weeks your six videos go out without you thinking about it.
+Then you go back to work, and over the next four weeks your eight videos go out without you thinking about it.
 
 ## What happens on my side between shoots
 
@@ -2415,9 +2415,9 @@ And it is not immediate. The first two months mostly serve to establish the rhyt
 
 ## What it costs
 
-€890 a month, no commitment. Travel, the filming day, editing, subtitles, captions and posting six videos are all in there. No setup fee, and you stop any month you like.
+€890 a month, no commitment. Travel, the filming day, editing, subtitles, captions and posting eight videos are all in there. No setup fee, and you stop any month you like.
 
-Three more things at the same price. The first month I film for two days instead of one. From the third month I build your website. And if the six videos do not go out, the month after is free.
+Three more things at the same price. The first month I film for two days instead of one. From the third month I build your website. And if the eight videos do not go out, the month after is free.
 
 If you want something else, more videos or a longer shoot, write to me and I will come back with a price.
 

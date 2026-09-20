@@ -22,7 +22,7 @@ const baseUrl = 'https://elieageron.com';
 const categoryCtas: Record<CategorySlug, { title: string; body: string; to: string; label: string }> = {
   'reseaux-sociaux': {
     title: 'Vous n’avez pas le temps de tenir ce rythme ?',
-    body: 'Je viens filmer une journée par mois chez vous, puis je monte, sous-titre et publie 6 vidéos. Vous n’avez rien à faire entre deux tournages. 890 euros par mois, sans engagement.',
+    body: 'Je viens filmer une journée par mois chez vous, puis je monte, sous-titre et publie 8 vidéos. Vous n’avez rien à faire entre deux tournages. 890 euros par mois, sans engagement.',
     to: '/reseaux-sociaux',
     label: 'Voir comment ça se passe',
   },
