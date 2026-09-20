@@ -995,9 +995,84 @@ les articles. Ni l'un ni l'autre ne disait si une page était encore
 atteignable en cliquant. **C'est ce que fait `npm run check:maillage`**, dans
 un vrai navigateur, après le rendu de React.
 
+### 🔴 Google avait indexé le site en anglais (20 septembre 2026)
+
+> Elie : *« j'ai cherché création réseaux sociaux Albertville, création compte
+> Albertville, agence web Albertville. Même dans la deuxième page, je ne suis
+> pas. Je suis invisible. C'est abusé. »*
+
+**Ce n'était ni le contenu, ni les balises, ni le classement. C'était la
+langue.**
+
+Le site choisissait la sienne sur `navigator.language`. **Googlebot explore
+depuis les États-Unis, avec une locale anglaise.** Il recevait donc la version
+anglaise, et c'est elle qui est entrée dans l'index d'un artisan de Savoie.
+
+Mesuré sur la production, même URL, deux navigateurs :
+
+| `/creation-site-web-albertville` | navigateur fr | navigateur en |
+|---|---|---|
+| `<title>` | Création Site Web Albertville | Web Design Albertville Savoie |
+| `<h1>` | Création de site web à Albertville | Web design in Albertville |
+| `<html lang>` | fr | **en** |
+
+La page de résultats le disait en clair : ses propres pages ressortaient en
+anglais, avec un lien « Traduire cette page » à côté. **Une requête française
+ne peut pas tomber sur une page anglaise.**
+
+C'est ce que Google appelle une page adaptative à la locale, et qu'il
+déconseille. Le `hreflang` du site n'y peut rien : ses trois balises pointent
+sur la même adresse, donc rien ne départage les deux langues.
+
+**La correction : le français est servi à tout le monde, robots compris.** Seul
+un clic donne l'anglais, et ce choix est retenu dans `localStorage`. Un
+visiteur dont le navigateur est en anglais voit `BandeauLangue`, une barre
+sobre en bas de page qui propose sans rien basculer, et qui n'existe pas avant
+le montage : ni dans le HTML pré-rendu, ni pour un robot.
+
+> ⚠️ **Ne jamais remettre `navigator.language` dans `detecterLangue`.** C'est
+> l'erreur qui a rendu le site introuvable dans son propre bassin.
+>
+> ⚠️ **La vraie solution reste des URL séparées** (`elieageron.com/en/...`) avec
+> un hreflang croisé. C'est un chantier à part, et ceci en est la base.
+
+#### Les deux autres choses trouvées ce jour là
+
+1. **18 pages indexées sur 193.** `site:elieageron.com` tenait en deux pages de
+   résultats. Conséquence du bug des canonical, réparé seulement le 13
+   septembre, et d'un sitemap qui annonçait le 7 août pour 50 pages et le
+   19 avril pour 7 autres. **Le point 0 de la liste ci-dessous est donc réglé :**
+   la date éditoriale (`lastModified`, affichée au lecteur) et la date technique
+   du sitemap sont séparées, via `REVISION_TECHNIQUE` dans
+   `generate-sitemap.mjs`. Ne la bouger que lorsqu'un changement touche
+   réellement ce que Google reçoit de chaque page.
+2. **Une page indexée sur son message d'erreur.** Tout ce que Google connaissait
+   de `/referencement-local` était « Mise à jour disponible. Rechargez la
+   page. » C'est l'`ErrorBoundary` de `App.tsx`, capturé pendant un
+   déploiement : le robot reçoit un HTML qui référence les fichiers d'avant, un
+   lot ne charge pas, et cet écran prend toute la page. Une erreur de lot
+   recharge maintenant la page une seule fois, toute seule.
+
+#### Ce que le code ne peut pas corriger
+
+**Le pack local.** Sur « agence web Albertville », Elie **est** dans les
+résultats Google Maps, 5,0 avec **3 avis**, mais il faut dérouler « Voir plus
+d'établissements ». Ses voisins y sont avec 8, 12, 39 et 73 avis. Ce classement
+là ne dépend ni du site ni du SEO : il dépend du nombre d'avis et de la
+complétude de la fiche.
+
+**Le concurrent direct est identifié.** Sur « création réseaux sociaux
+Albertville », le n°1 est **PeakCL** (Charlotte Lacroix), avec exactement la
+même URL que celle construite ici : `peakcl.com/community-manager-albertville`.
+Elle est aussi dans le pack local, avec 6 avis.
+
 ### Ce qui reste à faire, par ordre de valeur
 
-0. 🔴 **Les 142 `lastModified` d'articles n'ont pas bougé, alors que leurs
+0. ✅ **Réglé le 20 septembre 2026** (les 142 `lastModified` d'articles ne
+   bougeaient pas, alors que leurs balises avaient toutes changé). Les deux
+   dates sont séparées, voir `REVISION_TECHNIQUE` dans `generate-sitemap.mjs`.
+   Le texte d'origine, gardé pour le raisonnement :
+   **Les 142 `lastModified` d'articles n'ont pas bougé, alors que leurs
    balises ont toutes changé.** Le `lastmod` du sitemap en est tiré, et c'est
    lui qui décide si Google vient revoir une page. Tant qu'ils annoncent avril,
    les nouveaux titres mettront des semaines à apparaître dans les résultats.
