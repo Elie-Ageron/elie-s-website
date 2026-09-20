@@ -31,7 +31,8 @@
     "check:types": "tsc -p tsconfig.app.json --noEmit",
     "check:vitals": "node scripts/check-vitals.mjs",
     "check:maillage": "node scripts/check-maillage-pages.mjs",
-    "check:hierarchie": "node scripts/check-hierarchie.mjs"
+    "check:hierarchie": "node scripts/check-hierarchie.mjs",
+    "gen:banniere": "node scripts/generer-banniere.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
