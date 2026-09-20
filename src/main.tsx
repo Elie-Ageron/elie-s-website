@@ -1,6 +1,7 @@
 import { createRoot, hydrateRoot } from "react-dom/client";
 import { HelmetProvider } from "react-helmet-async";
 import App from "./App.tsx";
+import { langueInitiale } from "./contexts/LanguageContext";
 import "./index.css";
 
 const rootElement = document.getElementById("root")!;
@@ -39,12 +40,22 @@ const app = (
  */
 const squelette = rootElement.firstElementChild?.hasAttribute('data-squelette');
 
-if (import.meta.env.PROD && rootElement.hasChildNodes() && !squelette) {
+/**
+ * Le HTML pre-rendu est en francais, toujours. Un visiteur anglophone rend donc
+ * un arbre qui ne correspond pas a ce qui a ete servi, et l'hydrater redonne
+ * exactement l'erreur 418 puis 423 corrigee le 17 septembre : arbre jete, page
+ * refaite, deux rendus sur le fil principal.
+ *
+ * On ne tente donc pas de l'hydrater. Un rendu propre, une seule fois.
+ */
+const autreLangue = langueInitiale !== 'fr';
+
+if (import.meta.env.PROD && rootElement.hasChildNodes() && !squelette && !autreLangue) {
   hydrateRoot(rootElement, app);
 } else {
   // `createRoot` vide la racine à son premier rendu, mais on le fait nous mêmes :
   // le comportement est documenté, il n'est pas garanti d'une version à l'autre,
   // et un squelette resté en place se verrait immédiatement.
-  if (squelette) rootElement.replaceChildren();
+  if (squelette || autreLangue) rootElement.replaceChildren();
   createRoot(rootElement).render(app);
 }

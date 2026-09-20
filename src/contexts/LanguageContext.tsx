@@ -1,4 +1,4 @@
-﻿import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+﻿import React, { createContext, useContext, useState, useCallback, ReactNode } from 'react';
 
 type Language = 'fr' | 'en';
 
@@ -34,7 +34,7 @@ const translations = {
     'hero.review.author': 'Austin Talley · VM Producers',
     'form.success': 'Message sent',
     'form.error.title': 'Error',
-    'form.error.desc': 'Something went wrong. Try again or contact us via WhatsApp.',
+    'form.error.desc': "That did not go through. Try again, or send me a message on WhatsApp.",
     'hero.scroll': 'Scroll',
     'hero.proof.delivery': 'Delivered in 7-14 days',
     'hero.proof.call': 'Free 30-min call',
@@ -185,10 +185,10 @@ const translations = {
     'services.title1': 'The plan that',
     'services.title2': 'fits your needs',
     'services.subtitle': 'Whether you\'re just getting started or building everything at once, there\'s an option that fits where you are.',
-    'services.quote.note': 'These are starting prices, not a catalogue. The final figure comes after a free call, once I know what you actually need.',
+    'services.quote.note': 'These are floor prices, not fixed packages. The figure moves with the number of pages and how much copy there is to write, and you get it in writing before anything starts.',
     'services.quote.link': 'Request a quote',
     'services.landing.title': 'Single-Page Site',
-    'services.landing.price': 'from 500 €',
+    'services.landing.price': 'from €500',
     'services.landing.tag': 'The essentials, on one page',
     'services.landing.desc': 'Everything you need on one sharp page, so visitors find you, trust you, and reach out to you.',
     'services.landing.feature1': 'Looks great on every device (phone, tablet, desktop)',
@@ -197,18 +197,18 @@ const translations = {
     'services.landing.cta': 'Get started',
     
     'services.authority.title': 'Showcase Website',
-    'services.authority.price': 'from 1,500 €',
+    'services.authority.price': 'from €1,500',
     'services.authority.tag': 'Your full presence, several pages',
     'services.authority.desc': 'Your full online presence. Clients find you on Google, see you\'re the real deal, and choose you over the competitor down the street.',
     'services.authority.feature1': 'Multiple pages: home, services, about, contact',
-    'services.authority.feature2': 'Serious Google SEO: your town and your trade appear everywhere Google looks for them',
+    'services.authority.feature2': 'Careful Google SEO: your town and your trade written everywhere Google looks for them',
     'services.authority.feature3': 'Visitors can reach you directly from the site',
     'services.authority.feature4': 'Fast and flawless on mobile (7 in 10 visitors are on their phone)',
     'services.authority.cta': 'Get my site',
     'services.authority.popular': 'Most Popular',
     
     'services.custom.title': 'Full Launch Pack',
-    'services.custom.price': 'from 3,500 €',
+    'services.custom.price': 'from €3,500',
     'services.custom.tag': 'Site, brand & visibility, turnkey',
     'services.custom.desc': 'The site, the logo, the Google profile, your first videos and the copy, delivered together. For people starting from nothing who want it all in place the same month.',
     'services.custom.feature1': 'Showcase site + visual identity (logo, colors, fonts)',
@@ -471,7 +471,7 @@ const translations = {
     'hero.review.author': 'Austin Talley · VM Producers',
     'form.success': 'Message bien envoyé',
     'form.error.title': 'Erreur',
-    'form.error.desc': 'Une erreur est survenue. Réessayez ou contactez-nous via WhatsApp.',
+    'form.error.desc': "Le message n'est pas parti. Réessayez, ou écrivez-moi sur WhatsApp.",
     'hero.scroll': 'Défiler',
     'hero.proof.delivery': 'Livré en 7-14 jours',
     'hero.proof.call': 'Appel découverte offert',
@@ -856,16 +856,90 @@ const translations = {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguage] = useState<Language>('fr');
+/** Clef du choix explicite, pour qu'il survive a un rechargement. */
+const CLEF_LANGUE = 'elie-langue';
 
-  useEffect(() => {
-    // Detect browser language
-    const browserLang = navigator.language.toLowerCase();
-    if (browserLang.startsWith('fr')) {
-      setLanguage('fr');
-    } else {
-      setLanguage('en');
+/**
+ * 🔴 **Le site sert le francais a tout le monde. Seul un clic donne l'anglais.**
+ *
+ * Ici vivait une detection sur `navigator.language`, et elle a rendu le site
+ * invisible en recherche francaise. Elie, le 20 septembre 2026 : *« j'ai
+ * cherche agence web Albertville. Meme dans la deuxieme page, je ne suis pas.
+ * Je suis invisible. »*
+ *
+ * **Googlebot explore depuis les Etats-Unis, avec une locale anglaise.** Il
+ * recevait donc la version anglaise du site, et c'est elle qui est entree dans
+ * l'index. Mesure du meme jour, sur la production, a la meme URL :
+ *
+ * | `/creation-site-web-albertville` | navigateur fr | navigateur en |
+ * |---|---|---|
+ * | `<title>` | Creation Site Web Albertville | Web Design Albertville Savoie |
+ * | `<h1>` | Creation de site web a Albertville | Web design in Albertville |
+ * | `<html lang>` | fr | **en** |
+ *
+ * Les resultats Google le confirmaient mot pour mot : ses propres pages
+ * ressortaient en anglais, avec un lien « Traduire cette page » a cote. Une
+ * requete francaise ne peut pas tomber sur une page anglaise.
+ *
+ * C'est le defaut que Google appelle une page adaptative a la locale, et qu'il
+ * deconseille : **deux langues sur une meme URL ne sont pas departageables.**
+ * Le `hreflang` du site n'y peut rien, ses trois balises pointent sur la meme
+ * adresse.
+ *
+ * ⚠️ **Ne jamais remettre `navigator.language` ici.** Un anglophone est
+ * accueilli par `BandeauLangue`, qui propose sans rien basculer tout seul.
+ * La vraie solution reste des URL separees (`/en/...`) avec un hreflang croise :
+ * c'est un chantier a part, et ceci en est la base.
+ *
+ * ⚠️ Le HTML pre-rendu est en francais, donc `'fr'` correspond maintenant a ce
+ * qui est servi, et l'hydratation redevient normale pour tout le monde sauf
+ * celui qui a deja choisi l'anglais. `main.tsx` lit `langueInitiale` et **rend
+ * au lieu d'hydrater** quand elle vaut autre chose que `'fr'`. Garder ce
+ * garde-fou : sans lui on retombe sur l'erreur React 418 du 17 septembre.
+ */
+const detecterLangue = (): Language => {
+  if (typeof window === 'undefined') return 'fr';
+
+  try {
+    const choix = window.localStorage.getItem(CLEF_LANGUE);
+    if (choix === 'fr' || choix === 'en') return choix;
+  } catch {
+    // Navigation privee ou stockage bloque : le francais, comme tout le monde.
+  }
+
+  return 'fr';
+};
+
+export const langueInitiale: Language = detecterLangue();
+
+/**
+ * Est-ce que ce visiteur lit plutot l'anglais ?
+ *
+ * Sert uniquement a proposer, jamais a basculer : c'est `BandeauLangue` qui la
+ * lit. Elle retourne faux tant qu'un choix a deja ete fait, dans un sens comme
+ * dans l'autre, pour qu'on ne propose pas l'anglais a qui vient de prendre le
+ * francais.
+ */
+export const preferePeutEtreAnglais = (): boolean => {
+  if (typeof window === 'undefined') return false;
+  try {
+    if (window.localStorage.getItem(CLEF_LANGUE)) return false;
+  } catch {
+    // Stockage bloque : on propose, le visiteur decide.
+  }
+  const langue = (navigator.language || navigator.languages?.[0] || 'fr').toLowerCase();
+  return !langue.startsWith('fr');
+};
+
+export const LanguageProvider = ({ children }: { children: ReactNode }) => {
+  const [language, setLanguageState] = useState<Language>(langueInitiale);
+
+  const setLanguage = useCallback((lang: Language) => {
+    setLanguageState(lang);
+    try {
+      window.localStorage.setItem(CLEF_LANGUE, lang);
+    } catch {
+      // Le choix vaut pour la session, c'est deja mieux que rien.
     }
   }, []);
 

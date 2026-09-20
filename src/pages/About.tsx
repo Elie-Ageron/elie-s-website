@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+﻿import { motion } from 'framer-motion';
 import { ArrowRight, MapPin, Mail, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '@/components/SEO';
@@ -60,7 +60,7 @@ const About = () => {
         {
           title: 'Ce que je fais, concrètement',
           body: [
-            "Deux choses, de poids égal. Je construis des sites pour des entreprises qui n'ont pas de service communication, et je produis le contenu vidéo de leurs réseaux sociaux. Pour ce second point, je viens filmer une journée par mois sur place, puis je monte, je sous-titre, j'écris et je publie six à douze vidéos dans le mois. Le client ne touche à rien.",
+            "Deux choses, de poids égal. Je construis des sites pour des entreprises qui n'ont pas de service communication, et je produis le contenu vidéo de leurs réseaux sociaux. Pour ce second point, je viens filmer une journée par mois sur place, puis je monte, je sous-titre, j'écris et je publie six vidéos dans le mois. Le client ne touche à rien.",
             "Autour de ces deux piliers, je m'occupe de ce qui les rend utiles : la fiche Google Business, la collecte et les réponses aux avis, le référencement local, les textes, et l'identité de marque quand il en faut une.",
           ],
         },
@@ -90,7 +90,7 @@ const About = () => {
           title: 'Comment je travaille',
           body: [
             "Le premier rendez-vous est gratuit et il n'engage à rien, y compris quand je conclus que vous n'avez pas besoin de moi. Ça arrive régulièrement : il m'est souvent plus utile de dire à quelqu'un que sa fiche Google mal remplie lui coûte plus cher que l'absence de site.",
-            "Le devis arrive sous 48 heures et il est ferme. Les prix ne sont pas affichés sur le site parce que les écarts entre deux projets sont trop importants pour qu'un chiffre isolé veuille dire quelque chose, mais j'explique toujours comment je chiffre.",
+            "Le devis arrive sous 48 heures et il est ferme. Les prix de départ sont affichés sur le site. Le chiffre final tombe une fois que je sais ce qu'il y a à faire, et j'explique toujours comment j'y arrive.",
             "Après la mise en ligne, je reste. Un site livré et laissé seul se dégrade en dix-huit mois. C'est la raison pour laquelle je parle de partenariat plutôt que de prestation.",
           ],
         },
@@ -106,7 +106,7 @@ const About = () => {
         {
           title: 'What I actually do',
           body: [
-            'Two things, equally weighted. I build websites for businesses with no communications team, and I produce the video content for their social media. For the second, I come and film on site for one full day each month, then edit, subtitle, write and publish six to twelve videos over the month. The client touches nothing.',
+            'Two things, equally weighted. I build websites for businesses with no communications team, and I produce the video content for their social media. For the second, I come and film on site for one full day each month, then edit, subtitle, write and publish six videos over the month. The client touches nothing.',
             'Around those two pillars I handle what makes them work: the Google Business Profile, review collection and replies, local SEO, copy, and brand identity when one is needed.',
           ],
         },
@@ -136,7 +136,7 @@ const About = () => {
           title: 'How I work',
           body: [
             'The first meeting is free and commits you to nothing, including when I conclude you do not need me. That happens regularly: it is often more useful to tell someone their half-filled Google profile costs them more than the missing website.',
-            'The quote arrives within 48 hours and it is firm. Prices are not displayed on the site because the gap between two projects is too wide for a single figure to mean anything, but I always explain how I price.',
+            'The quote arrives within 48 hours and it is firm. The starting prices are on the site. The final figure comes once I know what the work actually involves, and I always explain how I get there.',
             'After launch, I stay. A site delivered and left alone degrades within eighteen months. That is why I talk about a partnership rather than a one-off job.',
           ],
         },
@@ -171,8 +171,8 @@ const About = () => {
             </h1>
             <p className="mt-5 text-base sm:text-lg text-muted-foreground leading-relaxed">
               {fr
-                ? "Je construis des sites pour des entreprises locales et je m'occupe de leurs réseaux sociaux. Une journée de tournage par mois chez elles, et six à douze publications dans le mois ensuite, sans qu'elles aient à filmer ou monter quoi que ce soit."
-                : 'I build websites for local businesses and run their social media. Half a day of filming on site each month, then two to three posts a week, without them having to film or edit anything.'}
+                ? "Je construis des sites pour des entreprises locales et je m'occupe de leurs réseaux sociaux. Une journée de tournage par mois chez elles, et six publications dans le mois ensuite, sans qu'elles aient à filmer ou monter quoi que ce soit."
+                : 'I build websites for local businesses and run their social media. One day of filming at their place each month, then six videos posted over that month, without them having to film or edit anything.'}
             </p>
           </motion.header>
         </div>
@@ -222,8 +222,8 @@ const About = () => {
           </h2>
           <p className="text-sm text-muted-foreground mb-5">
             {fr
-              ? "Ces guides contiennent la méthode complète. Vous pouvez tout appliquer sans jamais me contacter."
-              : 'These guides contain the full method. You can apply all of it without ever contacting me.'}
+              ? "Ces guides contiennent la méthode complète. Rien n'y est réservé aux clients."
+              : "These four guides contain the full method, and none of it is held back for clients. They are written in French."}
           </p>
           <ul className="border-y border-border/60 divide-y divide-border/60">
             {guides.map((guide) => (
@@ -232,7 +232,7 @@ const About = () => {
                   to={`/guides/${guide.slug}`}
                   className="group flex items-baseline justify-between gap-4 py-4 hover:text-primary transition-colors"
                 >
-                  <span className="font-medium">{guide.title}</span>
+                  <span className="font-medium">{fr ? guide.title : guide.titleEn}</span>
                   <ArrowRight
                     className="w-4 h-4 shrink-0 text-primary/50 group-hover:text-primary group-hover:translate-x-0.5 transition-all"
                     aria-hidden="true"

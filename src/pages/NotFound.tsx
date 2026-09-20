@@ -14,27 +14,34 @@ const NotFound = () => {
     console.error('404 Error: User attempted to access non-existent route:', location.pathname);
   }, [location.pathname]);
 
+  /**
+   * ⚠️ Cette page parlait au « nous » dans les deux langues (« Laissez-nous
+   * vous guider », « Contact Us », « une consultation gratuite »), alors que
+   * tout le reste du site est ecrit a la premiere personne du singulier. Et
+   * elle envoyait vers un « free consultation » qui n'existe pas : ce qui
+   * existe, c'est l'audit gratuit.
+   */
   const content = {
     en: {
-      title: 'Page Not Found',
-      subtitle: "The page you're looking for doesn't exist or has been moved.",
-      heading: "Lost? Let's get you back on track.",
-      cta: 'Go to Homepage',
+      title: 'Page not found',
+      subtitle: "This page does not exist, or it has moved.",
+      heading: 'Here is where most people were going.',
+      cta: 'Back to the homepage',
       links: [
-        { to: '/why-a-website', icon: BookOpen, label: 'Why You Need a Website', desc: 'Learn how a site transforms your business' },
-        { to: '/services', icon: LayoutGrid, label: 'Our Services', desc: 'Everything to grow your online presence' },
-        { to: '/contact', icon: Mail, label: 'Contact Us', desc: 'Get in touch for a free consultation' },
+        { to: '/reseaux-sociaux', icon: BookOpen, label: 'Social media', desc: 'I film, edit and post all month long' },
+        { to: '/services', icon: LayoutGrid, label: 'Services', desc: 'Site, social, Google, branding, SEO' },
+        { to: '/audit-gratuit', icon: Mail, label: 'Free audit', desc: 'What your clients find when they look you up' },
       ],
     },
     fr: {
-      title: 'Page Non Trouvée',
-      subtitle: 'La page que vous recherchez n\'existe pas ou a été déplacée.',
-      heading: 'Perdu ? Laissez-nous vous guider.',
-      cta: 'Retour à l\'Accueil',
+      title: 'Page introuvable',
+      subtitle: "Cette page n'existe pas, ou elle a changé d'adresse.",
+      heading: 'Voilà où allaient la plupart des gens.',
+      cta: "Retour à l'accueil",
       links: [
-        { to: '/why-a-website', icon: BookOpen, label: 'Pourquoi un Site Web', desc: 'Découvrez comment un site transforme votre business' },
-        { to: '/services', icon: LayoutGrid, label: 'Nos Services', desc: 'Tout pour développer votre présence en ligne' },
-        { to: '/contact', icon: Mail, label: 'Nous Contacter', desc: 'Contactez-nous pour une consultation gratuite' },
+        { to: '/reseaux-sociaux', icon: BookOpen, label: 'Réseaux sociaux', desc: 'Je filme, je monte et je publie tout le mois' },
+        { to: '/services', icon: LayoutGrid, label: 'Services', desc: 'Site, réseaux, Google, marque, référencement' },
+        { to: '/audit-gratuit', icon: Mail, label: 'Audit gratuit', desc: 'Ce que vos clients trouvent quand ils vous cherchent' },
       ],
     },
   };
@@ -44,6 +51,7 @@ const NotFound = () => {
   return (
     <>
       <Helmet>
+        <html lang={language} />
         <title>{t.title} | Elie Ageron Web Design</title>
         <meta name="robots" content="noindex, follow" />
         <meta name="description" content={t.subtitle} />

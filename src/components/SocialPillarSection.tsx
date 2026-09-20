@@ -34,7 +34,10 @@ import { parId } from '@/data/publications';
  * place parce qu'elle montre le livrable dans son contexte. La bande vit sur
  * `/reseaux-sociaux`, sous un titre qui dit pourquoi elle est la.
  *
- * Le plancher de 890 € est affiche. C'est le seul prix public du service.
+ * 890 € est le prix, plus un plancher : une offre unique depuis le 19
+ * septembre 2026. Le detail vit sur `/reseaux-sociaux`, l'accueil porte le
+ * montant et ce qu'il y a dedans. Sans engagement : c'est un argument
+ * concurrentiel, l'agence qui vend le meme prix l'affiche en premier.
  */
 
 const useSteps = () => {
@@ -52,8 +55,8 @@ const useSteps = () => {
       num: '2',
       title: fr ? 'Je monte et je sous-titre' : 'I edit and subtitle',
       desc: fr
-        ? "De cette journée je sors 6 à 12 vidéos verticales. Chacune tient debout toute seule : une accroche dans les deux premières secondes, une idée, une fin qui donne envie de vous suivre."
-        : 'From that day I pull 6 to 12 vertical videos. Each stands on its own: a hook in the first two seconds, one idea, an ending that makes people follow you.',
+        ? "De cette journée je sors 6 vidéos verticales. Chacune tient debout toute seule : une accroche dans les deux premières secondes, une idée, une fin qui donne envie de vous suivre."
+        : 'From that day I pull 6 vertical videos. Each stands on its own: a hook in the first two seconds, one idea, an ending that makes people follow you.',
     },
     {
       num: '3',
@@ -92,7 +95,7 @@ const PostingCalendar = () => {
               {fr ? 'Votre mois' : 'Your month'}
             </p>
             <p className="mt-0.5 text-base font-bold text-foreground">
-              {fr ? '8 publications programmées' : '8 posts scheduled'}
+              {fr ? '6 publications programmées' : '6 posts scheduled'}
             </p>
           </div>
 
@@ -266,12 +269,12 @@ const SocialPillarSection = () => {
           <div className="mt-16 flex flex-col gap-5 border-t border-border pt-10 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="font-heading text-3xl font-bold leading-none text-foreground sm:text-4xl">
-                {fr ? 'À partir de 890 € par mois' : 'From 890 € a month'}
+                {fr ? '890 € par mois, sans engagement' : '€890 a month, no commitment'}
               </p>
               <p className="mt-2.5 text-sm text-muted-foreground">
                 {fr
-                  ? "Déplacement, tournage, montage et publication compris. Trois mois minimum, le temps qu'un compte reparte."
-                  : 'Travel, filming, editing and posting included. Three months minimum, the time it takes for an account to pick up.'}
+                  ? "Une journée de tournage chez vous, 6 vidéos montées et publiées, déplacement compris. Et votre site à partir du troisième mois, sans rien payer de plus."
+                  : 'A full day of filming at your place, 6 edited videos posted for you, travel included. And your website from the third month, at no extra cost.'}
               </p>
             </div>
             <Link

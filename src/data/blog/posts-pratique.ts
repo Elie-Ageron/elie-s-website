@@ -106,7 +106,7 @@ Les écarts entre deux projets sont trop importants pour qu'un chiffre isolé ai
 
 En revanche, j'explique en détail ce qui fait varier le prix, ce qui est inclus, et comment je chiffre. J'ai écrit [un article entier sur le coût réel d'un site](/blog/combien-coute-un-site-web) qui donne des ordres de grandeur et les variables.
 
-Et sur mon offre de réseaux sociaux, où la prestation est standardisée, j'affiche un plancher : à partir de 890 euros par mois. Parce que là, un chiffre a un sens.
+Et sur mon offre de réseaux sociaux, où la prestation est standardisée, j'affiche le prix en entier : 890 euros par mois, avec la liste de ce qu'il y a dedans. Parce que là, un chiffre a un sens.
 
 C'est ça, la règle : affichez dès que le chiffre est informatif, expliquez quand il ne l'est pas.
 

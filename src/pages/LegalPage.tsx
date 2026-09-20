@@ -21,6 +21,10 @@ const LegalPage = ({ page }: LegalPageProps) => {
   return (
     <>
       <Helmet>
+        {/* Ces deux pages ecrivent leur <head> a la main, sans passer par
+            `SEO.tsx`. La balise `lang` manquait donc : le corps etait traduit
+            mais le document restait annonce en francais. */}
+        <html lang={language} />
         <title>{title}</title>
         <meta
           name="description"

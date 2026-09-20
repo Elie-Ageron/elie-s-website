@@ -65,7 +65,7 @@ const Footer = () => {
     return (
       <Link
         to={`/${entree[0]}`}
-        className="text-foreground underline-offset-4 hover:text-primary hover:underline"
+        className="text-foreground underline underline-offset-4 hover:text-primary"
       >
         {entree[1]}
       </Link>

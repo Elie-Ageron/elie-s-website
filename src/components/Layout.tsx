@@ -2,6 +2,7 @@ import { LanguageProvider } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
+import BandeauLangue from '@/components/BandeauLangue';
 import GlobalContactForm from '@/components/GlobalContactForm';
 import PageTransition from '@/components/animations/PageTransition';
 import Breadcrumb from '@/components/Breadcrumb';
@@ -156,6 +157,7 @@ const Layout = ({ children }: LayoutProps) => {
         </PageTransition>
         <Footer />
         <FloatingWhatsApp />
+        <BandeauLangue />
       </div>
     </LanguageProvider>
   );

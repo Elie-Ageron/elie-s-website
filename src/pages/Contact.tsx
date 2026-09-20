@@ -115,7 +115,7 @@ const Contact = () => {
                     <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
                       {language === 'fr'
                         ? "Coiffeur, coach, restaurant, artisan, PME : remplissez le formulaire en 4 étapes. Je construis votre site, vous le validez, vous le gardez si ça vous convient."
-                        : "Hairdresser, coach, restaurant, craftsman, SMB: fill in the 4-step form. I build your site, you review it, you keep it if you like it."}
+                        : "Hairdresser, coach, restaurant, tradesperson, small business: fill in the four step form. I build your site, you look at it, you keep it if you like it."}
                     </p>
                   </div>
                   <ArrowRight

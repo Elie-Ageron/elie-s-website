@@ -2273,10 +2273,10 @@ Not sure which case you are in? [Tell me about your situation](/contact) and I w
     titleEn: 'Handing off your social media: how it actually works',
     excerptFr: "Beaucoup de gens imaginent qu'ils vont devoir fournir des idées, valider des textes et se filmer eux-mêmes. Voilà à quoi ressemble vraiment un mois quand quelqu'un s'en occupe.",
     excerptEn: "Most people assume they will have to supply ideas, approve captions and film themselves. Here is what a month actually looks like when someone else handles it.",
-    seoTitleFr: 'Déléguer ses Réseaux : une Journée, Dès 890 €',
+    seoTitleFr: 'Déléguer ses Réseaux : une Journée, 890 €/mois',
     seoTitleEn: 'Outsourcing Your Social Media | Elie Ageron',
     seoDescFr: "Une journée de tournage chez vous par mois, puis le montage, les légendes et la publication étalée. De votre côté, il n'y a que la journée. Ce que ça coûte.",
-    seoDescEn: 'Half a day of filming a month, then nothing to do. What a done-for-you social media service really looks like.',
+    seoDescEn: 'One day of filming a month, then nothing to do on your side. What a done for you social media service actually looks like.',
     readTime: '6 min',
     categoryFr: 'Réseaux sociaux',
     categoryEn: 'Social media',
@@ -2294,7 +2294,7 @@ Not sure which case you are in? [Tell me about your situation](/contact) and I w
       },
       {
         q: "Combien coûte la gestion des réseaux sociaux ?",
-        a: "À partir de 890 € par mois, déplacement, tournage, montage et publication compris. Le prix bouge selon le nombre de plateformes et le volume de publications.",
+        a: "890 € par mois, sans engagement : déplacement, tournage, montage et publication de 6 vidéos. Le premier mois je filme deux jours, et à partir du troisième je fais votre site sans rien payer de plus.",
       },
       {
         q: "Faut-il valider chaque publication ?",
@@ -2318,11 +2318,11 @@ Vous n'avez rien à préparer avant. Pas de sujets à trouver, pas de texte à �
 
 On tourne. Je pose des questions, vous répondez. On refait autant de prises qu'il faut. La plupart des gens sont crispés les vingt premières minutes puis oublient la caméra.
 
-Ensuite vous retournez travailler, et pendant les quatre semaines suivantes vos vidéos sortent, six à douze dans le mois, sans que vous ayez à y penser.
+Ensuite vous retournez travailler, et pendant les quatre semaines suivantes vos vidéos sortent, six dans le mois, sans que vous ayez à y penser.
 
 ## Ce qui se passe de mon côté entre deux tournages
 
-Le montage, d'abord. D'une journée je sors six à douze vidéos verticales. Chacune est coupée pour tenir seule : une accroche dans les deux premières secondes, une idée, une fin nette.
+Le montage, d'abord. D'une journée je sors six vidéos verticales. Chacune est coupée pour tenir seule : une accroche dans les deux premières secondes, une idée, une fin nette.
 
 Le sous-titrage ensuite, avec relecture. Les sous-titres automatiques massacrent systématiquement le vocabulaire technique et les noms propres, donc je repasse dessus à la main.
 
@@ -2352,9 +2352,11 @@ Et ce n'est pas immédiat. Les deux premiers mois servent surtout à installer l
 
 ## Combien ça coûte
 
-Ça dépend du nombre de vidéos, du nombre de réseaux et de la fréquence de tournage. Je n'affiche pas de grille parce que je préfère vous donner un chiffre juste après avoir compris votre activité.
+890 € par mois, sans engagement. Le déplacement, la journée de tournage, le montage, les sous-titres, les légendes et la publication de six vidéos sont dedans. Pas de frais de démarrage, et vous arrêtez le mois que vous voulez.
 
-Un appel de trente minutes suffit. Vous me racontez ce que vous faites, je vous dis ce que je filmerais et à quel rythme, et vous recevez un devis clair. Si je pense que ça n'a pas de sens pour vous, je vous le dis aussi.
+Trois choses en plus, au même prix : le premier mois je filme deux jours au lieu d'un, à partir du troisième mois je vous fais votre site, et si les six vidéos ne sortent pas dans le mois, le mois suivant ne vous est pas facturé.
+
+Si vous voulez autre chose, plus de vidéos ou un tournage plus long, écrivez-moi et je reviens vers vous avec un prix.
 
 Sur le prix, je détaille ailleurs ce qu'il y a derrière chaque tranche du marché, [de deux cents à trois mille euros par mois](/blog/prix-gestion-reseaux-sociaux). Et sur le délai, la réponse honnête est [qu'il faut compter plusieurs mois](/blog/combien-de-temps-resultats-reseaux-sociaux), pas plusieurs semaines.
 
@@ -2373,17 +2375,17 @@ What I do differs on one point: I come to you, I film, and the rest stops being 
 
 ## A typical month, from the client side
 
-Half a day in the month. That is the only moment you are involved.
+One day in the month. That is the only moment you are involved.
 
 Nothing to prepare beforehand. No subjects to find, no captions to write, no special outfit beyond what you normally wear to work. I arrive with the subject list already written, the camera, the mics and the lights.
 
 We film. I ask questions, you answer. We redo takes as many times as needed. Most people are tense for the first twenty minutes then forget the camera is there.
 
-Then you go back to work, and for the next four weeks your videos go out 2 to 3 times a week without you thinking about it.
+Then you go back to work, and over the next four weeks your six videos go out without you thinking about it.
 
 ## What happens on my side between shoots
 
-Editing first. From one day I get six to twelve vertical videos. Each one is cut to stand alone: a hook in the first two seconds, one idea, a clean ending.
+Editing first. From one day I get six vertical videos. Each one is cut to stand alone: a hook in the first two seconds, one idea, a clean ending.
 
 Subtitling next, with a proofread. Automatic subtitles butcher technical vocabulary and proper nouns every time, so I go over them by hand.
 
@@ -2413,9 +2415,11 @@ And it is not immediate. The first two months mostly serve to establish the rhyt
 
 ## What it costs
 
-It depends on the number of videos, the number of networks and how often we film. I do not publish a price grid because I would rather give you a fair number after understanding your business.
+€890 a month, no commitment. Travel, the filming day, editing, subtitles, captions and posting six videos are all in there. No setup fee, and you stop any month you like.
 
-A thirty-minute call is enough. You tell me what you do, I tell you what I would film and at what pace, and you get a clear quote. If I think it does not make sense for you, I will say that too.
+Three more things at the same price. The first month I film for two days instead of one. From the third month I build your website. And if the six videos do not go out, the month after is free.
+
+If you want something else, more videos or a longer shoot, write to me and I will come back with a price.
 
 ---
 

@@ -15,12 +15,19 @@ Site vitrine / portfolio de **Elie Ageron**, web designer et partenaire web bas�
 ## Services proposés
 Les 7 services (source unique : `src/data/services.ts`, **l'ordre du tableau pilote l'affichage**) :
 - **Sites web** (pilier 1) — landing dès 500€, vitrine dès 1500€, pack lancement dès 3500€
-- **Réseaux sociaux** (pilier 2, page dédiée `/reseaux-sociaux`) — tournage sur place **une journée** par mois, montage vertical, sous-titres, puis **6 à 12 publications dans le mois** sur Instagram / Facebook / TikTok / YouTube Shorts. Récurrent, **à partir de 890€/mois**.
+- **Réseaux sociaux** (pilier 2, page dédiée `/reseaux-sociaux`) — tournage sur place **une journée** par mois, montage vertical, sous-titres, puis **6 publications dans le mois** sur Instagram / Facebook / TikTok / YouTube Shorts. Récurrent, **890 €/mois, sans engagement**.
   > ⚠️ **Révisé en août 2026, deux points à ne jamais réintroduire.**
   > 1. **La « demi-journée » de tournage n'existe plus** : c'est une journée entière. L'ancien périmètre (demi-journée + 2 à 3 publications par semaine) représentait environ 23 h de travail pour 450 €, soit 19 €/h brut.
   > 2. **Aucune formule où le client filme lui-même.** Écartée volontairement : sans production sur place, la matière s'épuise en six semaines et le compte retombe. C'est le raisonnement de l'article `/blog/prix-gestion-reseaux-sociaux`, il doit rester cohérent avec l'offre.
   >
-  > Le plancher **890 € est le seul prix affiché publiquement** (page `/reseaux-sociaux`, FAQ et section « ce qui est compris », `llms.txt`, schéma `Offer`). La grille complète reste hors ligne.
+  > 3. 🔴 **Depuis le 19 septembre 2026, ce n'est plus un plancher : c'est le prix.**
+  > Voir la section « L'offre unique » plus bas. Un « à partir de » se compare au
+  > 390 € d'une agence qui ne se déplace pas, et perd avant qu'on ait lu la liste.
+  >
+  > Le prix **890 € par mois, sans engagement** est affiché partout (page
+  > `/reseaux-sociaux`, accueil, six pages locales, FAQ, `llms.txt`, schéma
+  > `Offer`). La grille complète (1 290 / 1 890) reste hors ligne : qui veut
+  > autre chose écrit un message.
   > Sources internes : `création de contenue/ressources, data/15-CLIENTS/_MOI/02-offre.md`.
 - **Google Business** — création / optimisation de la fiche
 - **Identité de marque** — logo, charte (réalisée avec son frère, designer)
@@ -35,9 +42,9 @@ Les 7 services (source unique : `src/data/services.ts`, **l'ordre du tableau pil
 - **Événementiel** : **supprimé (août 2026)**. Plus un service à part : une landing page d'événement est simplement un site web. La page `/event-production` et les démos Apex Summit / Chromatic ont été retirées, l'URL redirige en 301 vers `/services` (règle dans `vercel.json`).
 
 > ⚠️ **Révisé le 13 septembre 2026 : les prix planchers sont désormais publics.**
-> Affichés : site une page **dès 500 €**, site vitrine **dès 1 500 €**, pack lancement **dès 3 500 €**, réseaux sociaux **dès 890 €/mois**. Ils apparaissent sur les formules de la home (`ServicesSection.tsx`), dans les meta descriptions, dans `llms.txt` et `llms-full.txt`.
+> Affichés : site une page **dès 500 €**, site vitrine **dès 1 500 €**, pack lancement **dès 3 500 €**. Les réseaux sociaux, eux, n'ont plus de plancher mais un prix unique : **890 €/mois** *(19 septembre 2026)*. Ils apparaissent sur les formules de la home (`ServicesSection.tsx`), dans les meta descriptions, dans `llms.txt` et `llms-full.txt`.
 > **Pourquoi** : relevé du SERP « agence web albertville » le 13/09/2026, tous les concurrents locaux annoncent un prix ou un délai dans leur extrait Google (agencecomsi « dès 2 100 € HT » et « livré dès 3 semaines », aacréation « dès 500 € HT », Agence Marin « dès 49 €/mois »). Et la fiche `02-offre.md` le dit : un prix qu'on doit demander est un prix qu'on peut négocier.
-> **La grille complète reste hors ligne** (890 / 1 290 / 1 890 pour les réseaux). Seul le plancher est public. Modèle business inchangé : land & expand.
+> **La grille complète reste hors ligne** (1 290 / 1 890 pour les réseaux). Modèle business inchangé : land & expand.
 
 ---
 
@@ -66,9 +73,109 @@ Les 7 services (source unique : `src/data/services.ts`, **l'ordre du tableau pil
 - **Pas de page Tarifs** : la page `/pricing` a été retirée (tout est sur devis). Les 3 formules de site vivent sur la home (`ServicesSection.tsx`), suivies d'une note « chiffré sur devis ». L'URL `/pricing` redirige vers `/services` (SEO). Prix de référence internes conservés dans `src/data/services.ts` (jamais affichés).
 
 ### Page Réseaux sociaux (`/reseaux-sociaux`)
-- `src/pages/SocialMedia.tsx` — hero, preuve en prose, déroulé d'un mois type (tournage → montage → publication), ce qui est inclus, combo site + réseaux, FAQ (8 questions) et CTA. Le prix plancher de 890 € est affiché.
+- `src/pages/SocialMedia.tsx` — hero, preuve en prose, déroulé d'un mois type (tournage → montage → publication), **la liste à 890 €**, **les trois choses en plus**, combo site + réseaux, FAQ et CTA.
 - **Le CTA principal du hero et du pied de page est `/audit-gratuit`**, l'appel Calendly passe en second. Deux champs valent mieux qu'un créneau à poser pour quelqu'un qui découvre la page.
 - Schémas : `Service` (@id `/reseaux-sociaux#service`), `FAQPage`, `BreadcrumbList`.
+
+### L'offre unique à 890 € (19 septembre 2026)
+
+> Elie : *« il faut que j'enlève à partir de 890 € par mois. Il faut que je
+> dise : pour 890 € par mois, ça, ça, ça, ça. »* Puis, une fois l'analyse
+> posée : *« une seule offre sur le site, et si ils veulent autre chose ils
+> m'envoient un message. »*
+
+**Une offre, un prix, une liste. Plus de « à partir de », plus d'engagement.**
+
+```
+890 € par mois, sans engagement.
+  une journée de tournage chez vous, tous les mois
+  le déplacement, compris en Savoie et Haute-Savoie
+  tout le matériel
+  6 vidéos montées, verticales et sous-titrées
+  la publication sur Instagram, Facebook, TikTok, YouTube Shorts
+  les légendes et le calendrier
+  les photos de la journée
+  un point par mois
+
+  1. le premier mois, je filme deux jours
+  2. à partir du troisième mois, le site web est compris
+  3. si les 6 vidéos ne sortent pas, le mois suivant est gratuit
+```
+
+#### Pourquoi le « à partir de » devait sauter, et c'est mesuré
+
+Relevé des pages de prix des concurrents le 19 septembre 2026 :
+
+| | Prix affiché | Ce qu'on a pour ce prix |
+|---|---|---|
+| Click&Digital | 349 à 789 €/mois | 4 à 12 publications, stories, visuels. **Aucun tournage.** 1 mois offert contre 12 mois d'engagement |
+| R Numérique | 390 / 590 / **890 €** | À 890 € : 8 publications, **2 reels par mois**, shooting **trimestriel**. Sans engagement |
+| Micro-agences (Annecy, Chambéry) | 300 à 800 €/mois | 8 à 12 publications, vidéo en option payante |
+| **Studio FLF**, le même modèle qu'Elie | **à partir de 3 500 €/mois** | 1 journée de tournage par mois, 4 à 8 formats courts, montage, sous-titres, calendrier |
+
+⭐ **Le seul concurrent qui vend le modèle d'Elie à l'identique l'affiche
+quatre fois plus cher.** Et au même prix que lui, une agence donne deux vidéos
+par mois et un tournage par trimestre. **Donc le prix n'avait pas besoin de
+baisser, il avait besoin d'être rendu lisible** : « à partir de 890 € » se
+compare à « 390 € » et perd, la liste se compare à la liste et gagne.
+
+#### 🔴 Pourquoi il n'y a ni remise ni « mois offert »
+
+Elie voulait *« un truc gratuit dans l'équation »*, et citait « un mois acheté,
+un mois offert ». Calculé sur sa charge réelle (19 h par client et par mois,
+3 places) : un mois offert sur quatre le fait tomber de **47 €/h à 35 €/h**,
+soit un quart de sa marge, sur l'offre la moins chère de sa catégorie. Et
+c'est la mécanique des vendeurs à 5 € sur ComeUp.
+
+**La règle : l'élément gratuit doit coûter peu à produire et valoir cher à
+recevoir.** Les trois retenues coûtent 7 h une fois (le double tournage), 18 h
+une fois après 2 670 € encaissés (le site), et **zéro** tant qu'il livre (la
+garantie). Son taux horaire ne descend jamais sous 40 €.
+
+#### 🔴 L'engagement de trois mois a sauté, et c'est Elie qui l'a vu
+
+> *« le truc d'engagement, ça fait scam un peu non ? »*
+
+Il a raison, et le marché le confirme : le concurrent direct au même prix
+affiche **sans engagement** en argument de vente, et celui qui engage sur douze
+mois s'en sert pour justifier son « mois offert ». Arriver avec six mois fermes
+faisait perdre la comparaison avant qu'on ait lu la liste.
+
+⭐ **La mécanique est inversée : on ne retient plus celui qui part, on
+récompense celui qui reste.** Le client peut arrêter chaque mois, mais s'il
+part au deuxième il laisse un site à 1 500 € sur la table. **Un gain perdu
+retient mieux qu'une pénalité, et personne ne se sent piégé.** Le risque
+réel d'Elie est plafonné à 7 h : le site ne sort qu'après trois mois payés.
+
+L'argument des trois mois n'a pas disparu, il a changé de bouche. Avant :
+« je vous engage trois mois ». Maintenant : *« le site démarre au troisième
+mois, parce qu'avant on n'a rien à mettre dessus »*. Même délai, et cette fois
+c'est lui qui rend service.
+
+⚠️ **« Je vous fais votre site » veut dire une page de destination, ou un site
+vitrine si le client n'en a pas.** Pas une refonte de catalogue à quinze pages :
+ça, c'est un devis à part, et la page le dit.
+
+⚠️ **Le périmètre est passé de « 6 à 12 vidéos » à 6 fermes**, partout. Un
+intervalle ne peut pas être garanti, et la garantie de publication ne veut rien
+dire sans un nombre. 6 est aussi ce que dit la grille interne pour SOCLE.
+
+⚠️ **Deux lignes sont descendues de SIGNATURE (1 290 €) vers l'offre publique** :
+les photos tirée de la journée et le point mensuel. Elles ne coûtent presque
+rien une fois la journée tournée, et une liste de quatre lignes à 890 € ne
+tient pas en face d'une liste de huit lignes à 390 €.
+
+⚠️ **Jamais de garantie de résultat.** R Numérique garantit « 200 à 1 000
+abonnés qualifiés ». La seule garantie tenable ici porte sur ce qui ne dépend
+que d'Elie : la publication. Les vues dépendent du marché du client.
+
+⚠️ **Les trois choses en plus ne sont pas une promotion de lancement.** Pas de
+compte à rebours, pas de « jusqu'au 31 » : elles sont permanentes, et c'est ce
+qui les rend crédibles. La page le dit en toutes lettres.
+
+**Sources internes** : `création de contenue/ressources, data/15-CLIENTS/_MOI/02-offre.md`
+(la grille, la charge réelle, le refus du 699 €) et `06-le-metier-et-le-marche.md`
+(les repères de marché, et ce qui n'existe pas comme donnée).
 
 ### Les six pages locales du pilier réseaux (16 septembre 2026)
 
@@ -908,6 +1015,106 @@ un vrai navigateur, après le rendu de React.
 3. **Les quatre pages héritées**, toujours pas tranchées par Elie.
 
 ---
+
+## Le site en anglais (20 septembre 2026)
+
+> Elie : *« le jour où j'ai mon frère qui l'a essayé avec le navigateur en
+> anglais, ça buguait, ça ne marchait pas, c'était saccadé. Là j'ai donné ma
+> carte à des anglais, donc le site doit marcher. »*
+
+### Ce qui était « saccadé », et ce n'était pas une impression
+
+`LanguageContext` partait sur `'fr'`, puis un `useEffect` basculait sur `'en'`
+**après le montage**. Un visiteur anglophone payait donc **deux rendus complets
+de l'arbre entier** : il voyait la page en français, puis la voyait se refaire
+en anglais, sur le fil principal déjà le plus chargé du site.
+
+La détection est maintenant **synchrone, avant le premier rendu**, et le choix
+est gardé dans `localStorage` sous la clef `elie-langue`.
+
+> 🔴 **Le second bug était pire, et personne ne l'avait vu.** Seule la langue du
+> navigateur comptait. Un anglophone sur une machine française qui cliquait
+> « ENG » **retombait en français à la page suivante**, à chaque fois. Le
+> sélecteur de langue ne servait à rien au delà de la page courante.
+
+⚠️ **Le HTML pré-rendu est en français, toujours.** Une détection synchrone fait
+donc diverger le premier rendu du HTML servi. `main.tsx` lit `langueInitiale` et
+**rend au lieu d'hydrater** quand elle ne vaut pas `'fr'`, exactement comme pour
+le squelette. Sans ce garde-fou on retombe sur l'erreur React 418 puis 423
+corrigée le 17 septembre. Mesure après correction, navigateur en `en-US`, build
+de production : **zéro erreur console sur les quatre pages principales.**
+
+### Ce qui était resté en anglais sur l'ancienne offre
+
+Le français avait été révisé plusieurs fois depuis août, l'anglais non. La
+page `/a-propos` annonçait encore en anglais **« half a day of filming, then
+two to three posts a week »**, soit précisément le périmètre que `CLAUDE.md`
+interdit de réintroduire. Elle disait aussi « prices are not displayed on the
+site », faux depuis le 13 septembre.
+
+> ⚠️ **« 6 à 12 vidéos » survivait dans les deux langues**, sur onze fichiers :
+> `services.ts`, `JsonLd`, `SocialPillarSection`, `SocialMedia`, `SocialCityPage`,
+> `social-cities`, `cities/list-core`, `About`, `llms-full.txt`, et l'article
+> `/blog/deleguer-reseaux-sociaux`. Le périmètre est **6 fermes** depuis le
+> 19 septembre : un intervalle ne peut pas être garanti, et la garantie de
+> publication ne veut rien dire sans un nombre. Le téléphone de l'accueil
+> affichait « 8 publications programmées ».
+
+Cet article portait aussi une section « combien ça coûte » qui disait
+*« je n'affiche pas de grille »*, trois lignes sous sa propre FAQ qui annonce
+890 €. Les deux langues sont recalées sur l'offre unique.
+
+### Les trois trous du menu, et comment ils sont bouchés
+
+| Où | Ce que voyait un anglophone | Ce qui a été fait |
+|---|---|---|
+| `/guides`, dans le menu principal | Quatre pavés en français, sous un document déclaré `lang="fr"` au milieu d'un site en anglais | L'index est bilingue (`kickerEn`, `titleEn`, `excerptEn` dans `guides.ts`). Le corps des guides reste en français, **et la page le dit avant le clic** |
+| Les cinq pages de service | « See details » menant à une page française | Le libellé anglais dit « See details (in French) », et la page elle même porte deux phrases en anglais avec une sortie vers `/services` |
+| `/mentions-legales`, `/politique-confidentialite` | Corps traduit, mais `<html lang="fr">` | Ces deux pages écrivent leur `<head>` à la main sans passer par `SEO.tsx`. La balise `lang` y a été ajoutée |
+
+> 🔴 **La règle : on annonce la langue avant le clic, on ne la cache pas.** Un
+> anglophone qui clique « See details » et tombe sur du français en déduit que
+> le site est cassé. Celui à qui on annonce la langue ne déduit rien : il
+> choisit. C'est la différence entre un site bilingue et un site à moitié
+> traduit.
+
+⚠️ **Le corps des guides et des pages de service ne se traduit pas.** Ce sont
+des pages piliers écrites pour des requêtes françaises. Les traduire ne
+rapporterait rien et diluerait le signal. Ce qui manquait, c'est qu'on sache
+quoi y trouver.
+
+### Le reste de la passe
+
+- **Le format des prix.** Un lecteur anglophone lit `€890`, pas `890 €`. Les
+  deux sources se contredisaient déjà entre elles : `services.ts` écrivait
+  « from €500 » et `LanguageContext` « from 500 € » sur la même page d'accueil.
+- **Le « nous » anglais.** `form.error.desc` disait « contact us », la page 404
+  « Contact Us » et « a free consultation », qui n'existe pas : ce qui existe,
+  c'est l'audit gratuit. Tout le reste du site parle à la première personne du
+  singulier. La 404 est recalée dans les deux langues.
+- **« Craftsman » et « SMB »** dans les listes de métiers de `/get-started` et
+  `/assessment`. Le premier exclut la moitié des artisans, le second est du
+  jargon. Remplacés par « Tradesperson » et « Small business ».
+- **« Fondateur » et « Son site »** étaient rendus tels quels en anglais, sur
+  `/portfolio` et dans `SocialClientsSection`.
+
+> ⚠️ **`LanguageContext.tsx` porte environ 80 clefs mortes**, dont deux faux
+> clients (`portfolio.luxura`, `portfolio.steel`, avec un « Brings in 50+ leads
+> every month ») et toute l'ancienne page Tarifs. Elles ne sont rendues nulle
+> part, vérifié en croisant les `t('...')` du code avec le dictionnaire. À
+> nettoyer un jour, sans urgence.
+
+### Ce qui reste vrai après la passe
+
+Le contrôle qui le prouve : un scan du texte rendu des seize pages principales
+avec le navigateur en `en-US`, à la recherche de français qui fuit. **Aucune
+fuite** hors des pages françaises assumées. Et les deux campagnes visuelles
+passent : `check:a11y` sans violation sur 18 pages, `check:overflow` sans
+débordement sur 9 pages en 7 largeurs.
+
+⚠️ **Les 142 articles restent français**, sauf les 17 hérités qui sont
+bilingues. C'est assumé : Elie *« c'est pas grave si tous les articles ne sont
+pas en anglais »*. Le blog anglais affiche donc 17 articles, et c'est cohérent.
 
 ## Contrôles automatiques avant de livrer
 

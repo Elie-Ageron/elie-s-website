@@ -112,7 +112,7 @@ const GetStarted = () => {
 
   const businessTypes = language === 'fr'
     ? ["Coiffeur / Salon de beauté", "Coach / Thérapeute", "Restaurant / Bar / Café", "Artisan / Prestataire de service", "Boutique en ligne", "PME / Entreprise", "Autre"]
-    : ['Hairdresser / Beauty salon', 'Coach / Therapist', 'Restaurant / Bar / Café', 'Craftsman / Service provider', 'Online store', 'SMB / Company', 'Other'];
+    : ['Hairdresser / Beauty salon', 'Coach / Therapist', 'Restaurant / Bar / Café', 'Tradesperson / Service provider', 'Online store', 'Small business / Company', 'Other'];
 
   const goals = language === 'fr'
     ? ['Générer des contacts et leads', 'Vendre mes produits ou services en ligne', 'Présenter mon activité (vitrine)', 'Gagner en visibilité locale', 'Autre']

@@ -31,6 +31,15 @@ export interface ServiceItem {
   to?: string;
   /** Label for the `to` link. Defaults to a generic "learn more" wording. */
   ctaLabel?: { fr: string; en: string };
+  /**
+   * La page de detail n'existe qu'en francais.
+   *
+   * ⚠️ Le libelle anglais le dit, il ne le cache pas. Un anglophone qui clique
+   * « See details » et tombe sur une page francaise en deduit que le site est
+   * casse. Un anglophone a qui on annonce la langue avant le clic ne deduit
+   * rien du tout : c'est un guide en francais, il choisit.
+   */
+  detailFrOnly?: boolean;
 }
 
 /**
@@ -70,22 +79,22 @@ export const services: ServiceItem[] = [
       en: 'We film for a day, I post your videos all month. You touch nothing.',
     },
     desc: {
-      fr: "J'arrive chez vous avec le matériel et un plan de tournage déjà prêt : les sujets, les questions, ce qu'on filme et dans quel ordre. On tourne une journée. Ensuite je monte, je sous-titre et je publie 6 à 12 vidéos courtes dans le mois sur Instagram, Facebook, TikTok ou YouTube Shorts. Vous, vous retournez travailler. Je ne propose pas de formule où vous filmez vous-même : sans quelqu'un qui vient produire les images, il ne sort rien au bout de six semaines.",
-      en: "I show up with the gear and a shooting plan already written: the topics, the questions, what we film and in what order. We shoot for a full day. Then I edit, subtitle and publish 6 to 12 short videos over the month on Instagram, Facebook, TikTok or YouTube Shorts. You go back to work. I do not offer a plan where you film it yourself: without someone coming to produce the footage, nothing goes out after six weeks.",
+      fr: "J'arrive chez vous avec le matériel et un plan de tournage déjà prêt : les sujets, les questions, ce qu'on filme et dans quel ordre. On tourne une journée. Ensuite je monte, je sous-titre et je publie 6 vidéos courtes dans le mois sur Instagram, Facebook, TikTok ou YouTube Shorts. Vous, vous retournez travailler. Je ne propose pas de formule où vous filmez vous-même : sans quelqu'un qui vient produire les images, il ne sort rien au bout de six semaines.",
+      en: "I show up with the gear and a shooting plan already written: the topics, the questions, what we film and in what order. We shoot for a full day. Then I edit, subtitle and publish 6 short videos over the month on Instagram, Facebook, TikTok or YouTube Shorts. You go back to work. I do not offer a plan where you film it yourself: without someone coming to produce the footage, nothing goes out after six weeks.",
     },
     bullets: {
       fr: [
         'Un plan de tournage et des idées de sujets, préparés en amont',
         'Une journée de tournage chez vous, tout le matériel fourni',
-        '6 à 12 vidéos verticales montées et publiées dans le mois',
+        '6 vidéos verticales montées et publiées dans le mois',
       ],
       en: [
         'A shooting plan and topic ideas, prepared in advance',
         'A full day of filming at your place, all equipment provided',
-        '6 to 12 vertical videos edited and published over the month',
+        '6 vertical videos edited and published over the month',
       ],
     },
-    price: { fr: 'dès 890€/mois', en: 'from €890/mo' },
+    price: { fr: '890€/mois', en: '€890/mo' },
     recurring: true,
     to: '/reseaux-sociaux',
     ctaLabel: { fr: 'Voir comment ça marche', en: 'See how it works' },
@@ -110,7 +119,8 @@ export const services: ServiceItem[] = [
     },
     price: { fr: 'dès 250€', en: 'from €250' },
     to: '/fiche-google-business',
-    ctaLabel: { fr: 'Voir le détail', en: 'See details' },
+    ctaLabel: { fr: 'Voir le détail', en: 'See details (in French)' },
+    detailFrOnly: true,
   },
   {
     id: 'branding',
@@ -132,7 +142,8 @@ export const services: ServiceItem[] = [
     },
     price: { fr: 'dès 600€', en: 'from €600' },
     to: '/identite-de-marque',
-    ctaLabel: { fr: 'Voir le détail', en: 'See details' },
+    ctaLabel: { fr: 'Voir le détail', en: 'See details (in French)' },
+    detailFrOnly: true,
   },
   {
     id: 'seo',
@@ -155,7 +166,8 @@ export const services: ServiceItem[] = [
     price: { fr: 'dès 150€/mois', en: 'from €150/mo' },
     recurring: true,
     to: '/referencement-local',
-    ctaLabel: { fr: 'Voir le détail', en: 'See details' },
+    ctaLabel: { fr: 'Voir le détail', en: 'See details (in French)' },
+    detailFrOnly: true,
   },
   {
     id: 'avis',
@@ -178,7 +190,8 @@ export const services: ServiceItem[] = [
     price: { fr: 'dès 90€/mois', en: 'from €90/mo' },
     recurring: true,
     to: '/avis-google',
-    ctaLabel: { fr: 'Voir le détail', en: 'See details' },
+    ctaLabel: { fr: 'Voir le détail', en: 'See details (in French)' },
+    detailFrOnly: true,
   },
   {
     id: 'contenu',
@@ -200,6 +213,7 @@ export const services: ServiceItem[] = [
     },
     price: { fr: 'dès 90€', en: 'from €90' },
     to: '/redaction-web',
-    ctaLabel: { fr: 'Voir le détail', en: 'See details' },
+    ctaLabel: { fr: 'Voir le détail', en: 'See details (in French)' },
+    detailFrOnly: true,
   },
 ];

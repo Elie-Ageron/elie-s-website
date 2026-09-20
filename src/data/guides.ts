@@ -22,6 +22,18 @@ export interface Guide {
   label: string;
   kicker: string;
   title: string;
+  /**
+   * Version anglaise des trois champs affiches sur `/guides`.
+   *
+   * Le corps des guides reste en francais : ce sont des pages piliers ecrites
+   * pour des requetes francaises, et les traduire n'aurait aucun sens tant
+   * qu'elles visent « reseaux sociaux entreprise locale ». Mais l'index, lui,
+   * est dans le menu principal : un visiteur anglophone qui clique « Guides »
+   * doit au moins comprendre ce qu'il y a derriere. L'index le dit en clair.
+   */
+  kickerEn: string;
+  titleEn: string;
+  excerptEn: string;
   seoTitle: string;
   seoDesc: string;
   excerpt: string;
@@ -40,6 +52,10 @@ export const guides: Guide[] = [
     label: 'Réseaux sociaux pour une entreprise locale',
     kicker: 'Guide complet',
     title: 'Les réseaux sociaux pour une entreprise locale',
+    kickerEn: 'Full guide',
+    titleEn: 'Social media for a local business',
+    excerptEn:
+      "Everything you have to decide, in order, for a social media presence to actually bring a local business clients. No jargon and nothing promised that cannot be kept.",
     seoTitle: 'Réseaux Sociaux Entreprise Locale : le Guide',
     seoDesc:
       "Le guide complet des réseaux sociaux pour une TPE ou un artisan : choisir sa plateforme, tenir un rythme, mesurer, et transformer des vues en clients.",
@@ -200,6 +216,10 @@ export const guides: Guide[] = [
     label: 'Filmer avec un smartphone',
     kicker: 'Guide technique',
     title: 'Filmer des vidéos pour son entreprise avec un smartphone',
+    kickerEn: 'Technical guide',
+    titleEn: 'Filming your own business videos on a phone',
+    excerptEn:
+      "The technical side, in the order it really matters. Sound comes before picture, and the first three seconds come before both.",
     seoTitle: 'Filmer avec un Smartphone : Guide Complet',
     seoDesc:
       "Son, lumière, cadrage, accroche, montage, sous-titres, export : tout ce qu'il faut savoir pour produire des vidéos courtes propres avec un téléphone.",
@@ -307,6 +327,10 @@ export const guides: Guide[] = [
     label: 'Être visible sur Google localement',
     kicker: 'Guide référencement',
     title: 'Être visible sur Google quand on est une entreprise locale',
+    kickerEn: 'Local SEO guide',
+    titleEn: 'Getting found on Google as a local business',
+    excerptEn:
+      "How a local search actually works, and what order to work in so your business turns up when someone looks for your trade in your town.",
     seoTitle: 'Visibilité Google Locale : le Guide Complet',
     seoDesc:
       "Fiche Google Business, avis, pages par ville, site rapide : la méthode complète pour sortir sur Google quand quelqu'un cherche votre métier près de chez vous.",
@@ -414,6 +438,10 @@ export const guides: Guide[] = [
     label: 'Créer le site web de sa petite entreprise',
     kicker: 'Guide création',
     title: 'Créer le site web de sa petite entreprise',
+    kickerEn: 'Build guide',
+    titleEn: 'Building a website for your small business',
+    excerptEn:
+      "The decisions to make, in order, so a small firm's site is worth having. What costs money, what takes time, and what nobody tells you before you sign.",
     seoTitle: 'Créer un Site Web pour une TPE : le Guide',
     seoDesc:
       "Prix, délais, contenu, nom de domaine, obligations légales : tout ce qu'il faut décider pour créer un site vitrine qui amène des demandes, dans l'ordre.",

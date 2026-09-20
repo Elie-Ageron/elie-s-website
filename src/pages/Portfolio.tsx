@@ -187,7 +187,7 @@ const Portfolio = () => {
       quote: language === 'fr'
         ? 'Notre site inspire confiance, convertit mieux, et nos clients nous le disent. Un travail soigné, du début à la fin.'
         : 'Our site now inspires trust, converts better, and our clients tell us so. Careful, attentive work from start to finish.',
-      quoteAuthor: 'Gabriel Ageron, Fondateur, MyWebGlory',
+      quoteAuthor: `Gabriel Ageron, ${language === 'fr' ? 'Fondateur' : 'Founder'}, MyWebGlory`,
     },
     {
       image: portfolioSolarFusion,
@@ -200,7 +200,7 @@ const Portfolio = () => {
       quote: language === 'fr'
         ? 'Elie a su capter l\'essence de notre marque. Le trafic a vraiment décollé dès le lancement.'
         : 'Elie perfectly captured our brand\'s essence. Traffic has really taken off since launch.',
-      quoteAuthor: 'Sébastien Chaffardon, Fondateur, Solar Fusion',
+      quoteAuthor: `Sébastien Chaffardon, ${language === 'fr' ? 'Fondateur' : 'Founder'}, Solar Fusion`,
     },
     {
       image: portfolioVmProducers,

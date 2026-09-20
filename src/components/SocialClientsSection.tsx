@@ -31,7 +31,8 @@ type Compte = {
   lieu: string;
   depuisFr: string;
   depuisEn: string;
-  liens: { label: string; href: string }[];
+  /** `labelEn` n'est la que pour les libelles ecrits, jamais pour un nom de reseau. */
+  liens: { label: string; labelEn?: string; href: string }[];
 };
 
 const COMPTES: Compte[] = [
@@ -59,7 +60,7 @@ const COMPTES: Compte[] = [
     liens: [
       { label: 'Facebook', href: 'https://www.facebook.com/isabelleageronvicat/' },
       { label: 'LinkedIn', href: 'https://fr.linkedin.com/in/isabelle-ageron-vicat-2b57ba78' },
-      { label: 'Son site', href: 'https://isabelle-ageronvicat.fr' },
+      { label: 'Son site', labelEn: 'Her website', href: 'https://isabelle-ageronvicat.fr' },
     ],
   },
 ];
@@ -120,7 +121,7 @@ const SocialClientsSection = () => {
                           rel="noopener noreferrer"
                           className="inline-flex min-h-[24px] items-center gap-1 text-sm font-semibold text-primary underline-offset-4 hover:underline"
                         >
-                          {l.label}
+                          {fr ? l.label : l.labelEn ?? l.label}
                           <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
                         </a>
                       ))}

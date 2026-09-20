@@ -30,7 +30,7 @@ export const faqHome: { fr: FaqItem[]; en: FaqItem[] } = {
     {
       question: 'Combien coûte la gestion de mes réseaux sociaux ?',
       answer:
-        "À partir de 890 € par mois, engagement de trois mois. Le déplacement, la journée de tournage, le montage, les sous-titres, l'écriture des légendes et la publication sont compris. Il n'y a pas de frais de démarrage et pas de matériel à acheter de votre côté. Le chiffre final dépend du nombre de plateformes et du volume de vidéos.",
+        "890 € par mois, sans engagement. Le déplacement, la journée de tournage, le montage, les sous-titres, l'écriture des légendes et la publication de 6 vidéos sont compris. Pas de frais de démarrage, pas de matériel à acheter de votre côté, et votre site à partir du troisième mois sans rien payer de plus. Vous arrêtez quand vous voulez.",
       article: 'prix-gestion-reseaux-sociaux',
     },
     {
@@ -65,7 +65,7 @@ export const faqHome: { fr: FaqItem[]; en: FaqItem[] } = {
     {
       question: 'How much does managing my social accounts cost?',
       answer:
-        'From 890 € a month, on a three month commitment. Travel, the filming day, editing, subtitles, captions and posting are all included. There is no setup fee and no equipment to buy on your side. The final figure depends on how many platforms and how many videos.',
+        '€890 a month, no commitment. Travel, the filming day, editing, subtitles, captions and posting 6 videos are all included. No setup fee, no equipment to buy on your side, and your website from the third month at no extra cost. You stop whenever you want.',
       article: 'prix-gestion-reseaux-sociaux',
     },
     {
@@ -76,7 +76,7 @@ export const faqHome: { fr: FaqItem[]; en: FaqItem[] } = {
     {
       question: 'How much does a professional website cost?',
       answer:
-        'A one page site starts at 500 €, a multi page showcase site at 1,500 €, and the full launch pack at 3,500 €. Those are starting prices, not a catalogue: the exact figure comes after a call, once I know how many pages you need and what has to be written. The quote is fixed and there are no hidden fees.',
+        'A one page site starts at €500, a multi page showcase site at €1,500, and the full launch pack at €3,500. Those are starting prices, not a catalogue: the exact figure comes after a call, once I know how many pages you need and what has to be written. The quote is fixed and there are no hidden fees.',
       article: 'combien-coute-un-site-web',
     },
     {

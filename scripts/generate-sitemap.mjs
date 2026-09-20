@@ -16,6 +16,37 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const BASE = 'https://elieageron.com';
 const today = new Date().toISOString().slice(0, 10);
 
+/**
+ * La derniere fois qu'une modification technique a touche **toutes** les pages.
+ *
+ * 🔴 **C'est le point 0 de la liste « ce qui reste a faire », et le 20 septembre
+ * 2026 il est devenu bloquant.** Les 142 articles tiraient leur `lastmod` de
+ * leur champ `lastModified`, qui est aussi la date affichee au lecteur sous
+ * « Mis a jour le ». Les passer tous a aujourd'hui aurait donc menti au
+ * lecteur, et ne pas les passer laissait le sitemap annoncer le 7 aout pour
+ * 50 pages et le 19 avril pour 7 autres.
+ *
+ * Le probleme n'etait pas theorique : le site a ete indexe **en anglais**
+ * (voir `LanguageContext.tsx`), et tant que Google n'a aucune raison de
+ * repasser, ce sont les titres anglais qui restent dans l'index.
+ *
+ * Les deux dates sont donc separees, ce qui etait la voie propre notee dans
+ * `CLAUDE.md` : **`lastModified` reste la date editoriale, affichee au
+ * lecteur. Celle ci est la date technique, et elle ne sert qu'au sitemap.**
+ * Le `lastmod` publie est la plus recente des deux, donc un article revise
+ * apres cette date garde bien la sienne.
+ *
+ * ⚠️ Ne la bouger que lorsqu'un changement touche reellement ce que Google
+ * recoit de chaque page : la langue servie, le gabarit, les balises. Pas pour
+ * une correction sur trois pages, et jamais « pour faire repasser Google ».
+ * Un sitemap qui crie au loup finit par ne plus etre cru.
+ */
+const REVISION_TECHNIQUE = '2026-09-20';
+
+/** La plus recente entre la date editoriale de la page et la revision technique. */
+const dateSitemap = (editoriale) =>
+  !editoriale || editoriale < REVISION_TECHNIQUE ? REVISION_TECHNIQUE : editoriale;
+
 /** Extraction sans compilation TypeScript : on lit les sources au regex. */
 const readAll = (files) => files.map((f) => readFileSync(f, 'utf8')).join('\n');
 
@@ -132,7 +163,7 @@ const entries = [
   ...staticPages.map((p) => ({ ...p, lastmod: today })),
   ...guides.map((g) => ({
     loc: `/guides/${g.slug}`,
-    lastmod: g.lastmod,
+    lastmod: dateSitemap(g.lastmod),
     changefreq: 'monthly',
     priority: '0.9',
   })),
@@ -147,7 +178,7 @@ const entries = [
   })),
   ...posts.map((p) => ({
     loc: `/blog/${p.slug}`,
-    lastmod: p.lastmod,
+    lastmod: dateSitemap(p.lastmod),
     changefreq: 'monthly',
     priority: '0.7',
   })),

@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import FaqSection from '@/components/FaqSection';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
 import { getServicePage, getRelatedServices } from '@/data/service-pages';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { getIndexEntry } from '@/data/blogIndex';
 
 /**
@@ -29,6 +30,7 @@ interface ServicePageProps {
 }
 
 const ServicePage = ({ slug }: ServicePageProps) => {
+  const { language } = useLanguage();
   const service = getServicePage(slug);
   if (!service) return null;
 
@@ -174,6 +176,20 @@ const ServicePage = ({ slug }: ServicePageProps) => {
           >
             {service.lede}
           </motion.p>
+
+          {/* ⚠️ Cette page n'existe qu'en francais, et `/services` l'annonce
+              maintenant avant le clic. On le redit ici pour celui qui arrive
+              par un lien ou par Google, avec une sortie vers la page qui, elle,
+              est traduite. Deux phrases, pas une banniere. */}
+          {language === 'en' && (
+            <p lang="en" className="mx-auto mb-10 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+              This page is written in French. Everything I do is described in English on the{' '}
+              <Link to="/services" className="text-primary underline-offset-4 hover:underline">
+                services page
+              </Link>
+              .
+            </p>
+          )}
 
           <motion.div
             initial={{ opacity: 0, y: 18 }}

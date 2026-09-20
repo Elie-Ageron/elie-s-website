@@ -48,7 +48,7 @@ const etapes = [
     icone: CalendarCheck,
     titre: 'Je publie pendant tout le mois',
     texte:
-      "6 à 12 publications étalées sur Instagram, Facebook, TikTok ou YouTube Shorts. Vous les découvrez en ligne, ou la veille si vous préférez les voir avant.",
+      "6 publications étalées sur Instagram, Facebook, TikTok ou YouTube Shorts. Vous les découvrez en ligne, ou la veille si vous préférez les voir avant.",
   },
 ];
 
@@ -107,7 +107,7 @@ const SocialCityPage = ({ slug }: SocialCityPageProps) => {
     serviceType: 'Gestion de réseaux sociaux',
     description:
       `Tournage vidéo sur place une journée par mois à ${city.name}, montage vertical, sous-titrage ` +
-      'et publication de 6 à 12 vidéos courtes dans le mois sur Instagram, Facebook, TikTok et YouTube Shorts.',
+      'et publication de 6 vidéos courtes dans le mois sur Instagram, Facebook, TikTok et YouTube Shorts. 890 € par mois, sans engagement, site web compris à partir du troisième mois.',
     url: canonical,
     provider: { '@id': `${baseUrl}/#business` },
     areaServed: { '@type': city.scope === 'area' ? 'AdministrativeArea' : 'City', name: city.name },
@@ -119,7 +119,6 @@ const SocialCityPage = ({ slug }: SocialCityPageProps) => {
         '@type': 'UnitPriceSpecification',
         priceCurrency: 'EUR',
         price: 890,
-        minPrice: 890,
         unitCode: 'MON',
         billingIncrement: 1,
       },
@@ -246,7 +245,7 @@ const SocialCityPage = ({ slug }: SocialCityPageProps) => {
             className="mt-6 text-sm text-muted-foreground"
           >
             Ou appelez directement le{' '}
-            <a href="tel:+33695555318" className="font-medium text-primary underline-offset-4 hover:underline">
+            <a href="tel:+33695555318" className="font-medium text-primary underline underline-offset-4">
               06 95 55 53 18
             </a>
             .
@@ -322,9 +321,9 @@ const SocialCityPage = ({ slug }: SocialCityPageProps) => {
           </ol>
 
           <p className="mt-8 text-base leading-relaxed text-muted-foreground">
-            À partir de <strong className="font-semibold text-foreground">890 € par mois</strong>, déplacement,
-            tournage, montage, légendes et publication compris. Trois mois minimum, le temps qu&rsquo;un compte
-            reparte.
+            <strong className="font-semibold text-foreground">890 € par mois, sans engagement</strong> : déplacement,
+            tournage, montage, légendes et publication de 6 vidéos. Le premier mois je filme deux jours, et à partir
+            du troisième je vous fais votre site, sans rien payer de plus.
           </p>
         </div>
       </section>
@@ -420,7 +419,7 @@ const SocialCityPage = ({ slug }: SocialCityPageProps) => {
           {webCity && (
             <p className="mt-7 text-base leading-relaxed text-muted-foreground">
               Vous cherchiez plutôt un site ?{' '}
-              <Link to={`/${webCity.slug}`} className="font-medium text-primary underline-offset-4 hover:underline">
+              <Link to={`/${webCity.slug}`} className="font-medium text-primary underline underline-offset-4">
                 Je fais aussi les sites {city.scope === 'area' ? `en ${city.name}` : `à ${city.name}`}
               </Link>
               , et les deux se font ensemble : les vidéos amènent les gens, le site les reçoit.

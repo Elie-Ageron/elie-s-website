@@ -53,14 +53,54 @@ const queryClient = new QueryClient({
   },
 });
 
+/** Un lot de code manquant : la page a ete servie avant un deploiement, les fichiers apres. */
+const estErreurDeLot = (err: Error) =>
+  err.message.includes('Failed to fetch dynamically imported') ||
+  err.message.includes('Loading chunk') ||
+  err.message.includes('Failed to load');
+
+/** Clef du rechargement automatique, pour ne le tenter qu'une fois. */
+const CLEF_RELANCE = 'elie-relance-lot';
+
 // Catch render errors so users see an error message instead of a blank page
 class ErrorBoundary extends Component<{ children: ReactNode }, { error: Error | null }> {
   state = { error: null };
   static getDerivedStateFromError(error: Error) { return { error }; }
+
+  /**
+   * 🔴 **Google a indexe une de ces pages sur son message d'erreur.**
+   * Releve le 20 septembre 2026 : tout ce que l'index contenait pour
+   * `/referencement-local` etait « Mise a jour disponible. Rechargez la page. »
+   *
+   * La cause est un deploiement en cours d'exploration. Le robot recoit un
+   * HTML qui reference les fichiers d'avant, ceux ci viennent d'etre remplaces,
+   * un lot ne se charge pas, et cet ecran prend toute la page. Le visiteur
+   * s'en sort en cliquant ; un robot ne clique pas, il enregistre.
+   *
+   * On recharge donc une seule fois, tout seul. La page revient avec les bons
+   * fichiers, et personne, robot compris, ne voit l'ecran d'erreur. Le drapeau
+   * est en `sessionStorage` : si le rechargement echoue aussi, le message
+   * s'affiche au lieu de boucler.
+   *
+   * ⚠️ Ne pas mettre de `noindex` sur cet ecran pour « proteger l'index ». Une
+   * erreur passagere ferait alors desindexer une page saine, ce qui coute plus
+   * cher que l'instantane qu'on essaie d'eviter.
+   */
+  componentDidCatch(error: Error) {
+    if (!estErreurDeLot(error) || typeof window === 'undefined') return;
+    try {
+      if (window.sessionStorage.getItem(CLEF_RELANCE)) return;
+      window.sessionStorage.setItem(CLEF_RELANCE, '1');
+    } catch {
+      return; // Stockage bloque : on ne recharge pas, au risque de boucler.
+    }
+    window.location.reload();
+  }
+
   render() {
     if (this.state.error) {
       const err = this.state.error as Error;
-      const isChunkError = err.message.includes('Failed to fetch dynamically imported') || err.message.includes('Loading chunk') || err.message.includes('Failed to load');
+      const isChunkError = estErreurDeLot(err);
       return (
         <div style={{ minHeight: '100vh', background: 'hsl(30 20% 98%)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'system-ui, sans-serif' }}>
           <div style={{ textAlign: 'center', padding: 32, maxWidth: 400 }}>
@@ -73,7 +113,7 @@ class ErrorBoundary extends Component<{ children: ReactNode }, { error: Error | 
                 : "Une erreur JavaScript s’est produite."}
             </p>
             <button
-              onClick={() => { localStorage.removeItem('chunk-reload'); window.location.reload(); }}
+              onClick={() => { try { sessionStorage.removeItem(CLEF_RELANCE); } catch { /* rien a nettoyer */ } window.location.reload(); }}
               style={{ padding: '12px 28px', background: '#c4516b', color: '#fff', border: 'none', borderRadius: 8, cursor: 'pointer', fontSize: 15, fontWeight: 600 }}
             >
               Recharger la page

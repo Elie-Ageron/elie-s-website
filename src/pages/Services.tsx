@@ -281,7 +281,7 @@ const Services = () => {
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               {language === 'fr'
                 ? "Un site web qui vous ramène des clients, des vidéos qui tournent sur vos réseaux, une fiche Google qui remonte. Au lieu d'un site livré puis oublié, je m'occupe de votre présence en ligne mois après mois. Pour des artisans, des commerçants, des thérapeutes et des formateurs de Savoie et de Haute-Savoie."
-                : 'A website that brings you clients, videos running on your social accounts, a Google profile that climbs. Instead of a site delivered and forgotten, I look after your online presence month after month. For tradespeople, shopkeepers, therapists and trainers across Savoie and Haute-Savoie.'}
+                : 'A website that brings you clients, videos running on your social accounts, a Google listing that starts turning up. Instead of a site delivered and then forgotten, I look after your online presence month after month. For tradespeople, shopkeepers, therapists and trainers across Savoie and Haute-Savoie.'}
             </p>
 
             {/* Service pills, preview the breadth */}

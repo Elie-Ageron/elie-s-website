@@ -530,7 +530,7 @@ C'est le format qui correspond à la majorité des petites entreprises locales, 
 
 Attention quand même au bas de cette tranche. À 450 euros, une demi-journée de tournage et une dizaine de vidéos montées, le prestataire travaille autour de vingt euros de l'heure avant charges. Soit il rogne sur le montage, soit il ne tient pas, soit il vous fournit beaucoup moins que ce qui était annoncé. Demandez le nombre de vidéos et la durée du tournage, puis faites la division vous même.
 
-C'est la formule que je propose, à partir de 890 euros par mois, avec une journée entière de tournage sur place et six à douze vidéos montées et publiées dans le mois. [Le détail est ici](/reseaux-sociaux).
+C'est la formule que je propose, à 890 euros par mois sans engagement, avec une journée entière de tournage sur place et six vidéos montées et publiées dans le mois. [Le détail est ici](/reseaux-sociaux).
 
 ## Tranche 3 : au delà de 1500 euros par mois
 

@@ -21,7 +21,7 @@ import { socialCities } from '@/data/social-cities';
 
 /**
  * Page dédiée au service réseaux sociaux (lancé en 2026).
- * Promesse : Elie vient filmer une journée, puis publie 6 à 12 vidéos
+ * Promesse : Elie vient filmer une journée, puis publie 6 vidéos
  * verticales dans le mois. Le client ne touche à rien.
  *
  * Périmètre et prix revus en août 2026. Deux choses à ne pas réintroduire :
@@ -30,8 +30,30 @@ import { socialCities } from '@/data/social-cities';
  *    pour la raison expliquée dans l'article « combien coûte la gestion des
  *    réseaux sociaux » : sans production sur place, il ne sort plus rien au bout
  *    de six semaines.
- * Le plancher public est « à partir de 890 € par mois ». Pas de grille complète
- * en ligne et pas de cartes : l'info est présentée en listes éditoriales.
+ * ⚠️ Révisé le 19 septembre 2026 : une seule offre, un seul prix, plus de
+ * plancher. Elie : « il faut que j'enlève à partir de 890 € par mois. Il faut
+ * que je dise : pour 890 € par mois, ça, ça, ça. » Le « à partir de » se
+ * comparait au 390 € d'une agence qui ne se déplace pas, et perdait avant
+ * qu'on ait lu la liste. La liste, elle, gagne.
+ *
+ * 🔴 Et l'engagement de trois mois a sauté. Elie : « le truc d'engagement, ça
+ * fait scam un peu non ? » Le concurrent direct au même prix affiche « sans
+ * engagement » en argument de vente. La mécanique est inversée : on ne retient
+ * plus celui qui part, on récompense celui qui reste. Le site compris à partir
+ * du troisième mois retient mieux qu'une clause, parce que c'est un gain perdu
+ * et pas une pénalité.
+ *
+ * Les trois éléments en plus, et ce qu'ils coûtent réellement :
+ *  - deux jours de tournage le premier mois : 7 h une seule fois, et Elie
+ *    démarre avec deux mois de matière d'avance ;
+ *  - le site à partir du troisième mois : ~18 h, après 2 670 € encaissés.
+ *    C'est le seul cadeau que ni un community manager ni un studio vidéo ne
+ *    peut copier ;
+ *  - la garantie de publication : zéro coût tant qu'il livre, et c'est la
+ *    seule garantie honnête possible ici. Jamais de garantie de résultat, de
+ *    vues ou d'abonnés.
+ * La grille complète (1 290 / 1 890) reste hors ligne : qui veut autre chose
+ * écrit un message.
  */
 
 /* ── Étapes du mois type ── */
@@ -55,8 +77,8 @@ const useSteps = () => {
       title: language === 'fr' ? 'Je monte, je sous-titre, je découpe' : 'I edit, subtitle and cut it up',
       desc:
         language === 'fr'
-          ? "De cette journée je sors 6 à 12 vidéos courtes, au format vertical, montées et sous-titrées. Chacune tient debout toute seule : une accroche dans les deux premières secondes, une idée claire, une fin qui donne envie de vous suivre."
-          : "From that day I pull 6 to 12 short vertical videos, edited and subtitled. Each one stands on its own: a hook in the first two seconds, one clear idea, an ending that makes people want to follow you.",
+          ? "De cette journée je sors 6 vidéos courtes, au format vertical, montées et sous-titrées. Chacune tient debout toute seule : une accroche dans les deux premières secondes, une idée claire, une fin qui donne envie de vous suivre."
+          : "From that day I pull 6 short vertical videos, edited and subtitled. Each one stands on its own: a hook in the first two seconds, one clear idea, an ending that makes people want to follow you.",
     },
     {
       icon: CalendarCheck,
@@ -76,24 +98,69 @@ const useIncluded = () => {
   const { language } = useLanguage();
   return language === 'fr'
     ? [
-        { label: 'Un plan de tournage', detail: 'écrit avant chaque session' },
-        { label: 'Une journée de tournage', detail: 'chez vous ou sur le terrain' },
+        { label: 'Une journée de tournage', detail: 'chez vous, tous les mois' },
+        { label: 'Le déplacement', detail: 'compris en Savoie et Haute-Savoie' },
         { label: 'Tout le matériel', detail: 'caméra, micros, lumière, drone' },
-        { label: 'Montage vertical', detail: 'sous-titres et musique' },
-        { label: '6 à 12 vidéos', detail: 'publiées dans le mois' },
-        { label: 'Légendes et hashtags', detail: 'rédigés pour chaque publication' },
-        { label: 'Publication', detail: 'sur les réseaux de votre choix' },
-        { label: 'Les fichiers vidéo', detail: 'vous appartiennent' },
+        { label: '6 vidéos montées', detail: 'verticales et sous-titrées' },
+        { label: 'La publication', detail: 'Instagram, Facebook, TikTok, YouTube Shorts' },
+        { label: 'Les légendes et le calendrier', detail: 'écrits et posés par moi' },
+        { label: 'Les photos de la journée', detail: 'à vous, pour votre site et vos réseaux' },
+        { label: 'Un point par mois', detail: "ce qui a marché, ce qu'on filme ensuite" },
       ]
     : [
-        { label: 'A written shooting plan', detail: 'before every session' },
-        { label: 'A full day of filming', detail: 'at your place or on location' },
+        { label: 'A full day of filming', detail: 'at your place, every month' },
+        { label: 'Travel', detail: 'included across Savoie and Haute-Savoie' },
         { label: 'All the gear', detail: 'camera, mics, lighting, drone' },
-        { label: 'Vertical editing', detail: 'subtitles and music' },
-        { label: '6 to 12 videos', detail: 'published over the month' },
-        { label: 'Captions and hashtags', detail: 'written for every post' },
-        { label: 'Publishing', detail: 'on the networks you care about' },
-        { label: 'The video files', detail: 'are yours to keep' },
+        { label: '6 edited videos', detail: 'vertical and subtitled' },
+        { label: 'Publishing', detail: 'Instagram, Facebook, TikTok, YouTube Shorts' },
+        { label: 'Captions and calendar', detail: 'written and scheduled by me' },
+        { label: 'The photos from the day', detail: 'yours, for your site and your feeds' },
+        { label: 'A monthly review', detail: 'what worked, what we film next' },
+      ];
+};
+
+/* ── Les trois choses en plus ──
+   Elles remplacent la remise et le « mois offert » : a 890 € Elie est deja le
+   moins cher de sa categorie a perimetre egal (un studio qui vend le meme
+   modele affiche 3 500 €/mois), donc baisser le prix n'aurait rien prouve et
+   aurait coute sa marge. Chacune a un cout maitrise et une valeur percue
+   haute, et aucune n'est une promesse de resultat. */
+const useBonus = () => {
+  const { language } = useLanguage();
+  return language === 'fr'
+    ? [
+        {
+          num: '1',
+          title: 'Le premier mois, je filme deux jours',
+          desc: "Au lieu d'un. Vous démarrez avec deux mois de matière d'avance, et une journée reportée pour cause de chantier ou de grippe ne fait plus tomber le rythme. C'est le seul mois où vous me voyez deux fois.",
+        },
+        {
+          num: '2',
+          title: 'À partir du troisième mois, je vous fais votre site',
+          desc: "Une page de destination si vous avez déjà un site, un site vitrine si vous n'en avez pas. Compris, vous ne payez pas plus. C'est mon autre métier, et une vidéo qui marche a besoin d'un endroit où envoyer les gens.",
+        },
+        {
+          num: '3',
+          title: 'Si les 6 vidéos ne sortent pas, le mois suivant est gratuit',
+          desc: "C'est la seule chose que je peux vous garantir sans mentir : la régularité ne dépend que de moi. Le nombre de vues dépend de votre marché, et personne ne peut vous le promettre.",
+        },
+      ]
+    : [
+        {
+          num: '1',
+          title: 'The first month, I film for two days',
+          desc: 'Instead of one. You start with two months of material in hand, so a day pushed back by a job or a bad flu no longer breaks the rhythm. It is the only month you see me twice.',
+        },
+        {
+          num: '2',
+          title: 'From the third month, I build your website',
+          desc: 'A landing page if you already have a site, a full brochure site if you do not. Included, you pay nothing more. It is my other trade, and a video that works needs somewhere to send people.',
+        },
+        {
+          num: '3',
+          title: 'If the 6 videos do not go out, the next month is free',
+          desc: 'It is the only thing I can guarantee without lying: consistency depends on me alone. View counts depend on your market, and nobody can promise you those.',
+        },
       ];
 };
 
@@ -127,12 +194,20 @@ const useFaq = () => {
           a: "Instagram, Facebook, TikTok et YouTube Shorts. On choisit ensemble ceux qui ont du sens pour vous : un artisan du bâtiment et une thérapeute ne visent pas le même public au même endroit. Une même vidéo verticale peut sortir sur plusieurs réseaux, ce qui multiplie les chances sans multiplier le travail.",
         },
         {
-          q: "Et si je veux aussi un site web ?",
-          a: "C'est même le combo qui marche le mieux. Les réseaux créent l'attention, le site transforme cette attention en rendez-vous. Je fais les deux, donc tout parle d'une seule voix : même identité, mêmes messages, un seul interlocuteur. Regardez la page site web pour le détail.",
+          q: "Et si je ne suis pas content ?",
+          a: "Vous arrêtez le mois suivant, il n'y a rien à résilier. Et il y a une chose sur laquelle je m'engage par écrit : si les 6 vidéos du mois ne sont pas publiées, le mois suivant ne vous est pas facturé. C'est la seule garantie que je peux tenir honnêtement, parce que la régularité ne dépend que de moi. Le nombre de vues, lui, dépend de votre marché : personne ne peut vous le garantir, et méfiez-vous de ceux qui le font.",
         },
         {
           q: "Combien ça coûte ?",
-          a: "À partir de 890 euros par mois, journée de tournage comprise. Au-dessus, ça dépend du nombre de vidéos et du nombre de réseaux. Je ne mets pas la grille complète en ligne parce que je préfère vous donner un chiffre juste plutôt qu'un chiffre au hasard, mais vous savez au moins d'où ça part avant de m'appeler. Un appel de trente minutes suffit pour que je vous envoie un devis clair, sans engagement.",
+          a: "890 euros par mois, et c'est le seul chiffre. Dedans : la journée de tournage, le déplacement, le matériel, les 6 vidéos montées et sous-titrées, les légendes, la publication sur vos réseaux, les photos de la journée et un point mensuel. Pas de frais de démarrage, pas de supplément, pas de ligne surprise sur la facture. Si vous voulez autre chose que cette offre, plus de vidéos ou un tournage plus long par exemple, écrivez-moi et je vous réponds avec un prix.",
+        },
+        {
+          q: "Il y a un engagement ?",
+          a: "Non. Vous payez au mois, et vous arrêtez quand vous voulez, sans préavis à respecter ni contrat de douze mois à faire signer. Ce que je demande, c'est de me laisser trois mois avant de juger : le premier mois sert à constituer la matière, et on ne voit rien d'un compte en quatre semaines. C'est aussi pour ça que le site n'arrive qu'au troisième mois. Mais c'est vous qui décidez, chaque mois.",
+        },
+        {
+          q: "Le site est vraiment compris ?",
+          a: "Oui, à partir du troisième mois, et sans rien payer de plus. Une page de destination si vous avez déjà un site, un site vitrine si vous n'en avez pas. C'est compris parce que ça me sert autant qu'à vous : une vidéo qui marche envoie des gens quelque part, et s'il n'y a rien au bout, tout le travail du mois retombe. Ce n'est pas une refonte de catalogue à quinze pages, ça c'est un devis à part.",
         },
         {
           q: "Vous vous déplacez où ?",
@@ -175,12 +250,16 @@ const useFaq = () => {
           a: 'Instagram, Facebook, TikTok and YouTube Shorts. We pick the ones that make sense for you together: a builder and a therapist are not reaching the same audience in the same place. One vertical video can go out on several networks, which multiplies the chances without multiplying the work.',
         },
         {
-          q: 'What if I also want a website?',
-          a: 'That is actually the combination that works best. Social creates the attention, the site turns that attention into bookings. I do both, so everything speaks with one voice: same identity, same messages, one person to talk to.',
+          q: 'What if I am not happy?',
+          a: 'You stop the following month, there is nothing to cancel. And there is one thing I commit to in writing: if the 6 videos for the month are not published, the next month is not invoiced. That is the only guarantee I can honestly hold, because consistency depends on me alone. View counts depend on your market: nobody can guarantee those, and be wary of anyone who does.',
         },
         {
           q: 'How much does it cost?',
-          a: 'From 890 euros a month, filming day included. Above that it depends on the number of videos and the number of networks. I do not put the full grid online because I would rather give you a fair number than a random one, but at least you know where it starts before calling me. A thirty-minute call is enough for me to send you a clear quote, no strings attached.',
+          a: '890 euros a month, and that is the only figure. It covers the filming day, the travel, the gear, 6 edited and subtitled videos, the captions, publishing on your networks, the photos from the day and a monthly review. No setup fee, no extras, no surprise line on the invoice. If you want something other than this offer, more videos or a longer shoot for instance, write to me and I will come back with a price.',
+        },
+        {
+          q: 'Is there a commitment?',
+          a: 'No. You pay monthly and you stop whenever you want, with no notice period and no twelve-month contract to sign. What I do ask is that you give it three months before judging: the first month builds the material, and nothing shows on an account in four weeks. That is also why the website only comes in the third month. But the call is yours, every month.',
         },
         {
           q: 'Where do you travel?',
@@ -194,6 +273,7 @@ const SocialMedia = () => {
   const { openCalendly } = useCalendly();
   const steps = useSteps();
   const included = useIncluded();
+  const bonus = useBonus();
   const faq = useFaq();
 
   /** Un nom de zone, dans la phrase, qui est aussi le lien vers sa page locale. */
@@ -203,7 +283,7 @@ const SocialMedia = () => {
     return (
       <Link
         to={`/${city.slug}`}
-        className="text-foreground underline-offset-4 hover:text-primary hover:underline"
+        className="text-foreground underline underline-offset-4 hover:text-primary"
       >
         {city.name}
       </Link>
@@ -235,8 +315,8 @@ const SocialMedia = () => {
     serviceType: language === 'fr' ? 'Gestion de réseaux sociaux' : 'Social media management',
     description:
       language === 'fr'
-        ? "Tournage vidéo sur place une journée par mois, puis montage vertical, sous-titrage et publication de 6 à 12 vidéos courtes dans le mois sur Instagram, Facebook, TikTok et YouTube Shorts."
-        : 'On-site video shoot one day a month, then vertical editing, subtitling and publishing of 6 to 12 short videos over the month on Instagram, Facebook, TikTok and YouTube Shorts.',
+        ? "890 € par mois, sans engagement : une journée de tournage sur place chaque mois, puis montage vertical, sous-titrage et publication de 6 vidéos courtes dans le mois sur Instagram, Facebook, TikTok et YouTube Shorts. Site web compris à partir du troisième mois."
+        : '€890 a month, no commitment: one full day of on-site filming every month, then vertical editing, subtitling and publishing of 6 short videos over the month on Instagram, Facebook, TikTok and YouTube Shorts. Website included from the third month.',
     url: 'https://elieageron.com/reseaux-sociaux',
     provider: { '@id': 'https://elieageron.com/#person' },
     offers: {
@@ -247,7 +327,6 @@ const SocialMedia = () => {
         '@type': 'UnitPriceSpecification',
         priceCurrency: 'EUR',
         price: 890,
-        minPrice: 890,
         unitCode: 'MON',
         billingIncrement: 1,
       },
@@ -284,8 +363,8 @@ const SocialMedia = () => {
           name: language === 'fr' ? 'Publication mensuelle' : 'Monthly publishing',
           description:
             language === 'fr'
-              ? '6 à 12 publications dans le mois sur Instagram, Facebook, TikTok ou YouTube Shorts, légendes incluses.'
-              : '6 to 12 posts over the month on Instagram, Facebook, TikTok or YouTube Shorts, captions included.',
+              ? '6 publications dans le mois sur Instagram, Facebook, TikTok ou YouTube Shorts, légendes incluses.'
+              : '6 posts over the month on Instagram, Facebook, TikTok or YouTube Shorts, captions included.',
         },
       ],
     },
@@ -347,8 +426,8 @@ const SocialMedia = () => {
 
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               {language === 'fr'
-                ? "J'arrive avec le matériel et un plan de tournage déjà prêt. On tourne, je monte, et je publie 6 à 12 vidéos sur vos réseaux pendant tout le mois. Vous, vous ne touchez à rien. Artisans, restaurateurs, thérapeutes et formateurs, en Savoie et en Haute-Savoie."
-                : "I show up with the gear and a shooting plan already written. We film, I edit, and I post 6 to 12 videos on your accounts across the month. You touch nothing. Tradespeople, restaurant owners, therapists and trainers, across Savoie and Haute-Savoie."}
+                ? "J'arrive avec le matériel et un plan de tournage déjà prêt. On tourne, je monte, et je publie 6 vidéos sur vos réseaux pendant tout le mois. 890 € par mois, sans engagement. Artisans, restaurateurs, thérapeutes et formateurs, en Savoie et en Haute-Savoie."
+                : "I show up with the gear and a shooting plan already written. We film, I edit, and I post 6 videos on your accounts across the month. €890 a month, no commitment. Tradespeople, restaurant owners, therapists and trainers, across Savoie and Haute-Savoie."}
             </p>
 
             <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -572,19 +651,47 @@ const SocialMedia = () => {
             >
               <h2
                 id="social-included-heading"
-                className="section-title text-foreground mb-5"
+                className="section-title mb-5"
               >
-                {language === 'fr' ? 'Ce qui est compris' : "What's included"}
+                <span className="text-foreground">
+                  {language === 'fr' ? 'Pour 890 € par mois, ' : 'For €890 a month, '}
+                </span>
+                <span className="text-primary">
+                  {language === 'fr' ? 'vous avez tout ça.' : 'you get all of this.'}
+                </span>
               </h2>
               <p className="text-base text-muted-foreground leading-relaxed">
                 {language === 'fr'
-                  ? "Un seul montant par mois, tout dedans. Pas de ligne surprise sur la facture, pas de supplément pour un sous-titre ou une légende."
-                  : 'One monthly amount, everything in it. No surprise line on the invoice, no extra charge for a subtitle or a caption.'}
+                  ? "Un seul montant, et c'est le seul. Pas de frais de démarrage, pas de supplément pour un sous-titre ou une légende, pas de ligne surprise sur la facture."
+                  : 'One amount, and it is the only one. No setup fee, no extra charge for a subtitle or a caption, no surprise line on the invoice.'}
               </p>
-              <p className="mt-5 text-sm text-muted-foreground">
+              {/* ⚠️ « Sans engagement » est un argument concurrentiel, pas une
+                  formalite : l'agence qui vend le meme prix l'affiche en
+                  premier. Ne pas le rentrer dans une note de bas de section. */}
+              <p className="mt-5 text-base font-medium text-foreground">
                 {language === 'fr'
-                  ? 'À partir de 890 € par mois, journée de tournage comprise. Au-dessus, ça dépend du nombre de vidéos et de réseaux, et on le fixe ensemble sur un appel.'
-                  : 'From €890 a month, filming day included. Above that it depends on the number of videos and networks, and we set it together on a call.'}
+                  ? 'Sans engagement. Vous payez au mois, vous arrêtez quand vous voulez.'
+                  : 'No commitment. You pay monthly, you stop whenever you want.'}
+              </p>
+              <p className="mt-5 text-base text-muted-foreground leading-relaxed">
+                {language === 'fr' ? (
+                  <>
+                    Vous voulez autre chose : plus de vidéos, un tournage plus long, vos messages
+                    privés gérés ?{' '}
+                    <Link to="/contact" className="font-medium text-primary underline underline-offset-4">
+                      Écrivez-moi
+                    </Link>
+                    , je vous réponds avec un prix.
+                  </>
+                ) : (
+                  <>
+                    Want something else: more videos, a longer shoot, your inbox handled?{' '}
+                    <Link to="/contact" className="font-medium text-primary underline underline-offset-4">
+                      Write to me
+                    </Link>{' '}
+                    and I will come back with a price.
+                  </>
+                )}
               </p>
             </motion.div>
 
@@ -622,6 +729,68 @@ const SocialMedia = () => {
         </div>
       </section>
 
+      {/* ─────────── Les trois choses en plus ───────────
+          ⚠️ Liste editoriale separee par des filets, numeros en `text-5xl`.
+          Pas de grille de cartes : on ne compare rien ici, on enumere. Et un
+          numero est un repere, donc il se voit (regle 2 des retours d'Elie).
+          🔴 Ne jamais transformer ca en offre de lancement ni en compte a
+          rebours : les trois sont permanentes, c'est ce qui les rend credibles. */}
+      <section className="py-20 sm:py-32 bg-secondary/30 border-y border-border/50" aria-labelledby="social-bonus-heading">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6">
+          <motion.h2
+            id="social-bonus-heading"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="section-title mb-5"
+          >
+            <span className="text-foreground">
+              {language === 'fr' ? 'Et trois choses en plus, ' : 'And three more things, '}
+            </span>
+            <span className="text-primary">
+              {language === 'fr' ? 'au même prix.' : 'at the same price.'}
+            </span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="section-lede"
+          >
+            {language === 'fr'
+              ? "Elles ne sont pas une promotion de lancement et elles ne s'arrêtent pas. Elles font partie de l'offre."
+              : 'They are not a launch promotion and they do not expire. They are part of the offer.'}
+          </motion.p>
+
+          <ul className="mt-12">
+            {bonus.map((item, index) => (
+              <motion.li
+                key={item.num}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ delay: index * 0.06, duration: 0.45 }}
+                className="flex flex-col gap-3 border-t border-border py-8 sm:flex-row sm:gap-8"
+              >
+                <span
+                  className="text-5xl font-semibold leading-none text-primary sm:w-20 sm:shrink-0"
+                  aria-hidden="true"
+                >
+                  {item.num}
+                </span>
+                <div>
+                  <h3 className="text-xl font-semibold text-foreground sm:text-2xl">{item.title}</h3>
+                  <p className="mt-3 text-base leading-relaxed text-muted-foreground sm:text-lg">
+                    {item.desc}
+                  </p>
+                </div>
+              </motion.li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       {/* ─────────── Le combo site + réseaux ───────────
           🔴 Ce paragraphe disait : « Une video a 56 000 vues sans rien
           derriere [...] C'est exactement ce qui s'est passe : beaucoup de vues,
@@ -633,7 +802,7 @@ const SocialMedia = () => {
           L'argument site + reseaux reste, l'aveu qui detruisait la preuve est
           parti. Ne pas le reintroduire pour faire honnete : l'honnetete du site
           vit dans les trois interdits de l'audit, pas dans l'auto-sabotage. */}
-      <section className="py-20 sm:py-32 bg-secondary/30 border-y border-border/50" aria-labelledby="social-combo-heading">
+      <section className="py-20 sm:py-32" aria-labelledby="social-combo-heading">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <motion.h2
             id="social-combo-heading"
@@ -656,8 +825,8 @@ const SocialMedia = () => {
             className="text-base sm:text-lg text-muted-foreground leading-relaxed"
           >
             {language === 'fr'
-              ? "Une vidéo qui marche envoie des gens quelque part. S'il n'y a rien au bout, l'attention retombe et vous ne vous en apercevez même pas. C'est pour ça que je regarde toujours le site avant de proposer des réseaux : une page qui explique ce que vous faites et qui propose un rendez-vous transforme cette attention en demandes."
-              : 'A video that works sends people somewhere. If there is nothing at the end of it, the attention fades and you never even notice. That is why I always look at the site before proposing social: a page that explains what you do and offers a booking turns that attention into enquiries.'}
+              ? "Une vidéo qui marche envoie des gens quelque part. S'il n'y a rien au bout, l'attention retombe et vous ne vous en apercevez même pas. C'est pour ça que le site est dans l'offre et pas en supplément : une page qui explique ce que vous faites et qui propose un rendez-vous transforme cette attention en demandes. Je fais les deux métiers, donc tout parle d'une seule voix et vous n'avez qu'un interlocuteur."
+              : 'A video that works sends people somewhere. If there is nothing at the end of it, the attention fades and you never even notice. That is why the site is part of the offer and not an add-on: a page that explains what you do and offers a booking turns that attention into enquiries. I do both trades, so everything speaks with one voice and you only have one person to deal with.'}
           </motion.p>
 
           <motion.div

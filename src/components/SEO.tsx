@@ -61,11 +61,11 @@ const seoData = {
     },
     services: {
       title: 'Web Partner in Savoie | Elie Ageron',
-      description: 'Websites, short videos for social media, Google Business profile, branding and local SEO. Based in Albertville, Savoie. Websites from 500 €.',
+      description: 'Websites, short videos for social media, Google Business profile, branding and local SEO. Based in Albertville, Savoie. Websites from €500.',
     },
     social: {
       title: 'Social Media Content, Done For You | Elie Ageron',
-      description: 'From 890 €/month: I film for one day at your place, then post 6 to 12 videos through the month. You touch nothing. Albertville and Savoie.',
+      description: '€890/month, no commitment: I film one day at your place, then post 6 videos through the month. Website included from month three.',
     },
     why: {
       title: 'Why You Need a Website | Elie Ageron',
@@ -128,7 +128,7 @@ const seoData = {
        il arrive apres la phrase, pas a la place de la phrase. */
     home: {
       title: 'Site Web & Réseaux Sociaux Savoie | Elie Ageron',
-      description: "Je viens filmer chez vous une journée par mois, et vos comptes tournent jusqu'à la suivante. Je construis aussi le site. Albertville, dès 890 €/mois.",
+      description: "Je viens filmer chez vous une journée par mois, et vos comptes tournent jusqu'à la suivante. Je construis aussi le site. Albertville, 890 €/mois.",
     },
     services: {
       title: 'Partenaire Web en Savoie | Elie Ageron',
@@ -144,7 +144,7 @@ const seoData = {
        lieu dans ce titre. */
     social: {
       title: 'Gestion de Réseaux Sociaux Entreprise | Elie Ageron',
-      description: "Dès 890 €/mois : je filme une journée chez vous, puis je publie 6 à 12 vidéos dans le mois. Vous ne touchez à rien. Albertville et Savoie.",
+      description: "890 €/mois, sans engagement : je filme une journée chez vous, puis je publie 6 vidéos dans le mois. Site compris au troisième mois.",
     },
     why: {
       title: 'Pourquoi un Site Web | Elie Ageron',

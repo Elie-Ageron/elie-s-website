@@ -189,7 +189,7 @@ const BlogPost = () => {
   const cta = useMemo(() => {
     const social = {
       title: 'Vous n’avez pas le temps de tenir ce rythme ?',
-      body: 'Je viens filmer une journée par mois chez vous, et vos publications sortent ensuite sans que vous ayez à y penser. À partir de 890 euros par mois.',
+      body: 'Je viens filmer une journée par mois chez vous, et vos publications sortent ensuite sans que vous ayez à y penser. 890 euros par mois, sans engagement.',
       to: '/reseaux-sociaux',
       label: 'Voir comment ça se passe',
     };

@@ -33,10 +33,18 @@ const cityFiles = readdirSync(join(root, 'src/data/cities'))
   .filter((f) => f.startsWith('list-'))
   .map((f) => `src/data/cities/${f}`);
 
-/** slug puis titre, dans l'ordre ou ils apparaissent dans les objets. */
-const pairs = (src, titleKey, window = 400) => {
+/** slug puis titre, dans l'ordre ou ils apparaissent dans les objets.
+    🔴 La fenetre etait comptee en caracteres (400, 600 ou 1200 selon la
+    source). Le 19 septembre 2026 elle a silencieusement perdu
+    `/web-designer-savoie`, dont le `breadcrumb` est tombe a 1 491 caracteres
+    du `slug` : la page a disparu de llms.txt et de llms-full.txt sans qu'aucun
+    controle ne bronche. Une distance en caracteres depend de la longueur du
+    contenu redactionnel, donc elle se perime des qu'on enrichit une fiche.
+    La borne est maintenant structurelle : on ne traverse jamais un autre
+    `slug:`, donc on reste dans l'objet courant quelle que soit sa taille. */
+const pairs = (src, titleKey) => {
   const re = new RegExp(
-    `slug:\\s*'([^']+)',[\\s\\S]{0,${window}}?${titleKey}:\\s*(['"])((?:\\\\.|(?!\\2).)*)\\2`,
+    `slug:\\s*'([^']+)',(?:(?!slug:)[\\s\\S])*?${titleKey}:\\s*(['"])((?:\\\\.|(?!\\2).)*)\\2`,
     'g'
   );
   return [...src.matchAll(re)].map((m) => ({ slug: m[1], title: unescape(m[3]) }));
@@ -48,8 +56,8 @@ const dedupe = (items) => {
 };
 
 const posts = dedupe(postFiles.flatMap((f) => pairs(read(f), 'titleFr')));
-const guides = dedupe(pairs(read('src/data/guides.ts'), 'title', 600));
-const cities = dedupe(cityFiles.flatMap((f) => pairs(read(f), 'breadcrumb', 1200)));
+const guides = dedupe(pairs(read('src/data/guides.ts'), 'title'));
+const cities = dedupe(cityFiles.flatMap((f) => pairs(read(f), 'breadcrumb')));
 /* Les pages locales du pilier reseaux sociaux. Elles sont listees avec les
    autres pages locales : pour un moteur de reponse, ce qui compte est qu'une
    question du type « qui gere les reseaux sociaux a Albertville » trouve une
