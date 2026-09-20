@@ -51,7 +51,7 @@ const ServiceSection = ({ service, index }: { service: ServiceItem; index: numbe
         </span>
       </div>
 
-      <h2 className="text-3xl sm:text-4xl font-bold text-foreground leading-[1.1] mb-4">
+      <h2 className="section-title mb-4">
         {service.title[language]}
       </h2>
 
@@ -342,7 +342,7 @@ const Services = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground leading-tight mb-6"
+            className="section-title mb-6"
           >
             {language === 'fr' ? 'Mes services' : 'My services'}
           </motion.h2>

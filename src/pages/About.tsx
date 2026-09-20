@@ -163,7 +163,7 @@ const About = () => {
               <MapPin className="w-4 h-4" aria-hidden="true" />
               Albertville, Savoie
             </span>
-            <h1 id="about-heading" className="section-title">
+            <h1 id="about-heading" className="hero-title">
               {fr ? 'Elie Ageron, ' : 'Elie Ageron, '}
               <span className="text-primary">
                 {fr ? 'partenaire web en Savoie.' : 'web partner in Savoie.'}

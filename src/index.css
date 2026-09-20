@@ -185,7 +185,11 @@ All colors MUST be HSL.
     line-height: 1.05;
     letter-spacing: -0.035em;
     text-wrap: balance;
-    font-size: clamp(1.875rem, 4.6vw, 3.25rem);
+    /* ⚠️ Le plancher de 1.875rem valait 30 px, et il tenait jusqu'a 652 px de
+       large. Sur telephone il depassait donc le titre de page, qui plafonnait
+       a 28 px. Voir la note de `.hero-title` : les deux planchers se lisent
+       ensemble, on ne touche pas a l'un sans remesurer l'autre. */
+    font-size: clamp(1.5rem, 4.6vw, 3.25rem);
   }
 
   /* ── Le rapport entre les deux membres du titre ──────────────────────────
@@ -252,7 +256,27 @@ All colors MUST be HSL.
     line-height: 1.06;
     letter-spacing: -0.03em;
     text-wrap: balance;
-    font-size: clamp(1.75rem, 7.5vw, 4.5rem);
+    /* 🔴 **Le plancher etait a 1.75rem, et il rendait le titre de page plus
+       petit que les titres de section.** Elie, le 20 septembre 2026, capture
+       de son telephone a l'appui : *« quand t'es en haut, le titre principal
+       qu'on doit voir en premier, il est tout petit. Il est de la meme taille
+       que tout. »*
+
+       Mesure a 375 px avant correction : **h1 a 28,1 px, h2 a 30 px.** Les
+       deux planchers se croisaient. `.hero-title` tombait sur son minimum des
+       373 px, `.section-title` gardait le sien jusqu'a 652 px : entre 320 et
+       400 px le titre de page etait donc le plus petit titre de la page, sur
+       les onze pages qui ont un hero.
+
+       Les deux planchers sont reecrits ensemble, 2rem ici et 1.5rem sur
+       `.section-title`. Rapport obtenu sur telephone : 32 / 24 = 1,33, contre
+       72 / 52 = 1,38 sur grand ecran. La courbe au dela de 427 px n'a pas
+       bouge d'un pixel.
+
+       ⚠️ Ne pas monter ce plancher plus haut sans remesurer le pli. A 2.25rem,
+       le titre de l'accueil prend cinq lignes a 320 px et pousse le bouton a
+       627 px : c'est exactement le defaut corrige le 13 septembre. */
+    font-size: clamp(2rem, 7.5vw, 4.5rem);
   }
 
   /* Meme piege que sur `.section-title` : `p, span, a, li { font-weight: 400 }`
@@ -266,6 +290,43 @@ All colors MUST be HSL.
      section. Les deux descendent ensemble, l'ecart ne bouge pas. */
   .hero-title .text-primary {
     font-weight: 400;
+    font-size: 0.85em;
+  }
+
+  /**
+   * Les titres de section d'une page dont le hero est volontairement petit.
+   *
+   * 🔴 **Pourquoi cette variante existe.** `/audit-gratuit` partage la largeur
+   * de son hero avec le formulaire : son `h1` plafonne a 3.4rem au lieu de
+   * 4.5rem, et c'est un choix. Mais ses titres de section etaient ecrits a la
+   * main en `text-3xl sm:text-4xl`, survivants du menage du 13 septembre 2026,
+   * et valaient donc **30 px sur telephone, contre 25,6 px pour le titre de
+   * page.** Les sous-titres ecrasaient le titre.
+   *
+   * Leur passer `.section-title` reglait le telephone et cassait le grand
+   * ecran : 52 px de section contre 54,4 px de titre, soit plus aucune
+   * hierarchie. Cette echelle suit donc le hero reduit au lieu de l'ignorer.
+   *
+   * Rapports obtenus : 32 / 24 sur telephone, 54,4 / 36 sur grand ecran.
+   *
+   * ⚠️ Reservee aux pages au hero reduit. Partout ailleurs, `.section-title`.
+   * Et jamais de `text-3xl sm:text-4xl` ecrit a la main dans une page : c'est
+   * precisement ce que ces classes remplacent.
+   */
+  .section-title-compact {
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+  }
+
+  .section-title-compact > span {
+    font-weight: 600;
+  }
+
+  .section-title-compact .text-primary {
+    font-weight: 450;
     font-size: 0.85em;
   }
 

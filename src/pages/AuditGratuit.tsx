@@ -325,7 +325,7 @@ const AuditGratuit = () => {
                 partage sa largeur avec le formulaire, donc il ne peut pas
                 monter a 72 px comme celui de l'accueil. La graisse, elle, reste
                 celle de la classe : c'est tout l'interet de la centraliser. */}
-            <h1 className="hero-title" style={{ fontSize: 'clamp(1.6rem, 6.5vw, 3.4rem)' }}>
+            <h1 className="hero-title" style={{ fontSize: 'clamp(2rem, 6.5vw, 3.4rem)' }}>
               {/* ⚠️ Aligne sur le bloc du milieu de l'accueil. Ce h1 disait
                   « et je vous envoie 4 minutes de video » : la duree decrit le
                   contenant, pas ce qu'on y trouve. Les deux endroits qui
@@ -369,7 +369,7 @@ const AuditGratuit = () => {
       <section className="px-4 py-24 sm:px-6 sm:py-32">
         <div className="mx-auto max-w-4xl">
           <ScrollReveal direction="up">
-            <h2 className="max-w-2xl text-3xl font-bold leading-tight sm:text-4xl">
+            <h2 className="section-title-compact max-w-2xl">
               {fr
                 ? 'Quatre endroits, dans cet ordre, parce que c’est le chemin que prend un client.'
                 : 'Four places, in this order, because that is the path a customer takes.'}
@@ -403,7 +403,7 @@ const AuditGratuit = () => {
       <section className="border-t border-border px-4 py-24 sm:px-6 sm:py-32">
         <div className="mx-auto grid max-w-5xl items-start gap-14 lg:grid-cols-2">
           <ScrollReveal direction="up">
-            <h2 className="text-3xl font-bold leading-tight sm:text-4xl">
+            <h2 className="section-title-compact">
               {fr ? "J'enregistre mon écran en vous parlant, d'une traite." : 'I record my screen while talking to you, in one go.'}
             </h2>
             <p className="mt-5 text-muted-foreground">
@@ -440,7 +440,7 @@ const AuditGratuit = () => {
       <section className="px-4 py-24 sm:px-6 sm:py-32">
         <div className="mx-auto max-w-4xl">
           <ScrollReveal direction="up">
-            <h2 className="max-w-2xl text-3xl font-bold leading-tight sm:text-4xl">
+            <h2 className="section-title-compact max-w-2xl">
               {fr
                 ? 'Les trois règles que je me suis fixées, et pourquoi elles tiennent.'
                 : 'The three rules I set myself, and why they hold.'}
@@ -494,7 +494,7 @@ const AuditGratuit = () => {
       <section className="border-t border-border px-4 py-24 sm:px-6 sm:py-32">
         <div className="mx-auto max-w-3xl">
           <ScrollReveal direction="up">
-            <h2 className="mb-10 text-3xl font-bold sm:text-4xl">
+            <h2 className="section-title-compact mb-10">
               {fr ? 'Les questions qui reviennent' : 'The questions that come up'}
             </h2>
           </ScrollReveal>
@@ -515,7 +515,7 @@ const AuditGratuit = () => {
       <section className="border-t border-border px-4 py-24 sm:px-6 sm:py-32">
         <div className="mx-auto grid max-w-5xl items-center gap-12 lg:grid-cols-[1fr_0.85fr]">
           <div>
-            <h2 className="text-balance text-3xl font-semibold leading-[1.1] tracking-[-0.02em] sm:text-4xl lg:text-[2.75rem]">
+            <h2 className="section-title-compact">
               {fr
                 ? 'Vos prospects vont voir vos pages avant de vous appeler.'
                 : 'Your prospects will look at your pages before calling you.'}

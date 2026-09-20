@@ -110,7 +110,7 @@ const Blog = () => {
             transition={{ duration: 0.5 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <h1 id="blog-hero-heading" className="section-title">
+            <h1 id="blog-hero-heading" className="hero-title">
               {fr ? 'Des conseils concrets pour ' : 'Practical advice to '}
               <span className="text-primary">
                 {fr ? 'trouver des clients en ligne.' : 'win clients online.'}

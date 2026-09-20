@@ -488,8 +488,9 @@ combinaisons différentes sur la même page, et sept pages recopiaient à la mai
 
 | Classe | Où | Taille | Noir | Rose |
 |---|---|---|---|---|
-| `.hero-title` | Le `h1` des onze pages qui ont un hero | `clamp(1.75rem, 7.5vw, 4.5rem)` | 500 | 400 |
-| `.section-title` | Tous les `h2` de section | `clamp(1.875rem, 4.6vw, 3.25rem)` | 600 | 450 |
+| `.hero-title` | Le `h1` de toute page | `clamp(2rem, 7.5vw, 4.5rem)` | 500 | 400 |
+| `.section-title` | Tous les `h2` de section | `clamp(1.5rem, 4.6vw, 3.25rem)` | 600 | 450 |
+| `.section-title-compact` | Les `h2` d'une page au hero réduit | `clamp(1.5rem, 4vw, 2.25rem)` | 600 | 450 |
 
 `.section-lede` accompagne pour le paragraphe qui suit. Le second membre du
 titre est en `text-primary` : c'est la convention du site, et il est toujours
@@ -510,6 +511,50 @@ plus petit (`0.85em`) et un cran plus léger que le noir.
 Une page qui a besoin d'un titre plus petit surcharge la seule `font-size`,
 jamais la graisse. C'est le cas de `/audit-gratuit`, dont le hero partage sa
 largeur avec le formulaire.
+
+### 🔴 Sur téléphone, le titre de page était plus petit que ses sous-titres
+
+> Elie, le 20 septembre 2026, capture de son téléphone à l'appui : *« quand
+> t'es en haut, le titre principal qu'on doit voir en premier, il est tout
+> petit. Il est de la même taille que tout. Ça ne fait pas comme sur PC, où
+> t'as H1, H2 et après t'as les boutons. Et ça se fait sur toutes les pages. »*
+
+Mesuré sur l'accueil, à 375 px : **h1 à 28,1 px, h2 à 30 px.** Le titre de la
+page était le plus petit titre de la page. Sur grand écran c'est 72 contre 52,
+la hiérarchie est nette : **elle s'inversait sous 400 px**, donc sur tous les
+téléphones.
+
+La cause tient en deux valeurs planchers qui se croisaient. `.hero-title`
+tombait sur son minimum dès 373 px, `.section-title` gardait le sien jusqu'à
+652 px. Entre les deux, le `h2` gagnait.
+
+**Deux autres défauts sont sortis en vérifiant, et aucun n'était visible depuis
+un ordinateur :**
+
+| Page | Ce qui n'allait pas |
+|---|---|
+| `/a-propos`, `/blog`, `/guides` | Leur `h1` portait `.section-title`. Titre et sous-titres exactement de la même taille, **à toutes les largeurs, grand écran compris** |
+| `/services`, `/audit-gratuit` | Six `h2` écrits à la main en `text-3xl sm:text-4xl`, survivants du ménage du 13 septembre. 30 px sur téléphone, donc au dessus du titre |
+
+Rapport obtenu partout après correction : **1,33 sur téléphone, 1,38 sur grand
+écran.** `/audit-gratuit` garde un hero réduit parce qu'il partage sa largeur
+avec le formulaire, et ses sections suivent avec `.section-title-compact`.
+
+> ⚠️ **Ne pas monter le plancher de `.hero-title` au delà de 2rem sans
+> remesurer le pli.** À 2.25rem, le titre de l'accueil prend cinq lignes à
+> 320 px et pousse le bouton à 627 px : c'est exactement le défaut corrigé le
+> 13 septembre.
+>
+> ⚠️ **Jamais de `text-3xl sm:text-4xl` écrit à la main dans une page.** C'est
+> précisément ce que `.section-title` remplace, et c'est par là que le défaut
+> est revenu.
+
+**Le contrôle qui l'attrape : `npm run check:hierarchie`.** Il ouvre 12 pages
+sur 6 largeurs dans un vrai Chrome et compare la taille calculée du `h1` à
+celle du plus grand `h2` visible. Aucun contrôle existant ne pouvait le voir :
+`check:a11y` vérifie l'ordre des niveaux, pas leur taille rendue, et
+`check:overflow` regarde la largeur. **Une hiérarchie typographique ne se lit
+que dans les pixels calculés.**
 
 ### Une seule fin de page, sur les quatorze pages
 
@@ -1218,6 +1263,7 @@ Une seule commande : `npm run check`. Elle enchaîne les quatre.
 | `npm run verify` | Build, pré-rendu, puis les quatre contrôles d'affilée. **C'est la commande à lancer avant de livrer.** |
 | `npm run check:a11y` | **axe-core en WCAG 2.1 AA**, 13 pages en 1440 px et 5 en 375 px, dans un vrai Chrome. Demande le serveur de dev allumé |
 | `npm run check:overflow` | Le débordement horizontal, 9 pages sur 7 largeurs de 320 à 1440 px. Demande le serveur de dev allumé |
+| `npm run check:hierarchie` | **Le titre de page domine-t-il ses titres de section ?** 12 pages sur 6 largeurs, dans un vrai Chrome, en comparant les tailles calculées. C'est le seul qui voit qu'un `h1` est plus petit qu'un `h2` sur téléphone. Demande le serveur allumé |
 | `npm run check:maillage` | **Est-ce qu'on peut atteindre chaque page en cliquant ?** Ouvre les pages hors articles dans un vrai Chrome, relève les liens après le rendu de React, remonte de proche en proche, et liste ce que seul le sitemap atteint. Demande le serveur de dev allumé |
 | `npm run check:navigateur` | Les deux d'un coup |
 | `npm run captures [/route] [--mobile]` | Écrit les captures de relecture dans `.captures/`, une par tranche d'écran. Le volet navigateur de l'éditeur rend à 800 px : on ne peut pas y juger une page dessinée pour 1440 |

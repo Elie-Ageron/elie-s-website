@@ -25,12 +25,13 @@
     "check:build": "node scripts/check-build-seo.mjs",
     "check:a11y": "node scripts/check-a11y.mjs",
     "check:overflow": "node scripts/check-overflow.mjs",
-    "check:navigateur": "npm run check:a11y && npm run check:overflow && npm run check:maillage && npm run check:vitals",
+    "check:navigateur": "npm run check:a11y && npm run check:overflow && npm run check:maillage && npm run check:hierarchie && npm run check:vitals",
     "captures": "node scripts/captures.mjs",
     "verify": "npm run build && npm run prerender:head && npm run check:build && npm run check",
     "check:types": "tsc -p tsconfig.app.json --noEmit",
     "check:vitals": "node scripts/check-vitals.mjs",
-    "check:maillage": "node scripts/check-maillage-pages.mjs"
+    "check:maillage": "node scripts/check-maillage-pages.mjs",
+    "check:hierarchie": "node scripts/check-hierarchie.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
