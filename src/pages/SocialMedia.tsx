@@ -523,7 +523,7 @@ const SocialMedia = () => {
             transition={{ delay: 0.15, duration: 0.6 }}
             className="lg:col-span-5"
           >
-            <PostingCalendar />
+            <PostingCalendar apercu="video" />
           </motion.div>
         </div>
       </section>

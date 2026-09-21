@@ -1,5 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import PostCover from '@/components/PostCover';
+import ApercuVideo from '@/components/ApercuVideo';
 import { parId } from '@/data/publications';
 
 /**
@@ -20,7 +21,13 @@ import { parId } from '@/data/publications';
  * 20 septembre 2026, avec le reste du site.
  */
 /* ── L'element physique : le mois deja programme, dans un telephone ── */
-const PostingCalendar = () => {
+/**
+ * ⚠️ **L'apercu differe selon la page, et c'est voulu.** L'accueil garde la
+ * couverture de la coiffeuse, qu'Elie juge bonne a cet endroit. Sur
+ * `/reseaux-sociaux`, c'est une vraie video qui tourne : la page qui vend le
+ * service doit montrer le service, pas une illustration.
+ */
+const PostingCalendar = ({ apercu = 'image' }: { apercu?: 'image' | 'video' }) => {
   const { language } = useLanguage();
   const fr = language === 'fr';
 
@@ -78,7 +85,14 @@ const PostingCalendar = () => {
 
           {/* L'apercu de publication, en grand */}
           <div className="border-t border-border px-3 pb-3 pt-3">
-            <PostCover publication={parId('coiffure')} taille="grande" />
+            {apercu === 'video' ? (
+              <ApercuVideo
+                src="/publications/videos/apercu-telephone.mp4"
+                poster="/publications/videos/apercu-telephone.webp"
+              />
+            ) : (
+              <PostCover publication={parId('coiffure')} taille="grande" />
+            )}
             <p className="mt-2.5 px-1 text-[10px] text-muted-foreground">
               {fr ? 'Publié mardi, 18:30' : 'Posted Tuesday, 6:30pm'}
             </p>

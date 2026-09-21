@@ -283,11 +283,28 @@ mesuré.
 
 Deux corrections.
 
-**1. Le téléphone est remonté.** Il accompagne maintenant « Vous savez qu'il
-faut poster. Le problème n'a jamais été là. », donc à 1 811 px du haut au lieu
-de rien du tout. Il a été extrait de `SocialPillarSection` vers
-`src/components/PostingCalendar.tsx` : **une seule définition pour les deux
-pages**, sinon le second exemplaire dérive au premier changement de périmètre.
+**1. Le téléphone est remonté, et il joue une vraie vidéo.** Il accompagne
+« Vous savez qu'il faut poster. Le problème n'a jamais été là. », donc à
+1 811 px du haut au lieu de rien du tout. Extrait de `SocialPillarSection`
+vers `src/components/PostingCalendar.tsx` : **une seule définition pour les
+deux pages**, sinon le second exemplaire dérive au premier changement de
+périmètre.
+
+> Elie : *« tu peux même mettre directement une vidéo. Tu la mets sur le
+> téléphone, et quand la personne parle, la vidéo défile. Fais en sorte que ça
+> ne lague pas. »*
+
+L'accueil garde la couverture de la coiffeuse, qu'il juge bonne à cet endroit.
+`/reseaux-sociaux` reçoit `apercu="video"`. **Les cinq décisions qui tiennent
+la promesse « ça ne lague pas »**, toutes dans `ApercuVideo.tsx` : un fichier
+dédié recadré en 4:5 à la taille réelle de l'écran (480 x 600, seize secondes,
+**772 ko** contre 151 Mo au master), aucune piste audio, la source posée
+seulement à l'intersection, la lecture arrêtée dès la sortie de l'écran, et la
+vignette fixe servie quand `prefers-reduced-motion` est demandé.
+
+Mesuré dans un vrai Chrome, sans dérogation d'autoplay : avant tout
+défilement, seule la vignette de 49 ko existe ; téléphone à l'écran, la
+lecture tourne ; téléphone sorti, elle est en pause.
 
 **2. La preuve a changé de nature.** Le bloc montrait trois vignettes qui
 renvoyaient vers les Reels publics d'Isabelle. Il montre maintenant **deux
@@ -1343,6 +1360,31 @@ Une seule commande : `npm run check`. Elle enchaîne les quatre.
 > gestionnaire, pas la sortie visuelle. Et **préférer une limitation à la
 > montre (`performance.now()`) à une limitation par frame** dans ce projet :
 > même rendu pour le visiteur, et le code redevient vérifiable.
+
+> 🔴 **Le volet d'aperçu ne déclenche pas non plus `IntersectionObserver`.**
+> Même famille que le piège `requestAnimationFrame` ci dessus, et repéré le
+> 21 septembre 2026 sur `ApercuVideo` : le rappel n'est **jamais** appelé, pas
+> même une première fois avec `isIntersecting: false`. Les blocs y restent en
+> plus à `opacity: 0`, faute d'avoir déclenché les apparitions de
+> framer-motion, ce qui brouille encore la lecture.
+>
+> **Pour tout ce qui dépend de la visibilité, la vérification se fait dans un
+> vrai Chrome**, avec puppeteer et un défilement progressif. C'est ce qui a
+> montré que l'observateur marchait et que le bug était ailleurs.
+
+> 🔴 **Poser une `src` ne la rend pas disponible, et `preload="none"` ne
+> télécharge rien.** Deux tentatives ont échoué avant que la vidéo du
+> téléphone démarre, toutes deux **sans la moindre erreur** :
+>
+> 1. `play()` appelé dans le rappel de l'observateur, donc avant que React
+>    ait posé la `src` au rendu suivant. La lecture portait sur un élément
+>    vide et ne faisait rien.
+> 2. `onCanPlay` comme déclencheur. Avec `preload="none"`, poser une `src` ne
+>    lance aucun téléchargement : rien n'est jamais prêt, l'événement
+>    n'arrive jamais.
+>
+> La chaîne correcte : l'élément entre à l'écran, un `useEffect` sur cet état
+> pose la source, **et c'est `play()` qui demande les octets.**
 
 > 🔴 **Ne pas décider d'un comportement à partir du profil de l'appareil.**
 > `matchMedia('(hover: hover) and (pointer: fine)')` coupait la répulsion du
