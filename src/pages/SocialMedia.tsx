@@ -435,6 +435,26 @@ const SocialMedia = () => {
                 : "I show up with the gear and a shooting plan already written. We film, I edit, and I post 8 videos on your accounts across the month. €890 a month, no commitment. Tradespeople, restaurant owners, therapists and trainers, across Savoie and Haute-Savoie."}
             </p>
 
+            {/* 🔴 **Le site offert au troisième mois n'était nulle part en haut
+                de page.** Elie, le 21 septembre 2026 : *« ce qu'on ne voit pas
+                assez, c'est qu'au bout du troisième mois, j'offre le site web.
+                Ça, c'est vraiment ma nouvelle offre. »*
+
+                Mesure avant correction : **une seule mention visible sur cette
+                page, à 54 % de la hauteur**, dans une liste à 16 px. C'est
+                pourtant le seul élément de l'offre qu'aucun community manager
+                ni aucun studio vidéo ne peut copier, parce qu'il vient de
+                l'autre métier d'Elie.
+
+                ⚠️ Le prix est répété ici volontairement. Sans lui, « compris »
+                laisse planer un doute sur un supplément. */}
+            <p className="mt-6 text-base sm:text-lg font-medium text-foreground">
+              {language === 'fr' ? 'Et au troisième mois, votre site web d’une page. ' : 'And from the third month, your one page website. '}
+              <span className="text-primary">
+                {language === 'fr' ? 'Compris dans les 890 €.' : 'Included in the €890.'}
+              </span>
+            </p>
+
             <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">
               <MagneticButton>
                 <Button variant="hero" size="lg" className="group w-full sm:w-auto" asChild>

@@ -196,8 +196,17 @@ const SocialPillarSection = () => {
               </p>
               <p className="mt-2.5 text-sm text-muted-foreground">
                 {fr
-                  ? "Une journée de tournage chez vous, 8 vidéos, 4 carrousels et 8 stories publiés, déplacement compris. Et votre site d'une page à partir du troisième mois, sans rien payer de plus."
-                  : 'A full day of filming at your place, 8 videos, 4 carousels and 8 stories posted for you, travel included. And your one page website from the third month, at no extra cost.'}
+                  ? "Une journée de tournage chez vous, 8 vidéos, 4 carrousels et 8 stories publiés, déplacement compris."
+                  : 'A full day of filming at your place, 8 videos, 4 carousels and 8 stories posted for you, travel included.'}
+              </p>
+              {/* 🔴 Sorti de la phrase du dessus le 21 septembre 2026. Il y
+                  était en fin de ligne, à 14 px : la seule mention de tout
+                  l'accueil, dans le plus petit texte de la page. Elie : *« ce
+                  qu'on ne voit pas assez, c'est qu'au bout du troisième mois,
+                  j'offre le site web. »* */}
+              <p className="mt-3 text-base font-medium text-foreground">
+                {fr ? 'Et au troisième mois, votre site web d’une page. ' : 'And from the third month, your one page website. '}
+                <span className="text-primary">{fr ? 'Compris.' : 'Included.'}</span>
               </p>
             </div>
             <Link

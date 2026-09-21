@@ -173,6 +173,32 @@ rien dire sans un nombre. **Ce nombre est 8 depuis le 20 septembre 2026**, avec
 > offert à une seule page en récupère une partie. **Ne pas alourdir le
 > périmètre davantage sans refaire ce calcul.**
 
+> 🔴 **Le site offert était invisible, et c'est l'argument le plus fort de
+> l'offre.** Elie, le 21 septembre 2026 : *« ce qu'on ne voit pas assez, c'est
+> qu'au bout du troisième mois, j'offre le site web. Ça, c'est vraiment ma
+> nouvelle offre. »*
+>
+> Mesuré avant correction :
+>
+> | Page | Mentions visibles | Position | Taille |
+> |---|---|---|---|
+> | Accueil | 1 | 19 % de la page | **14 px**, en fin de phrase |
+> | `/reseaux-sociaux` | 1 | **54 %** de la page | 16 px, dans une liste |
+>
+> Aucun des deux heros n'en parlait. C'est pourtant le seul élément que ni un
+> community manager ni un studio vidéo ne peut copier, puisqu'il vient de
+> l'autre métier d'Elie.
+>
+> Il est maintenant **dans le hero de `/reseaux-sociaux`, à 6 % de la page, en
+> 18 px**, juste au dessus des boutons, et **sur sa propre ligne sous le prix
+> de l'accueil**. Le prix y est répété : sans lui, « compris » laisse planer un
+> doute sur un supplément.
+>
+> ⚠️ **Le coût mesuré, et il est assumé.** À 320 x 568 px, l'iPhone SE de 2016,
+> la ligne pousse le bouton d'appel de 550 à 622 px, donc sous la ligne de
+> flottaison. À 375 et 390 px il reste visible. Ne pas allonger cette ligne
+> davantage sans remesurer.
+
 ⚠️ **Deux lignes sont descendues de SIGNATURE (1 290 €) vers l'offre publique** :
 les photos tirée de la journée et le point mensuel. Elles ne coûtent presque
 rien une fois la journée tournée, et une liste de quatre lignes à 890 € ne
