@@ -66,8 +66,8 @@ const useSteps = () => {
       title: language === 'fr' ? "J'arrive avec le plan et le matériel" : 'I show up with the plan and the gear',
       desc:
         language === 'fr'
-          ? "Avant de venir, j'ai déjà écrit les sujets, les questions à vous poser et l'ordre de tournage. Vous n'avez rien à préparer, pas de script à apprendre. Je débarque avec la caméra, les micros, la lumière et le drone, et on tourne une journée. C'est la seule journée du mois où vous me voyez."
-          : "Before I arrive, the topics, the questions I'll ask you and the shooting order are already written. Nothing to prepare on your side, no script to learn. I show up with the camera, the mics, the lights and the drone, and we shoot for a full day. That is the only day of the month you see me.",
+          ? "Avant de venir, j'ai déjà écrit les sujets, les questions à vous poser et l'ordre de tournage. Vous n'avez rien à préparer, pas de script à apprendre. Je débarque avec les micros, la lumière et le drone, et on tourne une journée. C'est la seule journée du mois où vous me voyez."
+          : "Before I arrive, the topics, the questions I'll ask you and the shooting order are already written. Nothing to prepare on your side, no script to learn. I show up with the mics, the lights and the drone, and we shoot for a full day. That is the only day of the month you see me.",
     },
     {
       icon: Scissors,
@@ -99,25 +99,23 @@ const useIncluded = () => {
     ? [
         { label: 'Une journée de tournage', detail: 'chez vous, tous les mois' },
         { label: 'Le déplacement', detail: 'compris en Savoie et Haute-Savoie' },
-        { label: 'Tout le matériel', detail: 'caméra, micros, lumière, drone' },
+        { label: 'Tout le matériel', detail: 'micros, lumière, drone' },
         { label: '8 vidéos montées', detail: 'verticales et sous-titrées' },
         { label: '4 carrousels', detail: 'photos et texte, tirés de la journée' },
         { label: '8 stories', detail: 'publiées au fil du mois' },
         { label: 'La publication', detail: 'Instagram, Facebook, TikTok, YouTube Shorts' },
         { label: 'Les légendes et le calendrier', detail: 'écrits et posés par moi' },
-        { label: 'Les photos de la journée', detail: 'à vous, pour votre site et vos réseaux' },
         { label: 'Un point par mois', detail: "ce qui a marché, ce qu'on filme ensuite" },
       ]
     : [
         { label: 'A full day of filming', detail: 'at your place, every month' },
         { label: 'Travel', detail: 'included across Savoie and Haute-Savoie' },
-        { label: 'All the gear', detail: 'camera, mics, lighting, drone' },
+        { label: 'All the gear', detail: 'mics, lighting, drone' },
         { label: '8 edited videos', detail: 'vertical and subtitled' },
         { label: '4 carousels', detail: 'photos and text, from the shooting day' },
         { label: '8 stories', detail: 'posted through the month' },
         { label: 'Publishing', detail: 'Instagram, Facebook, TikTok, YouTube Shorts' },
         { label: 'Captions and calendar', detail: 'written and scheduled by me' },
-        { label: 'The photos from the day', detail: 'yours, for your site and your feeds' },
         { label: 'A monthly review', detail: 'what worked, what we film next' },
       ];
 };
@@ -157,7 +155,7 @@ const useFaq = () => {
         },
         {
           q: "Combien ça coûte ?",
-          a: "890 euros par mois, et c'est le seul chiffre. Dedans : la journée de tournage, le déplacement, le matériel, les 8 vidéos montées et sous-titrées, les 4 carrousels, les 8 stories, les légendes, la publication sur vos réseaux, les photos de la journée et un point mensuel. Pas de frais de démarrage, pas de supplément, pas de ligne surprise sur la facture. Si vous voulez autre chose que cette offre, plus de vidéos ou un tournage plus long par exemple, écrivez-moi et je vous réponds avec un prix.",
+          a: "890 euros par mois, et c'est le seul chiffre. Dedans : la journée de tournage, le déplacement, le matériel, les 8 vidéos montées et sous-titrées, les 4 carrousels, les 8 stories, les légendes, la publication sur vos réseaux et un point mensuel. Pas de frais de démarrage, pas de supplément, pas de ligne surprise sur la facture. Si vous voulez autre chose que cette offre, plus de vidéos ou un tournage plus long par exemple, écrivez-moi et je vous réponds avec un prix.",
         },
         {
           q: "Il y a un engagement ?",
@@ -213,7 +211,7 @@ const useFaq = () => {
         },
         {
           q: 'How much does it cost?',
-          a: '890 euros a month, and that is the only figure. It covers the filming day, the travel, the gear, 8 edited and subtitled videos, 4 carousels, 8 stories, the captions, publishing on your networks, the photos from the day and a monthly review. No setup fee, no extras, no surprise line on the invoice. If you want something other than this offer, more videos or a longer shoot for instance, write to me and I will come back with a price.',
+          a: '890 euros a month, and that is the only figure. It covers the filming day, the travel, the gear, 8 edited and subtitled videos, 4 carousels, 8 stories, the captions, publishing on your networks and a monthly review. No setup fee, no extras, no surprise line on the invoice. If you want something other than this offer, more videos or a longer shoot for instance, write to me and I will come back with a price.',
         },
         {
           q: 'Is there a commitment?',

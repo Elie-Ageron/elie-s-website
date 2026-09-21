@@ -47,8 +47,8 @@ const useSteps = () => {
       num: '1',
       title: fr ? 'Une journée chez vous' : 'One day at your place',
       desc: fr
-        ? "J'arrive avec la caméra, les micros, la lumière et le plan de tournage déjà écrit. Vous n'avez rien à préparer et aucun texte à apprendre. C'est la seule journée du mois où vous me voyez."
-        : 'I show up with the camera, mics, lights and the shooting plan already written. Nothing to prepare, no script to learn. It is the only day of the month you see me.',
+        ? "J'arrive avec les micros, la lumière et le plan de tournage déjà écrit. Vous n'avez rien à préparer et aucun texte à apprendre. C'est la seule journée du mois où vous me voyez."
+        : 'I show up with the mics, lights and the shooting plan already written. Nothing to prepare, no script to learn. It is the only day of the month you see me.',
     },
     {
       num: '2',

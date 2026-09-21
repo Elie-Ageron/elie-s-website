@@ -90,13 +90,12 @@ Les 7 services (source unique : `src/data/services.ts`, **l'ordre du tableau pil
 890 € par mois, sans engagement.
   une journée de tournage chez vous, tous les mois
   le déplacement, compris en Savoie et Haute-Savoie
-  tout le matériel
+  tout le matériel : micros, lumière, drone
   8 vidéos montées, verticales et sous-titrées
   4 carrousels, photos et texte, tirés de la même journée
   8 stories, publiées au fil du mois
   la publication sur Instagram, Facebook, TikTok, YouTube Shorts
   les légendes et le calendrier
-  les photos de la journée
   un point par mois
 
   1. à partir du troisième mois, un site d'une page est compris
@@ -198,10 +197,25 @@ rien dire sans un nombre. **Ce nombre est 8 depuis le 20 septembre 2026**, avec
 > flottaison. À 375 et 390 px il reste visible. Ne pas allonger cette ligne
 > davantage sans remesurer.
 
-⚠️ **Deux lignes sont descendues de SIGNATURE (1 290 €) vers l'offre publique** :
-les photos tirée de la journée et le point mensuel. Elles ne coûtent presque
-rien une fois la journée tournée, et une liste de quatre lignes à 890 € ne
-tient pas en face d'une liste de huit lignes à 390 €.
+⚠️ **Le point mensuel est descendu de SIGNATURE (1 290 €) vers l'offre
+publique.** Il ne coûte presque rien une fois la journée tournée, et une liste
+de quatre lignes à 890 € ne tient pas en face d'une liste de huit lignes à
+390 €.
+
+> 🔴 **Deux lignes ont été retirées le 21 septembre 2026, et les deux étaient
+> fausses ou données pour rien.**
+>
+> | Ligne | Pourquoi elle saute |
+> |---|---|
+> | « Tout le matériel : **caméra**, micros, lumière, drone » | Elie : *« enlève caméra, je filme avec mon tel mdr. »* La liste annonçait un matériel qui n'existe pas |
+> | « Les photos de la journée, à vous » | Elie : *« enlève ça aussi. »* Elle était descendue de SIGNATURE quelques jours plus tôt |
+>
+> ⚠️ **Ne pas remettre de caméra dans la liste du matériel.** Le tournage se
+> fait au téléphone, et c'est cohérent avec le guide
+> `/guides/video-smartphone-entreprise` et l'article
+> `/blog/filmer-avec-son-telephone`, qui défendent exactement ça. Le matériel
+> réel est le son, la lumière et le drone, c'est à dire précisément ce qu'un
+> client n'a pas.
 
 ⚠️ **Jamais de garantie de résultat.** R Numérique garantit « 200 à 1 000
 abonnés qualifiés ». La seule garantie tenable ici porte sur ce qui ne dépend
