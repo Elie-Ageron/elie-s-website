@@ -2294,7 +2294,7 @@ Not sure which case you are in? [Tell me about your situation](/contact) and I w
       },
       {
         q: "Combien coûte la gestion des réseaux sociaux ?",
-        a: "890 € par mois, sans engagement : déplacement, tournage, montage et publication de 8 vidéos, 4 carrousels et 8 stories. Le premier mois je filme deux jours, et à partir du troisième je fais un site d'une page sans rien payer de plus.",
+        a: "890 € par mois, sans engagement : déplacement, tournage, montage et publication de 8 vidéos, 4 carrousels et 8 stories. Et à partir du troisième mois, je fais un site d'une page sans rien payer de plus.",
       },
       {
         q: "Faut-il valider chaque publication ?",
@@ -2354,7 +2354,7 @@ Et ce n'est pas immédiat. Les deux premiers mois servent surtout à installer l
 
 890 € par mois, sans engagement. Le déplacement, la journée de tournage, le montage, les sous-titres, les légendes et la publication de huit vidéos, quatre carrousels et huit stories sont dedans. Pas de frais de démarrage, et vous arrêtez le mois que vous voulez.
 
-Trois choses en plus, au même prix : le premier mois je filme deux jours au lieu d'un, à partir du troisième mois je vous fais un site d'une page, et si les huit vidéos ne sortent pas dans le mois, le mois suivant ne vous est pas facturé.
+Deux choses en plus, au même prix : à partir du troisième mois je vous fais un site d'une page, et si les huit vidéos ne sortent pas dans le mois, le mois suivant ne vous est pas facturé.
 
 Si vous voulez autre chose, plus de vidéos ou un tournage plus long, écrivez-moi et je reviens vers vous avec un prix.
 
@@ -2417,7 +2417,7 @@ And it is not immediate. The first two months mostly serve to establish the rhyt
 
 €890 a month, no commitment. Travel, the filming day, editing, subtitles, captions and posting eight videos are all in there. No setup fee, and you stop any month you like.
 
-Three more things at the same price. The first month I film for two days instead of one. From the third month I build your website. And if the eight videos do not go out, the month after is free.
+Two more things at the same price. From the third month I build your website. And if the eight videos do not go out, the month after is free.
 
 If you want something else, more videos or a longer shoot, write to me and I will come back with a price.
 

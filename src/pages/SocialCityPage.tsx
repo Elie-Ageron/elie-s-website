@@ -322,8 +322,8 @@ const SocialCityPage = ({ slug }: SocialCityPageProps) => {
 
           <p className="mt-8 text-base leading-relaxed text-muted-foreground">
             <strong className="font-semibold text-foreground">890 € par mois, sans engagement</strong> : déplacement,
-            tournage, montage, légendes et publication de 8 vidéos, 4 carrousels et 8 stories. Le premier mois je
-            filme deux jours, et à partir du troisième je vous fais un site d'une page, sans rien payer de plus.
+            tournage, montage, légendes et publication de 8 vidéos, 4 carrousels et 8 stories. Et à partir du
+            troisième mois, je vous fais un site d'une page, sans rien payer de plus.
           </p>
         </div>
       </section>

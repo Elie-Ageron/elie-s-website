@@ -99,9 +99,8 @@ Les 7 services (source unique : `src/data/services.ts`, **l'ordre du tableau pil
   les photos de la journée
   un point par mois
 
-  1. le premier mois, je filme deux jours
-  2. à partir du troisième mois, un site d'une page est compris
-  3. si les 8 vidéos ne sortent pas, le mois suivant est gratuit
+  1. à partir du troisième mois, un site d'une page est compris
+  2. si les 8 vidéos ne sortent pas, le mois suivant est gratuit
 ```
 
 #### Pourquoi le « à partir de » devait sauter, et c'est mesuré
@@ -130,9 +129,8 @@ soit un quart de sa marge, sur l'offre la moins chère de sa catégorie. Et
 c'est la mécanique des vendeurs à 5 € sur ComeUp.
 
 **La règle : l'élément gratuit doit coûter peu à produire et valoir cher à
-recevoir.** Les trois retenues coûtent 7 h une fois (le double tournage), 18 h
-une fois après 2 670 € encaissés (le site), et **zéro** tant qu'il livre (la
-garantie). Son taux horaire ne descend jamais sous 40 €.
+recevoir.** Les deux retenues coûtent 18 h une fois, après 2 670 € encaissés
+(le site), et **zéro** tant qu'il livre (la garantie).
 
 #### 🔴 L'engagement de trois mois a sauté, et c'est Elie qui l'a vu
 
@@ -146,8 +144,9 @@ faisait perdre la comparaison avant qu'on ait lu la liste.
 ⭐ **La mécanique est inversée : on ne retient plus celui qui part, on
 récompense celui qui reste.** Le client peut arrêter chaque mois, mais s'il
 part au deuxième il laisse un site à 1 500 € sur la table. **Un gain perdu
-retient mieux qu'une pénalité, et personne ne se sent piégé.** Le risque
-réel d'Elie est plafonné à 7 h : le site ne sort qu'après trois mois payés.
+retient mieux qu'une pénalité, et personne ne se sent piégé.** Le risque réel
+d'Elie est plafonné : le site ne sort qu'après trois mois payés, donc après
+2 670 € encaissés.
 
 L'argument des trois mois n'a pas disparu, il a changé de bouche. Avant :
 « je vous engage trois mois ». Maintenant : *« le site démarre au troisième
@@ -208,9 +207,27 @@ tient pas en face d'une liste de huit lignes à 390 €.
 abonnés qualifiés ». La seule garantie tenable ici porte sur ce qui ne dépend
 que d'Elie : la publication. Les vues dépendent du marché du client.
 
-⚠️ **Les trois choses en plus ne sont pas une promotion de lancement.** Pas de
+⚠️ **Les deux choses en plus ne sont pas une promotion de lancement.** Pas de
 compte à rebours, pas de « jusqu'au 31 » : elles sont permanentes, et c'est ce
 qui les rend crédibles. La page le dit en toutes lettres.
+
+> 🔴 **Il y en avait trois, et la première était fausse.** « Le premier mois,
+> je filme deux jours » a été supprimée partout le 21 septembre 2026. Elie,
+> capture à l'appui : *« ça c'est faux. enlève partout. un tournage par
+> mois. »* C'est sa règle numéro 6, et elle passe avant tout le reste : un
+> argument vrai et petit bat un argument gros et faux.
+>
+> ⚠️ **Un seul tournage par mois, toujours.** Ne pas réintroduire de double
+> journée, sous aucune formulation. C'est le troisième point de cette famille,
+> après la demi-journée et la formule où le client filme lui même.
+>
+> 🔴 **Et la section ne liste plus.** Elie, dans la foulée : *« met en gros à
+> la place de la section "et trois choses en plus" que le site offert au
+> troisième mois. en mode et surtout, site offert. »* Une liste mettait le site
+> au même rang que la garantie. Il porte maintenant le titre de section,
+> **« Et surtout, votre site web est offert »**, et la garantie passe sous un
+> filet. C'est le seul élément que ni un community manager ni un studio vidéo
+> ne peut copier, il ne se range pas dans une énumération.
 
 **Sources internes** : `création de contenue/ressources, data/15-CLIENTS/_MOI/02-offre.md`
 (la grille, la charge réelle, le refus du 699 €) et `06-le-metier-et-le-marche.md`

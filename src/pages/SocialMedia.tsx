@@ -44,9 +44,7 @@ import { socialCities } from '@/data/social-cities';
  * du troisième mois retient mieux qu'une clause, parce que c'est un gain perdu
  * et pas une pénalité.
  *
- * Les trois éléments en plus, et ce qu'ils coûtent réellement :
- *  - deux jours de tournage le premier mois : 7 h une seule fois, et Elie
- *    démarre avec deux mois de matière d'avance ;
+ * Les deux éléments en plus, et ce qu'ils coûtent réellement :
  *  - le site à partir du troisième mois : ~18 h, après 2 670 € encaissés.
  *    C'est le seul cadeau que ni un community manager ni un studio vidéo ne
  *    peut copier ;
@@ -121,51 +119,6 @@ const useIncluded = () => {
         { label: 'Captions and calendar', detail: 'written and scheduled by me' },
         { label: 'The photos from the day', detail: 'yours, for your site and your feeds' },
         { label: 'A monthly review', detail: 'what worked, what we film next' },
-      ];
-};
-
-/* ── Les trois choses en plus ──
-   Elles remplacent la remise et le « mois offert » : a 890 € Elie est deja le
-   moins cher de sa categorie a perimetre egal (un studio qui vend le meme
-   modele affiche 3 500 €/mois), donc baisser le prix n'aurait rien prouve et
-   aurait coute sa marge. Chacune a un cout maitrise et une valeur percue
-   haute, et aucune n'est une promesse de resultat. */
-const useBonus = () => {
-  const { language } = useLanguage();
-  return language === 'fr'
-    ? [
-        {
-          num: '1',
-          title: 'Le premier mois, je filme deux jours',
-          desc: "Au lieu d'un. Vous démarrez avec deux mois de matière d'avance, et une journée reportée pour cause de chantier ou de grippe ne fait plus tomber le rythme. C'est le seul mois où vous me voyez deux fois.",
-        },
-        {
-          num: '2',
-          title: 'À partir du troisième mois, je vous fais votre site',
-          desc: "Un site d'une page, écrit et dessiné pour votre activité. Compris, vous ne payez pas plus. C'est mon autre métier, et une vidéo qui marche a besoin d'un endroit où envoyer les gens.",
-        },
-        {
-          num: '3',
-          title: 'Si les 8 vidéos ne sortent pas, le mois suivant est gratuit',
-          desc: "C'est la seule chose que je peux vous garantir sans mentir : la régularité ne dépend que de moi. Le nombre de vues dépend de votre marché, et personne ne peut vous le promettre.",
-        },
-      ]
-    : [
-        {
-          num: '1',
-          title: 'The first month, I film for two days',
-          desc: 'Instead of one. You start with two months of material in hand, so a day pushed back by a job or a bad flu no longer breaks the rhythm. It is the only month you see me twice.',
-        },
-        {
-          num: '2',
-          title: 'From the third month, I build your website',
-          desc: 'A one page site, written and designed for your trade. Included, you pay nothing more. It is my other trade, and a video that works needs somewhere to send people.',
-        },
-        {
-          num: '3',
-          title: 'If the 8 videos do not go out, the next month is free',
-          desc: 'It is the only thing I can guarantee without lying: consistency depends on me alone. View counts depend on your market, and nobody can promise you those.',
-        },
       ];
 };
 
@@ -278,7 +231,6 @@ const SocialMedia = () => {
   const { openCalendly } = useCalendly();
   const steps = useSteps();
   const included = useIncluded();
-  const bonus = useBonus();
   const faq = useFaq();
 
   /** Un nom de zone, dans la phrase, qui est aussi le lien vers sa page locale. */
@@ -779,12 +731,19 @@ const SocialMedia = () => {
         </div>
       </section>
 
-      {/* ─────────── Les trois choses en plus ───────────
-          ⚠️ Liste editoriale separee par des filets, numeros en `text-5xl`.
-          Pas de grille de cartes : on ne compare rien ici, on enumere. Et un
-          numero est un repere, donc il se voit (regle 2 des retours d'Elie).
-          🔴 Ne jamais transformer ca en offre de lancement ni en compte a
-          rebours : les trois sont permanentes, c'est ce qui les rend credibles. */}
+      {/* ─────────── Et surtout, le site ───────────
+          🔴 **Cette section listait « trois choses en plus » sur un pied
+          d'égalité.** Elie, le 21 septembre 2026 : *« met en gros à la place
+          de la section "et trois choses en plus" que le site offert au
+          troisième mois. en mode et surtout, site offert. »*
+
+          Une liste de trois met le site au même rang que le reste. Il est
+          pourtant le seul élément que ni un community manager ni un studio
+          vidéo ne peut copier, parce qu'il vient de l'autre métier d'Elie.
+          Il porte donc le titre de section, et la garantie passe dessous.
+
+          ⚠️ Ne jamais en faire une offre de lancement ni un compte à rebours :
+          c'est permanent, et c'est ce qui la rend crédible. La page le dit. */}
       <section className="py-20 sm:py-32 bg-secondary/30 border-y border-border/50" aria-labelledby="social-bonus-heading">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
           <motion.h2
@@ -795,12 +754,13 @@ const SocialMedia = () => {
             className="section-title mb-5"
           >
             <span className="text-foreground">
-              {language === 'fr' ? 'Et trois choses en plus, ' : 'And three more things, '}
+              {language === 'fr' ? 'Et surtout, ' : 'And above all, '}
             </span>
             <span className="text-primary">
-              {language === 'fr' ? 'au même prix.' : 'at the same price.'}
+              {language === 'fr' ? 'votre site web est offert.' : 'your website is included.'}
             </span>
           </motion.h2>
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -809,35 +769,42 @@ const SocialMedia = () => {
             className="section-lede"
           >
             {language === 'fr'
-              ? "Elles ne sont pas une promotion de lancement et elles ne s'arrêtent pas. Elles font partie de l'offre."
-              : 'They are not a launch promotion and they do not expire. They are part of the offer.'}
+              ? "À partir du troisième mois, je vous fais un site d'une page, écrit et dessiné pour votre activité. Vous ne payez rien de plus que les 890 €. C'est mon autre métier, et une vidéo qui marche a besoin d'un endroit où envoyer les gens."
+              : 'From the third month, I build you a one page site, written and designed for your trade. You pay nothing on top of the €890. It is my other trade, and a video that works needs somewhere to send people.'}
           </motion.p>
 
-          <ul className="mt-12">
-            {bonus.map((item, index) => (
-              <motion.li
-                key={item.num}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ delay: index * 0.06, duration: 0.45 }}
-                className="flex flex-col gap-3 border-t border-border py-8 sm:flex-row sm:gap-8"
-              >
-                <span
-                  className="text-5xl font-semibold leading-none text-primary sm:w-20 sm:shrink-0"
-                  aria-hidden="true"
-                >
-                  {item.num}
-                </span>
-                <div>
-                  <h3 className="text-xl font-semibold text-foreground sm:text-2xl">{item.title}</h3>
-                  <p className="mt-3 text-base leading-relaxed text-muted-foreground sm:text-lg">
-                    {item.desc}
-                  </p>
-                </div>
-              </motion.li>
-            ))}
-          </ul>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.16 }}
+            className="mt-6 text-base font-medium text-foreground sm:text-lg"
+          >
+            {language === 'fr'
+              ? "Ce n'est pas une promotion de lancement. Ça ne s'arrête pas, c'est dans l'offre."
+              : 'This is not a launch promotion. It does not expire, it is part of the offer.'}
+          </motion.p>
+
+          {/* La garantie, sous un filet : elle compte, mais elle ne se met pas
+              au même rang que le site. Liste éditoriale, pas grille de cartes. */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-40px' }}
+            transition={{ delay: 0.22, duration: 0.45 }}
+            className="mt-12 border-t border-border pt-8"
+          >
+            <h3 className="text-xl font-semibold text-foreground sm:text-2xl">
+              {language === 'fr'
+                ? 'Et si les 8 vidéos ne sortent pas, le mois suivant est gratuit'
+                : 'And if the 8 videos do not go out, the next month is free'}
+            </h3>
+            <p className="mt-3 text-base leading-relaxed text-muted-foreground sm:text-lg">
+              {language === 'fr'
+                ? "C'est la seule chose que je peux vous garantir sans mentir : la régularité ne dépend que de moi. Le nombre de vues dépend de votre marché, et personne ne peut vous le promettre."
+                : 'It is the only thing I can guarantee without lying: consistency depends on me alone. View counts depend on your market, and nobody can promise you those.'}
+            </p>
+          </motion.div>
         </div>
       </section>
 

@@ -126,7 +126,7 @@ export const socialCities: SocialCityData[] = [
       },
       {
         q: 'Combien coûte la gestion de mes réseaux ?',
-        a: "890 € par mois, sans engagement : déplacement, tournage, montage, légendes et publication de 8 vidéos, 4 carrousels et 8 stories. Le premier mois je filme deux jours au lieu d'un, et à partir du troisième mois je vous fais un site d'une page sans rien payer de plus. Si les 8 vidéos ne sortent pas dans le mois, le mois suivant ne vous est pas facturé. Vous voulez autre chose, plus de vidéos par exemple : vous m'écrivez et je vous réponds avec un prix.",
+        a: "890 € par mois, sans engagement : déplacement, tournage, montage, légendes et publication de 8 vidéos, 4 carrousels et 8 stories. Et à partir du troisième mois, je vous fais un site d'une page sans rien payer de plus. Si les 8 vidéos ne sortent pas dans le mois, le mois suivant ne vous est pas facturé. Vous voulez autre chose, plus de vidéos par exemple : vous m'écrivez et je vous réponds avec un prix.",
       },
       {
         q: "Est-ce que je dois apparaître à l'image ?",
