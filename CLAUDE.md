@@ -273,6 +273,63 @@ preuve ne tient pas. À trancher s'il n'est pas d'accord.
 tournent sur des listes de pages fixes, et ce qui n'y est pas n'est jamais
 mesuré.
 
+### 🔴 La page réseaux manquait d'éléments réels (21 septembre 2026)
+
+> Elie : *« si je vais voir la page d'accueil, il y a un téléphone, il y a
+> quelqu'un qui sourit. Juste en dessous, il y a ma tête, encore quelqu'un qui
+> sourit. Juste en dessous, il y a les avis, encore quelqu'un qui sourit. Il y
+> a des éléments réels, c'est pas que du texte. Dans la page réseaux sociaux,
+> il faut améliorer ça. Il faut descendre beaucoup avant de voir les vidéos. »*
+
+Deux corrections.
+
+**1. Le téléphone est remonté.** Il accompagne maintenant « Vous savez qu'il
+faut poster. Le problème n'a jamais été là. », donc à 1 811 px du haut au lieu
+de rien du tout. Il a été extrait de `SocialPillarSection` vers
+`src/components/PostingCalendar.tsx` : **une seule définition pour les deux
+pages**, sinon le second exemplaire dérive au premier changement de périmètre.
+
+**2. La preuve a changé de nature.** Le bloc montrait trois vignettes qui
+renvoyaient vers les Reels publics d'Isabelle. Il montre maintenant **deux
+vidéos qui se lisent sur la page et un carrousel de dix planches qui défile**,
+et ne renvoie nulle part.
+
+> 🔴 **Pourquoi plus aucun lien sortant.** Elie : *« sans le lien vers le
+> réseau social de la personne, parce que les réseaux, ils n'ont pas encore
+> beaucoup de résultats. »* **Un lien vers un compte qui démarre dessert le
+> travail qu'il est censé prouver.** Le fichier est servi par le site, et le
+> visiteur regarde sans partir. Bénéfice secondaire : la preuve ne dépend plus
+> d'une URL Facebook ni d'une vignette de CDN signée qui expire.
+
+| | Avant | Après |
+|---|---|---|
+| Première pièce physique de la page | aucune avant la mi-page | le téléphone, à 1 811 px |
+| Preuve du travail | 3 vignettes + lien sortant | 2 vidéos jouables + 1 carrousel |
+| Poids ajouté au chargement | 3 vignettes | 2 vignettes + 1 planche |
+
+⚠️ **Les vidéos sont réencodées, jamais déposées telles quelles.** Les masters
+font 150 et 175 Mo en 2160 x 3840. Servies : 540 x 960, h264 CRF 30, audio
+mono 64 kbit/s, soit 3,8 et 4,6 Mo. Et `preload="none"` avec une vignette :
+**rien ne se télécharge avant un clic.** Le fil principal de cette page est
+déjà le point faible du site, une vidéo en lecture automatique l'achèverait.
+
+⚠️ **Le métier affiché est celui que la personne accepte de lire sur une page
+commerciale.** Elie a tranché pour Nouït : *« tu dis que c'est pour Nouït,
+thérapeute, et conseil, met pas le mot médium. »* Le site écrit donc
+**thérapeute et conseil**, jamais médium.
+
+> ⚠️ **Mais le mot est gravé dans deux planches du carrousel**, que Nouït a
+> écrites elle-même : « Médium. C'est la quatrième chose que je fais » et « le
+> soin énergétique ou médiumnité ». C'est tout le propos du carrousel, qui
+> commence par « on me résume toujours à un seul mot ». La dixième planche
+> porte aussi son identifiant Instagram. **Signalé à Elie le jour même, à lui
+> de dire s'il veut des planches retouchées.**
+
+⚠️ `PublicationsReelles` et `publications-reelles.ts` ne sont plus montés nulle
+part. Ils sont gardés parce que la page Facebook d'Isabelle est réelle et
+active : le jour où un compte client pourra soutenir un lien sortant, c'est ce
+bloc qu'on remonte.
+
 ### Page Audit gratuit (`/audit-gratuit`)
 - `src/pages/AuditGratuit.tsx` + `src/components/AuditForm.tsx` — **l'aimant du funnel**, créé le 13 septembre 2026.
 - L'offre : Elie passe trente à quarante-cinq minutes sur la présence en ligne d'une entreprise, puis enregistre **4 minutes de vidéo** (fiche Google, réseaux, site, position sur « métier + commune »), livrées **sous 48 h ouvrées**.

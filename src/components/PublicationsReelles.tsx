@@ -3,6 +3,19 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { publicationsReelles } from '@/data/publications-reelles';
 
 /**
+ * ⚠️ **Ce composant n'est plus monte nulle part depuis le 21 septembre 2026.**
+ * `TravailLivre` l'a remplace sur `/reseaux-sociaux`. Elie voulait montrer le
+ * travail sans renvoyer vers un compte qui demarre : *« sans le lien vers le
+ * reseau social de la personne, parce que les reseaux, ils n'ont pas encore
+ * beaucoup de resultats. »*
+ *
+ * Il est garde tel quel, avec ses donnees et ses vignettes, parce que la page
+ * Facebook d'Isabelle est reelle et active : le jour ou un compte client aura
+ * de quoi soutenir un lien sortant, c'est ce bloc qu'on remonte. A supprimer
+ * si Elie tranche que les liens ne reviennent pas.
+ */
+
+/**
  * Trois videos reellement en ligne, cliquables.
  *
  * Elle remplace la bande de couvertures generees a cet endroit : une image

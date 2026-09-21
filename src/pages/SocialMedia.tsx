@@ -13,7 +13,8 @@ import {
 import MagneticButton from '@/components/animations/MagneticButton';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
 import FaqSection from '@/components/FaqSection';
-import PublicationsReelles from '@/components/PublicationsReelles';
+import PostingCalendar from '@/components/PostingCalendar';
+import TravailLivre from '@/components/TravailLivre';
 import InternalLinks from '@/components/InternalLinks';
 import ScrollArrow from '@/components/ScrollArrow';
 import SEO from '@/components/SEO';
@@ -468,8 +469,15 @@ const SocialMedia = () => {
           que le visiteur a deja en tete, donc elle doit tomber avant qu'on lui
           raconte une histoire de cliente. */}
       {/* ─────────── Le problème ─────────── */}
+      {/* 🔴 Le telephone est arrive ici le 21 septembre 2026. Elie : *« si je
+          vais voir la page d'accueil, il y a un telephone, il y a quelqu'un
+          qui sourit. Il y a des elements reels, c'est pas que du texte. Dans
+          la page reseaux sociaux, il faut ameliorer ca. »* La page qui vend le
+          service n'avait aucune piece physique avant la mi-page, alors que
+          l'accueil en a trois dans son premier tiers. */}
       <section className="py-20 sm:py-32" aria-labelledby="social-problem-heading">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6">
+        <div className="mx-auto grid max-w-5xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-7">
           <motion.h2
             id="social-problem-heading"
             initial={{ opacity: 0, y: 20 }}
@@ -505,6 +513,17 @@ const SocialMedia = () => {
                 ? "Alors je prends ce métier-là, et vous gardez le vôtre."
                 : 'So I take that job, and you keep yours.'}
             </p>
+          </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.15, duration: 0.6 }}
+            className="lg:col-span-5"
+          >
+            <PostingCalendar />
           </motion.div>
         </div>
       </section>
@@ -610,7 +629,14 @@ const SocialMedia = () => {
           </motion.div>
 
           {/* Ce que la journee produit. Une liste d'etapes decrit le service,
-              trois couvertures de video le montrent.
+              deux videos et un carrousel le montrent.
+
+              🔴 Le 21 septembre 2026, ce bloc a change de nature. Il montrait
+              trois vignettes qui renvoyaient vers les Reels publics d'une
+              cliente. Elie : *« sans le lien vers le reseau social de la
+              personne, parce que les reseaux, ils n'ont pas encore beaucoup de
+              resultats. »* Les fichiers sont donc servis par le site et se
+              regardent sur place. Voir `publications-livrees.ts`.
 
               ⚠️ La meme bande avait ete posee sur l'accueil et retiree tout de
               suite : elle arrivait sans titre, donc sans raison d'etre la. Ici
@@ -629,16 +655,16 @@ const SocialMedia = () => {
                 normale. */}
             <h3 className="section-title">
               <span className="text-foreground">
-                {language === 'fr' ? 'Des vidéos réellement ' : 'Videos that are actually '}
+                {language === 'fr' ? 'Deux vidéos et un carrousel, ' : 'Two videos and a carousel, '}
               </span>
-              <span className="text-primary">{language === 'fr' ? 'en ligne.' : 'live.'}</span>
+              <span className="text-primary">{language === 'fr' ? 'montés et livrés.' : 'edited and delivered.'}</span>
             </h3>
             <p className="section-lede mt-5">
               {language === 'fr'
-                ? "Format vertical, le sujet en une phrase posée sur l'image, et la personne qui parle de son métier. Cliquez, elles sont publiques."
-                : 'Vertical format, the topic in one line over the image, and someone talking about their trade. Click through, they are public.'}
+                ? "Format vertical, le sujet en une phrase posée sur l'image, et la personne qui parle de son métier. Lancez la lecture, ou faites glisser le carrousel."
+                : 'Vertical format, the topic in one line over the image, and someone talking about their trade. Press play, or swipe the carousel.'}
             </p>
-            <PublicationsReelles className="mt-8" />
+            <TravailLivre className="mt-8" />
           </motion.div>
         </div>
       </section>
