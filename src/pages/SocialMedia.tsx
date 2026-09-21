@@ -655,14 +655,14 @@ const SocialMedia = () => {
                 normale. */}
             <h3 className="section-title">
               <span className="text-foreground">
-                {language === 'fr' ? 'Deux vidéos et un carrousel, ' : 'Two videos and a carousel, '}
+                {language === 'fr' ? "Quelques publications que j'ai livrées " : 'A few posts I delivered '}
               </span>
-              <span className="text-primary">{language === 'fr' ? 'montés et livrés.' : 'edited and delivered.'}</span>
+              <span className="text-primary">{language === 'fr' ? 'récemment.' : 'recently.'}</span>
             </h3>
             <p className="section-lede mt-5">
               {language === 'fr'
-                ? "Format vertical, le sujet en une phrase posée sur l'image, et la personne qui parle de son métier. Lancez la lecture, ou faites glisser le carrousel."
-                : 'Vertical format, the topic in one line over the image, and someone talking about their trade. Press play, or swipe the carousel.'}
+                ? "Trois exemples, pris dans ce qui sort chaque mois. Format vertical, le sujet en une phrase posée sur l'image, et la personne qui parle de son métier. Lancez la lecture, ou faites glisser le carrousel."
+                : 'Three examples, taken from what goes out every month. Vertical format, the topic in one line over the image, and someone talking about their trade. Press play, or swipe the carousel.'}
             </p>
             <TravailLivre className="mt-8" />
           </motion.div>

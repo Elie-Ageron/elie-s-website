@@ -340,6 +340,21 @@ et ne renvoie nulle part.
 | Preuve du travail | 3 vignettes + lien sortant | 2 vidéos jouables + 1 carrousel |
 | Poids ajouté au chargement | 3 vignettes | 2 vignettes + 1 planche |
 
+> 🔴 **Le titre du bloc annonçait un périmètre, pas un échantillon.** Il disait
+> « Deux vidéos et un carrousel, montés et livrés », trois cents pixels au
+> dessus de « 8 vidéos, 4 carrousels et 8 stories ». Elie : *« ça donne
+> l'impression que ce sont les choses que les gens vont recevoir. »* Il a
+> raison : deux chiffres différents pour la même chose sur le même écran, le
+> lecteur retient le plus petit.
+>
+> Il dit maintenant **« Quelques publications que j'ai livrées récemment »**,
+> et le chapô ouvre sur « Trois exemples, pris dans ce qui sort chaque mois ».
+> Même tournure que l'accueil, qui annonce « quelques sites que j'ai créés
+> récemment ».
+>
+> ⚠️ **Aucun compte dans le titre d'un bloc de preuve.** Un échantillon compté
+> se lit comme un forfait.
+
 ⚠️ **Les vidéos sont réencodées, jamais déposées telles quelles.** Les masters
 font 150 et 175 Mo en 2160 x 3840. Servies : 540 x 960, h264 CRF 30, audio
 mono 64 kbit/s, soit 3,8 et 4,6 Mo. Et `preload="none"` avec une vignette :
