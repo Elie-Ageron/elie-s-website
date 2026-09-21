@@ -295,16 +295,32 @@ périmètre.
 > ne lague pas. »*
 
 L'accueil garde la couverture de la coiffeuse, qu'il juge bonne à cet endroit.
-`/reseaux-sociaux` reçoit `apercu="video"`. **Les cinq décisions qui tiennent
-la promesse « ça ne lague pas »**, toutes dans `ApercuVideo.tsx` : un fichier
-dédié recadré en 4:5 à la taille réelle de l'écran (480 x 600, seize secondes,
-**772 ko** contre 151 Mo au master), aucune piste audio, la source posée
-seulement à l'intersection, la lecture arrêtée dès la sortie de l'écran, et la
-vignette fixe servie quand `prefers-reduced-motion` est demandé.
+`/reseaux-sociaux` reçoit `apercu="video"`.
 
-Mesuré dans un vrai Chrome, sans dérogation d'autoplay : avant tout
-défilement, seule la vignette de 49 ko existe ; téléphone à l'écran, la
-lecture tourne ; téléphone sorti, elle est en pause.
+> 🔴 **Révisé le jour même : la lecture automatique a sauté.** Elie, après
+> l'avoir vue tourner : *« met la vidéo de Nouït sur le tel en pause, et avec
+> un bouton play, si ils veulent regarder, ils cliquent dessus et ils ont
+> aussi le son comme ça. et la vidéo est un peu flou. »*
+
+| | Première version | Retenue |
+|---|---|---|
+| Départ | automatique, à l'écran | au clic, sur un bouton |
+| Son | aucune piste | piste AAC, audible |
+| Fichier | 480 x 600, CRF 32, 16 s, 772 ko | 600 x 750, CRF 27, 42 s, 6,6 Mo |
+
+🔴 **Le flou venait du débit, pas de la définition.** 480 px de large pour un
+écran de 294 px, c'est déjà du sur-échantillonnage : c'est le CRF 32 qui
+lissait le jardin et le visage.
+
+**6,6 Mo est assumé parce que rien ne part avant le clic.** La `src` n'est
+posée qu'au clic : qui ne regarde pas ne télécharge que la vignette de 73 ko.
+Vérifié dans un vrai Chrome, avant clic comme après.
+
+⚠️ **Le téléphone n'est plus `aria-hidden` en entier dans cette variante.** Il
+porte un bouton réel : un élément focalisable sous `aria-hidden` est la
+violation axe `aria-hidden-focus`, gravité serious, déjà rencontrée sur
+`CalendlyPopup`. Les fausses interfaces (barre d'état, en-tête, grille du
+mois, badge) sont masquées une par une, la vidéo et son bouton sont exposés.
 
 **2. La preuve a changé de nature.** Le bloc montrait trois vignettes qui
 renvoyaient vers les Reels publics d'Isabelle. Il montre maintenant **deux
@@ -341,6 +357,14 @@ thérapeute, et conseil, met pas le mot médium. »* Le site écrit donc
 > commence par « on me résume toujours à un seul mot ». La dixième planche
 > porte aussi son identifiant Instagram. **Signalé à Elie le jour même, à lui
 > de dire s'il veut des planches retouchées.**
+
+⚠️ **Le carrousel a des flèches, pas une barre de défilement.** Elie : *« met
+des flèches à gauche et à droite pour slide. pas un curseur. et sur tel le
+doigt. »* `CarrouselPlanches` masque la barre du navigateur, ajoute deux
+flèches sur grand écran, et **garde le même conteneur à défilement tactile**
+pour le doigt. Les flèches se désactivent aux extrémités : une flèche qui ne
+fait rien fait croire à un défaut. Il est aussi centré verticalement, parce
+qu'en 4:5 il est plus court que les vidéos en 9:16.
 
 ⚠️ `PublicationsReelles` et `publications-reelles.ts` ne sont plus montés nulle
 part. Ils sont gardés parce que la page Facebook d'Isabelle est réelle et

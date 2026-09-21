@@ -1,143 +1,101 @@
-import { useEffect, useRef, useState } from 'react';
-import { useReducedMotion } from 'framer-motion';
+import { useRef, useState } from 'react';
+import { Play } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 /**
- * Une vraie vidéo qui tourne dans l'écran du téléphone.
+ * La vidéo de l'écran du téléphone : arrêtée, avec un bouton.
  *
- * 🔴 **Elie, le 21 septembre 2026 :** *« tu peux même mettre directement une
- * vidéo, par exemple de Nouït ou d'Isabelle. Tu la mets sur le téléphone, et
- * quand la personne parle, la vidéo défile. Fais en sorte que ça ne lague
- * pas. »*
+ * 🔴 **Elie, le 21 septembre 2026 :** *« met la vidéo de Nouït sur le tel en
+ * pause, et avec un bouton play, si ils veulent regarder, ils cliquent dessus
+ * et ils ont aussi le son comme ça. et la vidéo est un peu flou. »*
  *
- * ⚠️ **« Que ça ne lague pas » a dicté chacun des cinq choix ci dessous.**
- * Une vidéo en lecture automatique est la façon la plus simple de détruire une
- * page, et le fil principal de `/reseaux-sociaux` est déjà le point faible du
- * site.
+ * Elle démarrait toute seule, muette, en boucle. Ce qui change :
  *
- * 1. **Un fichier dédié, pas celui du bloc de preuve.** Le master fait 151 Mo
- *    en 2160 x 3840. Celui ci est recadré en 4:5 à la taille réelle de
- *    l'écran, 480 x 600, seize secondes, CRF 32 : **772 ko.**
- * 2. **Aucune piste audio.** La vidéo est muette de toute façon, une piste
- *    inutilisée se télécharge et se décode quand même.
- * 3. **Rien ne part avant que le téléphone soit visible.** La `src` n'est
- *    posée qu'à l'intersection : tant que le visiteur n'a pas descendu
- *    jusque là, seule la vignette de 49 ko existe.
- * 4. **La lecture s'arrête dès que le téléphone sort de l'écran.** Un
- *    décodeur qui tourne sur un élément hors champ coûte exactement autant
- *    qu'à l'écran, et pour rien.
- * 5. **`prefers-reduced-motion` coupe la vidéo, pas le contenu.** On sert la
- *    vignette fixe. Une image qui bouge en boucle est précisément ce que ce
- *    réglage demande d'éviter.
+ * | | Avant | Après |
+ * |---|---|---|
+ * | Départ | automatique à l'écran | au clic |
+ * | Son | aucune piste | piste AAC, audible |
+ * | Fichier | 480 x 600, CRF 32, 16 s, 772 ko | 600 x 750, CRF 27, 42 s, 6,6 Mo |
  *
- * ⚠️ Le téléphone entier est `aria-hidden`, donc rien ici n'est annoncé. C'est
- * voulu : c'est une maquette, pas un lecteur. Ne pas y ajouter de contrôles,
- * ils deviendraient des commandes invisibles dans l'ordre de tabulation.
+ * 🔴 **Le flou venait du débit, pas de la définition.** 480 px de large pour
+ * un écran de 294 px, c'est déjà du sur-échantillonnage. C'est le CRF 32 qui
+ * lissait les détails du jardin et du visage. CRF 27 les rend.
+ *
+ * ⚠️ **6,6 Mo, et c'est assumé, parce que rien ne part avant le clic.** La
+ * `src` n'est posée qu'au clic, donc un visiteur qui ne regarde pas ne
+ * télécharge que la vignette de 73 ko. C'est le même contrat qu'avant, avec un
+ * déclencheur plus honnête : le visiteur demande, on livre.
+ *
+ * ⚠️ **Plus d'`IntersectionObserver`, plus de `prefers-reduced-motion`.** Sans
+ * lecture automatique, les deux n'ont plus d'objet : une image fixe tant qu'on
+ * ne demande rien, c'est exactement ce que ce réglage veut.
+ *
+ * ⚠️ **Ce bloc ne doit pas vivre sous un `aria-hidden`.** Il porte un bouton
+ * réel et une vidéo réelle. Un élément focalisable sous `aria-hidden` est la
+ * violation axe `aria-hidden-focus`, gravité serious, déjà rencontrée sur
+ * `CalendlyPopup` : le visiteur au clavier tabule dans une commande qu'aucun
+ * lecteur d'écran n'annonce.
  */
 const ApercuVideo = ({
   src,
   poster,
+  titre,
   className = '',
 }: {
   src: string;
   poster: string;
+  titre: string;
   className?: string;
 }) => {
-  const reduit = useReducedMotion();
+  const { language } = useLanguage();
+  const fr = language === 'fr';
   const ref = useRef<HTMLVideoElement>(null);
-  const [visible, setVisible] = useState(false);
-  /* 🔴 **Un `ref` et pas un `state` pour savoir si on est a l'ecran.**
-     `onCanPlay` arrive apres coup et doit lire la valeur du moment, pas celle
-     capturee au rendu ou l'ecouteur a ete cree. */
-  const dansLEcran = useRef(false);
+  const [lance, setLance] = useState(false);
 
-  useEffect(() => {
-    if (reduit) return;
-    const el = ref.current;
-    if (!el || typeof IntersectionObserver === 'undefined') return;
-
-    const observateur = new IntersectionObserver(
-      ([entree]) => {
-        dansLEcran.current = entree.isIntersecting;
-        if (entree.isIntersecting) {
-          setVisible(true);
-          /* 🔴 **Ce `play()` ne suffit pas au premier passage, et c'est le bug
-             qui a coute le plus de temps ici.** `setVisible` ne pose la `src`
-             qu'au rendu suivant : appelee maintenant, la lecture porte sur un
-             element encore vide et ne fait rien, sans la moindre erreur.
-             C'est `onCanPlay` qui demarre la premiere fois. Celui ci sert aux
-             retours, quand la source est deja la.
-
-             Le `catch` n'est pas decoratif : la promesse se rejette des qu'on
-             quitte la vue pendant le chargement, et sans lui chaque
-             aller-retour ecrit une erreur en console. */
-          el.play().catch(() => {});
-        } else {
-          el.pause();
-        }
-      },
-      { threshold: 0.4 }
-    );
-
-    observateur.observe(el);
-    return () => observateur.disconnect();
-  }, [reduit]);
-
-  /**
-   * 🔴 **C'est ici que la premiere lecture demarre, et nulle part ailleurs.**
-   *
-   * Deux tentatives ont echoue avant, pour la meme raison de fond : on peut
-   * poser une source, elle n'existe pas encore pour le navigateur.
-   *
-   * 1. Appeler `play()` dans le rappel de l'observateur. `setVisible` ne pose
-   *    la `src` qu'au rendu suivant : la lecture portait sur un element vide
-   *    et ne faisait rien, **sans erreur**.
-   * 2. Compter sur `onCanPlay`. Avec `preload="none"`, poser une `src` ne
-   *    declenche aucun telechargement : rien n'est jamais pret, donc
-   *    l'evenement n'arrive jamais.
-   *
-   * Cet effet s'execute apres que React a pose la `src`, et `play()` est ce
-   * qui declenche le telechargement. La chaine est donc : le telephone entre
-   * a l'ecran, la source est posee, la lecture demande les octets.
-   *
-   * ⚠️ Ne pas revenir a un `play()` dans l'observateur en croyant simplifier.
-   */
-  useEffect(() => {
-    if (!visible || reduit) return;
-    if (dansLEcran.current) ref.current?.play().catch(() => {});
-  }, [visible, reduit]);
-
-  if (reduit) {
-    return (
-      <img
-        src={poster}
-        alt=""
-        className={`aspect-[4/5] w-full rounded-xl object-cover ${className}`}
-        width={480}
-        height={600}
-        loading="lazy"
-        decoding="async"
-      />
-    );
-  }
+  const demarrer = () => {
+    setLance(true);
+    /* La `src` arrive au rendu suivant : on attend qu'elle soit posée avant de
+       demander la lecture, sinon `play()` porte sur un élément vide et ne fait
+       rien, sans la moindre erreur. Voir la note de `CLAUDE.md` sur
+       `preload="none"`. */
+    requestAnimationFrame(() => {
+      const el = ref.current;
+      if (!el) return;
+      el.load();
+      el.play().catch(() => {});
+    });
+  };
 
   return (
-    <video
-      ref={ref}
-      /* La source n'apparait qu'une fois le telephone a l'ecran. */
-      src={visible ? src : undefined}
-      poster={poster}
-      className={`aspect-[4/5] w-full rounded-xl object-cover ${className}`}
-      muted
-      loop
-      playsInline
-      preload="none"
-      tabIndex={-1}
-      /* La source vient d'etre posee : c'est ici que demarre la premiere
-         lecture, et seulement si le telephone est toujours a l'ecran. */
-      onCanPlay={() => {
-        if (dansLEcran.current) ref.current?.play().catch(() => {});
-      }}
-    />
+    <div className={`relative ${className}`}>
+      <video
+        ref={ref}
+        src={lance ? src : undefined}
+        poster={poster}
+        className="aspect-[4/5] w-full rounded-xl bg-secondary object-cover"
+        preload="none"
+        playsInline
+        controls={lance}
+        title={titre}
+      >
+        {fr ? "Votre navigateur ne peut pas lire cette vidéo." : 'Your browser cannot play this video.'}
+      </video>
+
+      {!lance && (
+        <button
+          type="button"
+          onClick={demarrer}
+          aria-label={fr ? `Lire la vidéo : ${titre}` : `Play the video: ${titre}`}
+          /* Le bouton couvre toute la vignette : sur un écran de 294 px, une
+             cible de 56 px entourée de zones mortes se rate au doigt. */
+          className="group absolute inset-0 flex items-center justify-center rounded-xl"
+        >
+          <span className="flex h-14 w-14 items-center justify-center rounded-full bg-primary shadow-lg transition-transform duration-300 group-hover:scale-105">
+            <Play className="ml-0.5 h-6 w-6 fill-primary-foreground text-primary-foreground" aria-hidden="true" />
+          </span>
+        </button>
+      )}
+    </div>
   );
 };
 

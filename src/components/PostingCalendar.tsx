@@ -34,11 +34,19 @@ const PostingCalendar = ({ apercu = 'image' }: { apercu?: 'image' | 'video' }) =
   const postDays = [2, 5, 9, 13, 16, 20, 23, 27];
 
   return (
-    <div className="relative mx-auto w-full max-w-[300px] sm:max-w-[340px]" aria-hidden="true">
+    /* 🔴 `aria-hidden` seulement quand le telephone ne contient qu'une
+       maquette. Avec la variante video il porte un bouton reel : un element
+       focalisable sous `aria-hidden` est la violation axe `aria-hidden-focus`,
+       gravite serious, deja rencontree sur `CalendlyPopup`. Les parties
+       decoratives restent masquees une par une, plus bas. */
+    <div
+      className="relative mx-auto w-full max-w-[300px] sm:max-w-[340px]"
+      aria-hidden={apercu === 'video' ? undefined : true}
+    >
       <div className="rounded-[2.4rem] border-[7px] border-foreground bg-foreground p-1 shadow-2xl">
         <div className="overflow-hidden rounded-[1.9rem] bg-background">
           {/* Barre d'etat */}
-          <div className="flex items-center justify-between px-5 pb-1.5 pt-3.5">
+          <div aria-hidden="true" className="flex items-center justify-between px-5 pb-1.5 pt-3.5">
             <span className="text-[10px] font-semibold tabular-nums text-foreground">9:41</span>
             <span className="h-4 w-20 rounded-full bg-foreground" />
             <span className="flex gap-0.5">
@@ -48,7 +56,7 @@ const PostingCalendar = ({ apercu = 'image' }: { apercu?: 'image' | 'video' }) =
           </div>
 
           {/* En-tete */}
-          <div className="border-b border-border px-5 py-3.5">
+          <div aria-hidden="true" className="border-b border-border px-5 py-3.5">
             <p className="text-[11px] font-medium text-muted-foreground">
               {fr ? 'Votre mois' : 'Your month'}
             </p>
@@ -58,7 +66,7 @@ const PostingCalendar = ({ apercu = 'image' }: { apercu?: 'image' | 'video' }) =
           </div>
 
           {/* Grille du mois */}
-          <div className="px-5 py-4">
+          <div aria-hidden="true" className="px-5 py-4">
             <div className="mb-2 grid grid-cols-7 gap-1.5 text-center">
               {(fr ? ['L', 'M', 'M', 'J', 'V', 'S', 'D'] : ['M', 'T', 'W', 'T', 'F', 'S', 'S']).map((d, i) => (
                 <span key={`${d}-${i}`} className="text-[9px] font-medium text-muted-foreground">
@@ -89,6 +97,11 @@ const PostingCalendar = ({ apercu = 'image' }: { apercu?: 'image' | 'video' }) =
               <ApercuVideo
                 src="/publications/videos/apercu-telephone.mp4"
                 poster="/publications/videos/apercu-telephone.webp"
+                titre={
+                  fr
+                    ? 'Nouït, thérapeute et conseil à Albertville'
+                    : 'Nouït, therapist and counsellor in Albertville'
+                }
               />
             ) : (
               <PostCover publication={parId('coiffure')} taille="grande" />
@@ -101,7 +114,7 @@ const PostingCalendar = ({ apercu = 'image' }: { apercu?: 'image' | 'video' }) =
       </div>
 
       {/* Badge physique, colle de travers sur le coin */}
-      <div className="absolute -right-3 -top-3 rotate-6 rounded-lg bg-primary px-3 py-1.5 shadow-lg">
+      <div aria-hidden="true" className="absolute -right-3 -top-3 rotate-6 rounded-lg bg-primary px-3 py-1.5 shadow-lg">
         <span className="text-[11px] font-semibold text-primary-foreground">
           {fr ? 'Vous : rien à faire' : 'You: nothing to do'}
         </span>

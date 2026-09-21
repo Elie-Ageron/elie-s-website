@@ -1,4 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import CarrouselPlanches from '@/components/CarrouselPlanches';
 import { publicationsLivrees, type PublicationLivree } from '@/data/publications-livrees';
 
 /**
@@ -22,11 +23,15 @@ import { publicationsLivrees, type PublicationLivree } from '@/data/publications
  * surface de bugs et un probleme d'accessibilite pour rien : la lecture, le
  * son et le plein ecran sont deja la, au clavier comme a la souris.
  *
- * ⚠️ Le carrousel defile, donc il porte `tabIndex`, `role` et un libelle. Une
- * zone qui defile sans etre atteignable au clavier rend son contenu
- * inaccessible a qui n'a pas de souris. Regle axe
- * `scrollable-region-focusable`, gravite serious, deja rencontree sur le
- * carrousel d'avis.
+ * ⚠️ Le carrousel a son propre composant, `CarrouselPlanches` : fleches sur
+ * grand ecran, doigt sur telephone, et la barre de defilement retiree. Elie :
+ * *« met des fleches a gauche et a droite pour slide. pas un curseur. et sur
+ * tel le doigt. »*
+ *
+ * ⚠️ **Le carrousel est centre, pas cale en haut.** Il est en 4:5 quand les
+ * videos sont en 9:16, donc il est plus court : aligne en haut, il laissait un
+ * trou sous sa legende. Elie : *« baisse un peu le caroussel pour le
+ * centrer. »*
  */
 
 const Legende = ({ piece }: { piece: PublicationLivree }) => {
@@ -48,7 +53,7 @@ const TravailLivre = ({ className = '' }: { className?: string }) => {
 
   return (
     <div className={className}>
-      <ul className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 sm:mx-0 sm:grid sm:grid-cols-3 sm:items-start sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0">
+      <ul className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 sm:mx-0 sm:grid sm:grid-cols-3 sm:items-center sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0">
         {publicationsLivrees.map((piece) => (
           <li key={piece.id} className="w-[68vw] shrink-0 snap-start sm:w-auto">
             {piece.type === 'video' ? (
@@ -66,32 +71,15 @@ const TravailLivre = ({ className = '' }: { className?: string }) => {
                   : 'Your browser cannot play this video.'}
               </video>
             ) : (
-              <div
-                tabIndex={0}
-                role="region"
-                aria-label={fr ? piece.titreFr : piece.titreEn}
-                className="soft-shadow flex snap-x snap-mandatory overflow-x-auto rounded-2xl border border-border"
-              >
-                {piece.images.map((image, i) => (
-                  <img
-                    key={image}
-                    src={image}
-                    alt={
-                      fr
-                        ? `${piece.titreFr}, planche ${i + 1} sur ${piece.images.length}`
-                        : `${piece.titreEn}, slide ${i + 1} of ${piece.images.length}`
-                    }
-                    className="aspect-[4/5] w-full shrink-0 snap-center object-cover"
-                    width={1080}
-                    height={1350}
-                    /* La premiere planche est ce que le visiteur voit sans
-                       rien faire : elle se charge normalement, les neuf
-                       autres attendent qu'il fasse glisser. */
-                    loading={i === 0 ? 'eager' : 'lazy'}
-                    decoding="async"
-                  />
-                ))}
-              </div>
+              <CarrouselPlanches
+                images={piece.images}
+                libelle={fr ? piece.titreFr : piece.titreEn}
+                legende={(i, total) =>
+                  fr
+                    ? `${piece.titreFr}, planche ${i + 1} sur ${total}`
+                    : `${piece.titreEn}, slide ${i + 1} of ${total}`
+                }
+              />
             )}
             <Legende piece={piece} />
           </li>
