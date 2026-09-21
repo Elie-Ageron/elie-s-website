@@ -744,35 +744,24 @@ const SocialMedia = () => {
           c'est permanent, et c'est ce qui la rend crédible. La page le dit. */}
       <section className="py-20 sm:py-32 bg-secondary/30 border-y border-border/50" aria-labelledby="social-bonus-heading">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
-          {/* 🔴 **Le mot « offert » etait dans le membre rose, donc a 0.85em
-              et en 450.** Elie : *« c'est un truc de fou quand meme site
-              offert. tu met le numero 3 en gros, et offert aussi. »* Il a
-              raison, et c'etait une infraction a la convention du site : le
-              noir porte l'idee, le rose plus petit complete. « Et surtout, »
-              n'est pas une idee, c'est une charniere. Les deux membres sont
-              donc inverses, et « offert » passe de 44 a 52 px.
+          {/* 🔴 **Le mot « offert » vivait dans le membre rose, donc a 0.85em
+              et en 450**, pendant que le noir portait « Et surtout, ». C'est
+              l'inverse de la convention du site : le noir porte l'idee, le
+              rose plus petit complete. « Et surtout, » n'est pas une idee,
+              c'est une charniere. Les deux membres sont donc inverses, et
+              « offert » est passe de 44 a 52 px.
 
-              Le chiffre est `aria-hidden` : le sens est dans le titre et dans
-              le paragraphe, qui disent tous les deux « troisieme mois ». Il ne
-              pese donc pas dans `check:hierarchie`, qui lit la taille calculee
-              des `h2`. */}
+              ⚠️ **Un chiffre « 3e mois » de 104 px a vecu ici une heure.**
+              Elie, capture a l'appui : *« supprime ces deux trucs. »* Ne pas
+              le remettre : la date est deja dans le titre du paragraphe qui
+              suit, et un chiffre d'ornement n'ajoutait rien a une section qui
+              tient en une phrase. */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="mb-6 sm:mb-8"
           >
-            {/* Empile, pas a cote. A 1280 px le chiffre poussait le titre a
-                360 px pendant que le paragraphe partait a 216 px : deux bords
-                gauches dans un meme bloc, et un chiffre qui perdait sa force
-                en face d'un titre de trois lignes. */}
-            <p aria-hidden="true" className="mb-1 flex items-baseline gap-2">
-              <span className="chiffre-offert text-primary">3</span>
-              <span className="text-lg font-medium text-muted-foreground sm:text-xl">
-                {language === 'fr' ? 'e mois' : 'rd month'}
-              </span>
-            </p>
-
             <h2 id="social-bonus-heading" className="section-title">
               <span className="text-foreground">
                 {language === 'fr'
@@ -815,26 +804,14 @@ const SocialMedia = () => {
               : 'This is not a launch promotion. It does not expire, it is part of the offer.'}
           </motion.p>
 
-          {/* La garantie, sous un filet : elle compte, mais elle ne se met pas
-              au même rang que le site. Liste éditoriale, pas grille de cartes. */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-40px' }}
-            transition={{ delay: 0.22, duration: 0.45 }}
-            className="mt-12 border-t border-border pt-8"
-          >
-            <h3 className="text-xl font-semibold text-foreground sm:text-2xl">
-              {language === 'fr'
-                ? 'Et si les 8 vidéos ne sortent pas, le mois suivant est gratuit'
-                : 'And if the 8 videos do not go out, the next month is free'}
-            </h3>
-            <p className="mt-3 text-base leading-relaxed text-muted-foreground sm:text-lg">
-              {language === 'fr'
-                ? "C'est la seule chose que je peux vous garantir sans mentir : la régularité ne dépend que de moi. Le nombre de vues dépend de votre marché, et personne ne peut vous le promettre."
-                : 'It is the only thing I can guarantee without lying: consistency depends on me alone. View counts depend on your market, and nobody can promise you those.'}
-            </p>
-          </motion.div>
+          {/* ⚠️ **La garantie de publication vivait ici, sous un filet.**
+              Retiree le 21 septembre 2026 sur demande d'Elie, capture a
+              l'appui : *« supprime ces deux trucs. »* La section ne parle donc
+              plus que du site offert, ce qui est bien ce qu'elle annonce.
+
+              Elle reste ecrite ailleurs, et c'est a trancher avec lui :
+              `social-cities.ts` (la FAQ prix des six pages locales),
+              `llms-full.txt` et l'article `/blog/deleguer-reseaux-sociaux`. */}
         </div>
       </section>
 

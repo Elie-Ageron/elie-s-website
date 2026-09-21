@@ -239,46 +239,46 @@ qui les rend crédibles. La page le dit en toutes lettres.
 > la place de la section "et trois choses en plus" que le site offert au
 > troisième mois. en mode et surtout, site offert. »* Une liste mettait le site
 > au même rang que la garantie. Il porte maintenant le titre de section,
-> **« Et surtout, votre site web est offert »**, et la garantie passe sous un
-> filet. C'est le seul élément que ni un community manager ni un studio vidéo
-> ne peut copier, il ne se range pas dans une énumération.
+> **« Et surtout, votre site web est offert »**. C'est le seul élément que ni
+> un community manager ni un studio vidéo ne peut copier, il ne se range pas
+> dans une énumération.
 
-> 🔴 **Et le lendemain, la section est devenue une manchette.** Elie : *« le
-> site offert fait une meilleure section. c'est un truc de fou quand même site
-> offert. tu met le numéro 3 en gros, et offert aussi. »*
->
-> En le faisant, un vrai défaut est sorti : **le mot « offert » était dans le
-> membre rose**, donc à `0.85em` et en 450, pendant que le noir portait
-> « Et surtout, ». C'est l'inverse de la convention du site, qu'Elie a posée
-> lui même : *« le noir dit le plus important, le rose plus petit complète, et
-> ça partout. »* « Et surtout, » n'est pas une idée, c'est une charnière.
+> 🔴 **Le mot « offert » était dans le membre rose, et c'était une infraction
+> à la convention du site.** Trouvé en voulant le grossir, à la demande
+> d'Elie : *« c'est un truc de fou quand même site offert. »* Le rose est à
+> `0.85em` et en 450, pendant que le noir portait « Et surtout, ». Or la règle,
+> posée par Elie lui même, dit *« le noir dit le plus important, le rose plus
+> petit complète, et ça partout »*, et « Et surtout, » n'est pas une idée,
+> c'est une charnière.
 >
 > | | Avant | Après |
 > |---|---|---|
 > | Membre noir | « Et surtout, » | « Et surtout, votre site web est offert. » |
 > | Membre rose | « votre site web est offert. » | « Sans un euro de plus que les 890 €. » |
 > | Taille du mot « offert », 1280 px | 44,2 px | **52 px** |
-> | Chiffre du troisième mois | aucun | **104 px** |
 >
-> Le chiffre vit dans `.chiffre-offert` (`index.css`), **une seule fois sur
-> tout le site**. Il est `aria-hidden` : le titre et le paragraphe disent tous
-> les deux « troisième mois », donc un lecteur d'écran qui annoncerait « 3 e
-> mois » avant le titre n'y gagnerait rien.
+> ⚠️ **Le membre rose est en `block`.** Sans ça, « offert. » retombait en tête
+> de la deuxième ligne, collé au rose qui démarrait dans la foulée. Le mot qui
+> porte la section finit sa phrase, il n'ouvre pas la suivante.
 >
-> ⚠️ **Il plafonne à 6.5rem, et le plafond est mesuré.** Le titre de page vaut
-> 72 px au maximum. À 104 px le chiffre le dépasse déjà de 44 %, ce qui tient
-> pour une ornementation isolée aux deux tiers de la page et ne tiendrait plus
-> au dessus. `check:hierarchie` ne peut pas l'attraper, puisqu'il lit la taille
-> calculée des `h2` : le garde-fou est ici, pas dans le script.
+> 🔴 **Un chiffre « 3e mois » de 104 px a vécu une heure ici, et Elie l'a fait
+> retirer.** Capture à l'appui : *« supprime ces deux trucs. »* **Ne pas le
+> remettre.** La date est déjà dans la phrase qui suit le titre, et un chiffre
+> d'ornement n'ajoutait rien à une section qui tient en deux lignes. La classe
+> `.chiffre-offert` a été supprimée d'`index.css` avec lui : une classe
+> orpheline finit recopiée ailleurs.
 >
-> ⚠️ **Le bloc est empilé, pas en deux colonnes.** Première version : le
-> chiffre à gauche du titre. À 1280 px le titre partait alors à 360 px pendant
-> que le paragraphe partait à 216 px, soit deux bords gauches dans le même
-> bloc, et le chiffre perdait sa force en face d'un titre de trois lignes.
+> 🔴 **Le bloc de garantie a été retiré de cette section le même jour**, sur la
+> même capture. La section ne parle donc plus que du site offert, ce qui est ce
+> que son titre annonce.
 >
-> ⚠️ **L'accueil n'a pas suivi, et c'est volontaire.** La mention y vit sous
-> « 890 € par mois », dans une rangée qui porte aussi le bouton. Un chiffre de
-> 104 px à côté d'un prix écrit en 36 px ferait passer le prix au second plan.
+> ⚠️ **La garantie de publication n'a pas disparu de l'offre pour autant**, et
+> c'est à trancher avec Elie. Elle reste écrite dans la FAQ de
+> `/reseaux-sociaux` (question « et si je veux arrêter »), dans la FAQ prix des
+> six pages locales (`social-cities.ts`), dans `llms-full.txt` et dans
+> l'article `/blog/deleguer-reseaux-sociaux`. **Soit elle sort de l'offre et il
+> faut la retirer des quatre, soit elle y reste et la page principale est la
+> seule à ne pas la montrer.**
 
 **Sources internes** : `création de contenue/ressources, data/15-CLIENTS/_MOI/02-offre.md`
 (la grille, la charge réelle, le refus du 699 €) et `06-le-metier-et-le-marche.md`

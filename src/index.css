@@ -330,33 +330,6 @@ All colors MUST be HSL.
     font-size: 0.85em;
   }
 
-  /**
-   * Le chiffre du site offert. Un seul sur le site, il ne se recopie pas.
-   *
-   * 🔴 **Elie, le 21 septembre 2026 :** *« le site offert fait une meilleure
-   * section. c'est un truc de fou quand meme site offert. tu met le numero 3
-   * en gros, et offert aussi. »*
-   *
-   * Ce n'est pas un titre, c'est un reperage. Le `h2` a cote dit deja tout,
-   * donc le chiffre est `aria-hidden` : un lecteur d'ecran qui annonce « 3 e
-   * mois » avant le titre n'y gagne rien. Il ne pese pas non plus dans
-   * `check:hierarchie`, qui lit la taille calculee des `h2`.
-   *
-   * ⚠️ **Il plafonne a 6rem, et ce plafond n'est pas arbitraire.** Le titre de
-   * page vaut 72 px au maximum (`clamp(2rem, 7.5vw, 4.5rem)`). A 96 px le
-   * chiffre le depasse deja d'un tiers : c'est tenable pour une ornementation
-   * isolee au deux tiers de la page, ca ne le serait plus au dessus.
-   *
-   * ⚠️ **500 et non 600.** La graisse percue monte avec la taille, meme regle
-   * que `.hero-title`. A 96 px, un 600 est un pave.
-   */
-  .chiffre-offert {
-    font-weight: 500;
-    line-height: 0.82;
-    letter-spacing: -0.03em;
-    font-size: clamp(4rem, 13vw, 6.5rem);
-  }
-
   /* Le paragraphe qui suit un titre de section. */
   .section-lede {
     max-width: 36rem;
