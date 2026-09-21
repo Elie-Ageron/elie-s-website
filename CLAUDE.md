@@ -243,6 +243,43 @@ qui les rend crédibles. La page le dit en toutes lettres.
 > filet. C'est le seul élément que ni un community manager ni un studio vidéo
 > ne peut copier, il ne se range pas dans une énumération.
 
+> 🔴 **Et le lendemain, la section est devenue une manchette.** Elie : *« le
+> site offert fait une meilleure section. c'est un truc de fou quand même site
+> offert. tu met le numéro 3 en gros, et offert aussi. »*
+>
+> En le faisant, un vrai défaut est sorti : **le mot « offert » était dans le
+> membre rose**, donc à `0.85em` et en 450, pendant que le noir portait
+> « Et surtout, ». C'est l'inverse de la convention du site, qu'Elie a posée
+> lui même : *« le noir dit le plus important, le rose plus petit complète, et
+> ça partout. »* « Et surtout, » n'est pas une idée, c'est une charnière.
+>
+> | | Avant | Après |
+> |---|---|---|
+> | Membre noir | « Et surtout, » | « Et surtout, votre site web est offert. » |
+> | Membre rose | « votre site web est offert. » | « Sans un euro de plus que les 890 €. » |
+> | Taille du mot « offert », 1280 px | 44,2 px | **52 px** |
+> | Chiffre du troisième mois | aucun | **104 px** |
+>
+> Le chiffre vit dans `.chiffre-offert` (`index.css`), **une seule fois sur
+> tout le site**. Il est `aria-hidden` : le titre et le paragraphe disent tous
+> les deux « troisième mois », donc un lecteur d'écran qui annoncerait « 3 e
+> mois » avant le titre n'y gagnerait rien.
+>
+> ⚠️ **Il plafonne à 6.5rem, et le plafond est mesuré.** Le titre de page vaut
+> 72 px au maximum. À 104 px le chiffre le dépasse déjà de 44 %, ce qui tient
+> pour une ornementation isolée aux deux tiers de la page et ne tiendrait plus
+> au dessus. `check:hierarchie` ne peut pas l'attraper, puisqu'il lit la taille
+> calculée des `h2` : le garde-fou est ici, pas dans le script.
+>
+> ⚠️ **Le bloc est empilé, pas en deux colonnes.** Première version : le
+> chiffre à gauche du titre. À 1280 px le titre partait alors à 360 px pendant
+> que le paragraphe partait à 216 px, soit deux bords gauches dans le même
+> bloc, et le chiffre perdait sa force en face d'un titre de trois lignes.
+>
+> ⚠️ **L'accueil n'a pas suivi, et c'est volontaire.** La mention y vit sous
+> « 890 € par mois », dans une rangée qui porte aussi le bouton. Un chiffre de
+> 104 px à côté d'un prix écrit en 36 px ferait passer le prix au second plan.
+
 **Sources internes** : `création de contenue/ressources, data/15-CLIENTS/_MOI/02-offre.md`
 (la grille, la charge réelle, le refus du 699 €) et `06-le-metier-et-le-marche.md`
 (les repères de marché, et ce qui n'existe pas comme donnée).

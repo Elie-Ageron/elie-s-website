@@ -744,20 +744,52 @@ const SocialMedia = () => {
           c'est permanent, et c'est ce qui la rend crédible. La page le dit. */}
       <section className="py-20 sm:py-32 bg-secondary/30 border-y border-border/50" aria-labelledby="social-bonus-heading">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
-          <motion.h2
-            id="social-bonus-heading"
+          {/* 🔴 **Le mot « offert » etait dans le membre rose, donc a 0.85em
+              et en 450.** Elie : *« c'est un truc de fou quand meme site
+              offert. tu met le numero 3 en gros, et offert aussi. »* Il a
+              raison, et c'etait une infraction a la convention du site : le
+              noir porte l'idee, le rose plus petit complete. « Et surtout, »
+              n'est pas une idee, c'est une charniere. Les deux membres sont
+              donc inverses, et « offert » passe de 44 a 52 px.
+
+              Le chiffre est `aria-hidden` : le sens est dans le titre et dans
+              le paragraphe, qui disent tous les deux « troisieme mois ». Il ne
+              pese donc pas dans `check:hierarchie`, qui lit la taille calculee
+              des `h2`. */}
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="section-title mb-5"
+            className="mb-6 sm:mb-8"
           >
-            <span className="text-foreground">
-              {language === 'fr' ? 'Et surtout, ' : 'And above all, '}
-            </span>
-            <span className="text-primary">
-              {language === 'fr' ? 'votre site web est offert.' : 'your website is included.'}
-            </span>
-          </motion.h2>
+            {/* Empile, pas a cote. A 1280 px le chiffre poussait le titre a
+                360 px pendant que le paragraphe partait a 216 px : deux bords
+                gauches dans un meme bloc, et un chiffre qui perdait sa force
+                en face d'un titre de trois lignes. */}
+            <p aria-hidden="true" className="mb-1 flex items-baseline gap-2">
+              <span className="chiffre-offert text-primary">3</span>
+              <span className="text-lg font-medium text-muted-foreground sm:text-xl">
+                {language === 'fr' ? 'e mois' : 'rd month'}
+              </span>
+            </p>
+
+            <h2 id="social-bonus-heading" className="section-title">
+              <span className="text-foreground">
+                {language === 'fr'
+                  ? 'Et surtout, votre site web est offert. '
+                  : 'And above all, your website is included. '}
+              </span>
+              {/* En bloc : sans ca, « offert. » se retrouvait en tete de la
+                  deuxieme ligne, colle au membre rose qui demarrait dans la
+                  foulee. Le mot qui porte la section merite de finir sa
+                  phrase, pas d'ouvrir la suivante. */}
+              <span className="block text-primary">
+                {language === 'fr'
+                  ? "Sans un euro de plus que les 890 €."
+                  : 'Not a euro on top of the €890.'}
+              </span>
+            </h2>
+          </motion.div>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -767,8 +799,8 @@ const SocialMedia = () => {
             className="section-lede"
           >
             {language === 'fr'
-              ? "À partir du troisième mois, je vous fais un site d'une page, écrit et dessiné pour votre activité. Vous ne payez rien de plus que les 890 €. C'est mon autre métier, et une vidéo qui marche a besoin d'un endroit où envoyer les gens."
-              : 'From the third month, I build you a one page site, written and designed for your trade. You pay nothing on top of the €890. It is my other trade, and a video that works needs somewhere to send people.'}
+              ? "À partir du troisième mois, un site d'une page, écrit et dessiné pour votre activité. C'est mon autre métier, et une vidéo qui marche a besoin d'un endroit où envoyer les gens."
+              : 'From the third month, a one page site, written and designed for your trade. It is my other trade, and a video that works needs somewhere to send people.'}
           </motion.p>
 
           <motion.p
