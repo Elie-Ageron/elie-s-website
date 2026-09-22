@@ -33,12 +33,12 @@ const Contact = () => {
       <SEO page="contact" structuredData={[contactPageSchema, breadcrumbSchema]} />
 
       {/* Hero */}
-      <section className="relative grain min-h-screen flex items-center justify-center" aria-labelledby="contact-hero-heading">
+      <section className="relative grain py-6 sm:py-12 lg:min-h-[100svh] lg:flex lg:items-center lg:justify-center lg:py-0" aria-labelledby="contact-hero-heading">
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
           <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-primary/20 rounded-full blur-[120px]" />
           <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-[100px]" />
         </div>
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center relative z-10 -mt-36">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center relative z-10 lg:-mt-36">
           <motion.header initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <h1 id="contact-hero-heading" className="hero-title mb-4 sm:mb-6">
               <span className="text-foreground">{language === 'fr' ? 'Parlons de' : "Let's talk about"}</span>{' '}
@@ -112,7 +112,7 @@ const Contact = () => {
                     <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
                       {language === 'fr' ? 'Démarrer mon projet' : 'Start my project'}
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
+                    <p className="text-muted-foreground leading-relaxed text-base">
                       {language === 'fr'
                         ? "Coiffeur, coach, restaurant, artisan, PME : remplissez le formulaire en 4 étapes. Je construis votre site, vous le validez, vous le gardez si ça vous convient."
                         : "Hairdresser, coach, restaurant, tradesperson, small business: fill in the four step form. I build your site, you look at it, you keep it if you like it."}

@@ -154,7 +154,10 @@ const PortfolioShowcaseSection = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="md:pt-10"
           >
-            <p className="font-heading text-2xl font-bold leading-tight tracking-tight text-foreground sm:text-3xl">
+            {/* ⚠️ Etait `text-2xl sm:text-3xl`, soit 24 px sur telephone : la
+                taille exacte d'un titre de section, pour un paragraphe. Elie,
+                le 22 septembre 2026 : *« des textes qui sont trop gros »*. */}
+            <p className="font-heading text-xl font-bold leading-tight tracking-tight text-foreground sm:text-2xl md:text-3xl">
               {fr ? 'Site une page, vitrine, ou refonte complète.' : 'One page, showcase site, or full rebuild.'}
             </p>
             <p className="mt-4 max-w-md leading-relaxed text-muted-foreground">

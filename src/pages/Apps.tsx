@@ -224,7 +224,7 @@ const Apps = () => {
             </div>
             <h1
               id="apps-hero-heading"
-              className="text-[2.4rem] leading-[1.15] sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-5 tracking-tight"
+              className="hero-title mb-5"
             >
               <span className="text-foreground">{t('apps.hero.h1a')}</span>
               <br />
@@ -283,7 +283,7 @@ const Apps = () => {
           <ScrollReveal>
             <div className="text-center mb-20">
               <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">{t('apps.types.badge')}</p>
-              <h2 id="apps-types-heading" className="text-3xl sm:text-5xl font-bold text-foreground mb-6">
+              <h2 id="apps-types-heading" className="section-title mb-6">
                 {t('apps.types.title')}
               </h2>
               <p className="text-lg text-foreground/75 max-w-xl mx-auto">
@@ -626,7 +626,7 @@ const Apps = () => {
           <ScrollReveal>
             <div className="text-center mb-16">
               <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">{t('apps.why.badge')}</p>
-              <h2 id="apps-why-heading" className="text-3xl sm:text-5xl font-bold text-foreground mb-6">
+              <h2 id="apps-why-heading" className="section-title mb-6">
                 {t('apps.why.title')}
               </h2>
               <p className="text-lg text-foreground/75 max-w-xl mx-auto">
@@ -678,7 +678,7 @@ const Apps = () => {
           <ScrollReveal>
             <div className="text-center mb-16">
               <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">{t('apps.process.badge')}</p>
-              <h2 id="apps-process-heading" className="text-3xl sm:text-5xl font-bold text-foreground mb-6">
+              <h2 id="apps-process-heading" className="section-title mb-6">
                 {t('apps.process.title')}
               </h2>
               <p className="text-lg text-foreground/75">
@@ -719,7 +719,7 @@ const Apps = () => {
           <ScrollReveal>
             <div className="text-center mb-16">
               <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">{t('apps.pricing.badge')}</p>
-              <h2 id="apps-pricing-heading" className="text-3xl sm:text-5xl font-bold text-foreground mb-6">
+              <h2 id="apps-pricing-heading" className="section-title mb-6">
                 {t('apps.pricing.title')}
               </h2>
               <p className="text-lg text-foreground/75 max-w-xl mx-auto">
@@ -748,7 +748,7 @@ const Apps = () => {
           <ScrollReveal>
             <div className="text-center mb-14">
               <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">{t('apps.faq.badge')}</p>
-              <h2 id="apps-faq-heading" className="text-3xl sm:text-5xl font-bold text-foreground">
+              <h2 id="apps-faq-heading" className="section-title">
                 {t('apps.faq.title')}
               </h2>
             </div>
@@ -774,7 +774,7 @@ const Apps = () => {
             >
               <h2
                 id="apps-cta-heading"
-                className="text-3xl sm:text-5xl font-bold text-foreground mb-6"
+                className="section-title mb-6"
               >
                 {t('apps.cta.title')}
               </h2>

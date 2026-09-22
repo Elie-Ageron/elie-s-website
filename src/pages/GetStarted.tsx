@@ -159,12 +159,12 @@ const GetStarted = () => {
       <SEO page="getStarted" structuredData={[breadcrumbSchema]} />
 
       {/* Hero */}
-      <section className="relative grain min-h-screen flex items-center justify-center" aria-labelledby="gs-heading">
+      <section className="relative grain py-6 sm:py-12 lg:min-h-[100svh] lg:flex lg:items-center lg:justify-center lg:py-0" aria-labelledby="gs-heading">
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
           <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-primary/15 rounded-full blur-[100px]" />
           <div className="absolute bottom-1/4 left-1/4 w-56 h-56 bg-primary/8 rounded-full blur-[80px]" />
         </div>
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center relative z-10 -mt-24">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center relative z-10 lg:-mt-24">
           <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
             <span className="inline-block text-xs font-semibold uppercase tracking-widest text-primary mb-4">
               {language === 'fr' ? 'Sans appel · Sans engagement' : 'No call · No commitment'}

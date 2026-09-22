@@ -246,12 +246,12 @@ const Services = () => {
       />
 
       {/* Hero */}
-      <section className="relative grain min-h-screen flex items-center justify-center overflow-hidden" aria-labelledby="services-hero-heading">
+      <section className="relative grain py-6 sm:py-12 lg:min-h-[100svh] lg:flex lg:items-center lg:justify-center lg:py-0 overflow-hidden" aria-labelledby="services-hero-heading">
         <div className="absolute inset-0" aria-hidden="true">
           <div className="absolute top-1/4 right-1/4 w-72 h-72 bg-primary/15 rounded-full blur-[120px]" />
           <div className="absolute bottom-1/4 left-1/5 w-64 h-64 bg-primary/8 rounded-full blur-[110px]" />
         </div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10 -mt-24">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10 lg:-mt-24">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
             {/* 🔴 Le point portait `animate-pulse` et la pastille `glass-card`.
                 Elie a banni les deux : « pas de badge qui pulse », et le verre
@@ -260,7 +260,7 @@ const Services = () => {
                 boucle sous un titre attire l'oeil sans rien annoncer, et il ne
                 s'arrete jamais. La pastille prend le meme fond que celles du
                 reste du site. */}
-            <span className="mb-7 inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-2 text-xs font-medium text-muted-foreground sm:text-sm">
+            <span className="mb-4 sm:mb-7 inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-2 text-xs font-medium text-muted-foreground sm:text-sm">
               <span className="h-1.5 w-1.5 rounded-full bg-primary" aria-hidden="true" />
               {language === 'fr' ? 'Votre partenaire web tout-en-un' : 'Your all-in-one web partner'}
             </span>

@@ -341,7 +341,7 @@ const SocialMedia = () => {
 
       {/* ─────────── Hero ─────────── */}
       <section
-        className="relative grain min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6"
+        className="relative grain py-6 sm:py-12 lg:min-h-[100svh] lg:flex lg:items-center lg:justify-center lg:py-0 overflow-hidden px-4 sm:px-6"
         aria-labelledby="social-hero-heading"
       >
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
@@ -349,7 +349,7 @@ const SocialMedia = () => {
           <div className="absolute bottom-1/4 left-1/5 w-64 h-64 bg-primary/8 rounded-full blur-[110px]" />
         </div>
 
-        <div className="max-w-4xl mx-auto text-center relative z-10 -mt-20 sm:-mt-24">
+        <div className="max-w-4xl mx-auto text-center relative z-10 lg:-mt-24">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
             {/* 🔴 Le point portait `animate-pulse` et la pastille `glass-card`.
                 Elie a banni les deux : « pas de badge qui pulse », et le verre
@@ -358,7 +358,7 @@ const SocialMedia = () => {
                 boucle sous un titre attire l'oeil sans rien annoncer, et il ne
                 s'arrete jamais. La pastille prend le meme fond que celles du
                 reste du site. */}
-            <span className="mb-7 inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-2 text-xs font-medium text-muted-foreground sm:text-sm">
+            <span className="mb-4 sm:mb-7 inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-2 text-xs font-medium text-muted-foreground sm:text-sm">
               <span className="h-1.5 w-1.5 rounded-full bg-primary" aria-hidden="true" />
               {language === 'fr' ? 'Vidéo et réseaux sociaux, clé en main' : 'Video and social media, done for you'}
             </span>

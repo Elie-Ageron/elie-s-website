@@ -325,7 +325,13 @@ const AuditGratuit = () => {
                 partage sa largeur avec le formulaire, donc il ne peut pas
                 monter a 72 px comme celui de l'accueil. La graisse, elle, reste
                 celle de la classe : c'est tout l'interet de la centraliser. */}
-            <h1 className="hero-title" style={{ fontSize: 'clamp(2rem, 6.5vw, 3.4rem)' }}>
+            <h1 className="hero-title" /* ⚠️ Seul le **plafond** est reduit, pas la pente. Le hero partage sa
+                  largeur avec le formulaire a partir de `lg`, donc il plafonne a
+                  3.4rem au lieu de 4.5. Sur telephone le formulaire passe dessous,
+                  il n'y a plus rien a partager : la pente est donc la meme que
+                  partout ailleurs, `10vw`. Avec `8.6vw`, ce titre valait 32,3 px a
+                  375 px quand toutes les autres pages en affichaient 37,5. */
+              style={{ fontSize: 'clamp(2rem, 10vw, 3.4rem)' }}>
               {/* ⚠️ Aligne sur le bloc du milieu de l'accueil. Ce h1 disait
                   « et je vous envoie 4 minutes de video » : la duree decrit le
                   contenant, pas ce qu'on y trouve. Les deux endroits qui

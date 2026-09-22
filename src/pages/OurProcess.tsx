@@ -78,11 +78,11 @@ const OurProcess = () => {
       <SEO page="process" structuredData={[howToSchema, breadcrumbSchema]} />
       
       {/* Hero */}
-      <section className="relative grain min-h-screen flex items-center justify-center" aria-labelledby="process-hero-heading">
+      <section className="relative grain py-6 sm:py-12 lg:min-h-[100svh] lg:flex lg:items-center lg:justify-center lg:py-0" aria-labelledby="process-hero-heading">
         <div className="absolute inset-0" aria-hidden="true">
           <div className="absolute top-1/3 left-1/4 w-56 sm:w-80 h-56 sm:h-80 bg-primary/20 rounded-full blur-[80px] sm:blur-[120px]" />
         </div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10 -mt-36">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10 lg:-mt-36">
           <motion.header
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

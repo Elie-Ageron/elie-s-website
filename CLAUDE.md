@@ -763,6 +763,123 @@ celle du plus grand `h2` visible. Aucun contrôle existant ne pouvait le voir :
 `check:overflow` regarde la largeur. **Une hiérarchie typographique ne se lit
 que dans les pixels calculés.**
 
+### 🔴 Le même défaut, un cran plus haut : le palier mort des téléphones (22 septembre 2026)
+
+> Elie : *« sur PC c'est parfait, mais dès que c'est sur téléphone il y a des
+> titres qui sont tout petits, des textes qui sont trop gros, des choses qui
+> sont mal placées. »*
+
+La correction du 20 septembre avait remonté les planchers pour décroiser les
+deux `clamp()`. Elle réparait la hiérarchie et laissait le vrai problème
+intact : **entre 320 et 430 px, plus rien ne bougeait.**
+
+| | 320 px | 375 px | 430 px | 1280 px |
+|---|---|---|---|---|
+| Titre de page | 32 | **32** | 32,3 | 72 |
+| Titre de section | 24 | **24** | 24 | 52 |
+| Texte courant | 16 | 16 | 16 | 16 |
+| Rapport titre / texte | 2,0 | **2,0** | 2,0 | **4,5** |
+
+En dessous de 427 px, `7.5vw` passait sous le plancher de 2rem : le `clamp()`
+rendait donc sa valeur minimale, et **un iPhone 15 Pro Max affichait exactement
+le même titre qu'un iPhone SE de 2016**. Pendant ce temps le texte courant ne
+descendait jamais. Sur grand écran le titre fait quatre fois et demie le texte,
+sur téléphone deux fois : il perdait plus de la moitié de son avance, et c'est
+ça qu'on lit comme « le titre est tout petit ».
+
+**Les trois pentes ont été rouvertes**, avec le même principe : la pente passe
+par la valeur du plancher **exactement à 320 px**, donc le pli du plus petit
+écran ne bouge pas d'un pixel et la courbe repart dès 321.
+
+| Classe | Avant | Après | 375 px | 430 px |
+|---|---|---|---|---|
+| `.hero-title` | `7.5vw` | **`10vw`** | 32 → **37,5** | 32,3 → **43** |
+| `.section-title` | `4.6vw` | **`7vw`** | 24 → **26,3** | 24 → **30** |
+| `.section-title-compact` | `4vw` | **`6.4vw`** | 24 | 24 → **27,5** |
+| `.section-lede` | 17 px fixe | `clamp()` | 17 → **16** | 16 |
+
+⚠️ **Le plancher de `.hero-title` ne sert plus qu'à 320 px, où il vaut
+exactement la valeur de la pente.** Le monter recréerait un palier mort, c'est
+à dire ce défaut là. Rapport obtenu partout : **1,33 à 320 px, 1,43 à 375 et
+430, 1,38 à 1280.**
+
+### 🔴 Les articles et les guides portaient les plus petits titres du site
+
+Trouvé dans la même mesure, et invisible depuis les douze pages de
+`check:hierarchie` :
+
+| | 375 px | 1280 px |
+|---|---|---|
+| `h1` d'un guide | 24 | 52 |
+| son plus grand `h2` | 24 | **52** |
+| `h1` d'un article | 30 | 48 |
+| son plus grand `h2` | 24 | **52** |
+
+Le `h1` d'un guide valait **exactement** la taille de ses `h2`, à toutes les
+largeurs : il portait `.section-title`, la classe des titres de section. Et sur
+un article, le `h1` passait **sous** ses `h2` sur grand écran. Soit le défaut
+du 20 septembre, à l'envers, sur 142 articles, 4 guides et 6 catégories.
+
+Ces trois familles portent maintenant **`.article-title`**, un cran sous
+`.hero-title` parce qu'un titre d'article est long et suivi d'un chapô : 34 px
+sur téléphone, 60 px sur grand écran. Et la fin de page commune reçoit
+`compact`, qui fait descendre son `h2` de 52 à 36 px : **un titre de conversion
+en pied de page ne domine pas le titre de la page.**
+
+⚠️ `check:hierarchie` ouvre maintenant **15 pages**, dont un article, un guide
+et une catégorie. Un contrôle qui tourne sur douze pages fixes ne voit rien de
+ce qui vit sur les 178 autres.
+
+### 🔴 Sept heros étaient centrés dans une boîte plus haute que l'écran
+
+C'est le « des choses qui sont mal placées ». `/portfolio`, `/contact`,
+`/our-process`, `/services`, `/reseaux-sociaux`, `/get-started` et
+`/assessment` portaient tous `min-h-screen flex items-center justify-center`,
+plus une marge négative de compensation (`-mt-36`, `-mt-24`, `-mt-20`).
+
+Deux conséquences, et les deux ne se voient que sur un téléphone.
+
+1. **`100vh` est la hauteur écran barre d'URL masquée.** Le hero est donc plus
+   haut que ce qu'on voit, et le contenu centré dedans tombe trop bas.
+2. **Centrer dans une boîte qui déborde donne n'importe quoi.** Mesuré sur
+   `/reseaux-sociaux` : le `h1` démarrait à 132 px à 320, à 152 à 375 et à
+   259 à 390. Sur `/portfolio`, **190 px de vide** entre le fil d'ariane et le
+   titre, puis un trou sous le bouton.
+
+Le hero est maintenant **dimensionné par son contenu sur téléphone**, et reprend
+sa pleine hauteur à partir de `lg` : `py-6 sm:py-12 lg:min-h-[100svh]
+lg:flex lg:items-center lg:justify-center lg:py-0`. Les marges négatives
+passent en `lg:` : elles compensaient le centrage, elles n'ont plus rien à
+compenser tant qu'il n'y a pas de centrage.
+
+⚠️ **`svh` et jamais `vh`** pour une hauteur de hero. `100svh` est la hauteur
+barre d'URL **visible**, donc jamais plus haute que l'écran réel. Sur grand
+écran les deux valent la même chose, le changement est gratuit.
+
+⚠️ **Le grand écran n'a pas bougé d'un pixel**, vérifié en capture à 1440. Elie
+a dit *« sur PC c'est parfait »* : tout ce qui suit ne s'applique qu'en dessous
+de `lg`.
+
+### Les trois autres réglages du même jour
+
+| Ce qui n'allait pas | Mesure | Correction |
+|---|---|---|
+| Le bandeau flottant | **106 px** sur téléphone, 94 sur grand écran, alors que `main` n'en réserve que 96 (`pt-24`) : il mordait de 10 px sur le contenu | `py-2.5 sm:py-4`. Le bouton de menu garde ses 48 px de cible tactile, c'est lui qui fixe le minimum |
+| Le fil d'ariane | `py-4` à toutes les largeurs, 32 px pris avant le titre | `px-4 py-3 sm:px-6 sm:py-4` |
+| Les pastilles de hero | `mb-7`, 28 px de plus avant le titre | `mb-4 sm:mb-7` |
+
+Et trois morceaux de texte qui contredisaient la tendance n°2 d'Elie :
+`PortfolioShowcaseSection` affichait un paragraphe en **24 px sur téléphone**,
+soit la taille d'un titre de section ; `/contact` mettait sa phrase de métiers
+en `text-sm` sur téléphone et `text-base` au dessus, donc à l'envers ; et
+`/portfolio` décrivait ses projets en 14 px.
+
+⚠️ **`/apps` a été recalé sur les classes partagées** alors que sa route est
+commentée dans `App.tsx`. Elle portait encore
+`text-[2.4rem] sm:text-5xl md:text-6xl lg:text-7xl` et six `h2` en
+`text-3xl sm:text-5xl`, écrits à la main. Le jour où elle sera rouverte, elle
+sera à l'échelle du reste.
+
 ### Une seule fin de page, sur les quatorze pages
 
 Chaque page se terminait par quatre à six blocs qui demandaient tous quelque
@@ -1470,7 +1587,7 @@ Une seule commande : `npm run check`. Elle enchaîne les quatre.
 | `npm run verify` | Build, pré-rendu, puis les quatre contrôles d'affilée. **C'est la commande à lancer avant de livrer.** |
 | `npm run check:a11y` | **axe-core en WCAG 2.1 AA**, 13 pages en 1440 px et 5 en 375 px, dans un vrai Chrome. Demande le serveur de dev allumé |
 | `npm run check:overflow` | Le débordement horizontal, 9 pages sur 7 largeurs de 320 à 1440 px. Demande le serveur de dev allumé |
-| `npm run check:hierarchie` | **Le titre de page domine-t-il ses titres de section ?** 12 pages sur 6 largeurs, dans un vrai Chrome, en comparant les tailles calculées. C'est le seul qui voit qu'un `h1` est plus petit qu'un `h2` sur téléphone. Demande le serveur allumé |
+| `npm run check:hierarchie` | **Le titre de page domine-t-il ses titres de section ?** 15 pages, dont un article, un guide et une catégorie, sur 6 largeurs, dans un vrai Chrome, en comparant les tailles calculées. C'est le seul qui voit qu'un `h1` est plus petit qu'un `h2` sur téléphone. Demande le serveur allumé |
 | `npm run check:maillage` | **Est-ce qu'on peut atteindre chaque page en cliquant ?** Ouvre les pages hors articles dans un vrai Chrome, relève les liens après le rendu de React, remonte de proche en proche, et liste ce que seul le sitemap atteint. Demande le serveur de dev allumé |
 | `npm run check:navigateur` | Les deux d'un coup |
 | `npm run captures [/route] [--mobile]` | Écrit les captures de relecture dans `.captures/`, une par tranche d'écran. Le volet navigateur de l'éditeur rend à 800 px : on ne peut pas y juger une page dessinée pour 1440 |

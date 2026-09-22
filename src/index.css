@@ -189,7 +189,16 @@ All colors MUST be HSL.
        large. Sur telephone il depassait donc le titre de page, qui plafonnait
        a 28 px. Voir la note de `.hero-title` : les deux planchers se lisent
        ensemble, on ne touche pas a l'un sans remesurer l'autre. */
-    font-size: clamp(1.5rem, 4.6vw, 3.25rem);
+    /* ⚠️ Meme correction que sur `.hero-title` le 22 septembre 2026 : la
+       pente passe de 4.6vw a 7vw. A 4.6vw, le plancher tenait jusqu'a 522 px,
+       donc les titres de section etaient figes a 24 px sur **tous** les
+       telephones. `7vw` vaut 22,4 px a 320 px, donc le plancher tient encore
+       sur le plus petit ecran, puis la courbe repart : 26,3 px a 375, 30 px a
+       430, et le plafond de 52 px arrive a 743 px.
+
+       Le rapport au titre de page reste constant, ce qui est tout l'objet :
+       1,33 a 320 px, 1,43 a 375, 1,43 a 430, 1,38 a 1280. */
+    font-size: clamp(1.5rem, 7vw, 3.25rem);
   }
 
   /* ── Le rapport entre les deux membres du titre ──────────────────────────
@@ -276,7 +285,33 @@ All colors MUST be HSL.
        ⚠️ Ne pas monter ce plancher plus haut sans remesurer le pli. A 2.25rem,
        le titre de l'accueil prend cinq lignes a 320 px et pousse le bouton a
        627 px : c'est exactement le defaut corrige le 13 septembre. */
-    font-size: clamp(2rem, 7.5vw, 4.5rem);
+    /* 🔴 **La pente est passee de 7.5vw a 10vw le 22 septembre 2026, et c'est
+       le meme defaut que le 20, vu d'un cran plus haut.** Elie : *« sur PC
+       c'est parfait, mais des que c'est sur telephone il y a des titres qui
+       sont tout petits. »*
+
+       Le plancher avait ete releve a 2rem, ce qui reparait le croisement avec
+       `.section-title`. Mais il restait **un palier mort de 320 a 427 px** :
+       en dessous de 427, `7.5vw` passait sous 32 px, donc le `clamp()` rendait
+       son plancher et **le titre ne bougeait plus d'un pixel sur toute la
+       gamme des telephones**. Un iPhone 15 Pro Max affichait exactement le
+       meme titre qu'un iPhone SE de 2016.
+
+       Mesure du jour, rapport titre de page sur texte courant :
+       **4,5 a 1280 px, 2,0 a 375 px.** Le titre perdait plus de la moitie de
+       son avance des qu'on passait sur un telephone, et c'est ca qu'on lit
+       comme « le titre est tout petit ».
+
+       `10vw` passe par 32 px **exactement a 320 px**, donc le pli du plus
+       petit ecran ne bouge pas d'un pixel : c'est la contrainte du 13
+       septembre, elle est respectee par construction et non par un plancher.
+       Au dessus, la courbe repart : 37,5 px a 375, 43 px a 430, et le plafond
+       de 72 px est atteint des 720 px au lieu de 960.
+
+       ⚠️ Ne pas remonter le plancher au dessus de 2rem : il ne sert plus qu'a
+       320 px, ou il vaut exactement la valeur de la pente. Le monter creerait
+       un nouveau palier mort, c'est a dire ce defaut la. */
+    font-size: clamp(2rem, 10vw, 4.5rem);
   }
 
   /* Meme piege que sur `.section-title` : `p, span, a, li { font-weight: 400 }`
@@ -318,7 +353,10 @@ All colors MUST be HSL.
     line-height: 1.1;
     letter-spacing: -0.02em;
     text-wrap: balance;
-    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    /* Meme deblocage que sur `.section-title`, a l'echelle reduite : 24 px
+       tient jusqu'a 375 px, puis 27,5 px a 430 et le plafond de 36 px a
+       563 px. */
+    font-size: clamp(1.5rem, 6.4vw, 2.25rem);
   }
 
   .section-title-compact > span {
@@ -330,10 +368,51 @@ All colors MUST be HSL.
     font-size: 0.85em;
   }
 
+  /**
+   * Le titre d'un article de blog ou d'un guide.
+   *
+   * 🔴 **Ces deux familles portaient les plus petits titres de page du site,
+   * et elles echappaient a tous les controles.** Mesure du 22 septembre 2026 :
+   *
+   * | | 375 px | 1280 px |
+   * |---|---|---|
+   * | `h1` d'un guide | 24 px | 52 px |
+   * | son plus grand `h2` | 24 px | **52 px** |
+   * | `h1` d'un article | 30 px | 48 px |
+   * | son plus grand `h2` | 24 px | **52 px** |
+   *
+   * Le `h1` d'un guide valait donc **exactement** la taille de ses `h2`, a
+   * toutes les largeurs : il portait `.section-title`, la classe des titres de
+   * section. Et sur un article, le `h1` etait **plus petit que ses `h2`** sur
+   * grand ecran, soit precisement le defaut corrige le 20 septembre sur les
+   * pages principales, ici a l'envers et sur 142 + 4 pages.
+   *
+   * ⚠️ `check:hierarchie` ne pouvait pas le voir : sa liste de douze pages ne
+   * contient ni article ni guide. Elle en contient maintenant un de chaque.
+   *
+   * L'echelle est un cran sous `.hero-title`, parce qu'un titre d'article est
+   * long et qu'il est suivi d'un chapo : 34 px sur telephone, 60 px sur grand
+   * ecran. Le `h2` de fin de page descend en face, voir la prop `compact` de
+   * `ContactMethodsSection`.
+   */
+  .article-title {
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+    font-size: clamp(2.125rem, 8.6vw, 3.75rem);
+  }
+
   /* Le paragraphe qui suit un titre de section. */
   .section-lede {
     max-width: 36rem;
-    font-size: 1.0625rem;
+    /* 17 px sur grand ecran, 16 px sur telephone. Elie, le 22 septembre 2026 :
+       *« des textes qui sont trop gros »*. Le chapo ne descendait jamais,
+       pendant que les titres, eux, tombaient sur leur plancher : a 375 px il
+       faisait 17 px sous un titre de section de 24, soit un rapport de 1,4 la
+       ou le grand ecran en donne 3,1. Un pixel de moins ne coute rien en
+       lisibilite et rend son avance au titre. */
+    font-size: clamp(1rem, 0.925rem + 0.35vw, 1.0625rem);
     line-height: 1.65;
     color: hsl(var(--muted-foreground));
   }

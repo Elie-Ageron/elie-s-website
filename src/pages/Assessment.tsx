@@ -305,13 +305,13 @@ const Assessment = () => {
       />
 
       {/* ===== Intro / Hook ===== */}
-      <section className="relative grain min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6" aria-labelledby="assess-heading">
+      <section className="relative grain py-6 sm:py-12 lg:min-h-[100svh] lg:flex lg:items-center lg:justify-center lg:py-0 overflow-hidden px-4 sm:px-6" aria-labelledby="assess-heading">
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
           <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary/10 rounded-full blur-[110px]" />
           <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-[90px]" />
         </div>
 
-        <div className="relative z-10 max-w-3xl mx-auto py-16 sm:py-20 text-center -mt-16 sm:-mt-24">
+        <div className="relative z-10 max-w-3xl mx-auto py-16 sm:py-20 text-center lg:-mt-24">
           <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }}>
             <span className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full glass-card mb-6">
               <Sparkles className="w-3.5 h-3.5 text-primary" aria-hidden="true" />

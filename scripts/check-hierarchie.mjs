@@ -43,6 +43,15 @@ const PAGES = [
   '/creation-site-web-albertville',
   '/community-manager-albertville',
   '/referencement-local',
+  /* 🔴 Ces quatre familles manquaient, et les trois premieres portaient les
+     plus petits titres de page du site. Mesure du 22 septembre 2026 : le `h1`
+     d'un guide valait exactement la taille de ses `h2` a toutes les largeurs,
+     et celui d'un article passait **sous** ses `h2` sur grand ecran, 48 px
+     contre 52. Un controle qui tourne sur douze pages fixes ne voit rien de ce
+     qui vit sur les 142 autres. */
+  '/blog/prix-gestion-reseaux-sociaux',
+  '/guides/reseaux-sociaux-entreprise-locale',
+  '/blog/categorie/reseaux-sociaux',
 ];
 
 /** Un titre de page doit depasser ses titres de section d'au moins ce rapport. */

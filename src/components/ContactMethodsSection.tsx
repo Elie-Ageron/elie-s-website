@@ -34,8 +34,12 @@ interface ContactMethodsSectionProps {
  * n'est pas une grille de cartes, la regle contre les cartes ne s'applique
  * pas ici. Les canaux directs passent en dessous, sur une seule ligne.
  *
- * Les props sont conservees parce que quatorze pages appellent ce composant,
- * mais `compact` ne joue que sur l'espacement vertical.
+ * `compact` joue sur l'espacement vertical **et sur la taille du titre**. Il
+ * est passe par les articles et les guides, dont le `h1` est volontairement
+ * plus petit que celui d'une page principale : sans lui, ce `h2` de fin de
+ * page montait a 52 px et **depassait le titre de l'article**, mesure a 48 px
+ * sur grand ecran le 22 septembre 2026. Un titre de conversion en pied de page
+ * ne domine pas le titre de la page. Voir `.article-title` dans `index.css`.
  */
 const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMethodsSectionProps) => {
   const { language } = useLanguage();
@@ -76,7 +80,10 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
                 raison : il decrivait mon action, pas ce que le visiteur y
                 gagne. La gratuite est passee en premier mot du chapo, ou elle
                 leve l'objection sans occuper la moitie du titre. */}
-            <h2 id="fin-de-page-heading" className="section-title max-w-3xl">
+            <h2
+              id="fin-de-page-heading"
+              className={`${compact ? 'section-title-compact' : 'section-title'} max-w-3xl`}
+            >
               <span className="text-foreground">
                 {fr ? 'Ce que vos clients voient de vous, ' : 'What your clients see of you, '}
               </span>

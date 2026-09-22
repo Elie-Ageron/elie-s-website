@@ -143,7 +143,7 @@ const BlogCategory = () => {
             </Link>
           </nav>
           <motion.header initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <h1 id="category-heading" className="section-title">
+            <h1 id="category-heading" className="article-title text-foreground">
               {fr ? category.fr : category.en}
             </h1>
             <p className="mt-5 text-base sm:text-lg text-muted-foreground leading-relaxed">
@@ -290,7 +290,7 @@ const BlogCategory = () => {
         </div>
       </section>
 
-      <ContactMethodsSection />
+      <ContactMethodsSection compact />
     </>
   );
 };

@@ -342,7 +342,7 @@ const BlogPost = () => {
 
             <h1
               id="post-title"
-              className="text-3xl sm:text-4xl md:text-5xl font-medium text-foreground leading-[1.12] text-balance"
+              className="article-title text-foreground"
             >
               {post.title}
             </h1>
@@ -546,7 +546,7 @@ const BlogPost = () => {
         </section>
       )}
 
-      <ContactMethodsSection />
+      <ContactMethodsSection compact />
     </>
   );
 };

@@ -48,7 +48,13 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 px-4 py-4" role="banner">
+      {/* ⚠️ `py-2.5` sur telephone et `py-4` au dessus : la carte flottante
+          mesurait 106 px de haut sur un ecran de 390 px, pour 94 px sur grand
+          ecran, alors que `main` ne reserve que 96 px (`pt-24`). Elle mordait
+          donc de 10 px sur le contenu, et elle coutait 12 px de plus la ou
+          l'ecran en a le moins. Le bouton de menu garde ses 48 px de cible
+          tactile, c'est lui qui fixe la hauteur minimale. */}
+      <header className="fixed top-0 left-0 right-0 z-50 px-4 py-2.5 sm:py-4" role="banner">
         <motion.nav 
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
