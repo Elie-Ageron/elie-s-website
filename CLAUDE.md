@@ -671,7 +671,7 @@ visiteur qui ne connaît pas Elie. Lus à la suite, les titres de l'accueil
 racontent l'offre entière :
 
 ```
-Vos réseaux tournent tout le mois sans que vous y pensiez
+Vos réseaux tournent. Sans que vous y pensiez.
 Un jour de tournage. Un mois de publications.
 Deux comptes que je gère en ce moment.
 Ils étaient à votre place. Ils ont accepté d'en parler.

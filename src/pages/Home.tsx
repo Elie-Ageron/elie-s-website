@@ -22,7 +22,7 @@ import InternalLinks from '@/components/InternalLinks';
  * visiteur qui ne connait pas Elie. Lus a la suite, les titres racontent
  * l'offre en entier :
  *
- *   Vos reseaux tournent tout le mois. Sans que vous y pensiez.
+ *   Vos reseaux tournent. Sans que vous y pensiez.
  *   Un jour de tournage. Un mois de publications.
  *   Je m'appelle Elie Ageron. Je rends votre metier visible.
  *   Recevez un audit complet de votre presence en ligne. Gratuitement.

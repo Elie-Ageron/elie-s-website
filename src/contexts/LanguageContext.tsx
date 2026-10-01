@@ -19,7 +19,7 @@ const translations = {
     'nav.book': 'Book a Call',
 
     // Home Page
-    'hero.headline1': 'Your social accounts run all month.',
+    'hero.headline1': 'Your social accounts keep running.',
     'hero.headline2': "Without you thinking about it.",
     'hero.subtitle': "One day of filming a month at your place, and your accounts run until the next one. I also build the website those videos point people to. Albertville, Savoie and Haute-Savoie.",
     'hero.badge': 'Three clients at a time · Albertville, Savoie',
@@ -442,7 +442,7 @@ const translations = {
     'nav.book': 'Réserver un appel',
 
     // Home Page
-    'hero.headline1': 'Vos réseaux tournent tout le mois.',
+    'hero.headline1': 'Vos réseaux tournent.',
     'hero.headline2': "Sans que vous y pensiez.",
     /* 🔴 Disait « puis je monte, j'écris et je publie. Et si votre site ne suit
        pas, je le refais. » Deux defauts. Le site y etait une reparation, pas

@@ -203,7 +203,7 @@ const SectionCourte = ({ a }: { a: Accent }) => (
             textWrap: 'balance',
           }}
         >
-          Vos r&eacute;seaux tournent tout le mois.
+          Vos r&eacute;seaux tournent.
           <br />
           <span style={{ color: a.valeur }}>Sans que vous y pensiez.</span>
         </h2>
