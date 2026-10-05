@@ -166,9 +166,9 @@ Proposition de description de fiche, 740 caractères :
 ```
 Web designer et partenaire web à Albertville, en Savoie. Deux métiers : la
 création de sites internet, livrés en 7 à 14 jours à partir de 500 euros, et la
-gestion complète des réseaux sociaux à partir de 890 euros par mois. Pour les
+gestion complète des réseaux sociaux à 890 euros par mois sans engagement. Pour les
 réseaux, je viens filmer une journée par mois chez vous, je monte, j'écris les
-légendes et je publie 6 à 12 vidéos dans le mois. Vous n'ouvrez jamais
+légendes et je publie 8 vidéos et 4 carrousels dans le mois. Vous n'ouvrez jamais
 l'application. J'interviens à Albertville, Chambéry, Aix-les-Bains, Annecy et
 dans toute la Savoie et la Haute-Savoie, et à distance pour la création de site
 partout en France. Un seul interlocuteur du premier appel à la mise en ligne.

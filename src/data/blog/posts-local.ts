@@ -548,7 +548,7 @@ Un poste dédié coûte, charges comprises, nettement plus qu'une prestation ext
 
 Confier la mission à un salarié qui a déjà un autre métier est le scénario le plus fréquent et le plus décevant. La personne n'est pas formée, la vidéo passe après ses tâches réelles, et au bout de trois mois plus rien ne sort. Ce n'est pas sa faute, c'est un problème de priorité.
 
-Faire soi même reste possible si vous avez du temps. Comptez environ une journée par mois en tournage et montage groupés, comme je l'explique dans [tourner un mois de vidéos en une demi-journée](/blog/tourner-plusieurs-videos-une-journee). La vraie question n'est pas de savoir si vous en êtes capable, c'est de savoir si vous le ferez encore au huitième mois.
+Faire soi même reste possible si vous avez du temps. Comptez environ une journée par mois en tournage et montage groupés, comme je l'explique dans [tourner un mois de vidéos en une journée](/blog/tourner-plusieurs-videos-une-journee). La vraie question n'est pas de savoir si vous en êtes capable, c'est de savoir si vous le ferez encore au huitième mois.
 
 ## Les questions à poser avant de signer
 

@@ -318,8 +318,8 @@ const SocialMedia = () => {
           name: language === 'fr' ? 'Publication mensuelle' : 'Monthly publishing',
           description:
             language === 'fr'
-              ? '8 publications dans le mois sur Instagram, Facebook, TikTok ou YouTube Shorts, légendes incluses.'
-              : '8 posts over the month on Instagram, Facebook, TikTok or YouTube Shorts, captions included.',
+              ? '8 vidéos et 4 carrousels publiés dans le mois sur Instagram, Facebook, TikTok ou YouTube Shorts, légendes incluses.'
+              : '8 videos and 4 carousels posted over the month on Instagram, Facebook, TikTok or YouTube Shorts, captions included.',
         },
       ],
     },

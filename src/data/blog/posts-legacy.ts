@@ -1356,7 +1356,7 @@ Ce n'est presque jamais le fait de publier. Appuyer sur un bouton prend trente s
 
 Ce qui bloque, c'est de trouver quoi dire, puis de filmer, puis de monter. Trois obstacles empilés, à chaque publication, pour toujours.
 
-C'est exactement le raisonnement qui m'a poussé à construire ma prestation comme je l'ai construite. Au lieu de répartir l'effort sur tout le mois, on le concentre sur une journée : un seul tournage produit six à douze vidéos, et il n'y a plus rien à décider ni à faire pendant quatre semaines.
+C'est exactement le raisonnement qui m'a poussé à construire ma prestation comme je l'ai construite. Au lieu de répartir l'effort sur tout le mois, on le concentre sur une journée : un seul tournage produit huit vidéos et quatre carrousels, et il n'y a plus rien à décider ni à faire pendant quatre semaines.
 
 ## Est-ce qu'il faut publier à la même heure
 
@@ -1417,7 +1417,7 @@ It is almost never the posting. Pressing a button takes thirty seconds.
 
 What stops people is finding something to say, then filming it, then editing it. Three obstacles stacked, on every post, forever.
 
-That is exactly the reasoning behind how I built my service. Instead of spreading the effort across the month, we concentrate it into one day: one shoot produces six to twelve videos, and there is nothing left to decide or do for four weeks.
+That is exactly the reasoning behind how I built my service. Instead of spreading the effort across the month, we concentrate it into one day: one shoot produces eight videos and four carousels, and there is nothing left to decide or do for four weeks.
 
 ## Do you have to post at the same time
 
@@ -1860,7 +1860,7 @@ Avant chaque tournage, j'arrive avec une liste écrite. Quinze à vingt sujets, 
 
 Sur place, je ne donne pas le script à la personne. Je pose la question et je la laisse répondre. C'est la différence entre une vidéo qui sonne comme un communiqué et une vidéo qui sonne comme quelqu'un qui parle.
 
-D'une journée, je sors six à douze vidéos exploitables. Ça couvre un mois complet de publications, et le mois suivant on recommence avec la liste suivante.
+D'une journée, je sors huit vidéos et quatre carrousels. Ça couvre un mois complet de publications, et le mois suivant on recommence avec la liste suivante.
 
 ## Ce qu'il ne faut pas faire
 
@@ -1923,7 +1923,7 @@ Before every shoot I arrive with a written list. Fifteen to twenty subjects, sor
 
 On the day, I do not hand the person a script. I ask the question and let them answer. That is the difference between a video that sounds like a press release and a video that sounds like a person talking.
 
-From one day I get six to twelve usable videos. That covers a full month of posting, and the next month we start again with the next list.
+From one day I get eight videos and four carousels. That covers a full month of posting, and the next month we start again with the next list.
 
 ## What not to do
 

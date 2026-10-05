@@ -171,8 +171,8 @@ const About = () => {
             </h1>
             <p className="mt-5 text-base sm:text-lg text-muted-foreground leading-relaxed">
               {fr
-                ? "Je construis des sites pour des entreprises locales et je m'occupe de leurs réseaux sociaux. Une journée de tournage par mois chez elles, et huit publications dans le mois ensuite, sans qu'elles aient à filmer ou monter quoi que ce soit."
-                : 'I build websites for local businesses and run their social media. One day of filming at their place each month, then eight videos posted over that month, without them having to film or edit anything.'}
+                ? "Je construis des sites pour des entreprises locales et je m'occupe de leurs réseaux sociaux. Une journée de tournage par mois chez elles, puis huit vidéos et quatre carrousels dans le mois, sans qu'elles aient à filmer ou monter quoi que ce soit."
+                : 'I build websites for local businesses and run their social media. One day of filming at their place each month, then eight videos and four carousels posted over that month, without them having to film or edit anything.'}
             </p>
           </motion.header>
         </div>

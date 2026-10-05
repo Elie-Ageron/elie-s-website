@@ -101,7 +101,7 @@ export const guides: Guide[] = [
         title: 'Tenir un rythme que vous garderez le mois où tout ira mal',
         body: [
           "Deux publications par semaine pendant six mois battent quinze publications en trois semaines suivies du silence. Ce n'est pas une question d'algorithme, c'est une question d'accumulation : les gens ont besoin de vous voir plusieurs fois avant de vous contacter.",
-          "Le seul moyen fiable de tenir ce rythme est de supprimer la décision quotidienne. Vous planifiez un mois en une heure, vous tournez tout en une demi-journée, vous montez groupé, et vous programmez. Ensuite vous n'ouvrez plus l'application que pour répondre aux commentaires.",
+          "Le seul moyen fiable de tenir ce rythme est de supprimer la décision quotidienne. Vous planifiez un mois en une heure, vous tournez tout en une journée, vous montez groupé, et vous programmez. Ensuite vous n'ouvrez plus l'application que pour répondre aux commentaires.",
           "C'est exactement le fonctionnement que j'utilise avec mes clients, et c'est ce qui rend la régularité possible quand on a déjà un métier à plein temps.",
         ],
         articles: [
@@ -279,8 +279,8 @@ export const guides: Guide[] = [
         title: 'Tourner groupé',
         body: [
           "Filmer une vidéo demande une mise en route qui coûte à peu près le même temps que vous en fassiez une ou dix. Sur une seule vidéo, cette mise en route représente l'essentiel du travail. Sur dix, elle devient négligeable.",
-          "Une demi-journée préparée donne huit à douze vidéos, soit un mois entier de publication. Sans préparation, la même demi-journée en donne trois ou quatre, parce que le temps part en réflexion.",
-          "Deux astuces qui rendent l'illusion crédible : trois hauts différents changés toutes les trois vidéos, et deux lieux de tournage. Personne ne devinera que tout a été tourné le même matin.",
+          "Une journée préparée donne huit à douze vidéos, soit un mois entier de publication. Sans préparation, la même journée en donne trois ou quatre, parce que le temps part en réflexion.",
+          "Deux astuces qui rendent l'illusion crédible : trois hauts différents changés toutes les trois vidéos, et deux lieux de tournage. Personne ne devinera que tout a été tourné le même jour.",
         ],
         articles: ['tourner-plusieurs-videos-une-journee', 'calendrier-editorial-reseaux-sociaux'],
       },

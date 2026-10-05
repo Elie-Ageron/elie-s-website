@@ -61,7 +61,7 @@ const PostingCalendar = ({ apercu = 'image' }: { apercu?: 'image' | 'video' }) =
               {fr ? 'Votre mois' : 'Your month'}
             </p>
             <p className="mt-0.5 text-base font-bold text-foreground">
-              {fr ? '8 publications programmées' : '8 posts scheduled'}
+              {fr ? '8 vidéos programmées' : '8 videos scheduled'}
             </p>
           </div>
 

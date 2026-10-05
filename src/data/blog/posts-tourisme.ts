@@ -241,7 +241,7 @@ Deux publications par semaine hors saison, une par semaine en pleine saison. C'e
 
 Ce rythme ne tient que si la matière est déjà tournée. C'est tout l'intérêt de filmer en saison pour publier après : la partie difficile est faite au moment où vous êtes de toute façon sur place.
 
-C'est le fonctionnement que j'applique chez mes clients : tout se tourne en une seule venue, et les publications sortent ensuite, six à douze dans le mois. Le détail est sur [la page réseaux sociaux](/reseaux-sociaux).
+C'est le fonctionnement que j'applique chez mes clients : tout se tourne en une seule venue, et les publications sortent ensuite : huit vidéos et quatre carrousels dans le mois. Le détail est sur [la page réseaux sociaux](/reseaux-sociaux).
 
 Si vous tenez un hébergement en Tarentaise, en Beaufortain ou dans la combe de Savoie et que le compte dort dix mois par an, [écrivez moi](/contact). Je suis à Albertville, on peut en parler sur place.
     `,

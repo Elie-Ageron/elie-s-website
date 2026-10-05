@@ -426,7 +426,7 @@ const preuve = (chemin) => {
     titreBloc('Deux comptes gérés en ce moment') +
     `<p style="margin:0;font-size:0.85rem;color:#635e59">Nouït, praticienne en soins énergétiques à Albertville, et Isabelle Ageron-Vicat, formatrice en rééducation de l'écriture à Albertville. Leurs publications sont publiques.</p>` +
     titreBloc('Qui, où, combien') +
-    `<p style="margin:0;font-size:0.85rem;color:#635e59">Elie Ageron, web designer indépendant à Albertville en Savoie. Réseaux sociaux dès 890 euros par mois : tournage sur place une journée par mois, puis 6 à 12 publications dans le mois. Site une page dès 500 euros, site vitrine dès 1 500 euros. Téléphone 06 95 55 53 18, elie@elieageron.com.</p>`
+    `<p style="margin:0;font-size:0.85rem;color:#635e59">Elie Ageron, web designer indépendant à Albertville en Savoie. Réseaux sociaux à 890 euros par mois, sans engagement : une journée de tournage sur place, puis 8 vidéos, 4 carrousels et 8 stories dans le mois. Site une page dès 500 euros, site vitrine dès 1 500 euros. Téléphone 06 95 55 53 18, elie@elieageron.com.</p>`
   );
 };
 

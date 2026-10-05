@@ -504,7 +504,7 @@ Deux publications par semaine, un message répondu dans la journée, un avis dem
 
 Tenu six mois, c'est largement au dessus de ce que fait la majorité des indépendants du secteur, qui alternent trois semaines intenses et deux mois de silence.
 
-Si vous voulez que ce soit tenu sans y penser, c'est exactement ce que je fais pour mes clients : une journée de tournage sur place, puis six à douze publications qui sortent dans le mois. C'est décrit sur [la page réseaux sociaux](/reseaux-sociaux), et vous pouvez [m'écrire](/contact) si vous exercez en Savoie ou en Haute-Savoie.
+Si vous voulez que ce soit tenu sans y penser, c'est exactement ce que je fais pour mes clients : une journée de tournage sur place, puis huit vidéos et quatre carrousels qui sortent dans le mois. C'est décrit sur [la page réseaux sociaux](/reseaux-sociaux), et vous pouvez [m'écrire](/contact) si vous exercez en Savoie ou en Haute-Savoie.
     `,
   },
 ];

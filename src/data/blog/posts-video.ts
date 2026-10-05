@@ -518,7 +518,7 @@ Si tout ça vous semble être beaucoup de manipulations pour quelqu'un qui a dé
   {
     id: '33',
     slug: 'tourner-plusieurs-videos-une-journee',
-    titleFr: "Tourner un mois de vidéos en une demi-journée",
+    titleFr: "Tourner un mois de vidéos en une journée",
     excerptFr:
       "La méthode qui rend la régularité possible quand on a un métier à plein temps : on ne filme pas souvent, on filme groupé.",
     seoTitleFr: 'Tourner un Mois de Vidéos : 8 à 12 en une Session',
@@ -528,7 +528,7 @@ Si tout ça vous semble être beaucoup de manipulations pour quelqu'un qui a dé
     categoryFr: 'Vidéo',
     categorySlug: 'video',
     date: '2026-05-20',
-    lastModified: '2026-08-07',
+    lastModified: '2026-10-05',
     author: 'Elie Ageron',
     frOnly: true,
     pillar: '/guides/video-smartphone-entreprise',
@@ -540,7 +540,7 @@ Si tout ça vous semble être beaucoup de manipulations pour quelqu'un qui a dé
     ],
     faqFr: [
       {
-        q: 'Combien de vidéos peut-on tourner en une demi-journée ?',
+        q: 'Combien de vidéos peut-on tourner en une journée ?',
         a: "Entre huit et douze vidéos courtes si les sujets sont préparés à l'avance. Sans préparation, on tombe souvent à trois ou quatre, parce que le temps part en réflexion plutôt qu'en tournage.",
       },
       {
@@ -557,7 +557,7 @@ La régularité est le seul facteur qui compte vraiment sur les réseaux sociaux
 
 La solution n'est pas d'être plus discipliné. C'est de changer la structure du travail : au lieu de filmer un peu souvent, on filme beaucoup rarement.
 
-C'est le principe que j'applique avec tous mes clients. Je viens une journée par mois, on sort six à douze vidéos, et ça couvre les quatre semaines suivantes.
+C'est le principe que j'applique avec tous mes clients. Je viens une journée par mois, on sort huit vidéos et quatre carrousels, et ça couvre les quatre semaines suivantes.
 
 ## Pourquoi le tournage groupé change tout
 
@@ -569,7 +569,7 @@ Il y a aussi un effet plus difficile à quantifier mais très réel : vous êtes
 
 ## Ce qu'il faut préparer avant le jour J
 
-C'est là que se joue la réussite de la session. Une demi-journée de tournage sans préparation donne quatre vidéos moyennes. Avec préparation, elle en donne dix bonnes.
+C'est là que se joue la réussite de la session. Une journée de tournage sans préparation donne quatre vidéos moyennes. Avec préparation, elle en donne dix bonnes.
 
 La liste des sujets, arrêtée. Huit à douze, écrits, pas "on verra sur place". Si vous n'en avez pas, piochez dans [ces idées de contenu](/blog/idees-contenu-reseaux-sociaux) ou dans les questions que vos clients vous posent au téléphone.
 
@@ -581,7 +581,7 @@ Les tenues. Deux ou trois hauts différents, posés à côté. J'y reviens.
 
 Le matériel chargé. Téléphone, micro, batterie externe. Vider la mémoire du téléphone avant, parce que "stockage insuffisant" au bout de la sixième vidéo est une manière stupide de perdre une session.
 
-## Le déroulé d'une demi-journée type
+## Le déroulé d'une journée de tournage
 
 Vingt minutes d'installation et de test. Cadrage, lumière, dix secondes d'essai qu'on regarde et qu'on écoute vraiment. C'est le moment où l'on découvre que le micro n'était pas branché, et il vaut mieux le découvrir maintenant.
 
@@ -609,7 +609,7 @@ Si vous publiez dix vidéos étalées sur un mois et que vous portez le même pu
 
 Trois hauts différents suffisent. Vous changez toutes les trois ou quatre vidéos. Trente secondes de changement, et l'impression d'un mois de tournages séparés.
 
-Même logique pour les décors. Deux emplacements différents, éventuellement un plan en extérieur, et personne ne devinera que tout a été tourné le même matin.
+Même logique pour les décors. Deux emplacements différents, éventuellement un plan en extérieur, et personne ne devinera que tout a été tourné le même jour.
 
 Un détail à surveiller si vous filmez sur plusieurs heures : la lumière du jour change. Une vidéo tournée à 9h et une à 14h près de la même fenêtre n'auront pas la même teinte, et ce n'est pas grave, mais évitez de les publier à la suite. Les principes sont dans [filmer avec une bonne lumière](/blog/lumiere-video-smartphone).
 
@@ -639,9 +639,9 @@ La méthode de montage détaillée est dans [monter une vidéo verticale quand o
 
 ## Le calcul final
 
-Préparation, une heure. Tournage, trois heures. Montage, trois à quatre heures si vous le faites vous même et que vous débutez.
+Préparation, une heure. Tournage, une journée bloquée, même si une liste bien préparée se termine souvent avant. Montage, trois à quatre heures si vous le faites vous même et que vous débutez.
 
-Environ une journée de travail pour un mois de présence sur trois ou quatre plateformes. Réparti sur quatre semaines, ça représente deux heures par semaine, ce qui est très inférieur à ce que la plupart des gens imaginent.
+Un peu plus d'une journée de travail pour un mois de présence sur trois ou quatre plateformes. Réparti sur quatre semaines, ça représente autour de trois heures par semaine, ce qui reste très inférieur à ce que la plupart des gens imaginent.
 
 Et si cette journée est celle que vous n'avez pas, c'est exactement le service que je propose : [je viens filmer une journée par mois](/reseaux-sociaux), je repars avec les rushes, et vous n'avez plus rien à faire. [Parlons en](/contact) si le format vous intéresse.
     `,

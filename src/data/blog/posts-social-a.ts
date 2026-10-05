@@ -149,7 +149,7 @@ Ouvrez la plateforme que vous avez choisie et regardez ce que publient trois con
 
 Ensuite, écrivez dix questions que vos clients vous posent au téléphone. Vous venez de trouver vos dix premières vidéos. Rien d'autre à inventer.
 
-Si vous voulez que quelqu'un s'occupe de tout ça, c'est exactement ce que je fais : [je viens filmer une journée par mois](/reseaux-sociaux) et je publie ensuite six à douze vidéos dans le mois sur vos comptes. Vous pouvez aussi [me poser la question directement](/contact), je vous dirai franchement si vous avez besoin de réseaux sociaux ou de tout autre chose.
+Si vous voulez que quelqu'un s'occupe de tout ça, c'est exactement ce que je fais : [je viens filmer une journée par mois](/reseaux-sociaux) et je publie ensuite huit vidéos et quatre carrousels dans le mois sur vos comptes. Vous pouvez aussi [me poser la question directement](/contact), je vous dirai franchement si vous avez besoin de réseaux sociaux ou de tout autre chose.
     `,
   },
   {
@@ -626,7 +626,7 @@ La colonne lieu sert à regrouper. Si trois vidéos se tournent à l'atelier, el
 
 C'est là que le calendrier prend tout son sens. Une fois le mois planifié, vous voyez que huit vidéos se tournent en deux endroits.
 
-Vous bloquez une demi-journée, vous changez de haut entre les prises pour que ça ne se voie pas, et vous sortez le mois entier. La méthode complète est dans [tourner plusieurs vidéos en une seule journée](/blog/tourner-plusieurs-videos-une-journee).
+Vous bloquez une journée, vous changez de haut entre les prises pour que ça ne se voie pas, et vous sortez le mois entier. La méthode complète est dans [tourner plusieurs vidéos en une seule journée](/blog/tourner-plusieurs-videos-une-journee).
 
 C'est exactement le fonctionnement que j'utilise avec mes clients : je viens filmer une journée, et ça alimente les quatre semaines suivantes.
 
@@ -646,9 +646,9 @@ La seconde, c'est la rigidité. Si vous vivez quelque chose d'intéressant un ma
 
 ## Le calcul de temps, en clair
 
-Une heure de planification par mois. Une demi-journée de tournage. Deux à trois heures de montage si vous le faites vous même, en comptant large au début.
+Une heure de planification par mois. Une journée de tournage. Deux à trois heures de montage si vous le faites vous même, en comptant large au début.
 
-Vous êtes autour d'une journée par mois pour tenir une présence sérieuse sur deux plateformes. C'est plus que ce que les gens imaginent, et beaucoup moins que ce qu'ils dépensent en publiant au coup par coup sans jamais rien construire.
+Vous êtes autour d'une journée et demie par mois pour tenir une présence sérieuse sur deux plateformes. C'est plus que ce que les gens imaginent, et beaucoup moins que ce qu'ils dépensent en publiant au coup par coup sans jamais rien construire.
 
 Si cette journée par mois est celle que vous n'avez pas, [c'est précisément ce que je prends en charge](/reseaux-sociaux) : je viens filmer, je monte, j'écris, je publie. Vous pouvez aussi [m'en parler d'abord](/contact) pour voir si le format vous correspond.
     `,
