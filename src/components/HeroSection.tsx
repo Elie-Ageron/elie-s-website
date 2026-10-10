@@ -11,6 +11,8 @@ import logoVmProducers from '@/assets/logo-vm-producers.webp';
 import logoSolarFusion from '@/assets/logo-solar-fusion.webp';
 import logoMywebglory from '@/assets/logo-mwg.webp';
 import logoNaura from '@/assets/logo-naura.webp';
+import logoIsabelle from '@/assets/logo-isabelle.webp';
+import logoInevolve from '@/assets/logo-inevolve.webp';
 
 /**
  * Le hero.
@@ -33,14 +35,22 @@ import logoNaura from '@/assets/logo-naura.webp';
 // Logos clients reels, affiches en pleine opacite.
 // Ils etaient a 55 % « pour ne pas concurrencer le titre » : a l'ecran on ne
 // les lisait plus, et un logo qu'on ne lit pas ne rassure personne. Ce sont
-// quatre vrais clients, c'est la seule preuve au-dessus de la ligne de
+// six vrais clients, c'est la seule preuve au-dessus de la ligne de
 // flottaison, elle a le droit d'etre nette.
+//
+// Les deux derniers sont les comptes reseaux geres, ajoutes le 10 octobre
+// 2026 a la demande d'Elie. Ils sont plus hauts que les quatre premiers, et
+// c'est voulu : un monogramme plein tient a 32 px, un dessin au trait (l'arbre
+// d'Isabelle, la bougie d'Inevolve) y devient une tache. La hauteur compense
+// la graisse, pour que les six pesent pareil a l'oeil.
 const CLIENT_LOGOS = [
-  { src: logoNaura, name: 'Naura Conseils', flat: false },
-  { src: logoMywebglory, name: 'MyWebGlory', flat: false },
+  { src: logoNaura, name: 'Naura Conseils', flat: false, size: 'h-7 sm:h-8' },
+  { src: logoMywebglory, name: 'MyWebGlory', flat: false, size: 'h-7 sm:h-8' },
   // Dessine en sombre sur transparent : sans `brightness-0` il disparait.
-  { src: logoVmProducers, name: 'VM Producers', flat: true },
-  { src: logoSolarFusion, name: 'Solar Fusion', flat: false },
+  { src: logoVmProducers, name: 'VM Producers', flat: true, size: 'h-7 sm:h-8' },
+  { src: logoSolarFusion, name: 'Solar Fusion', flat: false, size: 'h-7 sm:h-8' },
+  { src: logoIsabelle, name: 'Isabelle Ageron-Vicat', flat: false, size: 'h-10 sm:h-11' },
+  { src: logoInevolve, name: 'Inevolve Intuition', flat: false, size: 'h-8 sm:h-9' },
 ];
 
 /* 🔴 Une scene WebGL vivait ici : Three.js et react-three-fiber, 776 ko bruts
@@ -154,7 +164,10 @@ const HeroSection = () => {
           transition={{ delay: 0.5, duration: 0.7 }}
           className="mt-20 sm:mt-24"
         >
-          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 sm:gap-x-14">
+          {/* Trois colonnes sur telephone : en ligne souple, les six logos
+              tombaient a cinq plus un, et le dernier restait seul sur sa
+              ligne comme un oubli. */}
+          <div className="grid grid-cols-3 place-items-center gap-y-6 sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-x-14">
             {CLIENT_LOGOS.map((logo) => (
               <img
                 key={logo.name}
@@ -162,7 +175,7 @@ const HeroSection = () => {
                 alt={`Logo ${logo.name}, client d'Elie Ageron`}
                 width={120}
                 height={28}
-                className={`h-7 w-auto object-contain sm:h-8 ${logo.flat ? 'brightness-0' : ''}`}
+                className={`w-auto object-contain ${logo.size} ${logo.flat ? 'brightness-0' : ''}`}
                 loading="eager"
                 decoding="async"
               />

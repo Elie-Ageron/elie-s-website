@@ -427,6 +427,12 @@ et ne renvoie nulle part.
 > travail qu'il est censé prouver.** Le fichier est servi par le site, et le
 > visiteur regarde sans partir. Bénéfice secondaire : la preuve ne dépend plus
 > d'une URL Facebook ni d'une vignette de CDN signée qui expire.
+>
+> ⭐ **Révisé le 10 octobre 2026 : le lien vers les comptes est revenu.**
+> Elie : *« le lien vers leur compte, comme ça, c'est carré. »* La raison du
+> retrait est tombée : la page Facebook d'Isabelle a passé plusieurs reels au
+> delà de 80 000 vues, le compte soutient donc le lien. Voir la section
+> suivante.
 
 | | Avant | Après |
 |---|---|---|
@@ -442,7 +448,8 @@ et ne renvoie nulle part.
 > lecteur retient le plus petit.
 >
 > Il dit maintenant **« Quelques publications que j'ai livrées récemment »**,
-> et le chapô ouvre sur « Trois exemples, pris dans ce qui sort chaque mois ».
+> et le chapô ouvre sur « Pris dans ce qui sort chaque mois, chez deux
+> clientes d'Albertville » (il disait « Trois exemples » jusqu'au 10 octobre).
 > Même tournure que l'accueil, qui annonce « quelques sites que j'ai créés
 > récemment ».
 >
@@ -476,9 +483,49 @@ fait rien fait croire à un défaut. Il est aussi centré verticalement, parce
 qu'en 4:5 il est plus court que les vidéos en 9:16.
 
 ⚠️ `PublicationsReelles` et `publications-reelles.ts` ne sont plus montés nulle
-part. Ils sont gardés parce que la page Facebook d'Isabelle est réelle et
-active : le jour où un compte client pourra soutenir un lien sortant, c'est ce
-bloc qu'on remonte.
+part. Le lien sortant est revenu le 10 octobre 2026, mais dans `TravailLivre`,
+qui garde les vidéos jouables sur place : ce vieux bloc renvoyait le visiteur
+hors du site pour regarder. Ils peuvent être supprimés.
+
+### Une rangée par cliente, avec son logo et ses comptes (10 octobre 2026)
+
+> Elie : *« rajoute le logo d'Isabelle, le logo de Nouït [Inevolve
+> Intuition]. Pour Isabelle, tu peux mettre sa dernière vidéo, elle a vraiment
+> bien marché. Pareil pour Nouït, une des dernières vidéos. Le lien vers leur
+> compte, comme ça, c'est carré. »*
+
+Le bloc « Quelques publications que j'ai livrées récemment » de
+`/reseaux-sociaux` est passé d'une bande de trois pièces à **une rangée par
+cliente** : logo, nom, métier, lien vers ses comptes, puis **trois pièces**.
+
+| Cliente | Pièces | Lien |
+|---|---|---|
+| Isabelle Ageron-Vicat | « Une forme, six lettres » (sa dernière, publiée en octobre), « Par où commencer en maternelle », « Crayon de papier ou couleur » | sa page Facebook |
+| Nouït | le carrousel de présentation, « Quand tout va bien » (publiée le 9 octobre), « La boule de cristal » | Instagram et Facebook |
+
+⚠️ **Trois pièces par cliente, toujours.** La grille est en trois colonnes :
+une rangée de deux laisse une case vide qui se lit comme un oubli.
+
+⚠️ **Une vidéo n'entre sur le site qu'une fois publiée par la cliente.** Les
+vidéos d'octobre de Nouït sont programmées jusqu'au 30 : ne pas en monter une
+avant sa date de sortie.
+
+⚠️ **Aucun chiffre, même maintenant qu'ils sont bons.** Le lien laisse le
+visiteur voir les vues sur la plateforme, ce qui vaut mieux qu'un compteur
+qu'on affiche soi même. La règle « aucun compteur nulle part » tient.
+
+**Les logos** (`src/assets/logo-isabelle.webp`, `logo-inevolve.webp`) sont
+aussi dans la bande clients du hero de l'accueil, qui passe de quatre à six, et
+remplacent les initiales dans `SocialClientsSection`. Le logo d'Isabelle vient
+de son site (13 000 px de haut, ramené à 256). Celui de Nouït n'existe en ligne
+qu'en JPEG de 300 px sur fond blanc, cercle de points dorés compris : il a été
+recadré sur la bougie et le nom, et le blanc rendu transparent. **Si elle a un
+fichier source, le remplacer.**
+
+⚠️ **Dans le hero, ces deux logos sont plus hauts que les quatre autres**, et
+c'est voulu : un monogramme plein tient à 32 px, un dessin au trait y devient
+une tache. Et la bande passe en trois colonnes sur téléphone, sinon le sixième
+tombait seul sur sa ligne.
 
 ### Page Audit gratuit (`/audit-gratuit`)
 - `src/pages/AuditGratuit.tsx` + `src/components/AuditForm.tsx` — **l'aimant du funnel**, créé le 13 septembre 2026.

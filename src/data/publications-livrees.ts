@@ -1,32 +1,41 @@
+import logoIsabelle from '@/assets/logo-isabelle.webp';
+import logoInevolve from '@/assets/logo-inevolve.webp';
+
 /**
- * Ce qui a ete livre, montre directement sur la page.
+ * Ce qui a ete livre, montre directement sur la page, range par cliente.
  *
- * 🔴 **Elie, le 21 septembre 2026 :** *« je vais te mettre 3 videos dans le
- * chat a mettre sur la page, et tu les mettras sur la page, mais sans le lien
- * vers le reseau social de la personne. Parce que les reseaux, ils n'ont pas
- * encore beaucoup de resultats. »*
+ * 🔴 **Le lien vers les comptes est revenu le 10 octobre 2026.** Elie : *« le
+ * lien vers leur compte, comme ca, c'est carre. »*
  *
- * C'est le renversement de ce que faisait `publications-reelles.ts`, qui
- * montrait une vignette et renvoyait vers le Reel public. La raison tient en
- * une phrase : **un lien vers un compte qui demarre dessert le travail qu'il
- * est cense prouver.** Le fichier est donc servi par le site, et le visiteur
- * regarde sans partir.
+ * Il avait ete retire le 21 septembre, et pour une bonne raison a l'epoque :
+ * *« sans le lien vers le reseau social de la personne, parce que les reseaux,
+ * ils n'ont pas encore beaucoup de resultats. »* Un lien vers un compte qui
+ * demarre dessert le travail qu'il est cense prouver. Trois semaines plus
+ * tard, la page Facebook d'Isabelle a passe plusieurs reels au dela de
+ * 80 000 vues : le compte soutient maintenant le lien, et le lien devient la
+ * preuve verifiable que la page ne peut pas afficher elle meme.
  *
- * Ce qu'on y gagne aussi : la preuve ne depend plus d'une URL Facebook qui
- * peut changer, ni d'une vignette de CDN signee qui expire.
+ * Ce qui ne change pas : **les fichiers restent servis par le site.** Le
+ * visiteur regarde sur place, et le lien sert a qui veut verifier le reste.
+ * La preuve ne depend donc toujours pas d'une URL Facebook ni d'une vignette
+ * de CDN signee qui expire.
  *
  * ── Les regles ────────────────────────────────────────────────────────────
  *
- * 1. **Aucun lien sortant, aucun identifiant de compte ecrit par nous.**
- * 2. **Aucun compteur.** Ni vues, ni abonnes. C'est la regle du site, et une
- *    video livree n'y echappe pas.
- * 3. **Les fichiers sont reencodes pour le web**, pas deposes tels quels. Les
- *    masters font 150 a 175 Mo en 2160 x 3840. Ici : 540 x 960, h264, CRF 30,
- *    audio mono 64 kbit/s, soit 4 a 5 Mo. Et `preload="none"` cote composant,
+ * 1. **Aucun compteur ecrit par nous.** Ni vues, ni abonnes, meme quand ils
+ *    sont bons. C'est la regle du site. Le lien laisse le visiteur les voir
+ *    sur la plateforme, ce qui vaut mieux qu'un chiffre qu'on affiche soi meme.
+ * 2. **Les fichiers sont reencodes pour le web**, pas deposes tels quels. Les
+ *    masters font 60 a 210 Mo en 2160 x 3840. Ici : 540 x 960, h264, CRF 30,
+ *    audio mono 64 kbit/s, soit 2 a 5 Mo. Et `preload="none"` cote composant,
  *    donc rien ne se telecharge avant un clic.
- * 4. **Le metier est celui que la personne accepte de lire sur une page
+ * 3. **Le metier est celui que la personne accepte de lire sur une page
  *    commerciale.** Pour Nouit, Elie a tranche : *« tu dis que c'est pour
  *    Nouit, therapeute, et conseil, met pas le mot medium. »*
+ * 4. **Une video n'entre ici qu'une fois publiee par la cliente.** La montrer
+ *    sur le site avant sa sortie lui volerait sa premiere diffusion.
+ * 5. **Trois pieces par cliente.** La grille est en trois colonnes : une
+ *    rangee de deux laisse une case vide qui se lit comme un oubli.
  *
  * ⚠️ Ces images et ces videos montrent le visage de clientes sur un site
  * commercial. C'est Elie qui l'a demande, et c'est a lui de s'assurer de leur
@@ -35,11 +44,6 @@
 
 type Base = {
   id: string;
-  /** Le nom affiche sous la piece. */
-  client: string;
-  /** Le metier, tel qu'il peut etre lu publiquement. */
-  metierFr: string;
-  metierEn: string;
   /** Sert au texte alternatif et au survol, pas d'affichage par dessus l'image. */
   titreFr: string;
   titreEn: string;
@@ -59,42 +63,102 @@ export type PublicationLivree =
       images: string[];
     });
 
+export type ClienteLivree = {
+  id: string;
+  /** Le nom affiche au dessus de ses pieces. */
+  nom: string;
+  /** Le nom de la marque, pour le texte alternatif du logo. */
+  marque: string;
+  logo: string;
+  /** Le metier, tel qu'il peut etre lu publiquement. */
+  metierFr: string;
+  metierEn: string;
+  /** Les noms de reseau ne se traduisent pas. */
+  liens: { reseau: string; href: string }[];
+  pieces: PublicationLivree[];
+};
+
 const carrouselNouit = Array.from(
   { length: 10 },
   (_, i) => `/publications/carrousel-nouit/${String(i + 1).padStart(2, '0')}.webp`
 );
 
-export const publicationsLivrees: PublicationLivree[] = [
+/* Isabelle d'abord : c'est le compte le plus avance, et le lien vers sa page
+   Facebook est celui qui prouve le plus. */
+export const clientesLivrees: ClienteLivree[] = [
   {
-    type: 'carrousel',
-    id: 'nouit-presentation',
-    images: carrouselNouit,
-    client: 'Nouït',
-    metierFr: 'thérapeute et conseil, Albertville',
-    metierEn: 'therapist and counsellor, Albertville',
-    titreFr: 'Carrousel de présentation, dix planches',
-    titreEn: 'Introduction carousel, ten slides',
-  },
-  {
-    type: 'video',
-    id: 'nouit-boule-de-cristal',
-    fichier: '/publications/videos/nouit-boules-de-cristal.mp4',
-    poster: '/publications/videos/nouit-boules-de-cristal.webp',
-    client: 'Nouït',
-    metierFr: 'thérapeute et conseil, Albertville',
-    metierEn: 'therapist and counsellor, Albertville',
-    titreFr: 'La boule de cristal, la question qui revient',
-    titreEn: 'The crystal ball, the question that keeps coming up',
-  },
-  {
-    type: 'video',
-    id: 'isabelle-crayon',
-    fichier: '/publications/videos/isabelle-crayon-papier-couleur.mp4',
-    poster: '/publications/videos/isabelle-crayon-papier-couleur.webp',
-    client: 'Isabelle Ageron-Vicat',
+    id: 'isabelle',
+    nom: 'Isabelle Ageron-Vicat',
+    marque: 'Isabelle Ageron-Vicat',
+    logo: logoIsabelle,
     metierFr: "formatrice en rééducation de l'écriture, Albertville",
     metierEn: 'handwriting rehabilitation trainer, Albertville',
-    titreFr: 'Crayon de papier ou crayon de couleur',
-    titreEn: 'Pencil or coloured pencil',
+    liens: [{ reseau: 'Facebook', href: 'https://www.facebook.com/isabelleageronvicat/' }],
+    pieces: [
+      {
+        // Sa derniere video publiee, et celle qu'Elie a demande de mettre :
+        // « elle a vraiment bien marche ». Tournage du 3 octobre.
+        type: 'video',
+        id: 'isabelle-une-forme',
+        fichier: '/publications/videos/isabelle-une-forme-six-lettres.mp4',
+        poster: '/publications/videos/isabelle-une-forme-six-lettres.webp',
+        titreFr: 'Une forme, six lettres',
+        titreEn: 'One shape, six letters',
+      },
+      {
+        type: 'video',
+        id: 'isabelle-maternelle',
+        fichier: '/publications/videos/isabelle-par-quoi-commencer-maternelle.mp4',
+        poster: '/publications/videos/isabelle-par-quoi-commencer-maternelle.webp',
+        titreFr: "Par où commencer le geste d'écriture en maternelle",
+        titreEn: 'Where to start with handwriting in nursery school',
+      },
+      {
+        type: 'video',
+        id: 'isabelle-crayon',
+        fichier: '/publications/videos/isabelle-crayon-papier-couleur.mp4',
+        poster: '/publications/videos/isabelle-crayon-papier-couleur.webp',
+        titreFr: 'Crayon de papier ou crayon de couleur',
+        titreEn: 'Pencil or coloured pencil',
+      },
+    ],
+  },
+  {
+    id: 'nouit',
+    nom: 'Nouït',
+    marque: 'Inevolve Intuition',
+    logo: logoInevolve,
+    metierFr: 'thérapeute et conseil, Albertville',
+    metierEn: 'therapist and counsellor, Albertville',
+    liens: [
+      { reseau: 'Instagram', href: 'https://www.instagram.com/inevolve_intuition' },
+      { reseau: 'Facebook', href: 'https://www.facebook.com/inevolveintuition' },
+    ],
+    pieces: [
+      {
+        type: 'carrousel',
+        id: 'nouit-presentation',
+        images: carrouselNouit,
+        titreFr: 'Carrousel de présentation, dix planches',
+        titreEn: 'Introduction carousel, ten slides',
+      },
+      {
+        // Publiee le 9 octobre 2026, la plus recente du tournage 2.
+        type: 'video',
+        id: 'nouit-quand-tout-va-bien',
+        fichier: '/publications/videos/nouit-quand-tout-va-bien.mp4',
+        poster: '/publications/videos/nouit-quand-tout-va-bien.webp',
+        titreFr: 'Quand tout va bien',
+        titreEn: 'When everything is fine',
+      },
+      {
+        type: 'video',
+        id: 'nouit-boule-de-cristal',
+        fichier: '/publications/videos/nouit-boules-de-cristal.mp4',
+        poster: '/publications/videos/nouit-boules-de-cristal.webp',
+        titreFr: 'La boule de cristal, la question qui revient',
+        titreEn: 'The crystal ball, the question that keeps coming up',
+      },
+    ],
   },
 ];

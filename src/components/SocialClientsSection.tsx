@@ -1,6 +1,8 @@
 import { ArrowUpRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ScrollReveal from '@/components/animations/ScrollReveal';
+import logoIsabelle from '@/assets/logo-isabelle.webp';
+import logoInevolve from '@/assets/logo-inevolve.webp';
 
 /**
  * Les comptes reellement geres, en bas de `/portfolio`.
@@ -21,11 +23,17 @@ import ScrollReveal from '@/components/animations/ScrollReveal';
  *
  * ⚠️ Chaque ligne ajoutee ici demande l'accord du client concerne. Ce ne sont
  * pas des logos, ce sont des personnes nommees avec leur metier.
+ *
+ * Le logo de chacune a remplace son initiale dans une pastille rose, le
+ * 10 octobre 2026, a la demande d'Elie. Une initiale ne prouvait rien, un logo
+ * qu'on retrouve sur le compte qu'on va voir, si.
  */
 
 type Compte = {
   nom: string;
-  initiales: string;
+  logo: string;
+  /** Pour le texte alternatif du logo. */
+  marque: string;
   metierFr: string;
   metierEn: string;
   lieu: string;
@@ -38,7 +46,8 @@ type Compte = {
 const COMPTES: Compte[] = [
   {
     nom: 'Nouït',
-    initiales: 'N',
+    logo: logoInevolve,
+    marque: 'Inevolve Intuition',
     metierFr: 'Médium et praticienne en soins énergétiques',
     metierEn: 'Medium and energy practitioner',
     lieu: 'Albertville',
@@ -51,7 +60,8 @@ const COMPTES: Compte[] = [
   },
   {
     nom: 'Isabelle Ageron-Vicat',
-    initiales: 'I',
+    logo: logoIsabelle,
+    marque: 'Isabelle Ageron-Vicat',
     metierFr: "Formatrice en rééducation de l'écriture",
     metierEn: 'Handwriting remediation trainer',
     lieu: 'Albertville',
@@ -96,12 +106,15 @@ const SocialClientsSection = () => {
             >
               <ScrollReveal direction="up" delay={i * 0.06}>
                 <div className="flex items-start gap-5 sm:items-center sm:gap-7">
-                  <span
-                    className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary font-heading text-xl font-bold text-primary-foreground sm:h-16 sm:w-16 sm:text-2xl"
-                    aria-hidden="true"
-                  >
-                    {c.initiales}
-                  </span>
+                  <img
+                    src={c.logo}
+                    alt={`Logo ${c.marque}`}
+                    width={80}
+                    height={64}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-14 w-16 shrink-0 object-contain sm:h-16 sm:w-20"
+                  />
 
                   <div className="min-w-0 flex-1">
                     <h3 className="text-xl font-bold tracking-tight text-foreground sm:text-2xl">{c.nom}</h3>

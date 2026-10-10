@@ -599,14 +599,16 @@ const SocialMedia = () => {
           </motion.div>
 
           {/* Ce que la journee produit. Une liste d'etapes decrit le service,
-              deux videos et un carrousel le montrent.
+              les videos et le carrousel le montrent.
 
               🔴 Le 21 septembre 2026, ce bloc a change de nature. Il montrait
               trois vignettes qui renvoyaient vers les Reels publics d'une
-              cliente. Elie : *« sans le lien vers le reseau social de la
-              personne, parce que les reseaux, ils n'ont pas encore beaucoup de
-              resultats. »* Les fichiers sont donc servis par le site et se
-              regardent sur place. Voir `publications-livrees.ts`.
+              cliente. Les fichiers sont depuis servis par le site et se
+              regardent sur place.
+
+              🔴 Le 10 octobre 2026, une rangee par cliente, avec son logo et
+              le lien vers ses comptes. Elie : *« le lien vers leur compte,
+              comme ca, c'est carre. »* Voir `publications-livrees.ts`.
 
               ⚠️ La meme bande avait ete posee sur l'accueil et retiree tout de
               suite : elle arrivait sans titre, donc sans raison d'etre la. Ici
@@ -631,8 +633,8 @@ const SocialMedia = () => {
             </h3>
             <p className="section-lede mt-5">
               {language === 'fr'
-                ? "Trois exemples, pris dans ce qui sort chaque mois. Format vertical, le sujet en une phrase posée sur l'image, et la personne qui parle de son métier. Lancez la lecture, ou faites glisser le carrousel."
-                : 'Three examples, taken from what goes out every month. Vertical format, the topic in one line over the image, and someone talking about their trade. Press play, or swipe the carousel.'}
+                ? "Pris dans ce qui sort chaque mois, chez deux clientes d'Albertville. Format vertical, le sujet en une phrase posée sur l'image, et la personne qui parle de son métier. Lancez la lecture ici, ou allez voir le reste sur leurs comptes."
+                : 'Taken from what goes out every month, for two clients in Albertville. Vertical format, the topic in one line over the image, and someone talking about their trade. Press play here, or go and see the rest on their accounts.'}
             </p>
             <TravailLivre className="mt-8" />
           </motion.div>
