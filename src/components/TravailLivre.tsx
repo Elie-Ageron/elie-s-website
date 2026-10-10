@@ -1,7 +1,7 @@
 import { ArrowUpRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import CarrouselPlanches from '@/components/CarrouselPlanches';
-import { clientesLivrees, type PublicationLivree } from '@/data/publications-livrees';
+import { clientesLivrees, videosSalon, type PublicationLivree } from '@/data/publications-livrees';
 
 /**
  * Le travail livre, regarde sur place, range par cliente.
@@ -65,6 +65,70 @@ const Piece = ({ piece }: { piece: PublicationLivree }) => {
         fr ? `${piece.titreFr}, planche ${i + 1} sur ${total}` : `${piece.titreEn}, slide ${i + 1} of ${total}`
       }
     />
+  );
+};
+
+/* Les classes Tailwind doivent etre ecrites en entier pour etre generees :
+   pas de `sm:col-span-${n}` construit a la volee. */
+const SPAN_TEXTE: Record<number, string> = { 1: 'sm:col-span-2', 2: 'sm:col-span-1' };
+const SPAN_LISTE: Record<number, string> = { 1: 'sm:col-span-1 sm:grid-cols-1', 2: 'sm:col-span-2 sm:grid-cols-2' };
+
+/**
+ * La rangee du salon de l'habitat. Pas de logo ni de lien : ce sont des
+ * exposants filmes, pas des clientes. Le nom de chaque entreprise est sous sa
+ * video, puisque l'en-tete ne peut pas tous les porter.
+ *
+ * ⚠️ **Tant qu'il y a moins de trois videos, le texte prend la place des
+ * cases vides.** Une rangee d'une video sous un en-tete laissait deux tiers de
+ * la largeur vides, ce qui se lit comme un oubli. A trois et plus, le texte
+ * repasse en tete, comme les rangees des clientes.
+ */
+const RangeeSalon = () => {
+  const { language } = useLanguage();
+  const fr = language === 'fr';
+  const n = videosSalon.length;
+  if (!n) return null;
+  const enTete = n >= 3;
+
+  return (
+    <div className="sm:grid sm:grid-cols-3 sm:items-center sm:gap-6">
+      <div className={enTete ? 'sm:col-span-3' : `${SPAN_TEXTE[n]} sm:pr-6`}>
+        <h4 className="text-lg font-semibold leading-snug text-foreground">
+          {fr ? "Salon Habitat & Déco d'Albertville" : 'Albertville home and decor fair'}
+        </h4>
+        <p className="mt-1 max-w-md text-base text-muted-foreground">
+          {fr
+            ? "Une journée sur place, en octobre 2026. J'ai interviewé les exposants sur leur stand, puis monté leur vidéo dans la foulée."
+            : 'One day on site, in October 2026. I interviewed exhibitors on their stands, then edited their videos straight after.'}
+        </p>
+      </div>
+
+      <ul
+        tabIndex={0}
+        aria-label={fr ? 'Vidéos tournées au salon' : 'Videos filmed at the fair'}
+        className={`-mx-4 mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:mx-0 sm:grid sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0 ${
+          enTete ? 'sm:col-span-3 sm:grid-cols-3' : `sm:mt-0 ${SPAN_LISTE[n]}`
+        }`}
+      >
+        {videosSalon.map((v) => (
+          <li key={v.id} className="w-[68vw] shrink-0 snap-start sm:w-auto">
+            <video
+              className="soft-shadow aspect-[9/16] w-full rounded-2xl border border-border bg-secondary object-cover"
+              src={v.fichier}
+              poster={v.poster}
+              preload="none"
+              controls
+              playsInline
+              title={`${v.entreprise} : ${fr ? v.questionFr : v.questionEn}`}
+            >
+              {fr ? 'Votre navigateur ne peut pas lire cette vidéo.' : 'Your browser cannot play this video.'}
+            </video>
+            <p className="mt-3 text-base font-semibold text-foreground">{v.entreprise}</p>
+            <p className="text-base text-muted-foreground">{fr ? v.metierFr : v.metierEn}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 
@@ -132,6 +196,7 @@ const TravailLivre = ({ className = '' }: { className?: string }) => {
           </ul>
         </div>
       ))}
+      <RangeeSalon />
     </div>
   );
 };

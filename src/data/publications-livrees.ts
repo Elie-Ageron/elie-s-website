@@ -162,3 +162,56 @@ export const clientesLivrees: ClienteLivree[] = [
     ],
   },
 ];
+
+/**
+ * Le Salon Habitat & Deco d'Albertville, octobre 2026.
+ *
+ * Elie a interviewe les exposants sur leur stand, une question par artisan,
+ * puis a monte leur video le soir meme et la leur a envoyee. Ce ne sont pas
+ * des clients : ils n'ont rien achete.
+ *
+ * 🔴 **Donc jamais leur logo dans la bande clients de l'accueil.** Elle dit
+ * « mes clients », et ce serait faux, exactement le cas de MyDrop. Sous une
+ * video, le nom de l'entreprise reste vrai : c'est la sienne, dans sa video.
+ *
+ * 🔴 **Une video n'entre ici qu'avec un « oui » ecrit de l'exposant**, pour
+ * le site precisement. Accepter une interview au salon n'est pas accepter
+ * d'apparaitre sur le site commercial d'un prestataire. Elie leur envoie :
+ * « Est-ce que je peux mettre votre video sur mon site, dans mes
+ * realisations, avec le nom de [entreprise] ? »
+ *
+ * | Exposant | Accord |
+ * |---|---|
+ * | Generation Menuiserie 73 (Yohann) | « Avec plaisir », WhatsApp, 10 octobre 2026 |
+ *
+ * ⚠️ Sept videos ont ete livrees. Les six autres attendent leur reponse, et
+ * Belle Belle Belle n'avait pas ete prevenue d'une diffusion au moment du
+ * tournage.
+ *
+ * C'est la seule preuve du site qui montre des artisans, le trou que la
+ * relecture par profil signalait depuis le 13 septembre 2026.
+ */
+export type VideoSalon = {
+  id: string;
+  entreprise: string;
+  metierFr: string;
+  metierEn: string;
+  fichier: string;
+  poster: string;
+  /** La question posee, sert au titre de la video. */
+  questionFr: string;
+  questionEn: string;
+};
+
+export const videosSalon: VideoSalon[] = [
+  {
+    id: 'salon-generation-menuiserie-73',
+    entreprise: 'Génération Menuiserie 73',
+    metierFr: 'menuiserie, Savoie',
+    metierEn: 'windows and doors, Savoie',
+    fichier: '/publications/videos/salon-generation-menuiserie-73.mp4',
+    poster: '/publications/videos/salon-generation-menuiserie-73.webp',
+    questionFr: "Le plus beau compliment qu'un client vous a fait",
+    questionEn: 'The best compliment a customer ever paid you',
+  },
+];

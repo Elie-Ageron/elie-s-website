@@ -527,6 +527,27 @@ c'est voulu : un monogramme plein tient à 32 px, un dessin au trait y devient
 une tache. Et la bande passe en trois colonnes sur téléphone, sinon le sixième
 tombait seul sur sa ligne.
 
+### Les vidéos du Salon Habitat d'Albertville (10 octobre 2026)
+
+Elie a interviewé des exposants sur leur stand, une question par artisan, puis
+a monté leur vidéo le soir même et la leur a envoyée. Sept vidéos livrées. Elles
+vivent dans une rangée à part du même bloc, sous Isabelle et Nouït
+(`videosSalon` dans `publications-livrees.ts`).
+
+> 🔴 **Ce ne sont pas des clients : jamais leur logo dans la bande de
+> l'accueil.** Elle dit « mes clients », ce serait faux, le cas MyDrop. Sous
+> une vidéo, le nom de l'entreprise reste vrai.
+>
+> 🔴 **Une vidéo n'entre qu'avec un « oui » écrit, pour le site précisément.**
+> Accepter une interview n'est pas accepter d'apparaître sur un site
+> commercial. Le registre des accords est dans `publications-livrees.ts`.
+> Au 10 octobre : **Génération Menuiserie 73** seule. Belle Belle Belle
+> n'avait pas été prévenue d'une diffusion au tournage.
+
+⚠️ **Sous trois vidéos, le texte de la rangée prend la place des cases
+vides** (`RangeeSalon`). À trois et plus, il repasse en tête, comme les
+rangées des clientes. C'est la seule preuve du site qui montre des artisans.
+
 ### Page Audit gratuit (`/audit-gratuit`)
 - `src/pages/AuditGratuit.tsx` + `src/components/AuditForm.tsx` — **l'aimant du funnel**, créé le 13 septembre 2026.
 - L'offre : Elie passe trente à quarante-cinq minutes sur la présence en ligne d'une entreprise, puis enregistre **4 minutes de vidéo** (fiche Google, réseaux, site, position sur « métier + commune »), livrées **sous 48 h ouvrées**.

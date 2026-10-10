@@ -633,8 +633,8 @@ const SocialMedia = () => {
             </h3>
             <p className="section-lede mt-5">
               {language === 'fr'
-                ? "Pris dans ce qui sort chaque mois, chez deux clientes d'Albertville. Format vertical, le sujet en une phrase posée sur l'image, et la personne qui parle de son métier. Lancez la lecture ici, ou allez voir le reste sur leurs comptes."
-                : 'Taken from what goes out every month, for two clients in Albertville. Vertical format, the topic in one line over the image, and someone talking about their trade. Press play here, or go and see the rest on their accounts.'}
+                ? "Ce qui sort chaque mois chez deux clientes d'Albertville, et ce qu'une journée au salon de l'habitat a donné. Format vertical, le sujet en une phrase posée sur l'image, et la personne qui parle de son métier. Lancez la lecture ici, ou allez voir le reste sur leurs comptes."
+                : 'What goes out every month for two clients in Albertville, and what one day at the local home fair produced. Vertical format, the topic in one line over the image, and someone talking about their trade. Press play here, or go and see the rest on their accounts.'}
             </p>
             <TravailLivre className="mt-8" />
           </motion.div>
