@@ -32,6 +32,10 @@ import { clientesLivrees, videosSalon, type PublicationLivree } from '@/data/pub
  * *« met des fleches a gauche et a droite pour slide. pas un curseur. et sur
  * tel le doigt. »*
  *
+ * ⚠️ **`scroll-px-4` sur les rangees qui defilent.** Sans lui, l'aimant du
+ * defilement alignait la premiere piece sur le bord de l'ecran, pas sur la
+ * marge de 16 px : elle collait au bord des le premier geste.
+ *
  * ⚠️ **Le carrousel est centre, pas cale en haut.** Il est en 4:5 quand les
  * videos sont en 9:16, donc il est plus court : aligne en haut, il laissait un
  * trou sous lui. Elie : *« baisse un peu le caroussel pour le centrer. »*
@@ -106,7 +110,7 @@ const RangeeSalon = () => {
       <ul
         tabIndex={0}
         aria-label={fr ? 'Vidéos tournées au salon' : 'Videos filmed at the fair'}
-        className={`-mx-4 mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:mx-0 sm:grid sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0 ${
+        className={`-mx-4 mt-6 flex snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto px-4 pb-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:mx-0 sm:grid sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0 ${
           enTete ? 'sm:col-span-3 sm:grid-cols-3' : `sm:mt-0 ${SPAN_LISTE[n]}`
         }`}
       >
@@ -119,7 +123,13 @@ const RangeeSalon = () => {
               preload="none"
               controls
               playsInline
-              title={`${v.entreprise} : ${fr ? v.questionFr : v.questionEn}`}
+              title={
+                v.questionFr
+                  ? `${v.entreprise} : ${fr ? v.questionFr : v.questionEn}`
+                  : fr
+                    ? `${v.entreprise}, interview au salon`
+                    : `${v.entreprise}, interview at the fair`
+              }
             >
               {fr ? 'Votre navigateur ne peut pas lire cette vidéo.' : 'Your browser cannot play this video.'}
             </video>
@@ -186,7 +196,7 @@ const TravailLivre = ({ className = '' }: { className?: string }) => {
           <ul
             tabIndex={0}
             aria-label={fr ? `Publications livrées pour ${cliente.nom}` : `Posts delivered for ${cliente.nom}`}
-            className="-mx-4 mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:mx-0 sm:grid sm:grid-cols-3 sm:items-center sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0"
+            className="-mx-4 mt-6 flex snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto px-4 pb-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:mx-0 sm:grid sm:grid-cols-3 sm:items-center sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0"
           >
             {cliente.pieces.map((piece) => (
               <li key={piece.id} className="w-[68vw] shrink-0 snap-start sm:w-auto">

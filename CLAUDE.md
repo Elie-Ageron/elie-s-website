@@ -541,7 +541,7 @@ vivent dans une rangée à part du même bloc, sous Isabelle et Nouït
 > 🔴 **Une vidéo n'entre qu'avec un « oui » écrit, pour le site précisément.**
 > Accepter une interview n'est pas accepter d'apparaître sur un site
 > commercial. Le registre des accords est dans `publications-livrees.ts`.
-> Au 10 octobre : **Génération Menuiserie 73** seule. Belle Belle Belle
+> Au 10 octobre : **Génération Menuiserie 73** et **Parcs et Jardins**. Belle Belle Belle
 > n'avait pas été prévenue d'une diffusion au tournage.
 
 ⚠️ **Sous trois vidéos, le texte de la rangée prend la place des cases

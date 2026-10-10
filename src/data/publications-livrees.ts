@@ -183,8 +183,9 @@ export const clientesLivrees: ClienteLivree[] = [
  * | Exposant | Accord |
  * |---|---|
  * | Generation Menuiserie 73 (Yohann) | « Avec plaisir », WhatsApp, 10 octobre 2026 |
+ * | Parcs et Jardins (Cyril Delavigne) | « Pas de soucis, vous pouvez publier la video », WhatsApp, 10 octobre 2026 |
  *
- * ⚠️ Sept videos ont ete livrees. Les six autres attendent leur reponse, et
+ * ⚠️ Sept videos ont ete livrees. Les cinq autres attendent leur reponse, et
  * Belle Belle Belle n'avait pas ete prevenue d'une diffusion au moment du
  * tournage.
  *
@@ -198,9 +199,12 @@ export type VideoSalon = {
   metierEn: string;
   fichier: string;
   poster: string;
-  /** La question posee, sert au titre de la video. */
-  questionFr: string;
-  questionEn: string;
+  /**
+   * La question posee, sert au titre de la video. Seulement quand elle est
+   * lisible a l'ecran : on ne la reconstitue pas de memoire.
+   */
+  questionFr?: string;
+  questionEn?: string;
 };
 
 export const videosSalon: VideoSalon[] = [
@@ -213,5 +217,13 @@ export const videosSalon: VideoSalon[] = [
     poster: '/publications/videos/salon-generation-menuiserie-73.webp',
     questionFr: "Le plus beau compliment qu'un client vous a fait",
     questionEn: 'The best compliment a customer ever paid you',
+  },
+  {
+    id: 'salon-parcs-et-jardins',
+    entreprise: 'Parcs et Jardins',
+    metierFr: 'espaces verts, Savoie',
+    metierEn: 'landscaping, Savoie',
+    fichier: '/publications/videos/salon-parcs-et-jardins.mp4',
+    poster: '/publications/videos/salon-parcs-et-jardins.webp',
   },
 ];
