@@ -32,6 +32,12 @@ import { clientesLivrees, videosSalon, type PublicationLivree } from '@/data/pub
  * *« met des fleches a gauche et a droite pour slide. pas un curseur. et sur
  * tel le doigt. »*
  *
+ * ⚠️ **Les titres de rangee sont en `text-2xl sm:text-3xl`, pas en `text-lg`.**
+ * Elie, le 10 octobre 2026, sur celui du salon : *« titre trop petit on le
+ * voit pas mdr. »* A 18 px il avait la taille du texte courant, et sans logo a
+ * cote rien ne le signalait. Les noms des clientes ont suivi : les trois
+ * rangees se lisent au meme niveau.
+ *
  * ⚠️ **`scroll-px-4` sur les rangees qui defilent.** Sans lui, l'aimant du
  * defilement alignait la premiere piece sur le bord de l'ecran, pas sur la
  * marge de 16 px : elle collait au bord des le premier geste.
@@ -97,10 +103,10 @@ const RangeeSalon = () => {
   return (
     <div className="sm:grid sm:grid-cols-3 sm:items-center sm:gap-6">
       <div className={enTete ? 'sm:col-span-3' : `${SPAN_TEXTE[n]} sm:pr-6`}>
-        <h4 className="text-lg font-semibold leading-snug text-foreground">
+        <h4 className="text-2xl font-semibold leading-tight tracking-tight text-foreground sm:text-3xl">
           {fr ? "Salon Habitat & Déco d'Albertville" : 'Albertville home and decor fair'}
         </h4>
-        <p className="mt-1 max-w-md text-base text-muted-foreground">
+        <p className="mt-3 max-w-md text-base text-muted-foreground">
           {fr
             ? "Une journée sur place, en octobre 2026. J'ai interviewé les exposants sur leur stand, puis monté leur vidéo dans la foulée."
             : 'One day on site, in October 2026. I interviewed exhibitors on their stands, then edited their videos straight after.'}
@@ -168,7 +174,7 @@ const TravailLivre = ({ className = '' }: { className?: string }) => {
                 className="h-12 w-auto shrink-0 object-contain sm:h-14"
               />
               <div className="min-w-0">
-                <h4 className="text-lg font-semibold leading-snug text-foreground">{cliente.nom}</h4>
+                <h4 className="text-2xl font-semibold leading-tight tracking-tight text-foreground sm:text-3xl">{cliente.nom}</h4>
                 <p className="text-base text-muted-foreground">{fr ? cliente.metierFr : cliente.metierEn}</p>
               </div>
             </div>
