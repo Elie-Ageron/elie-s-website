@@ -184,8 +184,14 @@ export const clientesLivrees: ClienteLivree[] = [
  * |---|---|
  * | Generation Menuiserie 73 (Yohann) | « Avec plaisir », WhatsApp, 10 octobre 2026 |
  * | Parcs et Jardins (Cyril Delavigne) | « Pas de soucis, vous pouvez publier la video », WhatsApp, 10 octobre 2026 |
+ * | La Cuisine by Louise Verlaine, Chambery | « Oui, bien sur, avec grand plaisir », WhatsApp, 11 octobre 2026 |
  *
- * ⚠️ Sept videos ont ete livrees. Les cinq autres attendent leur reponse, et
+ * ⚠️ Louise Verlaine demandait aussi un lien vers son site. Elie a tranche
+ * le 11 octobre : le nom oui, le lien non. Un lien sortant ici donnerait de
+ * l'autorite a un tiers depuis la page qui vend, et ouvrirait la porte a
+ * chaque exposant suivant.
+ *
+ * ⚠️ Sept videos ont ete livrees. Les quatre autres attendent leur reponse, et
  * Belle Belle Belle n'avait pas ete prevenue d'une diffusion au moment du
  * tournage.
  *
@@ -225,5 +231,13 @@ export const videosSalon: VideoSalon[] = [
     metierEn: 'landscaping, Savoie',
     fichier: '/publications/videos/salon-parcs-et-jardins.mp4',
     poster: '/publications/videos/salon-parcs-et-jardins.webp',
+  },
+  {
+    id: 'salon-louise-verlaine-chambery',
+    entreprise: 'La Cuisine by Louise Verlaine',
+    metierFr: 'cuisiniste, Chambéry',
+    metierEn: 'kitchen designer, Chambéry',
+    fichier: '/publications/videos/salon-louise-verlaine-chambery.mp4',
+    poster: '/publications/videos/salon-louise-verlaine-chambery.webp',
   },
 ];
