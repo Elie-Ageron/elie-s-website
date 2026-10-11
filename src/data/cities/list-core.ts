@@ -293,7 +293,7 @@ export const coreCities: CityData[] = [
         },
         {
           q: 'Quels sont vos tarifs ?',
-          a: "Tout est chiffré sur devis, sous 48 heures après notre échange. Les écarts entre une landing page et un site complet sont trop importants pour qu'un tarif affiché ait un sens.",
+          a: "Une page dès 500 €, un site vitrine dès 1 500 €, un pack lancement dès 3 500 €. Le devis exact arrive sous 48 heures après notre échange : il bouge avec le nombre de pages et les textes à écrire.",
         },
         {
           q: 'Vous faites aussi les réseaux sociaux ?',

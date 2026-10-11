@@ -278,7 +278,7 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
             >
               06 95 55 53 18
             </a>
-            {language === 'fr' ? '. Réponse sous 48 h aux messages.' : '. Messages answered within 48 hours.'}
+            {language === 'fr' ? '. Réponse en moins de 24 h aux messages.' : '. Messages answered within 24 hours.'}
           </motion.p>
 
           {showDepth && (
@@ -302,7 +302,7 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
                  repose sur rien et se lit comme un slogan de prospectus ; Elie
                  refuse d'afficher un chiffre qu'il ne peut pas sourcer.
               2. **Elle repetait les deux lignes juste au-dessus**, qui disent
-                 la meme chose en vrai : le numero direct, la reponse sous 48 h
+                 la meme chose en vrai : le numero direct, la reponse sous 24 h
                  et le temps de trajet depuis Albertville.
               3. Le label etait en `text-foreground/70`, soit une opacite sur du
                  texte, ce que la regle d'accessibilite du projet interdit.

@@ -1758,10 +1758,12 @@ calque qui n'existe que sur téléphone.
 
 ### Ce qui n'est pas tranché, et revient à Elie
 
-- **Les délais affichés se contredisent.** « Moins de 24 h pour une réponse »
-  (formules de site), « Réponse sous 48 h aux messages » (pages locales),
-  « Je vous réponds sous 24h » et « Je réponds sous 48 h ouvrées » dans le
-  même panneau de `/contact`.
+- ✅ **Les délais, tranchés par Elie le jour même : un message reçoit une
+  réponse en moins de 24 h.** Trois délais coexistent, et ce sont trois choses
+  différentes : la réponse à un message (**moins de 24 h**), le devis (**48 h**
+  après l'échange) et la vidéo d'audit (**48 h ouvrées**). Ne pas les
+  mélanger. Les « 48 h ouvrées » du formulaire de `/contact` et « Réponse sous
+  48 h aux messages » des quinze pages locales sont corrigés.
 - **« 56 619 vues et 196 abonnés » reste sur `/a-propos`** et dans le corps de
   `/blog/prix-gestion-reseaux-sociaux`, en plus de l'article déjà signalé.
 - **Les titres de `/audit-gratuit` sont tout noirs**, sans membre rose, et le

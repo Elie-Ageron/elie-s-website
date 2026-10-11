@@ -96,7 +96,7 @@ export const tarentaiseCities: CityData[] = [
         },
         {
           q: 'Combien coûte un site pour une entreprise locale ?',
-          a: "Tout est chiffré sur devis, parce qu'une landing page et un site vitrine de six pages n'ont pas grand chose en commun. Le devis arrive sous 48 heures après notre échange, et il est ferme.",
+          a: "Une page dès 500 €, un site vitrine dès 1 500 €, un pack lancement dès 3 500 €. Le devis exact arrive sous 48 heures après notre échange, et il est ferme.",
         },
         {
           q: 'Vous travaillez avec des entreprises saisonnières ?',

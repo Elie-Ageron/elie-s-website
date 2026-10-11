@@ -40,7 +40,7 @@ const categoryCtas: Record<CategorySlug, { title: string; body: string; to: stri
   },
   'site-web': {
     title: 'Un site qui amène des demandes, pas juste une vitrine',
-    body: 'Je crée des sites construits autour des questions que vos clients posent avant d’appeler. Chiffré sur devis, après un appel gratuit.',
+    body: 'Je crée des sites construits autour des questions que vos clients posent avant d’appeler. Une page dès 500 euros, le prix exact par écrit après un appel.',
     to: '/services',
     label: 'Voir ce que je fais',
   },

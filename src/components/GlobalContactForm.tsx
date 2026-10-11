@@ -42,8 +42,8 @@ const GlobalContactForm = () => {
       toast({
         title: t('form.success'),
         description: fr
-          ? 'Je réponds sous 48 h ouvrées. Sans nouvelles, écrivez à elie@elieageron.com.'
-          : 'I reply within 2 working days. If you hear nothing, write to elie@elieageron.com.',
+          ? 'Je réponds en moins de 24 h. Sans nouvelles, écrivez à elie@elieageron.com.'
+          : 'I reply within 24 hours. If you hear nothing, write to elie@elieageron.com.',
       });
 
       setFormData({ name: '', email: '', phone: '', message: '' });
@@ -164,7 +164,10 @@ const GlobalContactForm = () => {
               <p className="text-center text-sm text-muted-foreground leading-relaxed">
                 {fr ? (
                   <>
-                    Je réponds sous 48 h ouvrées. Vos coordonnées servent uniquement à répondre à
+                    {/* ⚠️ Disait « sous 48 h ouvrees », dans le meme panneau qu'un
+                        sous-titre « sous 24h ». Elie a tranche le 11 octobre 2026 :
+                        moins de 24 h pour un message. */}
+                    Je réponds en moins de 24 h. Vos coordonnées servent uniquement à répondre à
                     votre demande, elles ne sont ni revendues ni utilisées pour de la prospection.{' '}
                     <Link
                       to="/politique-confidentialite"
@@ -176,7 +179,7 @@ const GlobalContactForm = () => {
                   </>
                 ) : (
                   <>
-                    I reply within 2 working days. Your details are only used to answer your enquiry,
+                    I reply within 24 hours. Your details are only used to answer your enquiry,
                     never sold and never used for cold outreach.
                   </>
                 )}
