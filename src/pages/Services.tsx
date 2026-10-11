@@ -133,10 +133,14 @@ const Services = () => {
   const whyPartner = [
     {
       icon: Handshake,
-      title: { fr: 'Un seul interlocuteur', en: 'One point of contact' },
+      /* 🔴 Disait « Un seul interlocuteur » et « Tout passe par moi ».
+         Retire le 11 octobre 2026, avec le titre de l'accueil : Elie, *« ca
+         fait, il est tout seul, donc c'est pas ouf »*. Le benefice reste, il
+         est dit du cote du client. */
+      title: { fr: 'Un seul devis', en: 'One quote' },
       desc: {
-        fr: "Fini de jongler entre un graphiste, une agence SEO et un community manager. Tout passe par moi.",
-        en: 'No more juggling a designer, an SEO agency and a community manager. Everything goes through me.',
+        fr: "Fini de jongler entre un graphiste, une agence SEO et un community manager. Une facture, et personne à mettre en relation.",
+        en: 'No more juggling a designer, an SEO agency and a community manager. One invoice, and nobody to put in touch with each other.',
       },
     },
     {
@@ -362,8 +366,8 @@ const Services = () => {
             className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto"
           >
             {language === 'fr'
-              ? "Deux gros morceaux : votre site web et vos réseaux sociaux. Autour, tout ce qui les rend efficaces, de votre fiche Google au référencement. Réuni au même endroit, géré par une seule personne."
-              : 'Two big pieces: your website and your social media. Around them, everything that makes them work, from your Google profile to SEO. All in one place, handled by one person.'}
+              ? "Deux gros morceaux : votre site web et vos réseaux sociaux. Autour, tout ce qui les rend efficaces, de votre fiche Google au référencement. Réuni au même endroit, sur un seul devis."
+              : 'Two big pieces: your website and your social media. Around them, everything that makes them work, from your Google profile to SEO. All in one place, on one quote.'}
           </motion.p>
         </div>
       </section>
@@ -391,9 +395,12 @@ const Services = () => {
                 une fois c'est une voix, employee a chaque section c'est une
                 signature. Le titre dit maintenant la meme chose sans se
                 retourner contre lui-meme. */}
-            {language === 'fr' ? "Vous n'avez " : 'You only have '}
+            {/* 🔴 Puis « Vous n'avez qu'un numero a appeler. », retire le
+                11 octobre 2026 : meme lecture que « un seul interlocuteur ».
+                Le benefice est le meme, mais il ne compte plus les personnes. */}
+            {language === 'fr' ? "Vous n'avez rien " : 'You have nothing '}
             <span className="text-primary">
-              {language === 'fr' ? "qu'un numéro à appeler." : 'one number to call.'}
+              {language === 'fr' ? 'à coordonner.' : 'to coordinate.'}
             </span>
           </motion.h2>
 

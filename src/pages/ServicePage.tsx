@@ -342,7 +342,7 @@ const ServicePage = ({ slug }: ServicePageProps) => {
             ))}
           </ul>
           <p className="mt-7 text-base leading-relaxed text-muted-foreground">
-            Tout ça se fait aussi ensemble, avec un seul interlocuteur.{' '}
+            Tout ça se fait aussi ensemble, sur un seul devis.{' '}
             <Link to="/services" className="font-medium text-primary underline-offset-4 hover:underline">
               Voir les sept prestations
             </Link>

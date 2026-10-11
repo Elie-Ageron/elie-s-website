@@ -850,8 +850,8 @@ const SocialMedia = () => {
             className="text-base sm:text-lg text-muted-foreground leading-relaxed"
           >
             {language === 'fr'
-              ? "Une vidéo qui marche envoie des gens quelque part. S'il n'y a rien au bout, l'attention retombe et vous ne vous en apercevez même pas. C'est pour ça que le site est dans l'offre et pas en supplément : une page qui explique ce que vous faites et qui propose un rendez-vous transforme cette attention en demandes. Je fais les deux métiers, donc tout parle d'une seule voix et vous n'avez qu'un interlocuteur."
-              : 'A video that works sends people somewhere. If there is nothing at the end of it, the attention fades and you never even notice. That is why the site is part of the offer and not an add-on: a page that explains what you do and offers a booking turns that attention into enquiries. I do both trades, so everything speaks with one voice and you only have one person to deal with.'}
+              ? "Une vidéo qui marche envoie des gens quelque part. S'il n'y a rien au bout, l'attention retombe et vous ne vous en apercevez même pas. C'est pour ça que le site est dans l'offre et pas en supplément : une page qui explique ce que vous faites et qui propose un rendez-vous transforme cette attention en demandes. Je fais les deux métiers, donc tout parle d'une seule voix et vous n'avez rien à coordonner."
+              : 'A video that works sends people somewhere. If there is nothing at the end of it, the attention fades and you never even notice. That is why the site is part of the offer and not an add-on: a page that explains what you do and offers a booking turns that attention into enquiries. I do both trades, so everything speaks with one voice and you have nothing to coordinate.'}
           </motion.p>
 
           <motion.div
