@@ -102,6 +102,10 @@ export const clientesLivrees: ClienteLivree[] = [
       {
         // Sa derniere video publiee, et celle qu'Elie a demande de mettre :
         // « elle a vraiment bien marche ». Tournage du 3 octobre.
+        // ⚠️ La vignette est sa miniature, extraite du fichier exporte, pas
+        // une image de la video : la premiere image la montrait les yeux
+        // fermes. Elie : « la, c'est moche, elle est fermee ». Une vignette
+        // tiree au hasard d'une interview tombe souvent sur un clignement.
         type: 'video',
         id: 'isabelle-une-forme',
         fichier: '/publications/videos/isabelle-une-forme-six-lettres.mp4',
@@ -312,15 +316,22 @@ const depuisCliente = (c: ClienteLivree): VideoBande[] =>
 const ORDRE_ACCUEIL = [
   'isabelle-une-forme',
   'nouit-quand-tout-va-bien',
-  'salon-generation-menuiserie-73',
+  'salon-louise-verlaine-chambery',
   'isabelle-maternelle',
   'nouit-boule-de-cristal',
   'salon-parcs-et-jardins',
   'isabelle-crayon',
-  'salon-louise-verlaine-chambery',
 ];
 
-const toutes = [...clientesLivrees.flatMap(depuisCliente), ...videosSalon.map(depuisSalon)];
+/* Retirees de l'accueil seulement, elles restent sur `/reseaux-sociaux`.
+   Elie, le 11 octobre 2026 : « ne mets pas la video de Generation
+   Menuiserie, mets une autre. Tu peux mettre celle de la cuisine Verlaine,
+   elle est mieux. » */
+const EXCLUES_ACCUEIL = ['salon-generation-menuiserie-73'];
+
+const toutes = [...clientesLivrees.flatMap(depuisCliente), ...videosSalon.map(depuisSalon)].filter(
+  (v) => !EXCLUES_ACCUEIL.includes(v.id)
+);
 const rang = (id: string) => {
   const i = ORDRE_ACCUEIL.indexOf(id);
   return i === -1 ? ORDRE_ACCUEIL.length : i;
