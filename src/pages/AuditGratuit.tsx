@@ -362,7 +362,9 @@ const AuditGratuit = () => {
 
       {/* ═══ 2. Les quatre faits, en une ligne ═══ */}
       <section className="border-y border-border px-4 py-6 sm:px-6">
-        <ul className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-muted-foreground sm:gap-x-14">
+        {/* Deux colonnes alignees sous `sm` : en flex centre, les quatre faits
+            tombaient en quinconce sur deux rangees de largeurs differentes. */}
+        <ul className="mx-auto grid max-w-4xl grid-cols-2 gap-x-6 gap-y-3 text-base text-muted-foreground sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-x-14 lg:text-sm">
           <li>{fr ? '4 minutes de vidéo' : '4 minutes of video'}</li>
           <li>{fr ? 'Sous 48 heures' : 'Within 48 hours'}</li>
           <li>{fr ? 'Deux champs à remplir' : 'Two fields to fill'}</li>
@@ -384,15 +386,17 @@ const AuditGratuit = () => {
           <div className="mt-14 space-y-12">
             {checks.map((check, i) => (
               <ScrollReveal key={check.num} direction="up" delay={i * 0.05}>
-                <article className="flex gap-5 sm:gap-8">
-                  <div className="shrink-0">
-                    <span className="block font-heading text-3xl font-bold text-primary/25 sm:text-4xl">
+                {/* Sous `sm`, le numero passe au dessus du titre : a cote, il mangeait
+                    50 px et decalait les titres selon la largeur du chiffre. */}
+                <article className="flex flex-col gap-1 sm:flex-row sm:gap-8">
+                  <div className="shrink-0" aria-hidden="true">
+                    <span className="block font-heading text-2xl font-bold text-primary/25 sm:text-4xl">
                       {check.num}
                     </span>
                   </div>
                   <div className="min-w-0">
                     <h3 className="flex items-center gap-2.5 text-xl font-semibold sm:text-2xl">
-                      <check.icon className="h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+                      <check.icon className="hidden h-5 w-5 shrink-0 text-primary sm:block" aria-hidden="true" />
                       {check.title}
                     </h3>
                     <p className="mt-3 text-muted-foreground">{check.desc}</p>
@@ -424,15 +428,15 @@ const AuditGratuit = () => {
           </ScrollReveal>
 
           <ScrollReveal direction="up" delay={0.08}>
-            <div className="rounded-2xl border border-border bg-card p-7 sm:p-9">
+            <div className="border-y border-border py-7 sm:rounded-2xl sm:border sm:bg-card sm:p-9">
               <p className="mb-6 text-sm font-medium text-foreground">
                 {fr ? 'Le déroulé' : 'The running order'}
               </p>
               <ol className="space-y-4">
                 {chapters.map((chapter) => (
                   <li key={chapter.t} className="flex items-baseline gap-4">
-                    <span className="w-11 shrink-0 text-sm tabular-nums text-primary">{chapter.t}</span>
-                    <span className="text-sm sm:text-base">{chapter.label}</span>
+                    <span className="w-11 shrink-0 text-base tabular-nums text-primary lg:text-sm">{chapter.t}</span>
+                    <span className="text-base">{chapter.label}</span>
                   </li>
                 ))}
               </ol>
@@ -464,7 +468,7 @@ const AuditGratuit = () => {
           </div>
 
           <ScrollReveal direction="up">
-            <p className="mt-10 text-sm text-muted-foreground">
+            <p className="mt-10 text-base text-muted-foreground lg:text-sm">
               {fr ? (
                 <>
                   Si après ça vous voulez qu'on en parle, tout est expliqué sur{' '}
@@ -509,7 +513,7 @@ const AuditGratuit = () => {
                 <AccordionTrigger className="py-5 text-left text-base font-semibold hover:no-underline sm:text-lg">
                   {item.q}
                 </AccordionTrigger>
-                <AccordionContent className="pb-5 text-muted-foreground">{item.a}</AccordionContent>
+                <AccordionContent className="pb-5 text-base text-muted-foreground lg:text-sm">{item.a}</AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
@@ -530,7 +534,7 @@ const AuditGratuit = () => {
                 ? "Autant savoir ce qu'ils y trouvent. Il vous faut deux champs et quarante-huit heures."
                 : 'You may as well know what they find there. It takes you two fields and forty-eight hours.'}
             </p>
-            <p className="mt-7 text-sm text-muted-foreground">
+            <p className="mt-7 text-base text-muted-foreground lg:text-sm">
               {fr
                 ? "Elie Ageron, Albertville. Je filme en Savoie, en Haute-Savoie, et je travaille à distance ailleurs."
                 : 'Elie Ageron, Albertville. I film across Savoie and Haute-Savoie, and work remotely elsewhere.'}

@@ -40,7 +40,7 @@ const PostingCalendar = ({ apercu = 'image' }: { apercu?: 'image' | 'video' }) =
        gravite serious, deja rencontree sur `CalendlyPopup`. Les parties
        decoratives restent masquees une par une, plus bas. */
     <div
-      className="relative mx-auto w-full max-w-[300px] sm:max-w-[340px]"
+      className="relative mx-auto w-full max-w-[264px] sm:max-w-[340px]"
       aria-hidden={apercu === 'video' ? undefined : true}
     >
       <div className="rounded-[2.4rem] border-[7px] border-foreground bg-foreground p-1 shadow-2xl">

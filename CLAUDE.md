@@ -901,7 +901,7 @@ par la valeur du plancher **exactement à 320 px**, donc le pli du plus petit
 |---|---|---|---|---|
 | `.hero-title` | `7.5vw` | **`10vw`** | 32 → **37,5** | 32,3 → **43** |
 | `.section-title` | `4.6vw` | **`7vw`** | 24 → **26,3** | 24 → **30** |
-| `.section-title-compact` | `4vw` | **`6.4vw`** | 24 | 24 → **27,5** |
+| `.section-title-compact` | `4vw` | **`6.4vw`**, puis **`7vw`** le 11 octobre | 24 → **26,3** | 24 → **30** |
 | `.section-lede` | 17 px fixe | `clamp()` | 17 → **16** | 16 |
 
 ⚠️ **Le plancher de `.hero-title` ne sert plus qu'à 320 px, où il vaut
@@ -1119,7 +1119,7 @@ récemment » sans transition : la preuve du pilier n°1 manquait alors qu'elle
 est publique.
 
 Deux comptes affichés, avec leur métier, leur commune et leurs liens :
-**Nouït** (médium et praticienne en soins énergétiques, Albertville, Instagram
+**Nouït** (thérapeute et conseil, Albertville, Instagram
 et Facebook) et **Isabelle Ageron-Vicat** (formatrice en rééducation de
 l'écriture, Albertville).
 
@@ -1706,6 +1706,69 @@ débordement sur 9 pages en 7 largeurs.
 ⚠️ **Les 142 articles restent français**, sauf les 17 hérités qui sont
 bilingues. C'est assumé : Elie *« c'est pas grave si tous les articles ne sont
 pas en anglais »*. Le blog anglais affiche donc 17 articles, et c'est cohérent.
+
+## La relecture téléphone du 11 octobre 2026
+
+> Elie : *« le responsive sur la page Réseaux sociaux, il n'est pas
+> exceptionnel. En vrai, je pense que c'est pareil sur toutes les pages. Je
+> veux vraiment que tu travailles le site avec tes relecteurs en mode
+> responsive, et pas en mode PC. »*
+
+Cinq relecteurs ont lu 13 pages en captures de 390 x 844 (155 écrans),
+mesures puppeteer à l'appui. Notes avant correction : 5 à 7 sur 10, aucune
+page au dessus. **Les quatre contrôles automatiques passaient tous** : aucun
+ne voit un texte qui sort d'une colonne, un prix plus gros que son titre ou un
+calque qui n'existe que sur téléphone.
+
+### Ce qu'aucun ordinateur ne montrait
+
+| Défaut | Où | Pourquoi personne ne l'avait vu |
+|---|---|---|
+| Cinq orbes roses floutées et sept points qui pulsaient, fixés derrière tout le contenu | `MobileBackgroundAnimation`, toutes les pages | Le calque était `sm:hidden` : il n'existait **que** sur téléphone. Supprimé |
+| Le texte de six services sur sept sortait de l'écran à droite (« votre position su ») | `/services` | Grille sans colonne déclarée sous `lg` : la colonne implicite prenait la largeur minimale de la maquette. **Toujours écrire `grid-cols-1`** |
+| Aucun projet du portfolio n'avait de nom | `/portfolio` | Le titre ne vivait que dans le calque de survol. Au doigt, il n'y a pas de survol |
+| Le bouton « Obtenir mon audit gratuit » ouvrait Calendly | les quinze pages locales | Pas un défaut de mise en page, mais dans le premier écran de quinze pages |
+| `line-clamp-2` ne coupait rien | articles, pages locales, pages de service | `block` passait après dans la feuille et remettait `display: block` |
+| « 56 619 vues », « #1 Google », « +38 % », « +12 places » | maquettes de `/services` | Le chiffre exact retiré de `/reseaux-sociaux` le 14 septembre était resté dans une maquette décorative. Remplacés par des libellés sans chiffre |
+
+### Les règles qui en sortent
+
+1. **Tout ce qui change pour le téléphone reste sous `lg`.** Elie : *« sur PC
+   c'est parfait »*. Le motif employé partout : `text-base lg:text-sm`,
+   `min-h-[44px] sm:min-h-[24px]`, `hidden lg:block`. Ne jamais écrire
+   `text-sm sm:text-base` : c'est plus petit sur téléphone, à l'envers.
+2. **Sur téléphone, rien ne dépasse le titre de section sauf le titre de
+   page.** Un prix en 30 px sous un `h2` de 27 px, une citation en 24 px sur
+   cinq lignes, un chiffre en 24 px au dessus d'un `h3` de 20 : tout ça a été
+   ramené sous `lg`.
+3. **Les halos flous sont masqués sous `lg`, sur toutes les pages.** Vingt
+   heros en portaient un. Le grand écran les garde.
+4. **Un `h2` écrit à la main en `text-lg sm:text-xl` passe sous ses propres
+   `h3` sur téléphone.** C'est ce qui inversait la hiérarchie de `/a-propos`,
+   `/blog`, des pages locales et des articles. `check:hierarchie` ne le voit
+   pas : il ne compare le `h1` qu'au plus grand `h2`.
+5. **Le membre rose commence sa ligne sous `lg`** quand il démarrait en bout
+   de ligne (`block lg:inline`), au cas par cas.
+6. **Une sortie ne passe jamais avant le formulaire.** Sur téléphone les
+   colonnes s'empilent : « Vous avez déjà un projet précis ? » et
+   « Écrivez-moi » tombaient avant ce qu'ils accompagnaient. Ils sont rendus
+   deux fois, un exemplaire visible selon la largeur.
+7. **Pas de bulle WhatsApp sur `/audit-gratuit` sous `lg`** : elle recouvrait
+   le bouton d'envoi du premier écran.
+
+### Ce qui n'est pas tranché, et revient à Elie
+
+- **Les délais affichés se contredisent.** « Moins de 24 h pour une réponse »
+  (formules de site), « Réponse sous 48 h aux messages » (pages locales),
+  « Je vous réponds sous 24h » et « Je réponds sous 48 h ouvrées » dans le
+  même panneau de `/contact`.
+- **« 56 619 vues et 196 abonnés » reste sur `/a-propos`** et dans le corps de
+  `/blog/prix-gestion-reseaux-sociaux`, en plus de l'article déjà signalé.
+- **Les titres de `/audit-gratuit` sont tout noirs**, sans membre rose, et le
+  chapô dit « les trois endroits » quand la section dit « quatre endroits ».
+- **La grille de fond de 80 px** traverse les paragraphes sur téléphone.
+  Elle fait partie de l'identité du grand écran.
+- **La fin des articles empile trois demandes** (appel, contact, audit).
 
 ## Contrôles automatiques avant de livrer
 

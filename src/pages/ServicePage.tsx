@@ -142,8 +142,11 @@ const ServicePage = ({ slug }: ServicePageProps) => {
       </Helmet>
 
       {/* ─────────── Hero ─────────── */}
-      <section className="grain relative flex min-h-[70vh] items-center justify-center overflow-hidden px-4 sm:px-6" aria-labelledby="service-hero">
-        <div className="relative z-10 mx-auto max-w-3xl py-20 text-center">
+      {/* Hero dimensionne par son contenu sous `lg`, comme les sept heros du
+          22 septembre 2026. `min-h-[..vh]` plus centrage laissait un trou sous
+          le bouton sur telephone. */}
+      <section className="grain relative overflow-hidden px-4 sm:px-6 lg:flex lg:min-h-[70svh] lg:items-center lg:justify-center" aria-labelledby="service-hero">
+        <div className="relative z-10 mx-auto max-w-3xl py-12 sm:py-20 text-center">
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -217,7 +220,7 @@ const ServicePage = ({ slug }: ServicePageProps) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.45, duration: 0.6 }}
-            className="mt-6 text-sm text-muted-foreground"
+            className="mt-6 text-base text-muted-foreground lg:text-sm"
           >
             <strong className="font-semibold text-foreground">{service.prix}</strong>
             <span aria-hidden="true"> · </span>
@@ -274,7 +277,9 @@ const ServicePage = ({ slug }: ServicePageProps) => {
           </ul>
 
           {/* Un service qui ne dit pas ses limites se vend mal. Celui-ci les dit. */}
-          <div className="mt-10 border-t border-border/60 pt-8">
+          {/* Sous `lg`, pas de second filet : la liste au dessus porte deja le
+              sien, et les deux traits tombaient a 40 px l'un de l'autre. */}
+          <div className="pt-10 lg:mt-10 lg:border-t lg:border-border/60 lg:pt-8">
             <h3 className="text-lg font-semibold text-foreground sm:text-xl">Ce que ça ne fait pas</h3>
             <p className="mt-3 text-base leading-relaxed text-muted-foreground">{service.limites}</p>
           </div>
@@ -288,7 +293,7 @@ const ServicePage = ({ slug }: ServicePageProps) => {
         titre={
           <>
             <span className="text-foreground">Les questions qu&rsquo;on me pose </span>
-            <span className="text-primary">là-dessus.</span>
+            <span className="block text-primary lg:inline">là-dessus.</span>
           </>
         }
       />
@@ -297,7 +302,7 @@ const ServicePage = ({ slug }: ServicePageProps) => {
       {articles.length > 0 && (
         <section className="border-t border-border/50 py-14 sm:py-20" aria-labelledby="service-articles">
           <div className="mx-auto max-w-3xl px-4 sm:px-6">
-            <h2 id="service-articles" className="text-2xl font-medium leading-tight text-foreground sm:text-3xl">
+            <h2 id="service-articles" className="max-lg:section-title lg:text-3xl lg:font-medium lg:leading-tight text-foreground">
               Si vous préférez le faire vous-même
             </h2>
             <p className="mt-3 text-base leading-relaxed text-muted-foreground">
@@ -308,10 +313,10 @@ const ServicePage = ({ slug }: ServicePageProps) => {
               {articles.map((post) => (
                 <li key={post.slug}>
                   <Link to={`/blog/${post.slug}`} className="group block py-5">
-                    <span className="block font-medium text-foreground transition-colors group-hover:text-primary">
+                    <span className="block font-medium text-foreground text-pretty transition-colors group-hover:text-primary">
                       {post.title}
                     </span>
-                    <span className="mt-1 block text-sm text-muted-foreground line-clamp-2">{post.excerpt}</span>
+                    <span className="mt-1 line-clamp-2 text-base text-muted-foreground lg:block lg:text-sm">{post.excerpt}</span>
                   </Link>
                 </li>
               ))}
@@ -323,7 +328,7 @@ const ServicePage = ({ slug }: ServicePageProps) => {
       {/* ─────────── Les autres services ─────────── */}
       <section className="border-t border-border/50 py-14 sm:py-20" aria-labelledby="service-related">
         <div className="mx-auto max-w-3xl px-4 sm:px-6">
-          <h2 id="service-related" className="text-lg font-semibold text-foreground sm:text-xl">
+          <h2 id="service-related" className="text-2xl leading-tight font-semibold text-foreground lg:text-xl">
             Ça va souvent avec
           </h2>
           <ul className="mt-5 divide-y divide-border/60 border-y border-border/60">

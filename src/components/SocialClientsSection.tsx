@@ -48,8 +48,12 @@ const COMPTES: Compte[] = [
     nom: 'Nouït',
     logo: logoInevolve,
     marque: 'Inevolve Intuition',
-    metierFr: 'Médium et praticienne en soins énergétiques',
-    metierEn: 'Medium and energy practitioner',
+    /* 🔴 Disait « Medium et praticienne en soins energetiques ». Elie a
+       tranche le 21 septembre 2026 : « tu dis que c'est pour Nouit,
+       therapeute, et conseil, met pas le mot medium ». `/reseaux-sociaux` le
+       disait deja, cette section non, sur `/portfolio` et six pages locales. */
+    metierFr: 'Thérapeute et conseil',
+    metierEn: 'Therapist and advisor',
     lieu: 'Albertville',
     depuisFr: 'Instagram, Facebook et YouTube, depuis août 2026',
     depuisEn: 'Instagram, Facebook and YouTube, since August 2026',
@@ -124,7 +128,7 @@ const SocialClientsSection = () => {
                       {', '}
                       {c.lieu}
                     </p>
-                    <p className="mt-1 text-sm text-muted-foreground">{fr ? c.depuisFr : c.depuisEn}</p>
+                    <p className="mt-1 text-base text-muted-foreground lg:text-sm">{fr ? c.depuisFr : c.depuisEn}</p>
 
                     <p className="mt-3.5 flex flex-wrap gap-x-6 gap-y-2">
                       {c.liens.map((l) => (
@@ -133,7 +137,7 @@ const SocialClientsSection = () => {
                           href={l.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex min-h-[24px] items-center gap-1 text-sm font-semibold text-primary underline-offset-4 hover:underline"
+                          className="inline-flex min-h-[44px] items-center gap-1 text-base font-semibold text-primary underline-offset-4 hover:underline sm:min-h-[24px] lg:text-sm"
                         >
                           {fr ? l.label : l.labelEn ?? l.label}
                           <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />

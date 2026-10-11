@@ -356,7 +356,7 @@ All colors MUST be HSL.
     /* Meme deblocage que sur `.section-title`, a l'echelle reduite : 24 px
        tient jusqu'a 375 px, puis 27,5 px a 430 et le plafond de 36 px a
        563 px. */
-    font-size: clamp(1.5rem, 6.4vw, 2.25rem);
+    font-size: clamp(1.5rem, 7vw, 2.25rem);
   }
 
   .section-title-compact > span {

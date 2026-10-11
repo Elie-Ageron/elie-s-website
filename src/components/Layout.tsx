@@ -158,7 +158,10 @@ const Layout = ({ children }: LayoutProps) => {
           </main>
         </PageTransition>
         <Footer />
-        <FloatingWhatsApp />
+        {/* ⚠️ Pas de bulle sur `/audit-gratuit` sous `lg` : sur telephone elle
+            recouvrait le bouton d'envoi du premier ecran (31 x 42 px), et c'est
+            une sortie concurrente sur la page de l'aimant. */}
+        <FloatingWhatsApp masquerSurTelephone={pathname === '/audit-gratuit'} />
         <BandeauLangue />
       </div>
     </LanguageProvider>

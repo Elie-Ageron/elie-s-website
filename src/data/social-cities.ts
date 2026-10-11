@@ -88,7 +88,7 @@ export const socialCities: SocialCityData[] = [
     seoTitle: 'Community Manager Albertville | Elie Ageron',
     seoDesc:
       "Je vis et je travaille à Albertville, donc je viens filmer chez vous une journée par mois sans trajet à compter. 8 vidéos publiées, 890 €/mois sans engagement.",
-    h1Pre: 'Community manager à ',
+    h1Pre: 'Community manager à ',
     h1Highlight: 'Albertville',
     lede:
       "Sauf que je ne me contente pas de publier. Je viens filmer chez vous une journée par mois, je monte, j'écris les légendes et je publie dans le mois. Vous n'avez rien à préparer et rien à apprendre.",
@@ -160,7 +160,7 @@ export const socialCities: SocialCityData[] = [
     seoTitle: 'Community Manager Chambéry | Elie Ageron',
     seoDesc:
       "Ni images de banque, ni citations programmées. Je viens filmer dans votre entreprise à Chambéry une journée par mois, à quarante-cinq minutes de chez moi.",
-    h1Pre: 'Community manager à ',
+    h1Pre: 'Community manager à ',
     h1Highlight: 'Chambéry',
     lede:
       "Je ne recycle pas des images de banque et je ne programme pas des citations. Je viens filmer dans votre entreprise une journée par mois, et le reste du mois se passe sans vous.",
@@ -233,7 +233,7 @@ export const socialCities: SocialCityData[] = [
     seoTitle: 'Community Manager Annecy | Elie Ageron',
     seoDesc:
       "Annecy est le bassin le plus exigeant de la région sur l'image. Je viens produire chez vous une journée par mois, et je publie le reste. 890 €/mois.",
-    h1Pre: 'Community manager à ',
+    h1Pre: 'Community manager à ',
     h1Highlight: 'Annecy',
     lede:
       "Annecy est le bassin le plus exigeant de la région sur l'image. C'est pour ça que je ne vends pas de la programmation de publications : je viens produire, une journée par mois, et je publie le reste du temps.",
@@ -307,7 +307,7 @@ export const socialCities: SocialCityData[] = [
     seoTitle: 'Community Manager Aix-les-Bains | Elie Ageron',
     seoDesc:
       "Tournage une journée par mois à Aix-les-Bains, montage vertical et publication suivie. 890 €/mois, sans engagement. Pensé pour le bien être et les praticiens.",
-    h1Pre: 'Community manager à ',
+    h1Pre: 'Community manager à ',
     h1Highlight: 'Aix-les-Bains',
     lede:
       "Je viens filmer chez vous une journée par mois, puis je publie 8 vidéos dans le mois. Sur un bassin où la moitié des entreprises vivent du soin et du bien être, c'est le format qui rassure avant le premier rendez vous.",

@@ -185,10 +185,10 @@ const SocialCityPage = ({ slug }: SocialCityPageProps) => {
 
       {/* ─────────── Hero ─────────── */}
       <section
-        className="relative grain flex min-h-[78vh] items-center justify-center overflow-hidden px-4 sm:px-6"
+        className="relative grain overflow-hidden px-4 sm:px-6 lg:flex lg:min-h-[78svh] lg:items-center lg:justify-center"
         aria-labelledby="social-city-hero"
       >
-        <div className="relative z-10 mx-auto max-w-3xl py-20 text-center">
+        <div className="relative z-10 mx-auto max-w-3xl py-12 sm:py-20 text-center">
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -242,7 +242,7 @@ const SocialCityPage = ({ slug }: SocialCityPageProps) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.45, duration: 0.6 }}
-            className="mt-6 text-sm text-muted-foreground"
+            className="mt-6 text-base text-muted-foreground lg:text-sm"
           >
             Ou appelez directement le{' '}
             <a href="tel:+33695555318" className="font-medium text-primary underline underline-offset-4">
@@ -255,9 +255,9 @@ const SocialCityPage = ({ slug }: SocialCityPageProps) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="mt-4 flex items-center justify-center gap-2 text-sm text-muted-foreground"
+            className="mt-4 flex items-center justify-center gap-2 text-base text-muted-foreground lg:text-sm"
           >
-            <Clock className="h-3.5 w-3.5 shrink-0 text-primary" aria-hidden="true" />
+            <Clock className="hidden h-3.5 w-3.5 shrink-0 text-primary sm:block" aria-hidden="true" />
             {city.travel}
           </motion.p>
         </div>
@@ -305,12 +305,12 @@ const SocialCityPage = ({ slug }: SocialCityPageProps) => {
               const Icone = etape.icone;
               return (
                 <li key={etape.titre} className="flex gap-5 py-7 sm:gap-7">
-                  <span className="shrink-0 text-4xl font-semibold leading-none text-primary sm:text-5xl" aria-hidden="true">
+                  <span className="w-8 shrink-0 text-5xl font-semibold leading-none text-primary lg:w-auto" aria-hidden="true">
                     {i + 1}
                   </span>
                   <div>
-                    <h3 className="flex items-center gap-2 text-lg font-semibold text-foreground sm:text-xl">
-                      <Icone className="h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+                    <h3 className="flex items-center gap-2 text-xl font-semibold text-foreground">
+                      <Icone className="hidden h-5 w-5 shrink-0 text-primary lg:inline-block" aria-hidden="true" />
                       {etape.titre}
                     </h3>
                     <p className="mt-2 text-base leading-relaxed text-muted-foreground">{etape.texte}</p>
@@ -353,7 +353,11 @@ const SocialCityPage = ({ slug }: SocialCityPageProps) => {
 
       {/* La seule preuve publique du pilier : deux comptes reellement geres,
           tous les deux a Albertville, avec leurs liens verifiables. */}
-      <SocialClientsSection />
+      {/* La section n'a pas de marge haute : sur telephone elle tombait a 81 px
+          de la precedente, contre 160 partout ailleurs sur la page. */}
+      <div className="border-t border-border/50 pt-20 lg:border-0 lg:pt-0">
+        <SocialClientsSection />
+      </div>
 
       <FaqSection
         id="social-city-faq"
@@ -362,7 +366,7 @@ const SocialCityPage = ({ slug }: SocialCityPageProps) => {
         titre={
           <>
             <span className="text-foreground">Les questions qu&rsquo;on me pose </span>
-            <span className="text-primary">à {city.name}.</span>
+            <span className="block text-primary lg:inline">à {city.name}.</span>
           </>
         }
       />
@@ -371,7 +375,7 @@ const SocialCityPage = ({ slug }: SocialCityPageProps) => {
       {articles.length > 0 && (
         <section className="border-t border-border/50 py-14 sm:py-20" aria-labelledby="social-city-articles">
           <div className="mx-auto max-w-3xl px-4 sm:px-6">
-            <h2 id="social-city-articles" className="text-2xl font-medium leading-tight text-foreground sm:text-3xl">
+            <h2 id="social-city-articles" className="max-lg:section-title lg:text-3xl lg:font-medium lg:leading-tight text-foreground">
               À lire avant de vous lancer
             </h2>
             <p className="mt-3 text-base leading-relaxed text-muted-foreground">
@@ -382,10 +386,10 @@ const SocialCityPage = ({ slug }: SocialCityPageProps) => {
               {articles.map((post) => (
                 <li key={post.slug}>
                   <Link to={`/blog/${post.slug}`} className="group block py-5">
-                    <span className="block font-medium text-foreground transition-colors group-hover:text-primary">
+                    <span className="block font-medium text-foreground text-pretty transition-colors group-hover:text-primary">
                       {post.title}
                     </span>
-                    <span className="mt-1 block text-sm text-muted-foreground line-clamp-2">{post.excerpt}</span>
+                    <span className="mt-1 line-clamp-2 text-base text-muted-foreground lg:block lg:text-sm">{post.excerpt}</span>
                   </Link>
                 </li>
               ))}
@@ -397,7 +401,7 @@ const SocialCityPage = ({ slug }: SocialCityPageProps) => {
       {/* ─────────── Maillage local, et croise vers le pilier site web ─────────── */}
       <section className="border-t border-border/50 py-14 sm:py-20" aria-labelledby="social-city-related">
         <div className="mx-auto max-w-3xl px-4 sm:px-6">
-          <h2 id="social-city-related" className="text-lg font-semibold text-foreground sm:text-xl">
+          <h2 id="social-city-related" className="text-2xl leading-tight font-semibold text-foreground lg:text-xl">
             Je filme aussi ici
           </h2>
           <ul className="mt-5 divide-y divide-border/60 border-y border-border/60">

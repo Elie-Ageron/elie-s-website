@@ -218,7 +218,7 @@ const AuditForm = ({ source }: AuditFormProps) => {
         </p>
       )}
 
-      <p className={`text-sm ${noteClass}`}>
+      <p className={`text-sm text-pretty ${noteClass}`}>
         {fr
           ? "Gratuit, sans engagement, et aucune relance derrière."
           : 'Free, no strings, and no chasing afterwards.'}
