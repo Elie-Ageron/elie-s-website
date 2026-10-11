@@ -37,8 +37,11 @@ const FloatingParticles = () => {
     );
   }, []);
 
+  /* Grand ecran seulement : sur telephone, ces points roses qui derivent
+     passaient derriere chaque paragraphe. Meme famille que le calque
+     `MobileBackgroundAnimation`, retire le 11 octobre 2026. */
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden hidden lg:block">
       <style>{`
         @keyframes float-particle {
           0%, 100% { transform: translate(0, 0); opacity: 0.2; }

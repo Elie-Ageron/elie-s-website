@@ -102,7 +102,7 @@ const FaqSection = ({
                     {article && item.article && (
                       <Link
                         to={`/blog/${item.article}`}
-                        className="mt-4 inline-flex min-h-[24px] items-center gap-1.5 text-sm font-semibold text-primary underline-offset-4 hover:underline"
+                        className="mt-4 inline-flex min-h-[44px] items-center gap-1.5 text-base font-semibold text-primary underline-offset-4 hover:underline sm:min-h-[24px] lg:text-sm"
                       >
                         {fr ? 'Lire la réponse complète' : 'Read the full answer'}
                         <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
@@ -119,7 +119,7 @@ const FaqSection = ({
           <p className="mt-8">
             <Link
               to="/blog"
-              className="inline-flex min-h-[24px] items-center gap-1.5 text-sm font-semibold text-primary underline-offset-4 hover:underline"
+              className="inline-flex min-h-[44px] items-center gap-1.5 text-base font-semibold text-primary underline-offset-4 hover:underline sm:min-h-[24px] lg:text-sm"
             >
               Toutes les réponses écrites, sur le blog
               <ArrowRight className="h-4 w-4" aria-hidden="true" />

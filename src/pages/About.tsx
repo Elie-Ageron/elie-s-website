@@ -194,10 +194,12 @@ const About = () => {
                 className="py-9 sm:py-11 border-b border-border/60"
                 aria-labelledby={`about-section-${i}`}
               >
-                <span className="text-xs font-mono text-primary">{String(i + 1).padStart(2, '0')}</span>
+                {/* Les reperes 01 a 06 en 12 px de police de code ne servaient a rien sur
+                    telephone : grand ecran seulement. */}
+                <span className="hidden text-xs font-mono text-primary lg:inline">{String(i + 1).padStart(2, '0')}</span>
                 <h3
                   id={`about-section-${i}`}
-                  className="mt-1 text-xl sm:text-2xl font-medium leading-snug text-balance"
+                  className="text-[1.375rem] font-semibold leading-snug text-balance sm:text-2xl lg:mt-1 lg:font-medium"
                 >
                   {section.title}
                 </h3>
@@ -217,10 +219,12 @@ const About = () => {
       {/* Guides, preuve d'expertise accessible sans rendez-vous */}
       <section className="py-12 sm:py-16" aria-labelledby="about-guides">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <h2 id="about-guides" className="text-lg sm:text-xl font-semibold text-foreground mb-2">
+          {/* `text-2xl` sous `lg` : en 18 px ce h2 etait plus petit que les h3 de la
+              page (20 px). */}
+          <h2 id="about-guides" className="text-2xl leading-tight font-semibold text-foreground mb-2 lg:text-xl">
             {fr ? 'Ce que je sais, en accès libre' : 'What I know, freely available'}
           </h2>
-          <p className="text-sm text-muted-foreground mb-5">
+          <p className="text-base text-muted-foreground mb-5 lg:text-sm">
             {fr
               ? "Ces guides contiennent la méthode complète. Rien n'y est réservé aux clients."
               : "These four guides contain the full method, and none of it is held back for clients. They are written in French."}
@@ -249,7 +253,7 @@ const About = () => {
       {/* Coordonnees en texte brut, coherentes avec la fiche Google */}
       <section className="py-12 sm:py-16 border-t border-border/60" aria-labelledby="about-contact">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <h2 id="about-contact" className="text-lg sm:text-xl font-semibold text-foreground mb-5">
+          <h2 id="about-contact" className="text-2xl leading-tight font-semibold text-foreground mb-5 lg:text-xl">
             {fr ? 'Me joindre' : 'Get in touch'}
           </h2>
           <ul className="space-y-3 text-base text-muted-foreground">
@@ -257,7 +261,7 @@ const About = () => {
               <Mail className="w-4 h-4 text-primary shrink-0" aria-hidden="true" />
               <a
                 href="mailto:elie@elieageron.com"
-                className="min-h-[24px] inline-flex items-center hover:text-primary underline-offset-4 hover:underline"
+                className="min-h-[44px] sm:min-h-[24px] inline-flex items-center hover:text-primary underline-offset-4 hover:underline"
               >
                 elie@elieageron.com
               </a>
@@ -266,7 +270,7 @@ const About = () => {
               <Phone className="w-4 h-4 text-primary shrink-0" aria-hidden="true" />
               <a
                 href="tel:+33695555318"
-                className="min-h-[24px] inline-flex items-center hover:text-primary underline-offset-4 hover:underline"
+                className="min-h-[44px] sm:min-h-[24px] inline-flex items-center hover:text-primary underline-offset-4 hover:underline"
               >
                 06 95 55 53 18
               </a>

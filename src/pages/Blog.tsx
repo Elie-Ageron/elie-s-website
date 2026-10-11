@@ -137,7 +137,9 @@ const Blog = () => {
                 A la place : une phrase qui dit ce que le lecteur trouve, et une
                 liste editoriale a deux colonnes separee par des filets. Quatre
                 items sur deux colonnes tombent juste, sans orphelin. */}
-            <h2 id="blog-guides" className="text-lg font-bold tracking-tight text-foreground sm:text-xl">
+            {/* `text-2xl` sous `lg` : en 18 px ce h2 etait plus petit que le h3 de
+                l'article vedette juste dessous (24 px). */}
+            <h2 id="blog-guides" className="text-2xl font-bold leading-tight tracking-tight text-foreground lg:text-xl">
               Si vous débutez, commencez par un guide
             </h2>
             <p className="mt-2 text-base text-muted-foreground">
@@ -171,7 +173,7 @@ const Blog = () => {
                 <li key={category.slug}>
                   <Link
                     to={`/blog/categorie/${category.slug}`}
-                    className="inline-flex items-center gap-2 min-h-[36px] px-4 rounded-full border border-border/70 text-sm text-muted-foreground hover:border-primary/50 hover:text-primary transition-colors"
+                    className="inline-flex items-center gap-2 min-h-[44px] sm:min-h-[36px] px-4 rounded-full border border-border/70 text-sm text-muted-foreground hover:border-primary/50 hover:text-primary transition-colors"
                   >
                     {fr ? category.fr : category.en}
                     <span className="text-xs text-primary">{category.count}</span>
@@ -246,7 +248,7 @@ const Blog = () => {
                     {featured.readTime}
                   </span>
                 </div>
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-medium leading-tight text-balance max-w-3xl group-hover:text-primary transition-colors duration-300">
+                <h3 className="text-[1.375rem] font-semibold sm:text-3xl md:text-4xl lg:font-medium leading-tight text-balance max-w-3xl group-hover:text-primary transition-colors duration-300">
                   {featured.title}
                 </h3>
                 <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl">
@@ -293,7 +295,7 @@ const Blog = () => {
                     <span className="font-medium text-primary">{post.categoryLabel}</span>
                   </div>
                   <div className="sm:col-span-8 min-w-0">
-                    <h3 className="text-lg sm:text-xl font-semibold leading-snug text-foreground group-hover:text-primary transition-colors duration-300">
+                    <h3 className="text-lg sm:text-xl font-semibold leading-snug text-pretty text-foreground lg:text-balance group-hover:text-primary transition-colors duration-300">
                       {post.title}
                     </h3>
                     {/* `text-sm` gris, coupe au milieu d'un mot : c'etait la

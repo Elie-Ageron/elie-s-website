@@ -35,7 +35,9 @@ const ServicesEcosystem = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* ─── Narrative (sticky on desktop) ─── */}
-          <ScrollReveal direction="up" className="lg:col-span-5 lg:sticky lg:top-28 text-center lg:text-left">
+          {/* Aligne a gauche partout : le titre et le bouton etaient centres sur
+              telephone, puis la liste partait a gauche juste dessous. */}
+          <ScrollReveal direction="up" className="lg:col-span-5 lg:sticky lg:top-28">
             <h2 id="ecosystem-heading" className="section-title">
               {language === 'fr' ? 'Tout le reste, ' : 'Everything else, '}
               <span className="text-primary">
@@ -43,13 +45,14 @@ const ServicesEcosystem = () => {
               </span>
             </h2>
 
-            <p className="section-lede mt-6 mx-auto lg:mx-0">
+            <p className="section-lede mt-6">
               {language === 'fr'
                 ? "La fiche Google, les avis, le logo, les textes. D'habitude, on les confie à quatre prestataires qui ne se parlent pas. Ici, tout est suivi ensemble, sur le même devis."
                 : 'The Google profile, the reviews, the logo, the copy. They usually go to four different providers who never talk to each other. Here it is all handled together, on one quote.'}
             </p>
 
-            <div className="mt-8 flex justify-center lg:justify-start">
+            {/* Sur telephone le bouton passe sous la liste qu'il annonce. */}
+            <div className="mt-8 hidden lg:flex">
               <Button variant="hero" size="lg" className="group" asChild>
                 <Link to="/services" className="flex items-center gap-2">
                   {language === 'fr' ? 'Voir tous les services' : 'See all services'}
@@ -88,11 +91,11 @@ const ServicesEcosystem = () => {
                 >
                   <Link
                     to={href}
-                    className="group flex items-center gap-4 sm:gap-5 py-5 pr-2 sm:pr-3 rounded-2xl sm:px-4 sm:-mx-4 transition-colors duration-300 hover:bg-secondary/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                    className="group flex items-start gap-4 sm:gap-5 py-5 pr-2 sm:pr-3 lg:items-center rounded-2xl sm:px-4 sm:-mx-4 transition-colors duration-300 hover:bg-secondary/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
                   >
                     {/* Bare icon, node, not a card */}
                     <Icon
-                      className="w-5 h-5 shrink-0 text-muted-foreground group-hover:text-primary transition-colors duration-300"
+                      className="mt-1 w-5 h-5 shrink-0 text-muted-foreground group-hover:text-primary transition-colors duration-300 lg:mt-0"
                       strokeWidth={1.75}
                       aria-hidden="true"
                     />
@@ -108,7 +111,7 @@ const ServicesEcosystem = () => {
                           </span>
                         )}
                       </div>
-                      <p className="mt-1 text-sm sm:text-[0.95rem] text-muted-foreground leading-relaxed">
+                      <p className="mt-1 text-base lg:text-[0.95rem] text-muted-foreground leading-relaxed">
                         {service.short[language]}
                       </p>
                     </div>
@@ -122,6 +125,15 @@ const ServicesEcosystem = () => {
               );
             })}
           </ul>
+
+          <div className="lg:hidden">
+            <Button variant="hero" size="lg" className="group w-full" asChild>
+              <Link to="/services" className="flex items-center justify-center gap-2">
+                {language === 'fr' ? 'Voir tous les services' : 'See all services'}
+                <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </div>
     </section>

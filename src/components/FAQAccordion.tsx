@@ -31,7 +31,7 @@ const FAQAccordion = () => {
       titre={
         <>
           <span className="text-foreground">{fr ? "Ce qu'on me demande " : 'What people ask '}</span>
-          <span className="text-primary">{fr ? 'le plus souvent.' : 'me the most.'}</span>
+          <span className="block text-primary lg:inline">{fr ? 'le plus souvent.' : 'me the most.'}</span>
         </>
       }
       lede={

@@ -243,7 +243,7 @@ const TestimonialsSection = () => {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="text-2xl sm:text-[1.75rem] lg:text-3xl font-medium leading-[1.32] text-foreground text-pretty"
+                    className="text-xl sm:text-[1.75rem] lg:text-3xl font-medium leading-[1.32] text-foreground text-pretty"
                   >
                     {withHighlight(featured.spotlight, featured.highlight)}
                   </motion.p>
@@ -254,7 +254,7 @@ const TestimonialsSection = () => {
             <button
               type="button"
               onClick={() => setExpanded((v) => !v)}
-              className="group mt-6 inline-flex items-center gap-1.5 min-h-[24px] text-sm font-semibold text-primary"
+              className="group mt-6 inline-flex items-center gap-1.5 min-h-[44px] text-base font-semibold text-primary sm:min-h-[24px] lg:text-sm"
             >
               {expanded
                 ? language === 'fr' ? "Réduire l'avis" : 'Show less'
@@ -294,7 +294,7 @@ const TestimonialsSection = () => {
                 type="button"
                 onClick={() => scrollCards(-1)}
                 aria-label={language === 'fr' ? 'Avis précédents' : 'Previous reviews'}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card text-foreground/70 transition hover:text-primary hover:border-primary/40 active:scale-95"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-border bg-card text-foreground/70 transition hover:text-primary hover:border-primary/40 active:scale-95 lg:h-10 lg:w-10"
               >
                 <ChevronLeft className="h-5 w-5" aria-hidden="true" />
               </button>
@@ -302,7 +302,7 @@ const TestimonialsSection = () => {
                 type="button"
                 onClick={() => scrollCards(1)}
                 aria-label={language === 'fr' ? 'Avis suivants' : 'Next reviews'}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card text-foreground/70 transition hover:text-primary hover:border-primary/40 active:scale-95"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-border bg-card text-foreground/70 transition hover:text-primary hover:border-primary/40 active:scale-95 lg:h-10 lg:w-10"
               >
                 <ChevronRight className="h-5 w-5" aria-hidden="true" />
               </button>
@@ -317,7 +317,9 @@ const TestimonialsSection = () => {
             tabIndex={0}
             role="region"
             aria-label={language === 'fr' ? 'Autres avis clients' : 'More client reviews'}
-            className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth -mx-4 px-4 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            /* `scroll-px-4` : sans lui l'aimantation ramenait la premiere carte
+               contre le bord de l'ecran (x = 1 au lieu de 16) des le chargement. */
+            className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth scroll-px-4 -mx-4 px-4 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:scroll-px-0"
           >
             {cards.map((item, i) => {
               /* Seuil monte de 120 a 240 caracteres, et la coupe passe de 4 a
@@ -362,7 +364,7 @@ const TestimonialsSection = () => {
                     <button
                       type="button"
                       onClick={() => toggleCard(i)}
-                      className="sm:hidden mt-2 inline-flex items-center min-h-[24px] text-sm font-semibold text-primary"
+                      className="sm:hidden mt-2 inline-flex items-center min-h-[44px] text-base font-semibold text-primary"
                     >
                       {isOpen
                         ? language === 'fr' ? 'Voir moins' : 'Show less'
@@ -404,12 +406,12 @@ const TestimonialsSection = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="mt-16 sm:mt-20 text-sm text-muted-foreground text-center"
+          className="mt-16 sm:mt-20 text-base text-muted-foreground text-left sm:text-center lg:text-sm"
         >
           {language === 'fr' ? 'Envie de voir les sites derrière ces avis ? ' : 'Want to see the sites behind these reviews? '}
           <Link
             to="/portfolio"
-            className="text-primary font-medium hover:underline underline-offset-4 inline-flex items-center gap-1 min-h-[24px]"
+            className="text-primary font-medium hover:underline underline-offset-4 inline-flex items-center gap-1 min-h-[44px] sm:min-h-[24px]"
           >
             {t('testimonials.cta')}
             <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />

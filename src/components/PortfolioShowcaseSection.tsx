@@ -59,13 +59,13 @@ const PortfolioShowcaseSection = () => {
   const Caption = ({ project }: { project: (typeof projects)[number] }) => (
     <div className="mt-5 flex items-start justify-between gap-4">
       <div className="min-w-0 text-left">
-        <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+        <div className="flex flex-col items-start gap-y-0.5 sm:flex-row sm:flex-wrap sm:items-baseline sm:gap-x-3 sm:gap-y-1">
           <h3 className="text-lg font-bold tracking-tight text-foreground transition-colors duration-300 group-hover:text-primary sm:text-xl">
             {project.name}
           </h3>
           <span className="text-sm text-muted-foreground">{project.category}</span>
         </div>
-        <p className="mt-1.5 max-w-xl text-sm leading-relaxed text-muted-foreground">{project.desc}</p>
+        <p className="mt-1.5 max-w-xl text-base leading-relaxed text-muted-foreground lg:text-sm">{project.desc}</p>
       </div>
       <ArrowUpRight
         className="mt-1 h-5 w-5 shrink-0 text-primary transition-transform duration-300 group-hover:translate-x-0.5"

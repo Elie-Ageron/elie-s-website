@@ -78,7 +78,7 @@ const ServiceSection = ({ service, index }: { service: ServiceItem; index: numbe
         ) : service.to ? (
           <Link
             to={service.to}
-            className="inline-flex items-center gap-2 min-h-[24px] text-sm font-semibold text-primary hover:gap-3 transition-all"
+            className="inline-flex items-center gap-2 min-h-[44px] text-base font-semibold text-primary hover:gap-3 transition-all sm:min-h-[24px] lg:text-sm"
           >
             {service.ctaLabel
               ? service.ctaLabel[language]
@@ -90,7 +90,7 @@ const ServiceSection = ({ service, index }: { service: ServiceItem; index: numbe
         ) : (
           <Link
             to="/get-started"
-            className="inline-flex items-center gap-2 min-h-[24px] text-sm font-semibold text-primary hover:gap-3 transition-all"
+            className="inline-flex items-center gap-2 min-h-[44px] text-base font-semibold text-primary hover:gap-3 transition-all sm:min-h-[24px] lg:text-sm"
           >
             {language === 'fr' ? 'En parler' : "Let's talk about it"}
             <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -99,7 +99,7 @@ const ServiceSection = ({ service, index }: { service: ServiceItem; index: numbe
         {service.secondaryLink && (
           <Link
             to={service.secondaryLink.to}
-            className="inline-flex items-center min-h-[24px] text-sm font-medium text-muted-foreground underline underline-offset-4 hover:text-primary transition-colors"
+            className="inline-flex items-center min-h-[44px] text-base font-medium text-muted-foreground underline underline-offset-4 hover:text-primary transition-colors sm:min-h-[24px] lg:text-sm"
           >
             {service.secondaryLink.label[language]}
           </Link>
@@ -115,7 +115,12 @@ const ServiceSection = ({ service, index }: { service: ServiceItem; index: numbe
       aria-labelledby={`${service.anchor}-title`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="grid lg:grid-cols-2 gap-6 lg:gap-16 items-center">
+        {/* 🔴 `grid-cols-1` sous `lg`, et il ne faut pas l'enlever. Sans colonne
+            declaree, la colonne implicite prenait la largeur minimale de la
+            maquette (320 a 350 px fixes) : sur six services sur sept, le texte
+            sortait de l'ecran a droite (« votre position su »). Releve par la
+            relecture telephone du 11 octobre 2026. */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-center">
           {/* Content first in the DOM so mobile shows the heading, then its mockup right below */}
           <div className={reversed ? 'lg:order-2' : ''} id={`${service.anchor}-title`}>
             {content}
@@ -203,7 +208,10 @@ const Services = () => {
   const faq = [
     {
       q: 'Combien coûte un site avec vous ?',
-      a: "Tout est chiffré sur devis, après un appel gratuit, parce que les écarts entre deux projets sont trop importants pour qu'un chiffre isolé ait un sens. En revanche je n'ai rien à cacher sur la méthode : j'ai écrit un article entier qui donne les ordres de grandeur du marché et ce qui fait varier le prix.",
+      /* ⚠️ Disait « Tout est chiffre sur devis [...] pour qu'un chiffre isole
+         ait un sens », alors que les planchers sont publics depuis le
+         13 septembre 2026 et affiches sur l'accueil. Recale le 11 octobre. */
+      a: "Une page dès 500 €, un site vitrine dès 1 500 €, un pack lancement dès 3 500 €. Le prix exact, je vous le donne par écrit après un appel gratuit, parce qu'il bouge avec le nombre de pages et les textes à écrire. J'ai aussi écrit un article entier qui donne les ordres de grandeur du marché et ce qui fait varier le prix.",
     },
     {
       q: 'Combien de temps avant que mon site soit en ligne ?',
@@ -296,7 +304,9 @@ const Services = () => {
             </p>
 
             {/* Service pills, preview the breadth */}
-            <div className="mt-9 flex flex-wrap items-center justify-center gap-2 max-w-2xl mx-auto">
+            {/* Grand ecran seulement : sur telephone ces sept pastilles en 12 px
+                prenaient trois rangees et poussaient le bouton au bas de l'ecran. */}
+            <div className="mt-9 hidden sm:flex flex-wrap items-center justify-center gap-2 max-w-2xl mx-auto">
               {services.map((s) => (
                 <a
                   key={s.id}
@@ -311,9 +321,9 @@ const Services = () => {
             {/* L'audit gratuit passe devant : deux champs valent mieux qu'un brief
                 en quatre etapes pour quelqu'un qui decouvre la page. Le brief
                 reste accessible juste a cote, pour qui sait deja ce qu'il veut. */}
-            <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
-              <MagneticButton>
-                <Button variant="hero" size="lg" className="group" asChild>
+            <div className="mt-8 sm:mt-9 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-6">
+              <MagneticButton className="w-full sm:w-auto">
+                <Button variant="hero" size="lg" className="group w-full sm:w-auto" asChild>
                   <Link to="/audit-gratuit" className="flex items-center gap-2">
                     {language === 'fr' ? 'Recevoir mon audit gratuit' : 'Get my free audit'}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
@@ -337,7 +347,7 @@ const Services = () => {
 
       {/* Services intro */}
       <section className="py-20 sm:py-32" aria-labelledby="services-intro-heading">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-left sm:text-center">
           <motion.span
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -442,7 +452,7 @@ const Services = () => {
           titre={
             <>
               <span className="text-foreground">Les questions qu&rsquo;on me pose </span>
-              <span className="text-primary">avant de se décider.</span>
+              <span className="block text-primary lg:inline">avant de se décider.</span>
             </>
           }
           lede={

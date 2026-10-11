@@ -86,7 +86,7 @@ const GuidePage = () => {
         </div>
         <div className="max-w-3xl mx-auto px-4 sm:px-6 relative z-10">
           <nav aria-label="Fil d'ariane" className="mb-6 text-sm text-muted-foreground">
-            <Link to="/guides" className="hover:text-primary underline-offset-4 hover:underline">
+            <Link to="/guides" className="inline-flex min-h-[24px] items-center hover:text-primary underline-offset-4 hover:underline">
               Guides
             </Link>
           </nav>
@@ -98,7 +98,7 @@ const GuidePage = () => {
             >
               {guide.title}
             </h1>
-            <p className="mt-5 text-base sm:text-lg text-muted-foreground leading-relaxed">{guide.excerpt}</p>
+            <p className="mt-5 text-lg text-muted-foreground leading-relaxed">{guide.excerpt}</p>
 
             <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
               <span className="inline-flex items-center gap-1.5">
@@ -124,7 +124,7 @@ const GuidePage = () => {
       {/* Sommaire, utile pour la lecture et pour les liens de sections dans les SERP */}
       <section className="pb-8" aria-labelledby="guide-toc">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <h2 id="guide-toc" className="mb-4 text-lg font-bold tracking-tight text-foreground sm:text-xl">
+          <h2 id="guide-toc" className="mb-4 text-lg font-semibold tracking-tight text-foreground sm:text-xl lg:font-bold">
             Au programme
           </h2>
           <ol className="border-y border-border/60 divide-y divide-border/60">
@@ -134,7 +134,7 @@ const GuidePage = () => {
                   href={`#chapitre-${i + 1}`}
                   className="group flex items-baseline gap-4 py-3 text-muted-foreground hover:text-primary transition-colors"
                 >
-                  <span className="text-xs font-mono text-primary shrink-0">
+                  <span className="text-sm tabular-nums text-primary shrink-0 lg:text-xs lg:font-mono">
                     {String(i + 1).padStart(2, '0')}
                   </span>
                   <span className="min-h-[24px]">{chapter.title}</span>
@@ -167,16 +167,19 @@ const GuidePage = () => {
                 className="scroll-mt-24 py-10 sm:py-12 border-t border-border/60"
                 aria-labelledby={`chapitre-titre-${i + 1}`}
               >
-                <span className="text-xs font-mono text-primary">{String(i + 1).padStart(2, '0')}</span>
+                {/* Sur telephone le numero de chapitre etait en 12 px de police de code :
+                    le seul repere de progression sur dix-huit ecrans, et on ne le
+                    voyait pas. 30 px, sous le h1 (34 px). */}
+                <span className="block text-3xl font-normal leading-none text-primary lg:inline lg:text-xs lg:font-mono lg:leading-normal">{String(i + 1).padStart(2, '0')}</span>
                 <h2
                   id={`chapitre-titre-${i + 1}`}
-                  className="mt-1 text-2xl sm:text-3xl font-medium leading-tight text-balance"
+                  className="mt-3 text-2xl sm:text-3xl font-medium leading-tight text-balance lg:mt-1"
                 >
                   {chapter.title}
                 </h2>
                 <div className="mt-5 space-y-4">
                   {chapter.body.map((paragraph, j) => (
-                    <p key={j} className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+                    <p key={j} className="text-base sm:text-lg text-muted-foreground leading-relaxed text-pretty lg:text-wrap">
                       {paragraph}
                     </p>
                   ))}
@@ -187,12 +190,12 @@ const GuidePage = () => {
                     <h3 className="mb-3 text-sm font-semibold text-foreground">
                       Pour aller plus loin
                     </h3>
-                    <ul className="space-y-2">
+                    <ul className="space-y-1 lg:space-y-2">
                       {articles.map((article) => (
                         <li key={article!.slug}>
                           <Link
                             to={`/blog/${article!.slug}`}
-                            className="group inline-flex items-baseline gap-1.5 min-h-[24px] text-primary hover:underline underline-offset-4"
+                            className="group flex w-full items-baseline justify-between gap-3 py-2.5 text-pretty text-primary hover:underline underline-offset-4 lg:inline-flex lg:w-auto lg:justify-start lg:gap-1.5 lg:py-0 lg:min-h-[24px] lg:text-wrap"
                           >
                             {article!.title}
                             <ArrowUpRight className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
@@ -217,8 +220,8 @@ const GuidePage = () => {
           <dl className="divide-y divide-border/60 border-y border-border/60">
             {guide.faq.map((item) => (
               <div key={item.q} className="py-6">
-                <dt className="text-base sm:text-lg font-semibold text-foreground">{item.q}</dt>
-                <dd className="mt-2 text-base text-muted-foreground leading-relaxed">{item.a}</dd>
+                <dt className="text-base sm:text-lg font-semibold text-foreground text-balance lg:text-wrap">{item.q.replace(/ ([?!:;])/g, ' $1')}</dt>
+                <dd className="mt-2 text-base text-muted-foreground leading-relaxed text-pretty lg:text-wrap">{item.a}</dd>
               </div>
             ))}
           </dl>
@@ -239,14 +242,14 @@ const GuidePage = () => {
             <p className="mt-5 flex flex-wrap gap-4">
               <Link
                 to={guide.ctaTo}
-                className="inline-flex items-center gap-1.5 min-h-[24px] text-primary font-medium hover:underline underline-offset-4"
+                className="inline-flex items-center gap-1.5 min-h-[44px] lg:min-h-[24px] text-primary font-medium hover:underline underline-offset-4"
               >
                 {guide.ctaLabel}
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-1.5 min-h-[24px] text-muted-foreground hover:text-primary underline-offset-4 hover:underline"
+                className="hidden lg:inline-flex items-center gap-1.5 min-h-[24px] text-muted-foreground hover:text-primary underline-offset-4 hover:underline"
               >
                 Ou poser une question directement
               </Link>
@@ -261,7 +264,7 @@ const GuidePage = () => {
       {otherGuides.length > 0 && (
         <section className="py-12 sm:py-16 border-t border-border/60" aria-labelledby="guide-others">
           <div className="max-w-3xl mx-auto px-4 sm:px-6">
-            <h2 id="guide-others" className="text-lg sm:text-xl font-semibold text-foreground mb-5">
+            <h2 id="guide-others" className="text-2xl leading-tight font-semibold text-foreground mb-5 lg:text-xl">
               Les autres guides
             </h2>
             <ul className="divide-y divide-border/60 border-y border-border/60">
@@ -274,7 +277,7 @@ const GuidePage = () => {
                     <span className="sm:col-span-4 text-sm text-primary font-medium">{g.kicker}</span>
                     <span className="sm:col-span-8">
                       <span className="font-medium block">{g.title}</span>
-                      <span className="mt-1 block text-sm text-muted-foreground">{g.excerpt}</span>
+                      <span className="mt-1 block text-base text-muted-foreground lg:text-sm">{g.excerpt}</span>
                     </span>
                   </Link>
                 </li>

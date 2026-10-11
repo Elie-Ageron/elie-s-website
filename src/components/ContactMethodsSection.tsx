@@ -192,10 +192,12 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
                 {(fr
                   ? ['Gratuit', 'Deux champs', 'Vidéo sous 48 h']
                   : ['Free', 'Two fields', 'Video within 48h']
-                ).map((repere) => (
+                ).map((repere, i) => (
+                  /* « Deux champs » masque sous `sm`, comme dans `AuditInline` :
+                     la troisieme pastille tombait seule sur sa ligne. */
                   <li
                     key={repere}
-                    className="inline-flex items-center gap-1.5 rounded-full bg-secondary px-3 py-1.5 text-sm font-medium text-foreground"
+                    className={`${i === 1 ? 'hidden sm:inline-flex' : 'inline-flex'} items-center gap-1.5 rounded-full bg-secondary px-3 py-1.5 text-sm font-medium text-foreground`}
                   >
                     <Check className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
                     {repere}

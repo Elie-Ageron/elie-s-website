@@ -68,7 +68,7 @@ const GlobalContactForm = () => {
               <h2 id="global-form-heading" className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
                 {t('globalForm.title')}
               </h2>
-              <p className="text-muted-foreground text-sm sm:text-base">
+              <p className="text-muted-foreground text-base">
                 {t('globalForm.subtitle')}
               </p>
             </div>
@@ -161,7 +161,7 @@ const GlobalContactForm = () => {
 
               {/* Reassurance et mention RGPD. C'est ce que je conseille aux
                   clients dans les articles : autant l'appliquer ici. */}
-              <p className="text-center text-xs sm:text-sm text-muted-foreground leading-relaxed">
+              <p className="text-center text-sm text-muted-foreground leading-relaxed">
                 {fr ? (
                   <>
                     Je réponds sous 48 h ouvrées. Vos coordonnées servent uniquement à répondre à

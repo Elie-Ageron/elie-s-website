@@ -54,18 +54,21 @@ const Contact = () => {
             {language === 'fr' && (
               <p className="mt-6 text-base text-muted-foreground">
                 Le plus rapide reste le téléphone :{' '}
+                {/* Le numero est insecable, et l'adresse passe a la ligne sous `sm` :
+                    sur telephone on lisait « 06 95 55 53 », puis « 18 » colle a
+                    l'adresse mail au debut de la ligne suivante. */}
                 <a
                   href="tel:+33695555318"
-                  className="font-semibold text-primary hover:underline underline-offset-4"
+                  className="whitespace-nowrap font-semibold text-primary hover:underline underline-offset-4"
                 >
                   06 95 55 53 18
                 </a>
-                <span className="mx-2 text-border" aria-hidden="true">
+                <span className="mx-2 hidden text-border sm:inline" aria-hidden="true">
                   ·
                 </span>
                 <a
                   href="mailto:elie@elieageron.com"
-                  className="font-medium text-primary hover:underline underline-offset-4"
+                  className="mt-1 block whitespace-nowrap font-medium text-primary hover:underline underline-offset-4 sm:mt-0 sm:inline"
                 >
                   elie@elieageron.com
                 </a>
@@ -92,11 +95,11 @@ const Contact = () => {
             >
               <Link
                 to="/get-started"
-                className="block glass-card neon-border rounded-2xl sm:rounded-3xl p-6 sm:p-10 group hover:scale-[1.01] transition-transform active:scale-[0.99]"
+                className="block glass-card sm:neon-border rounded-2xl sm:rounded-3xl p-6 sm:p-10 group hover:scale-[1.01] transition-transform active:scale-[0.99]"
                 aria-label={language === 'fr' ? 'Démarrer mon projet sans appel' : 'Start my project, no call needed'}
               >
                 <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-8">
-                  <div className="p-4 rounded-2xl bg-primary/20 w-fit shrink-0">
+                  <div className="hidden sm:block p-4 rounded-2xl bg-primary/20 w-fit shrink-0">
                     <FileText className="w-8 h-8 text-primary" aria-hidden="true" />
                   </div>
                   <div className="flex-1">
@@ -122,7 +125,7 @@ const Contact = () => {
                     aria-hidden="true"
                   />
                 </div>
-                <div className="flex items-center gap-2 mt-5 text-primary font-semibold text-sm sm:hidden">
+                <div className="flex items-center gap-2 mt-5 text-primary font-semibold text-base sm:hidden">
                   {language === 'fr' ? 'Remplir le formulaire' : 'Fill in the form'}
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </div>
@@ -147,15 +150,15 @@ const Contact = () => {
             >
               <a
                 href="https://wa.me/33695555318"
-                className="glass-card rounded-2xl p-5 sm:p-6 flex gap-4 items-start hover:border-green-500/40 border border-border/40 transition-colors group active:scale-[0.98]"
+                className="border-b border-border/60 py-5 sm:glass-card sm:rounded-2xl sm:p-6 sm:border sm:border-border/40 flex gap-4 items-start hover:border-green-500/40 transition-colors group active:scale-[0.98]"
                 aria-label="Contact via WhatsApp"
               >
-                <div className="p-3 rounded-xl bg-green-500/10 shrink-0">
+                <div className="hidden sm:block p-3 rounded-xl bg-green-500/10 shrink-0">
                   <MessageCircle className="w-6 h-6 text-green-700" aria-hidden="true" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">WhatsApp</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                  <p className="text-base text-muted-foreground leading-relaxed mb-3 sm:text-sm">
                     {language === 'fr'
                       ? 'Réponse rapide, généralement en quelques minutes.'
                       : 'Quick response, usually within minutes.'}
@@ -169,15 +172,15 @@ const Contact = () => {
 
               <a
                 href="mailto:elie@elieageron.com"
-                className="glass-card rounded-2xl p-5 sm:p-6 flex gap-4 items-start hover:border-primary/40 border border-border/40 transition-colors group active:scale-[0.98]"
+                className="border-b border-border/60 py-5 sm:glass-card sm:rounded-2xl sm:p-6 sm:border sm:border-border/40 flex gap-4 items-start hover:border-primary/40 transition-colors group active:scale-[0.98]"
                 aria-label="Contact via email"
               >
-                <div className="p-3 rounded-xl bg-primary/10 shrink-0">
+                <div className="hidden sm:block p-3 rounded-xl bg-primary/10 shrink-0">
                   <Mail className="w-6 h-6 text-primary" aria-hidden="true" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                  <p className="text-base text-muted-foreground leading-relaxed mb-3 sm:text-sm">
                     {language === 'fr'
                       ? 'Pour les questions rapides, réponse sous 24h.'
                       : 'For quick questions, response within 24h.'}
@@ -195,10 +198,10 @@ const Contact = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="text-center text-sm text-muted-foreground pt-2"
+              className="text-left text-base text-muted-foreground pt-2 sm:text-center sm:text-sm"
             >
               {language === 'fr' ? "C'est pour vos réseaux sociaux ? " : "Is it about your social media? "}
-              <Link to="/reseaux-sociaux" className="text-primary hover:underline underline-offset-4 font-medium">
+              <Link to="/reseaux-sociaux" className="whitespace-nowrap text-primary hover:underline underline-offset-4 font-medium">
                 {language === 'fr' ? "Voir comment je travaille →" : 'See how I work →'}
               </Link>
             </motion.p>

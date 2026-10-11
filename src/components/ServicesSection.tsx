@@ -112,15 +112,16 @@ const ServicesSection = () => {
               className="border-t-2 border-foreground pt-6"
             >
               <h3 className="text-xl font-bold tracking-tight text-foreground sm:text-2xl">{formule.title}</h3>
-              <p className="mt-1 text-sm text-muted-foreground">{formule.tagline}</p>
+              <p className="mt-1 text-base text-muted-foreground lg:text-sm">{formule.tagline}</p>
 
-              <p className="mt-5 font-heading text-3xl font-bold tabular-nums text-primary">{formule.price}</p>
+              {/* `text-2xl` sous `sm` : a 30 px le prix depassait le titre de section. */}
+              <p className="mt-5 font-heading text-2xl font-bold tabular-nums text-primary sm:text-3xl">{formule.price}</p>
 
               <p className="mt-4 leading-relaxed text-muted-foreground">{formule.description}</p>
 
               <ul className="mt-6 space-y-3">
                 {formule.features.map((feature) => (
-                  <li key={feature} className="flex gap-3 text-sm leading-relaxed text-foreground">
+                  <li key={feature} className="flex gap-3 text-base leading-relaxed text-foreground lg:text-sm">
                     <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
                     {feature}
                   </li>
@@ -132,10 +133,10 @@ const ServicesSection = () => {
 
         <ScrollReveal direction="up">
           <div className="mt-12 flex flex-col items-start gap-5 sm:mt-14 sm:flex-row sm:items-center sm:justify-between">
-            <p className="max-w-xl text-sm text-muted-foreground">{t('services.quote.note')}</p>
+            <p className="max-w-xl text-base text-muted-foreground lg:text-sm">{t('services.quote.note')}</p>
             <Link
               to="/get-started"
-              className="inline-flex min-h-[52px] shrink-0 items-center justify-center gap-2 rounded-full bg-primary px-7 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+              className="inline-flex min-h-[52px] w-full shrink-0 items-center justify-center gap-2 rounded-full bg-primary px-7 text-base font-semibold text-primary-foreground transition-colors hover:bg-primary/90 sm:w-auto lg:text-sm"
             >
               {t('services.quote.link')}
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -153,12 +154,12 @@ const ServicesSection = () => {
               viewport={{ once: true, margin: '-40px' }}
               transition={{ delay: index * 0.07, duration: 0.45 }}
             >
-              <p className="font-heading text-2xl font-bold tracking-tight text-foreground">{fait.valeur}</p>
-              <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{fait.desc}</p>
+              <p className="font-heading text-xl font-bold tracking-tight text-foreground sm:text-2xl">{fait.valeur}</p>
+              <p className="mt-1.5 text-base leading-relaxed text-muted-foreground lg:text-sm">{fait.desc}</p>
               {fait.lien && (
                 <Link
                   to={fait.lien.to}
-                  className="mt-2 inline-flex min-h-[24px] items-center gap-1.5 text-sm font-semibold text-primary underline-offset-4 hover:underline"
+                  className="mt-2 inline-flex min-h-[44px] items-center gap-1.5 text-base font-semibold text-primary underline-offset-4 hover:underline sm:min-h-[24px] lg:text-sm"
                 >
                   {fait.lien.texte}
                   <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />

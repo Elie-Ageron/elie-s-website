@@ -100,16 +100,19 @@ const LiveSite = ({ t }: { t: (fr: string, en: string) => string }) => (
     {/* stats band */}
     <div className="h-12 mx-4 rounded-lg bg-primary/8 border border-primary/20 grid grid-cols-3 items-center px-3 text-center shrink-0">
       <div>
-        <p className="text-[12px] font-extrabold text-foreground leading-none">+38%</p>
-        <p className="text-[7px] uppercase tracking-wide text-muted-foreground mt-0.5">{t('visites', 'visits')}</p>
+        {/* 🔴 Cette bande disait « +38 % visites », « 5,0★ avis » et « #1 Google ».
+            Trois compteurs, dont une promesse de classement que la FAQ de la
+            meme page dit impossible. Retires le 11 octobre 2026. */}
+        <p className="text-[12px] font-extrabold text-foreground leading-none">{t('Rapide', 'Fast')}</p>
+        <p className="text-[7px] uppercase tracking-wide text-muted-foreground mt-0.5">{t('à charger', 'to load')}</p>
       </div>
       <div className="border-x border-border/50">
-        <p className="text-[12px] font-extrabold text-foreground leading-none">5,0★</p>
-        <p className="text-[7px] uppercase tracking-wide text-muted-foreground mt-0.5">{t('avis', 'reviews')}</p>
+        <p className="text-[12px] font-extrabold text-foreground leading-none">{t('Avis', 'Reviews')}</p>
+        <p className="text-[7px] uppercase tracking-wide text-muted-foreground mt-0.5">{t('répondus', 'answered')}</p>
       </div>
       <div>
-        <p className="text-[12px] font-extrabold text-foreground leading-none">#1</p>
-        <p className="text-[7px] uppercase tracking-wide text-muted-foreground mt-0.5">Google</p>
+        <p className="text-[12px] font-extrabold text-foreground leading-none">{t('Fiche', 'Profile')}</p>
+        <p className="text-[7px] uppercase tracking-wide text-muted-foreground mt-0.5">{t('à jour', 'up to date')}</p>
       </div>
     </div>
     {/* testimonial */}
@@ -200,11 +203,11 @@ const ServiceHeroMorph = () => {
 
   return (
     // Tall track: the stage stays pinned while this scrolls past → scrub room.
-    <div ref={trackRef} className="relative h-[230vh] sm:h-[260vh]">
-      <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden px-4">
+    <div ref={trackRef} className="relative h-[170vh] sm:h-[260vh]">
+      <div className="sticky top-0 h-[100svh] lg:h-screen flex flex-col items-center justify-center overflow-hidden px-4">
         {/* pain point + hint */}
         <div className="mb-8 sm:mb-12 text-center max-w-2xl px-2">
-          <p className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-foreground leading-none tracking-tight">
+          <p className="text-[1.625rem] font-semibold sm:text-4xl sm:font-extrabold md:text-5xl text-foreground leading-none tracking-tight">
             {t('Pas de site = clients perdus.', 'No site = lost clients.')}
           </p>
           <p className="mt-4 text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
@@ -286,7 +289,7 @@ const ServiceHeroMorph = () => {
             className="absolute -left-3 sm:-left-7 top-20 -rotate-6 rounded-xl bg-card border border-border shadow-xl px-3 py-2 flex items-center gap-1.5 z-50"
           >
             <Search className="w-3.5 h-3.5 text-primary" />
-            <span className="text-[11px] font-semibold text-foreground">{t('1er sur Google', '#1 on Google')}</span>
+            <span className="text-[11px] font-semibold text-foreground">{t('Trouvé sur Google', 'Found on Google')}</span>
           </motion.div>
 
           <motion.div
@@ -294,7 +297,7 @@ const ServiceHeroMorph = () => {
             className="absolute -right-3 sm:-right-7 bottom-20 rotate-3 rounded-xl bg-card border border-border shadow-xl px-3 py-2 flex items-center gap-1.5 z-50"
           >
             <TrendingUp className="w-3.5 h-3.5 text-emerald-500" />
-            <span className="text-[11px] font-semibold text-foreground">+38% {t('visites', 'visits')}</span>
+            <span className="text-[11px] font-semibold text-foreground">{t('Des demandes', 'Enquiries')}</span>
           </motion.div>
         </motion.div>
 
@@ -304,8 +307,8 @@ const ServiceHeroMorph = () => {
             {t('Un site oublié', 'A forgotten site')}
           </motion.span>
           <motion.span
-            style={{ opacity: capLive, scale: capLiveScale }}
-            className="absolute left-1/2 -translate-x-1/2 whitespace-nowrap text-lg sm:text-2xl font-extrabold text-primary"
+            style={{ opacity: capLive, scale: capLiveScale, x: '-50%' }}
+            className="absolute left-1/2 whitespace-nowrap text-lg sm:text-2xl font-extrabold text-primary"
           >
             {t('Un site qui travaille pour vous', 'A site that works for you')}
           </motion.span>

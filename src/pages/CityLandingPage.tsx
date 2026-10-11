@@ -4,7 +4,6 @@ import { MapPin, ArrowRight, ArrowUpRight, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { useCalendly } from '@/contexts/CalendlyContext';
 import ServicesSection from '@/components/ServicesSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import FAQAccordion from '@/components/FAQAccordion';
@@ -19,7 +18,6 @@ interface CityLandingPageProps {
 
 const CityLandingPage = ({ slug }: CityLandingPageProps) => {
   const { language } = useLanguage();
-  const { openCalendly } = useCalendly();
 
   const city = cities.find((c) => c.slug === slug);
   if (!city) return null;
@@ -180,7 +178,10 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
 
       {/* Hero */}
       <section
-        className="relative min-h-[80vh] flex items-center justify-center overflow-hidden grain px-4 sm:px-6"
+        /* ⚠️ `min-h-[80vh]` et le centrage passent en `lg:`, comme les sept heros
+           corriges le 22 septembre 2026 : cette famille avait ete oubliee. Sur
+           telephone le hero laissait 135 px vides sous le bouton. */
+        className="relative overflow-hidden grain px-4 sm:px-6 lg:min-h-[80svh] lg:flex lg:items-center lg:justify-center"
         aria-labelledby="city-hero-heading"
       >
         <div className="hidden lg:block absolute inset-0 z-[1] pointer-events-none" aria-hidden="true">
@@ -188,12 +189,12 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
           <div className="absolute bottom-1/4 right-1/4 w-56 sm:w-80 h-56 sm:h-80 bg-primary/5 rounded-full blur-[80px]" />
         </div>
 
-        <div className="relative z-10 max-w-4xl mx-auto py-16 text-center">
+        <div className="relative z-10 max-w-4xl mx-auto py-8 sm:py-16 text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.1, duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-4 sm:mb-8"
           >
             <MapPin className="w-4 h-4 text-primary shrink-0" aria-hidden="true" />
             <span className="text-sm text-muted-foreground">
@@ -206,7 +207,7 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="hero-title mb-6"
+            className="hero-title mb-4 sm:mb-6"
           >
             <span className="text-foreground">{d.h1Pre}</span>
             <span className="inline-block text-primary">{d.h1Highlight}</span>
@@ -216,7 +217,7 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="text-lg sm:text-xl text-muted-foreground mb-6 max-w-2xl mx-auto font-medium"
+            className="text-lg sm:text-xl text-muted-foreground mb-6 max-w-2xl mx-auto font-medium text-balance"
           >
             {d.h2}
           </motion.p>
@@ -225,7 +226,7 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="text-sm sm:text-base text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed"
+            className="text-base text-muted-foreground mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed"
           >
             {d.intro}
           </motion.p>
@@ -236,23 +237,23 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
           >
+            {/* 🔴 Ce bouton disait « Obtenir mon audit gratuit » et ouvrait
+                Calendly, sur les quinze pages locales. Corrige le 11 octobre
+                2026 : il mene a l'audit, comme le hero de l'accueil. */}
             <Button
               variant="hero"
               size="xl"
               className="min-h-[56px] px-8 text-base sm:text-lg w-full sm:w-auto active:scale-[0.98] transition-transform"
-              onClick={openCalendly}
-              aria-label={
-                language === 'fr'
-                  ? `Réserver un appel gratuit, web designer ${d.name}`
-                  : `Book a free call, web designer ${d.name}`
-              }
+              asChild
             >
-              {language === 'fr' ? 'Obtenir mon audit gratuit' : 'Get my free audit'}
+              <Link to="/audit-gratuit">
+                {language === 'fr' ? 'Obtenir mon audit gratuit' : 'Get my free audit'}
+              </Link>
             </Button>
             <Button
               variant="ghost"
               size="xl"
-              className="min-h-[56px] px-8 text-base text-muted-foreground hover:text-foreground group w-full sm:w-auto"
+              className="min-h-[44px] sm:min-h-[56px] px-8 text-base text-muted-foreground hover:text-foreground group w-full sm:w-auto"
               asChild
             >
               <Link to="/services" className="flex items-center gap-2">
@@ -285,9 +286,9 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.55, duration: 0.6 }}
-              className="mt-4 flex items-center justify-center gap-2 text-xs sm:text-sm text-muted-foreground"
+              className="mt-4 flex items-center justify-center gap-2 text-sm text-muted-foreground"
             >
-              <Clock className="w-3.5 h-3.5 text-primary shrink-0" aria-hidden="true" />
+              <Clock className="hidden sm:block w-3.5 h-3.5 text-primary shrink-0" aria-hidden="true" />
               {depth!.travel}
             </motion.p>
           )}
@@ -314,9 +315,9 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
       {showDepth && (
         <>
           {/* Contexte local, la partie qui distingue cette page d'une page dupliquee */}
-          <section className="py-16 sm:py-24 border-t border-border/50" aria-labelledby="city-context">
+          <section className="py-20 sm:py-24 border-t border-border/50" aria-labelledby="city-context">
             <div className="max-w-3xl mx-auto px-4 sm:px-6">
-              <h2 id="city-context" className="text-2xl sm:text-3xl font-medium leading-tight text-balance mb-6">
+              <h2 id="city-context" className="max-lg:section-title lg:text-3xl lg:font-medium lg:leading-tight text-balance mb-6">
                 {`Le contexte à ${d.name}`}
               </h2>
               <div className="space-y-5">
@@ -360,10 +361,10 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
                     className="py-8 sm:py-10 grid grid-cols-1 sm:grid-cols-12 gap-3 sm:gap-8"
                   >
                     <div className="sm:col-span-4">
-                      <span className="text-xs font-mono text-primary">
+                      <span className="block font-heading text-4xl font-bold leading-none text-primary lg:inline lg:font-mono lg:text-xs lg:font-normal lg:leading-normal">
                         {String(i + 1).padStart(2, '0')}
                       </span>
-                      <h3 className="mt-1 text-lg sm:text-xl font-semibold leading-snug text-foreground">
+                      <h3 className="mt-3 text-lg sm:text-xl font-semibold leading-snug text-foreground lg:mt-1">
                         {block.title}
                       </h3>
                     </div>
@@ -377,16 +378,16 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
           </section>
 
           {/* Reseaux sociaux, deuxieme pilier */}
-          <section className="py-16 sm:py-24" aria-labelledby="city-social">
+          <section className="py-20 sm:py-24" aria-labelledby="city-social">
             <div className="max-w-3xl mx-auto px-4 sm:px-6">
-              <h2 id="city-social" className="text-2xl sm:text-3xl font-medium leading-tight text-balance mb-5">
+              <h2 id="city-social" className="max-lg:section-title lg:text-3xl lg:font-medium lg:leading-tight text-balance mb-5">
                 {`Et si on filmait chez vous, à ${d.name} ?`}
               </h2>
               <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">{depth!.social}</p>
               <p className="mt-6">
                 <Link
                   to="/reseaux-sociaux"
-                  className="inline-flex items-center gap-1.5 min-h-[24px] text-primary font-medium hover:underline underline-offset-4"
+                  className="inline-flex items-center gap-1.5 min-h-[44px] sm:min-h-[24px] text-primary font-medium hover:underline underline-offset-4"
                 >
                   Voir comment se passe une journée de tournage
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -396,9 +397,9 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
           </section>
 
           {/* Communes desservies, maillage semantique local */}
-          <section className="py-12 sm:py-16 bg-secondary/40 border-y border-border/50" aria-labelledby="city-nearby">
+          <section className="py-16 bg-secondary/40 border-y border-border/50" aria-labelledby="city-nearby">
             <div className="max-w-3xl mx-auto px-4 sm:px-6">
-              <h2 id="city-nearby" className="text-lg sm:text-xl font-semibold text-foreground mb-4">
+              <h2 id="city-nearby" className="text-2xl font-semibold leading-tight text-foreground mb-4 lg:text-xl">
                 {`Autour ${de(d.name)}`}
               </h2>
               <p className="text-base text-muted-foreground leading-relaxed">
@@ -414,7 +415,7 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
               qui portent une FAQ, seules les questions changent. */}
           <FaqSection
             id="city-faq"
-            className="px-4 py-14 sm:px-6 sm:py-20"
+            className="px-4 py-20 sm:px-6"
             items={depth!.faq.map((item) => ({ question: item.q, answer: item.a }))}
             titre={
               <>
@@ -426,11 +427,11 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
 
           {/* Maillage vers le corpus, choisi pour le tissu economique du bassin */}
           {cityArticles.length > 0 && (
-            <section className="py-12 sm:py-16 border-t border-border/50" aria-labelledby="city-articles">
+            <section className="py-16 border-t border-border/50" aria-labelledby="city-articles">
               <div className="max-w-3xl mx-auto px-4 sm:px-6">
                 <h2
                   id="city-articles"
-                  className="text-2xl sm:text-3xl font-medium leading-tight text-foreground"
+                  className="max-lg:section-title lg:text-3xl lg:font-medium lg:leading-tight text-foreground"
                 >
                   Ce qui concerne les entreprises d&rsquo;ici
                 </h2>
@@ -442,10 +443,10 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
                   {cityArticles.map((post) => (
                     <li key={post.slug}>
                       <Link to={`/blog/${post.slug}`} className="group block py-5">
-                        <span className="block font-medium text-foreground group-hover:text-primary transition-colors">
+                        <span className="block font-medium text-foreground text-pretty group-hover:text-primary transition-colors">
                           {post.title}
                         </span>
-                        <span className="mt-1 block text-sm text-muted-foreground line-clamp-2">
+                        <span className="mt-1 line-clamp-2 text-base text-muted-foreground lg:block lg:text-sm">
                           {post.excerpt}
                         </span>
                       </Link>
@@ -463,9 +464,9 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
 
       {/* Maillage vers les autres pages locales */}
       {related.length > 0 && (
-        <section className="py-12 sm:py-16 border-t border-border/50" aria-labelledby="city-related">
+        <section className="py-16 border-t border-border/50" aria-labelledby="city-related">
           <div className="max-w-3xl mx-auto px-4 sm:px-6">
-            <h2 id="city-related" className="text-lg sm:text-xl font-semibold text-foreground mb-5">
+            <h2 id="city-related" className="text-2xl font-semibold leading-tight text-foreground mb-5 lg:text-xl">
               {language === 'fr' ? "J'interviens aussi ici" : 'I also work here'}
             </h2>
             <ul className="divide-y divide-border/60 border-y border-border/60">

@@ -149,7 +149,7 @@ const SocialPillarSection = () => {
                 <ScrollReveal key={step.num} direction="up" delay={i * 0.05}>
                   <article className="flex gap-6 sm:gap-8">
                     <span
-                      className="shrink-0 font-heading text-5xl font-bold leading-none text-primary sm:text-6xl"
+                      className="w-7 shrink-0 font-heading text-5xl font-bold leading-none text-primary sm:w-9 sm:text-6xl lg:w-auto"
                       aria-hidden="true"
                     >
                       {step.num}
@@ -191,10 +191,14 @@ const SocialPillarSection = () => {
         <ScrollReveal direction="up">
           <div className="mt-16 flex flex-col gap-5 border-t border-border pt-10 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="font-heading text-3xl font-bold leading-none text-foreground sm:text-4xl">
-                {fr ? '890 € par mois, sans engagement' : '€890 a month, no commitment'}
+              {/* ⚠️ `text-2xl` sous `sm` : en 30 px et graisse 700, le prix etait
+                  plus gros que le titre de sa propre section (27 px). Et « par
+                  mois » est insecable : la ligne se coupait en « sans /
+                  engagement », un mot seul. */}
+              <p className="font-heading text-2xl font-bold leading-tight text-foreground text-balance sm:text-4xl sm:leading-none">
+                {fr ? '890 € par mois, sans engagement' : '€890 a month, no commitment'}
               </p>
-              <p className="mt-2.5 text-sm text-muted-foreground">
+              <p className="mt-2.5 text-base text-muted-foreground lg:text-sm">
                 {fr
                   ? "Une journée de tournage chez vous, 8 vidéos, 4 carrousels et 8 stories publiés, déplacement compris."
                   : 'A full day of filming at your place, 8 videos, 4 carousels and 8 stories posted for you, travel included.'}
@@ -206,7 +210,7 @@ const SocialPillarSection = () => {
                   j'offre le site web. »* */}
               <p className="mt-3 text-base font-medium text-foreground">
                 {fr ? 'Et au troisième mois, votre site web d’une page. ' : 'And from the third month, your one page website. '}
-                <span className="text-primary">{fr ? 'Compris.' : 'Included.'}</span>
+                <span className="block text-primary sm:inline">{fr ? 'Compris.' : 'Included.'}</span>
               </p>
             </div>
             <Link

@@ -65,7 +65,7 @@ const renderContent = (content: string) => {
       elements.push(<hr key={key++} className="my-10 border-border/60" />);
     } else if (line.startsWith('- ')) {
       listItems.push(
-        <li key={key++} className="text-muted-foreground leading-relaxed">
+        <li key={key++} className="text-muted-foreground leading-relaxed text-pretty lg:text-wrap">
           {renderInlineFormatting(line.replace('- ', ''))}
         </li>
       );
@@ -74,7 +74,7 @@ const renderContent = (content: string) => {
     } else {
       flushList();
       elements.push(
-        <p key={key++} className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-5">
+        <p key={key++} className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-5 text-pretty lg:text-wrap">
           {renderInlineFormatting(line)}
         </p>
       );
@@ -195,7 +195,7 @@ const BlogPost = () => {
     };
     const site = {
       title: 'Vous voulez que quelqu’un s’en occupe ?',
-      body: 'Je crée des sites qui répondent aux questions de vos clients et qui amènent des demandes, en Savoie et en Haute-Savoie. Chiffré sur devis, après un appel.',
+      body: 'Je crée des sites qui répondent aux questions de vos clients et qui amènent des demandes, en Savoie et en Haute-Savoie. Une page dès 500 euros, le prix exact par écrit après un appel.',
       to: '/services',
       label: 'Voir ce que je fais',
     };
@@ -212,8 +212,17 @@ const BlogPost = () => {
       conversion: site,
       strategie: site,
     };
-    return map[categorySlug] ?? site;
-  }, [categorySlug]);
+    /* 🔴 Le message etait choisi par categorie seulement : les articles
+       « strategie » et « conversion » du pilier reseaux finissaient sur une
+       carte qui vendait des sites, dans un article sur le prix d'un community
+       manager (16 articles). Le pilier passe en premier. */
+    const parPilier: Record<string, typeof site> = {
+      '/guides/reseaux-sociaux-entreprise-locale': social,
+      '/guides/video-smartphone-entreprise': social,
+      '/guides/visibilite-google-locale': map['seo-local'],
+    };
+    return parPilier[entree?.pillar ?? ''] ?? map[categorySlug] ?? site;
+  }, [categorySlug, entree?.pillar]);
 
   const formatDate = (dateString: string) =>
     new Date(dateString).toLocaleDateString(fr ? 'fr-FR' : 'en-US', {
@@ -385,7 +394,7 @@ const BlogPost = () => {
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <Link
             to={`/guides/${pillar.slug}`}
-            className="group flex items-start gap-3 rounded-xl border border-border/60 bg-secondary/40 p-4 hover:border-primary/40 transition-colors"
+            className="group flex items-start gap-3 border-y border-border/60 py-4 hover:border-primary/40 transition-colors lg:rounded-xl lg:border lg:bg-secondary/40 lg:p-4"
           >
             <span className="min-w-0">
               <span className="block text-sm font-semibold text-primary">
@@ -443,8 +452,8 @@ const BlogPost = () => {
             <dl className="divide-y divide-border/60 border-y border-border/60">
               {faq.map((item) => (
                 <div key={item.q} className="py-6">
-                  <dt className="text-base sm:text-lg font-semibold text-foreground">{item.q}</dt>
-                  <dd className="mt-2 text-base text-muted-foreground leading-relaxed">{item.a}</dd>
+                  <dt className="text-base sm:text-lg font-semibold text-foreground text-balance lg:text-wrap">{item.q.replace(/ ([?!:;])/g, ' $1')}</dt>
+                  <dd className="mt-2 text-base text-muted-foreground leading-relaxed text-pretty lg:text-wrap">{item.a}</dd>
                 </div>
               ))}
             </dl>
@@ -459,7 +468,7 @@ const BlogPost = () => {
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="glass-card rounded-2xl p-6 sm:p-8 text-center"
+            className="glass-card rounded-2xl p-6 sm:p-8 text-left lg:text-center"
           >
             <h2 className="text-xl sm:text-2xl font-semibold text-foreground leading-snug">
               {fr ? cta.title : 'Want to talk it through?'}
@@ -469,7 +478,7 @@ const BlogPost = () => {
                 ? cta.body
                 : 'Thirty minutes, free, no strings. I will tell you honestly what I would do in your place, including when the answer is to do nothing.'}
             </p>
-            <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <div className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center lg:justify-center gap-3">
               <Button
                 variant="hero"
                 size="lg"
@@ -485,7 +494,7 @@ const BlogPost = () => {
               )}
             </div>
             {fr && (
-              <p className="mt-5 text-sm text-muted-foreground">
+              <p className="mt-5 hidden text-sm text-muted-foreground lg:block">
                 Trente minutes, gratuit, sans engagement. Vous préférez écrire ?{' '}
                 <Link to="/contact" className="font-medium text-primary hover:underline underline-offset-4">
                   Envoyez-moi un message
@@ -510,7 +519,7 @@ const BlogPost = () => {
       {relatedPosts.length > 0 && (
         <section className="py-10 sm:py-14 border-t border-border/60" aria-labelledby="related-posts">
           <div className="max-w-3xl mx-auto px-4 sm:px-6">
-            <h2 id="related-posts" className="text-lg sm:text-xl font-semibold text-foreground mb-5">
+            <h2 id="related-posts" className="text-2xl leading-tight font-semibold text-foreground mb-5 lg:text-xl">
               {fr ? 'À lire ensuite' : 'Read next'}
             </h2>
             <ul className="border-y border-border/60 divide-y divide-border/60">
@@ -522,10 +531,10 @@ const BlogPost = () => {
                   >
                     <span className="sm:col-span-3 text-sm text-primary font-medium">{related.categoryLabel}</span>
                     <span className="sm:col-span-9 min-w-0">
-                      <span className="block font-medium group-hover:text-primary transition-colors">
+                      <span className="block font-medium text-pretty group-hover:text-primary transition-colors">
                         {related.title}
                       </span>
-                      <span className="mt-1 block text-sm text-muted-foreground line-clamp-2">
+                      <span className="mt-1 line-clamp-2 text-base text-muted-foreground lg:block lg:text-sm">
                         {related.excerpt}
                       </span>
                     </span>

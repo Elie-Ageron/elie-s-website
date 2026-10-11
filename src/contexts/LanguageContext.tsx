@@ -667,7 +667,7 @@ const translations = {
     'testimonials.title1': 'Ils étaient à votre place.',
     'testimonials.title2': "Ils ont accepté d'en parler.",
     'testimonials.subtitle': 'Des retours honnêtes de gens qui sont passés par là.',
-    'testimonials.cta': 'Voir nos réalisations',
+    'testimonials.cta': 'Voir mes réalisations',
     'testimonials.cta.link': '/portfolio',
     'testimonial.1.text': "On avait besoin d'un site à la hauteur de notre énergie. Elie a compris notre univers immédiatement. Le résultat est percutant, professionnel, exactement ce qu'on voulait.",
     'testimonial.1.author': 'VM Producers',

@@ -23,7 +23,7 @@ const Bar = ({ w = 'w-full', tone = 'bg-muted-foreground/25', h = 'h-1.5' }: { w
 
 /* 1. SITES, browser window with a colorful demo site + floating result chip */
 const SitesMockup = () => (
-  <div className="relative w-[340px] sm:w-[400px]">
+  <div className="relative w-[296px] sm:w-[400px]">
     <div className="rounded-2xl bg-card border border-border shadow-2xl overflow-hidden -rotate-2">
       <div className="flex items-center gap-1.5 px-3 py-2.5 bg-secondary/70 border-b border-border/70">
         <span className="w-2.5 h-2.5 rounded-full bg-rose-400/70" />
@@ -63,7 +63,7 @@ const SitesMockup = () => (
 const GoogleBusinessMockup = () => {
   const { language } = useLanguage();
   return (
-    <div className="relative w-[320px] sm:w-[360px] -rotate-1">
+    <div className="relative w-[296px] sm:w-[360px] -rotate-1">
       <div className="rounded-2xl bg-card border border-border shadow-2xl overflow-hidden">
         <div className="relative h-28 overflow-hidden" style={{ backgroundColor: 'hsl(40 30% 96%)', backgroundImage: 'linear-gradient(hsl(30 10% 88%) 1px, transparent 1px), linear-gradient(90deg, hsl(30 10% 88%) 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
           {/* green park blob */}
@@ -146,10 +146,13 @@ const SocialMockup = () => {
         </div>
       </div>
 
-      {/* floating view counter, the real proof of the offer */}
+      {/* 🔴 Cette pastille affichait « 56 619 vues », le chiffre exact qu'Elie a
+          fait retirer de `/reseaux-sociaux` le 14 septembre 2026 (« aucun
+          compteur nulle part »). Elle dit maintenant ce que le service garantit
+          vraiment : la publication. */}
       <div className="absolute -left-10 top-[18%] -rotate-6 rounded-2xl bg-card border border-border shadow-xl px-3 py-2 leading-tight transition-transform duration-300 ease-out group-hover:-translate-x-2.5 group-hover:-translate-y-1 group-hover:-rotate-[14deg]">
-        <span className="block text-sm font-bold text-foreground tabular-nums">56 619</span>
-        <span className="block text-[9px] text-muted-foreground">{language === 'fr' ? 'vues' : 'views'}</span>
+        <span className="block text-sm font-bold text-foreground">{language === 'fr' ? 'Publié' : 'Posted'}</span>
+        <span className="block text-[9px] text-muted-foreground">{language === 'fr' ? 'mardi, 18:30' : 'Tuesday, 6:30pm'}</span>
       </div>
 
       {/* floating publishing rhythm chip */}
@@ -167,7 +170,7 @@ const SocialMockup = () => {
 
 /* 4. BRANDING, brand board with a real multi-color palette + floating swatch */
 const BrandingMockup = () => (
-  <div className="relative w-[330px] sm:w-[380px] -rotate-1">
+  <div className="relative w-[296px] sm:w-[380px] -rotate-1">
     <div className="rounded-2xl bg-card border border-border shadow-2xl p-5 space-y-4">
       <div className="flex items-center gap-3">
         <span className="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-500 to-orange-400 flex items-center justify-center text-white font-heading font-bold text-xl shrink-0 shadow-lg shadow-rose-500/20">b</span>
@@ -198,7 +201,7 @@ const BrandingMockup = () => (
 const SeoMockup = () => {
   const { language } = useLanguage();
   return (
-    <div className="relative w-[350px] sm:w-[400px] -rotate-1">
+    <div className="relative w-[296px] sm:w-[400px] -rotate-1">
       <div className="rounded-2xl bg-card border border-border shadow-2xl p-4 space-y-3">
         <div className="h-8 rounded-full bg-secondary border border-border/60 flex items-center px-3.5 gap-2">
           <Search className="w-3.5 h-3.5 text-muted-foreground shrink-0" aria-hidden="true" />
@@ -224,8 +227,10 @@ const SeoMockup = () => {
           <TrendingUp className="w-4 h-4 text-white" aria-hidden="true" />
         </span>
         <span className="leading-tight">
-          <span className="block text-xs font-bold text-foreground">+12</span>
-          <span className="block text-[8px] text-muted-foreground">{language === 'fr' ? 'places' : 'spots'}</span>
+          {/* Disait « +12 places » : une promesse de classement chiffree, sur
+              une page dont la FAQ dit que personne ne peut la garantir. */}
+          <span className="block text-xs font-bold text-foreground">{language === 'fr' ? 'Suivi' : 'Tracked'}</span>
+          <span className="block text-[8px] text-muted-foreground">{language === 'fr' ? 'chaque mois' : 'every month'}</span>
         </span>
       </div>
       {/* floating climbing bars */}
@@ -243,7 +248,7 @@ const SeoMockup = () => {
 const ReviewMockup = () => {
   const { language } = useLanguage();
   return (
-    <div className="relative w-[320px] sm:w-[360px]">
+    <div className="relative w-[296px] sm:w-[360px]">
       {/* card behind for depth */}
       <div className="absolute inset-0 translate-x-3.5 translate-y-3.5 rotate-3 rounded-2xl bg-secondary border border-border" aria-hidden="true" />
       <div className="relative rounded-2xl bg-card border border-border shadow-2xl p-4 space-y-3 -rotate-1">
@@ -283,7 +288,7 @@ const ReviewMockup = () => {
 const ContentMockup = () => {
   const { language } = useLanguage();
   return (
-    <div className="relative w-[320px] sm:w-[360px] -rotate-1">
+    <div className="relative w-[296px] sm:w-[360px] -rotate-1">
       {/* sheet behind */}
       <div className="absolute inset-0 -translate-x-3.5 translate-y-3.5 -rotate-3 rounded-2xl bg-secondary border border-border" aria-hidden="true" />
       <div className="relative rounded-2xl bg-card border border-border shadow-2xl p-5 space-y-3">

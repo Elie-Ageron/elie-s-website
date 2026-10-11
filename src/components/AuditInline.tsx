@@ -82,10 +82,13 @@ const AuditInline = () => {
                   doit se voir dans la meme seconde que le titre, pas apres
                   quatre lignes de texte. */}
               <ul className="mt-7 flex flex-wrap gap-x-3 gap-y-2">
-                {reperes.map((repere) => (
+                {/* « Deux champs » est masque sous `sm` : les trois pastilles ne
+                    tiennent pas sur une ligne de telephone, la derniere tombait
+                    seule. Les deux champs sont visibles juste dessous. */}
+                {reperes.map((repere, i) => (
                   <li
                     key={repere}
-                    className="inline-flex items-center gap-1.5 rounded-full bg-secondary px-3.5 py-2 text-sm font-semibold text-foreground"
+                    className={`${i === 1 ? 'hidden sm:inline-flex' : 'inline-flex'} items-center gap-1.5 rounded-full bg-secondary px-3.5 py-2 text-sm font-semibold text-foreground`}
                   >
                     <Check className="h-4 w-4 text-primary" aria-hidden="true" />
                     {repere}

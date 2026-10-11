@@ -129,7 +129,7 @@ const HeroSection = () => {
             <Button
               variant="hero"
               size="lg"
-              className="w-full px-8 text-sm transition-transform active:scale-[0.98] sm:w-auto sm:text-base"
+              className="w-full px-8 text-base transition-transform active:scale-[0.98] sm:w-auto"
               asChild
             >
               <Link to="/audit-gratuit">
@@ -140,7 +140,7 @@ const HeroSection = () => {
             <button
               type="button"
               onClick={openCalendly}
-              className="inline-flex min-h-[44px] items-center text-sm text-muted-foreground underline-offset-[6px] transition-colors hover:text-foreground hover:underline sm:text-base"
+              className="inline-flex min-h-[44px] items-center text-base text-muted-foreground underline-offset-[6px] transition-colors hover:text-foreground hover:underline"
               aria-label={language === 'fr' ? 'Réserver un appel gratuit avec Elie Ageron' : 'Book a free call with Elie Ageron'}
             >
               {t('hero.cta.call')}
@@ -151,7 +151,7 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.32, duration: 0.5 }}
-            className="mt-6 text-xs text-muted-foreground sm:text-sm"
+            className="mt-6 text-sm text-muted-foreground"
           >
             {t('hero.friction')}
           </motion.p>
