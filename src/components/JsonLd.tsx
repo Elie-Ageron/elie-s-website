@@ -37,6 +37,7 @@ const JsonLd = () => {
        droite convertie en decimal. C'est la forme stable et documentee. */
     sameAs: [
       'https://www.linkedin.com/in/elie-ageron-289636394',
+      'https://www.instagram.com/elie.ageron/',
       'https://maps.google.com/?cid=10223724609164966776',
     ],
     knowsAbout: [

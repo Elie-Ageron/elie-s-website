@@ -546,9 +546,45 @@ vivent dans une rangée à part du même bloc, sous Isabelle et Nouït
 > lien vers son site : **le nom oui, le lien non**, tranché par Elie. Belle Belle Belle
 > n'avait pas été prévenue d'une diffusion au tournage.
 
-⚠️ **Sous trois vidéos, le texte de la rangée prend la place des cases
-vides** (`RangeeSalon`). À trois et plus, il repasse en tête, comme les
-rangées des clientes. C'est la seule preuve du site qui montre des artisans.
+⚠️ **La rangée du salon est une bande qui défile** (`BandeVideos`) depuis le
+11 octobre 2026 : trois vidéos visibles, des flèches au dessus dès qu'il y en
+a plus. Une grille laissait une case seule sur sa ligne à la quatrième vidéo.
+C'est la seule preuve du site qui montre des artisans.
+
+### Les vidéos livrées sur l'accueil (11 octobre 2026)
+
+> Elie : *« ce serait bien que ce soit sur l'accueil, toutes ces vidéos-là,
+> les vidéos Nouït, Isabelle, etc. Ça fait la preuve sociale en plus. »*
+
+`VideosLivreesAccueil`, juste après `SocialPillarSection` : **« Quelques
+vidéos que j'ai livrées récemment. »**, une bande de toutes les vidéos
+(`videosAccueil` dans `publications-livrees.ts`, ordre alterné entre les
+deux clientes et le salon), puis deux liens : la page réseaux, et
+**l'Instagram d'Elie, `@elie.ageron`**.
+
+⚠️ **Ce n'est pas le retour de `SocialClientsSection`**, qu'Elie avait fait
+descendre de l'accueil le 13 septembre (*« ça ne fait pas une très belle
+vitrine »*) : celle-là listait des comptes, celle-ci montre le travail.
+
+⚠️ **Le carrousel de Nouït n'est pas dans la bande de l'accueil** : un
+carrousel qui défile dans une bande qui défile, le doigt ne sait plus lequel
+il pousse.
+
+#### Pas de flux Instagram en direct, et pourquoi
+
+Elie a posé la question le même jour : un fil qui affiche ses publications en
+direct, ou les vidéos avec un lien « Voir sur Instagram » ? **Les vidéos et le
+lien.** Instagram a fermé son accès simple pour les sites en décembre 2024. Ce
+qui reste demande soit l'API Graph de Meta (compte pro, application Facebook,
+jeton qui expire), soit un widget payant. Dans les deux cas : un script tiers
+lourd sur la page la plus lente du site, des cookies donc un bandeau de
+consentement, et chaque publication affichée, y compris celles qui ne prouvent
+rien. Une bande choisie se charge sans rien, et le lien amène quand même au
+compte.
+
+**`@elie.ageron` est maintenant dans les `sameAs`** de `JsonLd`,
+`OrganizationSchema`, `index.html`, et dans `llms.txt`. Isabelle a aussi son
+Instagram, `@cabinetisabelleageronvicat`, lié à côté de son Facebook.
 
 ### Page Audit gratuit (`/audit-gratuit`)
 - `src/pages/AuditGratuit.tsx` + `src/components/AuditForm.tsx` — **l'aimant du funnel**, créé le 13 septembre 2026.
@@ -1095,8 +1131,8 @@ l'écriture, Albertville).
 > `formatrice-ecriture` notait qu'elle n'était pas nommable ; Elie a demandé
 > lui-même de l'afficher le 13 septembre 2026.
 >
-> 🔴 **Les comptes Instagram et Facebook d'Isabelle ne sont pas liés**, faute
-> d'avoir les identifiants exacts. Son site fait le lien en attendant.
+> ✅ **Les comptes d'Isabelle sont liés** depuis le 11 octobre 2026 : Facebook
+> et Instagram (`@cabinetisabelleageronvicat`), plus son site.
 
 ---
 

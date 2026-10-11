@@ -69,6 +69,7 @@ const COMPTES: Compte[] = [
     depuisEn: 'Facebook, Instagram and LinkedIn, since August 2026',
     liens: [
       { label: 'Facebook', href: 'https://www.facebook.com/isabelleageronvicat/' },
+      { label: 'Instagram', href: 'https://www.instagram.com/cabinetisabelleageronvicat/' },
       { label: 'LinkedIn', href: 'https://fr.linkedin.com/in/isabelle-ageron-vicat-2b57ba78' },
       { label: 'Son site', labelEn: 'Her website', href: 'https://isabelle-ageronvicat.fr' },
     ],

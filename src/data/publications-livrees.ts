@@ -93,7 +93,11 @@ export const clientesLivrees: ClienteLivree[] = [
     logo: logoIsabelle,
     metierFr: "formatrice en rééducation de l'écriture, Albertville",
     metierEn: 'handwriting rehabilitation trainer, Albertville',
-    liens: [{ reseau: 'Facebook', href: 'https://www.facebook.com/isabelleageronvicat/' }],
+    // Instagram retrouve le 11 octobre 2026 : il commente le reel d'Elie.
+    liens: [
+      { reseau: 'Facebook', href: 'https://www.facebook.com/isabelleageronvicat/' },
+      { reseau: 'Instagram', href: 'https://www.instagram.com/cabinetisabelleageronvicat/' },
+    ],
     pieces: [
       {
         // Sa derniere video publiee, et celle qu'Elie a demande de mettre :
@@ -201,6 +205,8 @@ export const clientesLivrees: ClienteLivree[] = [
 export type VideoSalon = {
   id: string;
   entreprise: string;
+  /** Un lien vers la publication, quand la video est sortie sur un reseau. */
+  lien?: LienVideo;
   metierFr: string;
   metierEn: string;
   fichier: string;
@@ -241,3 +247,83 @@ export const videosSalon: VideoSalon[] = [
     poster: '/publications/videos/salon-louise-verlaine-chambery.webp',
   },
 ];
+
+/* ── Les videos de l'accueil ──────────────────────────────────────────────
+
+   Elie, le 11 octobre 2026 : « ce serait bien que ce soit sur l'accueil,
+   toutes ces videos-la, les videos Nouit, Isabelle, etc. Ca fait la preuve
+   sociale en plus. »
+
+   Les memes fichiers que `/reseaux-sociaux`, aplatis en une seule bande. Le
+   carrousel de Nouit n'y est pas : un carrousel qui defile dans une bande qui
+   defile, c'est deux gestes identiques l'un dans l'autre, et le doigt ne sait
+   plus lequel il pousse. */
+
+export const INSTAGRAM_ELIE = 'https://www.instagram.com/elie.ageron/';
+
+export type LienVideo = { libelleFr: string; libelleEn: string; href: string };
+
+export type VideoBande = {
+  id: string;
+  fichier: string;
+  poster: string;
+  titreFr: string;
+  titreEn: string;
+  /** La personne ou l'entreprise, affichee sous la video. */
+  nom: string;
+  metierFr: string;
+  metierEn: string;
+  lien?: LienVideo;
+};
+
+export const depuisSalon = (v: VideoSalon): VideoBande => ({
+  id: v.id,
+  fichier: v.fichier,
+  poster: v.poster,
+  titreFr: v.questionFr ? `${v.entreprise} : ${v.questionFr}` : `${v.entreprise}, interview au salon`,
+  titreEn: v.questionEn ? `${v.entreprise}: ${v.questionEn}` : `${v.entreprise}, interview at the fair`,
+  nom: v.entreprise,
+  metierFr: v.metierFr,
+  metierEn: v.metierEn,
+  lien: v.lien,
+});
+
+const depuisCliente = (c: ClienteLivree): VideoBande[] =>
+  c.pieces.flatMap((p) =>
+    p.type === 'video'
+      ? [
+          {
+            id: p.id,
+            fichier: p.fichier,
+            poster: p.poster,
+            titreFr: `${c.nom} : ${p.titreFr}`,
+            titreEn: `${c.nom}: ${p.titreEn}`,
+            nom: c.nom,
+            metierFr: c.metierFr,
+            metierEn: c.metierEn,
+          },
+        ]
+      : []
+  );
+
+/* L'ordre alterne les trois sources, pour que les trois premieres videos
+   visibles montrent trois personnes et deux metiers differents. Une video
+   absente de cette liste n'est pas perdue : elle s'ajoute a la fin. */
+const ORDRE_ACCUEIL = [
+  'isabelle-une-forme',
+  'nouit-quand-tout-va-bien',
+  'salon-generation-menuiserie-73',
+  'isabelle-maternelle',
+  'nouit-boule-de-cristal',
+  'salon-parcs-et-jardins',
+  'isabelle-crayon',
+  'salon-louise-verlaine-chambery',
+];
+
+const toutes = [...clientesLivrees.flatMap(depuisCliente), ...videosSalon.map(depuisSalon)];
+const rang = (id: string) => {
+  const i = ORDRE_ACCUEIL.indexOf(id);
+  return i === -1 ? ORDRE_ACCUEIL.length : i;
+};
+
+export const videosAccueil: VideoBande[] = [...toutes].sort((a, b) => rang(a.id) - rang(b.id));

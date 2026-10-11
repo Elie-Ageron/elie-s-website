@@ -1,7 +1,8 @@
 import { ArrowUpRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import CarrouselPlanches from '@/components/CarrouselPlanches';
-import { clientesLivrees, videosSalon, type PublicationLivree } from '@/data/publications-livrees';
+import BandeVideos from '@/components/BandeVideos';
+import { clientesLivrees, depuisSalon, videosSalon, type PublicationLivree } from '@/data/publications-livrees';
 
 /**
  * Le travail livre, regarde sur place, range par cliente.
@@ -78,72 +79,37 @@ const Piece = ({ piece }: { piece: PublicationLivree }) => {
   );
 };
 
-/* Les classes Tailwind doivent etre ecrites en entier pour etre generees :
-   pas de `sm:col-span-${n}` construit a la volee. */
-const SPAN_TEXTE: Record<number, string> = { 1: 'sm:col-span-2', 2: 'sm:col-span-1' };
-const SPAN_LISTE: Record<number, string> = { 1: 'sm:col-span-1 sm:grid-cols-1', 2: 'sm:col-span-2 sm:grid-cols-2' };
-
 /**
- * La rangee du salon de l'habitat. Pas de logo ni de lien : ce sont des
- * exposants filmes, pas des clientes. Le nom de chaque entreprise est sous sa
- * video, puisque l'en-tete ne peut pas tous les porter.
+ * La rangee du salon de l'habitat. Pas de logo ni de lien vers les
+ * entreprises : ce sont des exposants filmes, pas des clientes. Le nom de
+ * chaque entreprise est sous sa video, puisque l'en-tete ne peut pas tous les
+ * porter.
  *
- * ⚠️ **Tant qu'il y a moins de trois videos, le texte prend la place des
- * cases vides.** Une rangee d'une video sous un en-tete laissait deux tiers de
- * la largeur vides, ce qui se lit comme un oubli. A trois et plus, le texte
- * repasse en tete, comme les rangees des clientes.
+ * ⚠️ **C'est une bande qui defile, pas une grille, depuis le 11 octobre
+ * 2026.** Elle avait trois colonnes, et une quatrieme video arrivait : une
+ * grille laissait une case seule sur la ligne suivante. Sept videos ont ete
+ * livrees au salon, la rangee va encore grandir. Voir `BandeVideos`.
  */
 const RangeeSalon = () => {
   const { language } = useLanguage();
   const fr = language === 'fr';
-  const n = videosSalon.length;
-  if (!n) return null;
-  const enTete = n >= 3;
+  if (!videosSalon.length) return null;
 
   return (
-    <div className="sm:grid sm:grid-cols-3 sm:items-center sm:gap-6">
-      <div className={enTete ? 'sm:col-span-3' : `${SPAN_TEXTE[n]} sm:pr-6`}>
-        <h4 className="text-2xl font-semibold leading-tight tracking-tight text-foreground sm:text-3xl">
-          {fr ? "Salon Habitat & Déco d'Albertville" : 'Albertville home and decor fair'}
-        </h4>
-        <p className="mt-3 max-w-md text-base text-muted-foreground">
-          {fr
-            ? "Une journée sur place, en octobre 2026. J'ai interviewé les exposants sur leur stand, puis monté leur vidéo dans la foulée."
-            : 'One day on site, in October 2026. I interviewed exhibitors on their stands, then edited their videos straight after.'}
-        </p>
-      </div>
-
-      <ul
-        tabIndex={0}
-        aria-label={fr ? 'Vidéos tournées au salon' : 'Videos filmed at the fair'}
-        className={`-mx-4 mt-6 flex snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto px-4 pb-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:mx-0 sm:grid sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0 ${
-          enTete ? 'sm:col-span-3 sm:grid-cols-3' : `sm:mt-0 ${SPAN_LISTE[n]}`
-        }`}
-      >
-        {videosSalon.map((v) => (
-          <li key={v.id} className="w-[68vw] shrink-0 snap-start sm:w-auto">
-            <video
-              className="soft-shadow aspect-[9/16] w-full rounded-2xl border border-border bg-secondary object-cover"
-              src={v.fichier}
-              poster={v.poster}
-              preload="none"
-              controls
-              playsInline
-              title={
-                v.questionFr
-                  ? `${v.entreprise} : ${fr ? v.questionFr : v.questionEn}`
-                  : fr
-                    ? `${v.entreprise}, interview au salon`
-                    : `${v.entreprise}, interview at the fair`
-              }
-            >
-              {fr ? 'Votre navigateur ne peut pas lire cette vidéo.' : 'Your browser cannot play this video.'}
-            </video>
-            <p className="mt-3 text-base font-semibold text-foreground">{v.entreprise}</p>
-            <p className="text-base text-muted-foreground">{fr ? v.metierFr : v.metierEn}</p>
-          </li>
-        ))}
-      </ul>
+    <div>
+      <h4 className="text-2xl font-semibold leading-tight tracking-tight text-foreground sm:text-3xl">
+        {fr ? "Salon Habitat & Déco d'Albertville" : 'Albertville home and decor fair'}
+      </h4>
+      <p className="mt-3 max-w-xl text-base text-muted-foreground">
+        {fr
+          ? "Une journée sur place, en octobre 2026. J'ai interviewé les exposants sur leur stand, puis monté leur vidéo dans la foulée."
+          : 'One day on site, in October 2026. I interviewed exhibitors on their stands, then edited their videos straight after.'}
+      </p>
+      <BandeVideos
+        className="mt-6"
+        videos={videosSalon.map(depuisSalon)}
+        libelle={fr ? 'Vidéos tournées au salon' : 'Videos filmed at the fair'}
+      />
     </div>
   );
 };
