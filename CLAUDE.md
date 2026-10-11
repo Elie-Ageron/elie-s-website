@@ -57,7 +57,7 @@ Les 7 services (source unique : `src/data/services.ts`, **l'ordre du tableau pil
 - `src/components/FAQSchema.tsx` — FAQPage schema (pages home + why)
 - `src/components/ReviewSchema.tsx` — Review schemas
 - `src/components/Breadcrumb.tsx` — Breadcrumb visuel
-- `src/components/InternalLinks.tsx` — Liens internes pour crawl
+- ~~`src/components/InternalLinks.tsx`~~ — **supprimé le 11 octobre 2026**, voir « Une seule fin de page ». La navigation de fin de page, c'est le pied de page
 - `src/components/Analytics.tsx` — GTM (GTM-MTQ3GP5H)
 
 ### Fichiers techniques
@@ -641,7 +641,7 @@ Le chiffre existe toujours dans les notes internes (`création de contenue/resso
 ### 6. Liens internes
 - Chaque page doit avoir au minimum 3-5 liens internes vers d'autres pages du site
 - Utiliser des anchor texts descriptifs (pas "cliquez ici")
-- Vérifier `src/components/InternalLinks.tsx` pour cohérence
+- Les liens contextuels dans le corps comptent, pas un bloc « à voir aussi » en fin de page (retiré le 11 octobre 2026). Vérifier avec `npm run check:maillage`
 
 ### 7. URL et canonical
 - URLs en kebab-case, courtes, descriptives
@@ -748,7 +748,7 @@ Ils étaient à votre place. Ils ont accepté d'en parler.
 Un projet à la fois. Le vôtre.
 Si le site ne suit pas, je le refais.
 La formule qu'il vous faut
-Un seul interlocuteur pour tout le reste.
+Tout le reste, au même endroit.
 Ce qu'on me demande le plus souvent.
 Je regarde votre présence en ligne. C'est gratuit.
 ```
@@ -960,8 +960,36 @@ cartes, le formulaire libre injecté par le gabarit, et un bandeau d'audit dans
 le footer. Elie : *« il y a trop de cases, on croit que c'est une double FAQ,
 on comprend rien. »*
 
-**L'ordre retenu, identique partout : contenu, puis `InternalLinks`, puis
-`ContactMethodsSection`.** Et rien après.
+**L'ordre retenu, identique partout : contenu, puis `ContactMethodsSection`,
+puis le pied de page.** Et rien d'autre.
+
+> 🔴 **Révisé le 11 octobre 2026 : `InternalLinks` et la rangée « Ou
+> directement » ont sauté, et le pied de page a perdu la moitié de sa hauteur.**
+> Elie, en descendant l'accueil : *« tu as la FAQ, c'est très bien. En
+> dessous, tu as encore le truc de navigation, encore un formulaire, encore
+> Réserver un appel directement, et un gros pied de page. On ne sait pas quoi
+> faire, on ne sait pas où aller. »*
+>
+> | Ce qui est parti | Ce qui le remplace |
+> |---|---|
+> | `InternalLinks`, trois liens « À voir aussi » sur onze pages | Le pied de page, qui porte la navigation. Composant supprimé |
+> | La rangée « Ou directement » : appel, téléphone, WhatsApp, email | Une phrase sous la liste : « Décrivez-le moi, ou appelez le 06 95 55 53 18 » |
+> | Le pied de page en cinq étages, 756 px à 1440 | Trois étages : marque et navigation, zones et contact, barre légale. **368 px** |
+> | La rangée des quatre guides du pied de page | L'entrée « Guides » de la navigation, dont l'index les lie tous |
+>
+> ⚠️ **`/why-a-website` et `/our-process` n'étaient liées que par
+> `InternalLinks`.** Elles ont reçu un lien contextuel : `/our-process` sous
+> « 7 à 14 jours » dans les formules de site (accueil et quinze pages
+> locales), `/why-a-website` à côté de « En parler » dans la section sites web
+> de `/services` (`secondaryLink` dans `services.ts`). `check:maillage` passe.
+>
+> ⚠️ **« Un seul interlocuteur » a disparu du site, titre et fait de
+> livraison.** Elie : *« ça fait, il est tout seul, donc c'est pas ouf. Est-ce
+> qu'il va réussir à faire mes réseaux sociaux ? Surtout que je suis même plus
+> tout seul maintenant. »* Il fait appel à un ami sur certains tournages. Le
+> titre dit maintenant « Tout le reste, au même endroit », et le fait « Un
+> interlocuteur, toujours moi » est devenu « Maintenance dès 0 € ». **Ne pas
+> le remplacer par « une équipe » : ce serait faux.**
 
 | Ce qui a été supprimé | Pourquoi |
 |---|---|
@@ -977,7 +1005,7 @@ poids, donc aucune. Le lien « Décrivez-le moi » sous le formulaire d'audit
 mène à `/contact` pour ceux qui ont déjà un projet précis.
 
 **`ContactMethodsSection` porte maintenant le formulaire d'audit à deux
-champs**, plus les canaux directs en texte à côté. C'étaient quatre cartes de
+champs**, plus une seule phrase de rattrapage (projet précis, ou téléphone). C'étaient quatre cartes de
 verre avec une pastille « recommandé » qui pulsait en boucle.
 
 ### Les éléments physiques
@@ -1143,8 +1171,8 @@ qui compare trois devis, une boulangère qui ne cherche rien.
   aucun n'est artisan ni commerçant. Le titre « Ils étaient à votre place » est
   donc faux pour la moitié de la clientèle visée.
 - **Quatre pages héritées sont indexées et liées, dans l'ancien langage
-  visuel** : `/why-a-website` et `/our-process` (les deux dans le pied de page
-  et dans `InternalLinks`), `/get-started` et `/assessment`. Elles portent des
+  visuel** : `/why-a-website` et `/our-process` (liées par un lien contextuel
+  chacune depuis le 11 octobre 2026), `/get-started` et `/assessment`. Elles portent des
   cartes de verre, des bordures néon, des pastilles « Recommandé », des halos
   flous et des survols qui agrandissent, soit exactement ce qu'Elie appelle
   *« vraiment intelligence artificielle »*. Le reste du site a été refait, pas

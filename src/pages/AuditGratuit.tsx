@@ -4,7 +4,6 @@ import { MapPin, Instagram, Monitor, Search, Play } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import SEO from '@/components/SEO';
 import AuditForm from '@/components/AuditForm';
-import InternalLinks from '@/components/InternalLinks';
 import ScrollReveal from '@/components/animations/ScrollReveal';
 import {
   Accordion,
@@ -544,7 +543,6 @@ const AuditGratuit = () => {
         </div>
       </section>
 
-      <InternalLinks currentPage="audit" />
     </>
   );
 };

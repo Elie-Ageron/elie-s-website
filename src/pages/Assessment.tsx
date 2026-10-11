@@ -5,7 +5,6 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useCalendly } from '@/contexts/CalendlyContext';
 import { useToast } from '@/hooks/use-toast';
 import SEO from '@/components/SEO';
-import InternalLinks from '@/components/InternalLinks';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 
@@ -564,7 +563,6 @@ const Assessment = () => {
         </section>
       )}
 
-      <InternalLinks currentPage="contact" />
     </>
   );
 };

@@ -4,14 +4,35 @@
     {
       "name": "elieageron-dev",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
+      "runtimeArgs": [
+        "run",
+        "dev"
+      ],
       "port": 8080
     },
     {
       "name": "elieageron-dist",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["vite", "preview", "--port", "4173"],
+      "runtimeArgs": [
+        "vite",
+        "preview",
+        "--port",
+        "4173"
+      ],
       "port": 4173
+    },
+    {
+      "name": "elieageron-relecture",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--",
+        "--port",
+        "8081",
+        "--strictPort"
+      ],
+      "port": 8081
     }
   ]
 }

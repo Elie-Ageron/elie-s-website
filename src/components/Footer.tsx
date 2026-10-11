@@ -1,10 +1,7 @@
-﻿import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Star } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
+﻿import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 import logo from '@/assets/logo.webp';
 import { cities } from '@/data/cities';
-import { guides } from '@/data/guides';
 
 const Footer = () => {
   const { t, language } = useLanguage();
@@ -65,35 +62,47 @@ const Footer = () => {
     return (
       <Link
         to={`/${entree[0]}`}
-        className="text-foreground underline underline-offset-4 hover:text-primary"
+        className="whitespace-nowrap text-foreground underline underline-offset-4 hover:text-primary"
       >
         {entree[1]}
       </Link>
     );
   };
 
+  /**
+   * 🔴 **Le pied de page a ete resserre une seconde fois le 11 octobre 2026.**
+   * Elie, en descendant l'accueil : *« en dessous, tu as un gros pied de page.
+   * Ca fait trop d'elements a la fin. On ne sait pas quoi faire, on ne sait
+   * pas ou aller. »*
+   *
+   * Il empilait cinq etages : trois colonnes (marque, huit liens en pile,
+   * quatre lignes de contact), la rangee des quatre guides, la phrase des
+   * zones, puis la barre legale. Il en garde trois :
+   *
+   *   1. la marque a gauche, la navigation a droite, sur une ligne ;
+   *   2. la phrase des zones, et le contact sur une seule ligne ;
+   *   3. la barre legale.
+   *
+   * Ce qui est parti : la rangee des guides (l'entree « Guides » de la
+   * navigation mene a l'index, qui les lie tous les quatre) et l'icone devant
+   * chaque ligne de contact. Le NAP reste entier : email, telephone, commune.
+   *
+   * ⚠️ Sur telephone, la navigation passe en deux colonnes avec des cibles de
+   * 44 px : une pile de huit liens de 24 px faisait la moitie de la hauteur du
+   * pied de page, et un pouce rate une cible de 24 px.
+   */
   return (
     <div className="relative z-10" role="contentinfo" aria-label="Site footer">
       <footer className="bg-secondary/40 border-t border-border/30">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
-            {/* Le bandeau « Recevoir mon audit gratuit » a ete retire d'ici.
-                Il arrivait juste sous la section de fin de page, qui porte
-                maintenant le formulaire d'audit lui-meme : le visiteur voyait
-                deux fois la meme proposition a trois cents pixels d'intervalle.
-                Le lien « Audit gratuit » reste dans la colonne de navigation,
-                et le bouton reste dans l'en-tete sur toutes les pages. */}
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-10 pb-8 sm:pt-14">
+          {/* Le bandeau « Recevoir mon audit gratuit » a ete retire d'ici le
+              13 septembre 2026 : la section de fin de page porte le formulaire
+              lui-meme, juste au-dessus. */}
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12"
-          >
-            {/* Brand Column */}
-            <div className="space-y-4">
+          <div className="flex flex-col gap-7 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
+            <div className="max-w-sm">
               <Link to="/" className="inline-flex items-center gap-3 group" aria-label="Elie Ageron - Home">
-                <img src={logo} alt="" className="w-8 h-8 rounded-lg" aria-hidden="true" />
+                <img src={logo} alt="" width={32} height={32} className="w-8 h-8 rounded-lg" aria-hidden="true" />
                 <span className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
                   Elie Ageron
                 </span>
@@ -101,136 +110,90 @@ const Footer = () => {
               {/* 🔴 Finissait par « Toute votre presence en ligne, geree par une
                   seule personne. » Elie avait fait retirer exactement cette
                   formule du titre de `/services` : *« ca fait un peu chelou, je
-                  ferais pas confiance »*. Elle se voulait rassurante et elle
-                  inquietait, parce qu'elle nomme une limite au lieu d'un
-                  service. Elle avait survecu ici, donc sur les quatorze pages.
-
-                  🔴 Et « Fait avec passion ❤️ » a saute avec elle : un coeur
-                  rouge et un mot que tout le monde ecrit ne disent rien sur ce
-                  qu'on achete, et ils sont a deux lignes du numero de
-                  telephone, qui lui est verifiable. */}
-              <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
+                  ferais pas confiance »*. Elle nomme une limite au lieu d'un
+                  service. « Fait avec passion ❤️ » a saute avec elle. */}
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 {language === 'fr'
-                  ? "Votre partenaire web de A à Z : site internet, vidéos et publications pour vos réseaux sociaux, fiche Google, identité de marque. Basé à Albertville, en Savoie."
-                  : 'Your all-in-one web partner: website, videos and posts for your social media, Google profile, brand identity. Based in Albertville, Savoie.'}
+                  ? 'Site internet, vidéos et publications pour vos réseaux sociaux, fiche Google, identité de marque.'
+                  : 'Website, videos and posts for your social media, Google profile, brand identity.'}
               </p>
             </div>
 
-            {/* Navigation Column */}
-            <div>
-              <h3 className="text-sm font-semibold text-foreground mb-4">
-                {language === 'fr' ? 'Navigation' : 'Navigation'}
-              </h3>
-              <nav className="flex flex-col gap-2.5" aria-label="Footer navigation">
+            <nav aria-label="Footer navigation" className="lg:pt-1">
+              <ul className="grid grid-cols-2 gap-x-6 sm:grid-cols-4 sm:gap-x-10 sm:gap-y-2">
                 {navLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    to={link.href}
-                    className="inline-flex items-center min-h-[24px] text-sm text-muted-foreground hover:text-primary transition-colors w-fit"
-                  >
-                    {link.label}
-                  </Link>
+                  <li key={link.href}>
+                    <Link
+                      to={link.href}
+                      className="inline-flex items-center min-h-[44px] sm:min-h-[28px] text-base text-foreground hover:text-primary transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
                 ))}
-              </nav>
-
-            </div>
-
-            {/* Contact Column */}
-            <div>
-              <h3 className="text-sm font-semibold text-foreground mb-4">
-                Contact
-              </h3>
-              <div className="flex flex-col gap-3">
-                <a
-                  href="mailto:elie@elieageron.com"
-                  className="inline-flex items-center gap-2.5 min-h-[24px] text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  <Mail className="w-4 h-4 shrink-0" aria-hidden="true" />
-                  elie@elieageron.com
-                </a>
-                <a
-                  href="tel:+33695555318"
-                  className="inline-flex items-center gap-2.5 min-h-[24px] text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  <Phone className="w-4 h-4 shrink-0" aria-hidden="true" />
-                  +33 6 95 55 53 18
-                </a>
-                <div className="inline-flex items-center gap-2.5 text-sm text-muted-foreground">
-                  <MapPin className="w-4 h-4 shrink-0" aria-hidden="true" />
-                  <address style={{ fontStyle: 'normal' }}>
-                    Albertville, Savoie, France
-                  </address>
-                </div>
-                {/* 🔴 La fiche Google Business n'etait liee nulle part sur le
-                    site, et declaree dans aucun schema. C'est le premier
-                    levier en recherche locale, et c'est aussi le seul chemin
-                    pour qu'un client satisfait laisse un avis sans qu'on ait
-                    a lui envoyer un lien a la main. Ajoutee le 16 septembre
-                    2026. */}
-                <a
-                  href="https://maps.google.com/?cid=10223724609164966776"
-                  target="_blank"
-                  rel="noopener"
-                  className="inline-flex items-center gap-2.5 min-h-[24px] text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  <Star className="w-4 h-4 shrink-0" aria-hidden="true" />
-                  {language === 'fr' ? 'Ma fiche Google' : 'My Google listing'}
-                </a>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Guides piliers : distribue l'autorite du pied de page vers les hubs de contenu */}
-          {language === 'fr' && (
-            <nav aria-label="Guides" className="mt-10 pt-8 border-t border-border/30">
-              <h3 className="text-sm font-semibold text-foreground mb-3">
-                Guides gratuits
-              </h3>
-              <div className="flex flex-wrap gap-x-5 gap-y-2">
-                {guides.map((guide) => (
-                  <Link
-                    key={guide.slug}
-                    to={`/guides/${guide.slug}`}
-                    className="inline-flex items-center min-h-[24px] text-sm text-muted-foreground hover:text-primary transition-colors w-fit"
-                  >
-                    {guide.label}
-                  </Link>
-                ))}
-              </div>
+              </ul>
             </nav>
-          )}
+          </div>
 
-          {/* Zones d'intervention : une phrase, pas trois murs d'etiquettes.
-              Les noms de communes portent les liens. Voir la note sur
-              `bassins` en haut du composant. */}
-          <nav
-            aria-label={language === 'fr' ? "Zones d'intervention" : 'Service areas'}
-            className="mt-8 pt-8 border-t border-border/30"
-          >
-            <p className="text-sm text-muted-foreground max-w-2xl leading-relaxed">
-              {language === 'fr' ? (
-                <>
-                  Basé à {zone(0)}, j&rsquo;interviens à {zone(1)}, {zone(2)} et {zone(3)}, et plus
-                  largement en {zone(4)} et en {zone(5)}. À distance, partout en France.
-                </>
-              ) : (
-                <>
-                  Based in {zone(0)}, I work in {zone(1)}, {zone(2)} and {zone(3)}, and across{' '}
-                  {zone(4)} and {zone(5)}. Remotely, anywhere in France.
-                </>
-              )}
-            </p>
-          </nav>
+          <div className="mt-8 pt-7 border-t border-border/40 flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
+            {/* Zones d'intervention : une phrase, pas trois murs d'etiquettes.
+                Les noms de communes portent les liens. Voir la note sur
+                `bassins` en haut du composant. */}
+            <nav aria-label={language === 'fr' ? "Zones d'intervention" : 'Service areas'}>
+              <p className="text-sm text-muted-foreground max-w-xl leading-relaxed">
+                {language === 'fr' ? (
+                  <>
+                    Basé à {zone(0)}, j&rsquo;interviens à {zone(1)}, {zone(2)} et {zone(3)}, et plus
+                    largement en {zone(4)} et en {zone(5)}. À distance, partout en France.
+                  </>
+                ) : (
+                  <>
+                    Based in {zone(0)}, I work in {zone(1)}, {zone(2)} and {zone(3)}, and across{' '}
+                    {zone(4)} and {zone(5)}. Remotely, anywhere in France.
+                  </>
+                )}
+              </p>
+            </nav>
 
-          {/* Bottom bar */}
-          <div className="mt-10 pt-6 border-t border-border/30">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
-              <span>© {currentYear} Elie Ageron. {t('footer.rights')}</span>
-              <div className="flex items-center gap-4">
-                <Link to="/mentions-legales" className="inline-flex items-center min-h-[24px] hover:text-primary transition-colors">
+            {/* Le contact, sur une ligne. La commune reste ecrite en clair
+                dans la barre du bas : c'est le NAP que Google rapproche de la
+                fiche. */}
+            <address className="not-italic flex flex-wrap items-center gap-x-6 gap-y-0 lg:justify-end lg:shrink-0">
+              <a
+                href="tel:+33695555318"
+                className="inline-flex items-center min-h-[40px] sm:min-h-[24px] text-sm font-medium text-foreground hover:text-primary transition-colors"
+              >
+                06 95 55 53 18
+              </a>
+              <a
+                href="mailto:elie@elieageron.com"
+                className="inline-flex items-center min-h-[40px] sm:min-h-[24px] text-sm font-medium text-foreground hover:text-primary transition-colors"
+              >
+                elie@elieageron.com
+              </a>
+              {/* 🔴 La fiche Google Business n'etait liee nulle part sur le
+                  site avant le 16 septembre 2026. C'est le premier levier en
+                  recherche locale, et le chemin le plus court pour laisser un
+                  avis. */}
+              <a
+                href="https://maps.google.com/?cid=10223724609164966776"
+                target="_blank"
+                rel="noopener"
+                className="inline-flex items-center min-h-[40px] sm:min-h-[24px] text-sm font-medium text-foreground hover:text-primary transition-colors"
+              >
+                {language === 'fr' ? 'Ma fiche Google' : 'My Google listing'}
+              </a>
+            </address>
+          </div>
+
+          <div className="mt-7 pt-6 border-t border-border/40">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-3 text-xs text-muted-foreground">
+              <span>© {currentYear} Elie Ageron, Albertville, Savoie. {t('footer.rights')}</span>
+              <div className="flex items-center gap-5">
+                <Link to="/mentions-legales" className="inline-flex items-center min-h-[32px] sm:min-h-[24px] hover:text-primary transition-colors">
                   {language === 'fr' ? 'Mentions légales' : 'Legal Notice'}
                 </Link>
-                <Link to="/politique-confidentialite" className="inline-flex items-center min-h-[24px] hover:text-primary transition-colors">
+                <Link to="/politique-confidentialite" className="inline-flex items-center min-h-[32px] sm:min-h-[24px] hover:text-primary transition-colors">
                   {language === 'fr' ? 'Confidentialité' : 'Privacy'}
                 </Link>
               </div>

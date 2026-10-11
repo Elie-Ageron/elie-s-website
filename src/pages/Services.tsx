@@ -6,7 +6,6 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import MagneticButton from '@/components/animations/MagneticButton';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
 import FaqSection from '@/components/FaqSection';
-import InternalLinks from '@/components/InternalLinks';
 import ScrollArrow from '@/components/ScrollArrow';
 import SEO from '@/components/SEO';
 import ServiceMockup from '@/components/ServiceMockups';
@@ -70,7 +69,7 @@ const ServiceSection = ({ service, index }: { service: ServiceItem; index: numbe
         ))}
       </ul>
 
-      <div className="mt-8 flex items-center gap-5">
+      <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3">
         {service.soon ? (
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary border border-border/70 text-sm font-medium text-muted-foreground">
             <span className="w-1.5 h-1.5 rounded-full bg-primary" aria-hidden="true" />
@@ -95,6 +94,14 @@ const ServiceSection = ({ service, index }: { service: ServiceItem; index: numbe
           >
             {language === 'fr' ? 'En parler' : "Let's talk about it"}
             <ArrowRight className="w-4 h-4" aria-hidden="true" />
+          </Link>
+        )}
+        {service.secondaryLink && (
+          <Link
+            to={service.secondaryLink.to}
+            className="inline-flex items-center min-h-[24px] text-sm font-medium text-muted-foreground underline underline-offset-4 hover:text-primary transition-colors"
+          >
+            {service.secondaryLink.label[language]}
           </Link>
         )}
       </div>
@@ -453,8 +460,6 @@ const Services = () => {
       {/* ⚠️ `ServiceResources` a ete retire ici aussi. Voir la note dans
           `SocialMedia.tsx` : un bloc de liens bruts vers le blog en fin de
           page n'apporte rien au visiteur et brouille la sortie. */}
-
-      <InternalLinks currentPage="services" />
 
       {/* Contact Methods */}
       <ContactMethodsSection />

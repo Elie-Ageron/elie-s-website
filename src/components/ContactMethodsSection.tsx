@@ -1,7 +1,6 @@
-import { Calendar, Check, MessageCircle, Mail, Phone } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { useCalendly } from '@/contexts/CalendlyContext';
 import ScrollReveal from '@/components/animations/ScrollReveal';
 import AuditForm from '@/components/AuditForm';
 
@@ -32,7 +31,16 @@ interface ContactMethodsSectionProps {
  * formulaire **dans un panneau delimite**, parce qu'un formulaire a besoin
  * d'un contenant : c'est ce qui dit « c'est ici qu'on remplit ». Un panneau
  * n'est pas une grille de cartes, la regle contre les cartes ne s'applique
- * pas ici. Les canaux directs passent en dessous, sur une seule ligne.
+ * pas ici.
+ *
+ * 🔴 **La rangee « Ou directement » a saute le 11 octobre 2026.** Elle portait
+ * cinq sorties sous le formulaire : reserver un appel, telephone, WhatsApp,
+ * email. Elie : *« en dessous, tu as encore un formulaire, et en dessous, tu
+ * as encore Reserver un appel directement. En dessous, tu as un gros pied de
+ * page. On ne sait pas quoi faire, on ne sait pas ou aller. »* Le telephone et
+ * l'email sont deja dans le pied de page, trente pixels plus bas. Il reste une
+ * phrase, sous la liste : un projet precis, ou un appel. **Une fin de page
+ * propose une chose, et rattrape au plus une exception.**
  *
  * `compact` joue sur l'espacement vertical **et sur la taille du titre**. Il
  * est passe par les articles et les guides, dont le `h1` est volontairement
@@ -44,7 +52,6 @@ interface ContactMethodsSectionProps {
 const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMethodsSectionProps) => {
   const { language } = useLanguage();
   const fr = language === 'fr';
-  const { openCalendly } = useCalendly();
 
   const contenu = fr
     ? [
@@ -59,12 +66,6 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
         'Your website, the first screen and what it gets across.',
         'Where you rank on your trade plus your town.',
       ];
-
-  const canaux = [
-    { icon: Phone, texte: '06 95 55 53 18', href: 'tel:+33695555318' },
-    { icon: MessageCircle, texte: 'WhatsApp', href: 'https://wa.me/33695555318' },
-    { icon: Mail, texte: 'elie@elieageron.com', href: 'mailto:elie@elieageron.com' },
-  ];
 
   return (
     <section
@@ -123,14 +124,25 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
               ))}
             </ul>
 
-            <p className="mt-8 text-sm text-muted-foreground">
+            {/* La seule sortie du bloc, et elle n'en est pas une : elle rattrape
+                celui qui a deja un projet, ou qui prefere parler. Corps de texte
+                et pas `text-sm` : c'est la tendance n°2 d'Elie. */}
+            <p className="mt-8 leading-relaxed text-muted-foreground">
               {fr ? 'Vous avez déjà un projet précis ? ' : 'Already have a specific project? '}
               <Link
                 to="/contact"
-                className="inline-flex min-h-[24px] items-center font-semibold text-primary underline-offset-4 hover:underline"
+                className="font-semibold text-primary underline underline-offset-4"
               >
                 {fr ? 'Décrivez-le moi' : 'Tell me about it'}
               </Link>
+              {fr ? ', ou appelez le ' : ', or call '}
+              <a
+                href="tel:+33695555318"
+                className="whitespace-nowrap font-semibold text-primary underline underline-offset-4"
+              >
+                06 95 55 53 18
+              </a>
+              .
             </p>
           </ScrollReveal>
 
@@ -185,39 +197,6 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
             </div>
           </ScrollReveal>
         </div>
-
-        {/* Les canaux directs, sur une ligne. Ils ne concurrencent pas le
-            formulaire, ils rattrapent celui qui prefere appeler. */}
-        <ScrollReveal direction="up" delay={0.12}>
-          {/* ⚠️ Centre et a la taille du corps de texte. Elie : « c'est un peu
-              petit et c'est pas centre, il faut que ce soit centre ». C'etait
-              une ligne en `text-sm` alignee a gauche sous une grille centree. */}
-          <div className="mt-12 border-t border-border pt-8 text-center sm:mt-14">
-            <p className="text-base text-muted-foreground">{fr ? 'Ou directement' : 'Or directly'}</p>
-
-            <div className="mt-4 flex flex-wrap items-center justify-center gap-x-9 gap-y-4">
-              <button
-                type="button"
-                onClick={openCalendly}
-                className="inline-flex min-h-[40px] items-center gap-2.5 text-base font-semibold text-foreground transition-colors hover:text-primary"
-              >
-                <Calendar className="h-[18px] w-[18px] text-primary" aria-hidden="true" />
-                {fr ? 'Réserver un appel' : 'Book a call'}
-              </button>
-
-              {canaux.map((canal) => (
-                <a
-                  key={canal.href}
-                  href={canal.href}
-                  className="inline-flex min-h-[40px] items-center gap-2.5 text-base font-semibold text-foreground transition-colors hover:text-primary"
-                >
-                  <canal.icon className="h-[18px] w-[18px] text-primary" aria-hidden="true" />
-                  {canal.texte}
-                </a>
-              ))}
-            </div>
-          </div>
-        </ScrollReveal>
       </div>
     </section>
   );

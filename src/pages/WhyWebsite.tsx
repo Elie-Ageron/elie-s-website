@@ -5,7 +5,6 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
 import SEO from '@/components/SEO';
 import FAQAccordion from '@/components/FAQAccordion';
-import InternalLinks from '@/components/InternalLinks';
 import ScrollArrow from '@/components/ScrollArrow';
 
 const WhyWebsite = () => {
@@ -392,8 +391,6 @@ const WhyWebsite = () => {
       {/* FAQ Section */}
       <FAQAccordion />
 
-      {/* Internal Links */}
-      <InternalLinks currentPage="why" />
 
       {/* Contact Methods */}
       <ContactMethodsSection />

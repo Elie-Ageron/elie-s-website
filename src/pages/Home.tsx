@@ -1,6 +1,7 @@
 import TestimonialsSection from '@/components/TestimonialsSection';
 import HeroSection from '@/components/HeroSection';
 import SocialPillarSection from '@/components/SocialPillarSection';
+import VideosLivreesAccueil from '@/components/VideosLivreesAccueil';
 import AuditInline from '@/components/AuditInline';
 import PersonalIntroSection from '@/components/PersonalIntroSection';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
@@ -10,7 +11,6 @@ import PortfolioShowcaseSection from '@/components/PortfolioShowcaseSection';
 import FAQAccordion from '@/components/FAQAccordion';
 import SEO from '@/components/SEO';
 import FAQSchema from '@/components/FAQSchema';
-import InternalLinks from '@/components/InternalLinks';
 
 /**
  * L'accueil.
@@ -24,12 +24,13 @@ import InternalLinks from '@/components/InternalLinks';
  *
  *   Vos reseaux tournent. Sans que vous y pensiez.
  *   Un jour de tournage. Un mois de publications.
+ *   Quelques videos que j'ai livrees recemment.
  *   Je m'appelle Elie Ageron. Je rends votre metier visible.
  *   Recevez un audit complet de votre presence en ligne. Gratuitement.
  *   Ils etaient a votre place. Ils ont accepte d'en parler.
  *   Chaque activite merite une presence a la hauteur.
  *   La formule qu'il vous faut
- *   Un seul interlocuteur pour tout le reste.
+ *   Tout le reste, au meme endroit.
  *   Ce qu'on me demande le plus souvent.
  *   Ce que vos clients voient de vous, et ce qui vous coute des clients.
  *
@@ -81,6 +82,12 @@ const Home = () => {
       {/* Pilier n°1 : les réseaux sociaux, et comment ça se passe */}
       <SocialPillarSection />
 
+      {/* La preuve du pilier n°1, juste apres l'offre : les videos livrees,
+          qui se regardent sur place. Demandee par Elie le 11 octobre 2026.
+          Ce n'est pas `SocialClientsSection` (voir le point 4 plus haut) :
+          on montre le travail, pas une liste de comptes. */}
+      <VideosLivreesAccueil />
+
       {/* 🔴 Qui est en face, remonte le 14 septembre 2026, juste avant la
           demande. Cette section etait en cinquieme position, donc **apres** le
           formulaire : on demandait un numero de telephone a quelqu'un qui
@@ -119,10 +126,16 @@ const Home = () => {
       {/* Les objections, et la porte vers le blog */}
       <FAQAccordion />
 
-      {/* Le renvoi discret vers trois autres pages, avant la fin */}
-      <InternalLinks currentPage="home" />
 
-      {/* Une seule fin de page : l'audit gratuit. Meme ordre sur les 14 pages */}
+      {/* Une seule fin de page : l'audit gratuit. Meme ordre sur les 14 pages.
+          🔴 Le bloc « A voir aussi » (`InternalLinks`) qui s'intercalait entre
+          la FAQ et ce formulaire a ete retire de toutes les pages le
+          11 octobre 2026. Elie : *« tu as la FAQ, c'est tres bien. En
+          dessous, tu as encore le truc de navigation, en dessous encore un
+          formulaire, encore Reserver un appel, et un gros pied de page. On ne
+          sait pas quoi faire, on ne sait pas ou aller. »* La fin de page fait
+          maintenant trois choses : la FAQ, le formulaire, le pied de page. La
+          navigation, c'est le pied de page qui la porte. */}
       <ContactMethodsSection />
     </>
   );

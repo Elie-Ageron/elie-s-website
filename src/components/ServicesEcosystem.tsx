@@ -14,6 +14,15 @@ import { services } from '@/data/services';
  * sociaux comme une suite du site, alors que c'est l'inverse depuis aout 2026.
  * Le titre porte maintenant ce que le visiteur achete reellement ici, un seul
  * prestataire au lieu de quatre.
+ *
+ * 🔴 **Il disait « Un seul interlocuteur pour tout le reste », et c'est parti
+ * le 11 octobre 2026.** Elie : *« ca fait : OK, il est tout seul, donc c'est
+ * pas ouf. Est-ce qu'il va reussir a faire mes reseaux sociaux ? Surtout que je
+ * suis meme plus tout seul maintenant. »* Il fait appel a un ami sur certains
+ * tournages. La formule nommait une limite au lieu d'un service, exactement
+ * comme celle qu'il avait fait retirer du titre de `/services` et du pied de
+ * page. Le titre parle maintenant de ce que le client y gagne : tout au meme
+ * endroit. ⚠️ Ne pas la remplacer par « une equipe » : ce serait faux.
  */
 const ServicesEcosystem = () => {
   const { language } = useLanguage();
@@ -28,19 +37,19 @@ const ServicesEcosystem = () => {
           {/* ─── Narrative (sticky on desktop) ─── */}
           <ScrollReveal direction="up" className="lg:col-span-5 lg:sticky lg:top-28 text-center lg:text-left">
             <h2 id="ecosystem-heading" className="section-title">
-              {language === 'fr' ? 'Un seul interlocuteur ' : 'One person '}
+              {language === 'fr' ? 'Tout le reste, ' : 'Everything else, '}
               <span className="text-primary">
-                {language === 'fr' ? 'pour tout le reste.' : 'for everything else.'}
+                {language === 'fr' ? 'au même endroit.' : 'in one place.'}
               </span>
             </h2>
 
             <p className="section-lede mt-6 mx-auto lg:mx-0">
               {language === 'fr'
-                ? "La fiche Google, les avis, le logo, les textes. Ce sont les quatre choses qu'on confie d'habitude à quatre personnes différentes qui ne se parlent pas. Ici c'est le même devis et le même numéro."
-                : 'The Google profile, the reviews, the logo, the copy. Those are the four things usually handed to four different people who never talk to each other. Here it is one quote and one phone number.'}
+                ? "La fiche Google, les avis, le logo, les textes. D'habitude, on les confie à quatre prestataires qui ne se parlent pas. Ici, tout est suivi ensemble, sur le même devis."
+                : 'The Google profile, the reviews, the logo, the copy. They usually go to four different providers who never talk to each other. Here it is all handled together, on one quote.'}
             </p>
 
-            <div className="mt-8 flex flex-col sm:flex-row lg:flex-col gap-4 items-center lg:items-start">
+            <div className="mt-8 flex justify-center lg:justify-start">
               <Button variant="hero" size="lg" className="group" asChild>
                 <Link to="/services" className="flex items-center gap-2">
                   {language === 'fr' ? 'Voir tous les services' : 'See all services'}
@@ -50,14 +59,6 @@ const ServicesEcosystem = () => {
                   />
                 </Link>
               </Button>
-              <p className="text-sm text-muted-foreground">
-                {language === 'fr'
-                  /* Disait « Un seul interlocuteur, un seul devis. », a douze
-                     lignes du titre « Un seul interlocuteur pour tout le
-                     reste ». La meme idee deux fois de suite ne renforce rien. */
-                  ? 'Et un seul devis à la fin du mois.'
-                  : 'One contact, one quote.'}
-              </p>
             </div>
           </ScrollReveal>
 

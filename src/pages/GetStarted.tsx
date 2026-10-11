@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useToast } from '@/hooks/use-toast';
 import SEO from '@/components/SEO';
-import InternalLinks from '@/components/InternalLinks';
 import ScrollArrow from '@/components/ScrollArrow';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -644,7 +643,6 @@ const GetStarted = () => {
         </div>
       </section>
 
-      <InternalLinks currentPage="contact" />
     </>
   );
 };

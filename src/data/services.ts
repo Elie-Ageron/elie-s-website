@@ -40,6 +40,15 @@ export interface ServiceItem {
    * rien du tout : c'est un guide en francais, il choisit.
    */
   detailFrOnly?: boolean;
+  /**
+   * Un second lien, plus discret, pose a cote du premier sur `/services`.
+   *
+   * ⚠️ Il existe pour une seule raison : `/why-a-website` n'etait atteignable
+   * que par `InternalLinks`, retire des fins de page le 11 octobre 2026. C'est
+   * desormais son point d'entree depuis le site rendu. Ne pas le retirer sans
+   * relancer `npm run check:maillage`.
+   */
+  secondaryLink?: { to: string; label: { fr: string; en: string } };
 }
 
 /**
@@ -67,6 +76,10 @@ export const services: ServiceItem[] = [
       en: ['Landing page or multi-page showcase site', 'Google SEO included', 'Perfect on mobile, tablet and desktop'],
     },
     price: { fr: 'dès 500€', en: 'from €500' },
+    secondaryLink: {
+      to: '/why-a-website',
+      label: { fr: "Ce qu'un site change vraiment", en: 'What a site actually changes' },
+    },
   },
   {
     id: 'reseaux',

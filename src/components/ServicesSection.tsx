@@ -63,18 +63,30 @@ const ServicesSection = () => {
     },
   ];
 
+  /* 🔴 Le troisieme fait disait « Un interlocuteur, du brief a la maintenance,
+     toujours moi ». Retire le 11 octobre 2026 avec le titre « Un seul
+     interlocuteur » de `ServicesEcosystem`, pour la meme raison : Elie,
+     *« ca fait, il est tout seul, donc c'est pas ouf »*. Il est remplace par
+     la question que se pose quelqu'un qui vient de lire trois prix : est-ce
+     qu'il y a un abonnement derriere. La maintenance existe a 0, 25 et
+     80 euros par mois (`CLAUDE.md`), la premiere est donc vraie.
+
+     ⚠️ Le lien « le deroule » est le point d'entree de `/our-process` depuis
+     le site rendu. Il etait dans `InternalLinks`, retire des fins de page le
+     meme jour. Ne pas l'enlever sans relancer `npm run check:maillage`. */
   const faits = [
     {
       valeur: fr ? '7 à 14 jours' : '7 to 14 days',
       desc: fr ? 'de production, une fois vos textes et vos photos reçus.' : 'of production, once your copy and photos are in.',
+      lien: { to: '/our-process', texte: fr ? 'Voir le déroulé' : 'See the process' },
     },
     {
       valeur: fr ? 'Moins de 24 h' : 'Under 24 h',
       desc: fr ? 'pour une réponse à votre demande.' : 'to get a reply to your request.',
     },
     {
-      valeur: fr ? 'Un interlocuteur' : 'One contact',
-      desc: fr ? 'du brief à la maintenance, toujours moi.' : 'from brief to maintenance, always me.',
+      valeur: fr ? 'Maintenance dès 0 €' : 'Upkeep from €0',
+      desc: fr ? "par mois. Le suivi est une option, pas une obligation." : 'a month. Ongoing care is an option, not a requirement.',
     },
   ];
 
@@ -143,6 +155,15 @@ const ServicesSection = () => {
             >
               <p className="font-heading text-2xl font-bold tracking-tight text-foreground">{fait.valeur}</p>
               <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{fait.desc}</p>
+              {fait.lien && (
+                <Link
+                  to={fait.lien.to}
+                  className="mt-2 inline-flex min-h-[24px] items-center gap-1.5 text-sm font-semibold text-primary underline-offset-4 hover:underline"
+                >
+                  {fait.lien.texte}
+                  <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                </Link>
+              )}
             </motion.div>
           ))}
         </div>

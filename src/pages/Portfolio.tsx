@@ -4,7 +4,6 @@ import { ExternalLink, ArrowRight, Quote } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
-import InternalLinks from '@/components/InternalLinks';
 import SocialClientsSection from '@/components/SocialClientsSection';
 import SEO from '@/components/SEO';
 import ScrollArrow from '@/components/ScrollArrow';
@@ -289,8 +288,6 @@ const Portfolio = () => {
           place, apres les sites, comme une seconde categorie de realisations. */}
       <SocialClientsSection />
 
-      {/* Internal Links */}
-      <InternalLinks currentPage="portfolio" />
 
       {/* Contact Methods */}
       <ContactMethodsSection />

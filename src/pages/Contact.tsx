@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { Mail, MessageCircle, ArrowRight, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
-import InternalLinks from '@/components/InternalLinks';
 import SEO from '@/components/SEO';
 import ScrollArrow from '@/components/ScrollArrow';
 
@@ -208,7 +207,6 @@ const Contact = () => {
         </div>
       </section>
 
-      <InternalLinks currentPage="contact" />
     </>
   );
 };

@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import SEO from '@/components/SEO';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
-import InternalLinks from '@/components/InternalLinks';
 /* 🔴 Importait `@/data/blogPosts`, soit 1,1 Mo compile, pour afficher une
    liste de titres. Mesure du 16 septembre 2026 en 4G : 594 ko de JavaScript
    et un LCP a 7,2 s. L'index porte maintenant la categorie, la date, le temps
@@ -343,7 +342,6 @@ const Blog = () => {
         </div>
       </section>
 
-      <InternalLinks currentPage="blog" />
       <ContactMethodsSection />
     </>
   );

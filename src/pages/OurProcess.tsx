@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import AnimatedTimeline from '@/components/animations/AnimatedTimeline';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
-import InternalLinks from '@/components/InternalLinks';
 import SEO from '@/components/SEO';
 import ScrollVideoSection from '@/components/ScrollVideoSection';
 import ScrollArrow from '@/components/ScrollArrow';
@@ -120,8 +119,6 @@ const OurProcess = () => {
       {/* Scroll Video, Animation du processus */}
       <ScrollVideoSection />
 
-      {/* Internal Links */}
-      <InternalLinks currentPage="process" />
 
       {/* Contact Methods */}
       <ContactMethodsSection />

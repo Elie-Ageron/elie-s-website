@@ -15,7 +15,6 @@ import ContactMethodsSection from '@/components/ContactMethodsSection';
 import FaqSection from '@/components/FaqSection';
 import PostingCalendar from '@/components/PostingCalendar';
 import TravailLivre from '@/components/TravailLivre';
-import InternalLinks from '@/components/InternalLinks';
 import ScrollArrow from '@/components/ScrollArrow';
 import SEO from '@/components/SEO';
 import { socialCities } from '@/data/social-cities';
@@ -902,9 +901,9 @@ const SocialMedia = () => {
       {/* ⚠️ Il y avait ici `ServiceResources`, un bloc de liens vers le blog
           et le guide pilier. Elie : « le truc de blog, ca fait plein de liens,
           comprends rien, c'est moche, faut enlever ». Le maillage vers le
-          corpus passe par la FAQ de l'accueil, par le pied de page et par
-          `InternalLinks`, qui suffisent : le rapport Liens de la Search
-          Console ne perd rien. */}
+          corpus passe par la FAQ de l'accueil et par le pied de page, qui
+          suffisent : le rapport Liens de la Search Console ne perd rien.
+          (`InternalLinks` a ete retire des fins de page le 11 octobre 2026.) */}
 
       {/* Les six pages locales du pilier réseaux, nommées dans une phrase.
           🔴 Elles étaient liées depuis le pied de page, dans un mur de dix
@@ -929,7 +928,6 @@ const SocialMedia = () => {
         </section>
       )}
 
-      <InternalLinks currentPage="social" />
       <ContactMethodsSection />
     </>
   );
