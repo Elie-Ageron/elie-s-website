@@ -48,7 +48,7 @@ const WhyWebsite = () => {
 
       {/* Hero */}
       <section className="relative grain py-6 sm:py-12 lg:min-h-[100svh] lg:flex lg:items-center lg:justify-center lg:py-0" aria-labelledby="why-hero-heading">
-        <div className="absolute inset-0" aria-hidden="true">
+        <div className="hidden lg:block absolute inset-0" aria-hidden="true">
           <div className="absolute top-1/3 right-1/4 w-56 sm:w-80 h-56 sm:h-80 bg-primary/20 rounded-full blur-[80px] sm:blur-[120px]" />
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10 -mt-36">
@@ -152,7 +152,7 @@ const WhyWebsite = () => {
 
       {/* Stats Section */}
       <section className="py-20 sm:py-32 md:py-32 relative overflow-hidden" aria-labelledby="stats-heading">
-        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <div className="hidden lg:block absolute inset-0 pointer-events-none" aria-hidden="true">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-primary/5 rounded-full blur-[140px]" />
         </div>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">

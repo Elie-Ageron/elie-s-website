@@ -315,7 +315,7 @@ const AuditGratuit = () => {
       {/* ═══ 1. HERO, bande encre ═══ */}
       <section className="relative overflow-hidden px-4 pb-16 pt-6 sm:px-6 sm:pb-28 sm:pt-20">
         <div
-          className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-primary/[0.06] blur-[120px]"
+          className="hidden lg:block pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-primary/[0.06] blur-[120px]"
           aria-hidden="true"
         />
         <div className="relative mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">

@@ -33,7 +33,7 @@ const Contact = () => {
 
       {/* Hero */}
       <section className="relative grain py-6 sm:py-12 lg:min-h-[100svh] lg:flex lg:items-center lg:justify-center lg:py-0" aria-labelledby="contact-hero-heading">
-        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <div className="hidden lg:block absolute inset-0 pointer-events-none" aria-hidden="true">
           <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-primary/20 rounded-full blur-[120px]" />
           <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-[100px]" />
         </div>

@@ -133,7 +133,7 @@ const BlogCategory = () => {
       />
 
       <section className="relative grain pt-8 sm:pt-14 pb-8 sm:pb-12" aria-labelledby="category-heading">
-        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <div className="hidden lg:block absolute inset-0 pointer-events-none" aria-hidden="true">
           <div className="absolute -top-10 right-[10%] w-64 sm:w-80 h-64 sm:h-80 bg-primary/10 rounded-full blur-[100px]" />
         </div>
         <div className="max-w-3xl mx-auto px-4 sm:px-6 relative z-10">

@@ -314,7 +314,7 @@ const BlogPost = () => {
 
       {/* En-tete */}
       <header className="py-8 sm:py-12 relative grain">
-        <div className="absolute inset-0" aria-hidden="true">
+        <div className="hidden lg:block absolute inset-0" aria-hidden="true">
           <div className="absolute top-1/3 right-1/4 w-56 sm:w-80 h-56 sm:h-80 bg-primary/20 rounded-full blur-[80px] sm:blur-[120px]" />
         </div>
         <div className="max-w-3xl mx-auto px-4 sm:px-6 relative z-10">

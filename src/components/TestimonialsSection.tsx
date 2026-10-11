@@ -129,11 +129,11 @@ const TestimonialsSection = () => {
       {/* Atmosphere, soft brand light, no boxes */}
       <div
         aria-hidden="true"
-        className="absolute top-24 left-[-14%] w-[32rem] h-[32rem] bg-primary/[0.06] rounded-full blur-[120px] pointer-events-none"
+        className="hidden lg:block absolute top-24 left-[-14%] w-[32rem] h-[32rem] bg-primary/[0.06] rounded-full blur-[120px] pointer-events-none"
       />
       <div
         aria-hidden="true"
-        className="absolute bottom-10 right-[-10%] w-[26rem] h-[26rem] bg-primary/[0.04] rounded-full blur-[120px] pointer-events-none"
+        className="hidden lg:block absolute bottom-10 right-[-10%] w-[26rem] h-[26rem] bg-primary/[0.04] rounded-full blur-[120px] pointer-events-none"
       />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">

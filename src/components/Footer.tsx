@@ -94,7 +94,7 @@ const Footer = () => {
   return (
     <div className="relative z-10" role="contentinfo" aria-label="Site footer">
       <footer className="bg-secondary/40 border-t border-border/30">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-10 pb-8 sm:pt-14">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-10 pb-24 sm:pb-8 sm:pt-14">
           {/* Le bandeau « Recevoir mon audit gratuit » a ete retire d'ici le
               13 septembre 2026 : la section de fin de page porte le formulaire
               lui-meme, juste au-dessus. */}
@@ -187,13 +187,13 @@ const Footer = () => {
           </div>
 
           <div className="mt-7 pt-6 border-t border-border/40">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-3 text-xs text-muted-foreground">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-3 text-sm sm:text-xs text-muted-foreground">
               <span>© {currentYear} Elie Ageron, Albertville, Savoie. {t('footer.rights')}</span>
               <div className="flex items-center gap-5">
-                <Link to="/mentions-legales" className="inline-flex items-center min-h-[32px] sm:min-h-[24px] hover:text-primary transition-colors">
+                <Link to="/mentions-legales" className="inline-flex items-center min-h-[44px] sm:min-h-[24px] hover:text-primary transition-colors">
                   {language === 'fr' ? 'Mentions légales' : 'Legal Notice'}
                 </Link>
-                <Link to="/politique-confidentialite" className="inline-flex items-center min-h-[32px] sm:min-h-[24px] hover:text-primary transition-colors">
+                <Link to="/politique-confidentialite" className="inline-flex items-center min-h-[44px] sm:min-h-[24px] hover:text-primary transition-colors">
                   {language === 'fr' ? 'Confidentialité' : 'Privacy'}
                 </Link>
               </div>

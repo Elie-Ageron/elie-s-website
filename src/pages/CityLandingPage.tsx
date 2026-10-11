@@ -183,7 +183,7 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
         className="relative min-h-[80vh] flex items-center justify-center overflow-hidden grain px-4 sm:px-6"
         aria-labelledby="city-hero-heading"
       >
-        <div className="absolute inset-0 z-[1] pointer-events-none" aria-hidden="true">
+        <div className="hidden lg:block absolute inset-0 z-[1] pointer-events-none" aria-hidden="true">
           <div className="absolute top-1/4 left-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-primary/10 rounded-full blur-[100px]" />
           <div className="absolute bottom-1/4 right-1/4 w-56 sm:w-80 h-56 sm:h-80 bg-primary/5 rounded-full blur-[80px]" />
         </div>

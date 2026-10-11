@@ -343,7 +343,9 @@ const SocialMedia = () => {
         className="relative grain py-6 sm:py-12 lg:min-h-[100svh] lg:flex lg:items-center lg:justify-center lg:py-0 overflow-hidden px-4 sm:px-6"
         aria-labelledby="social-hero-heading"
       >
-        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        {/* Halos : grand ecran seulement. Sur telephone, celui de 288 px couvrait
+            toute la largeur et rosissait le fond du premier ecran. */}
+        <div className="absolute inset-0 pointer-events-none hidden lg:block" aria-hidden="true">
           <div className="absolute top-1/4 right-1/4 w-72 h-72 bg-primary/15 rounded-full blur-[120px]" />
           <div className="absolute bottom-1/4 left-1/5 w-64 h-64 bg-primary/8 rounded-full blur-[110px]" />
         </div>
@@ -357,14 +359,14 @@ const SocialMedia = () => {
                 boucle sous un titre attire l'oeil sans rien annoncer, et il ne
                 s'arrete jamais. La pastille prend le meme fond que celles du
                 reste du site. */}
-            <span className="mb-4 sm:mb-7 inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-2 text-xs font-medium text-muted-foreground sm:text-sm">
+            <span className="mb-4 sm:mb-7 inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-2 text-sm font-medium text-muted-foreground">
               <span className="h-1.5 w-1.5 rounded-full bg-primary" aria-hidden="true" />
               {language === 'fr' ? 'Vidéo et réseaux sociaux, clé en main' : 'Video and social media, done for you'}
             </span>
 
             <h1
               id="social-hero-heading"
-              className="hero-title mb-6"
+              className="hero-title mb-4 sm:mb-6"
             >
               <span className="text-foreground">
                 {language === 'fr' ? 'On filme une journée.' : 'We film for one day.'}
@@ -397,15 +399,23 @@ const SocialMedia = () => {
 
                 ⚠️ Le prix est répété ici volontairement. Sans lui, « compris »
                 laisse planer un doute sur un supplément. */}
-            <p className="mt-6 text-base sm:text-lg font-medium text-foreground">
+            {/* ⚠️ `text-lg` des le telephone : en `text-base` elle avait la taille
+                exacte du paragraphe au dessus, et l'argument qu'Elie appelle
+                « vraiment ma nouvelle offre » ne se distinguait que par sa
+                graisse. Les marges du hero ont ete resserrees sous `sm` le meme
+                jour (11 octobre 2026) pour que le bouton ne recule pas. */}
+            <p className="mt-4 sm:mt-6 text-lg font-medium text-foreground">
               {language === 'fr' ? 'Et au troisième mois, votre site web d’une page. ' : 'And from the third month, your one page website. '}
               <span className="text-primary">
                 {language === 'fr' ? 'Compris dans les 890 €.' : 'Included in the €890.'}
               </span>
             </p>
 
-            <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">
-              <MagneticButton>
+            <div className="mt-7 sm:mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">
+              {/* `w-full sm:w-auto` sur l'enveloppe : sans lui le `motion.div` de
+                  `MagneticButton` se reduisait a son contenu, et les deux boutons
+                  empiles faisaient 273 et 358 px de large sur telephone. */}
+              <MagneticButton className="w-full sm:w-auto">
                 <Button variant="hero" size="lg" className="group w-full sm:w-auto" asChild>
                   <Link to="/audit-gratuit">
                     <span className="flex items-center gap-2">
@@ -420,10 +430,15 @@ const SocialMedia = () => {
               </Button>
             </div>
 
-            <p className="mt-4 text-xs sm:text-sm text-muted-foreground font-medium">
-              {language === 'fr'
-                ? 'Gratuit · Deux champs · Vidéo sous 48 h · Savoie, Haute-Savoie et France'
-                : 'Free · Two fields · Video within 48h · Savoie, Haute-Savoie and across France'}
+            {/* « Deux champs » est parti : la relecture aveugle du 14 septembre
+                l'avait juge jargonneux sous un hero, personne n'a encore vu le
+                formulaire. La zone ne s'affiche qu'a partir de `sm` : sur
+                telephone, le paragraphe juste au dessus la donne deja. */}
+            <p className="mt-4 text-sm text-muted-foreground font-medium">
+              {language === 'fr' ? 'Gratuit · Vidéo sous 48 h' : 'Free · Video within 48h'}
+              <span className="hidden sm:inline">
+                {language === 'fr' ? ' · Savoie, Haute-Savoie et France' : ' · Savoie, Haute-Savoie and across France'}
+              </span>
             </p>
           </motion.div>
 
@@ -655,7 +670,7 @@ const SocialMedia = () => {
                 className="section-title mb-5"
               >
                 <span className="text-foreground">
-                  {language === 'fr' ? 'Pour 890 € par mois, ' : 'For €890 a month, '}
+                  {language === 'fr' ? 'Pour 890 € par mois, ' : 'For €890 a month, '}
                 </span>
                 <span className="text-primary">
                   {language === 'fr' ? 'vous avez tout ça.' : 'you get all of this.'}
@@ -674,7 +689,11 @@ const SocialMedia = () => {
                   ? 'Sans engagement. Vous payez au mois, vous arrêtez quand vous voulez.'
                   : 'No commitment. You pay monthly, you stop whenever you want.'}
               </p>
-              <p className="mt-5 text-base text-muted-foreground leading-relaxed">
+              {/* ⚠️ La sortie « Ecrivez-moi » est rendue deux fois. Sur
+                  telephone les colonnes s'empilent : elle arrivait entre le
+                  titre « vous avez tout ca » et la liste, donc on proposait de
+                  partir avant de montrer l'offre. Elle passe sous la liste. */}
+              <p className="mt-5 hidden text-base text-muted-foreground leading-relaxed lg:block">
                 {language === 'fr' ? (
                   <>
                     Vous voulez autre chose : plus de vidéos, un tournage plus long, vos messages
@@ -726,6 +745,26 @@ const SocialMedia = () => {
                 </motion.li>
               ))}
             </ul>
+            <p className="border-t border-border pt-5 text-base text-muted-foreground leading-relaxed lg:hidden">
+                {language === 'fr' ? (
+                  <>
+                    Vous voulez autre chose : plus de vidéos, un tournage plus long, vos messages
+                    privés gérés ?{' '}
+                    <Link to="/contact" className="font-medium text-primary underline underline-offset-4">
+                      Écrivez-moi
+                    </Link>
+                    , je vous réponds avec un prix.
+                  </>
+                ) : (
+                  <>
+                    Want something else: more videos, a longer shoot, your inbox handled?{' '}
+                    <Link to="/contact" className="font-medium text-primary underline underline-offset-4">
+                      Write to me
+                    </Link>{' '}
+                    and I will come back with a price.
+                  </>
+                )}
+            </p>
           </div>
         </div>
       </section>
@@ -828,7 +867,9 @@ const SocialMedia = () => {
           parti. Ne pas le reintroduire pour faire honnete : l'honnetete du site
           vit dans les trois interdits de l'audit, pas dans l'auto-sabotage. */}
       <section className="py-20 sm:py-32" aria-labelledby="social-combo-heading">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+        {/* Alignee a gauche sous `lg` : c'etait la seule section centree de la
+            page hors hero, et son paragraphe faisait neuf lignes centrees. */}
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:text-center">
           <motion.h2
             id="social-combo-heading"
             initial={{ opacity: 0, y: 20 }}
@@ -859,18 +900,18 @@ const SocialMedia = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.15 }}
-            className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3"
+            className="mt-8 flex flex-col items-start gap-y-1 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-3 lg:justify-center"
           >
             <Link
               to="/services"
-              className="inline-flex items-center gap-2 min-h-[24px] text-sm font-semibold text-primary hover:gap-3 transition-all"
+              className="inline-flex items-center gap-2 min-h-[44px] text-base font-semibold text-primary hover:gap-3 transition-all sm:min-h-[24px] sm:text-sm"
             >
               {language === 'fr' ? 'Voir tous les services' : 'See all services'}
               <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
             <Link
               to="/portfolio"
-              className="inline-flex items-center gap-2 min-h-[24px] text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              className="inline-flex items-center gap-2 min-h-[44px] text-base font-medium text-muted-foreground hover:text-primary transition-colors sm:min-h-[24px] sm:text-sm"
             >
               {language === 'fr' ? 'Voir mes réalisations' : 'See my work'}
             </Link>
@@ -915,7 +956,7 @@ const SocialMedia = () => {
       {language === 'fr' && (
         <section className="border-t border-border/50 py-12 sm:py-16" aria-labelledby="social-zones">
           <div className="mx-auto max-w-4xl px-4 sm:px-6">
-            <h2 id="social-zones" className="text-lg font-semibold text-foreground sm:text-xl">
+            <h2 id="social-zones" className="text-xl font-semibold text-foreground">
               Où je viens tourner.
             </h2>
             <p className="mt-3 max-w-2xl leading-relaxed text-muted-foreground">

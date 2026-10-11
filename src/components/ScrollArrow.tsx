@@ -10,7 +10,10 @@ const ScrollArrow = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 1, duration: 0.5 }}
-      className="mt-10 sm:mt-12 flex flex-col items-center gap-2 cursor-pointer group mx-auto"
+      /* ⚠️ Grand ecran seulement. Sur telephone, ce « Decouvrir » qui rebondit
+         prenait 84 px du premier ecran, sur sept pages, pour dire ce que le
+         pouce fait deja tout seul. */
+      className="hidden lg:flex mt-12 flex-col items-center gap-2 cursor-pointer group mx-auto"
       onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}
       aria-label={language === 'fr' ? 'Découvrir' : 'Discover'}
     >

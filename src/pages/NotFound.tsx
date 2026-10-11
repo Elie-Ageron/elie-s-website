@@ -59,7 +59,7 @@ const NotFound = () => {
 
       <section className="min-h-[80vh] flex items-center justify-center relative grain">
         {/* Background glow */}
-        <div className="absolute inset-0" aria-hidden="true">
+        <div className="hidden lg:block absolute inset-0" aria-hidden="true">
           <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/20 rounded-full blur-[150px]" />
         </div>
 

@@ -92,7 +92,7 @@ const HeroSection = () => {
       {mounted && show3D && <HeroDots />}
 
       <div className="pointer-events-none absolute inset-0 z-[1]" aria-hidden="true">
-        <div className="absolute left-1/4 top-1/4 h-72 w-72 rounded-full bg-primary/[0.07] blur-[120px] sm:h-96 sm:w-96" />
+        <div className="hidden lg:block absolute left-1/4 top-1/4 h-72 w-72 rounded-full bg-primary/[0.07] blur-[120px] sm:h-96 sm:w-96" />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-4xl text-center">

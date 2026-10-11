@@ -174,7 +174,10 @@ const AuditForm = ({ source }: AuditFormProps) => {
           placeholder="06 12 34 56 78"
           className={fieldClass}
         />
-        <p id={`audit-contact-note-${source}`} className={`text-xs ${erreurTel ? 'text-destructive' : noteClass}`}>
+        {/* ⚠️ `text-sm` et pas `text-xs` : 12 px sur telephone, pour la phrase qui
+            dit ce qu'on fait du numero. C'est la tendance n°2 d'Elie, et c'est la
+            seule chose qui rassure au moment de donner son numero. */}
+        <p id={`audit-contact-note-${source}`} className={`text-sm leading-snug ${erreurTel ? 'text-destructive' : noteClass}`}>
           {erreurTel
             ? fr
               ? "Il me faut un numéro de téléphone à dix chiffres. C'est le seul moyen que j'ai de vous joindre vite."
@@ -192,7 +195,7 @@ const AuditForm = ({ source }: AuditFormProps) => {
       <button
         type="submit"
         disabled={sending}
-        className={`inline-flex h-12 w-full items-center justify-center gap-2 rounded-full px-6 text-sm font-semibold transition-colors disabled:opacity-70 sm:text-base ${buttonClass}`}
+        className={`inline-flex h-12 w-full items-center justify-center gap-2 rounded-full px-6 text-base font-semibold transition-colors disabled:opacity-70 ${buttonClass}`}
       >
         {sending ? (
           <>
@@ -215,7 +218,7 @@ const AuditForm = ({ source }: AuditFormProps) => {
         </p>
       )}
 
-      <p className={`text-xs ${noteClass}`}>
+      <p className={`text-sm ${noteClass}`}>
         {fr
           ? "Gratuit, sans engagement, et aucune relance derrière."
           : 'Free, no strings, and no chasing afterwards.'}

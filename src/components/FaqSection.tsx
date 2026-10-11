@@ -97,7 +97,7 @@ const FaqSection = ({
                   <AccordionTrigger className="py-5 text-left text-base font-bold tracking-tight text-foreground transition-colors hover:text-primary hover:no-underline sm:text-lg [&[data-state=open]]:text-primary">
                     {item.question}
                   </AccordionTrigger>
-                  <AccordionContent className="pb-6 text-[0.95rem] leading-relaxed text-muted-foreground sm:text-base">
+                  <AccordionContent className="pb-6 text-base leading-relaxed text-muted-foreground">
                     {item.answer}
                     {article && item.article && (
                       <Link

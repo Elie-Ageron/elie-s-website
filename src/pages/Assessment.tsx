@@ -305,7 +305,7 @@ const Assessment = () => {
 
       {/* ===== Intro / Hook ===== */}
       <section className="relative grain py-6 sm:py-12 lg:min-h-[100svh] lg:flex lg:items-center lg:justify-center lg:py-0 overflow-hidden px-4 sm:px-6" aria-labelledby="assess-heading">
-        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <div className="hidden lg:block absolute inset-0 pointer-events-none" aria-hidden="true">
           <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary/10 rounded-full blur-[110px]" />
           <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-[90px]" />
         </div>

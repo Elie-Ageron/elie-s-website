@@ -15,7 +15,6 @@ import { useLocation } from 'react-router-dom';
 // Lazy load non-critical visual components
 const FloatingParticles = lazy(() => import('@/components/animations/FloatingParticles'));
 const BackgroundPattern = lazy(() => import('@/components/BackgroundPattern'));
-const MobileBackgroundAnimation = lazy(() => import('@/components/animations/MobileBackgroundAnimation'));
 
 interface LayoutProps {
   children: ReactNode;
@@ -118,12 +117,15 @@ const Layout = ({ children }: LayoutProps) => {
         {showDecorations && (
           <Suspense fallback={null}>
             <BackgroundPattern disableBlurAccents={isIOSSafari} />
-            {!reduceMotion && (
-              <>
-                <MobileBackgroundAnimation lite={isIOSSafari} />
-                {!isIOSSafari && <FloatingParticles />}
-              </>
-            )}
+            {/* 🔴 `MobileBackgroundAnimation` a ete retire le 11 octobre 2026.
+                C'etait un calque `sm:hidden`, donc **visible uniquement sur
+                telephone** : cinq orbes roses floutees et sept points qui
+                pulsaient en boucle, fixes derriere tout le contenu. Exactement
+                les halos et les pulsations qu'Elie a bannis (« vraiment
+                intelligence artificielle »), et personne ne l'avait vu parce
+                que tout le monde relisait sur ordinateur. Releve par la
+                relecture telephone. */}
+            {!reduceMotion && !isIOSSafari && <FloatingParticles />}
           </Suspense>
         )}
         {/* Lien d'evitement. WCAG 2.4.1 : sans lui, un visiteur au clavier doit

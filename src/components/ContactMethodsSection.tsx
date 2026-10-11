@@ -67,6 +67,33 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
         'Where you rank on your trade plus your town.',
       ];
 
+  /**
+   * La seule sortie du bloc, et elle n'en est pas une : elle rattrape celui qui
+   * a deja un projet, ou qui prefere parler. Corps de texte et pas `text-sm` :
+   * c'est la tendance n°2 d'Elie.
+   *
+   * ⚠️ Elle est rendue deux fois, et une seule est visible. Sur grand ecran
+   * elle reste sous la liste, a cote du panneau. Sur telephone les colonnes
+   * s'empilent, et elle tombait **avant** le formulaire : on proposait de
+   * partir avant d'avoir montre ou remplir. Elle passe donc sous le panneau.
+   */
+  const rattrapage = (className: string) => (
+    <p className={`${className} leading-relaxed text-muted-foreground`}>
+      {fr ? 'Vous avez déjà un projet précis ? ' : 'Already have a specific project? '}
+      <Link to="/contact" className="font-semibold text-primary underline underline-offset-4">
+        {fr ? 'Décrivez-le moi' : 'Tell me about it'}
+      </Link>
+      {fr ? ', ou appelez le ' : ', or call '}
+      <a
+        href="tel:+33695555318"
+        className="whitespace-nowrap font-semibold text-primary underline underline-offset-4"
+      >
+        06 95 55 53 18
+      </a>
+      .
+    </p>
+  );
+
   return (
     <section
       className={`px-4 sm:px-6 ${compact ? 'py-16 sm:py-24' : 'py-24 sm:py-36'}`}
@@ -88,7 +115,11 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
               <span className="text-foreground">
                 {fr ? 'Ce que vos clients voient de vous, ' : 'What your clients see of you, '}
               </span>
-              <span className="text-primary">
+              {/* ⚠️ `block` sous `lg` : sur telephone le rose demarrait en bout de
+                  deuxieme ligne, « voient de vous, et ce / qui vous coute des
+                  clients ». Le second membre commence sa ligne, comme le titre
+                  « Et surtout, votre site web est offert ». */}
+              <span className="block text-primary lg:inline">
                 {/* « des appels » a ete remplace par « des clients » : un
                     restaurant perd des couverts, un therapeute perd des
                     rendez-vous. Le mot d'origine ne parlait qu'aux artisans,
@@ -124,26 +155,7 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
               ))}
             </ul>
 
-            {/* La seule sortie du bloc, et elle n'en est pas une : elle rattrape
-                celui qui a deja un projet, ou qui prefere parler. Corps de texte
-                et pas `text-sm` : c'est la tendance n°2 d'Elie. */}
-            <p className="mt-8 leading-relaxed text-muted-foreground">
-              {fr ? 'Vous avez déjà un projet précis ? ' : 'Already have a specific project? '}
-              <Link
-                to="/contact"
-                className="font-semibold text-primary underline underline-offset-4"
-              >
-                {fr ? 'Décrivez-le moi' : 'Tell me about it'}
-              </Link>
-              {fr ? ', ou appelez le ' : ', or call '}
-              <a
-                href="tel:+33695555318"
-                className="whitespace-nowrap font-semibold text-primary underline underline-offset-4"
-              >
-                06 95 55 53 18
-              </a>
-              .
-            </p>
+            {rattrapage('mt-8 hidden lg:block')}
           </ScrollReveal>
 
           <ScrollReveal direction="up" delay={0.08}>
@@ -170,13 +182,13 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
                   Une accroche qui presuppose une defaite ferme la porte avant
                   d'avoir montre quoi que ce soit. Celle-ci decrit simplement le
                   geste, et le geste est deja la promesse. */}
-              <p className="text-lg font-bold leading-snug tracking-tight text-foreground">
+              <p className="text-pretty text-lg font-bold leading-snug tracking-tight text-foreground">
                 {fr
                   ? 'Je tape le nom de votre entreprise sur Google, et je vous dis ce que je vois.'
                   : 'I type your business name into Google, and I tell you what I see.'}
               </p>
 
-              <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
+              <ul className="mt-4 flex flex-wrap gap-x-2 gap-y-2 sm:gap-x-4">
                 {(fr
                   ? ['Gratuit', 'Deux champs', 'Vidéo sous 48 h']
                   : ['Free', 'Two fields', 'Video within 48h']
@@ -197,6 +209,8 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
             </div>
           </ScrollReveal>
         </div>
+
+        {rattrapage('mt-8 lg:hidden')}
       </div>
     </section>
   );

@@ -35,6 +35,15 @@ const PortfolioItem = ({ image, name, url, categoryKey, ctaKey, descKey, alt, qu
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay }}
     >
+      {/* 🔴 Sur telephone, aucun projet n'avait de nom. Le titre et la
+          categorie ne vivaient que dans le calque de survol, rogne par
+          `overflow-hidden` : au doigt, on ne le voit jamais. Ils sont poses au
+          dessus de l'image sous `lg`, et le calque reste au grand ecran. */}
+      <div className="mb-4 lg:hidden">
+        <p className="text-sm font-medium text-primary">{t(categoryKey)}</p>
+        <h3 className="mt-1 text-[1.375rem] font-semibold leading-tight text-foreground">{name}</h3>
+      </div>
+
       <a
         href={url}
         target="_blank"
@@ -56,11 +65,13 @@ const PortfolioItem = ({ image, name, url, categoryKey, ctaKey, descKey, alt, qu
 
           <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-          <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+          <div className="absolute bottom-0 left-0 right-0 hidden p-6 sm:p-8 translate-y-full group-hover:translate-y-0 transition-transform duration-500 lg:block">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-xs text-primary font-medium uppercase tracking-wider mb-1">{t(categoryKey)}</p>
-                <h3 className="text-xl sm:text-2xl font-bold text-foreground">{name}</h3>
+                {/* Un `p` et plus un `h3` : le titre du projet est deja annonce
+                    au dessus de l'image, un lecteur d'ecran l'entendait deux fois. */}
+                <p className="text-xl sm:text-2xl font-bold text-foreground">{name}</p>
               </div>
               <div className="flex items-center gap-2 text-primary">
                 <span className="text-sm font-medium hidden sm:block">{t('portfolio.preview')}</span>
@@ -78,11 +89,14 @@ const PortfolioItem = ({ image, name, url, categoryKey, ctaKey, descKey, alt, qu
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: delay + 0.15 }}
-          className="mt-6 px-4 py-4 rounded-xl bg-secondary/60 border border-border/50 relative"
+          /* Sous `lg`, un filet rose a gauche plutot qu'une case grise : la
+             citation etait en 14 px italique dans un encadre, sous une icone de
+             16 px a 40 % d'opacite. */
+          className="mt-6 relative border-l-2 border-primary/30 pl-4 lg:px-4 lg:py-4 lg:rounded-xl lg:bg-secondary/60 lg:border lg:border-border/50"
         >
-          <Quote className="w-4 h-4 text-primary/40 absolute top-3 left-3" aria-hidden="true" />
-          <p className="text-sm text-muted-foreground italic pl-5 leading-relaxed">"{quote}"</p>
-          {quoteAuthor && <p className="text-xs text-primary font-medium mt-2 pl-5">{quoteAuthor}</p>}
+          <Quote className="hidden w-4 h-4 text-primary/40 absolute top-3 left-3 lg:block" aria-hidden="true" />
+          <p className="text-base text-muted-foreground italic leading-relaxed lg:text-sm lg:pl-5">"{quote}"</p>
+          {quoteAuthor && <p className="text-sm text-primary font-medium mt-2 lg:text-xs lg:pl-5">{quoteAuthor}</p>}
         </motion.div>
       )}
 
@@ -91,16 +105,20 @@ const PortfolioItem = ({ image, name, url, categoryKey, ctaKey, descKey, alt, qu
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: delay + 0.25 }}
-        className="text-center mt-6"
+        /* Sous `lg` : la description passe au dessus du bouton, alignee a gauche
+           comme le reste de la page, et le bouton prend toute la largeur. Elle
+           flottait centree entre deux projets, a 16 px de son bouton et a 64 px
+           de l'image suivante. */
+        className="mt-5 flex flex-col-reverse gap-5 lg:mt-6 lg:block lg:text-center"
       >
-        <Button size="lg" className="group" asChild>
+        <Button size="lg" className="group w-full lg:w-auto" asChild>
           <a href={url} target="_blank" rel="noopener noreferrer">
             {t(ctaKey)}
             <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
           </a>
         </Button>
 
-        <p className="text-muted-foreground text-base mt-4 max-w-md mx-auto">
+        <p className="text-muted-foreground text-base max-w-md lg:mt-4 lg:mx-auto">
           {t(descKey)}
         </p>
       </motion.div>
@@ -222,8 +240,8 @@ const Portfolio = () => {
       
       {/* Hero */}
       <section className="relative grain py-6 sm:py-12 lg:min-h-[100svh] lg:flex lg:items-center lg:justify-center lg:py-0" aria-labelledby="portfolio-hero-heading">
-        <div className="absolute inset-0" aria-hidden="true">
-          <div className="absolute top-1/3 left-1/4 sm:left-1/3 w-56 sm:w-80 h-56 sm:h-80 bg-primary/20 rounded-full blur-[80px] sm:blur-[120px]" />
+        <div className="absolute inset-0 hidden lg:block" aria-hidden="true">
+          <div className="absolute top-1/3 left-1/3 w-80 h-80 bg-primary/20 rounded-full blur-[120px]" />
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10 lg:-mt-36">
           <motion.header
@@ -239,11 +257,11 @@ const Portfolio = () => {
               {t('portfolio.subtitle')}
             </p>
             <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.4 }} className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-              <Link to="/get-started" className="inline-flex items-center gap-2 px-7 py-3.5 bg-primary text-primary-foreground font-semibold rounded-xl hover:bg-primary/90 transition-all text-sm">
+              <Link to="/get-started" className="inline-flex w-full items-center justify-center gap-2 px-7 py-3.5 bg-primary text-primary-foreground font-semibold rounded-xl hover:bg-primary/90 transition-all text-base sm:w-auto sm:text-sm">
                 {language === 'fr' ? 'Démarrer mon projet' : 'Start my project'}
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
-              <Link to="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <Link to="/contact" className="inline-flex min-h-[44px] items-center text-base text-muted-foreground hover:text-foreground transition-colors sm:min-h-0 sm:text-sm">
                 {language === 'fr' ? 'Questions ? Écrivez-moi →' : 'Questions? Write me →'}
               </Link>
             </motion.div>
@@ -253,7 +271,9 @@ const Portfolio = () => {
       </section>
 
       {/* Portfolio Showcase */}
-      <section className="py-8 sm:py-12 md:py-16" aria-labelledby="projects-heading">
+      {/* `pb-20` sous `sm` : la derniere realisation finissait a 32 px du
+          titre des comptes geres, qui n'a pas de marge haute. */}
+      <section className="pt-8 pb-20 sm:py-12 md:py-16" aria-labelledby="projects-heading">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           
           {/* C'etait une pastille rose bordee de deux etoiles scintillantes,

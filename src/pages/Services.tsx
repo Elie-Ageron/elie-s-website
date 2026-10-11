@@ -27,7 +27,7 @@ const ServiceSection = ({ service, index }: { service: ServiceItem; index: numbe
       className="relative flex items-center justify-center pt-2 pb-8 sm:py-10 px-6"
     >
       {/* Soft glow for depth, no surrounding box */}
-      <div className="absolute w-72 h-72 rounded-full bg-primary/10 blur-[90px]" aria-hidden="true" />
+      <div className="hidden lg:block absolute w-72 h-72 rounded-full bg-primary/10 blur-[90px]" aria-hidden="true" />
       <div className="relative z-10">
         <ServiceMockup id={service.id} />
       </div>
@@ -258,7 +258,7 @@ const Services = () => {
 
       {/* Hero */}
       <section className="relative grain py-6 sm:py-12 lg:min-h-[100svh] lg:flex lg:items-center lg:justify-center lg:py-0 overflow-hidden" aria-labelledby="services-hero-heading">
-        <div className="absolute inset-0" aria-hidden="true">
+        <div className="hidden lg:block absolute inset-0" aria-hidden="true">
           <div className="absolute top-1/4 right-1/4 w-72 h-72 bg-primary/15 rounded-full blur-[120px]" />
           <div className="absolute bottom-1/4 left-1/5 w-64 h-64 bg-primary/8 rounded-full blur-[110px]" />
         </div>
