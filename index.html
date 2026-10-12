@@ -202,20 +202,33 @@
   </head>
 
   <body>
-    <!-- Stale-chunk guard: if a JS bundle fails to load (old cached HTML after a deploy),
-         reload once so the browser fetches fresh HTML with correct chunk URLs.
-         Uses localStorage with 60s cooldown to prevent infinite loops. -->
+    <!-- Garde des lots perimes : si un de NOS fichiers versionnes (/assets/)
+         ne charge pas, c'est un HTML d'avant un deploiement. On recharge une
+         fois, avec 60 s de pause pour ne jamais boucler.
+
+         🔴 Le 12 octobre 2026, il rechargeait la page sur N'IMPORTE QUEL
+         script ou feuille en echec. Un bloqueur de pub (uBlock, Brave, Safari)
+         bloque Google Tag Manager et /_vercel/insights : la page s'affichait,
+         puis se rechargeait toute seule, a chaque visite espacee d'une minute.
+         C'est la « redirection » qu'Elie voyait, mesuree sur la production.
+         Un script tiers bloque n'est pas un deploiement : il ne doit rien
+         recharger. -->
     <script>
       (function() {
         var key = 'scr';
         window.addEventListener('error', function(e) {
-          if (e.target && (e.target.tagName === 'SCRIPT' || e.target.tagName === 'LINK')) {
+          var t = e.target;
+          if (!t || (t.tagName !== 'SCRIPT' && t.tagName !== 'LINK')) return;
+          var url = t.src || t.href || '';
+          if (url.indexOf(location.origin + '/assets/') !== 0) return;
+          try {
             var ts = localStorage.getItem(key);
-            if (!ts || Date.now() - Number(ts) > 60000) {
-              localStorage.setItem(key, String(Date.now()));
-              window.location.reload();
-            }
+            if (ts && Date.now() - Number(ts) < 60000) return;
+            localStorage.setItem(key, String(Date.now()));
+          } catch (err) {
+            return; // Stockage bloque : on ne recharge pas, au risque de boucler.
           }
+          window.location.reload();
         }, true);
       })();
     </script>

@@ -43,7 +43,9 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const racine = join(dirname(fileURLToPath(import.meta.url)), '..');
-const dist = join(racine, 'dist');
+// `PRERENDER_DIST` sert a tester un build ailleurs que dans `dist/`, sans
+// marcher sur une autre session qui lit ou construit le meme dossier.
+const dist = process.env.PRERENDER_DIST ?? join(racine, 'dist');
 const BASE = 'https://elieageron.com';
 
 if (!existsSync(join(dist, 'index.html'))) {
@@ -87,7 +89,18 @@ const videRoot = (html) => {
   return html;
 };
 
-const gabarit = videRoot(readFileSync(join(dist, 'index.html'), 'utf8'));
+/* Meme defaut pour le bloc que ce script ajoute en fin de <head> : sans ce
+   retrait, un second passage empilerait deux voiles et les prechargements de
+   l'accueil sur toutes les pages. */
+const DEBUT_BLOC = '<!-- prerender-head:debut -->';
+const FIN_BLOC = '<!-- prerender-head:fin -->';
+const videBloc = (html) => {
+  const debut = html.indexOf(DEBUT_BLOC);
+  const fin = html.indexOf(FIN_BLOC);
+  return debut === -1 || fin === -1 ? html : html.slice(0, debut) + html.slice(fin + FIN_BLOC.length);
+};
+
+const gabarit = videBloc(videRoot(readFileSync(join(dist, 'index.html'), 'utf8')));
 const lire = (p) => readFileSync(join(racine, p), 'utf8');
 const lireTout = (fichiers) => fichiers.map((f) => readFileSync(f, 'utf8')).join('\n');
 
@@ -370,13 +383,13 @@ const liensDePage = (chemin) => {
  * du site cassait sa mise en page pour les visiteurs.
  *
  * Un element hors flux ne participe pas au calcul de la mise en page : sa
- * disparition ne peut donc, par construction, decaler rien du tout. Le
- * squelette reste entierement visible pendant les deux secondes ou React
- * demarre, et entierement lisible pour un robot. Rien n'est masque : c'est le
- * meme contenu, au meme endroit, simplement pose sur sa propre couche.
+ * disparition ne peut donc, par construction, decaler rien du tout.
  *
  * ⚠️ Ne pas le repasser en flux normal pour « faire plus propre ». Le CLS
  * revient immediatement.
+ *
+ * Son contenu, lui, n'est plus montre au visiteur qui execute JavaScript :
+ * voir `VOILE` plus bas. La couche reste, c'est une feuille blanche.
  */
 /**
  * La preuve, pour qui n'execute pas JavaScript.
@@ -424,7 +437,7 @@ const preuve = (chemin) => {
     titreBloc('Quatre sites en ligne') +
     `<p style="margin:0;font-size:0.85rem;color:#635e59">Naura Conseils Finance (courtage), Solar Fusion (photovoltaïque), MyWebGlory et Virtual Producers (deux agences). Visibles sur la page portfolio.</p>` +
     titreBloc('Deux comptes gérés en ce moment') +
-    `<p style="margin:0;font-size:0.85rem;color:#635e59">Nouït, praticienne en soins énergétiques à Albertville, et Isabelle Ageron-Vicat, formatrice en rééducation de l'écriture à Albertville. Leurs publications sont publiques.</p>` +
+    `<p style="margin:0;font-size:0.85rem;color:#635e59">Nouït, thérapeute et conseil à Albertville, et Isabelle Ageron-Vicat, formatrice en rééducation de l'écriture à Albertville. Leurs publications sont publiques.</p>` +
     titreBloc('Qui, où, combien') +
     `<p style="margin:0;font-size:0.85rem;color:#635e59">Elie Ageron, web designer indépendant à Albertville en Savoie. Réseaux sociaux à 890 euros par mois, sans engagement : une journée de tournage sur place, puis 8 vidéos, 4 carrousels et 8 stories dans le mois. Site une page dès 500 euros, site vitrine dès 1 500 euros. Téléphone 06 95 55 53 18, elie@elieageron.com.</p>`
   );
@@ -488,6 +501,140 @@ const squelette = (chemin, titre, description) => {
       : '') +
     preuve(chemin) +
     `</div></div>`
+  );
+};
+
+/**
+ * Le voile : le squelette est pour les robots, plus pour les yeux.
+ *
+ * 🔴 **Elie, le 12 octobre 2026, troisieme signalement :** *« j'ai vraiment
+ * l'impression qu'il y a une redirection. Ca affiche une page, je ne sais pas
+ * si c'est le blog ou quoi, et apres ca va sur l'accueil. »*
+ *
+ * Ce n'etait toujours pas une redirection : la reponse est un 200 direct, et
+ * l'adresse ne change pas. C'etait ce squelette. La correction du 17 septembre
+ * lui avait donne la barre et le fond du site, mais son corps restait une
+ * colonne de trente liens, quatre avis et un bloc de prix en police systeme :
+ * pour un visiteur, une autre page. Pellicule de la production, telephone en
+ * 4G, processeur ralenti quatre fois :
+ *
+ *     1 447 ms  la page de liens
+ *     2 283 ms  vide
+ *     2 586 ms  l'en-tete du site, corps vide
+ *     4 725 ms  l'accueil
+ *
+ * Trois etats differents avant la bonne page. Aucun habillage du squelette ne
+ * pouvait regler ca : ce qu'il contient est fait pour etre lu par un robot, pas
+ * vu par quelqu'un.
+ *
+ * Le contenu est donc masque **seulement quand JavaScript tourne**, c'est a
+ * dire quand React va le remplacer. Le script en ligne ci-dessous pose
+ * `data-attente` sur `<html>` avant que le corps ne soit lu :
+ *
+ * - visiteur normal : feuille blanche, puis le site. Plus de page fantome.
+ * - navigateur sans JavaScript : le script ne tourne pas, rien n'est masque.
+ * - JavaScript actif mais lot principal en echec : l'attribut tombe au bout de
+ *   huit secondes, et le squelette redevient lisible au lieu d'une page vide.
+ *
+ * Ce n'est pas du texte cache au sens de Google : le HTML est le meme pour
+ * tout le monde, Googlebot execute JavaScript et indexe la page rendue par
+ * React, dans laquelle le squelette n'existe plus. Les robots qui n'executent
+ * pas JavaScript (ChatGPT, Perplexity) n'appliquent pas de CSS et lisent tout.
+ *
+ * ⚠️ `visibility`, jamais `opacity`. Un lien a opacite nulle reste cliquable :
+ * un doigt pose sur la feuille blanche pendant le chargement partait sur une
+ * page au hasard. `visibility:hidden` le retire du clic, de la tabulation et de
+ * l'arbre d'accessibilite.
+ *
+ * ⚠️ `overflow:hidden` pendant l'attente : les liens masques gardent leur
+ * hauteur, et la couche fixe afficherait une barre de defilement sur une page
+ * blanche.
+ */
+const VOILE =
+  `<script>(function(d){d.setAttribute('data-attente','');setTimeout(function(){d.removeAttribute('data-attente')},8000)})(document.documentElement)</script>` +
+  `<style>html[data-attente] [data-squelette]{overflow:hidden!important}html[data-attente] [data-squelette]>*{visibility:hidden}</style>`;
+
+/**
+ * Le lot JavaScript de la page, precharge des le HTML.
+ *
+ * Meme pellicule : le lot principal finit d'arriver a 1 794 ms, et c'est
+ * seulement la, quand React demande la page, que le lot de l'accueil et ses
+ * trente dependances partent, jusqu'a 3 358 ms. Un aller-retour reseau
+ * entier, en serie, pendant lequel le visiteur regarde un en-tete sur une page
+ * vide.
+ *
+ * Vite precharge deja les dependances du point d'entree, pas celles des pages,
+ * puisqu'elles sont chargees a la demande. On les annonce donc ici, route par
+ * route, a partir de `dist/.vite/manifest.json` : le navigateur les telecharge
+ * en parallele du lot principal. L'aide de prechargement de Vite trouve les
+ * balises deja posees et ne les redemande pas.
+ *
+ * ⚠️ Une route absente de `pageDe` n'est pas une erreur : la page charge comme
+ * avant, simplement plus tard. Le compte s'affiche en fin de script.
+ */
+const manifeste = (() => {
+  const f = join(dist, '.vite', 'manifest.json');
+  return existsSync(f) ? JSON.parse(readFileSync(f, 'utf8')) : null;
+})();
+
+/** Les pages a adresse fixe, et le composant qu'elles affichent dans `App.tsx`. */
+const PAGES_FIXES = {
+  '/': 'Home',
+  '/services': 'Services',
+  '/why-a-website': 'WhyWebsite',
+  '/our-process': 'OurProcess',
+  '/portfolio': 'Portfolio',
+  '/contact': 'Contact',
+  '/blog': 'Blog',
+  '/reseaux-sociaux': 'SocialMedia',
+  '/audit-gratuit': 'AuditGratuit',
+  '/get-started': 'GetStarted',
+  '/assessment': 'Assessment',
+  '/guides': 'GuidesIndex',
+  '/a-propos': 'About',
+  '/mentions-legales': 'LegalPage',
+  '/politique-confidentialite': 'LegalPage',
+};
+
+const pageDe = (chemin) => {
+  if (PAGES_FIXES[chemin]) return PAGES_FIXES[chemin];
+  if (chemin.startsWith('/blog/categorie/')) return 'BlogCategory';
+  if (chemin.startsWith('/blog/')) return 'BlogPost';
+  if (chemin.startsWith('/guides/')) return 'GuidePage';
+  const slug = chemin.slice(1);
+  if (villes.some((v) => v.slug === slug)) return 'CityLandingPage';
+  if (villesReseaux.some((v) => v.slug === slug)) return 'SocialCityPage';
+  if (pagesServices.some((v) => v.slug === slug)) return 'ServicePage';
+  return null;
+};
+
+/** Parcourt les imports statiques d'un lot, sans repasser par `exclus`. */
+const parcourir = (clef, vus, exclus = new Set()) => {
+  if (!manifeste?.[clef] || vus.has(clef) || exclus.has(clef)) return vus;
+  vus.add(clef);
+  for (const i of manifeste[clef].imports ?? []) parcourir(i, vus, exclus);
+  return vus;
+};
+
+/* Ce que le point d'entree charge deja : Vite l'a mis dans le gabarit. */
+const dejaCharge = manifeste
+  ? parcourir(Object.keys(manifeste).find((k) => manifeste[k].isEntry), new Set())
+  : new Set();
+
+let sansPrechargement = 0;
+const prechargements = (chemin) => {
+  const page = pageDe(chemin);
+  const clef = page && `src/pages/${page}.tsx`;
+  if (!manifeste?.[clef]) {
+    sansPrechargement += 1;
+    return '';
+  }
+  const lots = [...parcourir(clef, new Set(), dejaCharge)];
+  const js = lots.map((k) => manifeste[k].file);
+  const css = [...new Set(lots.flatMap((k) => manifeste[k].css ?? []))];
+  return (
+    js.map((f) => `<link rel="modulepreload" crossorigin href="/${f}">`).join('') +
+    css.map((f) => `<link rel="preload" as="style" href="/${f}">`).join('')
   );
 };
 
@@ -573,6 +720,15 @@ for (const [chemin, { titre, description }] of routes) {
   // Le squelette crawlable, remplace par React au montage.
   html = html.replace('<div id="root"></div>', `<div id="root">${squelette(chemin, titre, description)}</div>`);
 
+  // Son voile, et le lot de la page precharge. Voir `VOILE` et `prechargements`.
+  html = remplacer(
+    html,
+    /<\/head>/,
+    `${DEBUT_BLOC}${VOILE}${prechargements(chemin)}${FIN_BLOC}</head>`,
+    manquants,
+    'fin du head'
+  );
+
   // Controle : on n'ecrit pas un fichier qui n'aurait pas son canonical.
   if (!html.includes(`href="${url}"`)) {
     casses.push(chemin);
@@ -585,6 +741,11 @@ for (const [chemin, { titre, description }] of routes) {
 }
 
 console.log(`Head par route : ${ecrits} fichier(s) ecrit(s), ${deja} deja pre-rendu(s), ${routes.size} route(s) connues.`);
+if (!manifeste) {
+  console.warn('⚠️  dist/.vite/manifest.json absent (build.manifest dans vite.config.ts) : aucun lot de page precharge.');
+} else if (sansPrechargement) {
+  console.warn(`⚠️  ${sansPrechargement} route(s) sans lot precharge : ajouter leur page dans PAGES_FIXES ou pageDe.`);
+}
 
 /* ── Controle : toute URL du sitemap doit avoir son fichier ──
  *

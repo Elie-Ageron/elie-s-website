@@ -1484,6 +1484,44 @@ rendu complet, sur le fil principal déjà le plus chargé du site.
 > ⚠️ `<meta charset>` doit tenir dans les 1024 premiers octets du document.
 > C'est pour ça qu'il est passé avant le bloc GTM, et pas l'inverse.
 
+### 🔴 La « redirection », troisième signalement (12 octobre 2026)
+
+> Elie : *« ça affiche une page, je ne sais pas si c'est le blog ou quoi, et
+> après ça va sur l'accueil. »*
+
+Toujours pas une redirection HTTP (200 direct). **Deux causes réelles**,
+mesurées en pellicule sur la production, téléphone en 4G :
+
+1. **Le squelette restait visible.** La page de liens s'affichait à 1,4 s,
+   puis un vide, puis l'en-tête seul, puis l'accueil à 4,7 s. Son contenu est
+   maintenant **masqué quand JavaScript tourne** (`data-attente` posé sur
+   `<html>` par un script en ligne, `visibility:hidden`), visible sans
+   JavaScript, et visible au bout de 8 s si le lot principal échoue. Le visiteur
+   voit une feuille blanche, puis le site. Voir `VOILE` dans `prerender-head.mjs`.
+2. **🔴 La garde des lots périmés de `index.html` rechargeait la page sur
+   n'importe quel script en échec.** Un bloqueur de pub bloque GTM et
+   `/_vercel/insights` : la page s'affichait puis **se rechargeait toute
+   seule**, à chaque visite espacée d'une minute. Vérifié sur la production en
+   bloquant ces deux adresses. Elle ne réagit plus qu'à nos fichiers `/assets/`.
+
+En prime, chaque page **précharge son propre lot** dans le HTML
+(`<link rel="modulepreload">` lu dans `dist/.vite/manifest.json`, d'où
+`build.manifest: true`). Les trente fichiers de l'accueil arrivaient à 3,4 s, ils
+arrivent avec le lot principal. LCP de l'accueil mesuré de 5,5 à 4,7 s ; le
+reste est du temps de processeur, pas du réseau.
+
+> ⚠️ **Ne jamais remettre de `opacity:0` à la place de `visibility:hidden`** :
+> des liens invisibles restent cliquables, un doigt posé pendant le chargement
+> partait sur une page au hasard.
+>
+> ⚠️ **Tout script tiers ajouté au site doit pouvoir échouer sans rien
+> recharger.** Un bloqueur de pub n'est pas un déploiement.
+>
+> ⚠️ **En local, `vite preview` n'a pas `/_vercel/insights`** : avec
+> l'ancienne garde, chaque mesure locale rechargeait la page une fois et
+> doublait le temps mesuré. C'est en cherchant ce rechargement local que la
+> cause n°2 est sortie.
+
 ### Le pied de page est passé de 48 liens à 24
 
 > Elie, le même soir : *« le footer est méga long. simplifie. pas besoin de

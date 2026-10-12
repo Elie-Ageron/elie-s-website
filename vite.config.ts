@@ -38,6 +38,9 @@ export default defineConfig(({ mode }) => ({
     cssCodeSplit: true,
     // Skip printing compressed sizes (speeds up CI builds)
     reportCompressedSize: false,
+    // dist/.vite/manifest.json : scripts/prerender-head.mjs y lit le lot de
+    // chaque page pour le precharger dans le HTML de sa route.
+    manifest: true,
     // Suppress warnings for large chunks (three.js is intentionally large and lazy-loaded)
     chunkSizeWarningLimit: 1000,
     rollupOptions: {
