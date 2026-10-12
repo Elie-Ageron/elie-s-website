@@ -18,6 +18,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
   const flatNavItems = [
     { href: '/services', label: 'Services' },
     { href: '/reseaux-sociaux', label: language === 'fr' ? 'Réseaux sociaux' : 'Social media' },
+    { href: '/creation-site-web', label: language === 'fr' ? 'Sites web' : 'Websites' },
     { href: '/portfolio', label: t('nav.portfolio') },
     { href: '/blog', label: 'Blog' },
     { href: '/guides', label: language === 'fr' ? 'Guides' : 'Guides' },

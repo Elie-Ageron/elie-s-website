@@ -19,6 +19,7 @@ const Breadcrumb = () => {
   const pathMap: Record<string, { en: string; fr: string }> = {
     '/services': { en: 'Services', fr: 'Services' },
     '/reseaux-sociaux': { en: 'Social Media', fr: 'Réseaux Sociaux' },
+    '/creation-site-web': { en: 'Websites', fr: 'Sites Web' },
     '/why-a-website': { en: 'Why a Website', fr: 'Pourquoi un Site' },
     '/our-process': { en: 'Our Process', fr: 'Notre Méthode' },
     '/portfolio': { en: 'Portfolio', fr: 'Portfolio' },

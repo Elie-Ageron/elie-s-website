@@ -11,7 +11,7 @@
     },
     {
       "source": "/pricing",
-      "destination": "/services",
+      "destination": "/creation-site-web",
       "permanent": true
     },
     {

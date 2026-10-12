@@ -47,25 +47,30 @@ const useSteps = () => {
       num: '1',
       title: fr ? 'Une journée chez vous' : 'One day at your place',
       desc: fr
-        ? "J'arrive avec les micros, la lumière et le plan de tournage déjà écrit. Vous n'avez rien à préparer et aucun texte à apprendre. C'est la seule journée du mois où vous me voyez."
-        : 'I show up with the mics, lights and the shooting plan already written. Nothing to prepare, no script to learn. It is the only day of the month you see me.',
+        ? "J'arrive avec le matériel et le plan de tournage. Vous n'avez rien à préparer."
+        : 'I show up with the gear and the shooting plan. Nothing to prepare on your side.',
     },
     {
       num: '2',
       title: fr ? 'Je monte et je sous-titre' : 'I edit and subtitle',
       desc: fr
-        ? "De cette journée je sors 8 vidéos verticales. Chacune tient debout toute seule : une accroche dans les deux premières secondes, une idée, une fin qui donne envie de vous suivre."
-        : 'From that day I pull 8 vertical videos. Each stands on its own: a hook in the first two seconds, one idea, an ending that makes people follow you.',
+        ? 'De cette journée je sors 8 vidéos verticales, chacune avec son accroche.'
+        : 'From that day I pull 8 vertical videos, each with its own hook.',
     },
     {
       num: '3',
       title: fr ? 'Je publie à votre place' : 'I post for you',
       desc: fr
-        ? "Vos vidéos sortent tout au long du mois sur Instagram, Facebook, TikTok ou YouTube. Je choisis les horaires, j'écris les légendes et je gère les commentaires. Vous, vous répondez seulement aux gens qui veulent un rendez-vous."
-        : 'Your videos go out through the month on Instagram, Facebook, TikTok or YouTube. I pick the timing, write the captions and handle the comments. You only answer the people who want an appointment.',
+        ? "Elles sortent tout le mois, légendes comprises. Vous ne répondez qu'aux gens qui veulent un rendez-vous."
+        : 'They go out all month, captions included. You only answer the people who want an appointment.',
     },
   ];
 };
+/* ⚠️ Les trois textes d'etape ont ete ramenes a une ou deux phrases courtes le
+   12 octobre 2026. Elie : *« les trois etapes avec le gros titre. Comme ca si
+   les gens veulent lire le texte, ils le lisent, mais s'ils ne veulent pas, ils
+   ne le lisent pas. »* Le titre porte l'etape, le texte ne fait que la
+   preciser : la version longue vit sur `/reseaux-sociaux`. */
 
 
 const SocialPillarSection = () => {
@@ -114,15 +119,24 @@ const SocialPillarSection = () => {
                   {fr ? 'Un mois de publications.' : 'A month of posts.'}
                 </span>
               </h2>
+              {/* 🔴 Deux chapos de trois lignes chacun, soit sept lignes sur
+                  telephone avant la premiere image. Elie, le 12 octobre 2026 :
+                  *« en dessous, tu as un enorme paragraphe. Je ne sais pas si
+                  les gens vont lire ca, clairement. »* Le titre dit deja le
+                  rythme et le hero l'a deja explique : le chapo ne garde que
+                  ce qui est neuf, c'est a dire pourquoi, et pour qui.
+                  ⚠️ La ligne des metiers reste. C'est la correction de la
+                  relecture par profil du 13 septembre : sans elle, un plombier
+                  lit la page entiere sans croiser un mot qui le decrive. */}
               <p className="section-lede mt-6">
                 {fr
-                  ? "Vos clients regardent votre page avant de vous appeler. Aujourd'hui, ce qu'ils y lisent, c'est une date. Je viens filmer une journée par mois, et vos comptes tournent jusqu'à la suivante."
-                  : 'Your clients check your page before calling you. Right now, what they read there is a date. I come and film for one day a month, and your accounts run until the next one.'}
+                  ? "Vos clients regardent votre page avant de vous appeler. Ils y trouvent des vidéos du mois, pas une date de l'an dernier."
+                  : 'Your clients check your page before calling you. They find videos from this month, not a date from last year.'}
               </p>
-              <p className="section-lede mt-4">
+              <p className="mt-4 text-base font-medium text-foreground">
                 {fr
-                  ? 'Je travaille avec des artisans, des commerçants, des salons, des restaurants et des thérapeutes, entre Albertville, Chambéry et Annecy. Plus votre métier se voit, plus il est facile à filmer.'
-                  : 'I work with tradespeople, shopkeepers, salons, restaurants and therapists, between Albertville, Chambéry and Annecy. The more physical your trade, the easier it is to film.'}
+                  ? 'Artisans, commerces, restaurants, thérapeutes, entre Albertville, Chambéry et Annecy.'
+                  : 'Tradespeople, shops, restaurants, therapists, between Albertville, Chambéry and Annecy.'}
               </p>
             </ScrollReveal>
           </div>
@@ -149,7 +163,7 @@ const SocialPillarSection = () => {
                 <ScrollReveal key={step.num} direction="up" delay={i * 0.05}>
                   <article className="flex gap-6 sm:gap-8">
                     <span
-                      className="w-7 shrink-0 font-heading text-5xl font-bold leading-none text-primary sm:w-9 sm:text-6xl lg:w-auto"
+                      className="w-7 shrink-0 font-heading text-5xl font-bold leading-none text-primary sm:w-9 sm:text-6xl"
                       aria-hidden="true"
                     >
                       {step.num}
@@ -173,15 +187,13 @@ const SocialPillarSection = () => {
                 longue vit sur la page dediee, l'accueil garde le resume. */}
             <ScrollReveal direction="up">
               <div className="mt-12 border-t border-border pt-9 sm:mt-14">
+                {/* La phrase seule depuis le 12 octobre 2026 : elle dit tout.
+                    Le cadre pose au depart (ce dont on parle, ce qu'on garde
+                    pour soi) vit sur `/reseaux-sociaux`. */}
                 <p className="text-lg font-bold leading-snug tracking-tight text-foreground">
                   {fr
                     ? 'Votre part du travail tient dans une journée.'
                     : 'Your share of the work fits in a single day.'}
-                </p>
-                <p className="mt-3 max-w-lg leading-relaxed text-muted-foreground">
-                  {fr
-                    ? "Le reste du mois se passe sans vous. On fixe au départ ce dont vous voulez parler et ce que vous préférez garder pour vous, et je travaille dans ce cadre."
-                    : 'The rest of the month happens without you. We agree up front on what you want to talk about and what you would rather keep to yourself, and I work inside that.'}
                 </p>
               </div>
             </ScrollReveal>

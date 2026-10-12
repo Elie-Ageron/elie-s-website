@@ -23,7 +23,15 @@ import { services } from '@/data/services';
  * comme celle qu'il avait fait retirer du titre de `/services` et du pied de
  * page. Le titre parle maintenant de ce que le client y gagne : tout au meme
  * endroit. ⚠️ Ne pas la remplacer par « une equipe » : ce serait faux.
+ *
+ * 🔴 **Les deux piliers sont sortis de la liste le 12 octobre 2026.** Le titre
+ * dit « Tout le reste », et la liste recommencait par les sites et les reseaux,
+ * que l'accueil venait de presenter sur cinq ecrans. Sept lignes devenaient
+ * cinq, sur une page qu'Elie trouvait *« deja hyper longue »*. Le chapo a perdu
+ * sa phrase du milieu pour la meme raison.
  */
+const PILIERS = new Set(['sites', 'reseaux']);
+
 const ServicesEcosystem = () => {
   const { language } = useLanguage();
 
@@ -47,8 +55,8 @@ const ServicesEcosystem = () => {
 
             <p className="section-lede mt-6">
               {language === 'fr'
-                ? "La fiche Google, les avis, le logo, les textes. D'habitude, on les confie à quatre prestataires qui ne se parlent pas. Ici, tout est suivi ensemble, sur le même devis."
-                : 'The Google profile, the reviews, the logo, the copy. They usually go to four different providers who never talk to each other. Here it is all handled together, on one quote.'}
+                ? 'La fiche Google, les avis, le logo, les textes. Tout est suivi ensemble, sur le même devis.'
+                : 'The Google profile, the reviews, the logo, the copy. All handled together, on one quote.'}
             </p>
 
             {/* Sur telephone le bouton passe sous la liste qu'il annonce. */}
@@ -67,7 +75,7 @@ const ServicesEcosystem = () => {
 
           {/* ─── Service index ─── */}
           <ul className="lg:col-span-7 -my-1">
-            {services.map((service, index) => {
+            {services.filter((s) => !PILIERS.has(s.id)).map((service, index) => {
               const Icon = service.icon;
               const href = service.to ?? `/services#${service.anchor}`;
               const tag = service.soon

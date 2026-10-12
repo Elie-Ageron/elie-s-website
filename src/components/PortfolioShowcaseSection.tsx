@@ -19,10 +19,24 @@ import portfolioSolarFusion from '@/assets/portfolio-solar-fusion.webp';
  *    projet pleine largeur : la case en bas a droite restait vide. La cellule
  *    libre porte desormais le renvoi vers le portfolio complet, ce qui
  *    supprime aussi le bouton centre qui suivait.
+ *
+ * 🔴 **Le 12 octobre 2026, les formules de site ont quitte l'accueil** pour
+ * `/creation-site-web`. Elie : *« les prix des sites web, je pense qu'il ne
+ * faut pas que ce soit sur l'accueil. L'accueil est deja hyper long. »* La
+ * cellule de fin porte donc le renvoi vers les formules, avec les deux prix
+ * planchers en titre : le prix reste sur l'accueil, en une ligne. Il y est
+ * affiche depuis le 13 septembre parce que tous les concurrents locaux en
+ * montrent un dans leur extrait Google.
+ *
+ * La meme section sert sur `/creation-site-web` (`contexte="sites"`), avec un
+ * titre qui ne parle plus des videos et une fin qui mene au portfolio.
  */
-const PortfolioShowcaseSection = () => {
+type Contexte = 'accueil' | 'sites';
+
+const PortfolioShowcaseSection = ({ contexte = 'accueil' }: { contexte?: Contexte }) => {
   const { language } = useLanguage();
   const fr = language === 'fr';
+  const accueil = contexte === 'accueil';
 
   const projects = [
     {
@@ -103,14 +117,26 @@ const PortfolioShowcaseSection = () => {
               pas" sur la ligne d'en dessous, "je le refais". En dessous de ce
               titre, pareil, centre. » Le `block` force la coupure a l'endroit
               voulu au lieu de la laisser au navigateur. */}
-          <h2 id="work-heading" className="section-title mx-auto max-w-3xl">
-            <span className="block">{fr ? 'Si le site ne suit pas,' : 'If the site cannot keep up,'}</span>
-            <span className="block text-primary">{fr ? 'je le refais.' : 'I rebuild it.'}</span>
-          </h2>
+          {accueil ? (
+            <h2 id="work-heading" className="section-title mx-auto max-w-3xl">
+              <span className="block">{fr ? 'Si le site ne suit pas,' : 'If the site cannot keep up,'}</span>
+              <span className="block text-primary">{fr ? 'je le refais.' : 'I rebuild it.'}</span>
+            </h2>
+          ) : (
+            <h2 id="work-heading" className="section-title mx-auto max-w-3xl">
+              <span className="block">{fr ? "Quelques sites que j'ai livrés" : 'A few sites I delivered'}</span>
+              <span className="block text-primary">{fr ? 'récemment.' : 'recently.'}</span>
+            </h2>
+          )}
+          {/* Une phrase depuis le 12 octobre 2026, au lieu de trois. */}
           <p className="section-lede mx-auto mt-6 text-center">
-            {fr
-              ? "Une vidéo qui marche renvoie du monde quelque part. Si ce quelque part date de 2018, la vidéo travaille dans le vide. Voilà deux sites que j'ai livrés cette année."
-              : 'A video that works sends people somewhere. If that somewhere dates from 2018, the video works for nothing. Here are two sites I delivered this year.'}
+            {accueil
+              ? fr
+                ? 'Une vidéo qui marche renvoie du monde quelque part. Autant que ce soit un site récent.'
+                : 'A video that works sends people somewhere. Better make it a recent site.'
+              : fr
+                ? 'Cliquez sur un site pour le voir en ligne.'
+                : 'Click a site to see it live.'}
           </p>
         </motion.div>
 
@@ -157,21 +183,42 @@ const PortfolioShowcaseSection = () => {
             {/* ⚠️ Etait `text-2xl sm:text-3xl`, soit 24 px sur telephone : la
                 taille exacte d'un titre de section, pour un paragraphe. Elie,
                 le 22 septembre 2026 : *« des textes qui sont trop gros »*. */}
-            <p className="font-heading text-xl font-bold leading-tight tracking-tight text-foreground sm:text-2xl md:text-3xl">
-              {fr ? 'Site une page, vitrine, ou refonte complète.' : 'One page, showcase site, or full rebuild.'}
-            </p>
-            <p className="mt-4 max-w-md leading-relaxed text-muted-foreground">
-              {fr
-                ? 'Le portfolio complet montre le reste, avec à chaque fois ce que le client vendait et ce qui a changé une fois le site en ligne.'
-                : 'The full portfolio shows the rest, each time with what the client sold and what changed once the site went live.'}
-            </p>
-            <Link
-              to="/portfolio"
-              className="mt-6 inline-flex min-h-[48px] items-center gap-2 rounded-full border border-foreground px-6 text-sm font-semibold text-foreground transition-colors hover:bg-foreground hover:text-background"
-            >
-              {fr ? 'Voir le portfolio' : 'See the portfolio'}
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
+            {accueil ? (
+              <>
+                <p className="font-heading text-xl font-bold leading-tight tracking-tight text-foreground sm:text-2xl md:text-3xl">
+                  {fr ? 'Une page dès 500 €.' : 'One page from €500.'}
+                  <span className="block text-primary">{fr ? 'Un site vitrine dès 1 500 €.' : 'A showcase site from €1,500.'}</span>
+                </p>
+                <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2">
+                  <Link
+                    to="/creation-site-web"
+                    className="inline-flex min-h-[48px] items-center gap-2 rounded-full border border-foreground px-6 text-sm font-semibold text-foreground transition-colors hover:bg-foreground hover:text-background"
+                  >
+                    {fr ? 'Voir les formules de site' : 'See the website plans'}
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                  <Link
+                    to="/portfolio"
+                    className="inline-flex min-h-[44px] items-center text-base font-medium text-muted-foreground underline-offset-4 hover:text-foreground hover:underline sm:min-h-[24px] lg:text-sm"
+                  >
+                    {fr ? 'Voir le portfolio' : 'See the portfolio'}
+                  </Link>
+                </div>
+              </>
+            ) : (
+              <>
+                <p className="font-heading text-xl font-bold leading-tight tracking-tight text-foreground sm:text-2xl md:text-3xl">
+                  {fr ? 'Les autres sont dans le portfolio.' : 'The others are in the portfolio.'}
+                </p>
+                <Link
+                  to="/portfolio"
+                  className="mt-6 inline-flex min-h-[48px] items-center gap-2 rounded-full border border-foreground px-6 text-sm font-semibold text-foreground transition-colors hover:bg-foreground hover:text-background"
+                >
+                  {fr ? 'Voir le portfolio' : 'See the portfolio'}
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </Link>
+              </>
+            )}
           </motion.div>
         </div>
       </div>

@@ -5,7 +5,6 @@ import VideosLivreesAccueil from '@/components/VideosLivreesAccueil';
 import AuditInline from '@/components/AuditInline';
 import PersonalIntroSection from '@/components/PersonalIntroSection';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
-import ServicesSection from '@/components/ServicesSection';
 import ServicesEcosystem from '@/components/ServicesEcosystem';
 import PortfolioShowcaseSection from '@/components/PortfolioShowcaseSection';
 import FAQAccordion from '@/components/FAQAccordion';
@@ -114,11 +113,15 @@ const Home = () => {
       {/* La preuve humaine, collée au pilier qu'elle prouve */}
       <TestimonialsSection />
 
-      {/* Pilier n°2 : les sites livrés */}
+      {/* Pilier n°2 : les sites livrés, et le prix en une ligne.
+          🔴 Les trois formules de site (`ServicesSection`) vivaient ici
+          jusqu'au 12 octobre 2026. Elie : *« les prix des sites web, je pense
+          qu'il ne faut pas que ce soit sur l'accueil. Il faut que ce soit sur
+          une autre page. L'accueil est déjà hyper long. »* Elles sont sur
+          `/creation-site-web`, et la fin de cette section y mène avec les
+          deux prix planchers. Les faits de livraison (7 à 14 jours, moins de
+          24 h, maintenance dès 0 €) sont partis avec elles. */}
       <PortfolioShowcaseSection />
-
-      {/* Les formules de site, et les délais */}
-      <ServicesSection />
 
       {/* Tout le reste de la présence en ligne */}
       <ServicesEcosystem />

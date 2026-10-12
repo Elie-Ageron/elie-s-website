@@ -84,10 +84,17 @@ export default {
             height: "0",
           },
         },
+        // La bande de logos du hero : la liste est rendue deux fois, donc un
+        // demi-tour de piste ramene exactement au point de depart.
+        defile: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        defile: "defile 32s linear infinite",
       },
     },
   },

@@ -35,12 +35,16 @@ const Header = () => {
     };
   }, [isMenuOpen]);
 
+  /* ⚠️ Six entrees, pas sept. « Sites web » est arrive le 12 octobre 2026 avec
+     sa page : a sept, le nom touchait « Services » a 1280 px, le point de
+     rupture du menu horizontal. « Guides » lui a cede la place ; il reste dans
+     le menu du telephone, dans le pied de page et sur le blog. */
   const flatNavItems = [
     { href: '/services', label: 'Services' },
     { href: '/reseaux-sociaux', label: language === 'fr' ? 'Réseaux sociaux' : 'Social media' },
+    { href: '/creation-site-web', label: language === 'fr' ? 'Sites web' : 'Websites' },
     { href: '/portfolio', label: t('nav.portfolio') },
     { href: '/blog', label: 'Blog' },
-    { href: '/guides', label: language === 'fr' ? 'Guides' : 'Guides' },
     { href: '/contact', label: t('nav.contact') },
   ];
 

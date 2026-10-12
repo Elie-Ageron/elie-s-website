@@ -107,13 +107,22 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
                 montrant bien la valeur que je vais rapporter. » Il avait
                 raison : il decrivait mon action, pas ce que le visiteur y
                 gagne. La gratuite est passee en premier mot du chapo, ou elle
-                leve l'objection sans occuper la moitie du titre. */}
+                leve l'objection sans occuper la moitie du titre.
+
+                🔴 Remplace le 12 octobre 2026 par la version actuelle. Il disait
+                « Ce que vos clients voient de vous, et ce qui vous coute des
+                clients. » Elie, sur telephone : *« on ne comprend rien, avec
+                plein de texte encore. »* Deux idees imbriquees, et aucune ne
+                disait ce qu'on recoit. Celui-ci tient les deux exigences : le
+                noir dit le geste, le rose dit ce que le visiteur y gagne, et
+                le prix. C'est la lecon d'`AuditInline` : sur le bloc qui porte
+                le formulaire, la clarte bat l'elegance. */}
             <h2
               id="fin-de-page-heading"
               className={`${compact ? 'section-title-compact' : 'section-title'} max-w-3xl`}
             >
               <span className="text-foreground">
-                {fr ? 'Ce que vos clients voient de vous, ' : 'What your clients see of you, '}
+                {fr ? 'Je regarde votre présence en ligne. ' : 'I look at your online presence. '}
               </span>
               {/* ⚠️ `block` sous `lg` : sur telephone le rose demarrait en bout de
                   deuxieme ligne, « voient de vous, et ce / qui vous coute des
@@ -124,7 +133,7 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
                     restaurant perd des couverts, un therapeute perd des
                     rendez-vous. Le mot d'origine ne parlait qu'aux artisans,
                     soit la moitie de la clientele visee. */}
-                {fr ? 'et ce qui vous coûte des clients.' : 'and what is costing you clients.'}
+                {fr ? 'Et je vous dis quoi corriger, gratuitement.' : 'And tell you what to fix, for free.'}
               </span>
             </h2>
             <p className="section-lede mt-6">
@@ -135,14 +144,20 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
                    place dans la fiche technique de `/audit-gratuit`, pas dans
                    la phrase qui vend. Ce bloc est en pied des quatorze pages,
                    donc c'etait la formulation la plus repandue du site. */
-                ? "C'est gratuit et je ne vends rien dedans. Je passe une trentaine de minutes sur votre fiche Google, vos réseaux et votre site, puis je vous envoie l'analyse en vidéo sous 48 h ouvrées."
-                : 'It is free and I sell nothing in it. I spend about thirty minutes on your Google profile, your social accounts and your site, then send you the whole review as a video within two business days.'}
+                /* Une phrase depuis le 12 octobre 2026 : le titre dit deja le
+                   geste et le prix, le detail est dans la liste a cote. */
+                ? 'En vidéo, sous 48 h ouvrées. Je ne vends rien dedans.'
+                : 'As a video, within two business days. I sell nothing in it.'}
             </p>
           </ScrollReveal>
         )}
 
         <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[1fr_26rem] lg:gap-16">
-          <ScrollReveal direction="up">
+          {/* ⚠️ Grand ecran seulement depuis le 12 octobre 2026. Sur
+              telephone, la liste passait entre le titre et le formulaire :
+              quatre lignes de plus avant le premier champ, pour redire ce que
+              le titre vient de dire. */}
+          <ScrollReveal direction="up" className="hidden lg:block">
             <p className="text-lg font-bold tracking-tight text-foreground">
               {fr ? 'Ce que vous recevez' : 'What you get'}
             </p>
@@ -182,13 +197,10 @@ const ContactMethodsSection = ({ showTitle = true, compact = false }: ContactMet
                   Une accroche qui presuppose une defaite ferme la porte avant
                   d'avoir montre quoi que ce soit. Celle-ci decrit simplement le
                   geste, et le geste est deja la promesse. */}
-              <p className="text-pretty text-lg font-bold leading-snug tracking-tight text-foreground">
-                {fr
-                  ? 'Je tape le nom de votre entreprise sur Google, et je vous dis ce que je vois.'
-                  : 'I type your business name into Google, and I tell you what I see.'}
-              </p>
-
-              <ul className="mt-4 flex flex-wrap gap-x-2 gap-y-2 sm:gap-x-4">
+              {/* ⚠️ L'accroche du panneau est partie le 12 octobre 2026 : elle
+                  faisait un second titre a vingt pixels du premier. Le panneau
+                  commence par ses reperes, puis les champs. */}
+              <ul className="flex flex-wrap gap-x-2 gap-y-2 sm:gap-x-4">
                 {(fr
                   ? ['Gratuit', 'Deux champs', 'Vidéo sous 48 h']
                   : ['Free', 'Two fields', 'Video within 48h']

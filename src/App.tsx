@@ -24,6 +24,7 @@ const Contact = lazy(() => import("./pages/Contact"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 const SocialMedia = lazy(() => import("./pages/SocialMedia"));
+const SitesWeb = lazy(() => import("./pages/SitesWeb"));
 const AuditGratuit = lazy(() => import("./pages/AuditGratuit"));
 // Page d'essai locale. `import.meta.env.DEV` est remplace par `false` au build,
 // donc l'import dynamique est elimine et rien de tout ca ne part en production.
@@ -159,7 +160,7 @@ const App = () => (
                         <Route path="/why-a-website" element={<WhyWebsite />} />
                         <Route path="/our-process" element={<OurProcess />} />
                         {/* Page Tarifs retirée : les formules vivent sur la home, tout est sur devis. Redirection SEO. */}
-                        <Route path="/pricing" element={<Navigate to="/services" replace />} />
+                        <Route path="/pricing" element={<Navigate to="/creation-site-web" replace />} />
                         <Route path="/portfolio" element={<Portfolio />} />
                         <Route path="/contact" element={<Contact />} />
                         <Route path="/blog" element={<Blog />} />
@@ -167,6 +168,7 @@ const App = () => (
                         <Route path="/blog/categorie/:slug" element={<BlogCategory />} />
                         <Route path="/blog/:slug" element={<BlogPost />} />
                         <Route path="/reseaux-sociaux" element={<SocialMedia />} />
+                        <Route path="/creation-site-web" element={<SitesWeb />} />
                         <Route path="/audit-gratuit" element={<AuditGratuit />} />
                         {Labo && <Route path="/labo" element={<Labo />} />}
                         {/* Page Événements retirée (août 2026) : l'événementiel n'est plus un service à part. Redirection SEO. */}

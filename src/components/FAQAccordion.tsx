@@ -41,8 +41,8 @@ const FAQAccordion = () => {
              derniere phrase lue avant le seul formulaire de la page : elle
              donnait au visiteur la permission de partir au moment precis ou on
              lui demandait de rester. */
-          ? "Les prix et les délais sont dedans. Quand la réponse est plus longue que quelques lignes, j'ai écrit l'article en entier, et il est en accès libre."
-          : 'Prices and timelines are in there. When the answer runs longer than a few lines I wrote the whole article, and it is free to read.'
+          ? 'Les prix et les délais sont dedans.'
+          : 'Prices and timelines are in there.'
       }
     />
   );

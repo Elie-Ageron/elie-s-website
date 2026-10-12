@@ -21,14 +21,14 @@ const translations = {
     // Home Page
     'hero.headline1': 'Your social accounts keep running.',
     'hero.headline2': "Without you thinking about it.",
-    'hero.subtitle': "One day of filming a month at your place, and your accounts run until the next one. I also build the website those videos point people to. Albertville, Savoie and Haute-Savoie.",
+    'hero.subtitle': "I come and film at your place one day a month, and I post for you. The website, I build that too.",
     'hero.badge': 'Three clients at a time · Albertville, Savoie',
     'hero.cta': 'Get my free audit',
     'hero.secondaryCta': 'See my work',
     'hero.cta.call': 'Book a free call',
     'hero.cta.assessment': 'Get my free audit',
     'hero.cta.nocall': 'Already know what you want? Start without a call',
-    'hero.friction': 'Free · A full review of your online presence · Within 48h',
+    'hero.friction': 'A full review of your online presence, within 48h',
     'hero.trustedby': 'Trusted by',
     'hero.review.text': 'Sharp, professional, exactly what we wanted.',
     'hero.review.author': 'Austin Talley · VM Producers',
@@ -184,8 +184,8 @@ const translations = {
     'services.title': 'The plan that fits your needs',
     'services.title1': 'The plan that',
     'services.title2': 'fits your needs',
-    'services.subtitle': 'Whether you\'re just getting started or building everything at once, there\'s an option that fits where you are.',
-    'services.quote.note': 'These are floor prices, not fixed packages. The figure moves with the number of pages and how much copy there is to write, and you get it in writing before anything starts.',
+    'services.subtitle': 'Three starting points, depending on where you are.',
+    'services.quote.note': 'These are starting prices. Yours depends on the number of pages and the copy to write, and it is in writing before we start.',
     'services.quote.link': 'Request a quote',
     'services.landing.title': 'Single-Page Site',
     'services.landing.price': 'from €500',
@@ -451,8 +451,13 @@ const translations = {
        Savoie » et « web designer Savoie » : quelqu'un qui cherche un site
        tombait sur une page de video, ou son site etait presente comme un
        probleme. La phrase relie maintenant les deux offres au lieu d'en
-       subordonner une. */
-    'hero.subtitle': "Je viens filmer une journée par mois chez vous, et vos comptes tournent jusqu'à la suivante. Je construis aussi le site vers lequel ces vidéos renvoient. Albertville, Savoie et Haute-Savoie.",
+       subordonner une.
+       ⚠️ Ramene de 33 a 21 mots le 12 octobre 2026. Elie, sur telephone :
+       *« le paragraphe est trop gros. Il faut qu'il developpe un peu le titre,
+       mais pas trop. »* Le site y reste, en une phrase, pour la raison
+       ci-dessus. La commune est partie : le titre de la page et la suite la
+       portent. */
+    'hero.subtitle': "Je viens filmer chez vous une journée par mois, et je publie à votre place. Le site web, je le fais aussi.",
     'hero.badge': 'Trois clients à la fois · Albertville, Savoie',
     'hero.cta': 'Obtenir mon audit gratuit',
     'hero.secondaryCta': 'Voir mes réalisations',
@@ -464,8 +469,10 @@ const translations = {
        qu'ils recoivent une analyse de leur presence web complete, et
        gratuitement. » La duree decrit le contenant, pas ce qu'on y trouve. La
        correction avait ete faite sur `AuditInline` et `/audit-gratuit`, et
-       oubliee ici, c'est a dire a l'endroit le plus vu du site. */
-    'hero.friction': 'Gratuit · L\'analyse complète de votre présence en ligne · Sous 48 h',
+       oubliee ici, c'est a dire a l'endroit le plus vu du site.
+       ⚠️ « Gratuit » est parti le 12 octobre 2026 : le bouton juste au dessus
+       le dit deja. La ligne tenait sur deux lignes de telephone. */
+    'hero.friction': 'Analyse complète de votre présence en ligne, sous 48 h',
     'hero.trustedby': 'Ils m\'ont fait confiance',
     'hero.review.text': 'Percutant, professionnel, exactement ce qu\'on voulait.',
     'hero.review.author': 'Austin Talley · VM Producers',
@@ -604,8 +611,8 @@ const translations = {
     'services.title': 'Choisissez la formule adaptée à votre projet',
     'services.title1': 'La formule',
     'services.title2': "qu'il vous faut",
-    'services.subtitle': 'Que vous démarriez ou que vous construisiez tout d\'un coup, il y a une option qui correspond à où vous en êtes.',
-    'services.quote.note': "Ce sont des planchers, pas des forfaits fermés. Le prix bouge selon le nombre de pages et les textes à écrire, et je vous le donne par écrit avant qu'on commence quoi que ce soit.",
+    'services.subtitle': 'Trois points de départ, selon où vous en êtes.',
+    'services.quote.note': "Ce sont des prix de départ. Le vôtre dépend du nombre de pages et des textes à écrire, et il est écrit avant qu'on commence.",
     'services.quote.link': 'Demander un devis',
     'services.landing.title': 'Site Une Page',
     'services.landing.price': 'dès 500 €',

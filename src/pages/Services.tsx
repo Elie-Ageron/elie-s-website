@@ -299,8 +299,11 @@ const Services = () => {
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               {language === 'fr'
-                ? "Un site web qui vous ramène des clients, des vidéos qui tournent sur vos réseaux, une fiche Google qui remonte. Au lieu d'un site livré puis oublié, je m'occupe de votre présence en ligne mois après mois. Pour des artisans, des commerçants, des thérapeutes et des formateurs de Savoie et de Haute-Savoie."
-                : 'A website that brings you clients, videos running on your social accounts, a Google listing that starts turning up. Instead of a site delivered and then forgotten, I look after your online presence month after month. For tradespeople, shopkeepers, therapists and trainers across Savoie and Haute-Savoie.'}
+                /* 52 mots ramenes a 26 le 12 octobre 2026 : sept lignes sur
+                   telephone sous le titre. Les metiers restent en fin de
+                   chapo, c'est la correction de la relecture par profil. */
+                ? 'Votre site, vos réseaux, votre fiche Google : je m’occupe de tout, mois après mois. Pour les artisans, commerces et thérapeutes de Savoie et de Haute-Savoie.'
+                : 'Your site, your social accounts, your Google profile: I look after all of it, month after month. For tradespeople, shops and therapists across Savoie and Haute-Savoie.'}
             </p>
 
             {/* Service pills, preview the breadth */}
@@ -376,8 +379,8 @@ const Services = () => {
             className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto"
           >
             {language === 'fr'
-              ? "Deux gros morceaux : votre site web et vos réseaux sociaux. Autour, tout ce qui les rend efficaces, de votre fiche Google au référencement. Réuni au même endroit, sur un seul devis."
-              : 'Two big pieces: your website and your social media. Around them, everything that makes them work, from your Google profile to SEO. All in one place, on one quote.'}
+              ? 'Deux gros morceaux, le site et les réseaux. Autour, tout ce qui les rend efficaces.'
+              : 'Two big pieces, the site and social media. Around them, everything that makes them work.'}
           </motion.p>
         </div>
       </section>

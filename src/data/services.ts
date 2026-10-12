@@ -56,6 +56,10 @@ export interface ServiceItem {
  * le reste ensuite. Cet ordre pilote la page /services, la section écosystème
  * de la home et le catalogue d'offres JSON-LD.
  */
+/* ⚠️ Les sept `desc` tiennent en une ou deux phrases depuis le 12 octobre 2026.
+   Elie, sur telephone : *« des gros textes partout, c'est dur a lire »*. Celle
+   des reseaux faisait dix lignes sur `/services`. Le detail vit sur la page de
+   chaque service, et les puces juste dessous disent deja le perimetre. */
 export const services: ServiceItem[] = [
   {
     id: 'sites',
@@ -68,14 +72,17 @@ export const services: ServiceItem[] = [
       en: 'Fast, Google-optimized sites built to turn visitors into clients.',
     },
     desc: {
-      fr: "Le socle de votre présence en ligne. Landing page ou site vitrine multi-pages, produit en 7 à 14 jours une fois vos contenus reçus, optimisé pour Google et impeccable sur mobile.",
-      en: 'The foundation of your online presence. Landing page or multi-page showcase site, built in 7 to 14 days once your content is in, optimized for Google and flawless on mobile.',
+      fr: "Une page ou un site vitrine, en ligne 7 à 14 jours après vos contenus, et rapide sur téléphone.",
+      en: "One page or a showcase site, live 7 to 14 days after your content is in, and fast on a phone.",
     },
     bullets: {
       fr: ['Landing page ou site vitrine multi-pages', 'Référencement Google inclus', 'Parfait sur mobile, tablette et ordinateur'],
       en: ['Landing page or multi-page showcase site', 'Google SEO included', 'Perfect on mobile, tablet and desktop'],
     },
     price: { fr: 'dès 500€', en: 'from €500' },
+    // La page du pilier existe depuis le 12 octobre 2026.
+    to: '/creation-site-web',
+    ctaLabel: { fr: 'Voir les formules', en: 'See the plans' },
     secondaryLink: {
       to: '/why-a-website',
       label: { fr: "Ce qu'un site change vraiment", en: 'What a site actually changes' },
@@ -92,8 +99,8 @@ export const services: ServiceItem[] = [
       en: 'We film for a day, I post your videos all month. You touch nothing.',
     },
     desc: {
-      fr: "J'arrive chez vous avec le matériel et un plan de tournage déjà prêt : les sujets, les questions, ce qu'on filme et dans quel ordre. On tourne une journée. Ensuite je monte, je sous-titre et je publie 8 vidéos courtes dans le mois sur Instagram, Facebook, TikTok ou YouTube Shorts. Vous, vous retournez travailler. Je ne propose pas de formule où vous filmez vous-même : sans quelqu'un qui vient produire les images, il ne sort rien au bout de six semaines.",
-      en: "I show up with the gear and a shooting plan already written: the topics, the questions, what we film and in what order. We shoot for a full day. Then I edit, subtitle and publish 8 short videos over the month on Instagram, Facebook, TikTok or YouTube Shorts. You go back to work. I do not offer a plan where you film it yourself: without someone coming to produce the footage, nothing goes out after six weeks.",
+      fr: "Je viens tourner une journée chez vous, puis je monte et je publie 8 vidéos dans le mois. Vous retournez travailler.",
+      en: "I come and film one day at your place, then edit and post 8 videos over the month. You go back to work.",
     },
     bullets: {
       fr: [
@@ -125,8 +132,8 @@ export const services: ServiceItem[] = [
       en: 'Your Google profile optimized to show up in local searches.',
     },
     desc: {
-      fr: "Quand un client cherche votre métier dans votre ville, c'est votre fiche qui doit apparaître. Création ou optimisation complète de votre profil Google Business : photos, descriptions, catégories, posts et référencement local.",
-      en: 'When a client searches for your trade in your city, your profile is what should appear. Full creation or optimization of your Google Business profile: photos, descriptions, categories, posts and local SEO.',
+      fr: "Quand on cherche votre métier dans votre ville, c'est votre fiche qui doit sortir. Je la crée, ou je la reprends en entier.",
+      en: "When someone searches your trade in your town, your profile should come up. I create it, or rework it entirely.",
     },
     bullets: {
       fr: ['Création ou optimisation de la fiche', 'Photos, horaires et descriptions soignés', 'Référencement local (Google Maps)'],
@@ -148,8 +155,8 @@ export const services: ServiceItem[] = [
       en: 'Logo, colors and typography: a coherent, memorable image.',
     },
     desc: {
-      fr: "Une marque forte se reconnaît du premier coup d'œil. Je crée votre charte graphique complète (logo, palette de couleurs, typographies et règles d'usage) pour une image cohérente sur tous vos supports.",
-      en: 'A strong brand is recognizable at first glance. I create your full visual identity (logo, color palette, typography and usage rules) for a coherent image across all your materials.',
+      fr: "Logo, couleurs, typographies et règles d'usage, pour que tous vos supports se ressemblent.",
+      en: "Logo, colours, typefaces and usage rules, so all your materials look like they belong together.",
     },
     bullets: {
       fr: ['Logo et déclinaisons', 'Palette de couleurs & typographies', "Charte graphique et règles d'usage"],
@@ -171,8 +178,8 @@ export const services: ServiceItem[] = [
       en: 'Ongoing SEO to stay visible on Google in your area.',
     },
     desc: {
-      fr: "Le référencement n'est pas figé : il se travaille dans le temps. Suivi mensuel pour améliorer votre position sur Google, surveiller vos mots-clés et garder une longueur d'avance sur vos concurrents locaux.",
-      en: "SEO is never set in stone: it's worked over time. Monthly follow-up to improve your Google position, monitor your keywords and stay ahead of your local competitors.",
+      fr: "Le référencement se travaille dans le temps. Chaque mois, je suis vos mots-clés et votre position dans votre zone.",
+      en: "Search ranking is worked on over time. Every month, I track your keywords and your position in your area.",
     },
     bullets: {
       fr: ['Suivi de positionnement mensuel', 'Optimisation continue des pages', 'Veille sur la concurrence locale'],
@@ -195,8 +202,8 @@ export const services: ServiceItem[] = [
       en: 'Collecting and managing your Google reviews to build trust.',
     },
     desc: {
-      fr: "Les avis sont le premier critère de confiance pour un nouveau client. Je mets en place une stratégie pour collecter plus d'avis positifs et je réponds à votre place, professionnellement, à chaque retour.",
-      en: 'Reviews are the first trust factor for a new client. I set up a strategy to collect more positive reviews and reply on your behalf, professionally, to every one.',
+      fr: "Une méthode pour que vos clients contents laissent un avis, et une réponse à chacun, en votre nom.",
+      en: "A method so happy clients leave a review, and a reply to each one, on your behalf.",
     },
     bullets: {
       fr: ['Stratégie de collecte d\'avis', 'Réponses professionnelles aux avis', 'Suivi de votre note globale'],
@@ -219,8 +226,8 @@ export const services: ServiceItem[] = [
       en: 'Website copy, posts and articles that speak to your clients.',
     },
     desc: {
-      fr: "Les bons mots font vendre. Rédaction des textes de votre site, de vos posts réseaux ou d'articles de blog optimisés pour Google, dans un ton qui vous ressemble et qui donne envie de vous contacter.",
-      en: 'The right words sell. Writing of your website copy, social posts or Google-optimized blog articles, in a tone that sounds like you and makes people want to reach out.',
+      fr: "Les textes de votre site, vos posts et vos articles, dans un ton qui vous ressemble.",
+      en: "Your site copy, your posts and your articles, in a tone that sounds like you.",
     },
     bullets: {
       fr: ['Textes de site et pages services', 'Articles de blog optimisés SEO', 'Légendes et posts pour les réseaux'],

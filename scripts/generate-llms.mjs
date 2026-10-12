@@ -132,6 +132,7 @@ const fullSections = {
     ['Accueil', '/'],
     ['Services (partenaire web)', '/services'],
     ['Réseaux sociaux (tournage + publication)', '/reseaux-sociaux'],
+    ['Création de site web (formules dès 500 €)', '/creation-site-web'],
     ['Audit gratuit de présence en ligne (vidéo 4 min, sous 48 h)', '/audit-gratuit'],
     ['À propos de Elie Ageron', '/a-propos'],
     ['Guides de référence', '/guides'],

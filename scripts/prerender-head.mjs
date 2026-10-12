@@ -338,6 +338,7 @@ const lien = (href, texte) => `<a href="${href}" style="color:#a02050;text-decor
 const tronc = [
   ['/', 'Accueil'],
   ['/reseaux-sociaux', 'Réseaux sociaux'],
+  ['/creation-site-web', 'Création de site web'],
   ['/services', 'Tous les services'],
   ['/audit-gratuit', 'Audit gratuit'],
   ['/portfolio', 'Portfolio'],
@@ -357,7 +358,7 @@ const liensDePage = (chemin) => {
   if (cat) {
     return articles.filter((a) => a.categorie === cat[1]).map((a) => lien(`/blog/${a.slug}`, a.ancre));
   }
-  if (chemin === '/services' || chemin === '/portfolio') {
+  if (chemin === '/services' || chemin === '/portfolio' || chemin === '/creation-site-web') {
     return [...pagesServices, ...villes, ...villesReseaux].map((v) => lien(`/${v.slug}`, v.ancre));
   }
   /* La page pilier des reseaux pousse vers ses pages locales, en HTML brut, et
@@ -468,6 +469,7 @@ const barre =
   [
     ['/services', 'Services'],
     ['/reseaux-sociaux', 'Réseaux sociaux'],
+    ['/creation-site-web', 'Sites web'],
     ['/portfolio', 'Portfolio'],
     ['/blog', 'Blog'],
     ['/contact', 'Contact'],
@@ -587,6 +589,7 @@ const PAGES_FIXES = {
   '/contact': 'Contact',
   '/blog': 'Blog',
   '/reseaux-sociaux': 'SocialMedia',
+  '/creation-site-web': 'SitesWeb',
   '/audit-gratuit': 'AuditGratuit',
   '/get-started': 'GetStarted',
   '/assessment': 'Assessment',

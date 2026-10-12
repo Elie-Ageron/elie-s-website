@@ -107,7 +107,9 @@ const JsonLd = () => {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
+            '@id': `${baseUrl}/creation-site-web#service`,
             name: language === 'fr' ? 'Création de site web' : 'Website design',
+            url: `${baseUrl}/creation-site-web`,
             description: language === 'fr'
               ? 'Landing page ou site vitrine multi-pages, produit en 7 à 14 jours ouvrés une fois vos contenus fournis, optimisé pour Google et pour la conversion'
               : 'Landing page or multi-page showcase site, built in 7 to 14 business days once your content is supplied, optimized for Google and for conversion',

@@ -164,22 +164,50 @@ const HeroSection = () => {
           transition={{ delay: 0.5, duration: 0.7 }}
           className="mt-20 sm:mt-24"
         >
-          {/* Trois colonnes sur telephone : en ligne souple, les six logos
-              tombaient a cinq plus un, et le dernier restait seul sur sa
-              ligne comme un oubli. */}
-          <div className="grid grid-cols-3 place-items-center gap-y-6 sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-x-14">
-            {CLIENT_LOGOS.map((logo) => (
-              <img
-                key={logo.name}
-                src={logo.src}
-                alt={`Logo ${logo.name}, client d'Elie Ageron`}
-                width={120}
-                height={28}
-                className={`w-auto object-contain ${logo.size} ${logo.flat ? 'brightness-0' : ''}`}
-                loading="eager"
-                decoding="async"
-              />
-            ))}
+          {/* 🔴 Une seule ligne qui defile, sous `lg`. Elie, le 12 octobre
+              2026 : *« les logos, tu peux mettre une seule ligne qui defile,
+              plutot que six logos comme ca en une case. Comme ca quand on en
+              ajoute, on ajoute juste a la ligne et c'est carre. »* La grille de
+              trois colonnes faisait un bloc de deux rangees, et chaque logo
+              ajoute la redecoupait.
+
+              La liste est rendue deux fois et la piste recule de la moitie de
+              sa largeur : le second exemplaire prend exactement la place du
+              premier, la boucle ne saute pas. L'espace est un `pr` sur chaque
+              logo et non un `gap`, sinon les deux moities n'ont pas la meme
+              largeur et la boucle saute d'un ecart.
+
+              ⚠️ Un contenu qui bouge plus de cinq secondes doit pouvoir
+              s'arreter (WCAG 2.2.2) : la bande s'arrete sous le doigt ou la
+              souris, et ne bouge pas du tout pour qui a coupe les animations
+              de son telephone. Dans ce cas le double est masque et la ligne
+              defile au doigt.
+
+              Sur grand ecran, rien ne change : les six tiennent sur une
+              ligne. */}
+          <div className="-mx-4 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden motion-safe:overflow-hidden motion-safe:[mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] sm:-mx-6 lg:mx-0 lg:overflow-visible lg:[mask-image:none] motion-safe:lg:[mask-image:none]">
+            <ul className="flex w-max items-center px-4 motion-safe:animate-defile motion-safe:px-0 hover:[animation-play-state:paused] active:[animation-play-state:paused] lg:w-auto lg:flex-wrap lg:justify-center lg:gap-x-14 lg:gap-y-6 lg:px-0 motion-safe:lg:animate-none">
+              {[...CLIENT_LOGOS, ...CLIENT_LOGOS].map((logo, i) => {
+                const double = i >= CLIENT_LOGOS.length;
+                return (
+                  <li
+                    key={`${logo.name}-${i}`}
+                    aria-hidden={double || undefined}
+                    className={`shrink-0 pr-12 lg:pr-0 ${double ? 'motion-reduce:hidden lg:hidden' : ''}`}
+                  >
+                    <img
+                      src={logo.src}
+                      alt={double ? '' : `Logo ${logo.name}, client d'Elie Ageron`}
+                      width={120}
+                      height={28}
+                      className={`w-auto object-contain ${logo.size} ${logo.flat ? 'brightness-0' : ''}`}
+                      loading="eager"
+                      decoding="async"
+                    />
+                  </li>
+                );
+              })}
+            </ul>
           </div>
         </motion.div>
       </div>

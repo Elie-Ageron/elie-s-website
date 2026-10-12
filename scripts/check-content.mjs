@@ -104,7 +104,7 @@ const categorySlugs = new Set(
 );
 
 const staticRoutes = new Set([
-  '/', '/services', '/reseaux-sociaux', '/audit-gratuit', '/contact', '/blog', '/guides', '/a-propos',
+  '/', '/services', '/reseaux-sociaux', '/creation-site-web', '/audit-gratuit', '/contact', '/blog', '/guides', '/a-propos',
   '/portfolio', '/get-started', '/why-a-website', '/our-process', '/assessment',
   '/mentions-legales', '/politique-confidentialite',
 ]);

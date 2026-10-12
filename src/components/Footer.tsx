@@ -8,15 +8,19 @@ const Footer = () => {
   const { t, language } = useLanguage();
   const currentYear = new Date().getFullYear();
 
+  /* Huit liens, un nombre pair : la grille est en deux colonnes sur telephone,
+     et un neuvieme tombait seul sur sa ligne. « Contact » est parti le
+     12 octobre 2026, a l'arrivee de « Sites web » : il est dans le menu du
+     haut, et le telephone et l'email sont deux lignes plus bas. */
   const navLinks = [
     { label: language === 'fr' ? 'Services' : 'Services', href: '/services' },
     { label: language === 'fr' ? 'Réseaux sociaux' : 'Social media', href: '/reseaux-sociaux' },
+    { label: language === 'fr' ? 'Sites web' : 'Websites', href: '/creation-site-web' },
     { label: language === 'fr' ? 'Audit gratuit' : 'Free audit', href: '/audit-gratuit' },
     { label: t('nav.portfolio'), href: '/portfolio' },
     { label: 'Blog', href: '/blog' },
     { label: language === 'fr' ? 'Guides' : 'Guides', href: '/guides' },
     { label: language === 'fr' ? 'À propos' : 'About', href: '/a-propos' },
-    { label: t('nav.contact'), href: '/contact' },
   ];
 
   /**

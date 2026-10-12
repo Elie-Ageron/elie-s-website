@@ -34,6 +34,7 @@ const PAGES = [
   '/',
   '/services',
   '/reseaux-sociaux',
+  '/creation-site-web',
   '/audit-gratuit',
   '/portfolio',
   '/contact',

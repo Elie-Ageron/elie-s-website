@@ -2,7 +2,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface SEOProps {
-  page: 'home' | 'services' | 'social' | 'why' | 'process' | 'pricing' | 'portfolio' | 'contact' | 'getStarted' | 'blog' | 'apps' | 'guides' | 'about' | 'audit';
+  page: 'home' | 'services' | 'social' | 'sites' | 'why' | 'process' | 'pricing' | 'portfolio' | 'contact' | 'getStarted' | 'blog' | 'apps' | 'guides' | 'about' | 'audit';
   /** Force la langue du document, pour les contenus servis en francais seul. */
   forceLang?: 'fr' | 'en';
   customTitle?: string;
@@ -21,6 +21,7 @@ const pageKeywords = {
     home: 'Elie Ageron, web design, web designer, conversion optimization, website, Savoie, Haute-Savoie, Albertville, Annecy, France',
     services: 'web partner, digital partner, web designer Savoie, web designer Annecy, Google Business, social media management, brand identity, local SEO, content writing, web agency Savoie Haute-Savoie',
     social: 'social media management Savoie, short form video production France, Instagram Reels for small business, TikTok content creation, social media content creator Annecy, done-for-you social media',
+    sites: 'website design, small business website, one page website, showcase website, website price, web designer France, website for tradespeople',
     why: 'why a website, need website 2025, website business benefits, online presence, digital visibility',
     process: 'web design process, how to build a website, website creation steps, web designer workflow',
     pricing: 'web design pricing, website cost, landing page price, showcase site price, affordable web design',
@@ -37,6 +38,7 @@ const pageKeywords = {
     home: 'Elie Ageron, web design, création site web, optimisation conversion, site internet, Savoie, Haute-Savoie, Albertville, Annecy',
     services: 'partenaire web, partenaire digital, web designer Savoie, web designer Annecy, fiche Google Business, gestion réseaux sociaux, identité de marque, référencement local, rédaction de contenu, agence web Savoie Haute-Savoie',
     social: 'gestion réseaux sociaux Savoie, création contenu vidéo Savoie, vidéo verticale Instagram, reels professionnels, community manager Albertville, community manager Annecy, création contenu TikTok, gestion Instagram artisan, vidéaste réseaux sociaux Haute-Savoie',
+    sites: 'création site web, création site internet, site vitrine, site une page, prix site web, tarif création site web, création site web artisan, web designer Savoie',
     why: 'pourquoi site web, besoin site internet 2025, bénéfices site web, présence en ligne, visibilité digitale',
     process: 'processus création site web, comment créer site internet, étapes création site web',
     pricing: 'tarif web design, prix site internet, coût landing page, tarif site vitrine, web design Savoie, web design Annecy',
@@ -57,7 +59,7 @@ const seoData = {
     home: {
       // Voir la note sur la version francaise : Google jetait l'ancienne.
       title: 'Websites & Social Media Content | Elie Ageron',
-      description: 'I come and film at your place one day a month, and your accounts run until the next one. I build the website those videos point to. Albertville, Savoie.',
+      description: 'I come and film at your place one day a month, and I post for you. The website, I build that too. Albertville, Savoie.',
     },
     services: {
       title: 'Web Partner in Savoie | Elie Ageron',
@@ -66,6 +68,10 @@ const seoData = {
     social: {
       title: 'Social Media Content, Done For You | Elie Ageron',
       description: '€890/month, no commitment: I film one day at your place, then post 8 videos through the month. Website included from month three.',
+    },
+    sites: {
+      title: 'Website Design for Small Businesses | Elie Ageron',
+      description: 'One page from €500, a showcase site from €1,500. The price is in writing before we start, and the site is live in 7 to 14 days.',
     },
     why: {
       title: 'Why You Need a Website | Elie Ageron',
@@ -128,7 +134,7 @@ const seoData = {
        il arrive apres la phrase, pas a la place de la phrase. */
     home: {
       title: 'Site Web & Réseaux Sociaux Savoie | Elie Ageron',
-      description: "Je viens filmer chez vous une journée par mois, et vos comptes tournent jusqu'à la suivante. Je construis aussi le site. Albertville, 890 €/mois.",
+      description: "Je viens filmer chez vous une journée par mois, et je publie à votre place. Le site web, je le fais aussi. Albertville, 890 €/mois.",
     },
     services: {
       title: 'Partenaire Web en Savoie | Elie Ageron',
@@ -145,6 +151,14 @@ const seoData = {
     social: {
       title: 'Gestion de Réseaux Sociaux Entreprise | Elie Ageron',
       description: "890 €/mois, sans engagement : je filme une journée chez vous, puis je publie 8 vidéos dans le mois. Site compris au troisième mois.",
+    },
+    /* La page pilier des sites, creee le 12 octobre 2026. Meme regle que
+       `social` juste au dessus : elle porte l'offre, les quinze pages de
+       villes portent le lieu. Pas de nom de commune dans ce titre. La
+       description reprend le chapo du hero, mot pour mot ou presque. */
+    sites: {
+      title: 'Création de Site Web Professionnel | Elie Ageron',
+      description: "Une page dès 500 €, un site vitrine dès 1 500 €. Le prix est écrit avant qu'on commence, et le site est en ligne en 7 à 14 jours.",
     },
     why: {
       title: 'Pourquoi un Site Web | Elie Ageron',
@@ -227,6 +241,7 @@ const SEO = ({ page, forceLang, customTitle, customDescription, customCanonical,
     home: '',
     services: '/services',
     social: '/reseaux-sociaux',
+    sites: '/creation-site-web',
     why: '/why-a-website',
     process: '/our-process',
     pricing: '/pricing',

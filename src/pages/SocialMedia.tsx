@@ -54,7 +54,10 @@ import { socialCities } from '@/data/social-cities';
  * écrit un message.
  */
 
-/* ── Étapes du mois type ── */
+/* ── Étapes du mois type ──
+   ⚠️ Une ou deux phrases par étape depuis le 12 octobre 2026. Elie : *« les
+   textes, ils sont longs quand même »*. Il garde les trois étapes et leurs
+   titres, qui se lisent seuls en survol : le texte ne fait que préciser. */
 const useSteps = () => {
   const { language } = useLanguage();
   return [
@@ -65,8 +68,8 @@ const useSteps = () => {
       title: language === 'fr' ? "J'arrive avec le plan et le matériel" : 'I show up with the plan and the gear',
       desc:
         language === 'fr'
-          ? "Avant de venir, j'ai déjà écrit les sujets, les questions à vous poser et l'ordre de tournage. Vous n'avez rien à préparer, pas de script à apprendre. Je débarque avec les micros, la lumière et le drone, et on tourne une journée. C'est la seule journée du mois où vous me voyez."
-          : "Before I arrive, the topics, the questions I'll ask you and the shooting order are already written. Nothing to prepare on your side, no script to learn. I show up with the mics, the lights and the drone, and we shoot for a full day. That is the only day of the month you see me.",
+          ? "Les sujets et les questions sont déjà écrits. Vous n'avez rien à préparer, pas de texte à apprendre."
+          : 'The topics and the questions are already written. Nothing to prepare, no script to learn.',
     },
     {
       icon: Scissors,
@@ -75,8 +78,8 @@ const useSteps = () => {
       title: language === 'fr' ? 'Je monte, je sous-titre, je découpe' : 'I edit, subtitle and cut it up',
       desc:
         language === 'fr'
-          ? "De cette journée je sors 8 vidéos courtes, au format vertical, montées et sous-titrées. Chacune tient debout toute seule : une accroche dans les deux premières secondes, une idée claire, une fin qui donne envie de vous suivre."
-          : "From that day I pull 8 short vertical videos, edited and subtitled. Each one stands on its own: a hook in the first two seconds, one clear idea, an ending that makes people want to follow you.",
+          ? 'De cette journée je sors 8 vidéos verticales, sous-titrées, chacune avec son accroche.'
+          : 'From that day I pull 8 vertical videos, subtitled, each with its own hook.',
     },
     {
       icon: CalendarCheck,
@@ -85,8 +88,8 @@ const useSteps = () => {
       title: language === 'fr' ? 'Je publie tout le mois' : 'I post all month long',
       desc:
         language === 'fr'
-          ? "Vos vidéos sortent tout au long du mois sur Instagram, Facebook, TikTok ou YouTube Shorts, selon les réseaux qui comptent pour vous. Je choisis les horaires, j'écris les légendes, je gère les hashtags. Vous les voyez sortir, et si un sujet vous vient entre deux tournages, vous me l'envoyez et je l'ajoute au lot."
-          : "Your videos go out through the month on Instagram, Facebook, TikTok or YouTube Shorts, depending on which networks matter to you. I pick the timing, write the captions, handle the hashtags. You watch them go out without doing anything, and the next month we start again.",
+          ? "Sur Instagram, Facebook, TikTok ou YouTube Shorts, selon vos réseaux. J'écris les légendes et je choisis les horaires."
+          : 'On Instagram, Facebook, TikTok or YouTube Shorts, depending on your networks. I write the captions and pick the timing.',
     },
   ];
 };
@@ -380,10 +383,15 @@ const SocialMedia = () => {
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            {/* 🔴 Ramene de 45 a 20 mots le 12 octobre 2026. Elie, capture de
+                son telephone a l'appui : *« c'est un enorme paragraphe et tu as
+                deux boutons, donc ce n'est pas du tout assez aere. C'est
+                beaucoup trop condense, on ne comprend rien. »* Il faisait sept
+                lignes sur telephone. Le geste, le volume et le prix restent. */}
+            <p className="mx-auto max-w-xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg md:text-xl">
               {language === 'fr'
-                ? "J'arrive avec le matériel et un plan de tournage déjà prêt. On tourne, je monte, et je publie 8 vidéos sur vos réseaux pendant tout le mois. 890 € par mois, sans engagement. Artisans, restaurateurs, thérapeutes et formateurs, en Savoie et en Haute-Savoie."
-                : "I show up with the gear and a shooting plan already written. We film, I edit, and I post 8 videos on your accounts across the month. €890 a month, no commitment. Tradespeople, restaurant owners, therapists and trainers, across Savoie and Haute-Savoie."}
+                ? 'Je viens tourner chez vous, je monte, et je publie 8 vidéos sur vos réseaux. 890 € par mois, sans engagement.'
+                : 'I come and film at your place, I edit, and I post 8 videos on your accounts. €890 a month, no commitment.'}
             </p>
 
             {/* 🔴 **Le site offert au troisième mois n'était nulle part en haut
@@ -411,7 +419,7 @@ const SocialMedia = () => {
               </span>
             </p>
 
-            <div className="mt-7 sm:mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <div className="mt-7 sm:mt-9 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
               {/* `w-full sm:w-auto` sur l'enveloppe : sans lui le `motion.div` de
                   `MagneticButton` se reduisait a son contenu, et les deux boutons
                   empiles faisaient 273 et 358 px de large sur telephone. */}
@@ -425,9 +433,16 @@ const SocialMedia = () => {
                   </Link>
                 </Button>
               </MagneticButton>
-              <Button variant="neonOutline" size="lg" className="w-full sm:w-auto" onClick={openCalendly}>
-                {language === 'fr' ? 'Réserver un appel' : 'Book a call'}
-              </Button>
+              {/* Un lien et non plus un second bouton encadre, comme sur
+                  l'accueil : deux boutons de meme poids empiles faisaient un
+                  bloc, et Elie l'a releve le 12 octobre 2026. */}
+              <button
+                type="button"
+                onClick={openCalendly}
+                className="inline-flex min-h-[44px] items-center text-base text-muted-foreground underline-offset-[6px] transition-colors hover:text-foreground hover:underline"
+              >
+                {language === 'fr' ? 'Réserver un appel gratuit' : 'Book a free call'}
+              </button>
             </div>
 
             {/* « Deux champs » est parti : la relecture aveugle du 14 septembre
@@ -482,20 +497,23 @@ const SocialMedia = () => {
             transition={{ delay: 0.1 }}
             className="space-y-5 text-base sm:text-lg text-muted-foreground leading-relaxed"
           >
+            {/* Trois paragraphes, onze lignes sur telephone, ramenes a deux
+                phrases le 12 octobre 2026. Elie : *« le paragraphe est un peu
+                gros. »* La scene du dimanche soir reste, c'est elle qui fait
+                se reconnaitre le lecteur.
+                ⚠️ Les metiers ouvrent la phrase : ils etaient dans le hero, et
+                c'est la correction de la relecture par profil du 13 septembre
+                (un plombier doit croiser un mot qui le decrive). Ils sont
+                descendus ici quand le hero a ete allege. */}
             <p>
               {language === 'fr'
-                ? "Le problème, c'est le dimanche soir devant votre téléphone, à chercher quoi raconter. C'est la vidéo tournée trois fois puis supprimée parce que le son était mauvais. C'est le compte qui repart pendant deux semaines, puis s'arrête pendant trois mois."
-                : "The problem is Sunday night, phone in hand, trying to think of something to say. It's the video you shot three times then deleted because the audio was bad. It's the account that comes alive for two weeks, then goes quiet for three months."}
-            </p>
-            <p>
-              {language === 'fr'
-                ? "Ce n'est pas un manque de volonté. C'est que créer du contenu régulièrement, c'est un vrai métier, et vous en avez déjà un."
-                : "It's not a lack of will. Creating content consistently is an actual job, and you already have one."}
+                ? "Artisan, restaurateur, thérapeute : le problème, c'est le dimanche soir à chercher quoi raconter, et le compte qui s'arrête au bout de deux semaines."
+                : 'Tradesperson, restaurant owner, therapist: the problem is Sunday night trying to think of something to say, and the account that goes quiet after two weeks.'}
             </p>
             <p className="text-foreground font-medium">
               {language === 'fr'
-                ? "Alors je prends ce métier-là, et vous gardez le vôtre."
-                : 'So I take that job, and you keep yours.'}
+                ? 'Créer du contenu, c’est un métier. Je prends celui-là, vous gardez le vôtre.'
+                : 'Making content is a job. I take that one, you keep yours.'}
             </p>
           </motion.div>
           </div>
@@ -600,15 +618,13 @@ const SocialMedia = () => {
                 ? "Votre part du travail tient dans une journée."
                 : 'Your share of the work fits in a single day.'}
             </h3>
+            {/* Un paragraphe au lieu de deux depuis le 12 octobre 2026. Ce
+                qui reste est la part « selon leurs preferences » qu'Elie avait
+                demandee : le cadre pose au depart, et le droit de voir avant. */}
             <p className="mt-3 text-base text-muted-foreground leading-relaxed max-w-2xl">
               {language === 'fr'
-                ? "Le reste du mois se passe sans vous. Vous n'avez aucun outil à installer, aucun calendrier à tenir, aucune légende à écrire."
-                : 'The rest of the month happens without you. There is no tool to install, no calendar to keep, no caption to write.'}
-            </p>
-            <p className="mt-4 text-base text-muted-foreground leading-relaxed max-w-2xl">
-              {language === 'fr'
-                ? "On fixe au départ ce dont vous voulez parler et ce que vous préférez garder pour vous, et je travaille dans ce cadre. Si vous voulez voir les vidéos avant qu'elles sortent, je vous les envoie la veille. Sinon, vous les découvrez en ligne comme tout le monde."
-                : 'We agree up front on what you want to talk about and what you would rather keep to yourself, and I work inside that. If you want to see the videos before they go out, I send them the day before. Otherwise you find them online like everyone else.'}
+                ? "On fixe au départ ce dont vous voulez parler. Et si vous voulez voir les vidéos avant qu'elles sortent, je vous les envoie la veille."
+                : 'We agree up front on what you want to talk about. And if you want to see the videos before they go out, I send them the day before.'}
             </p>
           </motion.div>
 
@@ -647,8 +663,8 @@ const SocialMedia = () => {
             </h3>
             <p className="section-lede mt-5">
               {language === 'fr'
-                ? "Ce qui sort chaque mois chez deux clientes d'Albertville, et ce qu'une journée au salon de l'habitat a donné. Format vertical, le sujet en une phrase posée sur l'image, et la personne qui parle de son métier. Lancez la lecture ici, ou allez voir le reste sur leurs comptes."
-                : 'What goes out every month for two clients in Albertville, and what one day at the local home fair produced. Vertical format, the topic in one line over the image, and someone talking about their trade. Press play here, or go and see the rest on their accounts.'}
+                ? "Ce qui sort chaque mois chez deux clientes d'Albertville, et ce qu'une journée au salon de l'habitat a donné. Le son est là, lancez la lecture."
+                : 'What goes out every month for two clients in Albertville, and what one day at the local home fair produced. The sound is on, press play.'}
             </p>
             <TravailLivre className="mt-8" />
           </motion.div>
@@ -678,16 +694,16 @@ const SocialMedia = () => {
               </h2>
               <p className="text-base text-muted-foreground leading-relaxed">
                 {language === 'fr'
-                  ? "Un seul montant, et c'est le seul. Pas de frais de démarrage, pas de supplément pour un sous-titre ou une légende, pas de ligne surprise sur la facture."
-                  : 'One amount, and it is the only one. No setup fee, no extra charge for a subtitle or a caption, no surprise line on the invoice.'}
+                  ? 'Pas de frais de démarrage, pas de supplément, pas de ligne surprise sur la facture.'
+                  : 'No setup fee, no extras, no surprise line on the invoice.'}
               </p>
               {/* ⚠️ « Sans engagement » est un argument concurrentiel, pas une
                   formalite : l'agence qui vend le meme prix l'affiche en
                   premier. Ne pas le rentrer dans une note de bas de section. */}
               <p className="mt-5 text-base font-medium text-foreground">
                 {language === 'fr'
-                  ? 'Sans engagement. Vous payez au mois, vous arrêtez quand vous voulez.'
-                  : 'No commitment. You pay monthly, you stop whenever you want.'}
+                  ? 'Sans engagement : vous arrêtez quand vous voulez.'
+                  : 'No commitment: you stop whenever you want.'}
               </p>
               {/* ⚠️ La sortie « Ecrivez-moi » est rendue deux fois. Sur
                   telephone les colonnes s'empilent : elle arrivait entre le
@@ -891,8 +907,8 @@ const SocialMedia = () => {
             className="text-base sm:text-lg text-muted-foreground leading-relaxed"
           >
             {language === 'fr'
-              ? "Une vidéo qui marche envoie des gens quelque part. S'il n'y a rien au bout, l'attention retombe et vous ne vous en apercevez même pas. C'est pour ça que le site est dans l'offre et pas en supplément : une page qui explique ce que vous faites et qui propose un rendez-vous transforme cette attention en demandes. Je fais les deux métiers, donc tout parle d'une seule voix et vous n'avez rien à coordonner."
-              : 'A video that works sends people somewhere. If there is nothing at the end of it, the attention fades and you never even notice. That is why the site is part of the offer and not an add-on: a page that explains what you do and offers a booking turns that attention into enquiries. I do both trades, so everything speaks with one voice and you have nothing to coordinate.'}
+              ? "Une vidéo qui marche envoie des gens quelque part. S'il n'y a rien au bout, l'attention retombe. Je fais les deux métiers, donc vous n'avez rien à coordonner."
+              : 'A video that works sends people somewhere. If there is nothing at the end of it, the attention fades. I do both trades, so you have nothing to coordinate.'}
           </motion.p>
 
           <motion.div
@@ -902,18 +918,20 @@ const SocialMedia = () => {
             transition={{ delay: 0.15 }}
             className="mt-8 flex flex-col items-start gap-y-1 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-3 lg:justify-center"
           >
+            {/* La page des sites existe depuis le 12 octobre 2026 : c'est la
+                suite naturelle d'une section qui parle du site. */}
             <Link
-              to="/services"
+              to="/creation-site-web"
               className="inline-flex items-center gap-2 min-h-[44px] text-base font-semibold text-primary hover:gap-3 transition-all sm:min-h-[24px] sm:text-sm"
             >
-              {language === 'fr' ? 'Voir tous les services' : 'See all services'}
+              {language === 'fr' ? 'Voir mes sites web' : 'See my websites'}
               <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
             <Link
-              to="/portfolio"
+              to="/services"
               className="inline-flex items-center gap-2 min-h-[44px] text-base font-medium text-muted-foreground hover:text-primary transition-colors sm:min-h-[24px] sm:text-sm"
             >
-              {language === 'fr' ? 'Voir mes réalisations' : 'See my work'}
+              {language === 'fr' ? 'Voir tous les services' : 'See all services'}
             </Link>
           </motion.div>
         </div>

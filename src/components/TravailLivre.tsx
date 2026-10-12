@@ -165,13 +165,39 @@ const TravailLivre = ({ className = '' }: { className?: string }) => {
               axe tienne pour focalisable, donc elle etait inatteignable au
               clavier. Regle `scrollable-region-focusable`, gravite serious,
               meme correction que le carrousel d'avis. */}
+          {/* 🔴 **Sur telephone, le carrousel sort de la rangee.** Elie, le
+              12 octobre 2026 : *« quand on est sur le carousel, on n'arrive
+              pas trop a slider jusqu'a la suite, vu que ca slide dans le
+              carousel. »* La rangee defile au doigt, le carrousel aussi : le
+              geste partait dans le carrousel, et la video suivante restait
+              hors d'atteinte. C'est le defaut que `VideosLivreesAccueil` avait
+              deja evite en laissant le carrousel hors de sa bande.
+
+              Il passe donc en pleine largeur au dessus de la rangee, qui ne
+              garde que les videos. Bonus : ses planches, pleines de texte, se
+              lisent enfin. Sur grand ecran rien ne bouge, la grille de trois
+              colonnes n'a jamais defile.
+
+              Le carrousel est rendu deux fois, un exemplaire masque selon la
+              largeur : un `display: none` sort aussi l'exemplaire masque de
+              l'arbre d'accessibilite, et ses images en `lazy` ne partent pas. */}
+          {cliente.pieces
+            .filter((piece) => piece.type !== 'video')
+            .map((piece) => (
+              <div key={piece.id} className="mx-auto mt-6 max-w-sm sm:hidden">
+                <Piece piece={piece} />
+              </div>
+            ))}
           <ul
             tabIndex={0}
             aria-label={fr ? `Publications livrées pour ${cliente.nom}` : `Posts delivered for ${cliente.nom}`}
             className="-mx-4 mt-6 flex snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto px-4 pb-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:mx-0 sm:grid sm:grid-cols-3 sm:items-center sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0"
           >
             {cliente.pieces.map((piece) => (
-              <li key={piece.id} className="w-[68vw] shrink-0 snap-start sm:w-auto">
+              <li
+                key={piece.id}
+                className={`w-[68vw] shrink-0 snap-start sm:block sm:w-auto ${piece.type === 'video' ? '' : 'hidden'}`}
+              >
                 <Piece piece={piece} />
               </li>
             ))}

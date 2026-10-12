@@ -28,6 +28,7 @@ const REGLES = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'];
 const PAGES = [
   '/',
   '/reseaux-sociaux',
+  '/creation-site-web',
   '/services',
   '/audit-gratuit',
   '/portfolio',
@@ -41,7 +42,7 @@ const PAGES = [
   // La nouvelle famille de pages locales du pilier reseaux.
   '/community-manager-albertville',
 ];
-const MOBILES = ['/', '/reseaux-sociaux', '/audit-gratuit', '/services', '/community-manager-albertville'];
+const MOBILES = ['/', '/reseaux-sociaux', '/creation-site-web', '/audit-gratuit', '/services', '/community-manager-albertville'];
 
 const chemins = [
   process.env.PRERENDER_BROWSER,
