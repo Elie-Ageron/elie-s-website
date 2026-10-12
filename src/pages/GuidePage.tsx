@@ -8,6 +8,7 @@ import { getGuideBySlug, guides } from '@/data/guides';
 /* Un guide affiche des liens vers ses articles satellites, jamais leur
    texte. L'index leger suffit, et evite les 1,1 Mo de `blogPosts`. */
 import { getIndexEntry, localizeIndexEntry } from '@/data/blogIndex';
+import ParagrapheDecoupe from '@/components/ParagrapheDecoupe';
 
 const baseUrl = 'https://elieageron.com';
 
@@ -179,9 +180,11 @@ const GuidePage = () => {
                 </h2>
                 <div className="mt-5 space-y-4">
                   {chapter.body.map((paragraph, j) => (
-                    <p key={j} className="text-base sm:text-lg text-muted-foreground leading-relaxed text-pretty lg:text-wrap">
-                      {paragraph}
-                    </p>
+                    <ParagrapheDecoupe
+                      key={j}
+                      texte={paragraph}
+                      className="text-base sm:text-lg text-muted-foreground leading-relaxed text-pretty lg:text-wrap"
+                    />
                   ))}
                 </div>
 

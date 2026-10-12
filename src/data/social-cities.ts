@@ -91,13 +91,13 @@ export const socialCities: SocialCityData[] = [
     h1Pre: 'Community manager à ',
     h1Highlight: 'Albertville',
     lede:
-      "Sauf que je ne me contente pas de publier. Je viens filmer chez vous une journée par mois, je monte, j'écris les légendes et je publie dans le mois. Vous n'avez rien à préparer et rien à apprendre.",
+      "Sauf que je ne me contente pas de publier. Je viens filmer chez vous une journée par mois, puis je publie à votre place.",
     travel: 'Sur place. Je vis et je travaille à Albertville.',
     nearby: ['Ugine', 'Frontenex', 'Gilly-sur-Isère', 'Grignon', 'Mercury', 'Tours-en-Savoie', 'La Bâthie', 'Queige'],
     terrain: [
       "Ouvrez Instagram et cherchez les commerces du centre d'Albertville. Vous allez tomber sur beaucoup de comptes ouverts un jour d'enthousiasme, avec une dernière publication qui date de huit mois. Ce n'est pas de la négligence. C'est qu'aucun artisan, aucun commerçant et aucun praticien n'a le temps de tenir un rythme en plus de son métier.",
       "Ça a une conséquence directe, et elle joue en votre faveur. L'attention locale n'est disputée par presque personne ici. Un plombier d'Albertville qui publie deux fois par semaine devient, en quelques mois, le seul plombier que les gens du coin voient passer. Dans une ville de vingt mille habitants, ça se remarque bien plus vite qu'à Lyon.",
-      "Et la demande existe, elle passe juste ailleurs. Les groupes Facebook d'Albertville et de la combe tournent toute la journée, avec les mêmes demandes de recommandation qui reviennent chaque semaine : un couvreur, une esthéticienne, quelqu'un pour un dépannage. Les gens qui répondent citent les noms qu'ils ont vus récemment.",
+      "Et la demande existe, elle passe juste ailleurs. Les groupes Facebook d'Albertville et de la combe tournent toute la journée. Les mêmes demandes de recommandation y reviennent chaque semaine : un couvreur, une esthéticienne, quelqu'un pour un dépannage. Les gens qui répondent citent les noms qu'ils ont vus récemment.",
     ],
     platforms:
       "Ici, Facebook reste l'endroit où circulent les recommandations entre habitants, et Instagram celui où on vérifie que vous existez avant d'appeler. Les deux se nourrissent de la même vidéo verticale, donc la question du choix ne se pose pas vraiment : on publie sur les deux, plus TikTok quand le métier s'y prête.",
@@ -163,7 +163,7 @@ export const socialCities: SocialCityData[] = [
     h1Pre: 'Community manager à ',
     h1Highlight: 'Chambéry',
     lede:
-      "Je ne recycle pas des images de banque et je ne programme pas des citations. Je viens filmer dans votre entreprise une journée par mois, et le reste du mois se passe sans vous.",
+      "Je ne recycle pas des images de banque. Je viens filmer dans votre entreprise une journée par mois, et le reste du mois se passe sans vous.",
     travel: 'Environ quarante-cinq minutes depuis Albertville.',
     nearby: [
       'La Ravoire',
@@ -236,7 +236,7 @@ export const socialCities: SocialCityData[] = [
     h1Pre: 'Community manager à ',
     h1Highlight: 'Annecy',
     lede:
-      "Annecy est le bassin le plus exigeant de la région sur l'image. C'est pour ça que je ne vends pas de la programmation de publications : je viens produire, une journée par mois, et je publie le reste du temps.",
+      "Annecy est le bassin le plus exigeant de la région sur l'image. Alors je viens produire, une journée par mois, et je publie le reste du temps.",
     travel: 'Environ quarante-cinq minutes depuis Albertville.',
     nearby: [
       'Annecy-le-Vieux',
@@ -310,7 +310,7 @@ export const socialCities: SocialCityData[] = [
     h1Pre: 'Community manager à ',
     h1Highlight: 'Aix-les-Bains',
     lede:
-      "Je viens filmer chez vous une journée par mois, puis je publie 8 vidéos dans le mois. Sur un bassin où la moitié des entreprises vivent du soin et du bien être, c'est le format qui rassure avant le premier rendez vous.",
+      "Je viens filmer chez vous une journée par mois, puis je publie 8 vidéos. Pour le soin et le bien-être, c'est le format qui rassure avant le premier rendez-vous.",
     travel: 'Environ cinquante minutes depuis Albertville.',
     nearby: ['Grésy-sur-Aix', 'Drumettaz-Clarafond', 'Mouxy', 'Tresserve', 'Brison-Saint-Innocent', 'Viviers-du-Lac', 'Le Bourget-du-Lac'],
     terrain: [
@@ -374,7 +374,7 @@ export const socialCities: SocialCityData[] = [
     h1Pre: 'Gestion de réseaux sociaux en ',
     h1Highlight: 'Savoie',
     lede:
-      "Je suis basé à Albertville, au milieu du département. Je viens filmer chez vous une journée par mois, je monte, je publie, et vous n'avez rien à faire entre deux tournages.",
+      "Basé à Albertville, au milieu du département, je viens filmer chez vous une journée par mois. Entre deux tournages, vous n'avez rien à faire.",
     travel: 'Albertville, Chambéry, Aix-les-Bains, les deux vallées et la Tarentaise.',
     nearby: [
       'Albertville',
@@ -456,7 +456,7 @@ export const socialCities: SocialCityData[] = [
     h1Pre: 'Gestion de réseaux sociaux en ',
     h1Highlight: 'Haute-Savoie',
     lede:
-      "Je viens filmer chez vous une journée par mois, et vos comptes tournent jusqu'à la suivante. Annecy, la vallée de l'Arve, le Chablais et les Aravis, depuis Albertville.",
+      "Je viens filmer chez vous une journée par mois, et vos comptes tournent jusqu'à la suivante. Annecy, l'Arve, le Chablais et les Aravis.",
     travel: "De quarante-cinq minutes à une heure trente selon la vallée.",
     nearby: ['Annecy', 'Cluses', 'Sallanches', 'Thonon-les-Bains', 'Rumilly', 'La Roche-sur-Foron', 'Bonneville', 'Saint-Julien-en-Genevois'],
     terrain: [

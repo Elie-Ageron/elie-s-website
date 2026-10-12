@@ -22,42 +22,48 @@ const Bar = ({ w = 'w-full', tone = 'bg-muted-foreground/25', h = 'h-1.5' }: { w
 );
 
 /* 1. SITES, browser window with a colorful demo site + floating result chip */
-const SitesMockup = () => (
-  <div className="relative w-[296px] sm:w-[400px]">
-    <div className="rounded-2xl bg-card border border-border shadow-2xl overflow-hidden -rotate-2">
-      <div className="flex items-center gap-1.5 px-3 py-2.5 bg-secondary/70 border-b border-border/70">
-        <span className="w-2.5 h-2.5 rounded-full bg-rose-400/70" />
-        <span className="w-2.5 h-2.5 rounded-full bg-amber-400/70" />
-        <span className="w-2.5 h-2.5 rounded-full bg-emerald-400/70" />
-        <span className="ml-2 flex-1 h-5 rounded-full bg-background/80 border border-border/60 text-[10px] text-muted-foreground flex items-center px-2.5">
-          studio-belrose.fr
+const SitesMockup = () => {
+  const { language } = useLanguage();
+  return (
+    <div className="relative w-[296px] sm:w-[400px]">
+      <div className="rounded-2xl bg-card border border-border shadow-2xl overflow-hidden -rotate-2">
+        <div className="flex items-center gap-1.5 px-3 py-2.5 bg-secondary/70 border-b border-border/70">
+          <span className="w-2.5 h-2.5 rounded-full bg-rose-400/70" />
+          <span className="w-2.5 h-2.5 rounded-full bg-amber-400/70" />
+          <span className="w-2.5 h-2.5 rounded-full bg-emerald-400/70" />
+          <span className="ml-2 flex-1 h-5 rounded-full bg-background/80 border border-border/60 text-[10px] text-muted-foreground flex items-center px-2.5">
+            studio-belrose.fr
+          </span>
+        </div>
+        <div className="p-4 space-y-3">
+          <div className="h-28 rounded-xl bg-gradient-to-br from-indigo-500 via-violet-500 to-cyan-400 relative flex flex-col justify-end p-3 gap-1.5">
+            <span className="block h-2 w-2/3 rounded-full bg-white/90" />
+            <span className="block h-1.5 w-1/2 rounded-full bg-white/60" />
+            <span className="mt-1 inline-flex h-5 w-fit px-3 rounded-md bg-white text-indigo-600 text-[9px] font-bold items-center">Réserver</span>
+          </div>
+          <div className="grid grid-cols-3 gap-2">
+            <div className="h-9 rounded-lg bg-secondary border border-border/50" />
+            <div className="h-9 rounded-lg bg-secondary border border-border/50" />
+            <div className="h-9 rounded-lg bg-secondary border border-border/50" />
+          </div>
+        </div>
+      </div>
+      {/* floating stat card breaking the frame */}
+      <div className="absolute -bottom-5 -left-7 rotate-3 rounded-2xl bg-card border border-border shadow-xl px-3.5 py-2.5 flex items-center gap-2.5 transition-transform duration-300 ease-out group-hover:-translate-x-2.5 group-hover:translate-y-1.5 group-hover:-rotate-1">
+        <span className="w-8 h-8 rounded-xl bg-emerald-500/15 flex items-center justify-center">
+          <TrendingUp className="w-4 h-4 text-emerald-500" aria-hidden="true" />
+        </span>
+        <span className="leading-tight">
+          {/* Disait « +38% de contacts ». Le 11 octobre 2026, les chiffres de ces
+              maquettes avaient ete retires (« aucun compteur nulle part »), et
+              celui-ci avait survecu. Retrouve le 12 octobre. */}
+          <span className="block text-sm font-bold text-foreground">{language === 'fr' ? 'Demande reçue' : 'New enquiry'}</span>
+          <span className="block text-[9px] text-muted-foreground">{language === 'fr' ? 'depuis le site' : 'from the site'}</span>
         </span>
       </div>
-      <div className="p-4 space-y-3">
-        <div className="h-28 rounded-xl bg-gradient-to-br from-indigo-500 via-violet-500 to-cyan-400 relative flex flex-col justify-end p-3 gap-1.5">
-          <span className="block h-2 w-2/3 rounded-full bg-white/90" />
-          <span className="block h-1.5 w-1/2 rounded-full bg-white/60" />
-          <span className="mt-1 inline-flex h-5 w-fit px-3 rounded-md bg-white text-indigo-600 text-[9px] font-bold items-center">Réserver</span>
-        </div>
-        <div className="grid grid-cols-3 gap-2">
-          <div className="h-9 rounded-lg bg-secondary border border-border/50" />
-          <div className="h-9 rounded-lg bg-secondary border border-border/50" />
-          <div className="h-9 rounded-lg bg-secondary border border-border/50" />
-        </div>
-      </div>
     </div>
-    {/* floating stat card breaking the frame */}
-    <div className="absolute -bottom-5 -left-7 rotate-3 rounded-2xl bg-card border border-border shadow-xl px-3.5 py-2.5 flex items-center gap-2.5 transition-transform duration-300 ease-out group-hover:-translate-x-2.5 group-hover:translate-y-1.5 group-hover:-rotate-1">
-      <span className="w-8 h-8 rounded-xl bg-emerald-500/15 flex items-center justify-center">
-        <TrendingUp className="w-4 h-4 text-emerald-500" aria-hidden="true" />
-      </span>
-      <span className="leading-tight">
-        <span className="block text-sm font-bold text-foreground">+38%</span>
-        <span className="block text-[9px] text-muted-foreground">de contacts</span>
-      </span>
-    </div>
-  </div>
-);
+  );
+};
 
 /* 2. GOOGLE BUSINESS, map card with Google colors + floating rank chip */
 const GoogleBusinessMockup = () => {
@@ -125,11 +131,11 @@ const SocialMockup = () => {
           <span className="absolute right-1.5 bottom-14 flex flex-col items-center gap-2.5" aria-hidden="true">
             <span className="flex flex-col items-center gap-0.5">
               <Heart className="w-4 h-4 text-white fill-white drop-shadow" />
-              <span className="text-[7px] font-semibold text-white/90">4 812</span>
+
             </span>
             <span className="flex flex-col items-center gap-0.5">
               <Share2 className="w-3.5 h-3.5 text-white drop-shadow" />
-              <span className="text-[7px] font-semibold text-white/90">318</span>
+
             </span>
           </span>
 
@@ -210,7 +216,9 @@ const SeoMockup = () => {
         <div className="rounded-xl border border-rose-500/40 bg-rose-500/[0.04] p-3 space-y-1.5">
           <div className="flex items-center justify-between">
             <span className="text-[10px] text-emerald-600 font-medium">votresite.fr</span>
-            <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-rose-500 text-white">#1</span>
+            {/* Disait « #1 » : une position Google, que la page dit ne pas
+                pouvoir garantir. Meme survivant que le « +38% ». */}
+            <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-rose-500 text-white">{language === 'fr' ? 'Vous' : 'You'}</span>
           </div>
           <Bar w="w-3/4" h="h-2.5" tone="bg-blue-600/70" />
           <Bar w="w-full" />

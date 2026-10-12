@@ -42,7 +42,11 @@ const ServiceSection = ({ service, index }: { service: ServiceItem; index: numbe
       transition={{ duration: 0.6, ease: 'easeOut', delay: 0.08 }}
       className="flex flex-col justify-center"
     >
-      <div className="flex items-center gap-3 mb-4">
+      {/* Grand ecran seulement depuis le 12 octobre 2026 : sur telephone, un
+          numero de 14 px et un sur-titre en majuscules espacees de 12 px au
+          dessus de chaque titre. Elie a banni ces sur-titres (*« c'est du
+          petit texte »*, et c'est un marqueur de page generee). */}
+      <div className="mb-4 hidden items-center gap-3 lg:flex">
         <span className="font-heading text-sm font-bold text-primary">{num}</span>
         <span className="h-px w-8 bg-primary/40" aria-hidden="true" />
         <span className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
@@ -346,7 +350,15 @@ const Services = () => {
       </section>
 
       {/* Morph showcase, a forgotten site is rebuilt, live, as you scroll */}
-      <ServiceHeroMorph />
+      {/* 🔴 Grand ecran seulement depuis le 12 octobre 2026. Sur telephone,
+          ce decor anime occupait deux ecrans entiers entre le hero et la
+          premiere ligne de contenu, avec un titre repete et un « scrollez
+          pour voir la difference » en majuscules espacees. Elie, le meme
+          jour : *« il y a enormement de contenu »*, et sa regle n°8, *« on
+          ne sait pas pourquoi c'est la »*. */}
+      <div className="hidden lg:block">
+        <ServiceHeroMorph />
+      </div>
 
       {/* Services intro */}
       <section className="py-20 sm:py-32" aria-labelledby="services-intro-heading">
@@ -355,7 +367,7 @@ const Services = () => {
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-primary"
+            className="mb-5 hidden items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-primary lg:inline-flex"
           >
             <span className="h-px w-6 bg-primary/50" aria-hidden="true" />
             {language === 'fr' ? 'Ce que je fais' : 'What I do'}

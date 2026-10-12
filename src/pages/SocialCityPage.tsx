@@ -9,6 +9,7 @@ import SocialClientsSection from '@/components/SocialClientsSection';
 import { getSocialCity, getRelatedSocialCities } from '@/data/social-cities';
 import { getIndexEntry } from '@/data/blogIndex';
 import { cities } from '@/data/cities';
+import ParagrapheDecoupe from '@/components/ParagrapheDecoupe';
 
 /**
  * La page locale du pilier reseaux sociaux, une par bassin.
@@ -58,6 +59,9 @@ const SocialCityPage = ({ slug }: SocialCityPageProps) => {
 
   const baseUrl = 'https://elieageron.com';
   const canonical = `${baseUrl}/${city.slug}`;
+  /* « en Savoie », pas « a Savoie » : les deux pages departement portaient
+     le second dans deux titres et dans leur schema, jusqu'au 12 octobre 2026. */
+  const dans = /Savoie$/.test(city.name) ? `en ${city.name}` : `à ${city.name}`;
   const related = getRelatedSocialCities(city);
   const webCity = city.webPage ? cities.find((c) => c.slug === city.webPage) : undefined;
 
@@ -103,10 +107,10 @@ const SocialCityPage = ({ slug }: SocialCityPageProps) => {
     '@context': 'https://schema.org',
     '@type': 'Service',
     '@id': `${canonical}#service`,
-    name: `Gestion de réseaux sociaux à ${city.name}`,
+    name: `Gestion de réseaux sociaux ${dans}`,
     serviceType: 'Gestion de réseaux sociaux',
     description:
-      `Tournage vidéo sur place une journée par mois à ${city.name}, montage vertical, sous-titrage ` +
+      `Tournage vidéo sur place une journée par mois ${dans}, montage vertical, sous-titrage ` +
       "et publication de 8 vidéos courtes, 4 carrousels et 8 stories dans le mois. 890 € par mois, sans engagement, site web d'une page compris à partir du troisième mois.",
     url: canonical,
     provider: { '@id': `${baseUrl}/#business` },
@@ -196,7 +200,7 @@ const SocialCityPage = ({ slug }: SocialCityPageProps) => {
             className="mb-7 inline-flex items-center gap-2 text-sm text-muted-foreground"
           >
             <MapPin className="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
-            {city.name}, {city.department}
+            {city.name === city.department ? city.name : `${city.name}, ${city.department}`}
           </motion.p>
 
           <motion.h1
@@ -268,26 +272,26 @@ const SocialCityPage = ({ slug }: SocialCityPageProps) => {
         <div className="mx-auto max-w-3xl px-4 sm:px-6">
           <h2 id="social-city-terrain" className="section-title text-foreground">
             <span>Ce que donnent les réseaux </span>
-            <span className="text-primary">à {city.name}</span>
+            <span className="text-primary">{dans}</span>
           </h2>
           <div className="mt-8 space-y-6">
             {city.terrain.map((paragraphe, i) => (
-              <motion.p
+              <ParagrapheDecoupe
                 key={i}
+                as={motion.p}
+                texte={paragraphe}
                 initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ delay: i * 0.05, duration: 0.4 }}
                 className="text-base leading-relaxed text-muted-foreground sm:text-lg"
-              >
-                {paragraphe}
-              </motion.p>
+              />
             ))}
           </div>
 
           <div className="mt-10 border-t border-border/60 pt-8">
             <h3 className="text-lg font-semibold text-foreground sm:text-xl">Quelle plateforme, ici</h3>
-            <p className="mt-3 text-base leading-relaxed text-muted-foreground">{city.platforms}</p>
+            <ParagrapheDecoupe texte={city.platforms} className="mt-3 text-base leading-relaxed text-muted-foreground" />
           </div>
         </div>
       </section>
@@ -344,7 +348,7 @@ const SocialCityPage = ({ slug }: SocialCityPageProps) => {
             {city.filmer.map((bloc) => (
               <li key={bloc.title} className="py-7">
                 <h3 className="text-lg font-semibold text-foreground sm:text-xl">{bloc.title}</h3>
-                <p className="mt-2 text-base leading-relaxed text-muted-foreground">{bloc.body}</p>
+                <ParagrapheDecoupe texte={bloc.body} className="mt-2 text-base leading-relaxed text-muted-foreground" />
               </li>
             ))}
           </ul>
@@ -366,7 +370,7 @@ const SocialCityPage = ({ slug }: SocialCityPageProps) => {
         titre={
           <>
             <span className="text-foreground">Les questions qu&rsquo;on me pose </span>
-            <span className="block text-primary lg:inline">à {city.name}.</span>
+            <span className="block text-primary lg:inline">{dans}.</span>
           </>
         }
       />

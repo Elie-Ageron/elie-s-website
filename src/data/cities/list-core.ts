@@ -258,7 +258,7 @@ export const coreCities: CityData[] = [
         'Industrie et sous-traitance',
       ],
       context: [
-        "La Savoie tient en trois mondes qui se croisent peu : l'agglomération chambérienne et le lac du Bourget d'un côté, la vallée d'Albertville et la Tarentaise de l'autre, la Maurienne au sud. Les économies et les niveaux de concurrence n'y sont pas comparables.",
+        "La Savoie tient en trois mondes qui se croisent peu. D'un côté l'agglomération chambérienne et le lac du Bourget, de l'autre la vallée d'Albertville et la Tarentaise, et la Maurienne au sud. Les économies et les niveaux de concurrence n'y sont pas comparables.",
         "Je suis installé à Albertville, ce qui me place au centre de la partie montagne du département et à moins d'une heure de Chambéry. Concrètement, ça veut dire que je peux venir voir un atelier, filmer un chantier et repartir le jour même, ce qu'un prestataire lyonnais ou parisien ne fera pas.",
         "Sur la partie montagne, la concurrence en ligne reste faible et les résultats arrivent vite. Sur Chambéry et Aix-les-Bains, il faut viser des recherches plus précises et accepter un délai plus long. Je le dis avant de commencer plutôt qu'après.",
       ],

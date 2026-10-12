@@ -6,6 +6,7 @@ import ContactMethodsSection from '@/components/ContactMethodsSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { guides } from '@/data/guides';
+import ParagrapheDecoupe from '@/components/ParagrapheDecoupe';
 
 const baseUrl = 'https://elieageron.com';
 
@@ -171,8 +172,11 @@ const About = () => {
             </h1>
             <p className="mt-5 text-base sm:text-lg text-muted-foreground leading-relaxed">
               {fr
-                ? "Je construis des sites pour des entreprises locales et je m'occupe de leurs réseaux sociaux. Une journée de tournage par mois chez elles, puis huit vidéos et quatre carrousels dans le mois, sans qu'elles aient à filmer ou monter quoi que ce soit."
-                : 'I build websites for local businesses and run their social media. One day of filming at their place each month, then eight videos and four carousels posted over that month, without them having to film or edit anything.'}
+                /* 43 mots ramenes a 22 le 12 octobre 2026 (relecture
+                   telephone). Le detail est dans « Ce que je fais,
+                   concretement », juste dessous. */
+                ? 'Je fais des sites pour des entreprises locales, et leurs vidéos pour les réseaux : une journée de tournage par mois, chez elles.'
+                : 'I build websites for local businesses, and their videos for social media: one day of filming a month, at their place.'}
             </p>
           </motion.header>
         </div>
@@ -205,9 +209,7 @@ const About = () => {
                 </h3>
                 <div className="mt-4 space-y-4">
                   {section.body.map((paragraph, j) => (
-                    <p key={j} className="text-base text-muted-foreground leading-relaxed">
-                      {paragraph}
-                    </p>
+                    <ParagrapheDecoupe key={j} texte={paragraph} className="text-base text-muted-foreground leading-relaxed" />
                   ))}
                 </div>
               </motion.section>

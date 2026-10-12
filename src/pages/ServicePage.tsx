@@ -8,6 +8,7 @@ import ContactMethodsSection from '@/components/ContactMethodsSection';
 import { getServicePage, getRelatedServices } from '@/data/service-pages';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { getIndexEntry } from '@/data/blogIndex';
+import ParagrapheDecoupe from '@/components/ParagrapheDecoupe';
 
 /**
  * Une page par service, rendue depuis `src/data/service-pages.ts`.
@@ -241,16 +242,16 @@ const ServicePage = ({ slug }: ServicePageProps) => {
           </h2>
           <div className="mt-8 space-y-6">
             {service.probleme.map((paragraphe, i) => (
-              <motion.p
+              <ParagrapheDecoupe
                 key={i}
+                as={motion.p}
+                texte={paragraphe}
                 initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ delay: i * 0.05, duration: 0.4 }}
                 className="text-base leading-relaxed text-muted-foreground sm:text-lg"
-              >
-                {paragraphe}
-              </motion.p>
+              />
             ))}
           </div>
         </div>
@@ -270,7 +271,7 @@ const ServicePage = ({ slug }: ServicePageProps) => {
                 <Check className="mt-1 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
                 <div>
                   <h3 className="text-lg font-semibold text-foreground sm:text-xl">{bloc.title}</h3>
-                  <p className="mt-2 text-base leading-relaxed text-muted-foreground">{bloc.body}</p>
+                  <ParagrapheDecoupe texte={bloc.body} className="mt-2 text-base leading-relaxed text-muted-foreground" />
                 </div>
               </li>
             ))}
@@ -281,7 +282,7 @@ const ServicePage = ({ slug }: ServicePageProps) => {
               sien, et les deux traits tombaient a 40 px l'un de l'autre. */}
           <div className="pt-10 lg:mt-10 lg:border-t lg:border-border/60 lg:pt-8">
             <h3 className="text-lg font-semibold text-foreground sm:text-xl">Ce que ça ne fait pas</h3>
-            <p className="mt-3 text-base leading-relaxed text-muted-foreground">{service.limites}</p>
+            <ParagrapheDecoupe texte={service.limites} className="mt-3 text-base leading-relaxed text-muted-foreground" />
           </div>
         </div>
       </section>

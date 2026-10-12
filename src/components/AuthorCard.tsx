@@ -43,8 +43,10 @@ const AuthorCard = () => {
               </p>
               <p className="col-span-2 mt-4 sm:mt-3 text-base text-muted-foreground leading-relaxed">
                 {fr
-                  ? "Je construis des sites pour des artisans, des commerçants et des indépendants, et je m'occupe de leurs réseaux sociaux : je viens filmer une journée par mois, je monte et je publie. Tout ce que j'écris ici vient de ce que je vois chez mes clients, pas de théorie."
-                  : 'I build websites for tradespeople, shop owners and independents, and I run their social media: I come and film for a full day each month, then edit and publish. Everything here comes from what I see with clients, not from theory.'}
+                  /* 50 mots ramenes a 32 le 12 octobre 2026 : six lignes sur
+                     telephone, en bas des 142 articles et des quatre guides. */
+                  ? "Je fais des sites pour des artisans, des commerçants et des indépendants, et je filme leurs vidéos pour les réseaux. Ce que j'écris ici vient de ce que je vois chez eux."
+                  : 'I build websites for tradespeople, shop owners and independents, and film their videos for social media. What I write here comes from what I see with them.'}
               </p>
               <p className="col-span-2 mt-4 flex flex-wrap gap-x-5 gap-y-1 text-base sm:gap-y-2 lg:text-sm">
                 <Link

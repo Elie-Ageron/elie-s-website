@@ -76,7 +76,7 @@ export const servicePages: ServicePageData[] = [
     h1Pre: 'Votre fiche Google Business, ',
     h1Highlight: 'faite correctement',
     lede:
-      "C'est la première chose qu'un client voit quand il cherche votre métier dans votre ville, et c'est presque toujours la moins soignée. Je la reprends de bout en bout, une fois, et elle travaille ensuite toute seule.",
+      "C'est la première chose qu'un client voit de vous, et presque toujours la moins soignée. Je la reprends de bout en bout, une fois.",
     prix: 'dès 250 €',
     prixSchema: 250,
     probleme: [
@@ -142,7 +142,7 @@ export const servicePages: ServicePageData[] = [
     h1Pre: 'Sortir quand on cherche votre métier ',
     h1Highlight: 'dans votre commune',
     lede:
-      "Le référencement local n'est pas du référencement en plus petit. C'est un autre jeu, avec d'autres règles, et il se gagne avec beaucoup moins de moyens qu'on ne le croit.",
+      "Le référencement local est un autre jeu que le référencement classique, et il se gagne avec beaucoup moins de moyens qu'on ne le croit.",
     prix: 'sur devis',
     probleme: [
       "Une recherche locale ne ressemble pas à une recherche normale. Google y mélange trois choses : la carte avec ses trois fiches, les résultats classiques, et de plus en plus une réponse générée. Se battre sur les résultats classiques sans avoir réglé la carte, c'est commencer par le plus dur.",
@@ -207,7 +207,7 @@ export const servicePages: ServicePageData[] = [
     h1Pre: 'Des avis qui arrivent ',
     h1Highlight: 'sans les mendier',
     lede:
-      "Les avis sont le levier le plus fort du classement local et le plus mal utilisé. Le problème n'est presque jamais la qualité du travail : c'est qu'on ne les demande pas, ou qu'on les demande au mauvais moment.",
+      "Les avis sont le levier le plus fort du classement local, et le plus mal utilisé : on ne les demande pas, ou au mauvais moment.",
     prix: 'sur devis',
     probleme: [
       "Un client content ne laisse pas d'avis spontanément. Il en laisse un quand on le lui demande, au moment où il vient d'être content, et quand ça lui prend dix secondes. Ces trois conditions ne sont presque jamais réunies, et c'est tout le sujet.",
@@ -272,7 +272,7 @@ export const servicePages: ServicePageData[] = [
     h1Pre: 'Un logo, des couleurs, ',
     h1Highlight: 'et de quoi les utiliser',
     lede:
-      "Une identité de marque n'est pas un logo. C'est un logo, plus tout ce qu'il faut pour que votre entreprise se ressemble d'un support à l'autre, du camion au site.",
+      "Une identité de marque, c'est un logo plus tout ce qu'il faut pour que votre entreprise se ressemble, du camion au site.",
     prix: 'sur devis',
     probleme: [
       "Le cas que je rencontre le plus souvent : un logo existe, il a été fait il y a huit ans par un cousin ou acheté trente euros sur un site, et il n'existe qu'en un seul fichier. Pas de version sur fond sombre, pas de version horizontale, pas de fichier vectoriel. Chaque nouveau support demande donc un bricolage.",
@@ -337,7 +337,7 @@ export const servicePages: ServicePageData[] = [
     h1Pre: 'Les textes de votre site, ',
     h1Highlight: 'écrits pour être lus',
     lede:
-      "C'est ce qui bloque le plus de projets, et de loin. Le site est prêt, le design est validé, et il manque les textes depuis quatre mois. Je les écris, à partir de ce que vous dites déjà à vos clients.",
+      "Le site est prêt, et les textes manquent depuis quatre mois. Je les écris, à partir de ce que vous dites déjà à vos clients.",
     prix: 'sur devis',
     probleme: [
       "Écrire sur son propre métier est étrangement difficile. On le connaît trop bien, on ne sait plus ce qui va de soi, et on finit par écrire ce qu'on croit qu'il faut écrire : une page qui parle de passion, de savoir-faire et de qualité, comme les trois concurrents d'à côté.",

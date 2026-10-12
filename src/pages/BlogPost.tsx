@@ -22,6 +22,7 @@ import { getCategory } from '@/data/blog/types';
 import type { BlogPost as BlogPostType } from '@/data/blog/types';
 import { getGuideByPath } from '@/data/guides';
 import { useEffect, useMemo, useState } from 'react';
+import ParagrapheDecoupe from '@/components/ParagrapheDecoupe';
 
 const baseUrl = 'https://elieageron.com';
 
@@ -73,10 +74,16 @@ const renderContent = (content: string) => {
       flushList();
     } else {
       flushList();
+      /* Decoupe en paragraphes courts sur telephone seulement, depuis le
+         12 octobre 2026. Voir `ParagrapheDecoupe` : rien n'est retire du
+         texte, et le grand ecran ne change pas. */
       elements.push(
-        <p key={key++} className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-5 text-pretty lg:text-wrap">
-          {renderInlineFormatting(line)}
-        </p>
+        <ParagrapheDecoupe
+          key={key++}
+          texte={line}
+          rendu={renderInlineFormatting}
+          className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-5 text-pretty lg:text-wrap"
+        />
       );
     }
   }

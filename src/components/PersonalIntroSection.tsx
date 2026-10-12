@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import eliePortrait from '@/assets/elie-ageron-portrait.webp';
+import ParagrapheDecoupe from '@/components/ParagrapheDecoupe';
 
 /**
  * Qui est derriere tout ca.
@@ -95,11 +96,17 @@ const PersonalIntroSection = () => {
               </span>
             </h2>
 
-            <p className="section-lede mt-6 max-w-xl">
-              {fr
-                ? "Je filme, je monte et je publie pour des entreprises qui n'ont ni le temps ni l'envie de s'en occuper, et je construis les sites sur lesquels ces vidéos renvoient. Autrement dit : vous faites votre métier, et moi je m'occupe de ce que les gens trouvent quand ils cherchent votre nom."
-                : 'I film, edit and post for businesses that have neither the time nor the appetite for it, and I build the sites those videos point to. Put simply: you do your job, and I take care of what people find when they look you up.'}
-            </p>
+            {/* Decoupe sur telephone depuis le 12 octobre 2026 (six lignes d'un
+                bloc). Le texte ne change pas : Elie a valide cette section le
+                meme jour, *« ma presentation, ca, c'est bien »*. */}
+            <ParagrapheDecoupe
+              className="section-lede mt-6 max-w-xl"
+              texte={
+                fr
+                  ? "Je filme, je monte et je publie pour des entreprises qui n'ont ni le temps ni l'envie de s'en occuper, et je construis les sites sur lesquels ces vidéos renvoient. Autrement dit : vous faites votre métier, et moi je m'occupe de ce que les gens trouvent quand ils cherchent votre nom."
+                  : 'I film, edit and post for businesses that have neither the time nor the appetite for it, and I build the sites those videos point to. Put simply: you do your job, and I take care of what people find when they look you up.'
+              }
+            />
             <p className="section-lede mt-4 max-w-xl">
               {fr
                 ? "C'est moi qui filme, moi qui monte, et moi qui écris le site. Vous avez mon numéro, pas un formulaire de support. Je suis basé à Albertville et je me déplace pour tourner, en Savoie comme ailleurs."

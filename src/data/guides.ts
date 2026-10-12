@@ -354,7 +354,7 @@ export const guides: Guide[] = [
         title: 'La fiche Google Business, avant tout le reste',
         body: [
           "Elle est gratuite, elle s'affiche au-dessus de tous les résultats classiques, et la plupart des entreprises la remplissent à moitié puis n'y touchent plus.",
-          "Trois réglages pèsent plus que les autres : la catégorie principale, qui doit être exactement votre métier dans les termes de Google et non une catégorie plus large ; la description, qui doit nommer vos communes en toutes lettres ; et les photos, qu'il faut ajouter au moins une fois par mois.",
+          "Trois réglages pèsent plus que les autres. La catégorie principale, qui doit être exactement votre métier dans les termes de Google, et non une catégorie plus large. La description, qui doit nommer vos communes en toutes lettres. Et les photos, qu'il faut ajouter au moins une fois par mois.",
           "Deux erreurs coûtent particulièrement cher. Mettre un mot clé dans le nom de l'entreprise est une infraction explicite, régulièrement signalée par les concurrents. Et abandonner la fiche après l'avoir créée : une fiche complète mais figée depuis deux ans perd du terrain face à une fiche moins complète mais entretenue.",
         ],
         articles: ['creer-fiche-google-business', 'fiche-google-business-optimiser', 'apparaitre-sur-google-maps'],
@@ -389,7 +389,7 @@ export const guides: Guide[] = [
       {
         title: 'La technique qui compte, et celle qui ne compte pas',
         body: [
-          "La vitesse sur mobile est le point technique le plus rentable, parce que la plupart des recherches locales se font sur un téléphone, souvent en déplacement et avec une connexion moyenne. Les images non optimisées expliquent la majorité des cas.",
+          "La vitesse sur mobile est le point technique le plus rentable. La plupart des recherches locales se font sur un téléphone, souvent en déplacement et avec une connexion moyenne. Les images non optimisées expliquent la majorité des cas.",
           "Ce qui compte peu, en revanche : le design, le nombre de pages, les animations. Un site un peu daté mais clair et rapide convertit mieux qu'un site magnifique où l'on ne comprend rien.",
           "Enfin, la cohérence de vos informations sur le web pèse plus qu'on ne le croit. Un numéro de téléphone différent sur trois annuaires crée une incertitude qui vous coûte des positions.",
         ],

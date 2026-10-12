@@ -9,6 +9,7 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import FAQAccordion from '@/components/FAQAccordion';
 import FaqSection from '@/components/FaqSection';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
+import ParagrapheDecoupe from '@/components/ParagrapheDecoupe';
 import { cities, getRelatedCities } from '@/data/cities';
 import { getIndexEntry } from '@/data/blogIndex';
 
@@ -23,6 +24,14 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
   if (!city) return null;
 
   const d = city[language];
+  /* « en Savoie », pas « a Savoie ». Les deux pages departement
+     (`/web-designer-savoie`, `/creation-site-web-haute-savoie`) portaient le
+     second dans quatre titres jusqu'au 12 octobre 2026. Le contenu long est en
+     francais seulement, d'ou la preposition francaise. */
+  /* On teste le nom, pas `scope` : `/web-designer-savoie` est une zone qui
+     s'appelle « Albertville », et le drapeau aurait donne « en Albertville ». */
+  const departement = /Savoie$/.test(d.name);
+  const dans = departement ? `en ${d.name}` : `à ${d.name}`;
   const depth = city.depthFr;
   // Le contenu long n'existe qu'en francais : on ne le sert qu'en francais.
   const showDepth = language === 'fr' && Boolean(depth);
@@ -100,7 +109,7 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
           name: language === 'fr' ? 'Référencement local' : 'Local SEO',
           description:
             language === 'fr'
-              ? `Fiche Google Business et visibilité locale à ${d.name}`
+              ? `Fiche Google Business et visibilité locale ${dans}`
               : `Google Business Profile and local visibility in ${d.name}`,
         },
       ],
@@ -198,7 +207,9 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
           >
             <MapPin className="w-4 h-4 text-primary shrink-0" aria-hidden="true" />
             <span className="text-sm text-muted-foreground">
-              {d.name}, {city.department}
+              {/* « Haute-Savoie, Haute-Savoie » sur la page departement, jusqu'au
+                  12 octobre 2026. */}
+              {d.name === city.department ? d.name : `${d.name}, ${city.department}`}
             </span>
           </motion.div>
 
@@ -222,14 +233,26 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
             {d.h2}
           </motion.p>
 
-          <motion.p
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            className="text-base text-muted-foreground mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed"
-          >
-            {d.intro}
-          </motion.p>
+          {/* 🔴 L'intro (40 a 55 mots) est sortie du hero le 12 octobre 2026,
+              sur les pages qui ont un contexte local : elle ouvre maintenant la
+              section « Le contexte a ... », juste dessous. Elie, sur le hero de
+              `/reseaux-sociaux`, qui avait la meme forme : *« c'est un enorme
+              paragraphe et tu as deux boutons, donc ce n'est pas du tout assez
+              aere. »* Ici c'etait un sous-titre, puis ce paragraphe, puis deux
+              boutons et deux lignes. Le texte reste sur la page, mot pour mot :
+              c'est lui qui la distingue d'une page dupliquee. */}
+          {showDepth ? (
+            <div className="mb-8 sm:mb-10" />
+          ) : (
+            <motion.p
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="text-base text-muted-foreground mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed"
+            >
+              {d.intro}
+            </motion.p>
+          )}
 
           <motion.div
             className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
@@ -318,20 +341,20 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
           <section className="py-20 sm:py-24 border-t border-border/50" aria-labelledby="city-context">
             <div className="max-w-3xl mx-auto px-4 sm:px-6">
               <h2 id="city-context" className="max-lg:section-title lg:text-3xl lg:font-medium lg:leading-tight text-balance mb-6">
-                {`Le contexte à ${d.name}`}
+                {`Le contexte ${dans}`}
               </h2>
               <div className="space-y-5">
-                {depth!.context.map((paragraph, i) => (
-                  <motion.p
+                {[d.intro, ...depth!.context].map((paragraph, i) => (
+                  <ParagrapheDecoupe
                     key={i}
+                    as={motion.p}
+                    texte={paragraph}
                     initial={{ opacity: 0, y: 12 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: '-60px' }}
                     transition={{ delay: i * 0.05, duration: 0.4 }}
-                    className="text-base sm:text-lg text-muted-foreground leading-relaxed"
-                  >
-                    {paragraph}
-                  </motion.p>
+                    className={`text-base sm:text-lg leading-relaxed ${i === 0 ? 'text-foreground' : 'text-muted-foreground'}`}
+                  />
                 ))}
               </div>
 
@@ -349,7 +372,7 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
           {/* Blocs editoriaux, pas de grille de cartes */}
           <section className="py-4 sm:py-8" aria-labelledby="city-approach">
             <div className="max-w-3xl mx-auto px-4 sm:px-6">
-              <h2 id="city-approach" className="sr-only">{`Ma façon de travailler à ${d.name}`}</h2>
+              <h2 id="city-approach" className="sr-only">{`Ma façon de travailler ${dans}`}</h2>
               <ul className="divide-y divide-border/60 border-y border-border/60">
                 {depth!.blocks.map((block, i) => (
                   <motion.li
@@ -368,9 +391,10 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
                         {block.title}
                       </h3>
                     </div>
-                    <p className="sm:col-span-8 text-base text-muted-foreground leading-relaxed">
-                      {block.body}
-                    </p>
+                    <ParagrapheDecoupe
+                      texte={block.body}
+                      className="sm:col-span-8 text-base text-muted-foreground leading-relaxed"
+                    />
                   </motion.li>
                 ))}
               </ul>
@@ -381,9 +405,9 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
           <section className="py-20 sm:py-24" aria-labelledby="city-social">
             <div className="max-w-3xl mx-auto px-4 sm:px-6">
               <h2 id="city-social" className="max-lg:section-title lg:text-3xl lg:font-medium lg:leading-tight text-balance mb-5">
-                {`Et si on filmait chez vous, à ${d.name} ?`}
+                {`Et si on filmait chez vous, ${dans} ?`}
               </h2>
-              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">{depth!.social}</p>
+              <ParagrapheDecoupe texte={depth!.social} className="text-base sm:text-lg text-muted-foreground leading-relaxed" />
               <p className="mt-6">
                 <Link
                   to="/reseaux-sociaux"
@@ -400,7 +424,7 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
           <section className="py-16 bg-secondary/40 border-y border-border/50" aria-labelledby="city-nearby">
             <div className="max-w-3xl mx-auto px-4 sm:px-6">
               <h2 id="city-nearby" className="text-2xl font-semibold leading-tight text-foreground mb-4 lg:text-xl">
-                {`Autour ${de(d.name)}`}
+                {departement ? `Partout ${dans}` : `Autour ${de(d.name)}`}
               </h2>
               <p className="text-base text-muted-foreground leading-relaxed">
                 Je me déplace aussi à {depth!.nearby.slice(0, -1).join(', ')} et {depth!.nearby.slice(-1)}. Si
@@ -420,7 +444,7 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
             titre={
               <>
                 <span className="text-foreground">Les questions qu&rsquo;on me pose </span>
-                <span className="text-primary">à {d.name}.</span>
+                <span className="text-primary">{dans}.</span>
               </>
             }
           />

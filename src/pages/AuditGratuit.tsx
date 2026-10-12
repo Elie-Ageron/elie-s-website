@@ -5,6 +5,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import SEO from '@/components/SEO';
 import AuditForm from '@/components/AuditForm';
 import ScrollReveal from '@/components/animations/ScrollReveal';
+import ParagrapheDecoupe from '@/components/ParagrapheDecoupe';
 import {
   Accordion,
   AccordionContent,
@@ -343,10 +344,13 @@ const AuditGratuit = () => {
               </span>
             </h1>
 
+            {/* 43 mots ramenes a 23 le 12 octobre 2026, sur la relecture
+                telephone. La phrase du milieu disait « les trois endroits »
+                quand la section dessous en liste quatre : elle est partie. */}
             <p className="mt-7 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
               {fr
-                ? "Votre fiche Google, vos réseaux et votre site, passés en revue à l'écran avec votre nom prononcé. Les trois endroits où vous perdez des demandes sans le voir. Vous recevez la vidéo sous 48 heures, et vous en faites ce que vous voulez."
-                : 'Your Google listing, your social accounts and your website, reviewed on screen with your name spoken out loud. The three places you lose enquiries without seeing it. You get the video within two working days and do what you like with it.'}
+                ? "Votre fiche Google, vos réseaux et votre site, passés en revue à l'écran. La vidéo arrive sous 48 heures, et elle est à vous."
+                : 'Your Google listing, your social accounts and your website, reviewed on screen. The video arrives within two working days, and it is yours.'}
             </p>
 
             <div className="mt-10 max-w-md rounded-2xl border border-border bg-card p-6 shadow-[0_1px_2px_hsl(var(--shadow-color)),0_12px_32px_hsl(var(--shadow-soft))] sm:p-8">
@@ -399,7 +403,7 @@ const AuditGratuit = () => {
                       <check.icon className="hidden h-5 w-5 shrink-0 text-primary sm:block" aria-hidden="true" />
                       {check.title}
                     </h3>
-                    <p className="mt-3 text-muted-foreground">{check.desc}</p>
+                    <ParagrapheDecoupe texte={check.desc} className="mt-3 text-muted-foreground" />
                   </div>
                 </article>
               </ScrollReveal>
@@ -415,11 +419,14 @@ const AuditGratuit = () => {
             <h2 className="section-title-compact">
               {fr ? "J'enregistre mon écran en vous parlant, d'une traite." : 'I record my screen while talking to you, in one go.'}
             </h2>
-            <p className="mt-5 text-muted-foreground">
-              {fr
-                ? "Un enregistrement d'écran où je navigue chez vous en parlant. Pas un PDF de vingt pages que personne n'ouvre, pas un score automatique sorti d'un outil. Quelqu'un qui a passé une demi-heure sur votre cas et qui vous dit ce qu'il a vu."
-                : 'A screen recording where I navigate your pages while talking. Not a twenty page PDF nobody opens, not an automated score out of a tool. Someone who spent half an hour on your case telling you what they saw.'}
-            </p>
+            <ParagrapheDecoupe
+              className="mt-5 text-muted-foreground"
+              texte={
+                fr
+                  ? "Un enregistrement d'écran où je navigue chez vous en parlant. Pas un PDF de vingt pages que personne n'ouvre, pas un score automatique sorti d'un outil. Quelqu'un qui a passé une demi-heure sur votre cas et qui vous dit ce qu'il a vu."
+                  : 'A screen recording where I navigate your pages while talking. Not a twenty page PDF nobody opens, not an automated score out of a tool. Someone who spent half an hour on your case telling you what they saw.'
+              }
+            />
             <p className="mt-4 text-muted-foreground">
               {fr
                 ? "Ça ne dépasse jamais cinq minutes, parce qu'au-delà personne ne va au bout, et l'information la plus utile est toujours dans les trois dernières."
@@ -461,7 +468,7 @@ const AuditGratuit = () => {
               <ScrollReveal key={not.title} direction="up" delay={i * 0.05}>
                 <article className="py-7">
                   <h3 className="text-lg font-semibold sm:text-xl">{not.title}</h3>
-                  <p className="mt-2.5 text-muted-foreground">{not.desc}</p>
+                  <ParagrapheDecoupe texte={not.desc} className="mt-2.5 text-muted-foreground" />
                 </article>
               </ScrollReveal>
             ))}

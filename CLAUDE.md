@@ -89,8 +89,8 @@ Les 7 services (source unique : `src/data/services.ts`, **l'ordre du tableau pil
 - `src/pages/Services.tsx` — Page hub du partenaire web : hero, manifeste (repositionnement), **une section alternée par service** (numéro fantôme, orbe, kicker), "pourquoi un partenaire", CTA. **Sans prix affiché.**
 - `src/data/services.ts` — Source unique des 7 services (kicker, titre, desc, bullets, prix interne FR/EN, icône, ancre)
 - `src/components/ServicesEcosystem.tsx` — Section grille "Et une fois le site en ligne ?" affichée sur la Home (après les formules site)
-- Le menu est **plat** (Services · Réseaux sociaux · Portfolio · Blog · Contact) — "Services" pointe vers la page unique `/services`, "Réseaux sociaux" vers `/reseaux-sociaux`. Les ancres (`#reseaux-sociaux`, `#google-business`…) servent aux pills du hero de la page services.
-- **Pas de page Tarifs** : la page `/pricing` a été retirée (tout est sur devis). Les 3 formules de site vivent sur la home (`ServicesSection.tsx`), suivies d'une note « chiffré sur devis ». L'URL `/pricing` redirige vers `/services` (SEO). Prix de référence internes conservés dans `src/data/services.ts` (jamais affichés).
+- Le menu est **plat** (Services · Réseaux sociaux · Sites web · Portfolio · Blog · Contact). « Guides » en est sorti le 12 octobre 2026 pour faire place à « Sites web » : à sept entrées, le nom touchait « Services » à 1280 px. Il reste dans le menu du téléphone, le pied de page et le blog. Les ancres (`#reseaux-sociaux`, `#google-business`…) servent aux pills du hero de la page services.
+- **Les 3 formules de site vivent sur `/creation-site-web`** depuis le 12 octobre 2026 (voir plus bas), et sur les quinze pages de villes. Elles ont quitté l'accueil, qui n'en garde qu'une ligne : « Une page dès 500 €. Un site vitrine dès 1 500 €. » sous le portfolio. L'URL `/pricing` redirige vers `/creation-site-web`.
 
 ### Page Réseaux sociaux (`/reseaux-sociaux`)
 - `src/pages/SocialMedia.tsx` — hero, preuve en prose, déroulé d'un mois type (tournage → montage → publication), **la liste à 890 €**, **les trois choses en plus**, combo site + réseaux, FAQ et CTA.
@@ -806,15 +806,18 @@ racontent l'offre entière :
 ```
 Vos réseaux tournent. Sans que vous y pensiez.
 Un jour de tournage. Un mois de publications.
-Deux comptes que je gère en ce moment.
+Quelques vidéos que j'ai livrées récemment.
+Je m'appelle Elie Ageron. Je rends votre métier visible.
+Recevez un audit complet de votre présence en ligne. Gratuitement.
 Ils étaient à votre place. Ils ont accepté d'en parler.
-Un projet à la fois. Le vôtre.
 Si le site ne suit pas, je le refais.
-La formule qu'il vous faut
 Tout le reste, au même endroit.
 Ce qu'on me demande le plus souvent.
-Je regarde votre présence en ligne. C'est gratuit.
+Je regarde votre présence en ligne. Et je vous dis quoi corriger, gratuitement.
 ```
+
+(Liste remise à jour le 12 octobre 2026 : « La formule qu'il vous faut » est
+partie avec les formules, sur `/creation-site-web`.)
 
 Donc : **une idée par titre, jamais deux phrases imbriquées, jamais de
 négation double.** Celui de la section réseaux disait *« Un compte laissé en
@@ -1837,6 +1840,96 @@ calque qui n'existe que sur téléphone.
   Elle fait partie de l'identité du grand écran.
 - **La fin des articles empile trois demandes** (appel, contact, audit).
 
+## Trop de texte : la relecture téléphone du 12 octobre 2026
+
+> Elie : *« je commence à faire pas mal de contenu sur les réseaux et il y a
+> plein plus de gens qui vont le voir sur leur téléphone. »* Puis, page par
+> page : *« c'est un énorme paragraphe et tu as deux boutons, donc ce n'est
+> pas du tout assez aéré »*, *« je ne sais pas si les gens vont lire ça,
+> clairement »*, et pour finir : *« il faut cet effet très aéré, très facile
+> à lire, où, quand on cherche une info, elle arrive toute seule sous notre
+> œil. »* Il a demandé de ne pas être un « yes man » : les points où il n'a
+> pas été suivi à la lettre sont notés plus bas.
+
+Mesuré à 390 px avant correction : l'accueil faisait **20 écrans**, le chapô
+du hero de `/reseaux-sociaux` **sept lignes**, et chaque page de ville portait
+**quatorze paragraphes de cinq à neuf lignes**. Après : l'accueil fait 14,5
+écrans, et aucune page vendeuse ne garde plus de trois paragraphes de plus de
+quatre lignes (des phrases uniques, qu'on ne coupe pas).
+
+### Les règles, à appliquer avant qu'il ait à les redemander
+
+| Où | La règle |
+|---|---|
+| Hero | Un titre, **une phrase de 25 mots au plus**, un bouton plein, un lien. Jamais deux boutons pleins ou encadrés empilés : le second appel est un lien, comme sur l'accueil |
+| Chapô de section | Une ou deux phrases. Ce que le titre ou le hero ont déjà dit ne se redit pas |
+| Étapes | Le titre se lit seul, le texte tient en une ou deux phrases. Elie : *« si les gens veulent lire le texte, ils le lisent, mais s'ils ne veulent pas, ils ne le lisent pas »* |
+| Texte de fond (villes, pages réseaux locales, services, à propos, articles, guides) | **On découpe, on ne coupe pas.** `ParagrapheDecoupe` coupe un paragraphe aux fins de phrase, en morceaux d'environ trois lignes, **sous `lg` seulement**. Le texte reste entier, le grand écran ne bouge pas |
+| Bande qui défile | Jamais de carrousel dedans : le doigt pousse le carrousel au lieu de la bande. Sur `/reseaux-sociaux`, celui de Nouït sort de la rangée sur téléphone |
+
+### Ce qui a changé
+
+- **`/creation-site-web`, la page du pilier n°1** (`SitesWeb.tsx`), demandée
+  par Elie : *« fais une page site web »*. Les formules (`ServicesSection`),
+  le déroulé en trois étapes, deux sites, les avis (qui parlent tous de
+  sites), le lien vers l'offre réseaux qui comprend un site, une FAQ de six
+  questions et les six zones liées vers leurs pages de villes. Titre
+  « Création de Site Web Professionnel », sans nom de lieu : **elle porte
+  l'offre, les pages de villes portent le lieu**. Schémas `Service` (avec
+  `@id` `/creation-site-web#service`, repris dans `JsonLd`), `FAQPage`,
+  `BreadcrumbList`. Elle remplace l'ancienne page Tarifs sans la restaurer :
+  celle-là portait des pastilles « le plus populaire » et des couronnes.
+- **Accueil** : chapô du hero de 33 à 21 mots, **logos sur une ligne qui
+  défile** (demande d'Elie : on en ajoute un, il prend sa place dans la
+  ligne), section réseaux allégée, les formules remplacées par une ligne de
+  prix sous le portfolio, « Tout le reste » ne liste plus les deux piliers.
+- **La fin de page des quatorze pages** disait « Ce que vos clients voient de
+  vous, et ce qui vous coûte des clients ». Elie : *« on ne comprend
+  rien »*. Elle dit **« Je regarde votre présence en ligne. Et je vous dis
+  quoi corriger, gratuitement. »**, et la liste « Ce que vous recevez » ne
+  s'affiche plus que sur grand écran.
+- **`/services`** : les sept descriptions en une ou deux phrases, et sur
+  téléphone ni le décor animé (deux écrans de maquette) ni les sur-titres en
+  majuscules espacées.
+
+### Ce qui a été trouvé en route, et corrigé
+
+| Défaut | Où |
+|---|---|
+| « Le contexte **à** Savoie », « Et si on filmait chez vous, **à** Haute-Savoie ? » | Les pages département des deux piliers. On teste le nom (`/Savoie$/`), pas `scope` : `/web-designer-savoie` est une zone qui s'appelle « Albertville » |
+| « Haute-Savoie, Haute-Savoie » dans la pastille de lieu | Pages département |
+| « +38 % de contacts », un badge « #1 » Google, des compteurs « 4 812 » et « 318 » | Maquettes de `/services`, survivantes du ménage du 11 octobre. **Aucun compteur nulle part** |
+| Le chapô de `/audit-gratuit` disait « les trois endroits » au dessus de la section « Quatre endroits » | Phrase retirée en raccourcissant |
+| Le « 1 » de la première étape, plus étroit que le « 2 », décalait son titre | Section réseaux de l'accueil, grand écran |
+
+### Là où Elie n'a pas été suivi à la lettre
+
+1. **« Les prix des sites web ne doivent pas être sur l'accueil »** : les
+   formules sont parties, **le prix est resté**, en une ligne. C'est le
+   pilier n°1, et les prix sont publics depuis le 13 septembre parce que tous
+   les concurrents locaux en affichent un dans leur extrait Google.
+2. **« Trop de texte »** sur les pages de villes : découpé, pas coupé. Leur
+   texte local est ce qui les distingue d'une page satellite.
+3. **Les logos qui défilent** : oui, mais la bande s'arrête sous le doigt et
+   reste immobile pour qui a coupé les animations (WCAG 2.2.2, un contenu qui
+   bouge plus de cinq secondes doit pouvoir s'arrêter).
+
+### Le contrôle qui l'attrape : `npm run check:densite`
+
+Quinze pages, un gabarit de chaque, à 390 px dans un vrai Chrome. Il signale
+les paragraphes de plus de quatre lignes (un paragraphe découpé est jugé sur
+son plus long morceau) et les chapôs de hero de plus de trente mots. **Il
+signale, il ne bloque pas** : une phrase unique de cinq lignes ne se découpe
+pas. Aucun contrôle existant ne voyait ce défaut, et c'est le quatrième de la
+famille « ne se lit que dans les pixels rendus », après `check:overflow`,
+`check:hierarchie` et `check:maillage`.
+
+> ⚠️ `check:a11y` signale deux contrastes insuffisants sur le bouton
+> « Accepter » de la carte cookies, à 375 px. **C'est la mesure qui tombe
+> pendant le fondu d'apparition de la carte**, pas une vraie couleur : le
+> même bouton passe une fois apparu. À corriger dans le script (attendre la
+> fin de la transition), pas dans la carte.
+
 ## Contrôles automatiques avant de livrer
 
 Une seule commande : `npm run check`. Elle enchaîne les quatre.
@@ -1853,6 +1946,7 @@ Une seule commande : `npm run check`. Elle enchaîne les quatre.
 | `npm run check:overflow` | Le débordement horizontal, 9 pages sur 7 largeurs de 320 à 1440 px. Demande le serveur de dev allumé |
 | `npm run check:hierarchie` | **Le titre de page domine-t-il ses titres de section ?** 15 pages, dont un article, un guide et une catégorie, sur 6 largeurs, dans un vrai Chrome, en comparant les tailles calculées. C'est le seul qui voit qu'un `h1` est plus petit qu'un `h2` sur téléphone. Demande le serveur allumé |
 | `npm run check:maillage` | **Est-ce qu'on peut atteindre chaque page en cliquant ?** Ouvre les pages hors articles dans un vrai Chrome, relève les liens après le rendu de React, remonte de proche en proche, et liste ce que seul le sitemap atteint. Demande le serveur de dev allumé |
+| `npm run check:densite` | **Les paragraphes trop longs sur téléphone**, et les chapôs de hero de plus de trente mots. 15 pages à 390 px. Signale, ne bloque pas. Demande le serveur allumé |
 | `npm run check:navigateur` | Les deux d'un coup |
 | `npm run captures [/route] [--mobile]` | Écrit les captures de relecture dans `.captures/`, une par tranche d'écran. Le volet navigateur de l'éditeur rend à 800 px : on ne peut pas y juger une page dessinée pour 1440 |
 
