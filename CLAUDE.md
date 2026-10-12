@@ -563,8 +563,15 @@ vivent dans une rangée à part du même bloc, sous Isabelle et Nouït
 > commercial. Le registre des accords est dans `publications-livrees.ts`.
 > Au 11 octobre : **Génération Menuiserie 73**, **Parcs et Jardins** et **La
 > Cuisine by Louise Verlaine** (Chambéry). Cette dernière demandait aussi un
-> lien vers son site : **le nom oui, le lien non**, tranché par Elie. Belle Belle Belle
-> n'avait pas été prévenue d'une diffusion au tournage.
+> lien vers son site : **le nom oui, le lien non**, tranché par Elie.
+> **Belle Belle Belle** a dit oui le 12 octobre, pour ses deux vidéos : celle
+> d'exposant, et l'interview de Guy André qu'Elie a publiée sur son Instagram
+> (seule vidéo du site avec un lien « Voir sur Instagram »).
+>
+> ⚠️ **Pas de citation de Guy sur le site sans son écrit.** Il a dit à Elie que
+> c'était « la meilleure vidéo » qu'il ait eue pour son commerce, mais à
+> l'oral. Une citation attribuée à une personne nommée se publie mot pour mot,
+> d'après un message écrit, et avec son accord.
 
 ⚠️ **La rangée du salon est une bande qui défile** (`BandeVideos`) depuis le
 11 octobre 2026 : trois vidéos visibles, des flèches au dessus dès qu'il y en

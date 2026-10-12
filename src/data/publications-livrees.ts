@@ -193,6 +193,7 @@ export const clientesLivrees: ClienteLivree[] = [
  * | Generation Menuiserie 73 (Yohann) | « Avec plaisir », WhatsApp, 10 octobre 2026 |
  * | Parcs et Jardins (Cyril Delavigne) | « Pas de soucis, vous pouvez publier la video », WhatsApp, 10 octobre 2026 |
  * | La Cuisine by Louise Verlaine, Chambery | « Oui, bien sur, avec grand plaisir », WhatsApp, 11 octobre 2026 |
+ * | Belle Belle Belle (Guy Andre), les deux videos | « Oui bien sur Guy etait ok », WhatsApp, 12 octobre 2026 |
  *
  * ⚠️ Louise Verlaine demandait aussi un lien vers son site. Elie a tranche
  * le 11 octobre : le nom oui, le lien non. Un lien sortant ici donnerait de
@@ -224,6 +225,34 @@ export type VideoSalon = {
 };
 
 export const videosSalon: VideoSalon[] = [
+  {
+    // L'interview qu'Elie a tournee pour son propre compte, et publiee le
+    // 11 octobre. Elle passe en tete : Elie, « en vrai, le rendu est super
+    // bien », et c'est la seule qui renvoie vers son Instagram.
+    id: 'salon-belle-belle-belle-guy-andre',
+    entreprise: 'Guy André, Belle Belle Belle',
+    metierFr: 'son plus gros risque, en interview',
+    metierEn: 'his biggest risk, in an interview',
+    fichier: '/publications/videos/salon-belle-belle-belle-guy-andre.mp4',
+    poster: '/publications/videos/salon-belle-belle-belle-guy-andre.webp',
+    questionFr: 'Votre plus gros risque',
+    questionEn: 'Your biggest risk',
+    lien: {
+      libelleFr: 'Voir sur Instagram',
+      libelleEn: 'Watch on Instagram',
+      href: 'https://www.instagram.com/reel/DeWRghJI6Pa/',
+    },
+  },
+  {
+    // La video livree a l'exposant, comme les autres. Son atelier de
+    // fabrication est a Saint-Jean-de-Maurienne, il le dit a la fin.
+    id: 'salon-belle-belle-belle',
+    entreprise: 'Belle Belle Belle',
+    metierFr: 'cuisines sur mesure, Saint-Jean-de-Maurienne',
+    metierEn: 'made-to-measure kitchens, Saint-Jean-de-Maurienne',
+    fichier: '/publications/videos/salon-belle-belle-belle.mp4',
+    poster: '/publications/videos/salon-belle-belle-belle.webp',
+  },
   {
     id: 'salon-generation-menuiserie-73',
     entreprise: 'Génération Menuiserie 73',
@@ -317,6 +346,7 @@ const ORDRE_ACCUEIL = [
   'isabelle-une-forme',
   'nouit-quand-tout-va-bien',
   'salon-louise-verlaine-chambery',
+  'salon-belle-belle-belle-guy-andre',
   'isabelle-maternelle',
   'nouit-boule-de-cristal',
   'salon-parcs-et-jardins',
@@ -327,7 +357,13 @@ const ORDRE_ACCUEIL = [
    Elie, le 11 octobre 2026 : « ne mets pas la video de Generation
    Menuiserie, mets une autre. Tu peux mettre celle de la cuisine Verlaine,
    elle est mieux. » */
-const EXCLUES_ACCUEIL = ['salon-generation-menuiserie-73'];
+const EXCLUES_ACCUEIL = [
+  'salon-generation-menuiserie-73',
+  // Guy est deja sur l'accueil avec l'interview, qui porte le lien vers
+  // l'Instagram d'Elie. Deux videos de la meme personne cote a cote dans la
+  // bande se lisent comme un doublon.
+  'salon-belle-belle-belle',
+];
 
 const toutes = [...clientesLivrees.flatMap(depuisCliente), ...videosSalon.map(depuisSalon)].filter(
   (v) => !EXCLUES_ACCUEIL.includes(v.id)
