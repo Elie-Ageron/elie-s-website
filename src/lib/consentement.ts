@@ -66,7 +66,7 @@ const effacerCookiesDeMesure = () => {
   const domaines = ['', window.location.hostname, `.${window.location.hostname.replace(/^www\./, '')}`];
   document.cookie.split(';').forEach((morceau) => {
     const nom = morceau.split('=')[0].trim();
-    if (!/^(_ga|_gid|_gat|_hj)/.test(nom)) return;
+    if (!/^(_ga|_gid|_gat|_hj|_cs_)/.test(nom)) return;
     domaines.forEach((domaine) => {
       document.cookie = `${nom}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/${domaine ? `; domain=${domaine}` : ''}`;
     });

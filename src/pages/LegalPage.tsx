@@ -168,8 +168,8 @@ const LegalPage = ({ page }: LegalPageProps) => {
                 </li>
                 <li>
                   {isFr
-                    ? "Hotjar : les clics, le défilement, et des enregistrements de navigation qui montrent où l'on hésite. Ce que vous tapez dans les formulaires est masqué et n'est jamais enregistré. Cookies _hjSessionUser_* (1 an) et _hjSession_* (30 minutes)."
-                    : 'Hotjar: clicks, scrolling, and session recordings that show where people hesitate. Anything you type into forms is masked and never recorded. Cookies _hjSessionUser_* (1 year) and _hjSession_* (30 minutes).'}
+                    ? "Hotjar : les clics, le défilement, et des enregistrements de navigation qui montrent où l'on hésite. Ce que vous tapez dans les formulaires est masqué et n'est jamais enregistré. Cookies _cs_id (13 mois) et _cs_s (30 minutes)."
+                    : 'Hotjar: clicks, scrolling, and session recordings that show where people hesitate. Anything you type into forms is masked and never recorded. Cookies _cs_id (13 months) and _cs_s (30 minutes).'}
                 </li>
               </ul>
               <p className="text-muted-foreground">
@@ -215,8 +215,8 @@ const LegalPage = ({ page }: LegalPageProps) => {
               </h2>
               <p className="text-muted-foreground">
                 {isFr
-                  ? 'Le site est hébergé par Vercel. Google, Vercel et Calendly sont des sociétés américaines, adhérentes au cadre de protection des données UE / États-Unis (Data Privacy Framework). Hotjar est une société européenne, basée à Malte, qui stocke ses données en Irlande.'
-                  : 'The site is hosted by Vercel. Google, Vercel and Calendly are US companies certified under the EU-US Data Privacy Framework. Hotjar is a European company based in Malta that stores its data in Ireland.'}
+                  ? "Le site est hébergé par Vercel. Google, Vercel et Calendly sont des sociétés américaines, adhérentes au cadre de protection des données UE / États-Unis (Data Privacy Framework). Hotjar appartient à Contentsquare, société française basée à Paris, qui héberge ses données dans l'Union européenne."
+                  : 'The site is hosted by Vercel. Google, Vercel and Calendly are US companies certified under the EU-US Data Privacy Framework. Hotjar is owned by Contentsquare, a French company based in Paris that hosts its data in the European Union.'}
               </p>
             </section>
 

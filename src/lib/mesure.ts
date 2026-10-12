@@ -8,15 +8,15 @@
 
 // ID de mesure GA4, il commence par « G- ». analytics.google.com > Admin > Flux de donnees.
 export const GA_ID = '';
-// Site ID Hotjar, un nombre. insights.hotjar.com > Sites & Organizations.
-export const HOTJAR_ID = '';
+// Hotjar appartient a Contentsquare : un compte cree depuis 2025 ne donne plus
+// de Site ID mais un tag Contentsquare. Donne par Elie le 12 octobre 2026.
+export const HOTJAR_TAG = 'https://t.contentsquare.net/uxa/3e21667efab51.js';
 
 declare global {
   interface Window {
     dataLayer: unknown[];
     gtag: (...args: unknown[]) => void;
-    hj?: ((...args: unknown[]) => void) & { q?: unknown[] };
-    _hjSettings?: { hjid: number; hjsv: number };
+    _uxa?: unknown[];
   }
 }
 
@@ -50,17 +50,22 @@ export const chargerMesure = () => {
     ajouterScript(`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`);
   }
 
-  if (HOTJAR_ID) {
-    const hj =
-      window.hj ||
-      Object.assign(
-        (...args: unknown[]) => {
-          (hj.q = hj.q || []).push(args);
-        },
-        { q: [] as unknown[] },
-      );
-    window.hj = hj;
-    window._hjSettings = { hjid: Number(HOTJAR_ID), hjsv: 6 };
-    ajouterScript(`https://static.hotjar.com/c/hotjar-${HOTJAR_ID}.js?sv=6`);
+  if (HOTJAR_TAG) {
+    window._uxa = window._uxa || [];
+    window._uxa.push(['setPath', cheminCourant()]);
+    ajouterScript(HOTJAR_TAG);
   }
+};
+
+const cheminCourant = () => window.location.pathname + window.location.hash.replace('#', '?__');
+
+/**
+ * ⚠️ Le tag Contentsquare ne voit pas les changements de route d'une
+ * application React : il compte une page par chargement complet. Chaque
+ * navigation doit donc lui etre signalee, sinon toute la visite est rangee
+ * sous la premiere page ouverte. GA4, lui, les voit tout seul.
+ */
+export const signalerPage = () => {
+  if (!charge || !HOTJAR_TAG || !window._uxa) return;
+  window._uxa.push(['trackPageview', cheminCourant()]);
 };
