@@ -76,6 +76,9 @@ Les 7 services (source unique : `src/data/services.ts`, **l'ordre du tableau pil
 - 🔴 **Jamais d'accord par défaut.** Elie l'avait demandé le 2 octobre 2026, écarté : la CNIL exige un clic sur « Accepter » avant tout cookie de mesure. **« Refuser » garde la même taille qu'« Accepter ».**
 - ⚠️ Le conteneur GTM-MTQ3GP5H d'`index.html` est **vide** (aucune balise publiée). Ne pas y publier GA4 : double comptage, et hors bandeau.
 - ⚠️ Calendly reste préchargé sur toutes les pages, choix d'Elie du 2 octobre 2026. La politique de confidentialité le déclare.
+- ⚠️ **Le compte Hotjar est un essai Contentsquare** (15 jours restants au 12 octobre 2026), qui n'enregistre en vidéo qu'environ 15 % des sessions (`quotas.RECORDING` dans `t.contentsquare.net/settings/1076220.json`). Toutes les visites acceptées sont comptées, toutes ne sont pas filmées. Ça se règle par l'abonnement, pas dans le code.
+- ⚠️ Le projet Contentsquare suit déjà les changements de route de React. **Ne pas envoyer de `trackPageview` à la main**, chaque page serait comptée deux fois.
+- 🔴 **Une relecture Hotjar redemande la feuille de style au moment où on la regarde.** Avec un nom à empreinte, chaque déploiement la supprimait et les relectures plus anciennes s'affichaient en HTML brut. La feuille d'entrée s'appelle donc `assets/index.css?v=<empreinte>` (`versionnerCss` dans `vite.config.ts`), et aucune image n'est plus inlinée en base64 (les relectures n'affichent pas les `data:`).
 
 ### Fichiers techniques
 - `index.html` — Meta tags statiques (fallback pour crawlers), schemas JSON-LD statiques
