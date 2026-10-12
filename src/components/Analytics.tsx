@@ -1,8 +1,7 @@
-import { useEffect, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import { Analytics as VercelAnalytics } from '@vercel/analytics/react';
 import { EVENEMENT_CHOIX, effacerCookiesDeMesure, lireChoix } from '@/lib/consentement';
-import { chargerMesure, signalerPage } from '@/lib/mesure';
+import { chargerMesure } from '@/lib/mesure';
 
 /**
  * Deux etages de mesure, et ils n'ont pas la meme regle.
@@ -30,18 +29,6 @@ const Analytics = () => {
     window.addEventListener(EVENEMENT_CHOIX, surChoix);
     return () => window.removeEventListener(EVENEMENT_CHOIX, surChoix);
   }, []);
-
-  // La premiere page est comptee au chargement du tag (`setPath`), on ne
-  // signale donc que les navigations suivantes.
-  const { pathname } = useLocation();
-  const premiere = useRef(true);
-  useEffect(() => {
-    if (premiere.current) {
-      premiere.current = false;
-      return;
-    }
-    signalerPage();
-  }, [pathname]);
 
   return <VercelAnalytics />;
 };

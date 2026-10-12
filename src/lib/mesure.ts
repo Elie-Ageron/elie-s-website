@@ -16,7 +16,6 @@ declare global {
   interface Window {
     dataLayer: unknown[];
     gtag: (...args: unknown[]) => void;
-    _uxa?: unknown[];
   }
 }
 
@@ -58,21 +57,12 @@ export const chargerMesure = () => {
   }
 
   if (HOTJAR_TAG) {
-    window._uxa = window._uxa || [];
-    window._uxa.push(['setPath', cheminCourant()]);
+    // ⚠️ Rien a signaler a la main quand la route change : le projet
+    // Contentsquare porte deja une regle « ArtificialPageview » sur
+    // pushState et popstate (visible dans t.contentsquare.net/settings/1076220.json).
+    // Un `trackPageview` en plus comptait chaque page deux fois, corrige le
+    // 12 octobre 2026.
     ajouterScript(HOTJAR_TAG);
   }
 };
 
-const cheminCourant = () => window.location.pathname + window.location.hash.replace('#', '?__');
-
-/**
- * ⚠️ Le tag Contentsquare ne voit pas les changements de route d'une
- * application React : il compte une page par chargement complet. Chaque
- * navigation doit donc lui etre signalee, sinon toute la visite est rangee
- * sous la premiere page ouverte. GA4, lui, les voit tout seul.
- */
-export const signalerPage = () => {
-  if (!charge || !HOTJAR_TAG || !window._uxa) return;
-  window._uxa.push(['trackPageview', cheminCourant()]);
-};
