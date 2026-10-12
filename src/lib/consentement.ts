@@ -51,6 +51,9 @@ export const enregistrerChoix = (choix: Choix) => {
 
   // Un retrait doit effacer ce qui a deja ete pose, pas seulement arreter
   // d'en poser. Les scripts deja charges ne se dechargent pas : on recharge.
+  // ⚠️ Effacer ne suffit pas : gtag repose `_ga_*` au dechargement de la
+  // page. Le nettoyage est donc refait au chargement suivant, par
+  // `Analytics.tsx`, sur une page ou plus rien ne tourne.
   if (avant === 'accepte' && choix === 'refuse') {
     effacerCookiesDeMesure();
     window.location.reload();
@@ -62,7 +65,7 @@ export const rouvrirBandeau = () => {
   window.dispatchEvent(new Event(EVENEMENT_OUVRIR));
 };
 
-const effacerCookiesDeMesure = () => {
+export const effacerCookiesDeMesure = () => {
   const domaines = ['', window.location.hostname, `.${window.location.hostname.replace(/^www\./, '')}`];
   document.cookie.split(';').forEach((morceau) => {
     const nom = morceau.split('=')[0].trim();

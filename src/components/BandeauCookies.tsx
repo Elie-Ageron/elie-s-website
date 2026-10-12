@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Cookie } from 'lucide-react';
 import { useLanguage, preferePeutEtreAnglais } from '@/contexts/LanguageContext';
 import { EVENEMENT_OUVRIR, enregistrerChoix, lireChoix } from '@/lib/consentement';
 
@@ -22,6 +23,12 @@ import { EVENEMENT_OUVRIR, enregistrerChoix, lireChoix } from '@/lib/consentemen
  * ⚠️ Rien ne s'affiche avant le montage, comme `BandeauLangue` : le bandeau
  * n'existe ni dans le HTML pre-rendu ni pour un robot. Il est hors flux, il
  * ne decale donc rien (CLS de l'accueil a zero).
+ *
+ * Elie, le meme jour, a la premiere version : *« on dirait que c'est inclus
+ * dans le site »*. Meme fond que la page, ombre legere : elle s'y fondait.
+ * Elle est maintenant blanche sur le papier, avec une vraie ombre portee,
+ * le filet rose en tete et un pictogramme qui dit « cookies » avant qu'on
+ * lise. Toujours rien de sombre, rien qui pulse.
  *
  * ⚠️ Sur telephone il s'arrete a 88 px du bord droit : la bulle WhatsApp
  * vit en bas a droite et il la recouvrait.
@@ -91,11 +98,19 @@ const BandeauCookies = () => {
       role="region"
       aria-label="Cookies"
       lang={t === textes.en ? 'en' : 'fr'}
-      className={`fixed bottom-4 left-4 right-[5.5rem] z-50 sm:right-auto sm:bottom-6 sm:left-6 sm:w-[23rem] rounded-2xl border border-border bg-background p-4 sm:p-5 shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300 motion-reduce:transition-none ${
-        entre ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
+      className={`fixed bottom-4 left-4 right-[5.5rem] z-50 sm:right-auto sm:bottom-6 sm:left-6 sm:w-[23rem] overflow-hidden rounded-2xl border border-foreground/10 bg-card p-4 pt-5 sm:p-5 sm:pt-6 shadow-[0_2px_6px_rgba(0,0,0,0.06),0_16px_48px_rgba(0,0,0,0.16)] transition-all duration-500 ease-out motion-reduce:transition-none ${
+        entre ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
       }`}
     >
-      <p className="font-semibold text-foreground text-base">{t.titre}</p>
+      {/* Le filet rose du site, en tete de carte : c'est lui qui la detache
+          du fond papier. Sans lui elle se lisait comme un bloc de la page. */}
+      <span aria-hidden="true" className="absolute inset-x-0 top-0 h-1 bg-primary" />
+      <p className="flex items-center gap-2.5 font-semibold text-foreground text-base">
+        <span aria-hidden="true" className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+          <Cookie className="h-[18px] w-[18px]" strokeWidth={2} />
+        </span>
+        {t.titre}
+      </p>
       <p className="mt-1.5 text-base lg:text-sm text-muted-foreground leading-relaxed">
         {t.corps}{' '}
         <Link

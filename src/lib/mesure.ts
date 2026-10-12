@@ -7,7 +7,7 @@
  */
 
 // ID de mesure GA4, il commence par « G- ». analytics.google.com > Admin > Flux de donnees.
-export const GA_ID = '';
+export const GA_ID = 'G-4Y7HSBC6QQ';
 // Hotjar appartient a Contentsquare : un compte cree depuis 2025 ne donne plus
 // de Site ID mais un tag Contentsquare. Donne par Elie le 12 octobre 2026.
 export const HOTJAR_TAG = 'https://t.contentsquare.net/uxa/3e21667efab51.js';
@@ -46,7 +46,14 @@ export const chargerMesure = () => {
     // GA4 pose 2 ans par defaut. Les pages vues des changements de route sont
     // comptees par GA4 lui meme (mesure amelioree, historique du navigateur) :
     // ne pas en envoyer a la main, elles seraient comptees deux fois.
-    window.gtag('config', GA_ID, { cookie_expires: 60 * 60 * 24 * 395 });
+    // 🔴 Signaux Google et personnalisation publicitaire coupes : sans ca,
+    // gtag envoie aussi une requete a stats.g.doubleclick.net, la regie pub
+    // de Google. Le bandeau promet « pas de pub », il doit rester vrai.
+    window.gtag('config', GA_ID, {
+      cookie_expires: 60 * 60 * 24 * 395,
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false,
+    });
     ajouterScript(`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`);
   }
 

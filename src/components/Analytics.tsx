@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Analytics as VercelAnalytics } from '@vercel/analytics/react';
-import { EVENEMENT_CHOIX, lireChoix } from '@/lib/consentement';
+import { EVENEMENT_CHOIX, effacerCookiesDeMesure, lireChoix } from '@/lib/consentement';
 import { chargerMesure, signalerPage } from '@/lib/mesure';
 
 /**
@@ -21,7 +21,9 @@ import { chargerMesure, signalerPage } from '@/lib/mesure';
  */
 const Analytics = () => {
   useEffect(() => {
-    if (lireChoix() === 'accepte') chargerMesure();
+    const choix = lireChoix();
+    if (choix === 'accepte') chargerMesure();
+    if (choix === 'refuse') effacerCookiesDeMesure();
     const surChoix = (e: Event) => {
       if ((e as CustomEvent).detail === 'accepte') chargerMesure();
     };
