@@ -58,7 +58,24 @@ Les 7 services (source unique : `src/data/services.ts`, **l'ordre du tableau pil
 - `src/components/ReviewSchema.tsx` — Review schemas
 - `src/components/Breadcrumb.tsx` — Breadcrumb visuel
 - ~~`src/components/InternalLinks.tsx`~~ — **supprimé le 11 octobre 2026**, voir « Une seule fin de page ». La navigation de fin de page, c'est le pied de page
-- `src/components/Analytics.tsx` — GTM (GTM-MTQ3GP5H)
+- `src/components/Analytics.tsx` — Vercel Web Analytics pour tous, GA4 et Hotjar après consentement. Voir « Mesure d'audience et cookies » plus bas
+
+### Mesure d'audience et cookies (12 octobre 2026)
+
+> Elie : *« je veux pouvoir voir qui vient, ce qu'ils font sur le site »*, et
+> pour le bandeau : *« un truc en bas à gauche qui n'empêche pas d'utiliser le
+> site »*, qui *« doit donner envie de cliquer sur Accepter »*.
+
+| Outil | Consentement | Où |
+|---|---|---|
+| Vercel Web Analytics | non, aucun cookie | `Analytics.tsx`, à activer dans le tableau de bord Vercel |
+| Google Analytics 4 | oui | `GA_ID` dans `src/lib/mesure.ts` |
+| Hotjar | oui | `HOTJAR_ID` dans `src/lib/mesure.ts` |
+
+- `BandeauCookies.tsx` : carte en bas à gauche, sans voile, choix gardé 6 mois (`src/lib/consentement.ts`). Lien « Cookies » dans le pied de page et bouton sur `/politique-confidentialite` pour changer d'avis.
+- 🔴 **Jamais d'accord par défaut.** Elie l'avait demandé le 2 octobre 2026, écarté : la CNIL exige un clic sur « Accepter » avant tout cookie de mesure. **« Refuser » garde la même taille qu'« Accepter ».**
+- ⚠️ Le conteneur GTM-MTQ3GP5H d'`index.html` est **vide** (aucune balise publiée). Ne pas y publier GA4 : double comptage, et hors bandeau.
+- ⚠️ Calendly reste préchargé sur toutes les pages, choix d'Elie du 2 octobre 2026. La politique de confidentialité le déclare.
 
 ### Fichiers techniques
 - `index.html` — Meta tags statiques (fallback pour crawlers), schemas JSON-LD statiques

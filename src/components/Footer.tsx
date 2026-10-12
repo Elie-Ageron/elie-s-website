@@ -1,5 +1,6 @@
 ﻿import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
+import { rouvrirBandeau } from '@/lib/consentement';
 import logo from '@/assets/logo.webp';
 import { cities } from '@/data/cities';
 
@@ -196,6 +197,9 @@ const Footer = () => {
                 <Link to="/politique-confidentialite" className="inline-flex items-center min-h-[44px] sm:min-h-[24px] hover:text-primary transition-colors">
                   {language === 'fr' ? 'Confidentialité' : 'Privacy'}
                 </Link>
+                <button type="button" onClick={rouvrirBandeau} className="inline-flex items-center min-h-[44px] sm:min-h-[24px] hover:text-primary transition-colors">
+                  Cookies
+                </button>
               </div>
             </div>
           </div>

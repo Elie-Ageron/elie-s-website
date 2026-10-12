@@ -1,5 +1,6 @@
 ﻿import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { rouvrirBandeau } from '@/lib/consentement';
 
 interface LegalPageProps {
   page: 'mentions' | 'privacy';
@@ -125,50 +126,97 @@ const LegalPage = ({ page }: LegalPageProps) => {
               {isFr ? 'Politique de Confidentialité' : 'Privacy Policy'}
             </h1>
             <p className="text-sm text-muted-foreground">
-              {isFr ? 'Dernière mise à jour : mars 2026' : 'Last updated: March 2026'}
+              {isFr ? 'Dernière mise à jour : octobre 2026' : 'Last updated: October 2026'}
             </p>
 
             <section className="space-y-3">
               <h2 className="text-xl font-semibold text-foreground">
-                {isFr ? '1. Données collectées' : '1. Data Collected'}
+                {isFr ? "1. Ce que vous m'envoyez" : '1. What you send me'}
               </h2>
               <p className="text-muted-foreground">
                 {isFr
-                  ? 'Lors de votre utilisation du formulaire de contact, nous collectons les données suivantes : nom, adresse e-mail, numéro de téléphone (optionnel) et le message envoyé. Ces données sont utilisées uniquement pour répondre à votre demande.'
-                  : 'When you use the contact form, we collect the following data: name, email address, phone number (optional) and the message sent. This data is used solely to respond to your inquiry.'}
+                  ? "Le formulaire d'audit gratuit demande le nom de votre entreprise et votre numéro de téléphone. Le formulaire de contact demande votre nom, votre adresse e-mail, votre téléphone si vous le donnez, et votre message. Ces informations arrivent dans un tableau Google et dans ma boîte mail. Elles servent à vous répondre et à suivre notre échange, rien d'autre. Je les garde 3 ans après notre dernier contact."
+                  : 'The free audit form asks for your business name and phone number. The contact form asks for your name, email address, phone number if you give it, and your message. This information lands in a Google spreadsheet and in my inbox. It is used to reply to you and follow up on our conversation, nothing else. I keep it for 3 years after our last contact.'}
               </p>
+            </section>
+
+            <section id="cookies" className="space-y-3 scroll-mt-28">
+              <h2 className="text-xl font-semibold text-foreground">
+                {isFr ? "2. Cookies et mesure d'audience" : '2. Cookies and analytics'}
+              </h2>
+              <p className="text-muted-foreground">
+                {isFr
+                  ? 'Je mesure la fréquentation du site pour voir ce qui sert et ce qui bloque. Je ne fais pas de publicité, et je ne vends ni ne transmets ces données à qui que ce soit pour vous démarcher.'
+                  : "I measure how the site is used to see what helps and what gets in the way. I don't run ads, and I don't sell or pass this data on to anyone to market to you."}
+              </p>
+              <h3 className="text-lg font-semibold text-foreground pt-2">
+                {isFr ? 'Sans votre accord, et sans cookie' : 'Without your consent, and without cookies'}
+              </h3>
+              <p className="text-muted-foreground">
+                {isFr
+                  ? "Vercel Web Analytics compte les visites : pages vues, site d'où vous venez, pays, type d'appareil. Il ne dépose rien dans votre navigateur et ne permet pas de vous reconnaître d'une visite à l'autre. C'est pour cette raison qu'il ne demande pas d'accord."
+                  : "Vercel Web Analytics counts visits: pages viewed, the site you came from, country, device type. It stores nothing in your browser and can't recognise you from one visit to the next. That's why it doesn't need your consent."}
+              </p>
+              <h3 className="text-lg font-semibold text-foreground pt-2">
+                {isFr ? 'Seulement si vous cliquez sur « Accepter »' : 'Only if you click "Accept"'}
+              </h3>
+              <ul className="text-muted-foreground space-y-2 list-disc pl-5">
+                <li>
+                  {isFr
+                    ? 'Google Analytics : le parcours sur le site, la durée des visites, la provenance, la ville approximative. Cookies _ga et _ga_*, gardés 13 mois au plus.'
+                    : 'Google Analytics: how you move through the site, visit length, where you came from, approximate city. Cookies _ga and _ga_*, kept for 13 months at most.'}
+                </li>
+                <li>
+                  {isFr
+                    ? "Hotjar : les clics, le défilement, et des enregistrements de navigation qui montrent où l'on hésite. Ce que vous tapez dans les formulaires est masqué et n'est jamais enregistré. Cookies _hjSessionUser_* (1 an) et _hjSession_* (30 minutes)."
+                    : 'Hotjar: clicks, scrolling, and session recordings that show where people hesitate. Anything you type into forms is masked and never recorded. Cookies _hjSessionUser_* (1 year) and _hjSession_* (30 minutes).'}
+                </li>
+              </ul>
+              <p className="text-muted-foreground">
+                {isFr
+                  ? "Votre choix est gardé 6 mois, puis je vous redemande. Vous pouvez changer d'avis à tout moment, et un refus efface les cookies déjà posés."
+                  : 'Your choice is kept for 6 months, then I ask again. You can change your mind at any time, and declining deletes any cookies already set.'}
+              </p>
+              <button
+                type="button"
+                onClick={rouvrirBandeau}
+                className="inline-flex min-h-[44px] items-center rounded-full border border-border px-5 text-sm font-semibold text-foreground hover:bg-muted transition-colors"
+              >
+                {isFr ? 'Changer mon choix' : 'Change my choice'}
+              </button>
             </section>
 
             <section className="space-y-3">
               <h2 className="text-xl font-semibold text-foreground">
-                {isFr ? '2. Finalité du traitement' : '2. Purpose of Processing'}
+                {isFr ? '3. Les autres services chargés par le site' : '3. Other services the site loads'}
               </h2>
-              <ul className="text-muted-foreground space-y-1 list-disc list-inside">
-                <li>{isFr ? 'Répondre aux demandes de contact et de devis' : 'Responding to contact and quote requests'}</li>
-                <li>{isFr ? 'Assurer le suivi de la relation commerciale' : 'Managing the commercial relationship'}</li>
-                <li>{isFr ? 'Améliorer les performances du site (analytics)' : 'Improving site performance (analytics)'}</li>
+              <ul className="text-muted-foreground space-y-2 list-disc pl-5">
+                <li>
+                  {isFr
+                    ? "Calendly, l'outil de prise de rendez-vous, est préchargé pour s'ouvrir sans attendre. Il peut déposer ses propres cookies, selon sa politique de confidentialité."
+                    : 'Calendly, the booking tool, is preloaded so it opens instantly. It may set its own cookies, under its own privacy policy.'}
+                </li>
+                <li>
+                  {isFr
+                    ? "Fontshare fournit la police du site. Comme pour toute ressource chargée depuis un autre serveur, votre adresse IP lui est transmise pour qu'il puisse l'envoyer."
+                    : 'Fontshare serves the site font. As with any resource loaded from another server, your IP address is sent to it so it can deliver the file.'}
+                </li>
+                <li>
+                  {isFr
+                    ? "Votre navigateur garde aussi deux réglages qui ne servent qu'au site : la langue choisie et votre réponse sur les cookies. Ils ne quittent pas votre appareil."
+                    : 'Your browser also keeps two settings used only by this site: your chosen language and your cookie answer. They never leave your device.'}
+                </li>
               </ul>
             </section>
 
             <section className="space-y-3">
               <h2 className="text-xl font-semibold text-foreground">
-                {isFr ? '3. Cookies et analytics' : '3. Cookies & Analytics'}
+                {isFr ? '4. Où vont ces données' : '4. Where this data goes'}
               </h2>
               <p className="text-muted-foreground">
                 {isFr
-                  ? "Ce site utilise des outils d'analyse d'audience (analytics) pour mesurer la fréquentation. Ces outils peuvent déposer des cookies anonymes sur votre navigateur. Vous pouvez désactiver les cookies dans les paramètres de votre navigateur."
-                  : 'This site uses audience analytics tools to measure traffic. These tools may place anonymous cookies in your browser. You can disable cookies in your browser settings.'}
-              </p>
-            </section>
-
-            <section className="space-y-3">
-              <h2 className="text-xl font-semibold text-foreground">
-                {isFr ? '4. Durée de conservation' : '4. Data Retention'}
-              </h2>
-              <p className="text-muted-foreground">
-                {isFr
-                  ? 'Les données collectées via le formulaire de contact sont conservées pendant 3 ans à compter du dernier contact, conformément à la législation française.'
-                  : 'Data collected via the contact form is retained for 3 years from the last contact, in accordance with French legislation.'}
+                  ? 'Le site est hébergé par Vercel. Google, Vercel et Calendly sont des sociétés américaines, adhérentes au cadre de protection des données UE / États-Unis (Data Privacy Framework). Hotjar est une société européenne, basée à Malte, qui stocke ses données en Irlande.'
+                  : 'The site is hosted by Vercel. Google, Vercel and Calendly are US companies certified under the EU-US Data Privacy Framework. Hotjar is a European company based in Malta that stores its data in Ireland.'}
               </p>
             </section>
 
@@ -178,9 +226,13 @@ const LegalPage = ({ page }: LegalPageProps) => {
               </h2>
               <p className="text-muted-foreground">
                 {isFr
-                  ? "Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification, d'effacement, de portabilité et d'opposition au traitement de vos données personnelles. Pour exercer ces droits, contactez-nous à :"
-                  : 'Under the General Data Protection Regulation (GDPR), you have the right to access, rectify, erase, port and object to the processing of your personal data. To exercise these rights, contact us at:'}
+                  ? 'Vous pouvez me demander de voir, corriger, supprimer ou récupérer vos données, ou vous opposer à leur utilisation. Écrivez-moi à'
+                  : 'You can ask me to see, correct, delete or export your data, or object to its use. Write to me at'}
                 {' '}<a href="mailto:elie@elieageron.com" className="text-primary hover:underline">elie@elieageron.com</a>
+                {isFr
+                  ? '. Je réponds en moins de 24 h. Si ma réponse ne vous convient pas, vous pouvez saisir la CNIL sur '
+                  : '. I reply within 24 hours. If my answer does not satisfy you, you can contact the French data protection authority (CNIL) at '}
+                <a href="https://www.cnil.fr/fr/plaintes" className="text-primary hover:underline" rel="noopener noreferrer" target="_blank">cnil.fr</a>.
               </p>
             </section>
 
@@ -189,7 +241,7 @@ const LegalPage = ({ page }: LegalPageProps) => {
                 {isFr ? '6. Responsable du traitement' : '6. Data Controller'}
               </h2>
               <p className="text-muted-foreground">
-                {isFr ? 'Responsable :' : 'Controller:'} Elie Ageron - elie@elieageron.com - Albertville, France
+                {isFr ? 'Responsable :' : 'Controller:'} Elie Ageron, elie@elieageron.com, Albertville, France
               </p>
             </section>
           </>

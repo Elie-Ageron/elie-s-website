@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 import BandeauLangue from '@/components/BandeauLangue';
+import BandeauCookies from '@/components/BandeauCookies';
 import GlobalContactForm from '@/components/GlobalContactForm';
 import PageTransition from '@/components/animations/PageTransition';
 import Breadcrumb from '@/components/Breadcrumb';
@@ -162,6 +163,7 @@ const Layout = ({ children }: LayoutProps) => {
             recouvrait le bouton d'envoi du premier ecran (31 x 42 px), et c'est
             une sortie concurrente sur la page de l'aimant. */}
         <FloatingWhatsApp masquerSurTelephone={pathname === '/audit-gratuit'} />
+        <BandeauCookies />
         <BandeauLangue />
       </div>
     </LanguageProvider>

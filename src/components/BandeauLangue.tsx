@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useLanguage, preferePeutEtreAnglais } from '@/contexts/LanguageContext';
+import { EVENEMENT_CHOIX, lireChoix } from '@/lib/consentement';
 
 /**
  * Propose l'anglais a qui lit l'anglais. Ne bascule rien tout seul.
@@ -35,7 +36,16 @@ const BandeauLangue = () => {
     } catch {
       // Stockage bloque : on propose quand meme, il reste refusable.
     }
-    setVisible(true);
+    // ⚠️ Il attend que le bandeau cookies ait eu sa reponse : les deux sont
+    // en bas de l'ecran et se recouvraient. Le cookies passe d'abord, il est
+    // le seul des deux qui conditionne ce qui se charge.
+    if (lireChoix() !== null) {
+      setVisible(true);
+      return;
+    }
+    const apresChoix = () => setVisible(true);
+    window.addEventListener(EVENEMENT_CHOIX, apresChoix, { once: true });
+    return () => window.removeEventListener(EVENEMENT_CHOIX, apresChoix);
   }, []);
 
   if (!visible) return null;
