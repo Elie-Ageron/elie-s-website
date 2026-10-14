@@ -376,11 +376,11 @@ sitemap, soit exactement la situation qui a bloqué le site en août 2026.
 > Elie veut revenir dessus. **Le bassin, pas la commune** : une page de vallée
 > se défend, une page par village non.
 
-⚠️ `SocialClientsSection` est affichée sur ces pages. Elle vit sur
-`/portfolio` et Elie l'avait fait descendre de l'accueil (*« ça ne fait pas
-assez longtemps que je gère »*). **Elle est ici parce que les deux comptes
-gérés sont à Albertville** et qu'une page qui vend une prestation sans aucune
-preuve ne tient pas. À trancher s'il n'est pas d'accord.
+⚠️ **La preuve de ces pages est la bande des vidéos livrées**
+(`VideosLivreesAccueil`) depuis le 14 octobre 2026. C'était
+`SocialClientsSection`, deux noms et des liens : les vidéos se regardent sur
+place, et ce sont les mêmes clientes d'Albertville. Voir « Les pages locales
+en points » plus bas.
 
 ⚠️ Toute nouvelle page de cette famille doit être ajoutée à
 `scripts/check-a11y.mjs` et `scripts/check-overflow.mjs` : les deux campagnes
@@ -1930,6 +1930,65 @@ famille « ne se lit que dans les pixels rendus », après `check:overflow`,
 > même bouton passe une fois apparu. À corriger dans le script (attendre la
 > fin de la transition), pas dans la carte.
 
+## Les pages locales en points (14 octobre 2026)
+
+> Elie, sur `/creation-site-web-albertville` : *« tu descends, t'as pas
+> d'éléments clairs. T'as quatre paragraphes énormes avec un texte sur le
+> contexte à Albertville, donc on comprend rien. Personne va lire ça. [...] Tu
+> dis que c'est la fin de la page, mais après t'as encore des paragraphes, des
+> avis, des prix, un audit gratuit. La mise en page est nulle. »* Puis : *« tout
+> ce genre de page archi moche, tu les améliores. »*
+
+Le découpage du 12 octobre (`ParagrapheDecoupe`) avait raccourci les
+paragraphes sans rien changer à la structure : sept à dix blocs de texte
+d'affilée, aucun élément concret, et la FAQ suivie de trois autres sections.
+
+**Vingt-six pages refaites, trois gabarits** :
+
+| Gabarit | Pages | Ordre retenu |
+|---|---|---|
+| `CityLandingPage` | 15 villes | hero, **formules et prix**, **sites livrés**, section locale, avis, réseaux en deux phrases, zone, FAQ, fin |
+| `SocialCityPage` | 6 pages réseaux | hero, les trois étapes et le prix, **vidéos livrées**, section locale, zone, FAQ, fin |
+| `ServicePage` | 5 services | hero, ce qui cloche, ce qui est livré, les services voisins, FAQ, fin |
+
+| | Avant | Après |
+|---|---|---|
+| `/creation-site-web-albertville`, 390 px | 12 175 px, prix après la FAQ | 11 088 px, **prix au 2e écran** |
+| `/community-manager-albertville` | 9 286 px | 7 077 px |
+| Premier élément concret (image, prix) | après six écrans de texte | au 2e écran |
+| Paragraphes de plus de 4 lignes, 15 villes | 14 par page | **0** (`check:densite`) |
+
+### Les règles, à appliquer avant qu'il ait à les redemander
+
+1. **Le texte local ne se coupe pas, il change de forme.** C'est lui qui
+   distingue ces pages d'une page satellite. Il vit dans `SectionLocale` :
+   trois ou quatre points, **un titre qui se lit seul**, deux phrases au plus
+   (environ 150 signes). Chaque point a été réécrit depuis le texte qu'il
+   remplace, rien n'est inventé.
+2. **Le visage avant le texte.** `SectionLocale` pose le portrait d'Elie à
+   côté des points, sur les trois gabarits. Même raison que le 21 septembre :
+   *« il y a des éléments réels, c'est pas que du texte »*.
+3. **La FAQ est le dernier bloc avant `ContactMethodsSection`.** Plus de liste
+   d'articles, plus de « J'interviens aussi ici » sous elle. La zone et les
+   pages voisines passent avant, dans une seule bande.
+4. **Les articles sont accrochés aux points qu'ils développent** (`article`
+   sur un point, au plus un, pas sur tous), en lien « À lire : titre ». Les
+   listes de six articles en fin de page sont supprimées.
+5. **Une page de ville renvoie vers la page réseaux de la même commune**
+   (`socialPage`), et inversement (`webPage`), avec le prix de l'offre et le
+   site offert au troisième mois.
+6. Le lieu des titres vient de `h1Highlight`, pas de `name` : la page
+   `/web-designer-savoie` s'appelle « Albertville » (son adresse) et titrait
+   « Le contexte à Albertville » au dessus d'un texte sur tout le département.
+
+> ⚠️ **`SocialClientsSection` n'est plus montée nulle part en dehors de
+> `/portfolio`.** Sur les pages réseaux locales, la bande des vidéos la
+> remplace.
+>
+> ⚠️ **Les captures ne montrent plus la carte cookies** : `captures.mjs` pose
+> un refus avant le chargement. Elle masquait le bas de chaque tranche sur
+> téléphone.
+
 ## Contrôles automatiques avant de livrer
 
 Une seule commande : `npm run check`. Elle enchaîne les quatre.
@@ -2132,11 +2191,11 @@ Source unique : `src/data/guides.ts`. Chaque guide est un hub long, découpé en
 > les attrape.
 
 ### Pages locales : 15 villes
-Source : `src/data/cities/`. Chaque page porte un `depthFr` avec contexte économique réel, secteurs, communes desservies, temps de trajet depuis Albertville, blocs éditoriaux, angle réseaux sociaux et FAQ propre.
+Source : `src/data/cities/`. Chaque page porte un `depthFr` avec trois ou quatre `points` locaux (titre + deux phrases, article optionnel), secteurs, communes desservies, temps de trajet depuis Albertville, angle réseaux sociaux en deux phrases, page réseaux de la même commune (`socialPage`) et FAQ propre. Voir « Les pages locales en points ».
 
 Albertville, Chambéry, Aix-les-Bains, Ugine, Moûtiers, Bourg-Saint-Maurice, Saint-Jean-de-Maurienne, La Ravoire, Annecy, Savoie, Haute-Savoie, Cluses, Thonon-les-Bains, Sallanches, Rumilly.
 
-Chaque page porte aussi un `depthFr.articles` : six articles du blog choisis pour le tissu économique du bassin. Les slugs sont validés par `check:content`.
+~~`depthFr.articles`~~ : la liste de six articles a disparu le 14 octobre 2026. Un point peut porter un `article`, vérifié par `check:content`.
 
 > Une page locale sans contenu spécifique ne sert à rien et peut desservir. Ne jamais dupliquer une page en changeant seulement le nom de la commune.
 

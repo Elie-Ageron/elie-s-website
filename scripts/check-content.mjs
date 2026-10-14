@@ -137,9 +137,18 @@ const checkSlugRefs = (files, key) => {
     }
   }
 };
-checkSlugRefs(cityFiles, 'articles');
+/* Depuis le 14 octobre 2026, les pages de villes et les pages reseaux
+   locales n'ont plus de liste d'articles : chaque point local porte au plus
+   un `article: '...'`. Les pages de service aussi, qui n'etaient verifiees
+   par rien. */
 sources[socialCitiesFile] = read(socialCitiesFile);
-checkSlugRefs([socialCitiesFile], 'articles');
+const servicePagesFile = 'src/data/service-pages.ts';
+sources[servicePagesFile] = read(servicePagesFile);
+for (const file of [...cityFiles, socialCitiesFile, servicePagesFile]) {
+  for (const m of sources[file].matchAll(/\barticle:\s*'([^']+)'/g)) {
+    if (!postSlugs.has(m[1])) errors.push(`${file} : article pointe vers un article inconnu, ${m[1]}`);
+  }
+}
 checkSlugRefs(['src/data/guides.ts'], 'articles');
 checkSlugRefs(postFiles, 'related');
 

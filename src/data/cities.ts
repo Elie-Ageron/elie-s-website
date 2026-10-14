@@ -4,7 +4,7 @@ import { chamberyCities } from './cities/list-chambery';
 import { hauteSavoieCities } from './cities/list-haute-savoie';
 import type { CityData } from './cities/types';
 
-export type { CityData, CityDepth, CityLocale, CityBlock, CityFaq } from './cities/types';
+export type { CityData, CityDepth, CityLocale, CityPoint, CityFaq } from './cities/types';
 
 /**
  * Toutes les pages locales du site. L'ordre pilote la liste affichee en pied

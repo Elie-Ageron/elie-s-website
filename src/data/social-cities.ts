@@ -27,9 +27,21 @@
  * desservir : c'est la règle posée pour `src/data/cities/`, elle vaut ici.
  */
 
-export interface SocialCityBlock {
-  title: string;
-  body: string;
+/**
+ * Un point de la section locale. Même règle que `CityPoint` dans
+ * `src/data/cities/types.ts` : le titre se lit seul, le texte tient en deux
+ * phrases au plus.
+ *
+ * 🔴 **Remplace le terrain en trois paragraphes, les plateformes et les angles
+ * de tournage, le 14 octobre 2026.** Même défaut que les quinze pages de
+ * villes, signalé par Elie le même jour : six paragraphes de quatre à six
+ * lignes avant le premier élément concret.
+ */
+export interface SocialCityPoint {
+  titre: string;
+  texte: string;
+  /** L'article qui développe ce point. Slug vérifié par check:content. */
+  article?: string;
 }
 
 export interface SocialCityFaq {
@@ -60,15 +72,9 @@ export interface SocialCityData {
   travel: string;
   /** Communes couvertes depuis cette base. */
   nearby: string[];
-  /** L'état réel des réseaux dans ce bassin, en deux ou trois paragraphes. */
-  terrain: string[];
-  /** Quelle plateforme prime ici, et pourquoi. */
-  platforms: string;
-  /** Angles de tournage concrets pour le tissu économique local. */
-  filmer: SocialCityBlock[];
+  /** Ce qui est vrai des réseaux dans ce bassin, en quatre points. */
+  points: SocialCityPoint[];
   faq: SocialCityFaq[];
-  /** Articles du blog choisis pour ce bassin. Slugs validés par check:content. */
-  articles: string[];
   /** Autres pages sociales locales à proposer en maillage. */
   related: string[];
   /** La page site web de la même commune, pour le maillage croisé entre piliers. */
@@ -94,29 +100,24 @@ export const socialCities: SocialCityData[] = [
       "Sauf que je ne me contente pas de publier. Je viens filmer chez vous une journée par mois, puis je publie à votre place.",
     travel: 'Sur place. Je vis et je travaille à Albertville.',
     nearby: ['Ugine', 'Frontenex', 'Gilly-sur-Isère', 'Grignon', 'Mercury', 'Tours-en-Savoie', 'La Bâthie', 'Queige'],
-    terrain: [
-      "Ouvrez Instagram et cherchez les commerces du centre d'Albertville. Vous allez tomber sur beaucoup de comptes ouverts un jour d'enthousiasme, avec une dernière publication qui date de huit mois. Ce n'est pas de la négligence. C'est qu'aucun artisan, aucun commerçant et aucun praticien n'a le temps de tenir un rythme en plus de son métier.",
-      "Ça a une conséquence directe, et elle joue en votre faveur. L'attention locale n'est disputée par presque personne ici. Un plombier d'Albertville qui publie deux fois par semaine devient, en quelques mois, le seul plombier que les gens du coin voient passer. Dans une ville de vingt mille habitants, ça se remarque bien plus vite qu'à Lyon.",
-      "Et la demande existe, elle passe juste ailleurs. Les groupes Facebook d'Albertville et de la combe tournent toute la journée. Les mêmes demandes de recommandation y reviennent chaque semaine : un couvreur, une esthéticienne, quelqu'un pour un dépannage. Les gens qui répondent citent les noms qu'ils ont vus récemment.",
-    ],
-    platforms:
-      "Ici, Facebook reste l'endroit où circulent les recommandations entre habitants, et Instagram celui où on vérifie que vous existez avant d'appeler. Les deux se nourrissent de la même vidéo verticale, donc la question du choix ne se pose pas vraiment : on publie sur les deux, plus TikTok quand le métier s'y prête.",
-    filmer: [
+    points: [
       {
-        title: 'Le chantier de la semaine',
-        body: "La combe de Savoie et la vallée jusqu'à Ugine concentrent beaucoup de métiers du bâtiment. Un avant après filmé en deux plans, avec la difficulté réelle expliquée en quinze secondes, marche mieux que n'importe quelle publicité. Les gens reconnaissent les rues.",
+        titre: 'Presque personne ne publie ici',
+        texte: "Beaucoup de commerces du centre ont un compte dont la dernière publication date de huit mois. L'attention locale n'est disputée par presque personne.",
       },
       {
-        title: "Le geste qu'on ne voit jamais",
-        body: "Pour un commerce du centre, la matière est dans l'atelier ou dans l'arrière boutique : la mise en place du matin, la réception d'un arrivage, la réparation qu'on fait gratuitement. Personne ne voit jamais ça, et c'est exactement ce qui donne envie de pousser la porte.",
+        titre: 'Les recommandations passent par Facebook',
+        texte: "Les groupes d'Albertville et de la combe tournent toute la journée. Ceux qui répondent citent les noms qu'ils ont vus récemment.",
+        article: 'groupes-facebook-commune',
       },
       {
-        title: "La question qu'on vous pose dix fois par jour",
-        body: "Les praticiens et les thérapeutes d'Albertville passent leur temps à répondre aux mêmes questions en début de séance. Chacune est une vidéo. C'est le format le plus simple à tourner, parce que vous avez déjà la réponse et que vous l'avez déjà dite cent fois.",
+        titre: 'Instagram sert à vérifier que vous existez',
+        texte: "On vous y regarde avant d'appeler. Une même vidéo verticale nourrit les deux réseaux, plus TikTok quand le métier s'y prête.",
+        article: 'instagram-ou-facebook-entreprise-locale',
       },
       {
-        title: 'Le passage de la Tarentaise',
-        body: "Albertville est la porte des stations, et une partie du flux de décembre à avril ne fait que traverser. Une entreprise qui publie avant la saison est celle qu'on retrouve quand le besoin tombe, parce que le contenu reste en ligne alors que le passage, lui, ne revient pas.",
+        titre: 'Le chantier de la semaine',
+        texte: 'Un avant après en deux plans, la difficulté expliquée en quinze secondes. Les gens reconnaissent les rues, et ils partagent.',
       },
     ],
     faq: [
@@ -136,14 +137,6 @@ export const socialCities: SocialCityData[] = [
         q: 'Ça marche vraiment dans une ville de cette taille ?',
         a: "Différemment, oui. Vous ne ferez pas des centaines de milliers de vues, et ce n'est pas le but. Sur un bassin comme celui d'Albertville, quelques milliers de vues locales répétées chaque semaine touchent une part réelle des gens qui peuvent devenir clients.",
       },
-    ],
-    articles: [
-      'reseaux-sociaux-artisan-savoie',
-      'groupes-facebook-commune',
-      'instagram-ou-facebook-entreprise-locale',
-      'deleguer-reseaux-sociaux',
-      'prix-gestion-reseaux-sociaux',
-      'combien-de-temps-resultats-reseaux-sociaux',
     ],
     related: ['community-manager-chambery', 'gestion-reseaux-sociaux-savoie', 'community-manager-aix-les-bains'],
     webPage: 'creation-site-web-albertville',
@@ -175,25 +168,24 @@ export const socialCities: SocialCityData[] = [
       'La Motte-Servolex',
       'Montmélian',
     ],
-    terrain: [
-      "Chambéry est le plus gros bassin de Savoie, et le seul où la concurrence sur les réseaux commence à se voir. La restauration du centre, quelques instituts et une poignée de commerces de la rue de Boigne publient sérieusement. Ce sont des exceptions, mais elles existent, ce qui n'est pas le cas dans les vallées.",
-      "En dehors de ces métiers là, le terrain reste aussi vide qu'ailleurs. Les professions libérales, les artisans des zones de Bissy et de Bassens, les prestataires de services aux entreprises : presque aucun ne publie de vidéo. Ils ont pourtant la matière, et souvent une clientèle qui les cherche sur Google avant de les appeler.",
-      "L'autre particularité chambérienne, c'est l'étendue du bassin. Les gens de Cognin, de Barberaz ou de Saint-Alban-Leysse se disent de Chambéry pour certaines choses et de leur commune pour d'autres. Une entreprise qui nomme ces communes dans ses vidéos et ses légendes capte une attention que ses concurrents laissent de côté.",
-    ],
-    platforms:
-      "Sur Chambéry, Instagram porte le commerce, la restauration et le bien être, avec une audience jeune et un centre ville dense. Facebook garde les quarante ans et plus, et c'est souvent là que partent les recommandations de quartier. On produit une fois, on diffuse sur les deux.",
-    filmer: [
+    points: [
       {
-        title: 'Le centre ville se filme tout seul',
-        body: "Entre les Halles, le Curial et la rue de Boigne, un commerce a un décor que personne d'autre n'a. Filmer la devanture au bon moment de la journée, c'est un plan de trois secondes qui dit où vous êtes sans avoir à l'écrire.",
+        titre: 'Le seul bassin où la concurrence se voit',
+        texte: "La restauration du centre et quelques instituts publient sérieusement. En dehors de ces métiers, le terrain reste aussi vide qu'ailleurs.",
       },
       {
-        title: "L'expertise qui se raconte en une minute",
-        body: "Chambéry compte beaucoup de professions libérales et de prestataires de services. Pour eux, le contenu n'est pas visuel, il est explicatif : une question de client, une réponse claire, un exemple concret. Filmé correctement, ce format convertit mieux que n'importe quelle plaquette.",
+        titre: 'Les professions libérales ne publient presque pas',
+        texte: "Elles ont pourtant la matière : une question de client, une réponse claire, un exemple concret. Ce format convainc mieux qu'une plaquette.",
+        article: 'therapeute-reseaux-sociaux-clients',
       },
       {
-        title: "Les zones d'activité",
-        body: "Bissy, Bassens, La Ravoire : beaucoup d'entreprises y travaillent sans aucune visibilité en ligne parce qu'elles se croient invisibles par nature. Un atelier en activité est pourtant l'un des contenus les plus regardés, précisément parce qu'on ne le voit jamais.",
+        titre: 'Nommer Cognin, Barberaz, Saint-Alban',
+        texte: 'Les gens du bassin se disent de leur commune autant que de Chambéry. La nommer dans la vidéo capte une attention que vos concurrents laissent de côté.',
+      },
+      {
+        titre: 'Instagram pour le centre, Facebook pour le quartier',
+        texte: 'Instagram porte le commerce et le bien-être, Facebook les recommandations de quartier. On tourne une fois, on publie sur les deux.',
+        article: 'quel-reseau-social-choisir-entreprise-locale',
       },
     ],
     faq: [
@@ -209,14 +201,6 @@ export const socialCities: SocialCityData[] = [
         q: 'Vous prenez aussi les communes autour ?',
         a: "Oui. La Ravoire, Cognin, Saint-Alban-Leysse, Barberaz, La Motte-Servolex et Montmélian sont dans la même sortie. C'est souvent là que les recherches sont les moins disputées.",
       },
-    ],
-    articles: [
-      'quel-reseau-social-choisir-entreprise-locale',
-      'commerce-centre-ville-visibilite',
-      'transformer-vues-en-clients',
-      'therapeute-reseaux-sociaux-clients',
-      'prix-gestion-reseaux-sociaux',
-      'temps-par-semaine-communication',
     ],
     related: ['community-manager-albertville', 'community-manager-aix-les-bains', 'gestion-reseaux-sociaux-savoie'],
     webPage: 'creation-site-web-chambery',
@@ -249,25 +233,23 @@ export const socialCities: SocialCityData[] = [
       'Veyrier-du-Lac',
       'Faverges-Seythenex',
     ],
-    terrain: [
-      "Annecy est le seul bassin de la région où le niveau visuel attendu est réellement haut. Le tourisme, le tertiaire et une population aisée ont attiré beaucoup d'entreprises, beaucoup d'agences, et un nombre inhabituel de gens qui produisent du contenu pour vivre. Une vidéo mal cadrée se remarque davantage ici que dans une vallée.",
-      "Ça ne veut pas dire que la place est prise. Ça veut dire qu'un contenu générique n'en a aucune. Viser l'attention de tout Annecy demande des moyens que personne n'a en TPE. Viser une prestation nommée et une commune du bassin reste tout à fait accessible, et c'est là que se trouvent les clients qui appellent.",
-      "La saisonnalité joue aussi, plus qu'ailleurs. Une partie de l'économie annécienne vit sur l'été et sur les ailes de saison. Le contenu doit être en ligne avant, pas pendant, parce qu'une vidéo publiée au mois d'août travaille pour l'été suivant autant que pour celui en cours.",
-    ],
-    platforms:
-      "Instagram domine largement ici, porté par le lac, la restauration et le bien être. TikTok touche une audience réelle sur les métiers qui se montrent. Facebook garde son utilité sur les communes du bassin, où les groupes d'habitants restent très actifs à Poisy, Seynod ou Épagny.",
-    filmer: [
+    points: [
       {
-        title: 'Viser la commune, pas la ville',
-        body: "Les habitants de Poisy, de Sevrier ou d'Épagny nomment leur commune. Une vidéo qui dit le nom du village et montre un repère reconnaissable touche une audience beaucoup moins disputée que celle qui vise Annecy en général, pour un travail identique.",
+        titre: 'Le niveau visuel le plus haut de la région',
+        texte: "Beaucoup d'entreprises, beaucoup d'agences, beaucoup de gens qui produisent du contenu pour vivre. Une vidéo mal cadrée se remarque plus qu'en vallée.",
       },
       {
-        title: 'Le niveau visuel comme argument',
-        body: "Dans un bassin où tout le monde soigne son image, le contenu qui sort du lot n'est pas le plus beau, c'est le plus vrai. Un atelier en activité, une main qui travaille, une explication sans script : ça se distingue au milieu des plans drone.",
+        titre: 'Le plus vrai passe devant le plus beau',
+        texte: 'Au milieu des plans drone, un atelier en activité, une main qui travaille, une explication sans script se distinguent tout de suite.',
       },
       {
-        title: "L'avant saison",
-        body: "Ce qu'on tourne en mars sert de juin à septembre. Une journée de tournage avant l'ouverture permet de couvrir toute la saison sans jamais avoir à filmer pendant le coup de feu, qui est le moment où personne n'a le temps.",
+        titre: 'Viser la commune, pas la ville',
+        texte: 'À Poisy, Sevrier ou Épagny, une vidéo qui dit le nom du village touche une audience bien moins disputée que tout Annecy.',
+      },
+      {
+        titre: "Tourner en mars pour tout l'été",
+        texte: "Une journée de tournage avant l'ouverture couvre la saison entière. Vous n'avez jamais à filmer pendant le coup de feu.",
+        article: 'entreprise-saisonniere-communication',
       },
     ],
     faq: [
@@ -283,14 +265,6 @@ export const socialCities: SocialCityData[] = [
         q: 'Vous travaillez avec des hébergeurs et des restaurants ?',
         a: "Oui, et ce sont des métiers qui se filment bien parce que le décor travaille pour vous. La contrainte réelle est le calendrier : on tourne hors service, et on prépare la saison avant qu'elle commence.",
       },
-    ],
-    articles: [
-      'restaurant-reseaux-sociaux',
-      'hebergement-station-reseaux-sociaux',
-      'entreprise-saisonniere-communication',
-      'coiffeur-esthetique-reseaux-sociaux',
-      'quel-reseau-social-choisir-entreprise-locale',
-      'prix-gestion-reseaux-sociaux',
     ],
     related: ['gestion-reseaux-sociaux-haute-savoie', 'community-manager-chambery', 'community-manager-albertville'],
     webPage: 'web-designer-annecy',
@@ -313,25 +287,23 @@ export const socialCities: SocialCityData[] = [
       "Je viens filmer chez vous une journée par mois, puis je publie 8 vidéos. Pour le soin et le bien-être, c'est le format qui rassure avant le premier rendez-vous.",
     travel: 'Environ cinquante minutes depuis Albertville.',
     nearby: ['Grésy-sur-Aix', 'Drumettaz-Clarafond', 'Mouxy', 'Tresserve', 'Brison-Saint-Innocent', 'Viviers-du-Lac', 'Le Bourget-du-Lac'],
-    terrain: [
-      "Aix-les-Bains a une économie que je ne retrouve nulle part ailleurs en Savoie : le thermalisme et le lac ont installé une densité de praticiens, de thérapeutes, d'instituts et de professions de santé qu'aucune autre ville du département n'a. C'est exactement le type de métier où le contenu vidéo change quelque chose.",
-      "Pourquoi : on ne choisit pas un praticien sur un prix. On le choisit parce qu'on a vu son visage, entendu sa voix et compris comment il travaille. Une fiche Google et trois photos ne font pas ça. Une vidéo où vous expliquez une question courante le fait en quarante secondes, et elle continue de le faire pendant des mois.",
-      "La saison compte, ici aussi. L'activité se concentre de mars à octobre, le lac amène du passage l'été, et les curistes arrivent par sessions. Le contenu produit en hiver est celui qui travaille au printemps, quand tout le monde se met à publier en même temps.",
-    ],
-    platforms:
-      "Instagram porte le bien être, le soin et l'esthétique, et c'est là que se fait la vérification avant un premier rendez vous. Facebook reste utile pour les habitants à l'année et pour les groupes de commune. Pour un cabinet, la messagerie privée compte autant que la publication elle même.",
-    filmer: [
+    points: [
       {
-        title: 'La question du premier rendez vous',
-        body: "Chaque praticien a trois ou quatre questions qui reviennent avant la première séance : ce que ça fait, combien de temps, pour qui. Y répondre en vidéo enlève l'hésitation qui empêche d'appeler, et ça se tourne en quelques minutes.",
+        titre: 'La ville des praticiens et des thérapeutes',
+        texte: "Le thermalisme et le lac ont installé une densité de soin qu'aucune autre ville de Savoie n'a. C'est exactement là que la vidéo change quelque chose.",
+        article: 'therapeute-reseaux-sociaux-clients',
       },
       {
-        title: 'Le lieu rassure autant que vous',
-        body: "Un cabinet, un institut, une salle de soin : filmer l'endroit calmement, sans musique et sans effets, répond à une question que personne ne pose à voix haute mais que tout le monde se pose avant de pousser la porte.",
+        titre: 'On choisit un praticien sur un visage',
+        texte: 'Pas sur un prix. Une vidéo où vous répondez à une question courante montre votre voix et votre façon de travailler en quarante secondes.',
       },
       {
-        title: 'Préparer la saison en hiver',
-        body: "De novembre à février, vous avez le temps que vous n'aurez plus en juin. Une journée de tournage à ce moment là couvre le printemps entier, et vous publiez pendant la saison sans avoir à y penser.",
+        titre: 'Filmer le lieu, calmement',
+        texte: "Un cabinet, un institut, une salle de soin, sans musique ni effets. Ça répond à la question qu'on se pose avant de pousser la porte.",
+      },
+      {
+        titre: 'Préparer la saison en hiver',
+        texte: "De novembre à février, vous avez le temps que vous n'aurez plus en juin. Une journée de tournage couvre alors tout le printemps.",
       },
     ],
     faq: [
@@ -347,14 +319,6 @@ export const socialCities: SocialCityData[] = [
         q: 'Vous vous déplacez à Aix-les-Bains ?',
         a: "Oui, comptez environ cinquante minutes depuis Albertville. Grésy-sur-Aix, Drumettaz-Clarafond, Tresserve et Le Bourget-du-Lac sont dans le même déplacement.",
       },
-    ],
-    articles: [
-      'therapeute-reseaux-sociaux-clients',
-      'coiffeur-esthetique-reseaux-sociaux',
-      'repondre-commentaires-messages-prives',
-      'entreprise-saisonniere-communication',
-      'parler-face-camera-timide',
-      'prix-gestion-reseaux-sociaux',
     ],
     related: ['community-manager-chambery', 'gestion-reseaux-sociaux-savoie', 'community-manager-albertville'],
     webPage: 'creation-site-web-aix-les-bains',
@@ -387,25 +351,24 @@ export const socialCities: SocialCityData[] = [
       'La Ravoire',
       'Montmélian',
     ],
-    terrain: [
-      "La Savoie n'est pas un marché, c'est quatre marchés qui ne se ressemblent pas. La cluse de Chambéry et Aix vivent du tertiaire, du commerce et du soin. La combe et Albertville vivent du bâtiment et de l'industrie. La Tarentaise et la Maurienne vivent de la saison, avec des entreprises qui font l'essentiel de leur chiffre sur quatre mois.",
-      "Le point commun, c'est que presque personne ne publie de vidéo. Pas par choix stratégique : parce que tourner, monter, écrire et publier chaque semaine représente un vrai travail en plus du métier, et que ce travail saute le premier dès qu'une semaine est chargée. C'est pour ça que tant de comptes savoyards s'arrêtent après six semaines.",
-      "Le second point commun, c'est la taille des bassins. Sur un département d'un peu plus de quatre cent mille habitants, une entreprise qui publie régulièrement devient visible vite, parce que la concurrence sur l'attention est faible. Ce n'est pas vrai dans une métropole, et ça ne durera pas éternellement ici.",
-    ],
-    platforms:
-      "Facebook porte les recommandations entre habitants, commune par commune, et il reste dominant dans les vallées. Instagram porte le commerce, le soin et la restauration, surtout sur Chambéry, Aix et les stations. Une même vidéo verticale alimente les deux, plus TikTok quand le métier se montre bien.",
-    filmer: [
+    points: [
       {
-        title: 'La saison commande le calendrier',
-        body: "En Tarentaise et en Maurienne, le contenu se tourne en intersaison et se publie pendant. Une entreprise qui attend décembre pour commencer a déjà perdu la saison, parce qu'un compte met plusieurs semaines à retrouver de la portée.",
+        titre: 'Quatre marchés dans un département',
+        texte: "Chambéry et Aix vivent du tertiaire et du soin, la combe du bâtiment et de l'industrie, la Tarentaise et la Maurienne de la saison.",
       },
       {
-        title: 'Le bâtiment a la meilleure matière',
-        body: "Sur la combe et la vallée, les métiers du bâtiment ont ce que tous les autres cherchent : un avant, un après, et un geste technique visible. Deux plans et une phrase suffisent, et le résultat parle de lui même.",
+        titre: 'Presque personne ne publie de vidéo',
+        texte: "Tourner, monter et publier chaque semaine saute dès qu'une semaine est chargée. C'est pour ça que tant de comptes savoyards s'arrêtent après six semaines.",
+        article: 'deleguer-reseaux-sociaux',
       },
       {
-        title: 'Nommer la commune, toujours',
-        body: "Ugine, Moûtiers, Montmélian, Saint-Jean : nommer le lieu dans la vidéo et dans la légende fait deux choses à la fois. Ça attire l'attention des gens du coin, et ça dit à la plateforme à qui montrer la vidéo en priorité.",
+        titre: 'Le bâtiment a la meilleure matière',
+        texte: 'Un avant, un après, un geste technique visible. Deux plans et une phrase suffisent, le résultat parle de lui même.',
+        article: 'reseaux-sociaux-artisan-savoie',
+      },
+      {
+        titre: 'Nommer la commune, toujours',
+        texte: 'Ugine, Moûtiers, Montmélian : le nom du lieu attire les gens du coin, et il dit à la plateforme à qui montrer la vidéo.',
       },
     ],
     faq: [
@@ -425,14 +388,6 @@ export const socialCities: SocialCityData[] = [
         q: 'Et si mon site ne suit pas ?',
         a: "Je le refais. Les deux vont ensemble : des vidéos qui amènent des gens sur un site qui ne convertit pas, c'est du trafic perdu. Le site est mon autre métier, donc il n'y a personne d'autre à coordonner.",
       },
-    ],
-    articles: [
-      'reseaux-sociaux-artisan-savoie',
-      'entreprise-saisonniere-communication',
-      'groupes-facebook-commune',
-      'deleguer-reseaux-sociaux',
-      'combien-de-temps-resultats-reseaux-sociaux',
-      'prix-gestion-reseaux-sociaux',
     ],
     related: [
       'community-manager-albertville',
@@ -459,25 +414,23 @@ export const socialCities: SocialCityData[] = [
       "Je viens filmer chez vous une journée par mois, et vos comptes tournent jusqu'à la suivante. Annecy, l'Arve, le Chablais et les Aravis.",
     travel: "De quarante-cinq minutes à une heure trente selon la vallée.",
     nearby: ['Annecy', 'Cluses', 'Sallanches', 'Thonon-les-Bains', 'Rumilly', 'La Roche-sur-Foron', 'Bonneville', 'Saint-Julien-en-Genevois'],
-    terrain: [
-      "La Haute-Savoie est plus peuplée, plus riche et plus concurrentielle que la Savoie, et ça se voit en ligne. Le Genevois et le bassin annécien comptent des entreprises qui investissent réellement dans leur image, parce que leur clientèle a les moyens de comparer et l'habitude de le faire.",
-      "Les vallées, elles, ressemblent davantage à la Savoie. Dans l'Arve, du côté de Cluses et de Bonneville, le décolletage et la sous traitance industrielle sont presque absents des réseaux, alors que ce sont des métiers spectaculaires à filmer. Le Chablais et les Aravis vivent de la saison, avec les mêmes contraintes de calendrier qu'en Tarentaise.",
-      "Conséquence pratique : la stratégie n'est pas la même selon l'endroit. Sur Annecy et le Genevois, il faut viser précis parce que l'attention est disputée. Sur Cluses, Sallanches ou Thonon, le terrain est encore largement libre, et la régularité suffit à se détacher.",
-    ],
-    platforms:
-      "Instagram domine sur Annecy, le lac et le Genevois. Facebook reste solide dans les vallées et sur les communes, où les groupes d'habitants servent d'annuaire officieux. TikTok touche vraiment quand le métier se montre, ce qui est le cas de l'industrie et de l'artisanat.",
-    filmer: [
+    points: [
       {
-        title: "L'industrie est le contenu le plus sous exploité",
-        body: "Une machine de décolletage en fonctionnement, une pièce qui sort d'usinage, un contrôle au micron : ce sont des images que personne ne voit jamais et que tout le monde regarde jusqu'au bout. Les entreprises de l'Arve ont la meilleure matière de la région et ne s'en servent pas.",
+        titre: "Annecy et le Genevois se disputent l'attention",
+        texte: 'Les entreprises y investissent dans leur image, parce que leurs clients comparent. Il faut viser précis : une prestation, une commune.',
       },
       {
-        title: 'Le Genevois a une clientèle qui compare',
-        body: "Près de la frontière, vos clients regardent trois prestataires avant d'appeler, et ils le font sur leur téléphone. Un compte vivant, avec un visage et des chantiers récents, tranche la comparaison plus vite qu'une page de prix.",
+        titre: 'Les vallées restent largement libres',
+        texte: 'À Cluses, Sallanches ou Thonon, presque personne ne publie de vidéo. La régularité suffit à se détacher.',
       },
       {
-        title: 'Filmer avant la saison, dans les deux sens',
-        body: "Le Chablais et les Aravis ont deux saisons, pas une. Ce qui se tourne en mai sert l'été, ce qui se tourne en octobre sert l'hiver. Le piège est d'attendre le début de saison, au moment précis où personne n'a plus une heure.",
+        titre: "L'industrie, le contenu le plus sous exploité",
+        texte: "Une pièce qui sort d'usinage, un contrôle au micron : des images que personne ne voit jamais, et que tout le monde regarde jusqu'au bout.",
+      },
+      {
+        titre: 'Deux saisons à préparer',
+        texte: "Dans le Chablais et les Aravis, ce qui se tourne en mai sert l'été, ce qui se tourne en octobre sert l'hiver.",
+        article: 'entreprise-saisonniere-communication',
       },
     ],
     faq: [
@@ -493,14 +446,6 @@ export const socialCities: SocialCityData[] = [
         q: 'Combien de publications par mois ?',
         a: "Six, sur Instagram, Facebook, TikTok ou YouTube Shorts. Tout vient de la même journée de tournage, montée en format vertical avec les sous titres incrustés.",
       },
-    ],
-    articles: [
-      'entreprise-saisonniere-communication',
-      'hebergement-station-reseaux-sociaux',
-      'quel-reseau-social-choisir-entreprise-locale',
-      'transformer-vues-en-clients',
-      'deleguer-reseaux-sociaux',
-      'prix-gestion-reseaux-sociaux',
     ],
     related: [
       'community-manager-annecy',

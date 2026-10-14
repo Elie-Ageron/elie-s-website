@@ -62,6 +62,16 @@ const navigateur = await puppeteer.launch({ executablePath, headless: 'new', arg
 for (const route of routes) {
   const page = await navigateur.newPage();
   await page.setViewport({ width: largeur, height: hauteur, deviceScaleFactor: 1 });
+  /* La carte cookies (12 octobre 2026) masquait le bas de chaque tranche sur
+     telephone, soit un tiers de ce qu'on venait relire. On pose un refus avant
+     le chargement, comme le ferait un visiteur deja passe. */
+  await page.evaluateOnNewDocument(() => {
+    try {
+      localStorage.setItem('elie-cookies', JSON.stringify({ choix: 'refuse', date: Date.now() }));
+    } catch {
+      /* stockage bloque : la carte s'affichera, tant pis */
+    }
+  });
   await page.goto(base + route, { waitUntil: 'networkidle0', timeout: 60000 });
 
   // Les sections apparaissent au defilement : on descend toute la page une

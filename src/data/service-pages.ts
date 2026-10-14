@@ -52,15 +52,18 @@ export interface ServicePageData {
   prix: string;
   /** Le prix en euros, pour le schéma `Offer`. Absent si c'est du sur-mesure. */
   prixSchema?: number;
-  /** Le problème réel que ça résout, en deux ou trois paragraphes. */
-  probleme: string[];
+  /**
+   * Le problème réel que ça résout, en trois points courts. C'étaient trois
+   * paragraphes jusqu'au 14 octobre 2026 : même défaut que les pages de
+   * villes, voir `SectionLocale`. Chaque point peut porter l'article qui le
+   * développe, à la place de la liste d'articles qui tombait après la FAQ.
+   */
+  probleme: { titre: string; texte: string; article?: string }[];
   /** Ce qui est livré, concrètement. */
   livrables: ServiceBlock[];
   /** Ce que ce service ne fait pas. Un service qui ne dit pas ses limites se vend mal. */
   limites: string;
   faq: ServicePageFaq[];
-  /** Articles du blog qui développent le sujet. Slugs validés par check:content. */
-  articles: string[];
   /** Autres pages de service à proposer. */
   related: string[];
 }
@@ -80,9 +83,19 @@ export const servicePages: ServicePageData[] = [
     prix: 'dès 250 €',
     prixSchema: 250,
     probleme: [
-      "Quand quelqu'un tape votre métier suivi de votre commune, Google affiche d'abord une carte avec trois entreprises. Pas dix, pas la première page : trois. Ce bloc capte une part énorme des clics, et il se joue entièrement sur les fiches, pas sur les sites.",
-      "La plupart des fiches que je reprends ont le même profil. Elles existent, elles ont été créées un jour, et puis plus rien. Une catégorie principale mal choisie, deux photos floues, pas d'horaires à jour, une description écrite en dix minutes, et aucune publication depuis la création.",
-      "Le point qui surprend tout le monde : la catégorie principale pèse plus lourd que tout le reste. Un artisan rangé dans une catégorie voisine mais fausse ne sortira jamais sur sa vraie requête, quoi qu'il fasse d'autre. C'est réparable en cinq minutes, et personne ne le vérifie.",
+      {
+        titre: "Sur la carte, il n'y a que trois places",
+        texte: "Quand on tape votre métier et votre commune, Google affiche d'abord trois entreprises. Ce bloc se joue sur les fiches, pas sur les sites.",
+        article: 'fiche-google-business-optimiser',
+      },
+      {
+        titre: "La plupart des fiches sont à l'abandon",
+        texte: 'Une catégorie mal choisie, deux photos floues, des horaires faux, et aucune publication depuis la création.',
+      },
+      {
+        titre: 'La catégorie principale décide de presque tout',
+        texte: 'Rangé dans une catégorie voisine, un artisan ne sort pas sur sa vraie recherche. Ça se répare en cinq minutes, et personne ne le vérifie.',
+      },
     ],
     livrables: [
       {
@@ -122,14 +135,6 @@ export const servicePages: ServicePageData[] = [
         a: "Sur demande, oui, et c'est souvent inclus quand je gère déjà vos réseaux : les mêmes vidéos servent. Seule, la publication sur la fiche a un effet réel mais modeste, donc je ne la vends pas comme un abonnement à part.",
       },
     ],
-    articles: [
-      'creer-fiche-google-business',
-      'fiche-google-business-optimiser',
-      'obtenir-avis-google',
-      'apparaitre-sur-google-maps',
-      'publications-fiche-google-business',
-      'fiche-google-suspendue-que-faire',
-    ],
     related: ['referencement-local', 'avis-google'],
   },
   {
@@ -145,9 +150,20 @@ export const servicePages: ServicePageData[] = [
       "Le référencement local est un autre jeu que le référencement classique, et il se gagne avec beaucoup moins de moyens qu'on ne le croit.",
     prix: 'sur devis',
     probleme: [
-      "Une recherche locale ne ressemble pas à une recherche normale. Google y mélange trois choses : la carte avec ses trois fiches, les résultats classiques, et de plus en plus une réponse générée. Se battre sur les résultats classiques sans avoir réglé la carte, c'est commencer par le plus dur.",
-      "L'autre particularité, c'est que la concurrence y est ridiculement faible. Sur « agence web Paris », vous n'existerez jamais. Sur « menuisier Ugine », il y a souvent moins de cinq entreprises qui ont fait le minimum. La place n'est pas prise, elle est vide.",
-      "Ce qui bloque la plupart des entreprises n'est pas technique. C'est qu'elles n'ont aucune page qui dit à la fois ce qu'elles font et où elles le font. Un site avec une page Accueil, une page Services et une page Contact ne peut sortir sur aucune requête précise, parce qu'il ne contient aucune phrase précise.",
+      {
+        titre: 'Une recherche locale, ce sont trois résultats en un',
+        texte: "La carte et ses trois fiches, les résultats classiques, et de plus en plus une réponse générée. Commencer par le site sans régler la carte, c'est commencer par le plus dur.",
+      },
+      {
+        titre: "La place n'est pas prise, elle est vide",
+        texte: 'Sur « menuisier Ugine », il y a souvent moins de cinq entreprises qui ont fait le minimum.',
+        article: 'etre-premier-google-dans-sa-ville',
+      },
+      {
+        titre: 'Il manque une page qui dit quoi et où',
+        texte: 'Un site avec Accueil, Services et Contact ne contient aucune phrase précise. Il ne peut donc sortir sur aucune recherche précise.',
+        article: 'page-service-qui-ressort',
+      },
     ],
     livrables: [
       {
@@ -187,14 +203,6 @@ export const servicePages: ServicePageData[] = [
         a: "Pas toujours. Si la structure tient et que le site est correct sur téléphone, on ajoute des pages et on retravaille les existantes. La refonte ne se justifie que si les fondations empêchent le reste.",
       },
     ],
-    articles: [
-      'seo-local-guide-complet',
-      'etre-premier-google-dans-sa-ville',
-      'trouver-mots-cles-clients',
-      'concurrent-devant-moi-google',
-      'combien-de-temps-referencement-google',
-      'ce-que-google-ne-controle-pas',
-    ],
     related: ['fiche-google-business', 'avis-google'],
   },
   {
@@ -210,9 +218,20 @@ export const servicePages: ServicePageData[] = [
       "Les avis sont le levier le plus fort du classement local, et le plus mal utilisé : on ne les demande pas, ou au mauvais moment.",
     prix: 'sur devis',
     probleme: [
-      "Un client content ne laisse pas d'avis spontanément. Il en laisse un quand on le lui demande, au moment où il vient d'être content, et quand ça lui prend dix secondes. Ces trois conditions ne sont presque jamais réunies, et c'est tout le sujet.",
-      "L'autre erreur classique est le rattrapage. Une entreprise qui réalise son retard demande trente avis en une semaine à d'anciens clients. Ça se voit, ça ressemble à une opération, et ça compte beaucoup moins que dix avis étalés sur l'année.",
-      "Enfin, les réponses. Beaucoup d'entreprises ne répondent qu'aux avis négatifs, et souvent mal. Répondre à tous, brièvement, change deux choses : ça pèse dans le classement, et ça montre à celui qui lit qu'il y a quelqu'un derrière.",
+      {
+        titre: "Un client content n'écrit pas d'avis tout seul",
+        texte: 'Il en laisse un quand on le lui demande, juste après, et quand ça lui prend dix secondes. Ces trois conditions sont rarement réunies.',
+        article: 'obtenir-avis-google',
+      },
+      {
+        titre: 'Trente avis en une semaine, ça se voit',
+        texte: "Une opération de rattrapage auprès d'anciens clients compte bien moins que dix avis étalés sur l'année.",
+      },
+      {
+        titre: 'Répondre à tous, brièvement',
+        texte: "Pas seulement aux avis négatifs. Ça pèse dans le classement, et ça montre à celui qui lit qu'il y a quelqu'un derrière.",
+        article: 'repondre-avis-negatif-google',
+      },
     ],
     livrables: [
       {
@@ -252,14 +271,6 @@ export const servicePages: ServicePageData[] = [
         a: "Oui, y compris aux cinq étoiles sans commentaire, en une phrase. Ça pèse dans le classement local et ça montre au lecteur suivant qu'il y a quelqu'un derrière la fiche.",
       },
     ],
-    articles: [
-      'obtenir-avis-google',
-      'repondre-avis-negatif-google',
-      'e-reputation-crise-avis-negatifs',
-      'etoiles-avis-resultats-google',
-      'avis-clients-autres-plateformes',
-      'fiche-google-business-optimiser',
-    ],
     related: ['fiche-google-business', 'referencement-local'],
   },
   {
@@ -275,9 +286,19 @@ export const servicePages: ServicePageData[] = [
       "Une identité de marque, c'est un logo plus tout ce qu'il faut pour que votre entreprise se ressemble, du camion au site.",
     prix: 'sur devis',
     probleme: [
-      "Le cas que je rencontre le plus souvent : un logo existe, il a été fait il y a huit ans par un cousin ou acheté trente euros sur un site, et il n'existe qu'en un seul fichier. Pas de version sur fond sombre, pas de version horizontale, pas de fichier vectoriel. Chaque nouveau support demande donc un bricolage.",
-      "Le deuxième cas : le logo va très bien, mais il n'y a rien autour. Pas de couleurs définies, pas de typographie, pas de règle. Résultat, le site, la carte de visite, le devis et la page Facebook n'ont pas l'air de venir de la même entreprise.",
-      "Ça se voit, et ça coûte de la crédibilité au moment précis où quelqu'un compare trois prestataires. Ce n'est pas une question de goût, c'est une question de cohérence.",
+      {
+        titre: "Un logo qui n'existe qu'en un seul fichier",
+        texte: 'Fait il y a huit ans, sans version sur fond sombre ni fichier vectoriel. Chaque nouveau support devient un bricolage.',
+      },
+      {
+        titre: 'Rien autour du logo',
+        texte: "Pas de couleurs définies, pas de typographie. Le site, le devis et la page Facebook n'ont pas l'air de venir de la même entreprise.",
+        article: 'identite-visuelle-tpe',
+      },
+      {
+        titre: 'Ça coûte de la crédibilité au mauvais moment',
+        texte: "Quand quelqu'un compare trois prestataires, l'incohérence se voit. Ce n'est pas une question de goût.",
+      },
     ],
     livrables: [
       {
@@ -317,14 +338,6 @@ export const servicePages: ServicePageData[] = [
         a: "C'est plus confortable, mais ce n'est pas bloquant. On peut lancer un site sur une base visuelle simple et l'habiller ensuite. L'inverse, refaire le site parce que le logo a changé, coûte plus cher.",
       },
     ],
-    articles: [
-      'identite-visuelle-tpe',
-      'choisir-nom-entreprise-visibilite',
-      'supports-physiques-vehicule-panneaux',
-      'photos-pour-son-site-web',
-      'page-accueil-trois-secondes',
-      'concurrent-copie-mes-contenus',
-    ],
     related: ['redaction-web', 'fiche-google-business'],
   },
   {
@@ -340,9 +353,20 @@ export const servicePages: ServicePageData[] = [
       "Le site est prêt, et les textes manquent depuis quatre mois. Je les écris, à partir de ce que vous dites déjà à vos clients.",
     prix: 'sur devis',
     probleme: [
-      "Écrire sur son propre métier est étrangement difficile. On le connaît trop bien, on ne sait plus ce qui va de soi, et on finit par écrire ce qu'on croit qu'il faut écrire : une page qui parle de passion, de savoir-faire et de qualité, comme les trois concurrents d'à côté.",
-      "Le texte qui marche n'est presque jamais inventé. Il existe déjà, dans ce que vous répondez au téléphone dix fois par semaine. Mon travail consiste surtout à écouter ça, à le trier, et à l'écrire dans l'ordre où les questions se posent.",
-      "Et il y a un effet secondaire qui compte pour le référencement : un texte qui emploie les mots de vos clients emploie mécaniquement les mots qu'ils tapent dans Google. On ne bourre pas de mots-clés, on écrit ce que les gens demandent.",
+      {
+        titre: 'Écrire sur son propre métier est difficile',
+        texte: "On le connaît trop bien. On finit par parler de passion, de savoir-faire et de qualité, comme les trois concurrents d'à côté.",
+        article: 'quoi-ecrire-sur-son-site',
+      },
+      {
+        titre: 'Le bon texte existe déjà',
+        texte: "Il est dans ce que vous répondez au téléphone dix fois par semaine. Je l'écoute, je le trie, et je l'écris dans l'ordre des questions.",
+      },
+      {
+        titre: "Les mots de vos clients sont ceux qu'ils tapent",
+        texte: 'Un texte écrit avec leurs mots emploie ceux de leurs recherches Google, sans bourrer de mots-clés.',
+        article: 'trouver-mots-cles-clients',
+      },
     ],
     livrables: [
       {
@@ -381,14 +405,6 @@ export const servicePages: ServicePageData[] = [
         q: 'Est-ce que ça aide pour le référencement ?',
         a: "Oui, mécaniquement. Un texte écrit avec les mots de vos clients contient les mots qu'ils tapent. Mais le texte seul ne suffit pas : il faut aussi que la page existe pour la bonne recherche.",
       },
-    ],
-    articles: [
-      'quoi-ecrire-sur-son-site',
-      'page-service-qui-ressort',
-      'page-a-propos-qui-sert',
-      'page-accueil-trois-secondes',
-      'trouver-mots-cles-clients',
-      'faut-il-un-blog-quand-on-est-artisan',
     ],
     related: ['identite-de-marque', 'referencement-local'],
   },

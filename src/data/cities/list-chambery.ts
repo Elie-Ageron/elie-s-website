@@ -63,35 +63,29 @@ export const chamberyCities: CityData[] = [
         'Restauration',
         'Bien-être et thérapies',
       ],
-      context: [
-        "Chambéry concentre l'essentiel du tertiaire savoyard : professions libérales, cabinets, conseil, services aux entreprises, plus une vie commerçante de centre-ville et des zones d'activité en périphérie. C'est un marché plus dense que le reste du département, et donc plus disputé en ligne.",
-        "Cette densité a une conséquence directe sur la stratégie. Viser une recherche générique du type métier plus Chambéry, c'est se battre contre des annuaires nationaux et des concurrents installés depuis dix ans. Le rendement est faible et lent.",
-        "En revanche, les recherches précises restent largement disponibles. Une prestation nommée exactement, un quartier, un type de client, une situation particulière : ces requêtes font moins de volume individuellement, elles convertissent beaucoup mieux, et elles sont atteignables en quelques mois plutôt qu'en quelques années.",
-      ],
-      blocks: [
+      socialPage: 'community-manager-chambery',
+      points: [
         {
-          title: 'Une page par prestation, pas une page fourre-tout',
-          body: "C'est la différence principale entre un site qui ressort à Chambéry et un site qui n'y arrive pas. Une page qui liste huit prestations en trois lignes chacune ne se positionne sur aucune. Huit pages qui traitent réellement chaque prestation se positionnent sur huit familles de recherches.",
+          titre: 'Le marché le plus disputé de Savoie',
+          texte: 'Sur une recherche large, votre métier plus Chambéry, vous affrontez des annuaires nationaux et des concurrents installés depuis dix ans.',
         },
         {
-          title: 'La fiche Google, même en zone dense',
-          body: "Le bloc de trois entreprises affiché sur la carte reste le premier point d'entrée, y compris à Chambéry. La différence, c'est qu'il faut plus d'avis et une fiche mieux tenue que dans une petite commune pour y figurer. C'est un travail de fond, pas un réglage ponctuel.",
+          titre: 'Les recherches précises restent libres',
+          texte: 'Une prestation nommée, un quartier, un type de client. Ces recherches amènent moins de monde, mais des gens prêts à appeler.',
+          article: 'trouver-mots-cles-clients',
         },
         {
-          title: 'Se distinguer sur autre chose que le prix',
-          body: "Dans un marché dense, un site qui ne dit rien de particulier fait comparer sur le seul critère lisible, c'est à dire le tarif. Montrer votre façon de travailler, vos réalisations réelles et les gens derrière l'entreprise déplace la comparaison sur un terrain où vous avez quelque chose à dire.",
+          titre: 'Une page par prestation',
+          texte: 'Une page qui liste huit prestations en trois lignes ne ressort sur aucune. Une page par prestation donne sa chance à chacune.',
+          article: 'page-service-qui-ressort',
+        },
+        {
+          titre: 'Sortir de la comparaison par le prix',
+          texte: 'Vos réalisations, votre façon de travailler, votre visage. Sans eux, le client ne compare que le tarif.',
         },
       ],
       social:
-        "Sur une agglomération de cette taille, les réseaux sociaux ne servent pas au même usage qu'en vallée. Ils servent moins à faire circuler du bouche à oreille et davantage à établir votre crédibilité auprès de gens qui vous comparent à trois concurrents. Un compte à jour, avec des réalisations récentes et un visage identifiable, fait souvent la différence au moment du choix final.",
-      articles: [
-        'concurrent-devant-moi-google',
-        'page-service-qui-ressort',
-        'expert-comptable-conseil-visibilite',
-        'therapeute-reseaux-sociaux-clients',
-        'commerce-centre-ville-visibilite',
-        'trouver-mots-cles-clients',
-      ],
+        'À Chambéry, on vous compare à trois concurrents. Un compte à jour, avec des réalisations récentes et un visage, fait souvent la différence au dernier moment.',
       faq: [
         {
           q: 'Vous vous déplacez à Chambéry ?',
@@ -163,35 +157,29 @@ export const chamberyCities: CityData[] = [
         'Sport et activités nautiques',
         'Santé et paramédical',
       ],
-      context: [
-        "Aix-les-Bains vit du thermalisme, du lac et de tout ce qui gravite autour : soins, bien-être, hébergement, restauration, activités nautiques. C'est une économie de service, saisonnière sur une partie de l'année, et fortement dépendante de la réputation.",
-        "La particularité de ce marché, c'est que le client achète quelque chose qu'il ne peut pas essayer avant. Une séance, un soin, un séjour. Il ne compare pas des caractéristiques techniques, il cherche à savoir s'il peut vous faire confiance.",
-        "C'est pour ça que les sites qui fonctionnent ici ne sont pas les plus jolis, ce sont ceux qui montrent le plus. La personne qui reçoit, le lieu, le déroulé d'une séance, les avis. Un site qui reste abstrait laisse le doute intact, et le doute se solde par un abandon silencieux.",
-      ],
-      blocks: [
+      socialPage: 'community-manager-aix-les-bains',
+      points: [
         {
-          title: 'Montrer le lieu et la personne',
-          body: "Dans les métiers du soin et du bien-être, la première question du client est de savoir chez qui il va entrer. Des photos réelles du cabinet ou de l'institut, un portrait, quelques mots sur votre parcours : ce sont les éléments qui font passer de la curiosité à la prise de rendez-vous.",
+          titre: 'Ici, on vend de la confiance',
+          texte: "Un soin, une séance, un séjour : le client ne peut pas essayer avant. Il cherche d'abord à savoir s'il peut vous faire confiance.",
         },
         {
-          title: 'Expliquer le déroulé, pas seulement la prestation',
-          body: "Combien de temps, ce qui se passe, ce qu'il faut apporter, ce qu'on ressent après. Ces informations paraissent évidentes de votre côté et elles sont exactement ce qui bloque le client. Les écrire enlève l'appréhension.",
+          titre: 'Montrer le lieu et la personne',
+          texte: "Des photos réelles du cabinet, un portrait, quelques mots sur votre parcours. C'est ce qui fait passer de la curiosité au rendez-vous.",
+          article: 'therapeute-reseaux-sociaux-clients',
         },
         {
-          title: 'Les avis, décisifs sur ce type d\'activité',
-          body: "Quand on vend une prestation qui touche au corps ou au bien-être, les avis pèsent plus lourd que partout ailleurs. Mettre en place une routine simple de collecte, au bon moment, produit souvent plus de rendez-vous qu'une refonte de site.",
+          titre: 'Expliquer le déroulé',
+          texte: "Combien de temps, ce qui se passe, ce qu'il faut apporter. Ça paraît évident pour vous, et c'est exactement ce qui retient le client.",
+        },
+        {
+          titre: "Les avis pèsent plus lourd qu'ailleurs",
+          texte: "Sur une prestation qui touche au corps ou au bien-être, une routine simple pour collecter des avis rapporte souvent plus qu'une refonte.",
+          article: 'obtenir-avis-google',
         },
       ],
       social:
-        "Aix-les-Bains est un terrain particulièrement favorable à la vidéo, parce que les métiers du bien-être se montrent mal par écrit et très bien en images. Une courte vidéo qui présente une séance, un geste, ou simplement la personne qui reçoit, lève la barrière que le texte ne lève pas. C'est aussi un moyen de toucher les gens qui viennent en cure ou en séjour et qui cherchent sur place.",
-      articles: [
-        'therapeute-reseaux-sociaux-clients',
-        'coiffeur-esthetique-reseaux-sociaux',
-        'location-saisonniere-reservation-directe',
-        'commerce-centre-ville-visibilite',
-        'obtenir-avis-google',
-        'prendre-rendez-vous-en-ligne',
-      ],
+        "Un métier du bien-être se montre mal par écrit et très bien en vidéo. Une séance, un geste, la personne qui reçoit : l'image lève le doute que le texte laisse.",
       faq: [
         {
           q: 'Vous travaillez avec des thérapeutes et des praticiens ?',
@@ -263,35 +251,28 @@ export const chamberyCities: CityData[] = [
         'Restauration',
         'Santé de proximité',
       ],
-      context: [
-        "La Ravoire fait partie de cette couronne est de Chambéry où vivent beaucoup de familles et où se concentrent des zones commerciales et artisanales. On y trouve un tissu dense de petites entreprises qui travaillent pour les habitants des communes voisines.",
-        "L'intérêt de cette zone pour le référencement local tient à un détail comportemental : les gens tapent le nom de leur commune. Quelqu'un à Barberaz cherche un artisan à Barberaz, pas à Chambéry, même si les deux sont à cinq minutes. Or presque toutes les entreprises du secteur communiquent uniquement sur Chambéry.",
-        "Résultat, ces recherches communales restent largement disponibles. Une entreprise qui les traite explicitement, sur son site et sur sa fiche Google, se retrouve seule ou presque, là où sur Chambéry elle serait dixième.",
-      ],
-      blocks: [
+      points: [
         {
-          title: 'Nommer les communes, une par une',
-          body: "C'est le geste le plus rentable dans cette zone. Écrire la liste des communes que vous desservez, sur votre site et dans votre fiche Google, vous rend trouvable sur des recherches que personne ne travaille. Ça prend dix minutes et l'effet est durable.",
+          titre: 'Les gens tapent le nom de leur commune',
+          texte: "Quelqu'un à Barberaz cherche un artisan à Barberaz, pas à Chambéry. Presque toutes les entreprises du secteur ne parlent que de Chambéry.",
         },
         {
-          title: 'La fiche Google avec zone de service',
-          body: "Si vous vous déplacez chez vos clients sans avoir de local ouvert au public, déclarez une zone de service plutôt qu'une adresse. Listez les communes réelles, pas le département entier, sinon Google dilue votre pertinence sur chacune.",
+          titre: 'Nommer les communes, une par une',
+          texte: 'La liste des communes où vous allez, écrite sur le site et sur la fiche Google. Dix minutes de travail, et un effet qui dure.',
+          article: 'zone-de-chalandise-sans-local',
         },
         {
-          title: 'Un site court, mais qui répond',
-          body: "Pour un commerce ou un artisan de proximité, trois à quatre pages suffisent. Ce qui compte est que chacune réponde à une vraie question : ce que vous faites, où vous allez, combien ça coûte à peu près, comment on vous joint.",
+          titre: "Une zone de service plutôt qu'une adresse",
+          texte: 'Sans local ouvert au public, déclarez une zone sur votre fiche Google. Les communes réelles, pas le département entier.',
+          article: 'creer-fiche-google-business',
+        },
+        {
+          titre: 'Trois ou quatre pages qui répondent',
+          texte: 'Ce que vous faites, où vous allez, combien ça coûte à peu près, comment on vous joint. Pour un artisan de proximité, ça suffit.',
         },
       ],
       social:
-        "Dans une couronne périurbaine, les groupes Facebook de commune sont extrêmement actifs et servent de premier réflexe quand quelqu'un cherche un artisan ou un commerce. Y être présent régulièrement, sans y faire de promotion directe, vaut souvent mieux qu'un budget publicitaire. Les vidéos qui montrent un chantier local circulent vite parce que les gens reconnaissent la rue.",
-      articles: [
-        'commerce-centre-ville-visibilite',
-        'garage-automobile-visibilite',
-        'creer-fiche-google-business',
-        'obtenir-avis-google',
-        'zone-de-chalandise-sans-local',
-        'rater-moins-d-appels',
-      ],
+        'Dans la couronne chambérienne, les groupes Facebook de commune sont le premier réflexe pour trouver un artisan. Une vidéo de chantier y circule vite, parce que les gens reconnaissent la rue.',
       faq: [
         {
           q: 'Pourquoi cibler La Ravoire plutôt que Chambéry ?',
@@ -363,35 +344,28 @@ export const chamberyCities: CityData[] = [
         'Hébergement et restauration',
         'Commerces de vallée',
       ],
-      context: [
-        "Saint-Jean-de-Maurienne est une ville industrielle dans une vallée qui vit aussi du tourisme. L'aluminium y a une histoire longue, les grands chantiers d'infrastructure y font travailler beaucoup de monde, et les cols environnants attirent chaque été une clientèle cycliste venue de toute l'Europe.",
-        "Pour une entreprise locale, cette diversité est une opportunité et une difficulté. Une opportunité parce que la demande est variée et présente toute l'année. Une difficulté parce qu'un site qui essaie de parler à tout le monde en même temps finit par ne convaincre personne.",
-        "La bonne approche consiste à séparer clairement les publics sur des pages différentes. Le donneur d'ordre industriel, le particulier de la vallée et le visiteur de passage ne cherchent pas les mêmes mots et n'ont pas les mêmes questions.",
-      ],
-      blocks: [
+      points: [
         {
-          title: 'Séparer les publics, pas les diluer',
-          body: "Une page pour les professionnels, une page pour les particuliers. Le vocabulaire, les preuves et les arguments diffèrent complètement. Une page unique qui mélange les deux affaiblit les deux messages et brouille aussi la compréhension qu'a Google de votre activité.",
+          titre: 'Trois économies dans la même vallée',
+          texte: "L'industrie, la montagne et les grands chantiers. Vos clients viennent souvent des trois, et ils ne cherchent pas avec les mêmes mots.",
         },
         {
-          title: 'La sous-traitance industrielle se cherche en ligne',
-          body: "Contrairement à une idée répandue, les acheteurs industriels utilisent Google, y compris pour trouver un sous-traitant local. Un site qui détaille précisément vos capacités, vos machines et vos certifications vous rend trouvable sur des recherches très spécifiques et peu concurrentielles.",
+          titre: 'Une page pour les pros, une pour les particuliers',
+          texte: "Le vocabulaire, les preuves et les arguments n'ont rien à voir. Une page qui mélange les deux affaiblit les deux messages.",
         },
         {
-          title: 'La saison cycliste, un public à part',
-          body: "Si votre activité touche au tourisme sportif, sachez que cette clientèle prépare son séjour plusieurs mois à l'avance et depuis loin. Votre visibilité doit exister en hiver pour produire des réservations en été.",
+          titre: 'Les acheteurs industriels cherchent sur Google',
+          texte: 'Un site qui détaille vos capacités, vos machines et vos certifications vous rend trouvable sur des recherches précises et peu disputées.',
+          article: 'demarcher-les-professionnels',
+        },
+        {
+          titre: "Les cyclistes réservent l'été dès l'hiver",
+          texte: "La clientèle des cols prépare son séjour des mois à l'avance, et depuis loin. Votre visibilité doit exister en hiver.",
+          article: 'entreprise-saisonniere-communication',
         },
       ],
       social:
-        "La Maurienne offre un décor que les gens reconnaissent immédiatement, notamment autour des cols. Pour une entreprise touristique, c'est un avantage évident. Pour une entreprise industrielle ou du bâtiment, l'angle est différent mais tout aussi efficace : montrer un savoir faire technique en trente secondes intéresse à la fois les clients potentiels et les candidats au recrutement, ce qui est un vrai sujet dans la vallée.",
-      articles: [
-        'site-web-artisan',
-        'electricien-plombier-chauffagiste-visibilite',
-        'garage-automobile-visibilite',
-        'creer-fiche-google-business',
-        'entreprise-saisonniere-communication',
-        'rater-moins-d-appels',
-      ],
+        'Autour des cols, le décor se reconnaît tout de suite. Pour une entreprise industrielle, trente secondes de savoir-faire intéressent à la fois les clients et les candidats.',
       faq: [
         {
           q: 'Vous vous déplacez en Maurienne ?',

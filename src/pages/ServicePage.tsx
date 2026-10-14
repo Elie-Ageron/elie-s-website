@@ -7,8 +7,8 @@ import FaqSection from '@/components/FaqSection';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
 import { getServicePage, getRelatedServices } from '@/data/service-pages';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { getIndexEntry } from '@/data/blogIndex';
 import ParagrapheDecoupe from '@/components/ParagrapheDecoupe';
+import SectionLocale from '@/components/SectionLocale';
 
 /**
  * Une page par service, rendue depuis `src/data/service-pages.ts`.
@@ -38,13 +38,6 @@ const ServicePage = ({ slug }: ServicePageProps) => {
   const baseUrl = 'https://elieageron.com';
   const canonical = `${baseUrl}/${service.slug}`;
   const related = getRelatedServices(service);
-
-  const articles = service.articles
-    .map((articleSlug) => {
-      const post = getIndexEntry(articleSlug);
-      return post ? { slug: articleSlug, title: post.title, excerpt: post.excerpt } : null;
-    })
-    .filter((p): p is { slug: string; title: string; excerpt: string } => p !== null);
 
   const serviceSchema = {
     '@context': 'https://schema.org',
@@ -233,29 +226,20 @@ const ServicePage = ({ slug }: ServicePageProps) => {
         </div>
       </section>
 
-      {/* ─────────── Le probleme reel ─────────── */}
-      <section className="border-t border-border/50 py-20 sm:py-28" aria-labelledby="service-probleme">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6">
-          <h2 id="service-probleme" className="section-title text-foreground">
-            <span>Ce qui cloche, </span>
-            <span className="text-primary">presque à chaque fois</span>
-          </h2>
-          <div className="mt-8 space-y-6">
-            {service.probleme.map((paragraphe, i) => (
-              <ParagrapheDecoupe
-                key={i}
-                as={motion.p}
-                texte={paragraphe}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{ delay: i * 0.05, duration: 0.4 }}
-                className="text-base leading-relaxed text-muted-foreground sm:text-lg"
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ─────────── Le probleme reel ───────────
+          Trois points courts et un visage, au lieu de trois paragraphes. Meme
+          composant que les pages de villes, voir `SectionLocale`. */}
+      <SectionLocale
+        id="service-probleme"
+        altPortrait="Elie Ageron, web designer à Albertville, en Savoie"
+        points={service.probleme}
+        titre={
+          <>
+            <span className="text-foreground">Ce qui cloche, </span>
+            <span className="block text-primary lg:inline">presque à chaque fois.</span>
+          </>
+        }
+      />
 
       {/* ─────────── Ce qui est livre ─────────── */}
       <section className="border-t border-border/50 bg-secondary/30 py-20 sm:py-28" aria-labelledby="service-livrables">
@@ -287,46 +271,9 @@ const ServicePage = ({ slug }: ServicePageProps) => {
         </div>
       </section>
 
-      <FaqSection
-        id="service-faq"
-        className="border-t border-border/50 px-4 py-16 sm:px-6 sm:py-24"
-        items={service.faq.map((item) => ({ question: item.q, answer: item.a }))}
-        titre={
-          <>
-            <span className="text-foreground">Les questions qu&rsquo;on me pose </span>
-            <span className="block text-primary lg:inline">là-dessus.</span>
-          </>
-        }
-      />
-
-      {/* ─────────── Maillage vers le corpus ─────────── */}
-      {articles.length > 0 && (
-        <section className="border-t border-border/50 py-14 sm:py-20" aria-labelledby="service-articles">
-          <div className="mx-auto max-w-3xl px-4 sm:px-6">
-            <h2 id="service-articles" className="max-lg:section-title lg:text-3xl lg:font-medium lg:leading-tight text-foreground">
-              Si vous préférez le faire vous-même
-            </h2>
-            <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-              Tout est expliqué en détail dans ces articles, gratuitement. Rien n&rsquo;y est réservé aux
-              clients, et vous n&rsquo;avez pas besoin de moi pour les appliquer.
-            </p>
-            <ul className="mt-7 divide-y divide-border/60 border-y border-border/60">
-              {articles.map((post) => (
-                <li key={post.slug}>
-                  <Link to={`/blog/${post.slug}`} className="group block py-5">
-                    <span className="block font-medium text-foreground text-pretty transition-colors group-hover:text-primary">
-                      {post.title}
-                    </span>
-                    <span className="mt-1 line-clamp-2 text-base text-muted-foreground lg:block lg:text-sm">{post.excerpt}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-      )}
-
-      {/* ─────────── Les autres services ─────────── */}
+      {/* ─────────── Les autres services ───────────
+          Avant la FAQ depuis le 14 octobre 2026 : sous elle, avec la liste
+          d'articles, ils faisaient croire a une seconde fin de page. */}
       <section className="border-t border-border/50 py-14 sm:py-20" aria-labelledby="service-related">
         <div className="mx-auto max-w-3xl px-4 sm:px-6">
           <h2 id="service-related" className="text-2xl leading-tight font-semibold text-foreground lg:text-xl">
@@ -356,6 +303,18 @@ const ServicePage = ({ slug }: ServicePageProps) => {
           </p>
         </div>
       </section>
+
+      <FaqSection
+        id="service-faq"
+        className="border-t border-border/50 px-4 py-16 sm:px-6 sm:py-24"
+        items={service.faq.map((item) => ({ question: item.q, answer: item.a }))}
+        titre={
+          <>
+            <span className="text-foreground">Les questions qu&rsquo;on me pose </span>
+            <span className="block text-primary lg:inline">là-dessus.</span>
+          </>
+        }
+      />
 
       <ContactMethodsSection />
     </>

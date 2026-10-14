@@ -66,39 +66,28 @@ export const hauteSavoieCities: CityData[] = [
         'Commerces et services de vallée',
         'Transport et logistique',
       ],
-      context: [
-        "La vallée de l'Arve concentre le décolletage français, cette industrie de la pièce tournée de précision qui alimente l'automobile, le médical, l'aéronautique et la connectique. Autour de Cluses, de Scionzier et de Marnaz, des centaines d'ateliers de dix à cent salariés travaillent en sous-traitance, souvent pour des donneurs d'ordre situés à des centaines de kilomètres.",
-        "Cette structure change complètement la logique de visibilité. Un décolleteur ne cherche pas à sortir sur une recherche locale : ses clients ne sont pas dans la vallée. Il a besoin qu'un acheteur ou un bureau d'études qui cherche une capacité précise le trouve, comprenne ce qu'il sait faire, et le juge crédible avant de demander une consultation.",
-        "À côté de ce tissu industriel vit une économie de vallée classique : artisans du bâtiment, commerces, garages, restauration, services. Pour eux, la logique redevient locale et le bloc carte de Google redevient le premier enjeu. Une même commune, deux marchés qui n'ont presque rien en commun.",
-      ],
-      blocks: [
+      points: [
         {
-          title: 'Un site industriel doit lister des capacités, pas des valeurs',
-          body: "La quasi-totalité des sites de sous-traitance que je regarde parlent de savoir-faire, d'exigence et de partenariat. Un acheteur, lui, cherche des matières usinées, des diamètres, des tolérances, des parcs machines, des certifications, des volumes de série et des délais. Écrire ces éléments noir sur blanc n'est pas une question de référencement, c'est ce qui permet d'être consulté plutôt qu'écarté.",
+          titre: 'Vos clients ne sont pas dans la vallée',
+          texte: "Un décolleteur vend à des donneurs d'ordre situés à des centaines de kilomètres. Son site doit rassurer un acheteur, pas séduire un passant.",
         },
         {
-          title: 'Les photos d\'atelier valent tous les arguments',
-          body: "Un acheteur qui ne vous connaît pas veut voir le parc machines, l'organisation, la métrologie, la propreté des postes. Ce sont des images que vous pouvez prendre vous-même en une heure et qui font davantage pour la crédibilité qu'une page entière de texte. Peu d'entreprises de la vallée les montrent.",
+          titre: 'Des capacités, pas des valeurs',
+          texte: "Matières, diamètres, tolérances, parc machines, certifications. C'est ce qu'un acheteur cherche, et presque aucun site de la vallée ne l'écrit.",
         },
         {
-          title: 'Le recrutement est un sujet de site à part entière',
-          body: "Dans l'Arve, la difficulté à recruter des régleurs, des opérateurs et des techniciens est un problème structurel. Un site qui parle correctement aux candidats, avec des photos de l'atelier réel et des témoignages de salariés, sert autant que celui qui parle aux clients. C'est un usage que presque personne n'exploite.",
+          titre: 'Le site sert aussi à recruter',
+          texte: "Une page qui montre l'atelier réel et donne la parole aux salariés aide à trouver des régleurs et des opérateurs.",
+          article: 'recruter-avec-son-site-et-ses-reseaux',
         },
         {
-          title: 'Les artisans et commerces de la vallée jouent un autre match',
-          body: "Pour un plombier de Scionzier ou un garage de Marnaz, l'enjeu redevient la fiche Google Business, les avis et les recherches par commune. C'est un travail plus rapide et moins coûteux, et il produit des demandes en quelques semaines.",
+          titre: 'Les artisans de la vallée jouent un autre match',
+          texte: 'Pour un plombier de Scionzier ou un garage de Marnaz, tout repose sur la fiche Google, les avis et les recherches par commune.',
+          article: 'electricien-plombier-chauffagiste-visibilite',
         },
       ],
       social:
-        "Dans la vallée de l'Arve, la vidéo courte a un avantage rare : les gestes industriels sont spectaculaires et personne ne les montre. Une pièce qui sort d'un tour à commande numérique, un contrôle au projecteur de profil, un montage de série : ce sont des images qui retiennent l'attention, qui prouvent votre capacité, et qui servent autant en recrutement qu'en prospection. Pour les commerces et les artisans du fond de vallée, la logique reste celle du local, avec les groupes de commune comme relais de recommandation.",
-      articles: [
-        'demarcher-les-professionnels',
-        'recruter-avec-son-site-et-ses-reseaux',
-        'linkedin-tpe-locale',
-        'marches-publics-petite-entreprise',
-        'electricien-plombier-chauffagiste-visibilite',
-        'page-service-qui-ressort',
-      ],
+        "Une pièce qui sort d'un tour numérique, un contrôle au projecteur de profil : les gestes industriels sont spectaculaires, et personne ne les montre. Ils servent en prospection comme en recrutement.",
       faq: [
         {
           q: 'Vous vous déplacez dans la vallée de l\'Arve ?',
@@ -176,39 +165,28 @@ export const hauteSavoieCities: CityData[] = [
         'Bien-être et thérapies',
         'Services aux frontaliers',
       ],
-      context: [
-        "Thonon est la ville centre d'un bassin qui va de la rive du Léman aux premiers reliefs du Chablais. Le tissu économique y est varié : commerce de centre-ville, santé et professions libérales, bâtiment très actif, et une économie touristique lacustre qui fonctionne surtout l'été, à l'inverse des vallées de Tarentaise.",
-        "La singularité du secteur tient au travail frontalier. Une part importante de la population active traverse la frontière ou le lac chaque jour. Ces gens partent tôt, rentrent tard, ont un pouvoir d'achat supérieur à la moyenne locale, et gèrent presque tout depuis leur téléphone, souvent le soir.",
-        "Pour une entreprise locale, ça produit une conséquence très concrète : les demandes arrivent en dehors des heures ouvrables, et celui qui répond le lendemain matin a déjà perdu une partie d'entre elles. La joignabilité compte ici plus que dans la plupart des bassins savoyards.",
-      ],
-      blocks: [
+      points: [
         {
-          title: 'Se rendre joignable en dehors des heures de bureau',
-          body: "Un formulaire court, un numéro cliquable, une messagerie professionnelle avec un message d'absence honnête, et une réponse dans la journée. Ce n'est pas de la technique, c'est de l'organisation, et c'est ce qui sépare les entreprises qui captent les demandes du soir de celles qui les laissent filer.",
+          titre: 'Vos clients travaillent en Suisse',
+          texte: 'Ils partent tôt, rentrent tard et règlent tout le soir depuis leur téléphone. Celui qui répond le lendemain a déjà perdu une partie des demandes.',
+          article: 'rater-moins-d-appels',
         },
         {
-          title: 'Afficher ses prix face à une clientèle qui compare',
-          body: "Une clientèle au pouvoir d'achat élevé n'est pas une clientèle qui ne regarde pas les prix. C'est une clientèle qui compare vite et qui écarte ce qui reste flou. Un ordre de grandeur affiché fait gagner des rendez-vous et évite des visites inutiles.",
+          titre: 'Joignable en dehors des heures de bureau',
+          texte: "Un formulaire court, un numéro cliquable, une réponse dans la journée. Ce n'est pas de la technique, c'est de l'organisation.",
         },
         {
-          title: 'Le bâtiment, un marché tendu où le site sert à filtrer',
-          body: "Dans le Chablais, beaucoup d'artisans du bâtiment sont pleins et n'ont pas besoin de plus de demandes, mais de meilleures. Un site qui dit clairement ce que vous faites, ce que vous ne faites pas, votre zone et vos délais réels transforme un flot de demandes ingérable en un carnet mieux qualifié.",
+          titre: 'Un ordre de prix affiché',
+          texte: 'Une clientèle aisée compare vite et écarte ce qui reste flou. Un ordre de grandeur sur le site fait gagner des rendez-vous.',
+          article: 'afficher-ses-prix-ou-pas',
         },
         {
-          title: 'Le tourisme du lac obéit au calendrier inverse de la montagne',
-          body: "Hébergements, restaurants et activités du bord du Léman vivent surtout de mai à septembre. La visibilité se prépare donc en hiver et au début du printemps, au moment où les gens choisissent, pas en pleine saison quand tout est plein.",
+          titre: 'Le bâtiment a besoin de meilleures demandes',
+          texte: "Beaucoup d'artisans du Chablais sont pleins. Un site qui dit votre zone, vos délais et ce que vous ne faites pas trie les demandes à votre place.",
         },
       ],
       social:
-        "Dans le Chablais, les groupes de commune et les pages locales sont un canal de recommandation très actif, en partie parce que le bassin est dense et que les gens s'y connaissent. Une entreprise dont le nom revient régulièrement dans ces conversations obtient des demandes sans jamais rien payer. Les vidéos courtes qui montrent un chantier fini, un lieu reconnaissable du bord du lac ou un conseil pratique circulent bien parce que le territoire est identifiable en une image.",
-      articles: [
-        'rater-moins-d-appels',
-        'afficher-ses-prix-ou-pas',
-        'commerce-centre-ville-visibilite',
-        'therapeute-reseaux-sociaux-clients',
-        'devis-qui-se-signe',
-        'prendre-rendez-vous-en-ligne',
-      ],
+        "Dans le Chablais, les groupes de commune font circuler les noms. Un chantier fini, un coin du lac, un conseil pratique : ces vidéos marchent parce qu'on reconnaît le territoire.",
       faq: [
         {
           q: 'Vous intervenez dans le Chablais ?',
@@ -282,39 +260,28 @@ export const hauteSavoieCities: CityData[] = [
         'Santé et bien-être',
         'Restauration',
       ],
-      context: [
-        "Sallanches occupe une place particulière dans le pays du Mont-Blanc : c'est le point de convergence commercial et administratif d'une vallée dont les extrémités, de Megève à Saint-Gervais, vivent du tourisme haut de gamme. Les habitants des stations descendent ici, et une partie des entreprises de Sallanches travaillent en réalité pour les stations.",
-        "Le bâtiment y est particulièrement structurant. La rénovation et l'entretien de chalets, la charpente, la menuiserie, l'agencement et les métiers du second œuvre alimentent un marché à panier élevé, avec une clientèle qui n'habite pas forcément sur place et qui décide à distance.",
-        "Cette clientèle non résidente est le point clé du bassin. Un propriétaire de chalet qui vit à Paris, à Lyon ou à Genève choisit son artisan sans pouvoir passer à l'atelier. Il choisit sur ce qu'il trouve en ligne, sur des photos de réalisations et sur des avis. C'est un cas où le site pèse beaucoup plus lourd qu'ailleurs.",
-      ],
-      blocks: [
+      points: [
         {
-          title: 'Vendre à un client qui n\'habite pas sur place',
-          body: "Quand le propriétaire est à trois cents kilomètres, il ne peut ni passer voir votre travail ni juger votre sérieux de visu. Tout ce qui remplace cette visite compte double : des photos nombreuses de réalisations, un déroulé de chantier écrit, des comptes rendus réguliers, et des avis détaillés. C'est précisément ce que la plupart des entreprises de la vallée ne fournissent pas.",
+          titre: "Vos clients n'habitent pas sur place",
+          texte: "Un propriétaire de chalet qui vit à Paris ou à Genève choisit son artisan sans passer à l'atelier. Il choisit sur ce qu'il trouve en ligne.",
         },
         {
-          title: 'Le panier élevé justifie un site sérieux',
-          body: "Sur un marché où une rénovation de chalet se compte en dizaines de milliers d'euros, un site bâclé coûte des affaires entières. Plus le montant est élevé, plus le client cherche des raisons de faire confiance, et plus le moindre détail bancal pèse dans la balance.",
+          titre: 'Ce qui remplace la visite compte double',
+          texte: "Des photos de réalisations, un déroulé de chantier écrit, des avis détaillés. Peu d'entreprises de la vallée les fournissent.",
+          article: 'avant-apres-artisan-contenu',
         },
         {
-          title: 'La saisonnalité double des activités de montagne',
-          body: "Beaucoup d'entreprises d'ici vivent deux saisons et deux creux. La visibilité se prépare pendant les intersaisons, avec la matière captée pendant les périodes pleines. C'est le calendrier inversé, et il s'applique aussi bien aux hébergements qu'aux encadrants sportifs et aux commerces.",
+          titre: 'Un gros chantier mérite un site sérieux',
+          texte: "Une rénovation de chalet se compte en dizaines de milliers d'euros. Plus le montant monte, plus le moindre détail bancal pèse.",
+          article: 'menuisier-cuisiniste-visibilite',
         },
         {
-          title: 'Une clientèle internationale, en partie',
-          body: "Le pays du Mont-Blanc reçoit une clientèle étrangère régulière. Traduire ce qui décide, sans traduire tout le site, suffit dans la plupart des cas et se fait une fois.",
+          titre: 'Deux saisons, deux creux',
+          texte: 'La visibilité se prépare pendant les intersaisons, avec les images tournées quand tout est plein.',
         },
       ],
       social:
-        "Le décor fait une partie du travail : peu de bassins offrent des images aussi immédiatement reconnaissables. Un chantier avec le massif en arrière-plan, un chalet fini, un lever de jour sur la vallée retiennent l'attention sans effort de production. Pour les entreprises du bâtiment, l'avant et après est particulièrement efficace ici, parce que la rénovation de chalet produit des transformations spectaculaires et que la clientèle non résidente n'a que ces images pour juger.",
-      articles: [
-        'menuisier-cuisiniste-visibilite',
-        'location-saisonniere-reservation-directe',
-        'site-bilingue-clientele-etrangere',
-        'avant-apres-artisan-contenu',
-        'entreprise-saisonniere-communication',
-        'devis-qui-se-signe',
-      ],
+        "Un chantier avec le massif derrière, un chalet fini : le décor fait une partie du travail. L'avant et après marche très bien ici, parce que le client à distance n'a que ces images pour juger.",
       faq: [
         {
           q: 'Vous vous déplacez à Sallanches et dans le pays du Mont-Blanc ?',
@@ -388,39 +355,28 @@ export const hauteSavoieCities: CityData[] = [
         'Commerces et services de proximité',
         'Transport',
       ],
-      context: [
-        "Rumilly est la ville centre de l'Albanais, un territoire de plaine et de collines entre Annecy et Aix-les-Bains. Contrairement à ses deux voisines, ce n'est pas un bassin touristique : c'est un bassin de production, avec de l'industrie, de l'agroalimentaire, de l'agriculture et un artisanat de fabrication.",
-        "La position entre deux agglomérations a un effet paradoxal. Beaucoup d'habitants travaillent à Annecy ou à Chambéry, ce qui vide le territoire en journée, mais l'activité économique locale reste réelle et les entreprises d'ici servent souvent un rayon large.",
-        "Pour la visibilité en ligne, c'est une bonne nouvelle. La concurrence sur les recherches locales y est nettement plus faible qu'à Annecy, où le moindre métier est disputé par des dizaines d'entreprises installées. Une fiche Google bien tenue et quelques pages sérieuses y pèsent donc plus lourd qu'ailleurs, même si personne ne peut promettre une position : le classement de Google ne se contrôle pas.",
-      ],
-      blocks: [
+      points: [
         {
-          title: 'Un marché où les résultats arrivent vite',
-          body: "C'est l'argument principal de ce bassin. Là où une entreprise annécienne met un an ou deux à bouger sur une recherche disputée, une entreprise de l'Albanais peut se placer en quelques mois avec un travail sérieux mais modeste. Le rendement du temps investi est simplement meilleur.",
+          titre: "Moins de concurrence qu'à Annecy",
+          texte: "Dans l'Albanais, peu d'entreprises travaillent leur visibilité. Une fiche Google bien tenue et quelques pages sérieuses y pèsent plus lourd.",
+          article: 'etre-premier-google-dans-sa-ville',
         },
         {
-          title: 'Nommer les communes, toutes',
-          body: "L'Albanais est un territoire de petites communes, et les gens cherchent avec le nom de la leur. Écrire la liste réelle, d'Alby-sur-Chéran à Saint-Félix, vaut mieux que la mention générique d'un département. C'est gratuit et presque personne ne le fait.",
+          titre: 'Nommer toutes les communes',
+          texte: "D'Alby-sur-Chéran à Saint-Félix, les gens cherchent avec le nom de la leur. Les écrire ne coûte rien, et presque personne ne le fait.",
         },
         {
-          title: 'Les circuits courts et la vente directe',
-          body: "Producteurs, transformateurs et artisans de bouche gagnent beaucoup à être trouvables : horaires de vente, points de retrait, marchés fréquentés, disponibilité des produits. Ce sont des informations pratiques que les gens cherchent activement et qui manquent presque toujours en ligne.",
+          titre: 'Vente directe et circuits courts',
+          texte: 'Horaires, points de retrait, marchés, produits disponibles. Les gens les cherchent, et ces informations manquent presque toujours en ligne.',
+          article: 'traiteur-food-truck-visibilite',
         },
         {
-          title: 'Ne pas se battre sur Annecy quand on est à Rumilly',
-          body: "La tentation est forte de viser la grande ville voisine. C'est le meilleur moyen de perdre son temps et son budget : Google privilégie fortement la proximité sur les recherches locales. Mieux vaut dominer son bassin et travailler Annecy avec du contenu ciblé, pas avec des déclarations de zone.",
+          titre: 'Ne pas viser Annecy depuis Rumilly',
+          texte: "Sur une recherche locale, Google favorise la proximité. Mieux vaut tenir son bassin que se battre sur la grande ville d'à côté.",
         },
       ],
       social:
-        "Sur un territoire de petites communes, les groupes locaux et les pages de village pèsent lourd dans la recommandation. Une entreprise identifiée comme étant du coin obtient une préférence spontanée que les enseignes des zones commerciales d'Annecy n'auront jamais. La vidéo courte y sert surtout à montrer le travail réel et les visages, dans un contexte où tout le monde finit par se connaître.",
-      articles: [
-        'etre-premier-google-dans-sa-ville',
-        'electricien-plombier-chauffagiste-visibilite',
-        'demarcher-les-professionnels',
-        'creer-fiche-google-business',
-        'commerce-centre-ville-visibilite',
-        'traiteur-food-truck-visibilite',
-      ],
+        "Sur un territoire de petites communes, être identifié comme quelqu'un du coin donne une préférence spontanée. La vidéo y montre le travail réel et les visages.",
       faq: [
         {
           q: 'Vous vous déplacez à Rumilly et dans l\'Albanais ?',

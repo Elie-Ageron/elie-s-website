@@ -9,9 +9,9 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import FAQAccordion from '@/components/FAQAccordion';
 import FaqSection from '@/components/FaqSection';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
-import ParagrapheDecoupe from '@/components/ParagrapheDecoupe';
+import PortfolioShowcaseSection from '@/components/PortfolioShowcaseSection';
 import { cities, getRelatedCities } from '@/data/cities';
-import { getIndexEntry } from '@/data/blogIndex';
+import SectionLocale from '@/components/SectionLocale';
 
 interface CityLandingPageProps {
   slug: string;
@@ -30,22 +30,18 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
      francais seulement, d'ou la preposition francaise. */
   /* On teste le nom, pas `scope` : `/web-designer-savoie` est une zone qui
      s'appelle « Albertville », et le drapeau aurait donne « en Albertville ». */
-  const departement = /Savoie$/.test(d.name);
-  const dans = departement ? `en ${d.name}` : `à ${d.name}`;
+  /* Le lieu des titres est celui du h1, pas `name` : la page Savoie s'appelle
+     « Albertville » (son adresse) et titrait « Le contexte à Albertville »
+     au dessus d'un texte sur tout le departement. */
+  const lieu = d.h1Highlight;
+  const departement = /Savoie$/.test(lieu);
+  const dans = departement ? `en ${lieu}` : `à ${lieu}`;
   const depth = city.depthFr;
   // Le contenu long n'existe qu'en francais : on ne le sert qu'en francais.
   const showDepth = language === 'fr' && Boolean(depth);
   const baseUrl = 'https://elieageron.com';
   const canonical = `${baseUrl}/${slug}`;
   const related = getRelatedCities(city);
-
-  /** Articles choisis pour ce bassin. Les slugs sont valides par check:content. */
-  const cityArticles = (depth?.articles ?? [])
-    .map((articleSlug) => {
-      const post = getIndexEntry(articleSlug);
-      return post ? { slug: articleSlug, title: post.title, excerpt: post.excerpt } : null;
-    })
-    .filter((p): p is { slug: string; title: string; excerpt: string } => p !== null);
 
   /* « de » s'elide devant une voyelle ou un h muet. Sans ca, les pages
      locales affichaient « Autour de Albertville », « Autour de Annecy »,
@@ -239,8 +235,11 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
               `/reseaux-sociaux`, qui avait la meme forme : *« c'est un enorme
               paragraphe et tu as deux boutons, donc ce n'est pas du tout assez
               aere. »* Ici c'etait un sous-titre, puis ce paragraphe, puis deux
-              boutons et deux lignes. Le texte reste sur la page, mot pour mot :
-              c'est lui qui la distingue d'une page dupliquee. */}
+              boutons et deux lignes.
+              ⚠️ Depuis le 14 octobre 2026 la section de contexte n'existe plus :
+              l'intro francaise n'est donc plus affichee. Ce qu'elle disait est
+              repris dans les points de la section locale. Elle ne sert plus
+              qu'au hero anglais. */}
           {showDepth ? (
             <div className="mb-8 sm:mb-10" />
           ) : (
@@ -335,185 +334,142 @@ const CityLandingPage = ({ slug }: CityLandingPageProps) => {
         </div>
       </section>
 
+      {/* 🔴 **L'ordre de cette page a ete refait le 14 octobre 2026.** Elie,
+          sur `/creation-site-web-albertville` : *« t'as pas d'elements clairs.
+          T'as quatre paragraphes enormes [...] Tu dis que c'est la fin de la
+          page, mais apres t'as encore des paragraphes, des avis, des prix, un
+          audit gratuit. On comprend rien. »*
+
+          Mesure avant, a 390 px : quinze ecrans, dont six de texte continu
+          avant le premier element concret. Les prix arrivaient au treizieme
+          ecran, apres la FAQ, et aucun site realise n'etait montre.
+
+          L'ordre retenu suit les questions de quelqu'un qui tape « creation
+          site web + sa ville » : combien, qu'est-ce qu'il a deja fait, pourquoi
+          lui plutot qu'un autre, qu'en disent ses clients. Le texte local reste
+          sur la page, c'est lui qui la distingue d'une page satellite, mais en
+          points courts et apres les preuves. La FAQ est le dernier bloc avant
+          la fin de page commune, comme partout ailleurs sur le site. */}
+      <ServicesSection />
+      <PortfolioShowcaseSection contexte="sites" />
+
       {showDepth && (
-        <>
-          {/* Contexte local, la partie qui distingue cette page d'une page dupliquee */}
-          <section className="py-20 sm:py-24 border-t border-border/50" aria-labelledby="city-context">
-            <div className="max-w-3xl mx-auto px-4 sm:px-6">
-              <h2 id="city-context" className="max-lg:section-title lg:text-3xl lg:font-medium lg:leading-tight text-balance mb-6">
-                {`Le contexte ${dans}`}
-              </h2>
-              <div className="space-y-5">
-                {[d.intro, ...depth!.context].map((paragraph, i) => (
-                  <ParagrapheDecoupe
-                    key={i}
-                    as={motion.p}
-                    texte={paragraph}
-                    initial={{ opacity: 0, y: 12 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: '-60px' }}
-                    transition={{ delay: i * 0.05, duration: 0.4 }}
-                    className={`text-base sm:text-lg leading-relaxed ${i === 0 ? 'text-foreground' : 'text-muted-foreground'}`}
-                  />
-                ))}
-              </div>
-
-              <div className="mt-10 pt-8 border-t border-border/60">
-                <h3 className="mb-3 text-lg font-bold tracking-tight text-foreground">
-                  Les métiers que j'accompagne ici
-                </h3>
-                <p className="text-base text-muted-foreground leading-relaxed">
-                  {depth!.sectors.join('. ')}.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          {/* Blocs editoriaux, pas de grille de cartes */}
-          <section className="py-4 sm:py-8" aria-labelledby="city-approach">
-            <div className="max-w-3xl mx-auto px-4 sm:px-6">
-              <h2 id="city-approach" className="sr-only">{`Ma façon de travailler ${dans}`}</h2>
-              <ul className="divide-y divide-border/60 border-y border-border/60">
-                {depth!.blocks.map((block, i) => (
-                  <motion.li
-                    key={block.title}
-                    initial={{ opacity: 0, y: 14 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: '-40px' }}
-                    transition={{ delay: Math.min(i * 0.06, 0.24), duration: 0.4 }}
-                    className="py-8 sm:py-10 grid grid-cols-1 sm:grid-cols-12 gap-3 sm:gap-8"
-                  >
-                    <div className="sm:col-span-4">
-                      <span className="block font-heading text-4xl font-bold leading-none text-primary lg:inline lg:font-mono lg:text-xs lg:font-normal lg:leading-normal">
-                        {String(i + 1).padStart(2, '0')}
-                      </span>
-                      <h3 className="mt-3 text-lg sm:text-xl font-semibold leading-snug text-foreground lg:mt-1">
-                        {block.title}
-                      </h3>
-                    </div>
-                    <ParagrapheDecoupe
-                      texte={block.body}
-                      className="sm:col-span-8 text-base text-muted-foreground leading-relaxed"
-                    />
-                  </motion.li>
-                ))}
-              </ul>
-            </div>
-          </section>
-
-          {/* Reseaux sociaux, deuxieme pilier */}
-          <section className="py-20 sm:py-24" aria-labelledby="city-social">
-            <div className="max-w-3xl mx-auto px-4 sm:px-6">
-              <h2 id="city-social" className="max-lg:section-title lg:text-3xl lg:font-medium lg:leading-tight text-balance mb-5">
-                {`Et si on filmait chez vous, ${dans} ?`}
-              </h2>
-              <ParagrapheDecoupe texte={depth!.social} className="text-base sm:text-lg text-muted-foreground leading-relaxed" />
-              <p className="mt-6">
-                <Link
-                  to="/reseaux-sociaux"
-                  className="inline-flex items-center gap-1.5 min-h-[44px] sm:min-h-[24px] text-primary font-medium hover:underline underline-offset-4"
-                >
-                  Voir comment se passe une journée de tournage
-                  <ArrowRight className="w-4 h-4" aria-hidden="true" />
-                </Link>
-              </p>
-            </div>
-          </section>
-
-          {/* Communes desservies, maillage semantique local */}
-          <section className="py-16 bg-secondary/40 border-y border-border/50" aria-labelledby="city-nearby">
-            <div className="max-w-3xl mx-auto px-4 sm:px-6">
-              <h2 id="city-nearby" className="text-2xl font-semibold leading-tight text-foreground mb-4 lg:text-xl">
-                {departement ? `Partout ${dans}` : `Autour ${de(d.name)}`}
-              </h2>
-              <p className="text-base text-muted-foreground leading-relaxed">
-                Je me déplace aussi à {depth!.nearby.slice(0, -1).join(', ')} et {depth!.nearby.slice(-1)}. Si
-                votre commune n'est pas dans la liste, demandez, elle est probablement sur ma route.
-              </p>
-            </div>
-          </section>
-
-          {/* FAQ locale, alignee sur le schema FAQPage.
-              ⚠️ C'etait une liste `dl` depliee avec ses propres classes. Voir
-              la note de `FaqSection` : meme presentation sur les quatre pages
-              qui portent une FAQ, seules les questions changent. */}
-          <FaqSection
-            id="city-faq"
-            className="px-4 py-20 sm:px-6"
-            items={depth!.faq.map((item) => ({ question: item.q, answer: item.a }))}
-            titre={
-              <>
-                <span className="text-foreground">Les questions qu&rsquo;on me pose </span>
-                <span className="text-primary">{dans}.</span>
-              </>
-            }
-          />
-
-          {/* Maillage vers le corpus, choisi pour le tissu economique du bassin */}
-          {cityArticles.length > 0 && (
-            <section className="py-16 border-t border-border/50" aria-labelledby="city-articles">
-              <div className="max-w-3xl mx-auto px-4 sm:px-6">
-                <h2
-                  id="city-articles"
-                  className="max-lg:section-title lg:text-3xl lg:font-medium lg:leading-tight text-foreground"
-                >
-                  Ce qui concerne les entreprises d&rsquo;ici
-                </h2>
-                <p className="mt-3 text-base text-muted-foreground leading-relaxed">
-                  Des articles choisis pour les métiers qu&rsquo;on trouve sur ce secteur. Tout est
-                  gratuit et rien n&rsquo;est réservé aux clients.
-                </p>
-                <ul className="mt-7 border-y border-border/60 divide-y divide-border/60">
-                  {cityArticles.map((post) => (
-                    <li key={post.slug}>
-                      <Link to={`/blog/${post.slug}`} className="group block py-5">
-                        <span className="block font-medium text-foreground text-pretty group-hover:text-primary transition-colors">
-                          {post.title}
-                        </span>
-                        <span className="mt-1 line-clamp-2 text-base text-muted-foreground lg:block lg:text-sm">
-                          {post.excerpt}
-                        </span>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </section>
-          )}
-        </>
+        <SectionLocale
+          id="city-local"
+          altPortrait={`Elie Ageron, web designer installé à Albertville, qui se déplace ${dans}`}
+          points={depth!.points}
+          titre={
+            <>
+              <span className="text-foreground">{`Créer un site ${dans}, `}</span>
+              <span className="block text-primary lg:inline">ce que ça change.</span>
+            </>
+          }
+        >
+          <h3 className="text-lg font-bold text-foreground">Les métiers que j&rsquo;accompagne ici</h3>
+          <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-3">
+            {depth!.sectors.map((secteur) => (
+              <li key={secteur} className="flex items-center gap-2 text-base text-foreground">
+                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                {secteur}
+              </li>
+            ))}
+          </ul>
+        </SectionLocale>
       )}
 
       <TestimonialsSection />
-      <ServicesSection />
 
-      {/* Maillage vers les autres pages locales */}
-      {related.length > 0 && (
-        <section className="py-16 border-t border-border/50" aria-labelledby="city-related">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6">
-            <h2 id="city-related" className="text-2xl font-semibold leading-tight text-foreground mb-5 lg:text-xl">
-              {language === 'fr' ? "J'interviens aussi ici" : 'I also work here'}
+      {/* Le second pilier, en deux phrases et un lien. C'etait un paragraphe de
+          quatre a six lignes. Le site offert au troisieme mois est l'argument
+          le plus fort de l'offre (`CLAUDE.md`, 21 septembre 2026), et il se lit
+          aussi dans ce sens : quelqu'un qui vient pour un site peut l'avoir
+          compris. Le lien mene a la page reseaux de la meme commune quand elle
+          existe, sinon a la page pilier. */}
+      {showDepth && (
+        <section className="border-t border-border/50 px-4 py-20 sm:px-6 sm:py-28" aria-labelledby="city-social">
+          <div className="mx-auto max-w-3xl lg:text-center">
+            <h2 id="city-social" className="section-title">
+              {/* Coupe imposee a toutes les largeurs : centre sur grand ecran,
+                  le titre se cassait entre « chez » et « vous ». */}
+              <span className="block text-foreground">Et si on filmait chez vous,</span>
+              <span className="block text-primary">{`${dans} ?`}</span>
             </h2>
-            <ul className="divide-y divide-border/60 border-y border-border/60">
-              {related.map((c) => (
-                <li key={c.slug}>
-                  <Link
-                    to={`/${c.slug}`}
-                    className="group flex items-baseline justify-between gap-4 py-4 hover:text-primary transition-colors"
-                  >
-                    <span className="font-medium">{c[language].breadcrumb}</span>
-                    <ArrowUpRight
-                      className="w-4 h-4 shrink-0 text-primary/50 group-hover:text-primary transition-colors"
-                      aria-hidden="true"
-                    />
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <p className="section-lede mt-6 lg:mx-auto">{depth!.social}</p>
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground lg:mx-auto">
+              <strong className="font-semibold text-foreground">890 € par mois, sans engagement.</strong> Une
+              journée de tournage, 8 vidéos montées et publiées, et un site d&rsquo;une page compris à partir du
+              troisième mois.
+            </p>
+            <Link
+              to={depth!.socialPage ? `/${depth!.socialPage}` : '/reseaux-sociaux'}
+              className="mt-8 inline-flex min-h-[48px] items-center gap-2 rounded-full border border-foreground px-6 text-sm font-semibold text-foreground transition-colors hover:bg-foreground hover:text-background"
+            >
+              {depth!.socialPage ? `Voir l'offre réseaux sociaux ${dans}` : "Voir l'offre réseaux sociaux"}
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
           </div>
         </section>
       )}
 
-      {!showDepth && <FAQAccordion />}
+      {/* La zone, une seule fois. C'etaient deux sections, « Autour de » et
+          « J'interviens aussi ici », dont la seconde tombait apres la FAQ. */}
+      {(showDepth || related.length > 0) && (
+        <section className="border-y border-border/50 bg-secondary/40 py-16" aria-labelledby="city-nearby">
+          <div className="mx-auto max-w-3xl px-4 sm:px-6">
+            <h2 id="city-nearby" className="mb-4 text-2xl font-semibold leading-tight text-foreground lg:text-xl">
+              {language === 'fr'
+                ? departement
+                  ? `Partout ${dans}`
+                  : `Autour ${de(lieu)}`
+                : 'I also work here'}
+            </h2>
+            {showDepth && (
+              <p className="text-base leading-relaxed text-muted-foreground">
+                {departement ? 'Je me déplace à ' : 'Je me déplace aussi à '}
+                {depth!.nearby.slice(0, -1).join(', ')} et {depth!.nearby.slice(-1)}. Si
+                votre commune n&rsquo;est pas dans la liste, demandez, elle est probablement sur ma route.
+              </p>
+            )}
+            {related.length > 0 && (
+              <ul className="mt-6 divide-y divide-border/60 border-y border-border/60">
+                {related.map((c) => (
+                  <li key={c.slug}>
+                    <Link
+                      to={`/${c.slug}`}
+                      className="group flex items-baseline justify-between gap-4 py-4 transition-colors hover:text-primary"
+                    >
+                      <span className="font-medium">{c[language].breadcrumb}</span>
+                      <ArrowUpRight
+                        className="h-4 w-4 shrink-0 text-primary/50 transition-colors group-hover:text-primary"
+                        aria-hidden="true"
+                      />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </section>
+      )}
+
+      {/* FAQ locale, alignee sur le schema FAQPage. Dernier bloc avant la fin
+          de page commune : plus rien ne vient apres elle. */}
+      {showDepth ? (
+        <FaqSection
+          id="city-faq"
+          className="px-4 py-20 sm:px-6"
+          items={depth!.faq.map((item) => ({ question: item.q, answer: item.a }))}
+          titre={
+            <>
+              <span className="text-foreground">Les questions qu&rsquo;on me pose </span>
+              <span className="text-primary">{dans}.</span>
+            </>
+          }
+        />
+      ) : (
+        <FAQAccordion />
+      )}
+
       <ContactMethodsSection />
     </>
   );

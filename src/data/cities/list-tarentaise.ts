@@ -60,35 +60,29 @@ export const tarentaiseCities: CityData[] = [
         'Santé et bien-être',
         'Sport et montagne',
       ],
-      context: [
-        "Albertville est un carrefour plus qu'une destination. La ville vit du passage vers la Tarentaise et le Beaufortain, des zones d'activité de la plaine, et d'un tissu d'artisans qui travaillent aussi bien en fond de vallée qu'en altitude.",
-        "Ça change deux choses pour votre présence en ligne. D'abord votre clientèle est étalée sur un territoire large, souvent au delà de la commune, ce qui rend le référencement local plus utile qu'ailleurs. Ensuite votre activité est saisonnière, avec des mois pleins et des mois creux, et c'est précisément dans les mois creux qu'il faut avoir semé.",
-        "La plupart des entreprises que je rencontre ici ont un bouche à oreille solide et une visibilité en ligne quasi nulle. Ce n'est pas un défaut de sérieux, c'est un manque de temps. Le résultat, c'est que quelqu'un qui vient d'emménager et qui cherche votre métier sur Google trouve un concurrent de Chambéry avant de vous trouver, vous.",
-      ],
-      blocks: [
+      socialPage: 'community-manager-albertville',
+      points: [
         {
-          title: 'Ce que je fais pour les entreprises du bassin',
-          body: "Un site clair qui explique ce que vous faites, où vous intervenez et comment on vous joint. Une fiche Google Business remplie et entretenue, parce que c'est ce qui vous fait sortir sur la carte quand quelqu'un tape votre métier depuis son téléphone. Et si vous le souhaitez, une journée de tournage par mois pour alimenter vos réseaux sans que vous ayez à filmer quoi que ce soit.",
+          titre: 'Je passe vous voir dans la semaine',
+          texte: "J'habite Albertville. Le premier rendez-vous se fait dans votre atelier ou votre boutique, sans facturation et sans engagement.",
         },
         {
-          title: 'Le rendez-vous sur place, sans facturation',
-          body: "Je préfère venir voir. Un atelier, un chantier, un local commercial racontent plus en vingt minutes qu'un questionnaire en dix pages. Ce déplacement n'est pas facturé et il n'engage à rien, y compris si je vous dis à la fin que vous n'avez pas besoin de moi.",
+          titre: 'Vos clients viennent de toute la vallée',
+          texte: 'Ils arrivent de la Tarentaise, du Beaufortain ou de la plaine. Votre site et votre fiche Google disent où vous intervenez.',
+          article: 'creer-fiche-google-business',
         },
         {
-          title: 'La saisonnalité, à prendre au sérieux',
-          body: "Dans la vallée, beaucoup d'activités font leur chiffre sur quelques mois. La conséquence, c'est que le travail de visibilité doit démarrer largement avant la saison, pas pendant. Un site mis en ligne en décembre pour la saison d'hiver arrive trop tard, et une présence sur les réseaux démarrée en janvier ne produira rien avant le printemps.",
+          titre: 'Le bouche à oreille ne touche pas les nouveaux',
+          texte: "Quelqu'un qui vient d'emménager cherche votre métier sur Google. S'il ne vous trouve pas, il appelle un concurrent de Chambéry.",
+          article: 'site-web-artisan',
+        },
+        {
+          titre: 'On lance tout avant la saison',
+          texte: "Un site mis en ligne en décembre arrive trop tard pour l'hiver. Le travail se fait pendant les mois creux.",
         },
       ],
       social:
-        "Albertville est une ville où l'on se connaît, et les groupes Facebook locaux y sont particulièrement actifs. C'est un canal de recommandation qui pèse davantage ici que dans une grande agglomération. Pour une entreprise du bassin, publier régulièrement des vidéos courtes qui montrent le travail réel produit un effet direct sur le bouche à oreille, parce que les gens partagent ce qu'ils reconnaissent.",
-      articles: [
-        'site-web-artisan',
-        'reseaux-sociaux-artisan-savoie',
-        'creer-fiche-google-business',
-        'electricien-plombier-chauffagiste-visibilite',
-        'commerce-centre-ville-visibilite',
-        'erreurs-visibilite-tpe-locale',
-      ],
+        "Ici, les groupes Facebook locaux font le bouche à oreille. Une vidéo qui montre votre vrai travail circule, parce que les gens partagent ce qu'ils reconnaissent.",
       faq: [
         {
           q: 'Vous vous déplacez à Albertville et autour ?',
@@ -156,35 +150,28 @@ export const tarentaiseCities: CityData[] = [
         'Services à la personne',
         'Activités de montagne',
       ],
-      context: [
-        "Ugine a une identité industrielle forte, avec tout ce que ça implique de savoir faire technique et de sous-traitance autour. À côté de ça vit un tissu de commerces et d'artisans qui travaillent pour les habitants de la vallée et pour le Val d'Arly juste au dessus.",
-        "Sur une commune de cette taille, la concurrence en ligne est faible. C'est une bonne nouvelle rarement exploitée : il suffit souvent d'une fiche Google correctement remplie et d'un site clair pour se retrouver devant, là où dans une agglomération il faudrait des mois de travail.",
-        "Le réflexe local reste le bouche à oreille, et il fonctionne bien. Le problème apparaît avec les gens qui arrivent : nouveaux habitants, résidences secondaires, saisonniers. Eux ne connaissent personne et cherchent sur leur téléphone. Si vous n'y êtes pas, ils appellent quelqu'un d'Albertville.",
-      ],
-      blocks: [
+      points: [
         {
-          title: 'Le levier le moins cher, en premier',
-          body: "Pour une entreprise d'Ugine, la fiche Google Business passe avant le site. Elle est gratuite, elle s'affiche au dessus de tous les résultats classiques, et sur une commune de cette taille il suffit souvent de la remplir sérieusement pour ressortir. Je commence toujours par là avant de parler de quoi que ce soit d'autre.",
+          titre: 'Peu de concurrence en ligne à Ugine',
+          texte: "Sur une commune de cette taille, peu d'entreprises ont une fiche Google bien remplie et un site clair. Celles qui les ont se remarquent.",
+          article: 'creer-fiche-google-business',
         },
         {
-          title: 'Un site simple, mais complet',
-          body: "Trois à cinq pages suffisent dans la plupart des cas : ce que vous faites, comment ça se passe, vos réalisations, et comment vous joindre. L'important n'est pas le nombre de pages, c'est que chacune réponde à une question que vos clients posent réellement au téléphone.",
+          titre: 'Les nouveaux arrivants ne connaissent personne',
+          texte: "Nouveaux habitants, résidences secondaires, saisonniers : ils cherchent sur leur téléphone. Si vous n'y êtes pas, ils appellent quelqu'un d'Albertville.",
         },
         {
-          title: 'Le lien avec le Val d\'Arly',
-          body: "Beaucoup d'entreprises d'Ugine montent travailler vers Flumet, Crest-Voland ou Notre-Dame-de-Bellecombe. Si c'est votre cas, il faut que ça se voie sur votre site et sur votre fiche Google, parce que les recherches se font par commune. Quelqu'un à Flumet ne tape pas Ugine.",
+          titre: "Le Val d'Arly se cherche commune par commune",
+          texte: "Quelqu'un à Flumet ne tape pas Ugine. Si vous montez travailler vers Crest-Voland ou Notre-Dame-de-Bellecombe, votre site doit le dire.",
+          article: 'zone-de-chalandise-sans-local',
+        },
+        {
+          titre: 'Trois à cinq pages suffisent',
+          texte: "Ce que vous faites, comment ça se passe, vos réalisations, comment vous joindre. Chaque page répond à une question qu'on vous pose au téléphone.",
         },
       ],
       social:
-        "Sur une commune de cette taille, une vidéo qui montre un chantier reconnaissable circule vite. Les gens identifient la rue, le bâtiment, parfois le voisin. C'est exactement ce qui déclenche les partages, et le partage local vaut infiniment plus que la vue anonyme. Deux vidéos par semaine tournées pendant votre travail normal suffisent à installer ça.",
-      articles: [
-        'site-web-artisan',
-        'paysagiste-jardinier-visibilite',
-        'creer-fiche-google-business',
-        'zone-de-chalandise-sans-local',
-        'menuisier-cuisiniste-visibilite',
-        'rater-moins-d-appels',
-      ],
+        "Ici, une vidéo de chantier reconnaissable circule vite : les gens identifient la rue, parfois le voisin. Et un partage local vaut plus qu'une vue anonyme.",
       faq: [
         {
           q: 'Vous vous déplacez à Ugine ?',
@@ -257,35 +244,27 @@ export const tarentaiseCities: CityData[] = [
         'Hébergement et conciergerie',
         'Commerces et services de vallée',
       ],
-      context: [
-        "Moûtiers occupe une position particulière : c'est le verrou de la Tarentaise, le point où passe tout ce qui monte vers Courchevel, Méribel, Les Menuires ou Val Thorens. Une bonne partie de l'économie locale vit de ce passage.",
-        "Pour une entreprise d'ici, ça veut dire deux clientèles très différentes. Les habitants de la vallée, présents toute l'année, qui cherchent un artisan ou un service de proximité. Et les acteurs de la station, qui cherchent un prestataire fiable capable d'intervenir vite en pleine saison.",
-        "Ces deux publics ne cherchent pas de la même façon. Le premier tape le nom de la commune sur son téléphone. Le second cherche souvent depuis l'extérieur du département, parfois plusieurs mois à l'avance, et compare sur des critères de disponibilité et de réactivité. Un site qui ne parle qu'à l'un des deux laisse la moitié du marché de côté.",
-      ],
-      blocks: [
+      points: [
         {
-          title: 'Deux publics, une seule page d\'accueil',
-          body: "L'erreur classique consiste à faire un site qui s'adresse à un seul des deux. La solution n'est pas de faire deux sites, c'est d'avoir une page dédiée par type de client, avec un vocabulaire et des preuves différentes. Le particulier veut être rassuré, le professionnel veut connaître vos délais et votre capacité.",
+          titre: 'Deux clientèles qui ne cherchent pas pareil',
+          texte: "Les habitants de la vallée tapent le nom de la commune. Les stations cherchent un prestataire fiable, souvent de loin et des mois à l'avance.",
         },
         {
-          title: 'La disponibilité comme argument principal',
-          body: "En Tarentaise, ce qui décide n'est pas toujours le prix. C'est de savoir si vous pouvez venir. Afficher clairement vos délais d'intervention, votre zone et vos périodes de forte charge vous fera gagner des clients et vous évitera des appels inutiles.",
+          titre: 'Une page par type de client',
+          texte: "Le particulier veut être rassuré, le professionnel veut vos délais et votre capacité. Un site qui ne parle qu'à l'un laisse l'autre de côté.",
         },
         {
-          title: 'Anticiper le calendrier',
-          body: "Les décisions se prennent hors saison. Un hébergeur qui cherche un prestataire pour l'hiver le cherche en septembre, parfois en juin. Votre visibilité doit donc être en place avant, ce qui suppose de commencer le travail plusieurs mois à l'avance.",
+          titre: 'Votre disponibilité vend plus que votre prix',
+          texte: "En Tarentaise, le client veut d'abord savoir si vous pouvez venir. Affichez vos délais, votre zone et vos périodes chargées.",
+        },
+        {
+          titre: "L'hiver se décide en septembre",
+          texte: 'Un hébergeur cherche son prestataire pour la saison en septembre, parfois en juin. Votre visibilité doit être en place avant.',
+          article: 'entreprise-saisonniere-communication',
         },
       ],
       social:
-        "La Tarentaise est un endroit où le contenu vidéo fonctionne particulièrement bien, pour une raison simple : le décor est spectaculaire et immédiatement reconnaissable. Une vidéo tournée sur un chantier avec les sommets derrière est identifiée en une seconde par les gens de la vallée, et elle intéresse aussi ceux qui viennent chaque hiver. C'est un avantage que peu d'entreprises exploitent.",
-      articles: [
-        'location-saisonniere-reservation-directe',
-        'hebergement-station-reseaux-sociaux',
-        'entreprise-saisonniere-communication',
-        'site-web-artisan',
-        'creer-fiche-google-business',
-        'traiteur-food-truck-visibilite',
-      ],
+        'Une vidéo tournée sur un chantier avec les sommets derrière, les gens de la vallée la reconnaissent en une seconde. Ceux qui viennent chaque hiver aussi.',
       faq: [
         {
           q: 'Vous intervenez jusque dans les stations ?',
@@ -359,35 +338,24 @@ export const tarentaiseCities: CityData[] = [
         'Bâtiment et rénovation d\'altitude',
         'Commerces et restauration',
       ],
-      context: [
-        "Bourg-Saint-Maurice a une particularité que peu de villes de montagne partagent : elle vit correctement l'été. L'Isère y attire les activités d'eaux vives, la randonnée et le vélo remplissent les vallées, et la ville garde une population permanente qui fait tourner les commerces.",
-        "Cette double saison change la nature du travail de visibilité. Une entreprise qui ne communique que l'hiver laisse la moitié de son potentiel de côté, et surtout elle repart de zéro à chaque reprise, parce qu'une audience qui n'a rien vu pendant six mois vous a oublié.",
-        "L'autre spécificité, c'est que beaucoup de clients cherchent depuis loin et longtemps à l'avance. Quelqu'un qui prépare une semaine en juillet compare des prestataires en mars, depuis Lyon ou Paris. Ce n'est pas du référencement local classique, c'est de la visibilité nationale sur une prestation localisée, et ça se travaille différemment.",
-      ],
-      blocks: [
+      points: [
         {
-          title: 'Se rendre trouvable depuis l\'extérieur',
-          body: "Si vos clients viennent de loin, votre site doit répondre à leurs questions à eux : où exactement, comment on y accède, ce qui est inclus, quel niveau il faut avoir, quelles dates sont encore disponibles. Un site pensé uniquement pour les gens du coin passe à côté de cette clientèle.",
+          titre: "Ici, l'été compte autant que l'hiver",
+          texte: "Eaux vives, randonnée et vélo l'été, stations l'hiver. Une entreprise qui ne communique qu'une saison repart de zéro à chaque reprise.",
+          article: 'entreprise-saisonniere-communication',
         },
         {
-          title: 'Occuper les deux saisons',
-          body: "Le contenu produit l'été sert l'hiver et inversement. C'est une des rares situations où publier régulièrement toute l'année a un effet cumulatif visible, parce que les gens qui vous découvrent en août réservent en janvier.",
+          titre: 'Vos clients cherchent depuis Lyon ou Paris',
+          texte: "Quelqu'un qui prépare une semaine en juillet compare en mars. Votre site répond à ses questions : l'accès, les dates, le niveau, ce qui est inclus.",
         },
         {
-          title: 'Les avis, plus décisifs qu\'ailleurs',
-          body: "Une clientèle qui ne vous connaît pas et qui vient de loin s'appuie presque entièrement sur les avis pour choisir. Sur ce type d'activité, le travail de collecte d'avis rapporte souvent plus vite que le site lui même.",
+          titre: "Les avis décident plus qu'ailleurs",
+          texte: 'Une clientèle qui vient de loin ne vous connaît pas. Elle choisit sur les avis, et les collecter rapporte souvent plus vite que le site.',
+          article: 'obtenir-avis-google',
         },
       ],
       social:
-        "Peu d'endroits offrent un décor aussi favorable à la vidéo courte. Une descente en raft, un lever de soleil depuis un sommet, une intervention sur un chalet d'altitude : ce sont des images qui retiennent l'attention sans effort de mise en scène. L'enjeu ici n'est pas de trouver quoi filmer, c'est de le faire régulièrement et de dire clairement ce que vous vendez, sinon la belle image ne se transforme jamais en réservation.",
-      articles: [
-        'location-saisonniere-reservation-directe',
-        'moniteur-guide-montagne-visibilite',
-        'hebergement-station-reseaux-sociaux',
-        'entreprise-saisonniere-communication',
-        'site-bilingue-clientele-etrangere',
-        'obtenir-avis-google',
-      ],
+        "Une descente en raft, un chalet d'altitude, un lever de soleil : ici le décor fait le travail. L'enjeu est de publier toute l'année et de dire ce que vous vendez.",
       faq: [
         {
           q: 'Vous montez jusqu\'en Haute Tarentaise ?',

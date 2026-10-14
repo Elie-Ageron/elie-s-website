@@ -63,35 +63,29 @@ export const coreCities: CityData[] = [
         'Bâtiment et rénovation',
         'Services aux entreprises',
       ],
-      context: [
-        "Annecy est le marché le plus concurrentiel de la région, en ligne comme ailleurs. Le tourisme, le tertiaire et une population aisée y attirent beaucoup d'entreprises, et beaucoup d'agences web avec elles.",
-        "Ça ne veut pas dire qu'il n'y a pas de place. Ça veut dire qu'une stratégie générique n'en a aucune. Viser une recherche large ici demande des années. Viser des recherches précises, sur une prestation nommée et un quartier ou une commune du bassin, reste tout à fait accessible.",
-        "L'autre spécificité annécienne, c'est le niveau d'exigence visuelle. Un site approximatif se remarque davantage ici que dans une vallée, parce que les concurrents ont investi. Le contenu reste plus important que l'esthétique, mais le seuil d'acceptabilité est plus haut.",
-      ],
-      blocks: [
+      socialPage: 'community-manager-annecy',
+      points: [
         {
-          title: 'Viser les communes du bassin, pas seulement Annecy',
-          body: "Les habitants de Poisy, Sevrier ou Épagny tapent souvent le nom de leur commune. Ces recherches sont bien moins disputées que celles portant sur Annecy, et elles amènent des clients tout aussi réels.",
+          titre: 'Le marché le plus disputé de la région',
+          texte: "Tourisme, tertiaire, population aisée : beaucoup d'entreprises, et beaucoup d'agences web avec elles. Une stratégie générique n'y a aucune place.",
         },
         {
-          title: 'Se distinguer par la preuve',
-          body: "Dans un marché où tout le monde affiche un beau site, ce qui départage est la preuve : réalisations récentes, avis nombreux, visage identifiable. C'est aussi ce qui coûte le moins cher à produire quand on travaille déjà bien.",
+          titre: 'Viser les communes du bassin',
+          texte: 'À Poisy, Sevrier ou Épagny, les gens tapent le nom de leur commune. Ces recherches sont bien moins disputées que celles sur Annecy.',
+          article: 'trouver-mots-cles-clients',
         },
         {
-          title: 'La saisonnalité touristique',
-          body: "Une partie de l'économie annécienne dépend de la saison estivale. Comme partout, la visibilité doit être en place avant, pas pendant, et le contenu produit l'été sert toute l'année suivante.",
+          titre: 'Un site approximatif se voit plus ici',
+          texte: "Les concurrents annéciens ont investi. Le contenu passe toujours avant l'esthétique, mais le niveau attendu est plus haut qu'en vallée.",
+        },
+        {
+          titre: 'Se distinguer par la preuve',
+          texte: "Réalisations récentes, avis nombreux, un visage qu'on reconnaît. Quand tout le monde a un beau site, c'est ce qui départage.",
+          article: 'concurrent-devant-moi-google',
         },
       ],
       social:
-        "Le bassin annécien est très actif sur les réseaux, avec une audience habituée à un contenu soigné. C'est plus exigeant qu'en vallée, et c'est aussi un endroit où une entreprise qui publie régulièrement se distingue vite, parce que la plupart de ses concurrents publient par à-coups.",
-      articles: [
-        'concurrent-devant-moi-google',
-        'page-service-qui-ressort',
-        'trouver-mots-cles-clients',
-        'therapeute-reseaux-sociaux-clients',
-        'coach-sportif-trouver-clients',
-        'afficher-ses-prix-ou-pas',
-      ],
+        'Le public annécien est habitué à un contenu soigné. La plupart des entreprises publient par à-coups, donc celle qui publie chaque semaine se distingue vite.',
       faq: [
         {
           q: 'Vous vous déplacez à Annecy ?',
@@ -154,35 +148,29 @@ export const coreCities: CityData[] = [
         'Commerces et restauration',
         'Services frontaliers',
       ],
-      context: [
-        "La Haute-Savoie n'est pas un marché homogène. Le bassin annécien, la vallée de l'Arve, le Chablais et le pays du Mont-Blanc ont des économies très différentes, et une stratégie qui marche dans l'un ne marche pas forcément dans l'autre.",
-        "Ce qu'ils ont en commun, c'est une forte proportion d'entreprises de petite taille, un tourisme important et une pression foncière qui pousse beaucoup d'activités à travailler sur des zones étendues.",
-        "Pour le référencement, la conséquence est claire : une page unique qui parle du département entier ne ressort nulle part. Il faut des pages par bassin ou par commune, avec du contenu réellement différent pour chacune.",
-      ],
-      blocks: [
+      socialPage: 'gestion-reseaux-sociaux-haute-savoie',
+      points: [
         {
-          title: 'Découper par bassin, pas par département',
-          body: "Les gens cherchent avec le nom de leur ville ou de leur vallée. Une page Haute-Savoie sert à présenter votre zone globale, elle ne remplace pas les pages locales qui, elles, ramènent réellement du trafic.",
+          titre: 'Quatre bassins qui ne se ressemblent pas',
+          texte: "Le bassin annécien, la vallée de l'Arve, le Chablais et le pays du Mont-Blanc. Ce qui marche dans l'un ne marche pas forcément dans l'autre.",
         },
         {
-          title: 'Le décolletage et la sous-traitance',
-          body: "La vallée de l'Arve concentre un tissu industriel dense où les acheteurs cherchent en ligne des capacités précises. Un site qui détaille les machines, les matières et les tolérances ressort sur des recherches très spécifiques et peu disputées.",
+          titre: 'Une page par bassin, pas une page pour le 74',
+          texte: 'Les gens cherchent avec le nom de leur ville ou de leur vallée. Une page départementale présente votre zone, elle ne remplace pas les pages locales.',
+          article: 'seo-explique-a-un-artisan',
         },
         {
-          title: 'La clientèle frontalière',
-          body: "Une partie du département vit du travail en Suisse, avec des horaires décalés et des attentes de réactivité particulières. Afficher clairement vos disponibilités en soirée ou le samedi peut faire une vraie différence sur ce public.",
+          titre: 'La sous-traitance se cherche en ligne',
+          texte: "Dans l'Arve, les acheteurs cherchent des capacités précises. Un site qui détaille vos machines, vos matières et vos tolérances répond à ces recherches.",
+          article: 'demarcher-les-professionnels',
+        },
+        {
+          titre: 'La clientèle frontalière décide le soir',
+          texte: 'Une partie du département travaille en Suisse. Afficher vos disponibilités en soirée ou le samedi fait une vraie différence sur ce public.',
         },
       ],
       social:
-        "La Haute-Savoie est l'un des départements où la vidéo courte fonctionne le mieux, parce que le cadre est spectaculaire et que la population est jeune et connectée. L'écueil habituel est de faire de belles images sans jamais dire ce qu'on vend ni où l'on intervient.",
-      articles: [
-        'seo-explique-a-un-artisan',
-        'concurrent-devant-moi-google',
-        'combien-coute-un-site-web',
-        'page-service-qui-ressort',
-        'demarcher-les-professionnels',
-        'entreprise-saisonniere-communication',
-      ],
+        "La vidéo courte marche particulièrement bien ici : le cadre est spectaculaire et la population jeune. Le piège, c'est de faire de belles images sans dire ce qu'on vend.",
       faq: [
         {
           q: 'Vous intervenez dans tout le département ?',
@@ -257,35 +245,28 @@ export const coreCities: CityData[] = [
         'Santé et bien-être',
         'Industrie et sous-traitance',
       ],
-      context: [
-        "La Savoie tient en trois mondes qui se croisent peu. D'un côté l'agglomération chambérienne et le lac du Bourget, de l'autre la vallée d'Albertville et la Tarentaise, et la Maurienne au sud. Les économies et les niveaux de concurrence n'y sont pas comparables.",
-        "Je suis installé à Albertville, ce qui me place au centre de la partie montagne du département et à moins d'une heure de Chambéry. Concrètement, ça veut dire que je peux venir voir un atelier, filmer un chantier et repartir le jour même, ce qu'un prestataire lyonnais ou parisien ne fera pas.",
-        "Sur la partie montagne, la concurrence en ligne reste faible et les résultats arrivent vite. Sur Chambéry et Aix-les-Bains, il faut viser des recherches plus précises et accepter un délai plus long. Je le dis avant de commencer plutôt qu'après.",
-      ],
-      blocks: [
+      socialPage: 'gestion-reseaux-sociaux-savoie',
+      points: [
         {
-          title: 'Une page par ville où vous travaillez réellement',
-          body: "C'est la base du référencement local en Savoie, parce que les gens cherchent avec le nom de leur commune. La condition est que chaque page dise quelque chose de vrai et de spécifique sur cette commune, sinon elle ne sert à rien.",
+          titre: 'Trois Savoie qui se croisent peu',
+          texte: "Chambéry et le lac, la vallée d'Albertville et la Tarentaise, puis la Maurienne. Les économies et la concurrence n'y sont pas comparables.",
         },
         {
-          title: 'La fiche Google avant le site',
-          body: "Pour la plupart des entreprises savoyardes, la fiche Google Business rapporte plus vite que le site. Elle est gratuite, elle s'affiche au dessus des résultats classiques, et elle est souvent à moitié remplie.",
+          titre: 'Je viens voir, et je repars le jour même',
+          texte: "Installé à Albertville, je suis à moins d'une heure de Chambéry. Je peux voir un atelier et filmer un chantier dans la journée.",
         },
         {
-          title: 'Le partenariat plutôt que la livraison',
-          body: "Un site livré et laissé seul se dégrade. Je préfère rester présent après la mise en ligne, pour tenir la fiche Google, ajouter des pages et alimenter les réseaux. C'est ce qui fait la différence entre un site qui coûte et un site qui rapporte.",
+          titre: 'La fiche Google avant le site',
+          texte: "Gratuite, affichée au dessus des résultats, souvent à moitié remplie. Pour la plupart des entreprises savoyardes, c'est elle qui rapporte le plus vite.",
+          article: 'difference-site-fiche-google-reseaux',
+        },
+        {
+          titre: 'Je reste après la mise en ligne',
+          texte: 'Un site laissé seul se dégrade. Je peux tenir votre fiche Google, ajouter des pages et alimenter vos réseaux dans la durée.',
         },
       ],
       social:
-        "La Savoie est un terrain particulièrement favorable à la vidéo courte : décor reconnaissable, forte identité locale, groupes Facebook de commune très actifs. Une entreprise qui publie deux fois par semaine des vidéos tournées sur place se distingue rapidement, parce que très peu le font dans la durée.",
-      articles: [
-        'seo-explique-a-un-artisan',
-        'difference-site-fiche-google-reseaux',
-        'etre-premier-google-dans-sa-ville',
-        'combien-coute-un-site-web',
-        'erreurs-visibilite-tpe-locale',
-        'entreprise-saisonniere-communication',
-      ],
+        "Décor reconnaissable, identité locale forte, groupes Facebook de commune très actifs : la Savoie se prête à la vidéo courte. Très peu d'entreprises publient dans la durée, celles qui le font se voient.",
       faq: [
         {
           q: 'Vous intervenez dans toute la Savoie ?',

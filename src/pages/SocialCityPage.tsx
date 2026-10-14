@@ -5,11 +5,10 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import FaqSection from '@/components/FaqSection';
 import ContactMethodsSection from '@/components/ContactMethodsSection';
-import SocialClientsSection from '@/components/SocialClientsSection';
+import VideosLivreesAccueil from '@/components/VideosLivreesAccueil';
+import SectionLocale from '@/components/SectionLocale';
 import { getSocialCity, getRelatedSocialCities } from '@/data/social-cities';
-import { getIndexEntry } from '@/data/blogIndex';
 import { cities } from '@/data/cities';
-import ParagrapheDecoupe from '@/components/ParagrapheDecoupe';
 
 /**
  * La page locale du pilier reseaux sociaux, une par bassin.
@@ -64,14 +63,6 @@ const SocialCityPage = ({ slug }: SocialCityPageProps) => {
   const dans = /Savoie$/.test(city.name) ? `en ${city.name}` : `à ${city.name}`;
   const related = getRelatedSocialCities(city);
   const webCity = city.webPage ? cities.find((c) => c.slug === city.webPage) : undefined;
-
-  /** Articles choisis pour ce bassin. Les slugs sont valides par check:content. */
-  const articles = city.articles
-    .map((articleSlug) => {
-      const post = getIndexEntry(articleSlug);
-      return post ? { slug: articleSlug, title: post.title, excerpt: post.excerpt } : null;
-    })
-    .filter((p): p is { slug: string; title: string; excerpt: string } => p !== null);
 
   /* Meme entite entreprise que partout ailleurs, avec un areaServed cible.
      Ne jamais declarer une seconde entite : le site en a eu quatre en aout
@@ -267,35 +258,6 @@ const SocialCityPage = ({ slug }: SocialCityPageProps) => {
         </div>
       </section>
 
-      {/* ─────────── Le terrain, la partie qui distingue cette page ─────────── */}
-      <section className="border-t border-border/50 py-20 sm:py-28" aria-labelledby="social-city-terrain">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6">
-          <h2 id="social-city-terrain" className="section-title text-foreground">
-            <span>Ce que donnent les réseaux </span>
-            <span className="text-primary">{dans}</span>
-          </h2>
-          <div className="mt-8 space-y-6">
-            {city.terrain.map((paragraphe, i) => (
-              <ParagrapheDecoupe
-                key={i}
-                as={motion.p}
-                texte={paragraphe}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{ delay: i * 0.05, duration: 0.4 }}
-                className="text-base leading-relaxed text-muted-foreground sm:text-lg"
-              />
-            ))}
-          </div>
-
-          <div className="mt-10 border-t border-border/60 pt-8">
-            <h3 className="text-lg font-semibold text-foreground sm:text-xl">Quelle plateforme, ici</h3>
-            <ParagrapheDecoupe texte={city.platforms} className="mt-3 text-base leading-relaxed text-muted-foreground" />
-          </div>
-        </div>
-      </section>
-
       {/* ─────────── Comment ca se passe ─────────── */}
       <section className="border-t border-border/50 bg-secondary/30 py-20 sm:py-28" aria-labelledby="social-city-comment">
         <div className="mx-auto max-w-3xl px-4 sm:px-6">
@@ -332,83 +294,40 @@ const SocialCityPage = ({ slug }: SocialCityPageProps) => {
         </div>
       </section>
 
-      {/* ─────────── Quoi filmer ici ─────────── */}
-      <section className="border-t border-border/50 py-20 sm:py-28" aria-labelledby="social-city-filmer">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6">
-          <h2 id="social-city-filmer" className="section-title text-foreground">
-            <span>Ce qu&rsquo;on filme dans </span>
-            <span className="text-primary">un métier d&rsquo;ici</span>
-          </h2>
-          <p className="section-lede mt-5">
-            Les angles qui marchent ne sont pas les mêmes partout. Voilà ceux que je propose en premier sur ce
-            secteur.
-          </p>
-
-          <ul className="mt-10 divide-y divide-border/60 border-y border-border/60">
-            {city.filmer.map((bloc) => (
-              <li key={bloc.title} className="py-7">
-                <h3 className="text-lg font-semibold text-foreground sm:text-xl">{bloc.title}</h3>
-                <ParagrapheDecoupe texte={bloc.body} className="mt-2 text-base leading-relaxed text-muted-foreground" />
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* La seule preuve publique du pilier : deux comptes reellement geres,
-          tous les deux a Albertville, avec leurs liens verifiables. */}
-      {/* La section n'a pas de marge haute : sur telephone elle tombait a 81 px
-          de la precedente, contre 160 partout ailleurs sur la page. */}
-      <div className="border-t border-border/50 pt-20 lg:border-0 lg:pt-0">
-        <SocialClientsSection />
+      {/* La preuve : les videos elles memes, qui se regardent sur place.
+          C'etait `SocialClientsSection`, deux noms et des liens. Elie, le
+          21 septembre 2026, sur `/reseaux-sociaux` : *« il y a des elements
+          reels, c'est pas que du texte »*. Les deux clientes et les exposants
+          du salon sont tous d'Albertville et de la combe. */}
+      <div className="border-t border-border/50">
+        <VideosLivreesAccueil />
       </div>
 
-      <FaqSection
-        id="social-city-faq"
-        className="border-t border-border/50 px-4 py-16 sm:px-6 sm:py-24"
-        items={city.faq.map((item) => ({ question: item.q, answer: item.a }))}
+      <SectionLocale
+        id="social-city-local"
+        altPortrait={`Elie Ageron, qui vient filmer les entreprises ${dans}`}
+        points={city.points}
         titre={
           <>
-            <span className="text-foreground">Les questions qu&rsquo;on me pose </span>
-            <span className="block text-primary lg:inline">{dans}.</span>
+            <span className="text-foreground">{`Les réseaux ${dans}, `}</span>
+            <span className="block text-primary lg:inline">ce qui marche vraiment.</span>
           </>
         }
       />
 
-      {/* ─────────── Maillage vers le corpus ─────────── */}
-      {articles.length > 0 && (
-        <section className="border-t border-border/50 py-14 sm:py-20" aria-labelledby="social-city-articles">
-          <div className="mx-auto max-w-3xl px-4 sm:px-6">
-            <h2 id="social-city-articles" className="max-lg:section-title lg:text-3xl lg:font-medium lg:leading-tight text-foreground">
-              À lire avant de vous lancer
-            </h2>
-            <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-              Choisis pour les métiers qu&rsquo;on trouve sur ce secteur. Tout est gratuit, et rien n&rsquo;y est
-              réservé aux clients.
-            </p>
-            <ul className="mt-7 divide-y divide-border/60 border-y border-border/60">
-              {articles.map((post) => (
-                <li key={post.slug}>
-                  <Link to={`/blog/${post.slug}`} className="group block py-5">
-                    <span className="block font-medium text-foreground text-pretty transition-colors group-hover:text-primary">
-                      {post.title}
-                    </span>
-                    <span className="mt-1 line-clamp-2 text-base text-muted-foreground lg:block lg:text-sm">{post.excerpt}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-      )}
-
-      {/* ─────────── Maillage local, et croise vers le pilier site web ─────────── */}
-      <section className="border-t border-border/50 py-14 sm:py-20" aria-labelledby="social-city-related">
+      {/* ─────────── La zone, et le croisement vers le pilier site web ───────────
+          Avant la FAQ, plus apres : la liste d'articles et cette section
+          tombaient sous la FAQ et faisaient croire a une seconde fin de page. */}
+      <section className="border-y border-border/50 bg-secondary/40 py-16" aria-labelledby="social-city-related">
         <div className="mx-auto max-w-3xl px-4 sm:px-6">
-          <h2 id="social-city-related" className="text-2xl leading-tight font-semibold text-foreground lg:text-xl">
+          <h2 id="social-city-related" className="mb-4 text-2xl font-semibold leading-tight text-foreground lg:text-xl">
             Je filme aussi ici
           </h2>
-          <ul className="mt-5 divide-y divide-border/60 border-y border-border/60">
+          <p className="text-base leading-relaxed text-muted-foreground">
+            Je me déplace à{' '}
+            {city.nearby.slice(0, -1).join(', ')} et {city.nearby.slice(-1)}.
+          </p>
+          <ul className="mt-6 divide-y divide-border/60 border-y border-border/60">
             {related.map((c) => (
               <li key={c.slug}>
                 <Link to={`/${c.slug}`} className="group flex items-center justify-between gap-4 py-4">
@@ -428,13 +347,25 @@ const SocialCityPage = ({ slug }: SocialCityPageProps) => {
             <p className="mt-7 text-base leading-relaxed text-muted-foreground">
               Vous cherchiez plutôt un site ?{' '}
               <Link to={`/${webCity.slug}`} className="font-medium text-primary underline underline-offset-4">
-                Je fais aussi les sites {city.scope === 'area' ? `en ${city.name}` : `à ${city.name}`}
+                Je fais aussi les sites {dans}
               </Link>
               , et les deux se font ensemble : les vidéos amènent les gens, le site les reçoit.
             </p>
           )}
         </div>
       </section>
+
+      <FaqSection
+        id="social-city-faq"
+        className="px-4 py-16 sm:px-6 sm:py-24"
+        items={city.faq.map((item) => ({ question: item.q, answer: item.a }))}
+        titre={
+          <>
+            <span className="text-foreground">Les questions qu&rsquo;on me pose </span>
+            <span className="block text-primary lg:inline">{dans}.</span>
+          </>
+        }
+      />
 
       <ContactMethodsSection />
     </>
