@@ -16,9 +16,9 @@ export const tarentaiseCities: CityData[] = [
     relatedCities: ['creation-site-web-ugine', 'creation-site-web-moutiers', 'web-designer-savoie'],
     fr: {
       name: 'Albertville',
-      title: 'Création Site Web Albertville | Elie Ageron',
+      title: 'Création Site Internet Albertville | Elie Ageron',
       description:
-        "Web designer installé à Albertville. Sites qui sortent sur Google et vidéos pour vos réseaux. Rendez-vous sur place, devis sous 48h.",
+        "Création de site internet à Albertville, une page dès 500 €. Je passe voir votre atelier, devis sous 48 h après notre échange.",
       h1Pre: 'Création de site web à ',
       h1Highlight: 'Albertville',
       h2: "Je suis installé ici, pas à trois heures de route.",
@@ -101,6 +101,10 @@ export const tarentaiseCities: CityData[] = [
         {
           q: 'Vous travaillez avec des entreprises saisonnières ?',
           a: "Régulièrement. La contrainte principale est le calendrier : il faut lancer le travail de visibilité plusieurs mois avant la saison visée, sinon les résultats arrivent après.",
+        },
+        {
+          q: 'Quelle différence avec une agence web ?',
+          a: "Je suis web designer indépendant, installé à Albertville. Il n'y a pas de commercial entre nous : celui qui vient voir votre atelier est celui qui construit le site, et qui peut ensuite le faire vivre avec vos réseaux sociaux.",
         },
       ],
     },
