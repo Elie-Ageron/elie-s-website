@@ -23,7 +23,7 @@ export const coreCities: CityData[] = [
       name: 'Annecy',
       title: 'Web Designer Annecy | Elie Ageron',
       description:
-        "Web designer basé en Savoie, j'interviens à Annecy. Sites pros qui convertissent les visiteurs en clients. Livraison en 7-14 jours, sur devis.",
+        "Web designer pour Annecy et son bassin : un site d'une page dès 500 €, un site vitrine dès 1 500 €. Rendez-vous sur place, en ligne en 7 à 14 jours.",
       h1Pre: 'Web designer à ',
       h1Highlight: 'Annecy',
       h2: 'Un site qui ramène des clients. Pas juste un beau design.',
@@ -94,6 +94,10 @@ export const coreCities: CityData[] = [
         {
           q: 'Le marché annécien est-il trop concurrentiel ?',
           a: "Sur les recherches génériques, oui, et je le dis avant de commencer. Sur des recherches précises liées à une prestation ou à une commune du bassin, il reste beaucoup de place.",
+        },
+        {
+          q: 'Combien coûte un site web à Annecy ?',
+          a: "Un site d'une page dès 500 €, un site vitrine dès 1 500 €, un pack lancement dès 3 500 €. Le devis exact arrive sous 48 heures après notre échange.",
         },
       ],
     },
